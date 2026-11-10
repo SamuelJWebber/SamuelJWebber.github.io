@@ -1,0 +1,2 @@
+# Serve files byte-for-byte as published from each source dist/ (no line-ending conversion).
+* -text
