@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboards</title>
+<style>
+  :root { color-scheme: light; --plane:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+          --rule:#e1e0d9; --border:rgba(11,11,11,.10); --link:#2a78d6; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme: dark; --plane:#0d0d0d; --surface:#1a1a19;
+          --ink:#fff; --ink-2:#c3c2b7; --muted:#898781; --rule:#2c2c2a; --border:rgba(255,255,255,.10); --link:#3987e5; } }
+  :root[data-theme="dark"] { color-scheme: dark; --plane:#0d0d0d; --surface:#1a1a19; --ink:#fff; --ink-2:#c3c2b7; --muted:#898781;
+          --rule:#2c2c2a; --border:rgba(255,255,255,.10); --link:#3987e5; }
+  body { background:var(--plane); color:var(--ink); font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; margin:0; padding:0 16px 80px; }
+  .wrap { max-width:860px; margin:0 auto; }
+  header { padding:64px 0 28px; border-bottom:1px solid var(--rule); margin-bottom:28px; }
+  h1 { font-size:clamp(28px,4vw,40px); letter-spacing:-.02em; margin:0 0 10px; font-weight:640; }
+  .sub { color:var(--ink-2); margin:0; max-width:64ch; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px; }
+  a.card { display:block; text-decoration:none; color:inherit; background:var(--surface); border:1px solid var(--border);
+           border-radius:12px; padding:18px 18px 16px; }
+  a.card:hover { border-color:var(--link); }
+  .t { font-weight:640; font-size:16.5px; margin-bottom:6px; color:var(--link); }
+  .d { font-size:14.5px; color:var(--ink-2); }
+  footer { margin-top:48px; padding-top:16px; border-top:1px solid var(--rule); font-size:13px; color:var(--muted); }
+</style>
+</head>
+<body><div class="wrap">
+<header>
+  <h1>Dashboards</h1>
+  <p class="sub">Research dashboards built from public data. Each one says where its numbers come from.</p>
+</header>
+<div class="grid">
+  <a class="card" href="https://samueljwebber.github.io/credit-card-data/"><div class="t">US credit card data</div><div class="d">How much Americans owe on cards, what they pay and who falls behind. Rebuilt nightly from 14 public sources.</div></a>
+  <a class="card" href="market-calibration-atlas/"><div class="t">Market Calibration Atlas</div><div class="d">How well prediction-market prices match what actually happened, across venues, events and horizons.</div></a>
+  <a class="card" href="nyc-street-flow/"><div class="t">NYC Street Flow</div><div class="d">What replacing a traffic lane with a protected bike lane does to how many people move, and how fast.</div></a>
+  <a class="card" href="senate-coattails/"><div class="t">Senate Coattails</div><div class="d">Does a stronger Senate nominee lift the rest of the ticket? Tested through the 2026 midterms.</div></a>
+  <a class="card" href="https://samueljwebber.github.io/abs-risk/"><div class="t">Consumer credit risk from ABS filings</div><div class="d">Card trusts and auto-loan securitisations, read from SEC filings.</div></a>
+  <a class="card" href="https://samueljwebber.github.io/ski-rentals-2027/"><div class="t">Winter 2026-27 ski research</div><div class="d">Where the snow is likeliest and what a refundable week costs, with every price dated.</div></a>
+</div>
+<footer>Published from GitHub (SamuelJWebber/SamuelJWebber.github.io).</footer>
+</div></body>
+</html>
