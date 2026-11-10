@@ -1,0 +1,457 @@
+{
+ "meta": {
+  "study": "Quote midpoints after large jumps, forward Kalshi sample, with a timing control",
+  "generatedAt": "2026-11-10T00:44:21+00:00",
+  "spec": "studies/reaction-quotes/SPEC.md",
+  "specSha256": "456493cff1fb3d5ddc3cb0ebc7b3ee09eb82b1d02b40437347399ddda24b71fc",
+  "shards": [
+   {
+    "path": "downloads/forward-kalshi-0.parquet",
+    "sha256": "330582ccd04cf2b6c0d8d075b028dcfdaf3f0392fb8d5bcb1ca6a6922383c63a"
+   },
+   {
+    "path": "downloads/forward-kalshi-1.parquet",
+    "sha256": "644e2204886edf2a7a18a6bbba3e3ff74d70ba52a680a7d2ee6a36ea7232a2e7"
+   },
+   {
+    "path": "downloads/forward-kalshi-2.parquet",
+    "sha256": "aca3868a0f3dcefd9de1403a3e26f365e141b3eeca1104c106d2281874bd1662"
+   },
+   {
+    "path": "downloads/forward-kalshi-3.parquet",
+    "sha256": "31892aab6714d64b4c727ed0a6bfc7b503144ac0ff17d737eac1f305d0f616fa"
+   }
+  ],
+  "midpointBars": 10856001,
+  "spreadMaximum": 0.1,
+  "candidates": 12049,
+  "frozenK": {
+   "binA": 1.0535127396,
+   "binB": 0.9082585823
+  },
+  "primary": "Midpoint-detected jumps of 20+ points: Brier gain of b + 0.908*jump over the response midpoint.",
+  "interval": "Approximate 95% Student-t, clustered by parent event; suppressed below 20 events.",
+  "claims": "Exploratory follow-up to study 09 on the same contracts and period; not an independent sample. Midpoints are not tradable prices. Not causal."
+ },
+ "verdict": "inconclusive",
+ "quotes": {
+  "selected": 7849,
+  "binA": {
+   "gain": {
+    "mean": 7.99e-06,
+    "ci": [
+     -8.689e-05,
+     0.00010286
+    ]
+   },
+   "gap": {
+    "mean": 0.00357558,
+    "ci": [
+     -0.00695759,
+     0.01410875
+    ]
+   },
+   "brierAfter": {
+    "mean": 0.19630826,
+    "ci": [
+     0.19145737,
+     0.20115915
+    ]
+   },
+   "brierBefore": {
+    "mean": 0.2038938,
+    "ci": [
+     0.19887688,
+     0.20891072
+    ]
+   },
+   "brierShrunk": {
+    "mean": 0.19630027,
+    "ci": [
+     0.19144022,
+     0.20116033
+    ]
+   },
+   "logGain": {
+    "mean": -0.00017172,
+    "ci": [
+     -0.00063356,
+     0.00029013
+    ]
+   },
+   "n": 7416,
+   "events": 5501,
+   "contracts": 6859,
+   "meanJump": 0.07724029126213593,
+   "equalEventGain": 1.5894905586685898e-05,
+   "equalEventGap": 0.0034895320182524643,
+   "path": {
+    "drift60": {
+     "mean": -0.00448364,
+     "ci": [
+      -0.01238826,
+      0.00342098
+     ]
+    },
+    "n": 3851,
+    "events": 3055,
+    "retainedMovement": 0.942906694530232,
+    "selectionShare": 0.5192826321467098
+   }
+  },
+  "binB": {
+   "gain": {
+    "mean": -0.00104186,
+    "ci": [
+     -0.00314809,
+     0.00106436
+    ]
+   },
+   "gap": {
+    "mean": 0.00691109,
+    "ci": [
+     -0.03517714,
+     0.04899931
+    ]
+   },
+   "brierAfter": {
+    "mean": 0.19479759,
+    "ci": [
+     0.17840565,
+     0.21118953
+    ]
+   },
+   "brierBefore": {
+    "mean": 0.28781647,
+    "ci": [
+     0.26735494,
+     0.308278
+    ]
+   },
+   "brierShrunk": {
+    "mean": 0.19583945,
+    "ci": [
+     0.18056517,
+     0.21111373
+    ]
+   },
+   "logGain": {
+    "mean": -0.00093648,
+    "ci": [
+     -0.01202821,
+     0.01015524
+    ]
+   },
+   "n": 433,
+   "events": 419,
+   "contracts": 433,
+   "meanJump": 0.27754041570438803,
+   "equalEventGain": -0.0009717855022362209,
+   "equalEventGap": 0.005787589498806679,
+   "path": {
+    "drift60": {
+     "mean": -0.00494382,
+     "ci": [
+      -0.04937778,
+      0.03949014
+     ]
+    },
+    "n": 178,
+    "events": 171,
+    "retainedMovement": 0.979735175590098,
+    "selectionShare": 0.4110854503464203
+   }
+  },
+  "refitK": {
+   "binA": 1.0373284896216801,
+   "binB": 1.0172835954502053
+  },
+  "leadAtLeast1h": {
+   "binA": {
+    "gain": {
+     "mean": -2.439e-05,
+     "ci": [
+      -0.00013125,
+      8.248e-05
+     ]
+    },
+    "gap": {
+     "mean": -0.00024118,
+     "ci": [
+      -0.012172,
+      0.01168965
+     ]
+    },
+    "brierAfter": {
+     "mean": 0.20657632,
+     "ci": [
+      0.20118742,
+      0.21196523
+     ]
+    },
+    "brierBefore": {
+     "mean": 0.21347149,
+     "ci": [
+      0.2079149,
+      0.21902809
+     ]
+    },
+    "brierShrunk": {
+     "mean": 0.20660071,
+     "ci": [
+      0.2012001,
+      0.21200132
+     ]
+    },
+    "logGain": {
+     "mean": -0.00035265,
+     "ci": [
+      -0.00089367,
+      0.00018837
+     ]
+    },
+    "n": 6120,
+    "events": 4434,
+    "contracts": 5584,
+    "meanJump": 0.07673758169934641,
+    "equalEventGain": -1.287630444861724e-05,
+    "equalEventGap": -0.00025853278475263864,
+    "path": {
+     "drift60": {
+      "mean": -0.00448364,
+      "ci": [
+       -0.01238826,
+       0.00342098
+      ]
+     },
+     "n": 3851,
+     "events": 3055,
+     "retainedMovement": 0.942906694530232,
+     "selectionShare": 0.6292483660130719
+    }
+   },
+   "binB": {
+    "gain": {
+     "mean": -0.00038334,
+     "ci": [
+      -0.00287933,
+      0.00211265
+     ]
+    },
+    "gap": {
+     "mean": -0.00707465,
+     "ci": [
+      -0.06081162,
+      0.04666232
+     ]
+    },
+    "brierAfter": {
+     "mean": 0.21010124,
+     "ci": [
+      0.19186994,
+      0.22833254
+     ]
+    },
+    "brierBefore": {
+     "mean": 0.2858015,
+     "ci": [
+      0.262134,
+      0.309469
+     ]
+    },
+    "brierShrunk": {
+     "mean": 0.21048457,
+     "ci": [
+      0.19362372,
+      0.22734543
+     ]
+    },
+    "logGain": {
+     "mean": -0.00288515,
+     "ci": [
+      -0.00868809,
+      0.0029178
+     ]
+    },
+    "n": 288,
+    "events": 279,
+    "contracts": 288,
+    "meanJump": 0.26164930555555554,
+    "equalEventGain": -0.0004163072667627847,
+    "equalEventGap": -0.006066308243727599,
+    "path": {
+     "drift60": {
+      "mean": -0.00494382,
+      "ci": [
+       -0.04937778,
+       0.03949014
+      ]
+     },
+     "n": 178,
+     "events": 171,
+     "retainedMovement": 0.979735175590098,
+     "selectionShare": 0.6180555555555556
+    }
+   }
+  },
+  "timingControl": {
+   "binB": {
+    "k": 0.9082585823,
+    "n": 361,
+    "events": 348,
+    "ofJumps": 433,
+    "a": {
+     "label": "bid-ask midpoint at the end of the response minute (as detected)",
+     "gap": {
+      "mean": 0.02114266,
+      "ci": [
+       -0.02485612,
+       0.06714144
+      ]
+     },
+     "gain": {
+      "mean": -0.00175265,
+      "ci": [
+       -0.00409164,
+       0.00058634
+      ]
+     }
+    },
+    "m1": {
+     "label": "bid-ask midpoint at the end of the next minute",
+     "gap": {
+      "mean": 0.01561634,
+      "ci": [
+       -0.02997828,
+       0.06121097
+      ]
+     },
+     "gain": {
+      "mean": -0.00152996,
+      "ci": [
+       -0.00397977,
+       0.00091984
+      ]
+     }
+    },
+    "t0": {
+     "label": "last trade of the response minute",
+     "gap": {
+      "mean": 0.02904432,
+      "ci": [
+       -0.01735791,
+       0.07544656
+      ]
+     },
+     "gain": {
+      "mean": -0.0016827,
+      "ci": [
+       -0.00397229,
+       0.00060688
+      ]
+     }
+    },
+    "t1": {
+     "label": "last trade of the next minute",
+     "gap": {
+      "mean": 0.01418283,
+      "ci": [
+       -0.03147836,
+       0.05984401
+      ]
+     },
+     "gain": {
+      "mean": -0.00136907,
+      "ci": [
+       -0.00386954,
+       0.0011314
+      ]
+     }
+    }
+   },
+   "binA": {
+    "k": 1.0535127396,
+    "n": 4329,
+    "events": 3685,
+    "ofJumps": 7416,
+    "a": {
+     "label": "bid-ask midpoint at the end of the response minute (as detected)",
+     "gap": {
+      "mean": 0.00247066,
+      "ci": [
+       -0.01115849,
+       0.01609981
+      ]
+     },
+     "gain": {
+      "mean": -1.238e-05,
+      "ci": [
+       -0.00014357,
+       0.00011882
+      ]
+     }
+    },
+    "m1": {
+     "label": "bid-ask midpoint at the end of the next minute",
+     "gap": {
+      "mean": 0.00269335,
+      "ci": [
+       -0.01085571,
+       0.0162424
+      ]
+     },
+     "gain": {
+      "mean": -2.154e-05,
+      "ci": [
+       -0.00016829,
+       0.00012522
+      ]
+     }
+    },
+    "t0": {
+     "label": "last trade of the response minute",
+     "gap": {
+      "mean": 0.01300069,
+      "ci": [
+       -0.00065221,
+       0.0266536
+      ]
+     },
+     "gain": {
+      "mean": -1.357e-05,
+      "ci": [
+       -0.00014194,
+       0.00011479
+      ]
+     }
+    },
+    "t1": {
+     "label": "last trade of the next minute",
+     "gap": {
+      "mean": 0.00225479,
+      "ci": [
+       -0.0113296,
+       0.01583918
+      ]
+     },
+     "gain": {
+      "mean": -9.625e-05,
+      "ci": [
+       -0.00024714,
+       5.464e-05
+      ]
+     }
+    }
+   }
+  },
+  "overlapWithTradeDetector": {
+   "windowSeconds": 120,
+   "midpointJumps20": 433,
+   "withTradeEpisode": 166,
+   "withTradeEpisodeShare": 0.3833718244803695,
+   "tradeJumps20": 415,
+   "withMidpointEpisode": 168,
+   "withMidpointEpisodeShare": 0.40481927710843374
+  }
+ }
+}

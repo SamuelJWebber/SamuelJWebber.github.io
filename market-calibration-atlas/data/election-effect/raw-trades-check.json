@@ -1,0 +1,180 @@
+{
+ "meta": {
+  "study": "Study 11 robustness: raw Kalshi trades inside the election-anchored windows (post hoc)",
+  "generatedAt": "2026-11-10T00:55:13+00:00",
+  "note": "Not in SPEC.md, which uses panel trades only. Every contract-horizon pair (sets S and W, 1/7/30/90 days) with a close-anchored price but no panel trade in the election-anchored window was checked against Kalshi's public historical trades.",
+  "endpoint": "https://api.elections.kalshi.com/trade-api/v2/historical/trades",
+  "collectedAt": "2026-11-10T00:54:36+00:00",
+  "extract": "studies/election-effect/inputs/raw-trades.json",
+  "extractSha256": "30f4f92eaa96ef52c474e0d31900b16dfd30fac059be98ce69f05ad0ab666f9b"
+ },
+ "windowsChecked": 251,
+ "windowsWithRawTrades": 1,
+ "coverage": {
+  "contracts": 216,
+  "earliestPanelTradeReturned": 216,
+  "note": "The endpoint returned each contract's earliest stored panel trade (same second, same price), so an empty window is an absence of trades, not a gap in the archive."
+ },
+ "sets": {
+  "S": {
+   "All Politics": {
+    "1": {
+     "windowsChecked": 0,
+     "windowsWithRawTrades": 0,
+     "rawTrades": 0,
+     "contractsWithRawTrades": []
+    },
+    "7": {
+     "windowsChecked": 4,
+     "windowsWithRawTrades": 0,
+     "rawTrades": 0,
+     "contractsWithRawTrades": []
+    },
+    "30": {
+     "windowsChecked": 51,
+     "windowsWithRawTrades": 0,
+     "rawTrades": 0,
+     "contractsWithRawTrades": []
+    },
+    "90": {
+     "windowsChecked": 16,
+     "windowsWithRawTrades": 0,
+     "rawTrades": 0,
+     "contractsWithRawTrades": []
+    }
+   },
+   "Elections and primaries": {
+    "1": {
+     "windowsChecked": 0,
+     "windowsWithRawTrades": 0,
+     "rawTrades": 0,
+     "contractsWithRawTrades": []
+    },
+    "7": {
+     "windowsChecked": 4,
+     "windowsWithRawTrades": 0,
+     "rawTrades": 0,
+     "contractsWithRawTrades": []
+    },
+    "30": {
+     "windowsChecked": 51,
+     "windowsWithRawTrades": 0,
+     "rawTrades": 0,
+     "contractsWithRawTrades": []
+    },
+    "90": {
+     "windowsChecked": 16,
+     "windowsWithRawTrades": 0,
+     "rawTrades": 0,
+     "contractsWithRawTrades": []
+    }
+   }
+  },
+  "W": {
+   "All Politics": {
+    "1": {
+     "windowsChecked": 6,
+     "windowsWithRawTrades": 0,
+     "rawTrades": 0,
+     "contractsWithRawTrades": []
+    },
+    "7": {
+     "windowsChecked": 36,
+     "windowsWithRawTrades": 0,
+     "rawTrades": 0,
+     "contractsWithRawTrades": []
+    },
+    "30": {
+     "windowsChecked": 111,
+     "windowsWithRawTrades": 1,
+     "rawTrades": 1,
+     "contractsWithRawTrades": [
+      {
+       "ticker": "PRES-2024-RFK",
+       "lastTrade": "2024-10-06T19:50:08.126664Z",
+       "yesPrice": 0.01,
+       "trades": 1
+      }
+     ],
+     "withRawTrades": {
+      "published": {
+       "contracts": 1132,
+       "events": 462,
+       "brier": 0.136856,
+       "winRate": 0.80477,
+       "meanPrice": 0.806458,
+       "bias": -0.001687
+      },
+      "reanchored": {
+       "contracts": 1132,
+       "events": 462,
+       "brier": 0.137086,
+       "winRate": 0.803887,
+       "meanPrice": 0.806034,
+       "bias": -0.002147
+      },
+      "electionContracts": 2
+     }
+    },
+    "90": {
+     "windowsChecked": 98,
+     "windowsWithRawTrades": 0,
+     "rawTrades": 0,
+     "contractsWithRawTrades": []
+    }
+   },
+   "Elections and primaries": {
+    "1": {
+     "windowsChecked": 6,
+     "windowsWithRawTrades": 0,
+     "rawTrades": 0,
+     "contractsWithRawTrades": []
+    },
+    "7": {
+     "windowsChecked": 36,
+     "windowsWithRawTrades": 0,
+     "rawTrades": 0,
+     "contractsWithRawTrades": []
+    },
+    "30": {
+     "windowsChecked": 111,
+     "windowsWithRawTrades": 1,
+     "rawTrades": 1,
+     "contractsWithRawTrades": [
+      {
+       "ticker": "PRES-2024-RFK",
+       "lastTrade": "2024-10-06T19:50:08.126664Z",
+       "yesPrice": 0.01,
+       "trades": 1
+      }
+     ],
+     "withRawTrades": {
+      "published": {
+       "contracts": 239,
+       "events": 112,
+       "brier": 0.117221,
+       "winRate": 0.832636,
+       "meanPrice": 0.82841,
+       "bias": 0.004226
+      },
+      "reanchored": {
+       "contracts": 239,
+       "events": 112,
+       "brier": 0.118309,
+       "winRate": 0.828452,
+       "meanPrice": 0.826402,
+       "bias": 0.00205
+      },
+      "electionContracts": 2
+     }
+    },
+    "90": {
+     "windowsChecked": 98,
+     "windowsWithRawTrades": 0,
+     "rawTrades": 0,
+     "contractsWithRawTrades": []
+    }
+   }
+  }
+ }
+}

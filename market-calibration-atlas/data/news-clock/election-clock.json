@@ -1,0 +1,280 @@
+{
+ "meta": {
+  "study": "Election clock: 2024 US single-race Kalshi contracts against election night (news-clock Tier E)",
+  "generatedAt": "2026-11-09T21:58:26+00:00",
+  "source": "Atlas Kalshi panel only; statutory Election Day and poll-closing time",
+  "firstPollsClose": "2024-11-05T23:00:00Z",
+  "sample": "every panel parent event matching ^(PRESPARTY(?!FULL)[A-Z]{2}\\d?|SENATE[A-Z]{2}S?|HOUSE[A-Z]{2}(?:\\d+|AL)|GOVPARTY[A-Z]{2})-24$",
+  "contractCloseDates": {
+   "2025-01-03": 87,
+   "2025-01-06": 112,
+   "2025-01-10": 6,
+   "2025-01-13": 6,
+   "2025-01-16": 4,
+   "2025-01-20": 2
+  },
+  "claims": "Descriptive lower bound. No result could be public before the first polls closed; this does not say when any race was called."
+ },
+ "all": {
+  "events": 109,
+  "contracts": 217,
+  "panelObservations": 7424,
+  "closeMinusFirstPollsCloseDays": {
+   "n": 217,
+   "min": 58.888916185520316,
+   "p10": 58.88893410771644,
+   "median": 61.84816232214095,
+   "p90": 61.908319022137256,
+   "max": 75.75546706990788
+  },
+  "contractsClosedBeforeFirstPollsClose": 0,
+  "tradedAfterFirstPollsClose": 4208,
+  "tradedAfterFirstPollsCloseShare": 0.5668103448275862,
+  "panelDaysOfObservationsAfterFirstPollsClose": {
+   "n": 4208,
+   "min": 1,
+   "p10": 16.0,
+   "median": 45.0,
+   "p90": 58.0,
+   "max": 75
+  },
+  "byPanelDay": {
+   "1": {
+    "observations": 18,
+    "afterFirstPollsClose": 18
+   },
+   "3": {
+    "observations": 27,
+    "afterFirstPollsClose": 27
+   },
+   "7": {
+    "observations": 26,
+    "afterFirstPollsClose": 26
+   },
+   "14": {
+    "observations": 31,
+    "afterFirstPollsClose": 31
+   },
+   "30": {
+    "observations": 51,
+    "afterFirstPollsClose": 51
+   },
+   "60": {
+    "observations": 186,
+    "afterFirstPollsClose": 104
+   }
+  },
+  "brierBeforeFirstPollsClose": 0.07175584577114429,
+  "brierAfterFirstPollsClose": 0.0080488355513308
+ },
+ "offices": {
+  "President (state or district)": {
+   "events": 56,
+   "contracts": 112,
+   "panelObservations": 4535,
+   "closeMinusFirstPollsCloseDays": {
+    "n": 112,
+    "min": 61.84551195781264,
+    "p10": 61.84700538316176,
+    "median": 61.86386139660936,
+    "p90": 61.902761706672614,
+    "max": 61.90890878795198
+   },
+   "contractsClosedBeforeFirstPollsClose": 0,
+   "tradedAfterFirstPollsClose": 2456,
+   "tradedAfterFirstPollsCloseShare": 0.5415656008820287,
+   "panelDaysOfObservationsAfterFirstPollsClose": {
+    "n": 2456,
+    "min": 1,
+    "p10": 16.0,
+    "median": 45.0,
+    "p90": 59.0,
+    "max": 61
+   },
+   "byPanelDay": {
+    "1": {
+     "observations": 12,
+     "afterFirstPollsClose": 12
+    },
+    "3": {
+     "observations": 19,
+     "afterFirstPollsClose": 19
+    },
+    "7": {
+     "observations": 12,
+     "afterFirstPollsClose": 12
+    },
+    "14": {
+     "observations": 16,
+     "afterFirstPollsClose": 16
+    },
+    "30": {
+     "observations": 23,
+     "afterFirstPollsClose": 23
+    },
+    "60": {
+     "observations": 99,
+     "afterFirstPollsClose": 99
+    }
+   },
+   "brierBeforeFirstPollsClose": 0.04124006734006734,
+   "brierAfterFirstPollsClose": 0.0002213355048859938
+  },
+  "Senate": {
+   "events": 19,
+   "contracts": 38,
+   "panelObservations": 1502,
+   "closeMinusFirstPollsCloseDays": {
+    "n": 38,
+    "min": 58.888916185520316,
+    "p10": 58.88892979121401,
+    "median": 58.88896217635384,
+    "p90": 58.88898470594569,
+    "max": 58.88898730709597
+   },
+   "contractsClosedBeforeFirstPollsClose": 0,
+   "tradedAfterFirstPollsClose": 766,
+   "tradedAfterFirstPollsCloseShare": 0.5099866844207723,
+   "panelDaysOfObservationsAfterFirstPollsClose": {
+    "n": 766,
+    "min": 1,
+    "p10": 13.0,
+    "median": 41.0,
+    "p90": 56.0,
+    "max": 58
+   },
+   "byPanelDay": {
+    "1": {
+     "observations": 2,
+     "afterFirstPollsClose": 2
+    },
+    "3": {
+     "observations": 7,
+     "afterFirstPollsClose": 7
+    },
+    "7": {
+     "observations": 11,
+     "afterFirstPollsClose": 11
+    },
+    "14": {
+     "observations": 9,
+     "afterFirstPollsClose": 9
+    },
+    "30": {
+     "observations": 13,
+     "afterFirstPollsClose": 13
+    },
+    "60": {
+     "observations": 34,
+     "afterFirstPollsClose": 0
+    }
+   },
+   "brierBeforeFirstPollsClose": 0.09129347826086956,
+   "brierAfterFirstPollsClose": 0.00237780678851175
+  },
+  "House": {
+   "events": 24,
+   "contracts": 49,
+   "panelObservations": 1124,
+   "closeMinusFirstPollsCloseDays": {
+    "n": 49,
+    "min": 58.88891973879602,
+    "p10": 58.88892313502177,
+    "median": 58.88894383202548,
+    "p90": 58.88897413060345,
+    "max": 58.88897962490717
+   },
+   "contractsClosedBeforeFirstPollsClose": 0,
+   "tradedAfterFirstPollsClose": 848,
+   "tradedAfterFirstPollsCloseShare": 0.7544483985765125,
+   "panelDaysOfObservationsAfterFirstPollsClose": {
+    "n": 848,
+    "min": 1,
+    "p10": 22.0,
+    "median": 47.0,
+    "p90": 57.0,
+    "max": 58
+   },
+   "byPanelDay": {
+    "1": {
+     "observations": 3,
+     "afterFirstPollsClose": 3
+    },
+    "3": {
+     "observations": 0,
+     "afterFirstPollsClose": 0
+    },
+    "7": {
+     "observations": 3,
+     "afterFirstPollsClose": 3
+    },
+    "14": {
+     "observations": 6,
+     "afterFirstPollsClose": 6
+    },
+    "30": {
+     "observations": 15,
+     "afterFirstPollsClose": 15
+    },
+    "60": {
+     "observations": 48,
+     "afterFirstPollsClose": 0
+    }
+   },
+   "brierBeforeFirstPollsClose": 0.2355804347826087,
+   "brierAfterFirstPollsClose": 0.03707110849056604
+  },
+  "Governor": {
+   "events": 10,
+   "contracts": 18,
+   "panelObservations": 263,
+   "closeMinusFirstPollsCloseDays": {
+    "n": 18,
+    "min": 65.6710463264005,
+    "p10": 65.67315772504249,
+    "median": 68.75774028087932,
+    "p90": 73.02280832618007,
+    "max": 75.75546706990788
+   },
+   "contractsClosedBeforeFirstPollsClose": 0,
+   "tradedAfterFirstPollsClose": 138,
+   "tradedAfterFirstPollsCloseShare": 0.5247148288973384,
+   "panelDaysOfObservationsAfterFirstPollsClose": {
+    "n": 138,
+    "min": 1,
+    "p10": 19.0,
+    "median": 58.0,
+    "p90": 68.0,
+    "max": 75
+   },
+   "byPanelDay": {
+    "1": {
+     "observations": 1,
+     "afterFirstPollsClose": 1
+    },
+    "3": {
+     "observations": 1,
+     "afterFirstPollsClose": 1
+    },
+    "7": {
+     "observations": 0,
+     "afterFirstPollsClose": 0
+    },
+    "14": {
+     "observations": 0,
+     "afterFirstPollsClose": 0
+    },
+    "30": {
+     "observations": 0,
+     "afterFirstPollsClose": 0
+    },
+    "60": {
+     "observations": 5,
+     "afterFirstPollsClose": 5
+    }
+   },
+   "brierBeforeFirstPollsClose": 0.102532,
+   "brierAfterFirstPollsClose": 0.0004942028985507253
+  }
+ }
+}

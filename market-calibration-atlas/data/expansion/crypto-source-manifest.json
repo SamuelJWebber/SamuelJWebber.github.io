@@ -1,0 +1,63 @@
+{
+  "revision": "74502466d1a7cef56395bfd8d0b465fbebc849cf",
+  "selectionRule": "First seven calendar days starting from first common observed date; chosen before inspecting results.",
+  "start": "2026-02-12",
+  "endExclusive": "2026-02-19",
+  "files": [
+    {
+      "path": "unified/binance_ticks_ms/date=2026-02-12/part-000001.parquet",
+      "sizeBytes": 11519876,
+      "sha256": "e649b0f0be5078deb3da858940c9ba7748cf6cde09de850c07257f2f3bd1e999"
+    },
+    {
+      "path": "unified/binance_ticks_ms/date=2026-02-13/part-000001.parquet",
+      "sizeBytes": 2466,
+      "sha256": "c3016efedbe8441956383800d89235399f2a2a0d161195c56b40612d4128dc18"
+    },
+    {
+      "path": "unified/binance_ticks_ms/date=2026-02-16/part-000001.parquet",
+      "sizeBytes": 4699446,
+      "sha256": "dda1fd37e865e6762bb788b9e277fa15e2eba0ced629daa53696152be1abf1ed"
+    },
+    {
+      "path": "unified/binance_ticks_ms/date=2026-02-17/part-000001.parquet",
+      "sizeBytes": 13600558,
+      "sha256": "775ff278ef799bbbd57e9a0fdfc3e9acdf918ec6f77272dcc22a7312dba7546d"
+    },
+    {
+      "path": "unified/binance_ticks_ms/date=2026-02-18/part-000001.parquet",
+      "sizeBytes": 13225916,
+      "sha256": "bfb317e6536081f07d1c55373a7de008c1b1ab32fbc7d8232653c58167d1dfcf"
+    },
+    {
+      "path": "unified/polymarket_ticks_ms/date=2026-02-12/part-000001.parquet",
+      "sizeBytes": 17707617,
+      "sha256": "b3c7e6c7b63d3ada6a946def1e6f75076cc32a30bd93afab3e6a3892f432dde5"
+    },
+    {
+      "path": "unified/polymarket_ticks_ms/date=2026-02-13/part-000001.parquet",
+      "sizeBytes": 66602,
+      "sha256": "998c5fb80e4192c6f6d2cc1b1147ca2d06789629a23a7a5b5c51403f7528ddc7"
+    },
+    {
+      "path": "unified/polymarket_ticks_ms/date=2026-02-16/part-000001.parquet",
+      "sizeBytes": 2183679,
+      "sha256": "8920727cc21c4bb816fc8cd71bf7587e440be966c356b4ff5874edfc38de3558"
+    },
+    {
+      "path": "unified/polymarket_ticks_ms/date=2026-02-17/part-000001.parquet",
+      "sizeBytes": 8662441,
+      "sha256": "324c780d5eb7b63bb82dca90a69317d605b5a4329b65963678da570825194c08"
+    },
+    {
+      "path": "unified/polymarket_ticks_ms/date=2026-02-18/part-000001.parquet",
+      "sizeBytes": 9973046,
+      "sha256": "808676a40062f58c1b38f3071c98f7f12a61afbc64016389474f5885cde3aa7b"
+    },
+    {
+      "path": "unified/market_meta/unpartitioned/part-000001.parquet",
+      "sizeBytes": 427173,
+      "sha256": "6b6ea2969b5744240a8681bdb9992b01856346e71a9d196e680d91f8a76900b5"
+    }
+  ]
+}

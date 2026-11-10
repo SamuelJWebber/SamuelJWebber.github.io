@@ -1,0 +1,10 @@
+#spreads a,#charts-matched,.window-foot a{color:var(--blue);text-underline-offset:3px}
+.quote-ref{margin-top:18px}
+.quote-scope{font-weight:650;font-size:15px;margin:13px 0 2px}
+.quote-days{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin:14px 0}
+.quote-days span{font-size:12px;color:var(--muted);margin-right:3px}
+.quote-days button[aria-pressed=true]{background:#e8f0fc}
+.quote-return{display:grid;grid-template-columns:1fr 1fr;gap:16px;background:#eef5f4;border:1px solid #cbdedb;border-radius:8px;padding:14px;margin:15px 0 8px}
+.quote-return span{display:block;font-size:12px;color:#45655e}.quote-return strong{font-size:22px;color:#135f55;font-variant-numeric:tabular-nums}
+.quote-method{color:var(--muted);font-size:13px;margin-top:16px}.quote-method summary{font-weight:600;cursor:pointer}.quote-method p{margin:8px 0}
+@media(max-width:550px){.quote-return{grid-template-columns:1fr;gap:8px}.quote-kpis .kpi strong{font-size:25px}}

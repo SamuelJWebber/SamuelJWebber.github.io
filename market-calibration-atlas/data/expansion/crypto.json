@@ -1,0 +1,498 @@
+{
+  "id": "crypto",
+  "title": "How quickly do Bitcoin contracts follow a spot-price jump?",
+  "status": "limited",
+  "finding": "In the fixed early-archive cohort, 26 of 27 qualifying 5-basis-point spot moves were followed by a same-direction midpoint change of at least 1 percentage point within five seconds. This is observed response timing, not a measure of correct pricing or a profitable edge.",
+  "metrics": [
+    {
+      "label": "Qualifying spot moves",
+      "value": 27
+    },
+    {
+      "label": "Distinct 15-minute contracts",
+      "value": 10
+    },
+    {
+      "label": "Reached 1-point response within 5 seconds",
+      "value": 0.9629629629629629,
+      "format": "percent"
+    },
+    {
+      "label": "Median among responders only",
+      "value": 508.5,
+      "unit": "ms"
+    }
+  ],
+  "chart": {
+    "title": "Fraction reaching a 1-point same-direction quote change",
+    "xLabel": "Milliseconds after spot threshold crossing",
+    "yLabel": "Share of complete observed episodes",
+    "rows": [
+      {
+        "milliseconds": 0,
+        "meanSignedMidpointChangePp": 0.0,
+        "shareReachedOnePoint": 0.0,
+        "shareReachedOppositeOnePoint": 0.0,
+        "n": 27
+      },
+      {
+        "milliseconds": 100,
+        "meanSignedMidpointChangePp": 0.4259259259259259,
+        "shareReachedOnePoint": 0.2222222222222222,
+        "shareReachedOppositeOnePoint": 0.0,
+        "n": 27
+      },
+      {
+        "milliseconds": 250,
+        "meanSignedMidpointChangePp": 0.983324120140041,
+        "shareReachedOnePoint": 0.2962962962962963,
+        "shareReachedOppositeOnePoint": 0.0,
+        "n": 27
+      },
+      {
+        "milliseconds": 500,
+        "meanSignedMidpointChangePp": 1.1833425465266263,
+        "shareReachedOnePoint": 0.4444444444444444,
+        "shareReachedOppositeOnePoint": 0.037037037037037035,
+        "n": 27
+      },
+      {
+        "milliseconds": 1000,
+        "meanSignedMidpointChangePp": 2.7388981020821817,
+        "shareReachedOnePoint": 0.8518518518518519,
+        "shareReachedOppositeOnePoint": 0.037037037037037035,
+        "n": 27
+      },
+      {
+        "milliseconds": 2000,
+        "meanSignedMidpointChangePp": 4.7018610650451444,
+        "shareReachedOnePoint": 0.9629629629629629,
+        "shareReachedOppositeOnePoint": 0.037037037037037035,
+        "n": 27
+      },
+      {
+        "milliseconds": 5000,
+        "meanSignedMidpointChangePp": 5.259259259259259,
+        "shareReachedOnePoint": 0.9629629629629629,
+        "shareReachedOppositeOnePoint": 0.1111111111111111,
+        "n": 27
+      }
+    ]
+  },
+  "table": [
+    {
+      "date": "2026-02-12",
+      "n": 21,
+      "markets": 5,
+      "responders": 20,
+      "responseShare": 0.9523809523809523,
+      "oppositeDirectionShare": 0.14285714285714285,
+      "medianDelayAmongRespondersMs": 526.5,
+      "meanFiveSecondDriftPp": 4.7142857142857135
+    },
+    {
+      "date": "2026-02-16",
+      "n": 1,
+      "markets": 1,
+      "responders": 1,
+      "responseShare": 1.0,
+      "oppositeDirectionShare": 0.0,
+      "medianDelayAmongRespondersMs": 506.0,
+      "meanFiveSecondDriftPp": 5.000000000000004
+    },
+    {
+      "date": "2026-02-17",
+      "n": 3,
+      "markets": 2,
+      "responders": 3,
+      "responseShare": 1.0,
+      "oppositeDirectionShare": 0.0,
+      "medianDelayAmongRespondersMs": 849.0,
+      "meanFiveSecondDriftPp": 8.983416252072969
+    },
+    {
+      "date": "2026-02-18",
+      "n": 2,
+      "markets": 2,
+      "responders": 2,
+      "responseShare": 1.0,
+      "oppositeDirectionShare": 0.0,
+      "medianDelayAmongRespondersMs": 49.5,
+      "meanFiveSecondDriftPp": 5.524875621890551
+    }
+  ],
+  "analyses": [
+    {
+      "thresholdBps": 2,
+      "selectedSpotMoves": 5969,
+      "eligibleInitialQuotes": 256,
+      "completePaths": 253,
+      "exclusions": {
+        "noActiveRecorded15MinuteMarket": 5160,
+        "nearNominalClose": 20,
+        "missingOrWideOrStaleInitialQuote": 479,
+        "initialPriceOutside5to95Percent": 54,
+        "missingOrWideOrStaleFollowup": 3
+      },
+      "n": 253,
+      "markets": 19,
+      "responders": 244,
+      "responseShare": 0.9644268774703557,
+      "oppositeDirectionShare": 0.14624505928853754,
+      "medianDelayAmongRespondersMs": 369.0,
+      "meanFiveSecondDriftPp": 3.8209545159577605,
+      "path": [
+        {
+          "milliseconds": 0,
+          "meanSignedMidpointChangePp": -0.0019762845849802388,
+          "shareReachedOnePoint": 0.0,
+          "shareReachedOppositeOnePoint": 0.0,
+          "n": 253
+        },
+        {
+          "milliseconds": 100,
+          "meanSignedMidpointChangePp": 0.34407016301889737,
+          "shareReachedOnePoint": 0.16996047430830039,
+          "shareReachedOppositeOnePoint": 0.011857707509881422,
+          "n": 253
+        },
+        {
+          "milliseconds": 250,
+          "meanSignedMidpointChangePp": 0.8019684187756865,
+          "shareReachedOnePoint": 0.33201581027667987,
+          "shareReachedOppositeOnePoint": 0.011857707509881422,
+          "n": 253
+        },
+        {
+          "milliseconds": 500,
+          "meanSignedMidpointChangePp": 1.5092816549662753,
+          "shareReachedOnePoint": 0.6403162055335968,
+          "shareReachedOppositeOnePoint": 0.015810276679841896,
+          "n": 253
+        },
+        {
+          "milliseconds": 1000,
+          "meanSignedMidpointChangePp": 2.748215444516548,
+          "shareReachedOnePoint": 0.8932806324110671,
+          "shareReachedOppositeOnePoint": 0.02766798418972332,
+          "n": 253
+        },
+        {
+          "milliseconds": 2000,
+          "meanSignedMidpointChangePp": 3.3782569366605704,
+          "shareReachedOnePoint": 0.9407114624505929,
+          "shareReachedOppositeOnePoint": 0.06719367588932806,
+          "n": 253
+        },
+        {
+          "milliseconds": 5000,
+          "meanSignedMidpointChangePp": 3.8209545159577605,
+          "shareReachedOnePoint": 0.9644268774703557,
+          "shareReachedOppositeOnePoint": 0.14624505928853754,
+          "n": 253
+        }
+      ],
+      "days": [
+        {
+          "date": "2026-02-12",
+          "n": 149,
+          "markets": 7,
+          "responders": 144,
+          "responseShare": 0.9664429530201343,
+          "oppositeDirectionShare": 0.1476510067114094,
+          "medianDelayAmongRespondersMs": 441.5,
+          "meanFiveSecondDriftPp": 3.5812047146816255
+        },
+        {
+          "date": "2026-02-16",
+          "n": 7,
+          "markets": 2,
+          "responders": 6,
+          "responseShare": 0.8571428571428571,
+          "oppositeDirectionShare": 0.14285714285714285,
+          "medianDelayAmongRespondersMs": 427.5,
+          "meanFiveSecondDriftPp": 6.642857142857141
+        },
+        {
+          "date": "2026-02-17",
+          "n": 46,
+          "markets": 3,
+          "responders": 45,
+          "responseShare": 0.9782608695652174,
+          "oppositeDirectionShare": 0.043478260869565216,
+          "medianDelayAmongRespondersMs": 459.0,
+          "meanFiveSecondDriftPp": 3.9619835604585765
+        },
+        {
+          "date": "2026-02-18",
+          "n": 51,
+          "markets": 7,
+          "responders": 49,
+          "responseShare": 0.9607843137254902,
+          "oppositeDirectionShare": 0.23529411764705882,
+          "medianDelayAmongRespondersMs": 100.0,
+          "meanFiveSecondDriftPp": 4.006877377816798
+        }
+      ]
+    },
+    {
+      "thresholdBps": 5,
+      "selectedSpotMoves": 1070,
+      "eligibleInitialQuotes": 27,
+      "completePaths": 27,
+      "exclusions": {
+        "noActiveRecorded15MinuteMarket": 929,
+        "nearNominalClose": 5,
+        "missingOrWideOrStaleInitialQuote": 97,
+        "initialPriceOutside5to95Percent": 12,
+        "missingOrWideOrStaleFollowup": 0
+      },
+      "n": 27,
+      "markets": 10,
+      "responders": 26,
+      "responseShare": 0.9629629629629629,
+      "oppositeDirectionShare": 0.1111111111111111,
+      "medianDelayAmongRespondersMs": 508.5,
+      "meanFiveSecondDriftPp": 5.259259259259259,
+      "path": [
+        {
+          "milliseconds": 0,
+          "meanSignedMidpointChangePp": 0.0,
+          "shareReachedOnePoint": 0.0,
+          "shareReachedOppositeOnePoint": 0.0,
+          "n": 27
+        },
+        {
+          "milliseconds": 100,
+          "meanSignedMidpointChangePp": 0.4259259259259259,
+          "shareReachedOnePoint": 0.2222222222222222,
+          "shareReachedOppositeOnePoint": 0.0,
+          "n": 27
+        },
+        {
+          "milliseconds": 250,
+          "meanSignedMidpointChangePp": 0.983324120140041,
+          "shareReachedOnePoint": 0.2962962962962963,
+          "shareReachedOppositeOnePoint": 0.0,
+          "n": 27
+        },
+        {
+          "milliseconds": 500,
+          "meanSignedMidpointChangePp": 1.1833425465266263,
+          "shareReachedOnePoint": 0.4444444444444444,
+          "shareReachedOppositeOnePoint": 0.037037037037037035,
+          "n": 27
+        },
+        {
+          "milliseconds": 1000,
+          "meanSignedMidpointChangePp": 2.7388981020821817,
+          "shareReachedOnePoint": 0.8518518518518519,
+          "shareReachedOppositeOnePoint": 0.037037037037037035,
+          "n": 27
+        },
+        {
+          "milliseconds": 2000,
+          "meanSignedMidpointChangePp": 4.7018610650451444,
+          "shareReachedOnePoint": 0.9629629629629629,
+          "shareReachedOppositeOnePoint": 0.037037037037037035,
+          "n": 27
+        },
+        {
+          "milliseconds": 5000,
+          "meanSignedMidpointChangePp": 5.259259259259259,
+          "shareReachedOnePoint": 0.9629629629629629,
+          "shareReachedOppositeOnePoint": 0.1111111111111111,
+          "n": 27
+        }
+      ],
+      "days": [
+        {
+          "date": "2026-02-12",
+          "n": 21,
+          "markets": 5,
+          "responders": 20,
+          "responseShare": 0.9523809523809523,
+          "oppositeDirectionShare": 0.14285714285714285,
+          "medianDelayAmongRespondersMs": 526.5,
+          "meanFiveSecondDriftPp": 4.7142857142857135
+        },
+        {
+          "date": "2026-02-16",
+          "n": 1,
+          "markets": 1,
+          "responders": 1,
+          "responseShare": 1.0,
+          "oppositeDirectionShare": 0.0,
+          "medianDelayAmongRespondersMs": 506.0,
+          "meanFiveSecondDriftPp": 5.000000000000004
+        },
+        {
+          "date": "2026-02-17",
+          "n": 3,
+          "markets": 2,
+          "responders": 3,
+          "responseShare": 1.0,
+          "oppositeDirectionShare": 0.0,
+          "medianDelayAmongRespondersMs": 849.0,
+          "meanFiveSecondDriftPp": 8.983416252072969
+        },
+        {
+          "date": "2026-02-18",
+          "n": 2,
+          "markets": 2,
+          "responders": 2,
+          "responseShare": 1.0,
+          "oppositeDirectionShare": 0.0,
+          "medianDelayAmongRespondersMs": 49.5,
+          "meanFiveSecondDriftPp": 5.524875621890551
+        }
+      ]
+    },
+    {
+      "thresholdBps": 10,
+      "selectedSpotMoves": 105,
+      "eligibleInitialQuotes": 3,
+      "completePaths": 3,
+      "exclusions": {
+        "noActiveRecorded15MinuteMarket": 92,
+        "nearNominalClose": 1,
+        "missingOrWideOrStaleInitialQuote": 8,
+        "initialPriceOutside5to95Percent": 1,
+        "missingOrWideOrStaleFollowup": 0
+      },
+      "n": 3,
+      "markets": 3,
+      "responders": 3,
+      "responseShare": 1.0,
+      "oppositeDirectionShare": 0.0,
+      "medianDelayAmongRespondersMs": 471.0,
+      "meanFiveSecondDriftPp": 6.999999999999999,
+      "path": [
+        {
+          "milliseconds": 0,
+          "meanSignedMidpointChangePp": 0.0,
+          "shareReachedOnePoint": 0.0,
+          "shareReachedOppositeOnePoint": 0.0,
+          "n": 3
+        },
+        {
+          "milliseconds": 100,
+          "meanSignedMidpointChangePp": 0.16666666666666313,
+          "shareReachedOnePoint": 0.0,
+          "shareReachedOppositeOnePoint": 0.0,
+          "n": 3
+        },
+        {
+          "milliseconds": 250,
+          "meanSignedMidpointChangePp": 1.3333333333333308,
+          "shareReachedOnePoint": 0.3333333333333333,
+          "shareReachedOppositeOnePoint": 0.0,
+          "n": 3
+        },
+        {
+          "milliseconds": 500,
+          "meanSignedMidpointChangePp": 3.3333333333333317,
+          "shareReachedOnePoint": 0.6666666666666666,
+          "shareReachedOppositeOnePoint": 0.0,
+          "n": 3
+        },
+        {
+          "milliseconds": 1000,
+          "meanSignedMidpointChangePp": 4.333333333333333,
+          "shareReachedOnePoint": 1.0,
+          "shareReachedOppositeOnePoint": 0.0,
+          "n": 3
+        },
+        {
+          "milliseconds": 2000,
+          "meanSignedMidpointChangePp": 5.166666666666666,
+          "shareReachedOnePoint": 1.0,
+          "shareReachedOppositeOnePoint": 0.0,
+          "n": 3
+        },
+        {
+          "milliseconds": 5000,
+          "meanSignedMidpointChangePp": 6.999999999999999,
+          "shareReachedOnePoint": 1.0,
+          "shareReachedOppositeOnePoint": 0.0,
+          "n": 3
+        }
+      ],
+      "days": [
+        {
+          "date": "2026-02-12",
+          "n": 3,
+          "markets": 3,
+          "responders": 3,
+          "responseShare": 1.0,
+          "oppositeDirectionShare": 0.0,
+          "medianDelayAmongRespondersMs": 471.0,
+          "meanFiveSecondDriftPp": 6.999999999999999
+        }
+      ]
+    }
+  ],
+  "cohort": {
+    "startUtc": "2026-02-12T00:00:00Z",
+    "endExclusiveUtc": "2026-02-19T00:00:00Z",
+    "selectionRule": "First seven calendar days starting from first common observed date; chosen before inspecting results.",
+    "sourceRows": {
+      "binanceTicksAfterTimestampFilterAndDedup": 1443731,
+      "upQuotesAfterTimestampFilterAndDedup": 1285680,
+      "recorded15MinuteMarkets": 26,
+      "actualUtcDays": [
+        "2026-02-12",
+        "2026-02-13",
+        "2026-02-16",
+        "2026-02-17",
+        "2026-02-18"
+      ]
+    },
+    "downloadedFiles": 11,
+    "downloadedBytes": 82068820
+  },
+  "methods": [
+    "The first seven calendar days from the earliest common archive date were fixed before examining response results. Actual collector timestamps define inclusion; partition date labels are not assumed to be UTC.",
+    "A spot shock is a Binance recorded trade-price log change of at least 5 basis points over the preceding 1 second (lookback observation at most 250 ms older). The 2- and 10-basis-point floors are declared sensitivities. Keep the earliest candidate and then wait 10 seconds before selecting another, without inspecting future quotes.",
+    "Match only the UP side of the active BTC 15-minute contract; nominal start/end are encoded by its archive slug. Require at least 30 seconds before nominal end and an initial midpoint between 5% and 95%.",
+    "Use (best bid + best ask)/2, not the price-change payload price. At every sampled time require 0 < bid <= ask < 1, spread <=10 percentage points, and a latest quote no more than 1 second old. Invalid quotes reset availability rather than being silently skipped.",
+    "The baseline is the last valid recorded midpoint strictly before the spot threshold crossing. A response means its signed change first reaches +1 percentage point by 5 seconds. Crossing fractions count all complete eligible paths; median delay is conditional on responding and separately labeled.",
+    "Follow-up grid is 0, 100, 250, 500, 1000, 2000 and 5000 ms. Missing/stale paths are excluded and counted. No interpolation or zero-movement imputation.",
+    "The opposite-direction diagnostic uses the same episodes and records whether the midpoint ever moves at least 1 point against the spot shock; both directions can be reached within the same window. It is descriptive, not a randomized placebo.",
+    "No statistical interval is presented from this short, incomplete historical cohort. Day-by-day results expose variation; episodes and adjacent contracts share Bitcoin information."
+  ],
+  "limitations": [
+    "Collector-clock delays combine exchange reaction, feed transport and collection latency. They are not end-to-end trader reaction times.",
+    "Spot threshold crossing occurs after a move has begun; Polymarket can already have reacted before the chosen zero. First quote response does not mean full information absorption.",
+    "Complete fresh-price paths select active observed periods. Archive gaps and the tiny February 13 recording limit representativeness.",
+    "A spot-price move is a continuous information proxy, not an independently identified news announcement. Further spot movement can drive the follow-up.",
+    "The actual downloaded market_meta table has no authoritative resolved-outcome field despite the README reference schema. We do not infer outcomes from prices; forecast calibration or added predictive value versus spot is not established by this audit.",
+    "This is a new descriptive calculation on one fixed week, not a reproduction of the paper\u2019s published 347 ms figure, and no execution/fee or profitability claim is made."
+  ],
+  "sources": [
+    {
+      "label": "OpenMarket public dataset, fixed revision",
+      "url": "https://huggingface.co/datasets/gregyoung14/openmarket-btc-polymarket/tree/74502466d1a7cef56395bfd8d0b465fbebc849cf"
+    },
+    {
+      "label": "OpenMarket methodology paper",
+      "url": "https://arxiv.org/abs/2607.26245"
+    }
+  ],
+  "downloads": [
+    {
+      "label": "Episode-level observations (gzip JSON)",
+      "url": "downloads/crypto-response-episodes.json.gz"
+    },
+    {
+      "label": "Pinned input manifest",
+      "url": "data/expansion/crypto-source-manifest.json"
+    }
+  ],
+  "reproduction": "python scripts/expansion_crypto.py --collect --cache /tmp/atlas-exp-crypto; then rerun without --collect for offline reproduction.",
+  "validation": [
+    "Every downloaded file was matched to its published LFS SHA-256.",
+    "All 27 primary episodes were independently recomputed with raw DuckDB SQL: spot log return, baseline midpoint, first same-direction and opposite-direction response.",
+    "Actual data schemas were inspected; missing outcome labels were not fabricated."
+  ]
+}

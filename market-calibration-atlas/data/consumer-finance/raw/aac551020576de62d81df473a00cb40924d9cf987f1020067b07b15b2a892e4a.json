@@ -1,0 +1,1 @@
+{"url":"https://api.elections.kalshi.com/trade-api/v2/historical/markets/KXUSPINCOME-26APR30-T0.0/candlesticks?start_ts=1776862311&end_ts=1776948711&period_interval=60","retrievedAt":"2026-11-06T20:14:40.036059+00:00","sha256":"7ff687f5660ef57de173fd7007fcfc8aabf0ee0d21dff37182d6118e67b2ec0e","response":{"candlesticks":[],"ticker":"KXUSPINCOME-26APR30-T0.0"}}

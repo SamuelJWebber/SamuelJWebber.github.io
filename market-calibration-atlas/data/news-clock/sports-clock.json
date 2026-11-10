@@ -1,0 +1,1395 @@
+{
+ "meta": {
+  "study": "Sports clock: game end versus Kalshi close (news-clock Tier D)",
+  "generatedAt": "2026-11-10T00:30:41+00:00",
+  "source": "ESPN public game summaries (play wall clocks); Kalshi historical market API",
+  "terms": "Frozen: the ESPN responses were fetched once by script on 2026-11-09. ESPN terms (Disney Terms of Use, section 2.B(x)) prohibit automated access and compiling data sets, and www.espn.com/robots.txt disallows the anthropic-ai agent, so no further requests are made, the raw responses are not redistributed, and this output keeps only aggregates (no per-game ESPN times).",
+  "sample": "first 150 panel events per league by md5(\"atlas-sports-v1|\" + event_ticker)",
+  "collectedAt": "2026-11-09T22:29:59+00:00",
+  "matchStatus": {
+   "matched": 2273,
+   "ESPN play clock inconsistent with its scheduled start": 7,
+   "ESPN game end not after its first play": 18,
+   "no timestamped plays": 1,
+   "no ESPN game with both teams on the ticker date or the day before or after": 8,
+   "ESPN game postponed or cancelled on the ticker date (makeup not traced)": 26
+  },
+  "matchStatusByLeague": {
+   "NBA": {
+    "ESPN play clock inconsistent with its scheduled start": 2,
+    "matched": 148
+   },
+   "NHL": {
+    "ESPN play clock inconsistent with its scheduled start": 1,
+    "matched": 149
+   },
+   "NFL": {
+    "matched": 150
+   },
+   "NCAAF": {
+    "ESPN game end not after its first play": 18,
+    "ESPN play clock inconsistent with its scheduled start": 3,
+    "matched": 127,
+    "no ESPN game with both teams on the ticker date or the day before or after": 1,
+    "no timestamped plays": 1
+   },
+   "MLB": {
+    "ESPN game postponed or cancelled on the ticker date (makeup not traced)": 26,
+    "matched": 44
+   },
+   "NCAAM": {
+    "matched": 150
+   },
+   "NCAAW": {
+    "matched": 150
+   },
+   "WNBA": {
+    "matched": 150
+   },
+   "EPL": {
+    "matched": 150
+   },
+   "EFL Championship": {
+    "ESPN play clock inconsistent with its scheduled start": 1,
+    "matched": 149
+   },
+   "La Liga": {
+    "matched": 150
+   },
+   "Serie A": {
+    "matched": 150
+   },
+   "Bundesliga": {
+    "matched": 150
+   },
+   "Ligue 1": {
+    "matched": 150
+   },
+   "UCL": {
+    "matched": 111
+   },
+   "UEL": {
+    "matched": 52
+   },
+   "MLS": {
+    "matched": 143,
+    "no ESPN game with both teams on the ticker date or the day before or after": 7
+   }
+  },
+  "sampledEvents": {
+   "NBA": 150,
+   "NHL": 150,
+   "NFL": 150,
+   "NCAAF": 150,
+   "MLB": 70,
+   "NCAAM": 150,
+   "NCAAW": 150,
+   "WNBA": 150,
+   "EPL": 150,
+   "EFL Championship": 150,
+   "La Liga": 150,
+   "Serie A": 150,
+   "Bundesliga": 150,
+   "Ligue 1": 150,
+   "UCL": 111,
+   "UEL": 52,
+   "MLS": 150
+  },
+  "endMarkers": {
+   "NBA": {
+    "field": "text",
+    "value": "End of Game"
+   },
+   "NHL": {
+    "field": "text",
+    "value": "Game End"
+   },
+   "NFL": {
+    "field": "type",
+    "value": "End of Game"
+   },
+   "NCAAF": {
+    "field": "type",
+    "value": "End of Game"
+   },
+   "MLB": "last timestamped play",
+   "NCAAM": {
+    "field": "type",
+    "value": "End Game"
+   },
+   "NCAAW": {
+    "field": "type",
+    "value": "End Game"
+   },
+   "WNBA": {
+    "field": "type",
+    "value": "End Game"
+   },
+   "EPL": {
+    "field": "type",
+    "value": "End Regular Time"
+   },
+   "EFL Championship": {
+    "field": "type",
+    "value": "End Regular Time"
+   },
+   "La Liga": {
+    "field": "type",
+    "value": "End Regular Time"
+   },
+   "Serie A": {
+    "field": "type",
+    "value": "End Regular Time"
+   },
+   "Bundesliga": {
+    "field": "type",
+    "value": "End Regular Time"
+   },
+   "Ligue 1": {
+    "field": "type",
+    "value": "End Regular Time"
+   },
+   "UCL": {
+    "field": "type",
+    "value": "End Regular Time"
+   },
+   "UEL": {
+    "field": "type",
+    "value": "End Regular Time"
+   },
+   "MLS": {
+    "field": "type",
+    "value": "End Regular Time"
+   }
+  },
+  "excludedGames": [
+   {
+    "league": "NBA",
+    "event": "KXNBAGAME-25OCT28NYKMIL",
+    "rule": "ESPN play clock inconsistent with its scheduled start"
+   },
+   {
+    "league": "NBA",
+    "event": "KXNBAGAME-25OCT30GSWMIL",
+    "rule": "ESPN play clock inconsistent with its scheduled start"
+   },
+   {
+    "league": "NHL",
+    "event": "KXNHLGAME-25DEC21BUFNJ",
+    "rule": "ESPN play clock inconsistent with its scheduled start"
+   },
+   {
+    "league": "NCAAF",
+    "event": "KXNCAAFGAME-25AUG28NEBCIN",
+    "rule": "ESPN game end not after its first play"
+   },
+   {
+    "league": "NCAAF",
+    "event": "KXNCAAFGAME-25OCT11BYUARIZ",
+    "rule": "ESPN game end not after its first play"
+   },
+   {
+    "league": "NCAAF",
+    "event": "KXNCAAFGAME-25SEP06UNTWMU",
+    "rule": "ESPN game end not after its first play"
+   },
+   {
+    "league": "NCAAF",
+    "event": "KXNCAAFGAME-25SEP20UTSACSU",
+    "rule": "ESPN game end not after its first play"
+   },
+   {
+    "league": "NCAAF",
+    "event": "KXNCAAFGAME-25AUG30HAWARIZ",
+    "rule": "ESPN game end not after its first play"
+   },
+   {
+    "league": "NCAAF",
+    "event": "KXNCAAFGAME-25SEP06SCSTSCAR",
+    "rule": "ESPN game end not after its first play"
+   },
+   {
+    "league": "NCAAF",
+    "event": "KXNCAAFGAME-25SEP20MSUUSC",
+    "rule": "ESPN game end not after its first play"
+   },
+   {
+    "league": "NCAAF",
+    "event": "KXNCAAFGAME-25AUG29TARLARMY",
+    "rule": "ESPN play clock inconsistent with its scheduled start"
+   },
+   {
+    "league": "NCAAF",
+    "event": "KXNCAAFGAME-25OCT10FRESCSU",
+    "rule": "ESPN game end not after its first play"
+   },
+   {
+    "league": "NCAAF",
+    "event": "KXNCAAFGAME-25SEP06GASOUSC",
+    "rule": "ESPN game end not after its first play"
+   },
+   {
+    "league": "NCAAF",
+    "event": "KXNCAAFGAME-25OCT11SDSUNEV",
+    "rule": "ESPN game end not after its first play"
+   },
+   {
+    "league": "NCAAF",
+    "event": "KXNCAAFGAME-25OCT17SJSUUSU",
+    "rule": "ESPN game end not after its first play"
+   },
+   {
+    "league": "NCAAF",
+    "event": "KXNCAAFGAME-25SEP12UNMUCLA",
+    "rule": "ESPN game end not after its first play"
+   },
+   {
+    "league": "NCAAF",
+    "event": "KXNCAAFGAME-25SEP13BCSTAN",
+    "rule": "ESPN game end not after its first play"
+   },
+   {
+    "league": "NCAAF",
+    "event": "KXNCAAFGAME-25SEP06WVUOHIO",
+    "rule": "ESPN play clock inconsistent with its scheduled start"
+   },
+   {
+    "league": "NCAAF",
+    "event": "KXNCAAFGAME-25SEP13AKRUAB",
+    "rule": "ESPN game end not after its first play"
+   },
+   {
+    "league": "NCAAF",
+    "event": "KXNCAAFGAME-25AUG30CALORST",
+    "rule": "ESPN game end not after its first play"
+   },
+   {
+    "league": "NCAAF",
+    "event": "KXNCAAFGAME-25SEP06SHSUHAW",
+    "rule": "ESPN play clock inconsistent with its scheduled start"
+   },
+   {
+    "league": "NCAAF",
+    "event": "KXNCAAFGAME-25AUG30IDHOWSU",
+    "rule": "ESPN game end not after its first play"
+   },
+   {
+    "league": "NCAAF",
+    "event": "KXNCAAFGAME-25SEP13MINNCAL",
+    "rule": "ESPN game end not after its first play"
+   },
+   {
+    "league": "NCAAF",
+    "event": "KXNCAAFGAME-25SEP05EWUBSU",
+    "rule": "ESPN game end not after its first play"
+   },
+   {
+    "league": "EFL Championship",
+    "event": "KXEFLCHAMPIONSHIPGAME-25DEC02BLAIPS",
+    "rule": "ESPN play clock inconsistent with its scheduled start"
+   }
+  ],
+  "claims": "Descriptive. Game end is when the final result became public; information also arrives during the game, from the first play onward."
+ },
+ "all": {
+  "games": 2273,
+  "contracts": 5242,
+  "closeMinusGameEndMinutes": {
+   "n": 5242,
+   "min": -27.30215678333333,
+   "p10": 2.1637558833333332,
+   "median": 7.130261783333333,
+   "p90": 36.20228977500003,
+   "max": 1103.3187237
+  },
+  "closeBeforeGameEnd": 79,
+  "closeMoreThan60MinAfterEnd": 203,
+  "closeMoreThan1DayAfterEnd": 0,
+  "settledMinusGameEndMinutes": {
+   "n": 5242,
+   "min": -17.964090816666666,
+   "p10": 9.47084915,
+   "median": 15.646043625,
+   "p90": 57.38327445000002,
+   "max": 1111.71174785
+  },
+  "expectedMinusGameEndMinutes": {
+   "n": 5242,
+   "min": -2436.45,
+   "p10": -2.1,
+   "median": 60.333333333333336,
+   "p90": 66.96666666666667,
+   "max": 459.18333333333334
+  },
+  "gameLengthMinutes": {
+   "n": 2273,
+   "min": 19.683333333333334,
+   "p10": 111.93333333333334,
+   "median": 118.1,
+   "p90": 180.50333333333333,
+   "max": 2615.516666666667
+  },
+  "panelObservations": 21972,
+  "tradedAfterFirstPlay": 2,
+  "tradedAfterGameEnd": 0,
+  "afterFirstPlayByDays": {
+   "1": 2
+  },
+  "endSource": {
+   "end-of-game play": 5052,
+   "last timestamped play": 102,
+   "last timestamped play (league rule)": 88
+  },
+  "lateEndStamps": {
+   "contracts": 1949,
+   "games": 1024,
+   "closeBeforeGameEnd": 22,
+   "closeBeforeLastPlayBeforeEnd": 4,
+   "closeMinusGameEndMinutes": {
+    "n": 1949,
+    "min": -27.30215678333333,
+    "p10": 2.2924910766666673,
+    "median": 17.2218226,
+    "p90": 46.90188583333334,
+    "max": 228.87513668333335
+   },
+   "closeMinusLastPlayBeforeEndMinutes": {
+    "n": 1949,
+    "min": -27.235490116666664,
+    "p10": 3.2522021000000003,
+    "median": 17.89254138333333,
+    "p90": 48.175694996666664,
+    "max": 228.90847001666668
+   },
+   "endMinusLastPlayBeforeEndMinutes": {
+    "n": 1949,
+    "min": 0.016666666666666666,
+    "p10": 0.03333333333333333,
+    "median": 0.25,
+    "p90": 2.2666666666666666,
+    "max": 45.8
+   },
+   "settledBeforeGameEnd": 4,
+   "settledBeforeGameEndGames": [
+    "KXNFLGAME-25AUG09DENSF",
+    "KXNHLGAME-25NOV01STLCBJ"
+   ]
+  }
+ },
+ "leagues": {
+  "NBA": {
+   "games": 148,
+   "contracts": 293,
+   "closeMinusGameEndMinutes": {
+    "n": 293,
+    "min": 1.9713936666666667,
+    "p10": 6.535927099999999,
+    "median": 14.803616183333332,
+    "p90": 30.676162160000004,
+    "max": 89.0130717
+   },
+   "closeBeforeGameEnd": 0,
+   "closeMoreThan60MinAfterEnd": 4,
+   "closeMoreThan1DayAfterEnd": 0,
+   "settledMinusGameEndMinutes": {
+    "n": 293,
+    "min": 8.4519546,
+    "p10": 15.080326983333332,
+    "median": 24.1143056,
+    "p90": 42.70399357666668,
+    "max": 98.57385434999999
+   },
+   "expectedMinusGameEndMinutes": {
+    "n": 293,
+    "min": -350.51666666666665,
+    "p10": 6.176666666666668,
+    "median": 29.05,
+    "p90": 39.29333333333333,
+    "max": 53.483333333333334
+   },
+   "gameLengthMinutes": {
+    "n": 148,
+    "min": 116.2,
+    "p10": 129.50666666666666,
+    "median": 139.95833333333331,
+    "p90": 156.41,
+    "max": 187.5
+   },
+   "panelObservations": 546,
+   "tradedAfterFirstPlay": 0,
+   "tradedAfterGameEnd": 0,
+   "afterFirstPlayByDays": {},
+   "endSource": {
+    "end-of-game play": 289,
+    "last timestamped play": 4
+   },
+   "lateEndStamps": {
+    "contracts": 293,
+    "games": 148,
+    "closeBeforeGameEnd": 0,
+    "closeBeforeLastPlayBeforeEnd": 0,
+    "closeMinusGameEndMinutes": {
+     "n": 293,
+     "min": 1.9713936666666667,
+     "p10": 6.535927099999999,
+     "median": 14.803616183333332,
+     "p90": 30.676162160000004,
+     "max": 89.0130717
+    },
+    "closeMinusLastPlayBeforeEndMinutes": {
+     "n": 293,
+     "min": 2.071393666666667,
+     "p10": 6.865572,
+     "median": 15.108328483333334,
+     "p90": 31.918645786666687,
+     "max": 89.0630717
+    },
+    "endMinusLastPlayBeforeEndMinutes": {
+     "n": 293,
+     "min": 0.016666666666666666,
+     "p10": 0.03333333333333333,
+     "median": 0.06666666666666667,
+     "p90": 0.7333333333333333,
+     "max": 10.216666666666667
+    },
+    "settledBeforeGameEnd": 0,
+    "settledBeforeGameEndGames": []
+   }
+  },
+  "NHL": {
+   "games": 149,
+   "contracts": 296,
+   "closeMinusGameEndMinutes": {
+    "n": 296,
+    "min": -27.30215678333333,
+    "p10": 20.136783316666666,
+    "median": 32.672557991666665,
+    "p90": 49.824554649999996,
+    "max": 75.81038305
+   },
+   "closeBeforeGameEnd": 2,
+   "closeMoreThan60MinAfterEnd": 10,
+   "closeMoreThan1DayAfterEnd": 0,
+   "settledMinusGameEndMinutes": {
+    "n": 296,
+    "min": -17.964090816666666,
+    "p10": 26.781239841666668,
+    "median": 42.164915025,
+    "p90": 58.703119316666665,
+    "max": 86.46971678333333
+   },
+   "expectedMinusGameEndMinutes": {
+    "n": 296,
+    "min": -39.63333333333333,
+    "p10": 4.258333333333334,
+    "median": 19.03333333333333,
+    "p90": 27.883333333333333,
+    "max": 135.26666666666668
+   },
+   "gameLengthMinutes": {
+    "n": 149,
+    "min": 136.78333333333333,
+    "p10": 142.46666666666667,
+    "median": 150.11666666666667,
+    "p90": 161.36666666666667,
+    "max": 209.46666666666667
+   },
+   "panelObservations": 544,
+   "tradedAfterFirstPlay": 0,
+   "tradedAfterGameEnd": 0,
+   "afterFirstPlayByDays": {},
+   "endSource": {
+    "end-of-game play": 296
+   },
+   "lateEndStamps": {
+    "contracts": 296,
+    "games": 149,
+    "closeBeforeGameEnd": 2,
+    "closeBeforeLastPlayBeforeEnd": 2,
+    "closeMinusGameEndMinutes": {
+     "n": 296,
+     "min": -27.30215678333333,
+     "p10": 20.136783316666666,
+     "median": 32.672557991666665,
+     "p90": 49.824554649999996,
+     "max": 75.81038305
+    },
+    "closeMinusLastPlayBeforeEndMinutes": {
+     "n": 296,
+     "min": -27.235490116666664,
+     "p10": 20.536783316666668,
+     "median": 32.90850055,
+     "p90": 49.85788798333333,
+     "max": 76.37704971666668
+    },
+    "endMinusLastPlayBeforeEndMinutes": {
+     "n": 296,
+     "min": 0.016666666666666666,
+     "p10": 0.03333333333333333,
+     "median": 0.23333333333333334,
+     "p90": 0.825,
+     "max": 5.583333333333333
+    },
+    "settledBeforeGameEnd": 2,
+    "settledBeforeGameEndGames": [
+     "KXNHLGAME-25NOV01STLCBJ"
+    ]
+   }
+  },
+  "NFL": {
+   "games": 150,
+   "contracts": 300,
+   "closeMinusGameEndMinutes": {
+    "n": 300,
+    "min": -16.17705345,
+    "p10": 0.6452303016666668,
+    "median": 3.174235658333333,
+    "p90": 24.60611804166667,
+    "max": 187.16119543333335
+   },
+   "closeBeforeGameEnd": 4,
+   "closeMoreThan60MinAfterEnd": 10,
+   "closeMoreThan1DayAfterEnd": 0,
+   "settledMinusGameEndMinutes": {
+    "n": 300,
+    "min": -11.17249535,
+    "p10": 6.865926819999999,
+    "median": 9.5244258,
+    "p90": 32.344034565000015,
+    "max": 192.16082811666666
+   },
+   "expectedMinusGameEndMinutes": {
+    "n": 300,
+    "min": -253.61666666666667,
+    "p10": -20.41666666666666,
+    "median": -6.983333333333333,
+    "p90": 9.320000000000007,
+    "max": 152.28333333333333
+   },
+   "gameLengthMinutes": {
+    "n": 150,
+    "min": 19.683333333333334,
+    "p10": 168.84666666666666,
+    "median": 183.36666666666667,
+    "p90": 197.28833333333333,
+    "max": 225.73333333333332
+   },
+   "panelObservations": 3499,
+   "tradedAfterFirstPlay": 0,
+   "tradedAfterGameEnd": 0,
+   "afterFirstPlayByDays": {},
+   "endSource": {
+    "end-of-game play": 300
+   },
+   "lateEndStamps": {
+    "contracts": 300,
+    "games": 150,
+    "closeBeforeGameEnd": 4,
+    "closeBeforeLastPlayBeforeEnd": 0,
+    "closeMinusGameEndMinutes": {
+     "n": 300,
+     "min": -16.17705345,
+     "p10": 0.6452303016666668,
+     "median": 3.174235658333333,
+     "p90": 24.60611804166667,
+     "max": 187.16119543333335
+    },
+    "closeMinusLastPlayBeforeEndMinutes": {
+     "n": 300,
+     "min": 0.5609575833333333,
+     "p10": 1.3416036783333334,
+     "median": 4.001230383333334,
+     "p90": 25.53967820500001,
+     "max": 188.71003946666667
+    },
+    "endMinusLastPlayBeforeEndMinutes": {
+     "n": 300,
+     "min": 0.016666666666666666,
+     "p10": 0.3983333333333334,
+     "median": 0.6833333333333333,
+     "p90": 1.0850000000000004,
+     "max": 45.8
+    },
+    "settledBeforeGameEnd": 2,
+    "settledBeforeGameEndGames": [
+     "KXNFLGAME-25AUG09DENSF"
+    ]
+   }
+  },
+  "NCAAF": {
+   "games": 127,
+   "contracts": 254,
+   "closeMinusGameEndMinutes": {
+    "n": 254,
+    "min": -4.10795825,
+    "p10": 0.6608621433333334,
+    "median": 3.70477465,
+    "p90": 30.364890015000054,
+    "max": 128.13520355
+   },
+   "closeBeforeGameEnd": 16,
+   "closeMoreThan60MinAfterEnd": 4,
+   "closeMoreThan1DayAfterEnd": 0,
+   "settledMinusGameEndMinutes": {
+    "n": 254,
+    "min": 0.95180345,
+    "p10": 6.889652608333334,
+    "median": 9.809645166666666,
+    "p90": 36.07751083833338,
+    "max": 134.59407423333334
+   },
+   "expectedMinusGameEndMinutes": {
+    "n": 254,
+    "min": -580.7,
+    "p10": -208.31833333333333,
+    "median": -28.45,
+    "p90": 1.8400000000000318,
+    "max": 169.96666666666667
+   },
+   "gameLengthMinutes": {
+    "n": 127,
+    "min": 125.83333333333333,
+    "p10": 173.10333333333332,
+    "median": 198.06666666666666,
+    "p90": 218.67666666666668,
+    "max": 325.8666666666667
+   },
+   "panelObservations": 2297,
+   "tradedAfterFirstPlay": 0,
+   "tradedAfterGameEnd": 0,
+   "afterFirstPlayByDays": {},
+   "endSource": {
+    "last timestamped play": 98,
+    "end-of-game play": 156
+   },
+   "lateEndStamps": {
+    "contracts": 254,
+    "games": 127,
+    "closeBeforeGameEnd": 16,
+    "closeBeforeLastPlayBeforeEnd": 2,
+    "closeMinusGameEndMinutes": {
+     "n": 254,
+     "min": -4.10795825,
+     "p10": 0.6608621433333334,
+     "median": 3.70477465,
+     "p90": 30.364890015000054,
+     "max": 128.13520355
+    },
+    "closeMinusLastPlayBeforeEndMinutes": {
+     "n": 254,
+     "min": -3.2746249166666668,
+     "p10": 1.5924294533333334,
+     "median": 4.908820133333333,
+     "p90": 31.218223348333403,
+     "max": 128.55187021666669
+    },
+    "endMinusLastPlayBeforeEndMinutes": {
+     "n": 254,
+     "min": 0.06666666666666667,
+     "p10": 0.25,
+     "median": 0.9666666666666667,
+     "p90": 4.391666666666671,
+     "max": 16.25
+    },
+    "settledBeforeGameEnd": 0,
+    "settledBeforeGameEndGames": []
+   }
+  },
+  "MLB": {
+   "games": 44,
+   "contracts": 88,
+   "closeMinusGameEndMinutes": {
+    "n": 88,
+    "min": 0.020675600000000002,
+    "p10": 0.9453241166666667,
+    "median": 4.206986308333334,
+    "p90": 35.25095616666667,
+    "max": 543.85130595
+   },
+   "closeBeforeGameEnd": 0,
+   "closeMoreThan60MinAfterEnd": 6,
+   "closeMoreThan1DayAfterEnd": 0,
+   "settledMinusGameEndMinutes": {
+    "n": 88,
+    "min": 9.3656621,
+    "p10": 10.28004015,
+    "median": 13.512783883333334,
+    "p90": 43.652862516666666,
+    "max": 552.2006097166667
+   },
+   "expectedMinusGameEndMinutes": {
+    "n": 88,
+    "min": -2436.45,
+    "p10": -1022.9333333333333,
+    "median": -7.85,
+    "p90": 13.083333333333334,
+    "max": 34.983333333333334
+   },
+   "gameLengthMinutes": {
+    "n": 44,
+    "min": 144.4,
+    "p10": 162.83666666666667,
+    "median": 180.03333333333336,
+    "p90": 342.00666666666723,
+    "max": 2615.516666666667
+   },
+   "panelObservations": 217,
+   "tradedAfterFirstPlay": 2,
+   "tradedAfterGameEnd": 0,
+   "afterFirstPlayByDays": {
+    "1": 2
+   },
+   "endSource": {
+    "last timestamped play (league rule)": 88
+   }
+  },
+  "NCAAM": {
+   "games": 150,
+   "contracts": 278,
+   "closeMinusGameEndMinutes": {
+    "n": 278,
+    "min": 11.953745533333334,
+    "p10": 16.251732381666667,
+    "median": 30.746028391666666,
+    "p90": 67.02407731666666,
+    "max": 228.87513668333335
+   },
+   "closeBeforeGameEnd": 0,
+   "closeMoreThan60MinAfterEnd": 33,
+   "closeMoreThan1DayAfterEnd": 0,
+   "settledMinusGameEndMinutes": {
+    "n": 278,
+    "min": 13.716103816666667,
+    "p10": 43.51366604166667,
+    "median": 61.19684650000001,
+    "p90": 91.25925948666668,
+    "max": 259.88088653333335
+   },
+   "expectedMinusGameEndMinutes": {
+    "n": 278,
+    "min": -31.75,
+    "p10": 36.666666666666664,
+    "median": 53.825,
+    "p90": 69.14000000000001,
+    "max": 459.18333333333334
+   },
+   "gameLengthMinutes": {
+    "n": 150,
+    "min": 92.93333333333334,
+    "p10": 109.45166666666667,
+    "median": 121.81666666666666,
+    "p90": 136.10500000000002,
+    "max": 210.38333333333333
+   },
+   "panelObservations": 432,
+   "tradedAfterFirstPlay": 0,
+   "tradedAfterGameEnd": 0,
+   "afterFirstPlayByDays": {},
+   "endSource": {
+    "end-of-game play": 278
+   },
+   "lateEndStamps": {
+    "contracts": 278,
+    "games": 150,
+    "closeBeforeGameEnd": 0,
+    "closeBeforeLastPlayBeforeEnd": 0,
+    "closeMinusGameEndMinutes": {
+     "n": 278,
+     "min": 11.953745533333334,
+     "p10": 16.251732381666667,
+     "median": 30.746028391666666,
+     "p90": 67.02407731666666,
+     "max": 228.87513668333335
+    },
+    "closeMinusLastPlayBeforeEndMinutes": {
+     "n": 278,
+     "min": 12.779623899999999,
+     "p10": 18.2704122,
+     "median": 31.232138683333336,
+     "p90": 67.57527475,
+     "max": 228.90847001666668
+    },
+    "endMinusLastPlayBeforeEndMinutes": {
+     "n": 278,
+     "min": 0.016666666666666666,
+     "p10": 0.03333333333333333,
+     "median": 0.21666666666666667,
+     "p90": 3.9283333333333372,
+     "max": 15.233333333333333
+    },
+    "settledBeforeGameEnd": 0,
+    "settledBeforeGameEndGames": []
+   }
+  },
+  "NCAAW": {
+   "games": 150,
+   "contracts": 240,
+   "closeMinusGameEndMinutes": {
+    "n": 240,
+    "min": 9.532088416666666,
+    "p10": 14.77612184,
+    "median": 29.541251108333334,
+    "p90": 69.82443952166668,
+    "max": 146.28520948333335
+   },
+   "closeBeforeGameEnd": 0,
+   "closeMoreThan60MinAfterEnd": 33,
+   "closeMoreThan1DayAfterEnd": 0,
+   "settledMinusGameEndMinutes": {
+    "n": 240,
+    "min": 40.9191897,
+    "p10": 46.392447575,
+    "median": 61.861945033333335,
+    "p90": 101.41225418333333,
+    "max": 182.19956831666664
+   },
+   "expectedMinusGameEndMinutes": {
+    "n": 240,
+    "min": 10.85,
+    "p10": 49.63666666666666,
+    "median": 65.25833333333333,
+    "p90": 77.23666666666666,
+    "max": 252.86666666666667
+   },
+   "gameLengthMinutes": {
+    "n": 150,
+    "min": 86.78333333333333,
+    "p10": 100.52166666666666,
+    "median": 112.34166666666667,
+    "p90": 128.45499999999998,
+    "max": 167.0
+   },
+   "panelObservations": 329,
+   "tradedAfterFirstPlay": 0,
+   "tradedAfterGameEnd": 0,
+   "afterFirstPlayByDays": {},
+   "endSource": {
+    "end-of-game play": 240
+   },
+   "lateEndStamps": {
+    "contracts": 240,
+    "games": 150,
+    "closeBeforeGameEnd": 0,
+    "closeBeforeLastPlayBeforeEnd": 0,
+    "closeMinusGameEndMinutes": {
+     "n": 240,
+     "min": 9.532088416666666,
+     "p10": 14.77612184,
+     "median": 29.541251108333334,
+     "p90": 69.82443952166668,
+     "max": 146.28520948333335
+    },
+    "closeMinusLastPlayBeforeEndMinutes": {
+     "n": 240,
+     "min": 10.887030683333334,
+     "p10": 16.924537181666672,
+     "median": 30.951866675,
+     "p90": 69.85777285500001,
+     "max": 146.38520948333334
+    },
+    "endMinusLastPlayBeforeEndMinutes": {
+     "n": 240,
+     "min": 0.016666666666666666,
+     "p10": 0.03333333333333333,
+     "median": 0.11666666666666667,
+     "p90": 4.253333333333332,
+     "max": 21.0
+    },
+    "settledBeforeGameEnd": 0,
+    "settledBeforeGameEndGames": []
+   }
+  },
+  "WNBA": {
+   "games": 150,
+   "contracts": 288,
+   "closeMinusGameEndMinutes": {
+    "n": 288,
+    "min": 4.922785866666667,
+    "p10": 6.20653584,
+    "median": 10.7215355,
+    "p90": 23.622032911666672,
+    "max": 122.51254855
+   },
+   "closeBeforeGameEnd": 0,
+   "closeMoreThan60MinAfterEnd": 5,
+   "closeMoreThan1DayAfterEnd": 0,
+   "settledMinusGameEndMinutes": {
+    "n": 288,
+    "min": 9.9232216,
+    "p10": 11.234156656666666,
+    "median": 15.759861449999999,
+    "p90": 28.830624566666664,
+    "max": 128.84618226666666
+   },
+   "expectedMinusGameEndMinutes": {
+    "n": 288,
+    "min": 12.833333333333334,
+    "p10": 45.218333333333334,
+    "median": 56.6,
+    "p90": 65.32666666666667,
+    "max": 75.0
+   },
+   "gameLengthMinutes": {
+    "n": 150,
+    "min": 102.05,
+    "p10": 111.04833333333333,
+    "median": 120.48333333333333,
+    "p90": 131.175,
+    "max": 163.78333333333333
+   },
+   "panelObservations": 293,
+   "tradedAfterFirstPlay": 0,
+   "tradedAfterGameEnd": 0,
+   "afterFirstPlayByDays": {},
+   "endSource": {
+    "end-of-game play": 288
+   },
+   "lateEndStamps": {
+    "contracts": 288,
+    "games": 150,
+    "closeBeforeGameEnd": 0,
+    "closeBeforeLastPlayBeforeEnd": 0,
+    "closeMinusGameEndMinutes": {
+     "n": 288,
+     "min": 4.922785866666667,
+     "p10": 6.20653584,
+     "median": 10.7215355,
+     "p90": 23.622032911666672,
+     "max": 122.51254855
+    },
+    "closeMinusLastPlayBeforeEndMinutes": {
+     "n": 288,
+     "min": 5.0679786,
+     "p10": 6.9401548166666664,
+     "median": 11.071535500000001,
+     "p90": 23.667382111666672,
+     "max": 122.56254855
+    },
+    "endMinusLastPlayBeforeEndMinutes": {
+     "n": 288,
+     "min": 0.016666666666666666,
+     "p10": 0.03333333333333333,
+     "median": 0.06666666666666667,
+     "p90": 0.49333333333333373,
+     "max": 4.1
+    },
+    "settledBeforeGameEnd": 0,
+    "settledBeforeGameEndGames": []
+   }
+  },
+  "EPL": {
+   "games": 150,
+   "contracts": 446,
+   "closeMinusGameEndMinutes": {
+    "n": 446,
+    "min": -0.8723370666666667,
+    "p10": 1.6689684333333332,
+    "median": 5.541545266666666,
+    "p90": 15.608689766666666,
+    "max": 378.29900775
+   },
+   "closeBeforeGameEnd": 9,
+   "closeMoreThan60MinAfterEnd": 5,
+   "closeMoreThan1DayAfterEnd": 0,
+   "settledMinusGameEndMinutes": {
+    "n": 446,
+    "min": 0.6349128,
+    "p10": 10.205932733333334,
+    "median": 14.84744705,
+    "p90": 27.591485833333333,
+    "max": 448.4465616833333
+   },
+   "expectedMinusGameEndMinutes": {
+    "n": 446,
+    "min": -56.93333333333333,
+    "p10": 57.333333333333336,
+    "median": 62.90833333333333,
+    "p90": 66.1,
+    "max": 68.63333333333334
+   },
+   "gameLengthMinutes": {
+    "n": 150,
+    "min": 110.23333333333333,
+    "p10": 113.27833333333334,
+    "median": 116.38333333333334,
+    "p90": 121.81833333333333,
+    "max": 127.36666666666666
+   },
+   "panelObservations": 3975,
+   "tradedAfterFirstPlay": 0,
+   "tradedAfterGameEnd": 0,
+   "afterFirstPlayByDays": {},
+   "endSource": {
+    "end-of-game play": 446
+   }
+  },
+  "EFL Championship": {
+   "games": 149,
+   "contracts": 343,
+   "closeMinusGameEndMinutes": {
+    "n": 343,
+    "min": -1.2954436833333332,
+    "p10": 2.177925596666667,
+    "median": 6.34110625,
+    "p90": 12.439032283333336,
+    "max": 159.3185967
+   },
+   "closeBeforeGameEnd": 12,
+   "closeMoreThan60MinAfterEnd": 21,
+   "closeMoreThan1DayAfterEnd": 0,
+   "settledMinusGameEndMinutes": {
+    "n": 343,
+    "min": 0.7324660000000001,
+    "p10": 7.765364,
+    "median": 15.32059135,
+    "p90": 22.2654212,
+    "max": 168.67711079999998
+   },
+   "expectedMinusGameEndMinutes": {
+    "n": 343,
+    "min": 44.233333333333334,
+    "p10": 58.63666666666666,
+    "median": 64.23333333333333,
+    "p90": 67.11666666666666,
+    "max": 69.83333333333333
+   },
+   "gameLengthMinutes": {
+    "n": 149,
+    "min": 110.11666666666666,
+    "p10": 112.50666666666666,
+    "median": 115.38333333333334,
+    "p90": 120.59333333333333,
+    "max": 134.36666666666667
+   },
+   "panelObservations": 571,
+   "tradedAfterFirstPlay": 0,
+   "tradedAfterGameEnd": 0,
+   "afterFirstPlayByDays": {},
+   "endSource": {
+    "end-of-game play": 343
+   }
+  },
+  "La Liga": {
+   "games": 150,
+   "contracts": 415,
+   "closeMinusGameEndMinutes": {
+    "n": 415,
+    "min": -0.2882589833333334,
+    "p10": 2.0129925,
+    "median": 5.346991566666667,
+    "p90": 13.512568680000003,
+    "max": 604.7437236833333
+   },
+   "closeBeforeGameEnd": 9,
+   "closeMoreThan60MinAfterEnd": 12,
+   "closeMoreThan1DayAfterEnd": 0,
+   "settledMinusGameEndMinutes": {
+    "n": 415,
+    "min": 3.9665256666666666,
+    "p10": 10.00810606,
+    "median": 14.33640975,
+    "p90": 29.19133045,
+    "max": 613.1317817
+   },
+   "expectedMinusGameEndMinutes": {
+    "n": 415,
+    "min": -1318.8166666666666,
+    "p10": 57.05,
+    "median": 62.96666666666667,
+    "p90": 66.63333333333334,
+    "max": 116.58333333333333
+   },
+   "gameLengthMinutes": {
+    "n": 150,
+    "min": 108.85,
+    "p10": 112.295,
+    "median": 115.775,
+    "p90": 121.22666666666667,
+    "max": 133.9
+   },
+   "panelObservations": 1578,
+   "tradedAfterFirstPlay": 0,
+   "tradedAfterGameEnd": 0,
+   "afterFirstPlayByDays": {},
+   "endSource": {
+    "end-of-game play": 415
+   }
+  },
+  "Serie A": {
+   "games": 150,
+   "contracts": 407,
+   "closeMinusGameEndMinutes": {
+    "n": 407,
+    "min": -1.7008324333333333,
+    "p10": 2.12478312,
+    "median": 5.881437683333333,
+    "p90": 11.866013833333334,
+    "max": 194.14990098333334
+   },
+   "closeBeforeGameEnd": 12,
+   "closeMoreThan60MinAfterEnd": 15,
+   "closeMoreThan1DayAfterEnd": 0,
+   "settledMinusGameEndMinutes": {
+    "n": 407,
+    "min": 1.0826989166666665,
+    "p10": 9.376608716666667,
+    "median": 14.5595532,
+    "p90": 26.0583253,
+    "max": 203.48756545
+   },
+   "expectedMinusGameEndMinutes": {
+    "n": 407,
+    "min": 49.35,
+    "p10": 59.28333333333333,
+    "median": 62.983333333333334,
+    "p90": 66.78333333333333,
+    "max": 70.96666666666667
+   },
+   "gameLengthMinutes": {
+    "n": 150,
+    "min": 107.71666666666667,
+    "p10": 111.795,
+    "median": 115.2,
+    "p90": 118.66166666666668,
+    "max": 127.45
+   },
+   "panelObservations": 1322,
+   "tradedAfterFirstPlay": 0,
+   "tradedAfterGameEnd": 0,
+   "afterFirstPlayByDays": {},
+   "endSource": {
+    "end-of-game play": 407
+   }
+  },
+  "Bundesliga": {
+   "games": 150,
+   "contracts": 418,
+   "closeMinusGameEndMinutes": {
+    "n": 418,
+    "min": -0.7311823833333333,
+    "p10": 2.05978475,
+    "median": 6.161424308333333,
+    "p90": 21.06428954166667,
+    "max": 1103.3187237
+   },
+   "closeBeforeGameEnd": 6,
+   "closeMoreThan60MinAfterEnd": 14,
+   "closeMoreThan1DayAfterEnd": 0,
+   "settledMinusGameEndMinutes": {
+    "n": 418,
+    "min": 1.9829073333333334,
+    "p10": 10.463610749999999,
+    "median": 15.119366674999998,
+    "p90": 29.85466075,
+    "max": 1111.71174785
+   },
+   "expectedMinusGameEndMinutes": {
+    "n": 418,
+    "min": 44.7,
+    "p10": 57.986666666666665,
+    "median": 63.3,
+    "p90": 66.38833333333334,
+    "max": 68.66666666666667
+   },
+   "gameLengthMinutes": {
+    "n": 150,
+    "min": 110.91666666666667,
+    "p10": 113.21333333333334,
+    "median": 116.4,
+    "p90": 121.53666666666666,
+    "max": 134.75
+   },
+   "panelObservations": 1403,
+   "tradedAfterFirstPlay": 0,
+   "tradedAfterGameEnd": 0,
+   "afterFirstPlayByDays": {},
+   "endSource": {
+    "end-of-game play": 418
+   }
+  },
+  "Ligue 1": {
+   "games": 150,
+   "contracts": 349,
+   "closeMinusGameEndMinutes": {
+    "n": 349,
+    "min": -1.7994238333333332,
+    "p10": 2.84578279,
+    "median": 6.013375433333334,
+    "p90": 12.725832866666668,
+    "max": 94.11415033333333
+   },
+   "closeBeforeGameEnd": 3,
+   "closeMoreThan60MinAfterEnd": 3,
+   "closeMoreThan1DayAfterEnd": 0,
+   "settledMinusGameEndMinutes": {
+    "n": 349,
+    "min": 2.6673562833333335,
+    "p10": 10.647584683333335,
+    "median": 14.918014883333333,
+    "p90": 30.136368016666665,
+    "max": 102.44491651666667
+   },
+   "expectedMinusGameEndMinutes": {
+    "n": 349,
+    "min": -1330.55,
+    "p10": 59.376666666666665,
+    "median": 63.88333333333333,
+    "p90": 66.88666666666666,
+    "max": 70.05
+   },
+   "gameLengthMinutes": {
+    "n": 150,
+    "min": 109.76666666666667,
+    "p10": 112.815,
+    "median": 115.82499999999999,
+    "p90": 119.86333333333333,
+    "max": 124.5
+   },
+   "panelObservations": 959,
+   "tradedAfterFirstPlay": 0,
+   "tradedAfterGameEnd": 0,
+   "afterFirstPlayByDays": {},
+   "endSource": {
+    "end-of-game play": 349
+   }
+  },
+  "UCL": {
+   "games": 111,
+   "contracts": 333,
+   "closeMinusGameEndMinutes": {
+    "n": 333,
+    "min": 0.36358725000000003,
+    "p10": 2.5715146666666664,
+    "median": 6.226512766666667,
+    "p90": 12.687116533333333,
+    "max": 181.5246367
+   },
+   "closeBeforeGameEnd": 0,
+   "closeMoreThan60MinAfterEnd": 6,
+   "closeMoreThan1DayAfterEnd": 0,
+   "settledMinusGameEndMinutes": {
+    "n": 333,
+    "min": 8.697663833333333,
+    "p10": 11.095882266666667,
+    "median": 14.88538605,
+    "p90": 21.07843043333333,
+    "max": 189.90675078333334
+   },
+   "expectedMinusGameEndMinutes": {
+    "n": 333,
+    "min": 55.5,
+    "p10": 61.9,
+    "median": 65.96666666666667,
+    "p90": 68.6,
+    "max": 71.15
+   },
+   "gameLengthMinutes": {
+    "n": 111,
+    "min": 108.26666666666667,
+    "p10": 110.71666666666667,
+    "median": 113.08333333333333,
+    "p90": 116.91666666666667,
+    "max": 124.08333333333333
+   },
+   "panelObservations": 2814,
+   "tradedAfterFirstPlay": 0,
+   "tradedAfterGameEnd": 0,
+   "afterFirstPlayByDays": {},
+   "endSource": {
+    "end-of-game play": 333
+   }
+  },
+  "UEL": {
+   "games": 52,
+   "contracts": 122,
+   "closeMinusGameEndMinutes": {
+    "n": 122,
+    "min": 1.1078547666666667,
+    "p10": 2.0155744533333335,
+    "median": 6.82708535,
+    "p90": 10.105071696666666,
+    "max": 14.177031133333333
+   },
+   "closeBeforeGameEnd": 0,
+   "closeMoreThan60MinAfterEnd": 0,
+   "closeMoreThan1DayAfterEnd": 0,
+   "settledMinusGameEndMinutes": {
+    "n": 122,
+    "min": 2.6334002333333335,
+    "p10": 5.84721353,
+    "median": 11.85425685,
+    "p90": 18.934246103333333,
+    "max": 21.727999366666666
+   },
+   "expectedMinusGameEndMinutes": {
+    "n": 122,
+    "min": 13.8,
+    "p10": 60.28333333333333,
+    "median": 65.06666666666666,
+    "p90": 68.05,
+    "max": 69.71666666666667
+   },
+   "gameLengthMinutes": {
+    "n": 52,
+    "min": 109.56666666666666,
+    "p10": 110.87333333333333,
+    "median": 113.63333333333333,
+    "p90": 117.22166666666666,
+    "max": 122.28333333333333
+   },
+   "panelObservations": 259,
+   "tradedAfterFirstPlay": 0,
+   "tradedAfterGameEnd": 0,
+   "afterFirstPlayByDays": {},
+   "endSource": {
+    "end-of-game play": 122
+   }
+  },
+  "MLS": {
+   "games": 143,
+   "contracts": 372,
+   "closeMinusGameEndMinutes": {
+    "n": 372,
+    "min": -8.034913583333333,
+    "p10": 2.4151518,
+    "median": 5.236992566666667,
+    "p90": 20.6116089,
+    "max": 888.2029051833334
+   },
+   "closeBeforeGameEnd": 6,
+   "closeMoreThan60MinAfterEnd": 22,
+   "closeMoreThan1DayAfterEnd": 0,
+   "settledMinusGameEndMinutes": {
+    "n": 372,
+    "min": 1.7593053333333333,
+    "p10": 10.746494333333334,
+    "median": 13.606534666666667,
+    "p90": 30.819284253333407,
+    "max": 896.5970492166667
+   },
+   "expectedMinusGameEndMinutes": {
+    "n": 372,
+    "min": -43.78333333333333,
+    "p10": 39.36666666666667,
+    "median": 51.083333333333336,
+    "p90": 55.715,
+    "max": 65.81666666666666
+   },
+   "gameLengthMinutes": {
+    "n": 143,
+    "min": 108.06666666666666,
+    "p10": 112.95666666666666,
+    "median": 116.86666666666666,
+    "p90": 123.96666666666667,
+    "max": 171.26666666666668
+   },
+   "panelObservations": 934,
+   "tradedAfterFirstPlay": 0,
+   "tradedAfterGameEnd": 0,
+   "afterFirstPlayByDays": {},
+   "endSource": {
+    "end-of-game play": 372
+   }
+  }
+ }
+}

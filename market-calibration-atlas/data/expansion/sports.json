@@ -1,0 +1,443 @@
+{
+  "title": "Sports: the event clock changes the apparent reaction",
+  "status": "limited",
+  "finding": "On 1,378 selected MLB contract crossings, the same detected move is a median 18.9 seconds before the recorded completion stamp, but 3.2 seconds after the recorded pitch start. Neither timestamp is a verified information-arrival time.",
+  "scope": "Independent recomputation from the published study\u2019s frozen derived observations; not a new raw-data replication or a universal estimate of news-processing speed.",
+  "metrics": [
+    {
+      "label": "Contract crossings with both clocks",
+      "value": 1378
+    },
+    {
+      "label": "Games in clock sample",
+      "value": 687
+    },
+    {
+      "label": "Price paths",
+      "value": 1215
+    },
+    {
+      "label": "Games in price-path sample",
+      "value": 644
+    }
+  ],
+  "period": {
+    "start": "2026-06-18T00:38:52.760000+00:00",
+    "end": "2026-08-24T01:59:48.880000+00:00"
+  },
+  "clock": {
+    "n": 1378,
+    "games": 687,
+    "completionMedian": -18.862808,
+    "pitchMedian": 3.1903544999999998,
+    "completionIQR": [
+      -26.475376750000002,
+      -8.54220225
+    ],
+    "pitchIQR": [
+      1.336328,
+      5.696105749999999
+    ],
+    "fractionBeforeCompletion": 0.9818577648766328,
+    "fractionBeforePitch": 0.18940493468795355,
+    "completionCI": [
+      -19.913406,
+      -17.619296
+    ],
+    "pitchCI": [
+      2.966994,
+      3.420708
+    ]
+  },
+  "distinctScoringPlays": 1377,
+  "clockByPlay": [
+    {
+      "label": "Home Run",
+      "n": 594,
+      "games": 436,
+      "completionMedian": -23.1407125,
+      "pitchMedian": 3.5701375
+    },
+    {
+      "label": "Single",
+      "n": 405,
+      "games": 302,
+      "completionMedian": -8.590215,
+      "pitchMedian": 2.773547
+    },
+    {
+      "label": "Double",
+      "n": 196,
+      "games": 172,
+      "completionMedian": -9.611153,
+      "pitchMedian": 4.099356
+    },
+    {
+      "label": "Sac Fly",
+      "n": 74,
+      "games": 71,
+      "completionMedian": -25.6548855,
+      "pitchMedian": -14.614005
+    },
+    {
+      "label": "Field Out",
+      "n": 33,
+      "games": 33,
+      "completionMedian": -52.206426,
+      "pitchMedian": -43.668426
+    },
+    {
+      "label": "Triple",
+      "n": 30,
+      "games": 29,
+      "completionMedian": -10.004912000000001,
+      "pitchMedian": 6.923637
+    }
+  ],
+  "charts": [
+    {
+      "id": "clock",
+      "title": "One price move, two recorded event clocks",
+      "kind": "interval",
+      "unit": "seconds",
+      "zeroLabel": "Recorded event time",
+      "rows": [
+        {
+          "label": "Relative to completion stamp",
+          "value": -18.862808,
+          "low": -19.913406,
+          "high": -17.619296,
+          "n": 1378
+        },
+        {
+          "label": "Relative to pitch start",
+          "value": 3.1903544999999998,
+          "low": 2.966994,
+          "high": 3.420708,
+          "n": 1378
+        }
+      ]
+    },
+    {
+      "id": "prices",
+      "title": "Prices around plays that determine the payout",
+      "kind": "categorical-line",
+      "unit": "probability",
+      "rows": [
+        {
+          "label": "Earlier baseline",
+          "value": 0.6185802469135803,
+          "n": 1215
+        },
+        {
+          "label": "Before pitch start",
+          "value": 0.6403292181069958,
+          "n": 1215
+        },
+        {
+          "label": "Before completion stamp",
+          "value": 0.9706419753086419,
+          "n": 1215
+        },
+        {
+          "label": "Completion +30s",
+          "value": 0.9874979423868314,
+          "n": 1215
+        },
+        {
+          "label": "Completion +60s",
+          "value": 0.9888724279835391,
+          "n": 1215
+        },
+        {
+          "label": "Completion +120s",
+          "value": 0.9890123456790124,
+          "n": 1215
+        }
+      ]
+    }
+  ],
+  "pricePath": [
+    {
+      "label": "Earlier baseline",
+      "n": 1215,
+      "games": 644,
+      "meanPrice": 0.6185802469135803,
+      "meanDistanceToPayout": 0.3814197530864198,
+      "fractionAtLeast97": 0.0
+    },
+    {
+      "label": "Before pitch start",
+      "n": 1215,
+      "games": 644,
+      "meanPrice": 0.6403292181069958,
+      "meanDistanceToPayout": 0.3596707818930041,
+      "fractionAtLeast97": 0.007407407407407408
+    },
+    {
+      "label": "Before completion stamp",
+      "n": 1215,
+      "games": 644,
+      "meanPrice": 0.9706419753086419,
+      "meanDistanceToPayout": 0.029358024691358033,
+      "fractionAtLeast97": 0.897119341563786
+    },
+    {
+      "label": "Completion +30s",
+      "n": 1215,
+      "games": 644,
+      "meanPrice": 0.9874979423868314,
+      "meanDistanceToPayout": 0.012502057613168733,
+      "fractionAtLeast97": 0.988477366255144
+    },
+    {
+      "label": "Completion +60s",
+      "n": 1215,
+      "games": 644,
+      "meanPrice": 0.9888724279835391,
+      "meanDistanceToPayout": 0.011127572016460913,
+      "fractionAtLeast97": 0.9925925925925926
+    },
+    {
+      "label": "Completion +120s",
+      "n": 1215,
+      "games": 644,
+      "meanPrice": 0.9890123456790124,
+      "meanDistanceToPayout": 0.010987654320987663,
+      "fractionAtLeast97": 0.9958847736625515
+    }
+  ],
+  "tradeFreshness": [
+    {
+      "label": "All source 60s diagnostics",
+      "n": 1213,
+      "games": 643,
+      "meanPrice": 0.9892333058532564,
+      "fractionAtLeast97": 0.9942291838417148,
+      "medianTradeAgeSeconds": 8.339794
+    },
+    {
+      "label": "Observed post-completion trade",
+      "n": 1140,
+      "games": 621,
+      "meanPrice": 0.989421052631579,
+      "fractionAtLeast97": 0.9964912280701754,
+      "medianTradeAgeSeconds": 7.564172
+    },
+    {
+      "label": "Terminal trade at most 15s old",
+      "n": 789,
+      "games": 492,
+      "meanPrice": 0.9895057034220532,
+      "fractionAtLeast97": 0.9974651457541192,
+      "medianTradeAgeSeconds": 4.054576
+    },
+    {
+      "label": "Terminal trade at most 5s old",
+      "n": 447,
+      "games": 329,
+      "meanPrice": 0.9895078299776287,
+      "fractionAtLeast97": 0.9977628635346756,
+      "medianTradeAgeSeconds": 1.8530440000000001
+    }
+  ],
+  "liveContractDiagnostic": {
+    "title": "Contracts whose payout remains uncertain",
+    "n": 1357,
+    "events": 688,
+    "rows": [
+      {
+        "seconds": 10,
+        "n": 1357,
+        "events": 688,
+        "determinedObservedFiveCentChange": 87,
+        "liveObservedFiveCentChange": 638
+      },
+      {
+        "seconds": 30,
+        "n": 1357,
+        "events": 688,
+        "determinedObservedFiveCentChange": 99,
+        "liveObservedFiveCentChange": 868
+      },
+      {
+        "seconds": 60,
+        "n": 1357,
+        "events": 688,
+        "determinedObservedFiveCentChange": 105,
+        "liveObservedFiveCentChange": 992
+      },
+      {
+        "seconds": 120,
+        "n": 1357,
+        "events": 688,
+        "determinedObservedFiveCentChange": 108,
+        "liveObservedFiveCentChange": 1105
+      },
+      {
+        "seconds": 600,
+        "n": 1357,
+        "events": 688,
+        "determinedObservedFiveCentChange": 111,
+        "liveObservedFiveCentChange": 1201
+      }
+    ],
+    "interpretation": "Counts of first observed changes of at least 5 cents from the last pre-completion trade. This measures recorded trading activity, not accuracy or complete information incorporation. Some price adjustment already occurs before the completion stamp. Missing detections are not assigned a reaction time."
+  },
+  "tables": [
+    {
+      "title": "Clock sensitivity by scoring-play type",
+      "columns": [
+        "Play type",
+        "Crossings",
+        "Median seconds from completion",
+        "Median seconds from pitch start"
+      ],
+      "rows": [
+        [
+          "Home Run",
+          594,
+          -23.14,
+          3.57
+        ],
+        [
+          "Single",
+          405,
+          -8.59,
+          2.77
+        ],
+        [
+          "Double",
+          196,
+          -9.61,
+          4.1
+        ],
+        [
+          "Sac Fly",
+          74,
+          -25.65,
+          -14.61
+        ],
+        [
+          "Field Out",
+          33,
+          -52.21,
+          -43.67
+        ],
+        [
+          "Triple",
+          30,
+          -10.0,
+          6.92
+        ]
+      ]
+    },
+    {
+      "title": "Terminal-price sensitivity to stale trades",
+      "columns": [
+        "Selection",
+        "Paths",
+        "Games",
+        "Mean price",
+        "At least 97 cents",
+        "Median trade age (seconds)"
+      ],
+      "rows": [
+        [
+          "All source 60s diagnostics",
+          1213,
+          643,
+          0.9892333058532564,
+          0.9942291838417148,
+          8.339794
+        ],
+        [
+          "Observed post-completion trade",
+          1140,
+          621,
+          0.989421052631579,
+          0.9964912280701754,
+          7.564172
+        ],
+        [
+          "Terminal trade at most 15s old",
+          789,
+          492,
+          0.9895057034220532,
+          0.9974651457541192,
+          4.054576
+        ],
+        [
+          "Terminal trade at most 5s old",
+          447,
+          329,
+          0.9895078299776287,
+          0.9977628635346756,
+          1.8530440000000001
+        ]
+      ]
+    }
+  ],
+  "methods": [
+    "Downloaded and MD5-verified the 2.9 MB Zenodo deposit; recomputed aggregates from its numerical observation tables using our own script. The source authors\u2019 raw trade/league archive is not included in that deposit.",
+    "Clock sample: source-selected clean, anchored, distance-zero scoring crossings with both league clocks; 1,378 contract crossings on 1,377 distinct game/completion pairs (one play appears in two market ladders). Related crossings cluster by game for 2,000 fixed-seed bootstrap intervals around the median.",
+    "The source detector requires a price at least 15 cents above its baseline, supported by at least two trades and a median price holding that level during the following 20 seconds. It searches from 90 seconds before to 300 seconds after the completion stamp. This is retrospective selection, not an online trading rule.",
+    "Price sample: 1,215 fixed paths in 644 games, baseline price between 30 and 90 cents. Baseline is the median trade 8 minutes to 90 seconds before pitch start. Other prices are last trades at or before each target; pre-start and pre-completion observations have a one-second guard.",
+    "The 60-second staleness table is the source\u2019s slightly narrower 1,213-path subset requiring more than a two-cent total upward move. It separately reports actual post-completion trading and age-limited terminal prices.",
+    "Non-resolving paired-rung counts use the nearest still-live total-runs contract after the same scoring play and require pre-completion prices on both sides. They are descriptive activity diagnostics, not fair-probability validation."
+  ],
+  "limitations": [
+    "Pitch start, play completion, broadcast arrival and when traders learn the outcome are different clocks. These results do not establish foresight, insider trading, or a causal reaction time.",
+    "The main price paths are contracts whose payout becomes determined by the scoring play, conditional on the play standing; they do not answer whether markets correctly price news that leaves the outcome uncertain.",
+    "Source selection requires detectable sustained upward moves and trading coverage. Results are conditional on selected crossings, not representative of all sports markets or all news.",
+    "Last-trade prices can be stale, reflect bid\u2013ask effects and differ from executable quotes. The main 30/60/120-second path carries the last observed trade forward; the separate 60-second freshness checks expose this limitation.",
+    "A price close to one can still reflect fees, settlement delay and residual event/rule risk. Payout proximity is not a risk-free trading return.",
+    "We reanalyzed published derived tables, not independently reconstructed every observation from raw exchange and league feeds. The source reports limited historical trade retention."
+  ],
+  "sources": [
+    {
+      "title": "Petrov and Davison (2026), Foresight or Reaction? replication data, version 1.0",
+      "url": "https://zenodo.org/records/23491301",
+      "download": "https://zenodo.org/records/23491301/files/clock_paper_IJF_replication.zip?download=1",
+      "md5": "18d8b70a2071a90cac8a988b9c6221f5"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "downloads/sports-clock-input.parquet",
+      "sourceFile": "lead_decomposition_sample.parquet",
+      "sha256": "5a4652c1994171a8c5b78c5a055c93e88098b17de0ccd7b0bb0ef744c24ed4d7",
+      "bytes": 241217
+    },
+    {
+      "path": "downloads/sports-price-path-input.parquet",
+      "sourceFile": "f1_price_phase_sample.parquet",
+      "sha256": "60370f336fce0771dafe4c1d2e3531e4c73ba59b601e6ca3c16b685e153e9d81",
+      "bytes": 17602
+    },
+    {
+      "path": "downloads/sports-staleness-input.parquet",
+      "sourceFile": "f1_staleness_diagnostic.parquet",
+      "sha256": "c060c4c46ee2bc980559dc5aab0627e8fc40f7d840a22a0b006ffc68f3b8232a",
+      "bytes": 69343
+    },
+    {
+      "path": "downloads/sports-live-pair-input.parquet",
+      "sourceFile": "certain_vs_live_pairs.parquet",
+      "sha256": "08497408bf6d09e43f6312fafca7b7f66a71ae8f2d5dbb69423004b16a3ae29c",
+      "bytes": 60492
+    }
+  ],
+  "reproducibility": {
+    "script": "scripts/expansion_sports.py",
+    "command": "python scripts/expansion_sports.py",
+    "dependencies": [
+      "numpy",
+      "pandas",
+      "pyarrow"
+    ],
+    "bootstrapSeed": 20261106,
+    "bootstrapReplicates": 2000
+  },
+  "download": "data/expansion/sports.json"
+}

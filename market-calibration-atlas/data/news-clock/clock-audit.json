@@ -1,0 +1,4648 @@
+{
+ "meta": {
+  "study": "News clock versus exchange clocks",
+  "generatedAt": "2026-11-10T00:34:52+00:00",
+  "panel": "downloads/kalshi.parquet",
+  "panelSha256": "4a6a355263f8ec853a590d66aaf18ac45b12ccbe180a390a1a54314a2612238a",
+  "inputs": "studies/news-clock/inputs/manifest.json",
+  "collectedAt": "2026-11-09T20:18:20+00:00",
+  "clocks": {
+   "news": "Official publication time of the settling number (Tier A only).",
+   "close": "Kalshi close_time: the end of trading and the Atlas panel anchor.",
+   "expected": "Kalshi expected_expiration_time: the exchange schedule, not a verified event time.",
+   "settled": "Kalshi settlement_ts where the historical archive reports it."
+  },
+  "releaseTimes": "Release dates from ALFRED. Time of day per release where available: FRED release calendar (US Central Time, from January 2025) for BLS, BEA and DOL releases; BEA release pages for the GDP contracts that closed after a release; the press-release page of each FOMC statement. Otherwise (2021-2024 BLS, BEA and DOL releases) the standing 8:30 a.m. America/New_York, not individually verified. Per-contract counts: releaseTimeSource in each family.",
+  "mapping": "Each Tier A contract maps to a release of its family from the date code in its ticker and the official calendar (counts in mappingRules): a release on the coded date; for claims, the release after the coded week; for FOMC, the statement in the coded month; for month- or quarter-coded tickers, among releases after the coded period the one nearest the exchange close, because ALFRED calendars include extra vintages (81 contracts differ from the first release after the data month). Contracts with no matching release, or settled before it, are listed in unmapped.",
+  "tierB": "Outcome-blind sample: first 3000 panel contracts by md5(\"atlas-clock-v1|\"+ticker). No independent news clock. \"Traded after scheduled expiration\" uses the exchange's own expected expiration.",
+  "claims": "Descriptive. Tier A measures clock order for scheduled releases only; it does not show that other categories close before their news. Tier B is a venue-clock diagnostic."
+ },
+ "tierA": {
+  "contracts": 2826,
+  "mappingRules": {
+   "release after the coded data month nearest to close": 2013,
+   "release after the coded data month nearest to close (differs from first release after it)": 81,
+   "FOMC statement in the coded month": 412,
+   "GDP release after the coded quarter end nearest to close": 19,
+   "release on the coded date": 240,
+   "release after the coded claims week": 61
+  },
+  "unmappedReasons": {
+   "no claims release on or after the coded date": 9,
+   "settled before the mapped release: the settling number was not a regular publication": 24
+  },
+  "unmapped": [
+   {
+    "ticker": "JOBLESS-22OCT17-C230",
+    "closeUtc": "2022-10-19T23:00:00Z",
+    "settledUtc": "2022-10-21T05:00:00.418350Z",
+    "reason": "no claims release on or after the coded date"
+   },
+   {
+    "ticker": "KXCPI-25OCT-T-0.1",
+    "closeUtc": "2025-11-13T13:29:00Z",
+    "settledUtc": "2025-11-22T02:06:08.883617Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXCPI-25OCT-T0.0",
+    "closeUtc": "2025-11-13T13:29:00Z",
+    "settledUtc": "2025-11-22T02:06:08.883617Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXCPI-25OCT-T0.1",
+    "closeUtc": "2025-11-13T13:29:00Z",
+    "settledUtc": "2025-11-22T02:06:08.883617Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXCPI-25OCT-T0.2",
+    "closeUtc": "2025-11-13T13:29:00Z",
+    "settledUtc": "2025-11-22T02:06:08.883617Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXCPI-25OCT-T0.3",
+    "closeUtc": "2025-11-13T13:29:00Z",
+    "settledUtc": "2025-11-22T02:06:08.883617Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXCPI-25OCT-T0.4",
+    "closeUtc": "2025-11-13T13:29:00Z",
+    "settledUtc": "2025-11-22T02:06:08.883617Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXCPICORE-25OCT-T0.0",
+    "closeUtc": "2025-11-13T13:25:00Z",
+    "settledUtc": "2025-11-22T03:00:09.679129Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXCPICORE-25OCT-T0.1",
+    "closeUtc": "2025-11-13T13:25:00Z",
+    "settledUtc": "2025-11-22T03:00:09.679129Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXCPICORE-25OCT-T0.2",
+    "closeUtc": "2025-11-13T13:25:00Z",
+    "settledUtc": "2025-11-22T03:00:09.679129Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXCPICORE-25OCT-T0.3",
+    "closeUtc": "2025-11-13T13:25:00Z",
+    "settledUtc": "2025-11-22T03:00:09.679129Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXCPICOREYOY-25OCT-T2.9",
+    "closeUtc": "2025-11-13T13:25:00Z",
+    "settledUtc": "2025-11-22T02:59:30.871796Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXCPICOREYOY-25OCT-T3.0",
+    "closeUtc": "2025-11-13T13:25:00Z",
+    "settledUtc": "2025-11-22T02:59:30.871796Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXCPICOREYOY-25OCT-T3.1",
+    "closeUtc": "2025-11-13T13:25:00Z",
+    "settledUtc": "2025-11-22T02:59:30.871796Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXCPICOREYOY-25OCT-T3.2",
+    "closeUtc": "2025-11-13T13:25:00Z",
+    "settledUtc": "2025-11-22T02:59:30.871796Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXCPICOREYOY-25OCT-T3.3",
+    "closeUtc": "2025-11-13T13:25:00Z",
+    "settledUtc": "2025-11-22T02:59:30.871796Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXCPICOREYOY-25OCT-T3.5",
+    "closeUtc": "2025-11-13T13:25:00Z",
+    "settledUtc": "2025-11-22T02:59:30.871796Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXCPIYOY-25OCT-T2.4",
+    "closeUtc": "2025-11-13T13:29:00Z",
+    "settledUtc": "2025-11-22T02:04:58.890565Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXCPIYOY-25OCT-T2.5",
+    "closeUtc": "2025-11-13T13:29:00Z",
+    "settledUtc": "2025-11-22T02:04:58.890565Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXCPIYOY-25OCT-T2.6",
+    "closeUtc": "2025-11-13T13:29:00Z",
+    "settledUtc": "2025-11-22T02:04:58.890565Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXCPIYOY-25OCT-T2.7",
+    "closeUtc": "2025-11-13T13:29:00Z",
+    "settledUtc": "2025-11-22T02:04:58.890565Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXCPIYOY-25OCT-T2.8",
+    "closeUtc": "2025-11-13T13:29:00Z",
+    "settledUtc": "2025-11-22T02:04:58.890565Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXCPIYOY-25OCT-T2.9",
+    "closeUtc": "2025-11-13T13:29:00Z",
+    "settledUtc": "2025-11-22T02:04:58.890565Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXCPIYOY-25OCT-T3.0",
+    "closeUtc": "2025-11-13T13:29:00Z",
+    "settledUtc": "2025-11-22T02:04:58.890565Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXCPIYOY-25OCT-T3.1",
+    "closeUtc": "2025-11-13T13:29:00Z",
+    "settledUtc": "2025-11-22T02:04:58.890565Z",
+    "candidateNewsUtc": "2025-12-18T13:30:00Z",
+    "reason": "settled before the mapped release: the settling number was not a regular publication"
+   },
+   {
+    "ticker": "KXJOBLESSCLAIMS-25OCT02-200000",
+    "closeUtc": "2025-10-02T12:30:00Z",
+    "settledUtc": "2025-10-09T16:42:54.581574Z",
+    "reason": "no claims release on or after the coded date"
+   },
+   {
+    "ticker": "KXJOBLESSCLAIMS-25OCT02-210000",
+    "closeUtc": "2025-10-02T12:30:00Z",
+    "settledUtc": "2025-10-09T16:42:54.581574Z",
+    "reason": "no claims release on or after the coded date"
+   },
+   {
+    "ticker": "KXJOBLESSCLAIMS-25OCT02-215000",
+    "closeUtc": "2025-10-02T12:30:00Z",
+    "settledUtc": "2025-10-09T16:42:54.581574Z",
+    "reason": "no claims release on or after the coded date"
+   },
+   {
+    "ticker": "KXJOBLESSCLAIMS-25OCT02-220000",
+    "closeUtc": "2025-10-02T12:30:00Z",
+    "settledUtc": "2025-10-09T16:42:54.581574Z",
+    "reason": "no claims release on or after the coded date"
+   },
+   {
+    "ticker": "KXJOBLESSCLAIMS-25OCT02-225000",
+    "closeUtc": "2025-10-02T12:30:00Z",
+    "settledUtc": "2025-10-09T16:42:54.581574Z",
+    "reason": "no claims release on or after the coded date"
+   },
+   {
+    "ticker": "KXJOBLESSCLAIMS-25OCT02-230000",
+    "closeUtc": "2025-10-02T12:30:00Z",
+    "settledUtc": "2025-10-09T16:42:54.581574Z",
+    "reason": "no claims release on or after the coded date"
+   },
+   {
+    "ticker": "KXJOBLESSCLAIMS-25OCT02-250000",
+    "closeUtc": "2025-10-02T12:30:00Z",
+    "settledUtc": "2025-10-09T16:42:54.581574Z",
+    "reason": "no claims release on or after the coded date"
+   },
+   {
+    "ticker": "KXJOBLESSCLAIMS-25OCT02-260000",
+    "closeUtc": "2025-10-02T12:30:00Z",
+    "settledUtc": "2025-10-09T16:42:54.581574Z",
+    "reason": "no claims release on or after the coded date"
+   }
+  ],
+  "families": [
+   {
+    "id": "claims",
+    "label": "DOL Unemployment Insurance Weekly Claims",
+    "rid": 180,
+    "agency": "DOL",
+    "contracts": 197,
+    "events": 76,
+    "releases": 76,
+    "closeMinusNewsMinutes": {
+     "n": 197,
+     "min": -870.0,
+     "p10": -810.0,
+     "median": 0.0,
+     "p90": 0.0,
+     "max": 0.0
+    },
+    "closeBeforeNews": {
+     "n": 197,
+     "share": 0.3096446700507614,
+     "count": 61
+    },
+    "closeAtOrAfterNews": {
+     "n": 197,
+     "share": 0.6903553299492385,
+     "count": 136
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 197,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 197,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 197,
+     "min": 80.66701993333332,
+     "p10": 115.65490608333333,
+     "median": 990.0126050166667,
+     "p90": 2100.4210412100006,
+     "max": 7498.439770483334
+    },
+    "settlementReported": {
+     "n": 197,
+     "share": 1.0,
+     "count": 197
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 197,
+     "min": -11430.0,
+     "p10": -9990.0,
+     "median": 90.0,
+     "p90": 282.00000000000273,
+     "max": 6301909.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 197,
+     "min": 0.2708333333333333,
+     "p10": 0.3958333333333333,
+     "median": 7.0625,
+     "p90": 7.0625,
+     "max": 7.0625
+    },
+    "releaseTimeSource": {
+     "standing 8:30 a.m. ET": 61,
+     "FRED calendar time": 136
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {
+     "FRED calendar time": 136
+    }
+   },
+   {
+    "id": "cpi",
+    "label": "BLS Consumer Price Index",
+    "rid": 10,
+    "agency": "BLS",
+    "contracts": 1434,
+    "events": 247,
+    "releases": 54,
+    "closeMinusNewsMinutes": {
+     "n": 1434,
+     "min": -12965.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": 0.0
+    },
+    "closeBeforeNews": {
+     "n": 1434,
+     "share": 0.9923291492329149,
+     "count": 1423
+    },
+    "closeAtOrAfterNews": {
+     "n": 1434,
+     "share": 0.007670850767085077,
+     "count": 11
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 1434,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 1434,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 1434,
+     "min": 26.484614166666667,
+     "p10": 119.2198704,
+     "median": 273.007539525,
+     "p90": 356.64355120333335,
+     "max": 21752.00927515
+    },
+    "settlementReported": {
+     "n": 1434,
+     "share": 1.0,
+     "count": 1434
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 1434,
+     "min": -47430.0,
+     "p10": 90.0,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 95.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 1434,
+     "min": -1.9375,
+     "p10": 7.0625,
+     "median": 7.0625,
+     "p90": 7.0625,
+     "max": 91.0625
+    },
+    "releaseTimeSource": {
+     "standing 8:30 a.m. ET": 1091,
+     "FRED calendar time": 343
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {
+     "FRED calendar time": 11
+    }
+   },
+   {
+    "id": "employment",
+    "label": "BLS Employment Situation",
+    "rid": 50,
+    "agency": "BLS",
+    "contracts": 612,
+    "events": 96,
+    "releases": 53,
+    "closeMinusNewsMinutes": {
+     "n": 612,
+     "min": -69181.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -1.0
+    },
+    "closeBeforeNews": {
+     "n": 612,
+     "share": 1.0,
+     "count": 612
+    },
+    "closeAtOrAfterNews": {
+     "n": 612,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 612,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 612,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 612,
+     "min": 23.47579465,
+     "p10": 82.03944573333334,
+     "median": 273.0088047666667,
+     "p90": 316.4120856516661,
+     "max": 3010.0078242
+    },
+    "settlementReported": {
+     "n": 612,
+     "share": 1.0,
+     "count": 612
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 612,
+     "min": -69090.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 612,
+     "min": 0.3958333333333333,
+     "p10": 7.0625,
+     "median": 14.0625,
+     "p90": 14.104166666666666,
+     "max": 91.0625
+    },
+    "releaseTimeSource": {
+     "FRED calendar time": 151,
+     "standing 8:30 a.m. ET": 461
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "id": "fomc",
+    "label": "FOMC statement",
+    "rid": null,
+    "agency": "Federal Reserve",
+    "contracts": 412,
+    "events": 55,
+    "releases": 34,
+    "closeMinusNewsMinutes": {
+     "n": 412,
+     "min": -2580.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -1.0
+    },
+    "closeBeforeNews": {
+     "n": 412,
+     "share": 1.0,
+     "count": 412
+    },
+    "closeAtOrAfterNews": {
+     "n": 412,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 412,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 412,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 412,
+     "min": 5.7632931,
+     "p10": 11.886359445,
+     "median": 189.50696728333332,
+     "p90": 878.1087574066673,
+     "max": 3181.0097080833334
+    },
+    "settlementReported": {
+     "n": 412,
+     "share": 1.0,
+     "count": 412
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 412,
+     "min": -37680.0,
+     "p10": -240.0,
+     "median": 5.0,
+     "p90": 17040.0,
+     "max": 35820.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 412,
+     "min": 1.0035300925925925,
+     "p10": 7.003472222222222,
+     "median": 7.003472222222222,
+     "p90": 7.003472222222222,
+     "max": 91.00069444444445
+    },
+    "releaseTimeSource": {
+     "FOMC statement page": 412
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "id": "gdp",
+    "label": "BEA Gross Domestic Product",
+    "rid": 53,
+    "agency": "BEA",
+    "contracts": 123,
+    "events": 16,
+    "releases": 16,
+    "closeMinusNewsMinutes": {
+     "n": 123,
+     "min": -810.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": 3.406906453333333,
+     "max": 91.61414128333332
+    },
+    "closeBeforeNews": {
+     "n": 123,
+     "share": 0.8699186991869918,
+     "count": 107
+    },
+    "closeAtOrAfterNews": {
+     "n": 123,
+     "share": 0.13008130081300814,
+     "count": 16
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 123,
+     "share": 0.0975609756097561,
+     "count": 12
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 123,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 123,
+     "min": 62.70960313333333,
+     "p10": 62.70960313333333,
+     "median": 300.0040449333334,
+     "p90": 755.00822184,
+     "max": 2071.0058249666668
+    },
+    "settlementReported": {
+     "n": 123,
+     "share": 1.0,
+     "count": 123
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 123,
+     "min": -130995.0,
+     "p10": 90.0,
+     "median": 90.0,
+     "p90": 1530.0,
+     "max": 1530.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 123,
+     "min": 0.3958333333333333,
+     "p10": 7.0625,
+     "median": 7.0625,
+     "p90": 8.0625,
+     "max": 91.0625
+    },
+    "releaseTimeSource": {
+     "standing 8:30 a.m. ET": 83,
+     "BEA release page": 16,
+     "FRED calendar time": 24
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {
+     "BEA release page": 16
+    }
+   },
+   {
+    "id": "pio",
+    "label": "BEA Personal Income and Outlays",
+    "rid": 54,
+    "agency": "BEA",
+    "contracts": 48,
+    "events": 13,
+    "releases": 13,
+    "closeMinusNewsMinutes": {
+     "n": 48,
+     "min": -95.0,
+     "p10": -31.999999999999986,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -5.0
+    },
+    "closeBeforeNews": {
+     "n": 48,
+     "share": 1.0,
+     "count": 48
+    },
+    "closeAtOrAfterNews": {
+     "n": 48,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 48,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 48,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 48,
+     "min": 85.3177148,
+     "p10": 122.21852474666666,
+     "median": 234.23161431666668,
+     "p90": 842.5125088333333,
+     "max": 59856.01730318333
+    },
+    "settlementReported": {
+     "n": 48,
+     "share": 1.0,
+     "count": 48
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 48,
+     "min": 0.0,
+     "p10": 63.000000000000014,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 48,
+     "min": 7.0,
+     "p10": 7.04375,
+     "median": 7.0625,
+     "p90": 7.0625,
+     "max": 7.0625
+    },
+    "releaseTimeSource": {
+     "FRED calendar time": 38,
+     "standing 8:30 a.m. ET": 10
+    },
+    "verifiedTimesNot830": [
+     "2025-04-30T14:00:00Z"
+    ],
+    "afterNewsTimeSource": {}
+   }
+  ],
+  "series": [
+   {
+    "series": "CPI",
+    "family": "cpi",
+    "contracts": 270,
+    "events": 41,
+    "releases": 41,
+    "closeMinusNewsMinutes": {
+     "n": 270,
+     "min": -810.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -4.033333333333333
+    },
+    "closeBeforeNews": {
+     "n": 270,
+     "share": 1.0,
+     "count": 270
+    },
+    "closeAtOrAfterNews": {
+     "n": 270,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 270,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 270,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 270,
+     "min": 190.00663701666664,
+     "p10": 223.00937322166666,
+     "median": 276.01078413333335,
+     "p90": 385.0217095616667,
+     "max": 3230.0092883666666
+    },
+    "settlementReported": {
+     "n": 270,
+     "share": 1.0,
+     "count": 270
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 270,
+     "min": -47430.0,
+     "p10": -9660.0,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 270,
+     "min": 0.2708333333333333,
+     "p10": 7.0625,
+     "median": 7.0625,
+     "p90": 7.0625,
+     "max": 7.063113425925926
+    },
+    "releaseTimeSource": {
+     "standing 8:30 a.m. ET": 270
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "CPIAPPAREL",
+    "family": "cpi",
+    "contracts": 57,
+    "events": 14,
+    "releases": 14,
+    "closeMinusNewsMinutes": {
+     "n": 57,
+     "min": -8645.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -5.0
+    },
+    "closeBeforeNews": {
+     "n": 57,
+     "share": 1.0,
+     "count": 57
+    },
+    "closeAtOrAfterNews": {
+     "n": 57,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 57,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 57,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 57,
+     "min": 214.01231421666668,
+     "p10": 217.60881287333333,
+     "median": 223.01859348333335,
+     "p90": 420.01484862666666,
+     "max": 694.01042895
+    },
+    "settlementReported": {
+     "n": 57,
+     "share": 1.0,
+     "count": 57
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 57,
+     "min": -8550.0,
+     "p10": 90.0,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 57,
+     "min": 1.0625,
+     "p10": 7.0625,
+     "median": 7.0625,
+     "p90": 7.0625,
+     "max": 7.0625
+    },
+    "releaseTimeSource": {
+     "standing 8:30 a.m. ET": 57
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "CPICORE",
+    "family": "cpi",
+    "contracts": 192,
+    "events": 29,
+    "releases": 29,
+    "closeMinusNewsMinutes": {
+     "n": 192,
+     "min": -5.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -5.0
+    },
+    "closeBeforeNews": {
+     "n": 192,
+     "share": 1.0,
+     "count": 192
+    },
+    "closeAtOrAfterNews": {
+     "n": 192,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 192,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 192,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 192,
+     "min": 214.0184838,
+     "p10": 222.02469090166667,
+     "median": 277.0149910166666,
+     "p90": 416.61520065666684,
+     "max": 10740.009913783335
+    },
+    "settlementReported": {
+     "n": 192,
+     "share": 1.0,
+     "count": 192
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 192,
+     "min": 90.0,
+     "p10": 90.0,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 192,
+     "min": 7.0625,
+     "p10": 7.0625,
+     "median": 7.0625,
+     "p90": 7.0625,
+     "max": 7.0625
+    },
+    "releaseTimeSource": {
+     "standing 8:30 a.m. ET": 192
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "CPICOREYOY",
+    "family": "cpi",
+    "contracts": 136,
+    "events": 22,
+    "releases": 22,
+    "closeMinusNewsMinutes": {
+     "n": 136,
+     "min": -5.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -5.0
+    },
+    "closeBeforeNews": {
+     "n": 136,
+     "share": 1.0,
+     "count": 136
+    },
+    "closeAtOrAfterNews": {
+     "n": 136,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 136,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 136,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 136,
+     "min": 215.0107258,
+     "p10": 218.01122924166668,
+     "median": 277.0103614916667,
+     "p90": 605.0075777249999,
+     "max": 705.0149198166667
+    },
+    "settlementReported": {
+     "n": 136,
+     "share": 1.0,
+     "count": 136
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 136,
+     "min": 90.0,
+     "p10": 90.0,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 136,
+     "min": 7.0625,
+     "p10": 7.0625,
+     "median": 7.0625,
+     "p90": 7.0625,
+     "max": 7.0625
+    },
+    "releaseTimeSource": {
+     "standing 8:30 a.m. ET": 136
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "CPIFOOD",
+    "family": "cpi",
+    "contracts": 41,
+    "events": 14,
+    "releases": 14,
+    "closeMinusNewsMinutes": {
+     "n": 41,
+     "min": -5.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -5.0
+    },
+    "closeBeforeNews": {
+     "n": 41,
+     "share": 1.0,
+     "count": 41
+    },
+    "closeAtOrAfterNews": {
+     "n": 41,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 41,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 41,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 41,
+     "min": 216.02016238333331,
+     "p10": 218.0082658,
+     "median": 224.00959798333332,
+     "p90": 524.01240955,
+     "max": 4636.007132783333
+    },
+    "settlementReported": {
+     "n": 41,
+     "share": 1.0,
+     "count": 41
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 41,
+     "min": 90.0,
+     "p10": 90.0,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 41,
+     "min": 7.0625,
+     "p10": 7.0625,
+     "median": 7.0625,
+     "p90": 7.0625,
+     "max": 7.0625
+    },
+    "releaseTimeSource": {
+     "standing 8:30 a.m. ET": 41
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "CPIGAS",
+    "family": "cpi",
+    "contracts": 51,
+    "events": 11,
+    "releases": 11,
+    "closeMinusNewsMinutes": {
+     "n": 51,
+     "min": -5.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -5.0
+    },
+    "closeBeforeNews": {
+     "n": 51,
+     "share": 1.0,
+     "count": 51
+    },
+    "closeAtOrAfterNews": {
+     "n": 51,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 51,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 51,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 51,
+     "min": 214.0120716333333,
+     "p10": 217.00980723333333,
+     "median": 222.0225915,
+     "p90": 335.0239507333333,
+     "max": 420.0151520333333
+    },
+    "settlementReported": {
+     "n": 51,
+     "share": 1.0,
+     "count": 51
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 51,
+     "min": 90.0,
+     "p10": 90.0,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 51,
+     "min": 7.0625,
+     "p10": 7.0625,
+     "median": 7.0625,
+     "p90": 7.0625,
+     "max": 7.0625
+    },
+    "releaseTimeSource": {
+     "standing 8:30 a.m. ET": 51
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "CPISHELTER",
+    "family": "cpi",
+    "contracts": 35,
+    "events": 10,
+    "releases": 10,
+    "closeMinusNewsMinutes": {
+     "n": 35,
+     "min": -5.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -5.0
+    },
+    "closeBeforeNews": {
+     "n": 35,
+     "share": 1.0,
+     "count": 35
+    },
+    "closeAtOrAfterNews": {
+     "n": 35,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 35,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 35,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 35,
+     "min": 218.01330878333334,
+     "p10": 219.01045797333333,
+     "median": 223.0405932,
+     "p90": 302.61728373333347,
+     "max": 335.02954359999995
+    },
+    "settlementReported": {
+     "n": 35,
+     "share": 1.0,
+     "count": 35
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 35,
+     "min": 90.0,
+     "p10": 90.0,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 35,
+     "min": 7.0625,
+     "p10": 7.0625,
+     "median": 7.0625,
+     "p90": 7.0625,
+     "max": 7.0625
+    },
+    "releaseTimeSource": {
+     "standing 8:30 a.m. ET": 35
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "CPIUSEDCAR",
+    "family": "cpi",
+    "contracts": 60,
+    "events": 13,
+    "releases": 13,
+    "closeMinusNewsMinutes": {
+     "n": 60,
+     "min": -8645.0,
+     "p10": -868.9999999999973,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -5.0
+    },
+    "closeBeforeNews": {
+     "n": 60,
+     "share": 1.0,
+     "count": 60
+    },
+    "closeAtOrAfterNews": {
+     "n": 60,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 60,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 60,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 60,
+     "min": 216.00593548333333,
+     "p10": 218.008831375,
+     "median": 223.51088476666666,
+     "p90": 522.2059238133332,
+     "max": 694.009686
+    },
+    "settlementReported": {
+     "n": 60,
+     "share": 1.0,
+     "count": 60
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 60,
+     "min": -8550.0,
+     "p10": -773.9999999999973,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 60,
+     "min": 1.0625,
+     "p10": 6.462500000000002,
+     "median": 7.0625,
+     "p90": 7.0625,
+     "max": 7.0625
+    },
+    "releaseTimeSource": {
+     "standing 8:30 a.m. ET": 60
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "CPIYOY",
+    "family": "cpi",
+    "contracts": 194,
+    "events": 24,
+    "releases": 24,
+    "closeMinusNewsMinutes": {
+     "n": 194,
+     "min": -5.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -5.0
+    },
+    "closeBeforeNews": {
+     "n": 194,
+     "share": 1.0,
+     "count": 194
+    },
+    "closeAtOrAfterNews": {
+     "n": 194,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 194,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 194,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 194,
+     "min": 214.01806593333333,
+     "p10": 220.02505905333334,
+     "median": 274.00616387499997,
+     "p90": 318.1206772583342,
+     "max": 21752.00927515
+    },
+    "settlementReported": {
+     "n": 194,
+     "share": 1.0,
+     "count": 194
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 194,
+     "min": 90.0,
+     "p10": 90.0,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 194,
+     "min": 7.0625,
+     "p10": 7.0625,
+     "median": 7.0625,
+     "p90": 7.0625,
+     "max": 7.0625
+    },
+    "releaseTimeSource": {
+     "standing 8:30 a.m. ET": 194
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "FED",
+    "family": "fomc",
+    "contracts": 312,
+    "events": 34,
+    "releases": 34,
+    "closeMinusNewsMinutes": {
+     "n": 312,
+     "min": -2580.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -4.016666666666667
+    },
+    "closeBeforeNews": {
+     "n": 312,
+     "share": 1.0,
+     "count": 312
+    },
+    "closeAtOrAfterNews": {
+     "n": 312,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 312,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 312,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 312,
+     "min": 5.7632931,
+     "p10": 6.771990696666666,
+     "median": 194.00832891666667,
+     "p90": 847.0107339399999,
+     "max": 3181.0097080833334
+    },
+    "settlementReported": {
+     "n": 312,
+     "share": 1.0,
+     "count": 312
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 312,
+     "min": -37680.0,
+     "p10": -240.0,
+     "median": 5.0,
+     "p90": 18480.0,
+     "max": 35820.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 312,
+     "min": 1.0035300925925925,
+     "p10": 7.003472222222222,
+     "median": 7.003472222222222,
+     "p90": 7.003472222222222,
+     "max": 7.04556712962963
+    },
+    "releaseTimeSource": {
+     "FOMC statement page": 312
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "FEDDECISION",
+    "family": "fomc",
+    "contracts": 60,
+    "events": 13,
+    "releases": 13,
+    "closeMinusNewsMinutes": {
+     "n": 60,
+     "min": -5.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -5.0
+    },
+    "closeBeforeNews": {
+     "n": 60,
+     "share": 1.0,
+     "count": 60
+    },
+    "closeAtOrAfterNews": {
+     "n": 60,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 60,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 60,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 60,
+     "min": 128.00680996666668,
+     "p10": 131.01561798333333,
+     "median": 235.0088282,
+     "p90": 902.00787915,
+     "max": 1204.0098627500001
+    },
+    "settlementReported": {
+     "n": 60,
+     "share": 1.0,
+     "count": 60
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 60,
+     "min": -240.0,
+     "p10": 5.0,
+     "median": 5.0,
+     "p90": 5.0,
+     "max": 12965.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 60,
+     "min": 7.003472222222222,
+     "p10": 7.003472222222222,
+     "median": 7.003472222222222,
+     "p90": 7.003472222222222,
+     "max": 7.003472222222222
+    },
+    "releaseTimeSource": {
+     "FOMC statement page": 60
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "GDP",
+    "family": "gdp",
+    "contracts": 95,
+    "events": 13,
+    "releases": 13,
+    "closeMinusNewsMinutes": {
+     "n": 95,
+     "min": -810.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": 91.21879120666667,
+     "max": 91.61414128333332
+    },
+    "closeBeforeNews": {
+     "n": 95,
+     "share": 0.8736842105263158,
+     "count": 83
+    },
+    "closeAtOrAfterNews": {
+     "n": 95,
+     "share": 0.12631578947368421,
+     "count": 12
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 95,
+     "share": 0.12631578947368421,
+     "count": 12
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 95,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 95,
+     "min": 235.01856271666665,
+     "p10": 238.41268242,
+     "median": 329.02550123333333,
+     "p90": 1410.00793391,
+     "max": 2071.0058249666668
+    },
+    "settlementReported": {
+     "n": 95,
+     "share": 1.0,
+     "count": 95
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 95,
+     "min": -130995.0,
+     "p10": -88819.79999999997,
+     "median": 90.0,
+     "p90": 1530.0,
+     "max": 1530.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 95,
+     "min": 0.3958333333333333,
+     "p10": 7.0625,
+     "median": 7.0625,
+     "p90": 8.0625,
+     "max": 8.0625
+    },
+    "releaseTimeSource": {
+     "standing 8:30 a.m. ET": 83,
+     "BEA release page": 12
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {
+     "BEA release page": 12
+    }
+   },
+   {
+    "series": "JOBLESS",
+    "family": "claims",
+    "contracts": 61,
+    "events": 56,
+    "releases": 56,
+    "closeMinusNewsMinutes": {
+     "n": 61,
+     "min": -870.0,
+     "p10": -810.0,
+     "median": -810.0,
+     "p90": -810.0,
+     "max": -511.0
+    },
+    "closeBeforeNews": {
+     "n": 61,
+     "share": 1.0,
+     "count": 61
+    },
+    "closeAtOrAfterNews": {
+     "n": 61,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 61,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 61,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 61,
+     "min": 990.0055855833333,
+     "p10": 990.00926615,
+     "median": 990.1512966333333,
+     "p90": 2071.00582685,
+     "max": 3033.00683305
+    },
+    "settlementReported": {
+     "n": 61,
+     "share": 1.0,
+     "count": 61
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 61,
+     "min": -11430.0,
+     "p10": -9990.0,
+     "median": -9930.0,
+     "p90": 570.0,
+     "max": 6301909.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 61,
+     "min": 0.2708333333333333,
+     "p10": 0.3541666666666667,
+     "median": 0.3958333333333333,
+     "p90": 0.3958333333333333,
+     "max": 0.3958333333333333
+    },
+    "releaseTimeSource": {
+     "standing 8:30 a.m. ET": 61
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "KXCPI",
+    "family": "cpi",
+    "contracts": 74,
+    "events": 12,
+    "releases": 12,
+    "closeMinusNewsMinutes": {
+     "n": 74,
+     "min": -12961.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -1.0,
+     "max": -1.0
+    },
+    "closeBeforeNews": {
+     "n": 74,
+     "share": 1.0,
+     "count": 74
+    },
+    "closeAtOrAfterNews": {
+     "n": 74,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 74,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 74,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 74,
+     "min": 26.484614166666667,
+     "p10": 38.525576031666674,
+     "median": 123.51700671666667,
+     "p90": 349.82712094,
+     "max": 354.3749879
+    },
+    "settlementReported": {
+     "n": 74,
+     "share": 1.0,
+     "count": 74
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 74,
+     "min": -12870.0,
+     "p10": 90.0,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 74,
+     "min": 7.0625,
+     "p10": 7.0625,
+     "median": 7.0625,
+     "p90": 91.0625,
+     "max": 91.0625
+    },
+    "releaseTimeSource": {
+     "FRED calendar time": 66,
+     "standing 8:30 a.m. ET": 8
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "KXCPIAPPAREL",
+    "family": "cpi",
+    "contracts": 13,
+    "events": 4,
+    "releases": 4,
+    "closeMinusNewsMinutes": {
+     "n": 13,
+     "min": -5.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -5.0
+    },
+    "closeBeforeNews": {
+     "n": 13,
+     "share": 1.0,
+     "count": 13
+    },
+    "closeAtOrAfterNews": {
+     "n": 13,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 13,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 13,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 13,
+     "min": 156.26401461666669,
+     "p10": 305.9424741733333,
+     "median": 306.39264456666666,
+     "p90": 352.77398628,
+     "max": 354.37414036666667
+    },
+    "settlementReported": {
+     "n": 13,
+     "share": 1.0,
+     "count": 13
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 13,
+     "min": 90.0,
+     "p10": 90.0,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 13,
+     "min": 7.0625,
+     "p10": 7.0625,
+     "median": 7.0625,
+     "p90": 7.0625,
+     "max": 7.0625
+    },
+    "releaseTimeSource": {
+     "FRED calendar time": 7,
+     "standing 8:30 a.m. ET": 6
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "KXCPICORE",
+    "family": "cpi",
+    "contracts": 55,
+    "events": 12,
+    "releases": 12,
+    "closeMinusNewsMinutes": {
+     "n": 55,
+     "min": -12965.0,
+     "p10": -7780.999999999995,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -5.0
+    },
+    "closeBeforeNews": {
+     "n": 55,
+     "share": 1.0,
+     "count": 55
+    },
+    "closeAtOrAfterNews": {
+     "n": 55,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 55,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 55,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 55,
+     "min": 83.3514419,
+     "p10": 84.16743559333332,
+     "median": 127.23351918333333,
+     "p90": 333.46476389666674,
+     "max": 354.3746596666667
+    },
+    "settlementReported": {
+     "n": 55,
+     "share": 1.0,
+     "count": 55
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 55,
+     "min": -12870.0,
+     "p10": -7685.999999999995,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 55,
+     "min": -1.9375,
+     "p10": 1.6625000000000032,
+     "median": 7.0625,
+     "p90": 7.0625,
+     "max": 7.0625
+    },
+    "releaseTimeSource": {
+     "FRED calendar time": 52,
+     "standing 8:30 a.m. ET": 3
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "KXCPICOREYOY",
+    "family": "cpi",
+    "contracts": 79,
+    "events": 13,
+    "releases": 13,
+    "closeMinusNewsMinutes": {
+     "n": 79,
+     "min": -12965.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": 0.0,
+     "max": 0.0
+    },
+    "closeBeforeNews": {
+     "n": 79,
+     "share": 0.8607594936708861,
+     "count": 68
+    },
+    "closeAtOrAfterNews": {
+     "n": 79,
+     "share": 0.13924050632911392,
+     "count": 11
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 79,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 79,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 79,
+     "min": 80.13324053333334,
+     "p10": 90.01354917333335,
+     "median": 150.93320455,
+     "p90": 355.09380037333335,
+     "max": 475.9301469
+    },
+    "settlementReported": {
+     "n": 79,
+     "share": 1.0,
+     "count": 79
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 79,
+     "min": -12870.0,
+     "p10": -11430.0,
+     "median": 90.0,
+     "p90": 95.0,
+     "max": 95.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 79,
+     "min": -1.9375,
+     "p10": -0.0006944444444444445,
+     "median": 7.0625,
+     "p90": 7.065972222222222,
+     "max": 7.065972222222222
+    },
+    "releaseTimeSource": {
+     "FRED calendar time": 73,
+     "standing 8:30 a.m. ET": 6
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {
+     "FRED calendar time": 11
+    }
+   },
+   {
+    "series": "KXCPIFOOD",
+    "family": "cpi",
+    "contracts": 13,
+    "events": 3,
+    "releases": 3,
+    "closeMinusNewsMinutes": {
+     "n": 13,
+     "min": -5.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -5.0
+    },
+    "closeBeforeNews": {
+     "n": 13,
+     "share": 1.0,
+     "count": 13
+    },
+    "closeAtOrAfterNews": {
+     "n": 13,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 13,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 13,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 13,
+     "min": 306.57580133333335,
+     "p10": 306.69246926333335,
+     "median": 353.07351488333336,
+     "p90": 354.37302084666663,
+     "max": 354.37680639999996
+    },
+    "settlementReported": {
+     "n": 13,
+     "share": 1.0,
+     "count": 13
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 13,
+     "min": 90.0,
+     "p10": 90.0,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 13,
+     "min": 7.0625,
+     "p10": 7.0625,
+     "median": 7.0625,
+     "p90": 7.0625,
+     "max": 7.0625
+    },
+    "releaseTimeSource": {
+     "FRED calendar time": 8,
+     "standing 8:30 a.m. ET": 5
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "KXCPIGAS",
+    "family": "cpi",
+    "contracts": 31,
+    "events": 5,
+    "releases": 5,
+    "closeMinusNewsMinutes": {
+     "n": 31,
+     "min": -5.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -5.0
+    },
+    "closeBeforeNews": {
+     "n": 31,
+     "share": 1.0,
+     "count": 31
+    },
+    "closeAtOrAfterNews": {
+     "n": 31,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 31,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 31,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 31,
+     "min": 151.94652101666668,
+     "p10": 154.17401526666666,
+     "median": 304.22931678333333,
+     "p90": 354.37114153333334,
+     "max": 354.37580866666667
+    },
+    "settlementReported": {
+     "n": 31,
+     "share": 1.0,
+     "count": 31
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 31,
+     "min": 90.0,
+     "p10": 90.0,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 31,
+     "min": 7.0625,
+     "p10": 7.0625,
+     "median": 7.0625,
+     "p90": 7.0625,
+     "max": 7.0625
+    },
+    "releaseTimeSource": {
+     "FRED calendar time": 23,
+     "standing 8:30 a.m. ET": 8
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "KXCPISHELTER",
+    "family": "cpi",
+    "contracts": 10,
+    "events": 4,
+    "releases": 4,
+    "closeMinusNewsMinutes": {
+     "n": 10,
+     "min": -5.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -5.0
+    },
+    "closeBeforeNews": {
+     "n": 10,
+     "share": 1.0,
+     "count": 10
+    },
+    "closeAtOrAfterNews": {
+     "n": 10,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 10,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 10,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 10,
+     "min": 152.76320423333334,
+     "p10": 289.49955156833335,
+     "median": 328.183076775,
+     "p90": 354.3721488566667,
+     "max": 354.3766489166667
+    },
+    "settlementReported": {
+     "n": 10,
+     "share": 1.0,
+     "count": 10
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 10,
+     "min": 90.0,
+     "p10": 90.0,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 10,
+     "min": 7.0625,
+     "p10": 7.0625,
+     "median": 7.0625,
+     "p90": 7.0625,
+     "max": 7.0625
+    },
+    "releaseTimeSource": {
+     "FRED calendar time": 6,
+     "standing 8:30 a.m. ET": 4
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "KXCPIUSEDCAR",
+    "family": "cpi",
+    "contracts": 14,
+    "events": 4,
+    "releases": 4,
+    "closeMinusNewsMinutes": {
+     "n": 14,
+     "min": -5.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -5.0
+    },
+    "closeBeforeNews": {
+     "n": 14,
+     "share": 1.0,
+     "count": 14
+    },
+    "closeAtOrAfterNews": {
+     "n": 14,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 14,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 14,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 14,
+     "min": 153.02985445000002,
+     "p10": 198.769695055,
+     "median": 305.68413604166665,
+     "p90": 354.3691919916667,
+     "max": 354.3753188333333
+    },
+    "settlementReported": {
+     "n": 14,
+     "share": 1.0,
+     "count": 14
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 14,
+     "min": 90.0,
+     "p10": 90.0,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 14,
+     "min": 7.0625,
+     "p10": 7.0625,
+     "median": 7.0625,
+     "p90": 7.0625,
+     "max": 7.0625
+    },
+    "releaseTimeSource": {
+     "FRED calendar time": 8,
+     "standing 8:30 a.m. ET": 6
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "KXCPIYOY",
+    "family": "cpi",
+    "contracts": 109,
+    "events": 12,
+    "releases": 12,
+    "closeMinusNewsMinutes": {
+     "n": 109,
+     "min": -12961.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -1.0,
+     "max": -1.0
+    },
+    "closeBeforeNews": {
+     "n": 109,
+     "share": 1.0,
+     "count": 109
+    },
+    "closeAtOrAfterNews": {
+     "n": 109,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 109,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 109,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 109,
+     "min": 27.268115599999998,
+     "p10": 35.669876456666664,
+     "median": 120.29140301666666,
+     "p90": 356.49353934666664,
+     "max": 477.16348550000004
+    },
+    "settlementReported": {
+     "n": 109,
+     "share": 1.0,
+     "count": 109
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 109,
+     "min": -12870.0,
+     "p10": 90.0,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 109,
+     "min": 7.0625,
+     "p10": 7.0625,
+     "median": 7.0625,
+     "p90": 91.0625,
+     "max": 91.0625
+    },
+    "releaseTimeSource": {
+     "FRED calendar time": 100,
+     "standing 8:30 a.m. ET": 9
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "KXFEDDECISION",
+    "family": "fomc",
+    "contracts": 40,
+    "events": 8,
+    "releases": 8,
+    "closeMinusNewsMinutes": {
+     "n": 40,
+     "min": -5.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -1.0,
+     "max": -1.0
+    },
+    "closeBeforeNews": {
+     "n": 40,
+     "share": 1.0,
+     "count": 40
+    },
+    "closeAtOrAfterNews": {
+     "n": 40,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 40,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 40,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 40,
+     "min": 11.8912135,
+     "p10": 11.8912135,
+     "median": 66.54313485833333,
+     "p90": 73.13139405,
+     "max": 73.13139405
+    },
+    "settlementReported": {
+     "n": 40,
+     "share": 1.0,
+     "count": 40
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 40,
+     "min": 5.0,
+     "p10": 5.0,
+     "median": 5.0,
+     "p90": 5.0,
+     "max": 5.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 40,
+     "min": 7.003472222222222,
+     "p10": 7.003472222222222,
+     "median": 7.003472222222222,
+     "p90": 91.00069444444445,
+     "max": 91.00069444444445
+    },
+    "releaseTimeSource": {
+     "FOMC statement page": 40
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "KXGDP",
+    "family": "gdp",
+    "contracts": 28,
+    "events": 3,
+    "releases": 3,
+    "closeMinusNewsMinutes": {
+     "n": 28,
+     "min": -5.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": 3.0073202416666667,
+     "max": 3.4322207833333334
+    },
+    "closeBeforeNews": {
+     "n": 28,
+     "share": 0.8571428571428571,
+     "count": 24
+    },
+    "closeAtOrAfterNews": {
+     "n": 28,
+     "share": 0.14285714285714285,
+     "count": 4
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 28,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 28,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 28,
+     "min": 62.70960313333333,
+     "p10": 62.70960313333333,
+     "median": 63.111000399999995,
+     "p90": 70.34166485833333,
+     "max": 70.34272513333333
+    },
+    "settlementReported": {
+     "n": 28,
+     "share": 1.0,
+     "count": 28
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 28,
+     "min": 90.0,
+     "p10": 90.0,
+     "median": 90.0,
+     "p90": 1530.0,
+     "max": 1530.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 28,
+     "min": 7.0625,
+     "p10": 7.0625,
+     "median": 7.0625,
+     "p90": 8.0625,
+     "max": 91.0625
+    },
+    "releaseTimeSource": {
+     "FRED calendar time": 24,
+     "BEA release page": 4
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {
+     "BEA release page": 4
+    }
+   },
+   {
+    "series": "KXJOBLESSCLAIMS",
+    "family": "claims",
+    "contracts": 136,
+    "events": 20,
+    "releases": 20,
+    "closeMinusNewsMinutes": {
+     "n": 136,
+     "min": 0.0,
+     "p10": 0.0,
+     "median": 0.0,
+     "p90": 0.0,
+     "max": 0.0
+    },
+    "closeBeforeNews": {
+     "n": 136,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeAtOrAfterNews": {
+     "n": 136,
+     "share": 1.0,
+     "count": 136
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 136,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 136,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 136,
+     "min": 80.66701993333332,
+     "p10": 111.25255188333334,
+     "median": 782.49919295,
+     "p90": 4020.6673506999996,
+     "max": 7498.439770483334
+    },
+    "settlementReported": {
+     "n": 136,
+     "share": 1.0,
+     "count": 136
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 136,
+     "min": 90.0,
+     "p10": 90.0,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 136,
+     "min": 7.0625,
+     "p10": 7.0625,
+     "median": 7.0625,
+     "p90": 7.0625,
+     "max": 7.0625
+    },
+    "releaseTimeSource": {
+     "FRED calendar time": 136
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {
+     "FRED calendar time": 136
+    }
+   },
+   {
+    "series": "KXPAYROLLS",
+    "family": "employment",
+    "contracts": 87,
+    "events": 12,
+    "releases": 12,
+    "closeMinusNewsMinutes": {
+     "n": 87,
+     "min": -69181.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -1.0,
+     "max": -1.0
+    },
+    "closeBeforeNews": {
+     "n": 87,
+     "share": 1.0,
+     "count": 87
+    },
+    "closeAtOrAfterNews": {
+     "n": 87,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 87,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 87,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 87,
+     "min": 23.47579465,
+     "p10": 25.28651393333333,
+     "median": 102.70306236666667,
+     "p90": 228.13279344,
+     "max": 267.25916708333335
+    },
+    "settlementReported": {
+     "n": 87,
+     "share": 1.0,
+     "count": 87
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 87,
+     "min": -69090.0,
+     "p10": -15750.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 87,
+     "min": 14.0625,
+     "p10": 14.0625,
+     "median": 14.0625,
+     "p90": 91.0625,
+     "max": 91.0625
+    },
+    "releaseTimeSource": {
+     "FRED calendar time": 78,
+     "standing 8:30 a.m. ET": 9
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "KXPCECORE",
+    "family": "pio",
+    "contracts": 40,
+    "events": 10,
+    "releases": 10,
+    "closeMinusNewsMinutes": {
+     "n": 40,
+     "min": -95.0,
+     "p10": -95.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -5.0
+    },
+    "closeBeforeNews": {
+     "n": 40,
+     "share": 1.0,
+     "count": 40
+    },
+    "closeAtOrAfterNews": {
+     "n": 40,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 40,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 40,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 40,
+     "min": 85.3177148,
+     "p10": 122.17056711666667,
+     "median": 233.82531228333335,
+     "p90": 407.738317768334,
+     "max": 842.5125088333333
+    },
+    "settlementReported": {
+     "n": 40,
+     "share": 1.0,
+     "count": 40
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 40,
+     "min": 0.0,
+     "p10": 0.0,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 40,
+     "min": 7.0,
+     "p10": 7.0,
+     "median": 7.0625,
+     "p90": 7.0625,
+     "max": 7.0625
+    },
+    "releaseTimeSource": {
+     "FRED calendar time": 38,
+     "standing 8:30 a.m. ET": 2
+    },
+    "verifiedTimesNot830": [
+     "2025-04-30T14:00:00Z"
+    ],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "KXU3",
+    "family": "employment",
+    "contracts": 82,
+    "events": 12,
+    "releases": 12,
+    "closeMinusNewsMinutes": {
+     "n": 82,
+     "min": -69181.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -1.0,
+     "max": -1.0
+    },
+    "closeBeforeNews": {
+     "n": 82,
+     "share": 1.0,
+     "count": 82
+    },
+    "closeAtOrAfterNews": {
+     "n": 82,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 82,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 82,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 82,
+     "min": 24.225805400000002,
+     "p10": 26.11968661666667,
+     "median": 127.962856625,
+     "p90": 487.0446742666666,
+     "max": 487.0446742666666
+    },
+    "settlementReported": {
+     "n": 82,
+     "share": 1.0,
+     "count": 82
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 82,
+     "min": -69090.0,
+     "p10": 90.0,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 82,
+     "min": 7.0625,
+     "p10": 7.0625,
+     "median": 7.0625,
+     "p90": 91.0625,
+     "max": 91.0625
+    },
+    "releaseTimeSource": {
+     "FRED calendar time": 73,
+     "standing 8:30 a.m. ET": 9
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "PAYROLLS",
+    "family": "employment",
+    "contracts": 62,
+    "events": 9,
+    "releases": 9,
+    "closeMinusNewsMinutes": {
+     "n": 62,
+     "min": -5.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -5.0
+    },
+    "closeBeforeNews": {
+     "n": 62,
+     "share": 1.0,
+     "count": 62
+    },
+    "closeAtOrAfterNews": {
+     "n": 62,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 62,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 62,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 62,
+     "min": 213.01462076666667,
+     "p10": 214.22248745666667,
+     "median": 240.01380131666667,
+     "p90": 288.01428275333336,
+     "max": 289.00497735000005
+    },
+    "settlementReported": {
+     "n": 62,
+     "share": 1.0,
+     "count": 62
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 62,
+     "min": -5.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -5.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 62,
+     "min": 14.0625,
+     "p10": 14.0625,
+     "median": 14.0625,
+     "p90": 14.0625,
+     "max": 14.0625
+    },
+    "releaseTimeSource": {
+     "standing 8:30 a.m. ET": 62
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "PCECORE",
+    "family": "pio",
+    "contracts": 8,
+    "events": 3,
+    "releases": 3,
+    "closeMinusNewsMinutes": {
+     "n": 8,
+     "min": -5.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -5.0
+    },
+    "closeBeforeNews": {
+     "n": 8,
+     "share": 1.0,
+     "count": 8
+    },
+    "closeAtOrAfterNews": {
+     "n": 8,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 8,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 8,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 8,
+     "min": 292.0144011666667,
+     "p10": 292.71405246166665,
+     "median": 358.515083525,
+     "p90": 49743.81193131333,
+     "max": 59856.01730318333
+    },
+    "settlementReported": {
+     "n": 8,
+     "share": 1.0,
+     "count": 8
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 8,
+     "min": 90.0,
+     "p10": 90.0,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 8,
+     "min": 7.0625,
+     "p10": 7.0625,
+     "median": 7.0625,
+     "p90": 7.0625,
+     "max": 7.0625
+    },
+    "releaseTimeSource": {
+     "standing 8:30 a.m. ET": 8
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "PROLLS",
+    "family": "employment",
+    "contracts": 149,
+    "events": 23,
+    "releases": 23,
+    "closeMinusNewsMinutes": {
+     "n": 149,
+     "min": -5.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -5.0
+    },
+    "closeBeforeNews": {
+     "n": 149,
+     "share": 1.0,
+     "count": 149
+    },
+    "closeAtOrAfterNews": {
+     "n": 149,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 149,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 149,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 149,
+     "min": 212.00952963333333,
+     "p10": 224.01014415666668,
+     "median": 275.0192291833334,
+     "p90": 298.4130730966671,
+     "max": 539.0178519666666
+    },
+    "settlementReported": {
+     "n": 149,
+     "share": 1.0,
+     "count": 149
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 149,
+     "min": -31530.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": 0.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 149,
+     "min": 14.020833333333334,
+     "p10": 14.0625,
+     "median": 14.0625,
+     "p90": 14.0625,
+     "max": 14.104166666666666
+    },
+    "releaseTimeSource": {
+     "standing 8:30 a.m. ET": 149
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   },
+   {
+    "series": "U3",
+    "family": "employment",
+    "contracts": 232,
+    "events": 40,
+    "releases": 40,
+    "closeMinusNewsMinutes": {
+     "n": 232,
+     "min": -810.0,
+     "p10": -5.0,
+     "median": -5.0,
+     "p90": -5.0,
+     "max": -5.0
+    },
+    "closeBeforeNews": {
+     "n": 232,
+     "share": 1.0,
+     "count": 232
+    },
+    "closeAtOrAfterNews": {
+     "n": 232,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan60MinutesAfterNews": {
+     "n": 232,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeMoreThan1DayAfterNews": {
+     "n": 232,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusNewsMinutes": {
+     "n": 232,
+     "min": 213.01446861666668,
+     "p10": 226.417265185,
+     "median": 274.03149941666663,
+     "p90": 326.017457415,
+     "max": 3010.0078242
+    },
+    "settlementReported": {
+     "n": 232,
+     "share": 1.0,
+     "count": 232
+    },
+    "expectedMinusNewsMinutes": {
+     "n": 232,
+     "min": -50310.0,
+     "p10": -5.0,
+     "median": 90.0,
+     "p90": 90.0,
+     "max": 90.0
+    },
+    "expirationMinusNewsDays": {
+     "n": 232,
+     "min": 0.3958333333333333,
+     "p10": 7.0625,
+     "median": 7.0625,
+     "p90": 7.0625,
+     "max": 7.0625
+    },
+    "releaseTimeSource": {
+     "standing 8:30 a.m. ET": 232
+    },
+    "verifiedTimesNot830": [],
+    "afterNewsTimeSource": {}
+   }
+  ],
+  "panelObservations": 48793,
+  "postNewsObservations": 0,
+  "postNewsByFamilyAndDays": {},
+  "horizons": [
+   {
+    "days": 1,
+    "nominalN": 1635,
+    "nominalBrier": 0.11732954128440366,
+    "nominalPostNews": 0,
+    "newsAnchoredN": 1590,
+    "newsAnchoredBrier": 0.11655981132075471,
+    "sameObservations": 1589,
+    "nominalMinusNewsLeadHours": {
+     "n": 1635,
+     "min": -1153.0166666666667,
+     "p10": -0.0833333333333357,
+     "median": -0.08333333333333037,
+     "p90": -0.016666666666663943,
+     "max": 1.5247936597135308
+    }
+   },
+   {
+    "days": 2,
+    "nominalN": 1414,
+    "nominalBrier": 0.12377673267326732,
+    "nominalPostNews": 0,
+    "newsAnchoredN": 1392,
+    "newsAnchoredBrier": 0.12222449712643679,
+    "sameObservations": 1382,
+    "nominalMinusNewsLeadHours": {
+     "n": 1414,
+     "min": -1153.0166666666667,
+     "p10": -0.0833333333333357,
+     "median": -0.0833333333333357,
+     "p90": -0.016666666666669272,
+     "max": 1.5259213294585585
+    }
+   },
+   {
+    "days": 3,
+    "nominalN": 1262,
+    "nominalBrier": 0.12176854199683042,
+    "nominalPostNews": 0,
+    "newsAnchoredN": 1234,
+    "newsAnchoredBrier": 0.12225899513776338,
+    "sameObservations": 1228,
+    "nominalMinusNewsLeadHours": {
+     "n": 1262,
+     "min": -1153.0166666666667,
+     "p10": -0.0833333333333357,
+     "median": -0.0833333333333357,
+     "p90": -0.016666666666669272,
+     "max": 1.519984496103394
+    }
+   },
+   {
+    "days": 7,
+    "nominalN": 1138,
+    "nominalBrier": 0.1143244288224956,
+    "nominalPostNews": 0,
+    "newsAnchoredN": 1117,
+    "newsAnchoredBrier": 0.11375299910474486,
+    "sameObservations": 1103,
+    "nominalMinusNewsLeadHours": {
+     "n": 1138,
+     "min": -1153.0166666666667,
+     "p10": -0.0833333333333357,
+     "median": -0.0833333333333357,
+     "p90": -0.01666666666667993,
+     "max": 1.5247936597135308
+    }
+   },
+   {
+    "days": 14,
+    "nominalN": 1047,
+    "nominalBrier": 0.11590162368672398,
+    "nominalPostNews": 0,
+    "newsAnchoredN": 1049,
+    "newsAnchoredBrier": 0.11561353670162058,
+    "sameObservations": 1018,
+    "nominalMinusNewsLeadHours": {
+     "n": 1047,
+     "min": -1153.0166666666667,
+     "p10": -0.08333333333335702,
+     "median": -0.08333333333331439,
+     "p90": -0.07922222222223924,
+     "max": 1.5259213294585265
+    }
+   },
+   {
+    "days": 30,
+    "nominalN": 551,
+    "nominalBrier": 0.1176923774954628,
+    "nominalPostNews": 0,
+    "newsAnchoredN": 539,
+    "newsAnchoredBrier": 0.11729870129870129,
+    "sameObservations": 524,
+    "nominalMinusNewsLeadHours": {
+     "n": 551,
+     "min": -1153.0166666666664,
+     "p10": -0.08333333333339965,
+     "median": -0.08333333333331439,
+     "p90": -0.08333333333331439,
+     "max": 1.5220473055707089
+    }
+   }
+  ],
+  "latestCloses": [
+   {
+    "ticker": "GDP-24JAN26-T4.4",
+    "series": "GDP",
+    "newsUtc": "2024-01-25T13:30:00Z",
+    "closeUtc": "2024-01-25T15:01:36.848477Z",
+    "settledUtc": "2024-01-26T02:05:00.466058Z",
+    "closeMinusNewsMinutes": 91.6,
+    "mappingRule": "release on the coded date"
+   },
+   {
+    "ticker": "GDP-24JAN26-T3.9",
+    "series": "GDP",
+    "newsUtc": "2024-01-25T13:30:00Z",
+    "closeUtc": "2024-01-25T15:01:34.938670Z",
+    "settledUtc": "2024-01-26T02:05:00.476402Z",
+    "closeMinusNewsMinutes": 91.6,
+    "mappingRule": "release on the coded date"
+   },
+   {
+    "ticker": "GDP-24JAN26-T3.4",
+    "series": "GDP",
+    "newsUtc": "2024-01-25T13:30:00Z",
+    "closeUtc": "2024-01-25T15:01:33.316786Z",
+    "settledUtc": "2024-01-26T02:05:00.485180Z",
+    "closeMinusNewsMinutes": 91.6,
+    "mappingRule": "release on the coded date"
+   },
+   {
+    "ticker": "GDP-24JAN26-T2.9",
+    "series": "GDP",
+    "newsUtc": "2024-01-25T13:30:00Z",
+    "closeUtc": "2024-01-25T15:01:29.257175Z",
+    "settledUtc": "2024-01-26T02:05:00.495343Z",
+    "closeMinusNewsMinutes": 91.5,
+    "mappingRule": "release on the coded date"
+   },
+   {
+    "ticker": "GDP-24JAN26-T2.4",
+    "series": "GDP",
+    "newsUtc": "2024-01-25T13:30:00Z",
+    "closeUtc": "2024-01-25T15:01:27.004748Z",
+    "settledUtc": "2024-01-26T02:05:00.502117Z",
+    "closeMinusNewsMinutes": 91.5,
+    "mappingRule": "release on the coded date"
+   },
+   {
+    "ticker": "GDP-24JAN26-T2.1",
+    "series": "GDP",
+    "newsUtc": "2024-01-25T13:30:00Z",
+    "closeUtc": "2024-01-25T15:01:24.027691Z",
+    "settledUtc": "2024-01-26T02:05:00.435596Z",
+    "closeMinusNewsMinutes": 91.4,
+    "mappingRule": "release on the coded date"
+   },
+   {
+    "ticker": "GDP-24JAN26-T1.9",
+    "series": "GDP",
+    "newsUtc": "2024-01-25T13:30:00Z",
+    "closeUtc": "2024-01-25T15:01:22.086332Z",
+    "settledUtc": "2024-01-26T02:05:00.450273Z",
+    "closeMinusNewsMinutes": 91.4,
+    "mappingRule": "release on the coded date"
+   },
+   {
+    "ticker": "GDP-24JAN26-T1.6",
+    "series": "GDP",
+    "newsUtc": "2024-01-25T13:30:00Z",
+    "closeUtc": "2024-01-25T15:01:19.370300Z",
+    "settledUtc": "2024-01-26T14:01:01.269322Z",
+    "closeMinusNewsMinutes": 91.3,
+    "mappingRule": "release on the coded date"
+   },
+   {
+    "ticker": "GDP-24JAN26-T1.4",
+    "series": "GDP",
+    "newsUtc": "2024-01-25T13:30:00Z",
+    "closeUtc": "2024-01-25T15:01:16.415508Z",
+    "settledUtc": "2024-01-26T14:01:01.209390Z",
+    "closeMinusNewsMinutes": 91.3,
+    "mappingRule": "release on the coded date"
+   },
+   {
+    "ticker": "GDP-24JAN26-T0.9",
+    "series": "GDP",
+    "newsUtc": "2024-01-25T13:30:00Z",
+    "closeUtc": "2024-01-25T15:01:13.916330Z",
+    "settledUtc": "2024-01-26T14:01:00.569866Z",
+    "closeMinusNewsMinutes": 91.2,
+    "mappingRule": "release on the coded date"
+   },
+   {
+    "ticker": "GDP-24JAN26-T0.4",
+    "series": "GDP",
+    "newsUtc": "2024-01-25T13:30:00Z",
+    "closeUtc": "2024-01-25T15:01:11.944186Z",
+    "settledUtc": "2024-01-26T14:01:00.589295Z",
+    "closeMinusNewsMinutes": 91.2,
+    "mappingRule": "release on the coded date"
+   },
+   {
+    "ticker": "GDP-24JAN26-T-0.1",
+    "series": "GDP",
+    "newsUtc": "2024-01-25T13:30:00Z",
+    "closeUtc": "2024-01-25T15:01:10.159494Z",
+    "settledUtc": "2024-01-26T14:01:01.314017Z",
+    "closeMinusNewsMinutes": 91.2,
+    "mappingRule": "release on the coded date"
+   },
+   {
+    "ticker": "KXGDP-25JAN31-T3.5",
+    "series": "KXGDP",
+    "newsUtc": "2025-01-30T13:30:00Z",
+    "closeUtc": "2025-01-30T13:33:25.933247Z",
+    "settledUtc": "2025-01-30T14:40:20.563508Z",
+    "closeMinusNewsMinutes": 3.4,
+    "mappingRule": "release on the coded date"
+   },
+   {
+    "ticker": "KXGDP-25JAN31-T3.0",
+    "series": "KXGDP",
+    "newsUtc": "2025-01-30T13:30:00Z",
+    "closeUtc": "2025-01-30T13:33:18.338948Z",
+    "settledUtc": "2025-01-30T14:40:20.513629Z",
+    "closeMinusNewsMinutes": 3.3,
+    "mappingRule": "release on the coded date"
+   },
+   {
+    "ticker": "KXGDP-25JAN31-T2.0",
+    "series": "KXGDP",
+    "newsUtc": "2025-01-30T13:30:00Z",
+    "closeUtc": "2025-01-30T13:33:08.125274Z",
+    "settledUtc": "2025-01-30T14:40:20.534114Z",
+    "closeMinusNewsMinutes": 3.1,
+    "mappingRule": "release on the coded date"
+   },
+   {
+    "ticker": "KXGDP-25JAN31-T2.5",
+    "series": "KXGDP",
+    "newsUtc": "2025-01-30T13:30:00Z",
+    "closeUtc": "2025-01-30T13:32:57.145189Z",
+    "settledUtc": "2025-01-30T14:40:20.494004Z",
+    "closeMinusNewsMinutes": 3.0,
+    "mappingRule": "release on the coded date"
+   }
+  ],
+  "closedMoreThan1DayBeforeNews": [
+   {
+    "family": "employment",
+    "closeUtc": "2025-10-03T12:29:00Z",
+    "newsUtc": "2025-11-20T13:30:00Z",
+    "expectedUtc": "2025-10-03T14:00:00Z",
+    "contracts": 14,
+    "closeMinusNewsDays": -48.04,
+    "example": "KXPAYROLLS-25SEP-T-100000"
+   },
+   {
+    "family": "cpi",
+    "closeUtc": "2025-10-15T12:25:00Z",
+    "newsUtc": "2025-10-24T12:30:00Z",
+    "expectedUtc": "2025-10-15T14:00:00Z",
+    "contracts": 13,
+    "closeMinusNewsDays": -9.0,
+    "example": "KXCPICORE-25SEP-T-0.1"
+   },
+   {
+    "family": "cpi",
+    "closeUtc": "2025-10-15T12:29:00Z",
+    "newsUtc": "2025-10-24T12:30:00Z",
+    "expectedUtc": "2025-10-15T14:00:00Z",
+    "contracts": 14,
+    "closeMinusNewsDays": -9.0,
+    "example": "KXCPI-25SEP-T-0.1"
+   },
+   {
+    "family": "cpi",
+    "closeUtc": "2024-01-05T13:25:00Z",
+    "newsUtc": "2024-01-11T13:30:00Z",
+    "expectedUtc": "2024-01-05T15:00:00Z",
+    "contracts": 9,
+    "closeMinusNewsDays": -6.0,
+    "example": "CPIAPPAREL-23DEC-T-1.3"
+   },
+   {
+    "family": "fomc",
+    "closeUtc": "2021-12-14T00:00:00Z",
+    "newsUtc": "2021-12-15T19:00:00Z",
+    "expectedUtc": "2021-12-15T20:30:00Z",
+    "contracts": 1,
+    "closeMinusNewsDays": -1.79,
+    "example": "FED-21DEC-T0.25"
+   },
+   {
+    "family": "fomc",
+    "closeUtc": "2021-07-26T23:00:00Z",
+    "newsUtc": "2021-07-28T18:00:00Z",
+    "expectedUtc": "2021-07-02T14:00:00Z",
+    "contracts": 1,
+    "closeMinusNewsDays": -1.79,
+    "example": "FED-21JUL-T0.25"
+   },
+   {
+    "family": "fomc",
+    "closeUtc": "2021-09-20T23:00:00Z",
+    "newsUtc": "2021-09-22T18:00:00Z",
+    "expectedUtc": "2021-09-29T14:00:00Z",
+    "contracts": 1,
+    "closeMinusNewsDays": -1.79,
+    "example": "FED-21SEP-T0.25"
+   }
+  ]
+ },
+ "tierB": {
+  "all": {
+   "contracts": 2999,
+   "closeMinusExpectedHours": {
+    "n": 2999,
+    "min": -84597.55573956417,
+    "p10": -21.798776566944447,
+    "median": -0.40576448638888885,
+    "p90": 4.534439286666713,
+    "max": 8751.128147829999
+   },
+   "closeAfterExpectedPlus1h": {
+    "n": 2999,
+    "share": 0.1737245748582861,
+    "count": 521
+   },
+   "closeBeforeExpectedMinus1h": {
+    "n": 2999,
+    "share": 0.43314438146048684,
+    "count": 1299
+   },
+   "settledMinusCloseHours": {
+    "n": 2999,
+    "min": -2444.5702993247223,
+    "p10": 0.08428497644444445,
+    "median": 0.5166818541666667,
+    "p90": 13.066795691277777,
+    "max": 588.3667690477778
+   },
+   "settlementReported": {
+    "n": 2999,
+    "share": 1.0,
+    "count": 2999
+   },
+   "panelObservations": 13980,
+   "horizons": [
+    {
+     "days": 1,
+     "n": 2485,
+     "tradedAfterScheduledExpiration": 90,
+     "share": 0.03621730382293763,
+     "brierFlagged": 0.12258,
+     "brierOther": 0.14568008350730688
+    },
+    {
+     "days": 2,
+     "n": 1199,
+     "tradedAfterScheduledExpiration": 42,
+     "share": 0.03502919099249374,
+     "brierFlagged": 0.12915238095238096,
+     "brierOther": 0.14283171996542784
+    },
+    {
+     "days": 7,
+     "n": 275,
+     "tradedAfterScheduledExpiration": 14,
+     "share": 0.05090909090909091,
+     "brierFlagged": 0.13517142857142858,
+     "brierOther": 0.13111226053639846
+    },
+    {
+     "days": 30,
+     "n": 86,
+     "tradedAfterScheduledExpiration": 7,
+     "share": 0.08139534883720931,
+     "brierFlagged": 0.2175857142857143,
+     "brierOther": 0.10997088607594936
+    }
+   ]
+  },
+  "categories": [
+   {
+    "broad": "Sports",
+    "contracts": 1288,
+    "closeMinusExpectedHours": {
+     "n": 1288,
+     "min": -42983.54292605333,
+     "p10": -1.0836634717777778,
+     "median": 0.41387248416666667,
+     "p90": 7.3929077266111065,
+     "max": 8751.128147829999
+    },
+    "closeAfterExpectedPlus1h": {
+     "n": 1288,
+     "share": 0.28183229813664595,
+     "count": 363
+    },
+    "closeBeforeExpectedMinus1h": {
+     "n": 1288,
+     "share": 0.12189440993788819,
+     "count": 157
+    },
+    "settledMinusCloseHours": {
+     "n": 1288,
+     "min": -2444.5702993247223,
+     "p10": 0.034473688027777775,
+     "median": 0.10080653194444444,
+     "p90": 0.5013935883888889,
+     "max": 227.67247037194446
+    },
+    "settlementReported": {
+     "n": 1288,
+     "share": 1.0,
+     "count": 1288
+    },
+    "panelObservations": 4100,
+    "horizons": [
+     {
+      "days": 1,
+      "n": 1096,
+      "tradedAfterScheduledExpiration": 27,
+      "share": 0.024635036496350366,
+      "brierFlagged": 0.17674444444444445,
+      "brierOther": 0.1794799812909261
+     },
+     {
+      "days": 2,
+      "n": 637,
+      "tradedAfterScheduledExpiration": 11,
+      "share": 0.01726844583987441,
+      "brierFlagged": 0.16010909090909092,
+      "brierOther": 0.16675686900958467
+     },
+     {
+      "days": 7,
+      "n": 86,
+      "tradedAfterScheduledExpiration": 2,
+      "share": 0.023255813953488372,
+      "brierFlagged": 0.0125,
+      "brierOther": 0.16183214285714284
+     },
+     {
+      "days": 30,
+      "n": 8,
+      "tradedAfterScheduledExpiration": 0,
+      "share": 0.0,
+      "brierFlagged": null,
+      "brierOther": 0.0439125
+     }
+    ]
+   },
+   {
+    "broad": "Weather",
+    "contracts": 673,
+    "closeMinusExpectedHours": {
+     "n": 673,
+     "min": -3431.395655691111,
+     "p10": -10.016666666666667,
+     "median": -10.016666666666667,
+     "p90": -7.016666666666667,
+     "max": 1401.1028490058334
+    },
+    "closeAfterExpectedPlus1h": {
+     "n": 673,
+     "share": 0.04309063893016345,
+     "count": 29
+    },
+    "closeBeforeExpectedMinus1h": {
+     "n": 673,
+     "share": 0.9539375928677564,
+     "count": 642
+    },
+    "settledMinusCloseHours": {
+     "n": 673,
+     "min": 0.004749459166666667,
+     "p10": 5.236772296944446,
+     "median": 9.266889410833333,
+     "p90": 13.1836354135,
+     "max": 588.3667690477778
+    },
+    "settlementReported": {
+     "n": 673,
+     "share": 1.0,
+     "count": 673
+    },
+    "panelObservations": 1216,
+    "horizons": [
+     {
+      "days": 1,
+      "n": 660,
+      "tradedAfterScheduledExpiration": 26,
+      "share": 0.03939393939393939,
+      "brierFlagged": 0.09311153846153847,
+      "brierOther": 0.13018643533123028
+     },
+     {
+      "days": 2,
+      "n": 14,
+      "tradedAfterScheduledExpiration": 1,
+      "share": 0.07142857142857142,
+      "brierFlagged": 0.00010000000000000018,
+      "brierOther": 0.0022384615384615394
+     },
+     {
+      "days": 7,
+      "n": 17,
+      "tradedAfterScheduledExpiration": 1,
+      "share": 0.058823529411764705,
+      "brierFlagged": 0.48999999999999994,
+      "brierOther": 0.140475
+     },
+     {
+      "days": 30,
+      "n": 6,
+      "tradedAfterScheduledExpiration": 1,
+      "share": 0.16666666666666666,
+      "brierFlagged": 0.5041,
+      "brierOther": 0.16556
+     }
+    ]
+   },
+   {
+    "broad": "Politics",
+    "contracts": 361,
+    "closeMinusExpectedHours": {
+     "n": 361,
+     "min": -84597.55573956417,
+     "p10": -3546.4136495488883,
+     "median": 0.0,
+     "p90": 1.0,
+     "max": 2676.983333333333
+    },
+    "closeAfterExpectedPlus1h": {
+     "n": 361,
+     "share": 0.0886426592797784,
+     "count": 32
+    },
+    "closeBeforeExpectedMinus1h": {
+     "n": 361,
+     "share": 0.48753462603878117,
+     "count": 176
+    },
+    "settledMinusCloseHours": {
+     "n": 361,
+     "min": 0.0043490916666666666,
+     "p10": 0.5007125961111112,
+     "median": 1.0849550844444444,
+     "p90": 20.367142735555554,
+     "max": 251.66698905777778
+    },
+    "settlementReported": {
+     "n": 361,
+     "share": 1.0,
+     "count": 361
+    },
+    "panelObservations": 3084,
+    "horizons": [
+     {
+      "days": 1,
+      "n": 294,
+      "tradedAfterScheduledExpiration": 5,
+      "share": 0.017006802721088437,
+      "brierFlagged": 0.005480000000000003,
+      "brierOther": 0.14880242214532874
+     },
+     {
+      "days": 2,
+      "n": 225,
+      "tradedAfterScheduledExpiration": 6,
+      "share": 0.02666666666666667,
+      "brierFlagged": 0.009883333333333329,
+      "brierOther": 0.16169041095890413
+     },
+     {
+      "days": 7,
+      "n": 66,
+      "tradedAfterScheduledExpiration": 4,
+      "share": 0.06060606060606061,
+      "brierFlagged": 0.10005000000000001,
+      "brierOther": 0.13636774193548387
+     },
+     {
+      "days": 30,
+      "n": 30,
+      "tradedAfterScheduledExpiration": 3,
+      "share": 0.1,
+      "brierFlagged": 0.014000000000000005,
+      "brierOther": 0.14956296296296295
+     }
+    ]
+   },
+   {
+    "broad": "Finance",
+    "contracts": 296,
+    "closeMinusExpectedHours": {
+     "n": 296,
+     "min": -3235.8158585613887,
+     "p10": -10.024027777777778,
+     "median": -1.5833333333333333,
+     "p90": 4.5,
+     "max": 2157.429722222222
+    },
+    "closeAfterExpectedPlus1h": {
+     "n": 296,
+     "share": 0.1554054054054054,
+     "count": 46
+    },
+    "closeBeforeExpectedMinus1h": {
+     "n": 296,
+     "share": 0.543918918918919,
+     "count": 161
+    },
+    "settledMinusCloseHours": {
+     "n": 296,
+     "min": 0.0004966088888888889,
+     "p10": 2.6506801243055556,
+     "median": 5.183527360555556,
+     "p90": 31.325351698055552,
+     "max": 330.1834364397222
+    },
+    "settlementReported": {
+     "n": 296,
+     "share": 1.0,
+     "count": 296
+    },
+    "panelObservations": 2612,
+    "horizons": [
+     {
+      "days": 1,
+      "n": 173,
+      "tradedAfterScheduledExpiration": 11,
+      "share": 0.06358381502890173,
+      "brierFlagged": 0.1769272727272727,
+      "brierOther": 0.06893333333333333
+     },
+     {
+      "days": 2,
+      "n": 171,
+      "tradedAfterScheduledExpiration": 11,
+      "share": 0.06432748538011696,
+      "brierFlagged": 0.18135454545454546,
+      "brierOther": 0.092589375
+     },
+     {
+      "days": 7,
+      "n": 38,
+      "tradedAfterScheduledExpiration": 3,
+      "share": 0.07894736842105263,
+      "brierFlagged": 0.26380000000000003,
+      "brierOther": 0.09400857142857143
+     },
+     {
+      "days": 30,
+      "n": 20,
+      "tradedAfterScheduledExpiration": 1,
+      "share": 0.05,
+      "brierFlagged": 0.6561000000000001,
+      "brierOther": 0.08348421052631579
+     }
+    ]
+   },
+   {
+    "broad": "Culture",
+    "contracts": 249,
+    "closeMinusExpectedHours": {
+     "n": 249,
+     "min": -8768.591489315831,
+     "p10": -4353.130079974944,
+     "median": -10.016666666666667,
+     "p90": 17.762651937666796,
+     "max": 3935.0
+    },
+    "closeAfterExpectedPlus1h": {
+     "n": 249,
+     "share": 0.1646586345381526,
+     "count": 41
+    },
+    "closeBeforeExpectedMinus1h": {
+     "n": 249,
+     "share": 0.6104417670682731,
+     "count": 152
+    },
+    "settledMinusCloseHours": {
+     "n": 249,
+     "min": -646.2676823255555,
+     "p10": 0.5008451633333334,
+     "median": 1.7722168563888887,
+     "p90": 29.08230565527786,
+     "max": 81.03888065472223
+    },
+    "settlementReported": {
+     "n": 249,
+     "share": 1.0,
+     "count": 249
+    },
+    "panelObservations": 2173,
+    "horizons": [
+     {
+      "days": 1,
+      "n": 157,
+      "tradedAfterScheduledExpiration": 12,
+      "share": 0.07643312101910828,
+      "brierFlagged": 0.13519166666666665,
+      "brierOther": 0.0752103448275862
+     },
+     {
+      "days": 2,
+      "n": 111,
+      "tradedAfterScheduledExpiration": 7,
+      "share": 0.06306306306306306,
+      "brierFlagged": 0.14515714285714285,
+      "brierOther": 0.07176057692307693
+     },
+     {
+      "days": 7,
+      "n": 56,
+      "tradedAfterScheduledExpiration": 1,
+      "share": 0.017857142857142856,
+      "brierFlagged": 0.0001,
+      "brierOther": 0.11783636363636363
+     },
+     {
+      "days": 30,
+      "n": 18,
+      "tradedAfterScheduledExpiration": 1,
+      "share": 0.05555555555555555,
+      "brierFlagged": 0.28090000000000004,
+      "brierOther": 0.11015882352941177
+     }
+    ]
+   },
+   {
+    "broad": "Crypto",
+    "contracts": 112,
+    "closeMinusExpectedHours": {
+     "n": 112,
+     "min": -24.0,
+     "p10": -0.08333333333333333,
+     "median": -0.08333333333333333,
+     "p90": -0.08333333333333333,
+     "max": 1287.4376946166667
+    },
+    "closeAfterExpectedPlus1h": {
+     "n": 112,
+     "share": 0.017857142857142856,
+     "count": 2
+    },
+    "closeBeforeExpectedMinus1h": {
+     "n": 112,
+     "share": 0.008928571428571428,
+     "count": 1
+    },
+    "settledMinusCloseHours": {
+     "n": 112,
+     "min": 0.027886735555555552,
+     "p10": 0.03365491069444444,
+     "median": 0.0769084761111111,
+     "p90": 1.0198299588888888,
+     "max": 20.15749168388889
+    },
+    "settlementReported": {
+     "n": 112,
+     "share": 1.0,
+     "count": 112
+    },
+    "panelObservations": 415,
+    "horizons": [
+     {
+      "days": 1,
+      "n": 93,
+      "tradedAfterScheduledExpiration": 2,
+      "share": 0.021505376344086023,
+      "brierFlagged": 0.005,
+      "brierOther": 0.1035
+     },
+     {
+      "days": 2,
+      "n": 30,
+      "tradedAfterScheduledExpiration": 2,
+      "share": 0.06666666666666667,
+      "brierFlagged": 0.007249999999999994,
+      "brierOther": 0.1119
+     },
+     {
+      "days": 7,
+      "n": 3,
+      "tradedAfterScheduledExpiration": 1,
+      "share": 0.3333333333333333,
+      "brierFlagged": 0.04839999999999999,
+      "brierOther": 0.001
+     },
+     {
+      "days": 30,
+      "n": 2,
+      "tradedAfterScheduledExpiration": 1,
+      "share": 0.5,
+      "brierFlagged": 0.03999999999999998,
+      "brierOther": 0.0025000000000000005
+     }
+    ]
+   },
+   {
+    "broad": "Tech",
+    "contracts": 20,
+    "closeMinusExpectedHours": {
+     "n": 20,
+     "min": -6506.816671834999,
+     "p10": -2919.102846287305,
+     "median": -5.008333333333334,
+     "p90": 188.98500000000027,
+     "max": 376.5
+    },
+    "closeAfterExpectedPlus1h": {
+     "n": 20,
+     "share": 0.4,
+     "count": 8
+    },
+    "closeBeforeExpectedMinus1h": {
+     "n": 20,
+     "share": 0.5,
+     "count": 10
+    },
+    "settledMinusCloseHours": {
+     "n": 20,
+     "min": 1.0008998672222222,
+     "p10": 1.0915870784166668,
+     "median": 25.05847875263889,
+     "p90": 71.3452517940279,
+     "max": 266.0875626613889
+    },
+    "settlementReported": {
+     "n": 20,
+     "share": 1.0,
+     "count": 20
+    },
+    "panelObservations": 380,
+    "horizons": [
+     {
+      "days": 1,
+      "n": 12,
+      "tradedAfterScheduledExpiration": 7,
+      "share": 0.5833333333333334,
+      "brierFlagged": 0.03332857142857144,
+      "brierOther": 0.0012800000000000008
+     },
+     {
+      "days": 2,
+      "n": 11,
+      "tradedAfterScheduledExpiration": 4,
+      "share": 0.36363636363636365,
+      "brierFlagged": 0.144575,
+      "brierOther": 0.0023714285714285703
+     },
+     {
+      "days": 7,
+      "n": 9,
+      "tradedAfterScheduledExpiration": 2,
+      "share": 0.2222222222222222,
+      "brierFlagged": 0.06865,
+      "brierOther": 0.021528571428571428
+     },
+     {
+      "days": 30,
+      "n": 2,
+      "tradedAfterScheduledExpiration": 0,
+      "share": 0.0,
+      "brierFlagged": null,
+      "brierOther": 0.004499999999999997
+     }
+    ]
+   }
+  ],
+  "byCloseYear": [
+   {
+    "year": 2021,
+    "contracts": 26,
+    "closeMinusExpectedHours": {
+     "n": 26,
+     "min": 30.0,
+     "p10": 33.24166666666667,
+     "median": 37.983333333333334,
+     "p90": 256.5,
+     "max": 1071.5
+    },
+    "closeAfterExpectedPlus1h": {
+     "n": 26,
+     "share": 1.0,
+     "count": 26
+    },
+    "closeBeforeExpectedMinus1h": {
+     "n": 26,
+     "share": 0.0,
+     "count": 0
+    },
+    "settledMinusCloseHours": {
+     "n": 26,
+     "min": 14.001069137222224,
+     "p10": 24.01731514722222,
+     "median": 35.016799749722225,
+     "p90": 42.00008297638889,
+     "max": 48.00020140916667
+    },
+    "settlementReported": {
+     "n": 26,
+     "share": 1.0,
+     "count": 26
+    },
+    "panelObservations": 99,
+    "horizons": [
+     {
+      "days": 1,
+      "n": 24,
+      "tradedAfterScheduledExpiration": 24,
+      "share": 1.0,
+      "brierFlagged": 0.11137083333333332,
+      "brierOther": null
+     },
+     {
+      "days": 2,
+      "n": 6,
+      "tradedAfterScheduledExpiration": 6,
+      "share": 1.0,
+      "brierFlagged": 0.1730666666666667,
+      "brierOther": null
+     },
+     {
+      "days": 7,
+      "n": 2,
+      "tradedAfterScheduledExpiration": 2,
+      "share": 1.0,
+      "brierFlagged": 0.015250000000000005,
+      "brierOther": null
+     },
+     {
+      "days": 30,
+      "n": 1,
+      "tradedAfterScheduledExpiration": 1,
+      "share": 1.0,
+      "brierFlagged": 0.02560000000000001,
+      "brierOther": null
+     }
+    ]
+   },
+   {
+    "year": 2022,
+    "contracts": 145,
+    "closeMinusExpectedHours": {
+     "n": 145,
+     "min": -1799.9589627455557,
+     "p10": -10.016666666666667,
+     "median": -0.08333333333333333,
+     "p90": 130.55666666666662,
+     "max": 2157.429722222222
+    },
+    "closeAfterExpectedPlus1h": {
+     "n": 145,
+     "share": 0.22758620689655173,
+     "count": 33
+    },
+    "closeBeforeExpectedMinus1h": {
+     "n": 145,
+     "share": 0.45517241379310347,
+     "count": 66
+    },
+    "settledMinusCloseHours": {
+     "n": 145,
+     "min": 3.0001832088888887,
+     "p10": 3.030765557222222,
+     "median": 13.033519885277776,
+     "p90": 21.033539375277776,
+     "max": 49.15018633611111
+    },
+    "settlementReported": {
+     "n": 145,
+     "share": 1.0,
+     "count": 145
+    },
+    "panelObservations": 800,
+    "horizons": [
+     {
+      "days": 1,
+      "n": 116,
+      "tradedAfterScheduledExpiration": 24,
+      "share": 0.20689655172413793,
+      "brierFlagged": 0.11370416666666666,
+      "brierOther": 0.09866847826086957
+     },
+     {
+      "days": 2,
+      "n": 61,
+      "tradedAfterScheduledExpiration": 12,
+      "share": 0.19672131147540983,
+      "brierFlagged": 0.19768333333333335,
+      "brierOther": 0.05021428571428572
+     },
+     {
+      "days": 7,
+      "n": 12,
+      "tradedAfterScheduledExpiration": 4,
+      "share": 0.3333333333333333,
+      "brierFlagged": 0.22495000000000004,
+      "brierOther": 0.019362499999999998
+     },
+     {
+      "days": 30,
+      "n": 5,
+      "tradedAfterScheduledExpiration": 1,
+      "share": 0.2,
+      "brierFlagged": 0.6561000000000001,
+      "brierOther": 0.117375
+     }
+    ]
+   },
+   {
+    "year": 2023,
+    "contracts": 205,
+    "closeMinusExpectedHours": {
+     "n": 205,
+     "min": -1440.8528929025001,
+     "p10": -10.016666666666667,
+     "median": -9.016666666666667,
+     "p90": 1.0,
+     "max": 2431.7125660866664
+    },
+    "closeAfterExpectedPlus1h": {
+     "n": 205,
+     "share": 0.07317073170731707,
+     "count": 15
+    },
+    "closeBeforeExpectedMinus1h": {
+     "n": 205,
+     "share": 0.751219512195122,
+     "count": 154
+    },
+    "settledMinusCloseHours": {
+     "n": 205,
+     "min": 1.7167474086111112,
+     "p10": 4.640308072777778,
+     "median": 11.050176083055556,
+     "p90": 21.33023848872222,
+     "max": 147.46677406194445
+    },
+    "settlementReported": {
+     "n": 205,
+     "share": 1.0,
+     "count": 205
+    },
+    "panelObservations": 1153,
+    "horizons": [
+     {
+      "days": 1,
+      "n": 167,
+      "tradedAfterScheduledExpiration": 1,
+      "share": 0.005988023952095809,
+      "brierFlagged": 0.0004000000000000007,
+      "brierOther": 0.12369518072289157
+     },
+     {
+      "days": 2,
+      "n": 69,
+      "tradedAfterScheduledExpiration": 1,
+      "share": 0.014492753623188406,
+      "brierFlagged": 0.0001,
+      "brierOther": 0.08702941176470588
+     },
+     {
+      "days": 7,
+      "n": 12,
+      "tradedAfterScheduledExpiration": 1,
+      "share": 0.08333333333333333,
+      "brierFlagged": 0.0016,
+      "brierOther": 0.1283
+     },
+     {
+      "days": 30,
+      "n": 6,
+      "tradedAfterScheduledExpiration": 1,
+      "share": 0.16666666666666666,
+      "brierFlagged": 0.010000000000000002,
+      "brierOther": 0.01336
+     }
+    ]
+   },
+   {
+    "year": 2024,
+    "contracts": 309,
+    "closeMinusExpectedHours": {
+     "n": 309,
+     "min": -8430.25205040389,
+     "p10": -34.016666666666666,
+     "median": -9.016666666666667,
+     "p90": 0.0,
+     "max": 72.0
+    },
+    "closeAfterExpectedPlus1h": {
+     "n": 309,
+     "share": 0.032362459546925564,
+     "count": 10
+    },
+    "closeBeforeExpectedMinus1h": {
+     "n": 309,
+     "share": 0.7961165048543689,
+     "count": 246
+    },
+    "settledMinusCloseHours": {
+     "n": 309,
+     "min": 0.029848423055555556,
+     "p10": 1.2672235910555556,
+     "median": 8.050096524444445,
+     "p90": 17.55688680677777,
+     "max": 588.3667690477778
+    },
+    "settlementReported": {
+     "n": 309,
+     "share": 1.0,
+     "count": 309
+    },
+    "panelObservations": 1472,
+    "horizons": [
+     {
+      "days": 1,
+      "n": 237,
+      "tradedAfterScheduledExpiration": 0,
+      "share": 0.0,
+      "brierFlagged": null,
+      "brierOther": 0.11583459915611814
+     },
+     {
+      "days": 2,
+      "n": 71,
+      "tradedAfterScheduledExpiration": 1,
+      "share": 0.014084507042253521,
+      "brierFlagged": 0.0009,
+      "brierOther": 0.08862428571428572
+     },
+     {
+      "days": 7,
+      "n": 26,
+      "tradedAfterScheduledExpiration": 0,
+      "share": 0.0,
+      "brierFlagged": null,
+      "brierOther": 0.08511538461538462
+     },
+     {
+      "days": 30,
+      "n": 13,
+      "tradedAfterScheduledExpiration": 0,
+      "share": 0.0,
+      "brierFlagged": null,
+      "brierOther": 0.0801153846153846
+     }
+    ]
+   },
+   {
+    "year": 2025,
+    "contracts": 1833,
+    "closeMinusExpectedHours": {
+     "n": 1833,
+     "min": -84597.55573956417,
+     "p10": -36.9949356506666,
+     "median": -0.0688309975,
+     "p90": 4.967596249055555,
+     "max": 3935.0
+    },
+    "closeAfterExpectedPlus1h": {
+     "n": 1833,
+     "share": 0.20076377523186034,
+     "count": 368
+    },
+    "closeBeforeExpectedMinus1h": {
+     "n": 1833,
+     "share": 0.3649754500818331,
+     "count": 669
+    },
+    "settledMinusCloseHours": {
+     "n": 1833,
+     "min": -2444.5702993247223,
+     "p10": 0.08418684655555554,
+     "median": 0.28800439749999995,
+     "p90": 10.29740392611111,
+     "max": 266.0875626613889
+    },
+    "settlementReported": {
+     "n": 1833,
+     "share": 1.0,
+     "count": 1833
+    },
+    "panelObservations": 9172,
+    "horizons": [
+     {
+      "days": 1,
+      "n": 1514,
+      "tradedAfterScheduledExpiration": 32,
+      "share": 0.021136063408190225,
+      "brierFlagged": 0.13086875,
+      "brierOther": 0.14881396761133603
+     },
+     {
+      "days": 2,
+      "n": 771,
+      "tradedAfterScheduledExpiration": 19,
+      "share": 0.02464332036316472,
+      "brierFlagged": 0.0938421052631579,
+      "brierOther": 0.15671635638297873
+     },
+     {
+      "days": 7,
+      "n": 195,
+      "tradedAfterScheduledExpiration": 6,
+      "share": 0.03076923076923077,
+      "brierFlagged": 0.15726666666666667,
+      "brierOther": 0.14406084656084656
+     },
+     {
+      "days": 30,
+      "n": 60,
+      "tradedAfterScheduledExpiration": 4,
+      "share": 0.06666666666666667,
+      "brierFlagged": 0.20785,
+      "brierOther": 0.12501785714285713
+     }
+    ]
+   },
+   {
+    "year": 2026,
+    "contracts": 481,
+    "closeMinusExpectedHours": {
+     "n": 481,
+     "min": -8733.291675414444,
+     "p10": -18.288110384166668,
+     "median": -0.3233385361111111,
+     "p90": 4.5,
+     "max": 8751.128147829999
+    },
+    "closeAfterExpectedPlus1h": {
+     "n": 481,
+     "share": 0.14345114345114346,
+     "count": 69
+    },
+    "closeBeforeExpectedMinus1h": {
+     "n": 481,
+     "share": 0.340956340956341,
+     "count": 164
+    },
+    "settledMinusCloseHours": {
+     "n": 481,
+     "min": 0.018474697777777774,
+     "p10": 0.0336225425,
+     "median": 0.1559964077777778,
+     "p90": 11.122202764722223,
+     "max": 108.10011478416666
+    },
+    "settlementReported": {
+     "n": 481,
+     "share": 1.0,
+     "count": 481
+    },
+    "panelObservations": 1284,
+    "horizons": [
+     {
+      "days": 1,
+      "n": 427,
+      "tradedAfterScheduledExpiration": 9,
+      "share": 0.02107728337236534,
+      "brierFlagged": 0.16024444444444444,
+      "brierOther": 0.1705688995215311
+     },
+     {
+      "days": 2,
+      "n": 221,
+      "tradedAfterScheduledExpiration": 3,
+      "share": 0.013574660633484163,
+      "brierFlagged": 0.0766,
+      "brierOther": 0.15056605504587156
+     },
+     {
+      "days": 7,
+      "n": 28,
+      "tradedAfterScheduledExpiration": 1,
+      "share": 0.03571428571428571,
+      "brierFlagged": 0.016900000000000002,
+      "brierOther": 0.11902222222222222
+     },
+     {
+      "days": 30,
+      "n": 1,
+      "tradedAfterScheduledExpiration": 0,
+      "share": 0.0,
+      "brierFlagged": null,
+      "brierOther": 0.10890000000000001
+     }
+    ]
+   }
+  ]
+ },
+ "tierC": {
+  "contracts": 511,
+  "skipped": {
+   "not a US scheduled-release question": 474
+  },
+  "source": "https://huggingface.co/datasets/vgregoire/polymarket-users/resolve/91ddb961b090de18fd79e79edd8fa15f36ca11b9/markets.parquet",
+  "sourceSha256": "ca0a8438097fa830a2f94025e46196f4ff7a803656419e041f5c86c081c4a723",
+  "all": {
+   "contracts": 511,
+   "events": 100,
+   "releases": 62,
+   "anchorMinusNewsMinutes": {
+    "n": 511,
+    "min": -69930.0,
+    "p10": -16650.0,
+    "median": -810.0,
+    "p90": -30.0,
+    "max": 189.48333333333332
+   },
+   "closeMinusNewsMinutes": {
+    "n": 511,
+    "min": -51169.76666666667,
+    "p10": -13661.45,
+    "median": 195.53333333333333,
+    "p90": 243.13333333333333,
+    "max": 37680.01666666667
+   },
+   "expirationMinusNewsMinutes": {
+    "n": 511,
+    "min": -69930.0,
+    "p10": -15150.0,
+    "median": -810.0,
+    "p90": -30.0,
+    "max": 3570.0
+   },
+   "anchorBeforeNews": {
+    "n": 511,
+    "share": 0.9686888454011742,
+    "count": 495
+   },
+   "anchorMoreThan1DayAfterNews": {
+    "n": 511,
+    "share": 0.0,
+    "count": 0
+   },
+   "closeAfterNews": {
+    "n": 511,
+    "share": 0.8669275929549902,
+    "count": 443
+   },
+   "anchorIsExpiration": {
+    "n": 511,
+    "share": 0.9549902152641878,
+    "count": 488
+   },
+   "panelObservations": 15003,
+   "postNewsObservations": 0,
+   "postNewsByDays": {},
+   "releaseTimeSource": {
+    "FOMC statement page": 114,
+    "standing 8:30 a.m. ET": 33,
+    "FRED calendar time": 364
+   }
+  },
+  "families": {
+   "claims": {
+    "contracts": 27,
+    "events": 4,
+    "releases": 4,
+    "anchorMinusNewsMinutes": {
+     "n": 27,
+     "min": -810.0,
+     "p10": -810.0,
+     "median": -810.0,
+     "p90": -810.0,
+     "max": -810.0
+    },
+    "closeMinusNewsMinutes": {
+     "n": 27,
+     "min": 165.56666666666666,
+     "p10": 166.15333333333334,
+     "median": 198.05,
+     "p90": 341.17,
+     "max": 343.35
+    },
+    "expirationMinusNewsMinutes": {
+     "n": 27,
+     "min": -810.0,
+     "p10": -810.0,
+     "median": -810.0,
+     "p90": -810.0,
+     "max": -810.0
+    },
+    "anchorBeforeNews": {
+     "n": 27,
+     "share": 1.0,
+     "count": 27
+    },
+    "anchorMoreThan1DayAfterNews": {
+     "n": 27,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeAfterNews": {
+     "n": 27,
+     "share": 1.0,
+     "count": 27
+    },
+    "anchorIsExpiration": {
+     "n": 27,
+     "share": 1.0,
+     "count": 27
+    },
+    "panelObservations": 51,
+    "postNewsObservations": 0,
+    "postNewsByDays": {},
+    "releaseTimeSource": {
+     "FRED calendar time": 27
+    }
+   },
+   "cpi": {
+    "contracts": 189,
+    "events": 35,
+    "releases": 13,
+    "anchorMinusNewsMinutes": {
+     "n": 189,
+     "min": -52650.0,
+     "p10": -45450.0,
+     "median": -810.0,
+     "p90": -30.0,
+     "max": 189.48333333333332
+    },
+    "closeMinusNewsMinutes": {
+     "n": 189,
+     "min": -51169.76666666667,
+     "p10": -41556.263333333336,
+     "median": 190.51666666666668,
+     "p90": 288.56666666666666,
+     "max": 37680.01666666667
+    },
+    "expirationMinusNewsMinutes": {
+     "n": 189,
+     "min": -52650.0,
+     "p10": -45450.0,
+     "median": -810.0,
+     "p90": -30.0,
+     "max": 3570.0
+    },
+    "anchorBeforeNews": {
+     "n": 189,
+     "share": 0.9153439153439153,
+     "count": 173
+    },
+    "anchorMoreThan1DayAfterNews": {
+     "n": 189,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeAfterNews": {
+     "n": 189,
+     "share": 0.7037037037037037,
+     "count": 133
+    },
+    "anchorIsExpiration": {
+     "n": 189,
+     "share": 0.8783068783068783,
+     "count": 166
+    },
+    "panelObservations": 4583,
+    "postNewsObservations": 0,
+    "postNewsByDays": {},
+    "releaseTimeSource": {
+     "FRED calendar time": 189
+    }
+   },
+   "employment": {
+    "contracts": 181,
+    "events": 32,
+    "releases": 21,
+    "anchorMinusNewsMinutes": {
+     "n": 181,
+     "min": -69930.0,
+     "p10": -8010.0,
+     "median": -750.0,
+     "p90": -30.0,
+     "max": -30.0
+    },
+    "closeMinusNewsMinutes": {
+     "n": 181,
+     "min": -18451.95,
+     "p10": 187.35,
+     "median": 196.71666666666667,
+     "p90": 226.05,
+     "max": 325.46666666666664
+    },
+    "expirationMinusNewsMinutes": {
+     "n": 181,
+     "min": -69930.0,
+     "p10": -8010.0,
+     "median": -750.0,
+     "p90": -30.0,
+     "max": -30.0
+    },
+    "anchorBeforeNews": {
+     "n": 181,
+     "share": 1.0,
+     "count": 181
+    },
+    "anchorMoreThan1DayAfterNews": {
+     "n": 181,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeAfterNews": {
+     "n": 181,
+     "share": 0.9337016574585635,
+     "count": 169
+    },
+    "anchorIsExpiration": {
+     "n": 181,
+     "share": 1.0,
+     "count": 181
+    },
+    "panelObservations": 3139,
+    "postNewsObservations": 0,
+    "postNewsByDays": {},
+    "releaseTimeSource": {
+     "standing 8:30 a.m. ET": 33,
+     "FRED calendar time": 148
+    }
+   },
+   "fomc": {
+    "contracts": 114,
+    "events": 29,
+    "releases": 24,
+    "anchorMinusNewsMinutes": {
+     "n": 114,
+     "min": -3960.0,
+     "p10": -2520.0,
+     "median": -1080.0,
+     "p90": -360.0,
+     "max": -360.0
+    },
+    "closeMinusNewsMinutes": {
+     "n": 114,
+     "min": 121.4,
+     "p10": 126.405,
+     "median": 198.66666666666666,
+     "p90": 239.71333333333334,
+     "max": 2013.5166666666667
+    },
+    "expirationMinusNewsMinutes": {
+     "n": 114,
+     "min": -3960.0,
+     "p10": -2520.0,
+     "median": -1080.0,
+     "p90": -360.0,
+     "max": -360.0
+    },
+    "anchorBeforeNews": {
+     "n": 114,
+     "share": 1.0,
+     "count": 114
+    },
+    "anchorMoreThan1DayAfterNews": {
+     "n": 114,
+     "share": 0.0,
+     "count": 0
+    },
+    "closeAfterNews": {
+     "n": 114,
+     "share": 1.0,
+     "count": 114
+    },
+    "anchorIsExpiration": {
+     "n": 114,
+     "share": 1.0,
+     "count": 114
+    },
+    "panelObservations": 7230,
+    "postNewsObservations": 0,
+    "postNewsByDays": {},
+    "releaseTimeSource": {
+     "FOMC statement page": 114
+    }
+   }
+  },
+  "latestAnchors": [
+   {
+    "marketId": 563692,
+    "question": "Will monthly inflation increase by 0.2% in July?",
+    "newsUtc": "2025-08-12T12:30:00Z",
+    "anchorUtc": "2025-08-12T15:39:29Z",
+    "closeUtc": "2025-08-12T15:39:29Z",
+    "anchorMinusNewsHours": 3.16
+   },
+   {
+    "marketId": 563691,
+    "question": "Will monthly inflation increase by 0.1% in July?",
+    "newsUtc": "2025-08-12T12:30:00Z",
+    "anchorUtc": "2025-08-12T15:38:33Z",
+    "closeUtc": "2025-08-12T15:38:33Z",
+    "anchorMinusNewsHours": 3.14
+   },
+   {
+    "marketId": 563690,
+    "question": "Will monthly inflation increase by 0.0% or less in July?",
+    "newsUtc": "2025-08-12T12:30:00Z",
+    "anchorUtc": "2025-08-12T15:37:37Z",
+    "closeUtc": "2025-08-12T15:37:37Z",
+    "anchorMinusNewsHours": 3.13
+   },
+   {
+    "marketId": 563695,
+    "question": "Will monthly inflation increase by 0.5% or more in July?",
+    "newsUtc": "2025-08-12T12:30:00Z",
+    "anchorUtc": "2025-08-12T15:37:37Z",
+    "closeUtc": "2025-08-12T15:37:37Z",
+    "anchorMinusNewsHours": 3.13
+   },
+   {
+    "marketId": 563693,
+    "question": "Will monthly inflation increase by 0.3% in July?",
+    "newsUtc": "2025-08-12T12:30:00Z",
+    "anchorUtc": "2025-08-12T15:36:35Z",
+    "closeUtc": "2025-08-12T15:36:35Z",
+    "anchorMinusNewsHours": 3.11
+   },
+   {
+    "marketId": 563694,
+    "question": "Will monthly inflation increase by 0.4% in July?",
+    "newsUtc": "2025-08-12T12:30:00Z",
+    "anchorUtc": "2025-08-12T15:36:33Z",
+    "closeUtc": "2025-08-12T15:36:33Z",
+    "anchorMinusNewsHours": 3.11
+   },
+   {
+    "marketId": 551579,
+    "question": "Will monthly inflation increase by 0.0% or less in June?",
+    "newsUtc": "2025-07-15T12:30:00Z",
+    "anchorUtc": "2025-07-15T12:30:00Z",
+    "closeUtc": "2025-07-15T15:36:32Z",
+    "anchorMinusNewsHours": 0.0
+   },
+   {
+    "marketId": 551580,
+    "question": "Will monthly inflation increase by 0.1% in June?",
+    "newsUtc": "2025-07-15T12:30:00Z",
+    "anchorUtc": "2025-07-15T12:30:00Z",
+    "closeUtc": "2025-07-15T15:37:34Z",
+    "anchorMinusNewsHours": 0.0
+   },
+   {
+    "marketId": 551581,
+    "question": "Will monthly inflation increase by 0.2% in June?",
+    "newsUtc": "2025-07-15T12:30:00Z",
+    "anchorUtc": "2025-07-15T12:30:00Z",
+    "closeUtc": "2025-07-15T15:38:30Z",
+    "anchorMinusNewsHours": 0.0
+   },
+   {
+    "marketId": 551582,
+    "question": "Will monthly inflation increase by 0.3% in June?",
+    "newsUtc": "2025-07-15T12:30:00Z",
+    "anchorUtc": "2025-07-15T12:30:00Z",
+    "closeUtc": "2025-07-15T15:40:30Z",
+    "anchorMinusNewsHours": 0.0
+   },
+   {
+    "marketId": 551583,
+    "question": "Will monthly inflation increase by 0.4% or more in June?",
+    "newsUtc": "2025-07-15T12:30:00Z",
+    "anchorUtc": "2025-07-15T12:30:00Z",
+    "closeUtc": "2025-07-15T15:39:30Z",
+    "anchorMinusNewsHours": 0.0
+   },
+   {
+    "marketId": 551584,
+    "question": "Will annual inflation increase by 2.2% or less in June?",
+    "newsUtc": "2025-07-15T12:30:00Z",
+    "anchorUtc": "2025-07-15T12:30:00Z",
+    "closeUtc": "2025-07-15T15:38:30Z",
+    "anchorMinusNewsHours": 0.0
+   },
+   {
+    "marketId": 551585,
+    "question": "Will annual inflation increase by 2.3% in June?",
+    "newsUtc": "2025-07-15T12:30:00Z",
+    "anchorUtc": "2025-07-15T12:30:00Z",
+    "closeUtc": "2025-07-15T15:40:30Z",
+    "anchorMinusNewsHours": 0.0
+   },
+   {
+    "marketId": 551586,
+    "question": "Will annual inflation increase by 2.4% in June?",
+    "newsUtc": "2025-07-15T12:30:00Z",
+    "anchorUtc": "2025-07-15T12:30:00Z",
+    "closeUtc": "2025-07-15T15:39:32Z",
+    "anchorMinusNewsHours": 0.0
+   },
+   {
+    "marketId": 551587,
+    "question": "Will annual inflation increase by 2.5% in June?",
+    "newsUtc": "2025-07-15T12:30:00Z",
+    "anchorUtc": "2025-07-15T12:30:00Z",
+    "closeUtc": "2025-07-15T15:39:34Z",
+    "anchorMinusNewsHours": 0.0
+   }
+  ]
+ }
+}

@@ -1,0 +1,29 @@
+.study-nav.three{grid-template-columns:repeat(3,1fr)}.study-nav.four{grid-template-columns:repeat(4,1fr)}.study-nav.five{grid-template-columns:repeat(5,1fr)}
+.metric-text{font-size:17px;letter-spacing:-.2px}
+.two-up{display:grid;grid-template-columns:1fr;gap:16px;margin:16px 0;max-width:760px}
+.interval-chart{width:100%;height:auto;display:block}
+.interval-chart text{font-size:11px;fill:#53667b;font-family:inherit}
+.interval-chart .label{fill:#35475f;font-weight:650}
+.interval-chart .axis{stroke:#dce3eb}
+.interval-chart .zero{stroke:#9aa8b8;stroke-dasharray:3 3}
+.interval-chart .ci{stroke-width:3;stroke-linecap:round}
+.interval-chart .test .ci,.interval-chart .test circle{stroke:#203d70;fill:#203d70}
+.interval-chart .seen .ci,.interval-chart .seen circle{stroke:#8ea2bb;fill:#8ea2bb}
+.key{display:flex;gap:16px;flex-wrap:wrap;font-size:11px;color:var(--muted);margin:6px 0 0}
+.key i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+td.good{color:#1f6a4b;font-weight:650}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.92em}
+@media(max-width:800px){.two-up{grid-template-columns:1fr}.study-nav.three,.study-nav.four,.study-nav.five{grid-template-columns:1fr}}
+.line-chart{width:100%;height:auto;display:block}
+.line-chart text{font-size:11px;fill:#53667b;font-family:inherit}
+.line-chart .direct{fill:#25364d;font-weight:650}
+.line-chart .grid{stroke:#e8edf2;stroke-width:1}
+.line-chart .axis{stroke:#b8c4d2;stroke-width:1}
+.line-chart .band{fill:#f2f5f9}
+.line-chart .band-label{fill:#6b7c90;font-size:10px}
+.line-chart .series{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.line-chart .hover-col rect{fill:transparent}
+.line-chart .hover-col .cross{stroke:#7d8da1;stroke-width:1;opacity:0}
+.line-chart .hover-col:hover .cross{opacity:1}
+.key .line-key{display:inline-block;width:16px;height:0;border-radius:0;margin-right:5px;vertical-align:3px}
+.subhead{font-size:17px;margin:26px 0 6px;color:#203d70}

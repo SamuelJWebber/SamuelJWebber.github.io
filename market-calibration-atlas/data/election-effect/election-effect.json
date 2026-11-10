@@ -1,0 +1,2090 @@
+{
+ "meta": {
+  "study": "Election clock and the dashboard's Kalshi Politics calibration (descriptive add-on)",
+  "generatedAt": "2026-11-10T00:59:07+00:00",
+  "spec": "studies/election-effect/SPEC.md",
+  "specSha256": "7869c1156e15be8e0d0a29256775e3407a851d88f070410a0a9a309bb8351942",
+  "panel": "dist/downloads/kalshi.parquet",
+  "panelSha256": "4a6a355263f8ec853a590d66aaf18ac45b12ccbe180a390a1a54314a2612238a",
+  "firstPollsClose": "2024-11-05T23:00:00Z",
+  "horizons": [1, 7, 30, 90],
+  "scoring": "scripts/aggregate.py favorite fold, favorites priced at least 51%",
+  "claims": "Descriptive. Re-anchored prices are earlier forecasts of the same events; this is not a corrected dashboard."
+ },
+ "headline": {
+  "scope": "All Politics",
+  "horizon": 1,
+  "electionSet": "S",
+  "published": 0.133433,
+  "reanchored": 0.133618,
+  "excluded": 0.133603,
+  "publishedMinusReanchored": -0.000185,
+  "interval95": [-0.000323, -8.1e-05]
+ },
+ "sets": {
+  "S": {
+   "contracts": 217,
+   "events": 109,
+   "scopes": {
+    "All Politics": {
+     "1": {
+      "dashboardAsPublished": {
+       "contracts": 14112,
+       "events": 1906,
+       "brier": 0.133433,
+       "winRate": 0.802792,
+       "meanPrice": 0.799087,
+       "bias": 0.003705
+      },
+      "electionContractsInDashboardRow": 18,
+      "electionPricesInDashboardRowTradedAfterFirstPollsClose": 18,
+      "published": {
+       "contracts": 14112,
+       "events": 1906,
+       "brier": 0.133433,
+       "winRate": 0.802792,
+       "meanPrice": 0.799087,
+       "bias": 0.003705
+      },
+      "reanchored": {
+       "contracts": 14112,
+       "events": 1906,
+       "brier": 0.133618,
+       "winRate": 0.802509,
+       "meanPrice": 0.798776,
+       "bias": 0.003733
+      },
+      "excluded": {
+       "contracts": 14094,
+       "events": 1888,
+       "brier": 0.133603,
+       "winRate": 0.80254,
+       "meanPrice": 0.798843,
+       "bias": 0.003697
+      },
+      "electionOnly": {
+       "closeAnchored": {
+        "contracts": 18,
+        "events": 18,
+        "brier": 0.000117,
+        "winRate": 1.0,
+        "meanPrice": 0.989444,
+        "bias": 0.010556
+       },
+       "electionAnchored": {
+        "contracts": 18,
+        "events": 18,
+        "brier": 0.145156,
+        "winRate": 0.777778,
+        "meanPrice": 0.745556,
+        "bias": 0.032222
+       }
+      },
+      "electionContractsLeftOut": {
+       "election-anchored price only": 188
+      },
+      "leftOutWithLaterStoredTradeOnStraddlingDay": 0,
+      "postHoc": {
+       "note": "Not in SPEC; added after the SPEC tables were seen. Non-election contracts close-anchored plus every election contract with a qualifying election-anchored price at this horizon (contract sets differ from the dashboard row).",
+       "electionAnchoredAll": {
+        "contracts": 205,
+        "events": 106,
+        "brier": 0.082875,
+        "winRate": 0.873171,
+        "meanPrice": 0.832634,
+        "bias": 0.040537
+       },
+       "combined": {
+        "contracts": 14299,
+        "events": 1994,
+        "brier": 0.132876,
+        "winRate": 0.803553,
+        "meanPrice": 0.799328,
+        "bias": 0.004225
+       }
+      },
+      "electionInDashboardRow": {
+       "contracts": 18,
+       "events": 18,
+       "brier": 0.000117,
+       "winRate": 1.0,
+       "meanPrice": 0.989444,
+       "bias": 0.010556
+      },
+      "brierDashboardMinusExcluded": -0.00017,
+      "brierPublishedMinusReanchored": -0.000185,
+      "brierPublishedMinusExcluded": -0.00017,
+      "bootstrap": {
+       "publishedMinusReanchored95": [-0.000323, -8.1e-05],
+       "publishedMinusExcluded95": [-0.000254, -9.9e-05],
+       "resamples": 2000,
+       "resamplesWithExcludedSet": 2000
+      }
+     },
+     "7": {
+      "dashboardAsPublished": {
+       "contracts": 3507,
+       "events": 942,
+       "brier": 0.14434,
+       "winRate": 0.788138,
+       "meanPrice": 0.796536,
+       "bias": -0.008397
+      },
+      "electionContractsInDashboardRow": 26,
+      "electionPricesInDashboardRowTradedAfterFirstPollsClose": 26,
+      "published": {
+       "contracts": 3503,
+       "events": 939,
+       "brier": 0.144505,
+       "winRate": 0.787896,
+       "meanPrice": 0.796317,
+       "bias": -0.008421
+      },
+      "reanchored": {
+       "contracts": 3503,
+       "events": 939,
+       "brier": 0.145144,
+       "winRate": 0.787611,
+       "meanPrice": 0.794762,
+       "bias": -0.007151
+      },
+      "excluded": {
+       "contracts": 3481,
+       "events": 920,
+       "brier": 0.145417,
+       "winRate": 0.786556,
+       "meanPrice": 0.795108,
+       "bias": -0.008552
+      },
+      "electionOnly": {
+       "closeAnchored": {
+        "contracts": 22,
+        "events": 19,
+        "brier": 0.000168,
+        "winRate": 1.0,
+        "meanPrice": 0.987727,
+        "bias": 0.012273
+       },
+       "electionAnchored": {
+        "contracts": 22,
+        "events": 19,
+        "brier": 0.101845,
+        "winRate": 0.954545,
+        "meanPrice": 0.74,
+        "bias": 0.214545
+       }
+      },
+      "electionContractsLeftOut": {
+       "election-anchored price only": 102,
+       "no election-anchored price (no stored trade in the window)": 4
+      },
+      "leftOutWithLaterStoredTradeOnStraddlingDay": 0,
+      "postHoc": {
+       "note": "Not in SPEC; added after the SPEC tables were seen. Non-election contracts close-anchored plus every election contract with a qualifying election-anchored price at this horizon (contract sets differ from the dashboard row).",
+       "electionAnchoredAll": {
+        "contracts": 123,
+        "events": 67,
+        "brier": 0.038369,
+        "winRate": 0.98374,
+        "meanPrice": 0.877073,
+        "bias": 0.106667
+       },
+       "combined": {
+        "contracts": 3604,
+        "events": 987,
+        "brier": 0.141764,
+        "winRate": 0.793285,
+        "meanPrice": 0.797905,
+        "bias": -0.00462
+       }
+      },
+      "electionInDashboardRow": {
+       "contracts": 26,
+       "events": 22,
+       "brier": 0.000169,
+       "winRate": 1.0,
+       "meanPrice": 0.987692,
+       "bias": 0.012308
+      },
+      "brierDashboardMinusExcluded": -0.001077,
+      "brierPublishedMinusReanchored": -0.000639,
+      "brierPublishedMinusExcluded": -0.000912,
+      "bootstrap": {
+       "publishedMinusReanchored95": [-0.001102, -0.000275],
+       "publishedMinusExcluded95": [-0.001393, -0.000516],
+       "resamples": 2000,
+       "resamplesWithExcludedSet": 2000
+      }
+     },
+     "30": {
+      "dashboardAsPublished": {
+       "contracts": 1243,
+       "events": 542,
+       "brier": 0.124675,
+       "winRate": 0.822204,
+       "meanPrice": 0.8221,
+       "bias": 0.000105
+      },
+      "electionContractsInDashboardRow": 51,
+      "electionPricesInDashboardRowTradedAfterFirstPollsClose": 51,
+      "published": {
+       "contracts": 1192,
+       "events": 506,
+       "brier": 0.129997,
+       "winRate": 0.814597,
+       "meanPrice": 0.815159,
+       "bias": -0.000562
+      },
+      "reanchored": {
+       "contracts": 1192,
+       "events": 506,
+       "brier": 0.129997,
+       "winRate": 0.814597,
+       "meanPrice": 0.815159,
+       "bias": -0.000562
+      },
+      "excluded": {
+       "contracts": 1192,
+       "events": 506,
+       "brier": 0.129997,
+       "winRate": 0.814597,
+       "meanPrice": 0.815159,
+       "bias": -0.000562
+      },
+      "electionOnly": {
+       "closeAnchored": null,
+       "electionAnchored": null
+      },
+      "electionContractsLeftOut": {
+       "no election-anchored price (no stored trade in the window)": 51
+      },
+      "leftOutWithLaterStoredTradeOnStraddlingDay": 25,
+      "postHoc": {
+       "note": "Not in SPEC; added after the SPEC tables were seen. Non-election contracts close-anchored plus every election contract with a qualifying election-anchored price at this horizon (contract sets differ from the dashboard row).",
+       "electionAnchoredAll": null,
+       "combined": {
+        "contracts": 1192,
+        "events": 506,
+        "brier": 0.129997,
+        "winRate": 0.814597,
+        "meanPrice": 0.815159,
+        "bias": -0.000562
+       }
+      },
+      "electionInDashboardRow": {
+       "contracts": 51,
+       "events": 36,
+       "brier": 0.000278,
+       "winRate": 1.0,
+       "meanPrice": 0.984314,
+       "bias": 0.015686
+      },
+      "brierDashboardMinusExcluded": -0.005322,
+      "identicalSetComparison": "none: no election contract has a qualifying price under both anchors, so Published, Re-anchored and Excluded coincide"
+     },
+     "90": {
+      "dashboardAsPublished": {
+       "contracts": 469,
+       "events": 202,
+       "brier": 0.126339,
+       "winRate": 0.808102,
+       "meanPrice": 0.822942,
+       "bias": -0.01484
+      },
+      "electionContractsInDashboardRow": 16,
+      "electionPricesInDashboardRowTradedAfterFirstPollsClose": 0,
+      "published": {
+       "contracts": 453,
+       "events": 194,
+       "brier": 0.122684,
+       "winRate": 0.821192,
+       "meanPrice": 0.831766,
+       "bias": -0.010574
+      },
+      "reanchored": {
+       "contracts": 453,
+       "events": 194,
+       "brier": 0.122684,
+       "winRate": 0.821192,
+       "meanPrice": 0.831766,
+       "bias": -0.010574
+      },
+      "excluded": {
+       "contracts": 453,
+       "events": 194,
+       "brier": 0.122684,
+       "winRate": 0.821192,
+       "meanPrice": 0.831766,
+       "bias": -0.010574
+      },
+      "electionOnly": {
+       "closeAnchored": null,
+       "electionAnchored": null
+      },
+      "electionContractsLeftOut": {
+       "no election-anchored price (no stored trade in the window)": 16
+      },
+      "leftOutWithLaterStoredTradeOnStraddlingDay": 0,
+      "postHoc": {
+       "note": "Not in SPEC; added after the SPEC tables were seen. Non-election contracts close-anchored plus every election contract with a qualifying election-anchored price at this horizon (contract sets differ from the dashboard row).",
+       "electionAnchoredAll": null,
+       "combined": {
+        "contracts": 453,
+        "events": 194,
+        "brier": 0.122684,
+        "winRate": 0.821192,
+        "meanPrice": 0.831766,
+        "bias": -0.010574
+       }
+      },
+      "electionInDashboardRow": {
+       "contracts": 16,
+       "events": 8,
+       "brier": 0.229831,
+       "winRate": 0.4375,
+       "meanPrice": 0.573125,
+       "bias": -0.135625
+      },
+      "brierDashboardMinusExcluded": 0.003655,
+      "identicalSetComparison": "none: no election contract has a qualifying price under both anchors, so Published, Re-anchored and Excluded coincide"
+     }
+    },
+    "Elections and primaries": {
+     "1": {
+      "dashboardAsPublished": {
+       "contracts": 465,
+       "events": 210,
+       "brier": 0.04784,
+       "winRate": 0.931183,
+       "meanPrice": 0.939742,
+       "bias": -0.008559
+      },
+      "electionContractsInDashboardRow": 18,
+      "electionPricesInDashboardRowTradedAfterFirstPollsClose": 18,
+      "published": {
+       "contracts": 465,
+       "events": 210,
+       "brier": 0.04784,
+       "winRate": 0.931183,
+       "meanPrice": 0.939742,
+       "bias": -0.008559
+      },
+      "reanchored": {
+       "contracts": 465,
+       "events": 210,
+       "brier": 0.053455,
+       "winRate": 0.922581,
+       "meanPrice": 0.930301,
+       "bias": -0.00772
+      },
+      "excluded": {
+       "contracts": 447,
+       "events": 192,
+       "brier": 0.049762,
+       "winRate": 0.928412,
+       "meanPrice": 0.93774,
+       "bias": -0.009329
+      },
+      "electionOnly": {
+       "closeAnchored": {
+        "contracts": 18,
+        "events": 18,
+        "brier": 0.000117,
+        "winRate": 1.0,
+        "meanPrice": 0.989444,
+        "bias": 0.010556
+       },
+       "electionAnchored": {
+        "contracts": 18,
+        "events": 18,
+        "brier": 0.145156,
+        "winRate": 0.777778,
+        "meanPrice": 0.745556,
+        "bias": 0.032222
+       }
+      },
+      "electionContractsLeftOut": {
+       "election-anchored price only": 188
+      },
+      "leftOutWithLaterStoredTradeOnStraddlingDay": 0,
+      "postHoc": {
+       "note": "Not in SPEC; added after the SPEC tables were seen. Non-election contracts close-anchored plus every election contract with a qualifying election-anchored price at this horizon (contract sets differ from the dashboard row).",
+       "electionAnchoredAll": {
+        "contracts": 205,
+        "events": 106,
+        "brier": 0.082875,
+        "winRate": 0.873171,
+        "meanPrice": 0.832634,
+        "bias": 0.040537
+       },
+       "combined": {
+        "contracts": 652,
+        "events": 298,
+        "brier": 0.060173,
+        "winRate": 0.911043,
+        "meanPrice": 0.904693,
+        "bias": 0.00635
+       }
+      },
+      "electionInDashboardRow": {
+       "contracts": 18,
+       "events": 18,
+       "brier": 0.000117,
+       "winRate": 1.0,
+       "meanPrice": 0.989444,
+       "bias": 0.010556
+      },
+      "brierDashboardMinusExcluded": -0.001922,
+      "brierPublishedMinusReanchored": -0.005615,
+      "brierPublishedMinusExcluded": -0.001922,
+      "bootstrap": {
+       "publishedMinusReanchored95": [-0.010084, -0.002144],
+       "publishedMinusExcluded95": [-0.003515, -0.000876],
+       "resamples": 2000,
+       "resamplesWithExcludedSet": 2000
+      }
+     },
+     "7": {
+      "dashboardAsPublished": {
+       "contracts": 439,
+       "events": 209,
+       "brier": 0.082117,
+       "winRate": 0.888383,
+       "meanPrice": 0.879522,
+       "bias": 0.008861
+      },
+      "electionContractsInDashboardRow": 26,
+      "electionPricesInDashboardRowTradedAfterFirstPollsClose": 26,
+      "published": {
+       "contracts": 435,
+       "events": 206,
+       "brier": 0.082871,
+       "winRate": 0.887356,
+       "meanPrice": 0.878529,
+       "bias": 0.008828
+      },
+      "reanchored": {
+       "contracts": 435,
+       "events": 206,
+       "brier": 0.088013,
+       "winRate": 0.885057,
+       "meanPrice": 0.866,
+       "bias": 0.019057
+      },
+      "excluded": {
+       "contracts": 413,
+       "events": 187,
+       "brier": 0.087276,
+       "winRate": 0.881356,
+       "meanPrice": 0.872712,
+       "bias": 0.008644
+      },
+      "electionOnly": {
+       "closeAnchored": {
+        "contracts": 22,
+        "events": 19,
+        "brier": 0.000168,
+        "winRate": 1.0,
+        "meanPrice": 0.987727,
+        "bias": 0.012273
+       },
+       "electionAnchored": {
+        "contracts": 22,
+        "events": 19,
+        "brier": 0.101845,
+        "winRate": 0.954545,
+        "meanPrice": 0.74,
+        "bias": 0.214545
+       }
+      },
+      "electionContractsLeftOut": {
+       "election-anchored price only": 102,
+       "no election-anchored price (no stored trade in the window)": 4
+      },
+      "leftOutWithLaterStoredTradeOnStraddlingDay": 0,
+      "postHoc": {
+       "note": "Not in SPEC; added after the SPEC tables were seen. Non-election contracts close-anchored plus every election contract with a qualifying election-anchored price at this horizon (contract sets differ from the dashboard row).",
+       "electionAnchoredAll": {
+        "contracts": 123,
+        "events": 67,
+        "brier": 0.038369,
+        "winRate": 0.98374,
+        "meanPrice": 0.877073,
+        "bias": 0.106667
+       },
+       "combined": {
+        "contracts": 536,
+        "events": 254,
+        "brier": 0.076053,
+        "winRate": 0.904851,
+        "meanPrice": 0.873713,
+        "bias": 0.031138
+       }
+      },
+      "electionInDashboardRow": {
+       "contracts": 26,
+       "events": 22,
+       "brier": 0.000169,
+       "winRate": 1.0,
+       "meanPrice": 0.987692,
+       "bias": 0.012308
+      },
+      "brierDashboardMinusExcluded": -0.005159,
+      "brierPublishedMinusReanchored": -0.005142,
+      "brierPublishedMinusExcluded": -0.004405,
+      "bootstrap": {
+       "publishedMinusReanchored95": [-0.009061, -0.002225],
+       "publishedMinusExcluded95": [-0.00724, -0.002424],
+       "resamples": 2000,
+       "resamplesWithExcludedSet": 2000
+      }
+     },
+     "30": {
+      "dashboardAsPublished": {
+       "contracts": 350,
+       "events": 192,
+       "brier": 0.080188,
+       "winRate": 0.885714,
+       "meanPrice": 0.877,
+       "bias": 0.008714
+      },
+      "electionContractsInDashboardRow": 51,
+      "electionPricesInDashboardRowTradedAfterFirstPollsClose": 51,
+      "published": {
+       "contracts": 299,
+       "events": 156,
+       "brier": 0.093818,
+       "winRate": 0.866221,
+       "meanPrice": 0.858696,
+       "bias": 0.007525
+      },
+      "reanchored": {
+       "contracts": 299,
+       "events": 156,
+       "brier": 0.093818,
+       "winRate": 0.866221,
+       "meanPrice": 0.858696,
+       "bias": 0.007525
+      },
+      "excluded": {
+       "contracts": 299,
+       "events": 156,
+       "brier": 0.093818,
+       "winRate": 0.866221,
+       "meanPrice": 0.858696,
+       "bias": 0.007525
+      },
+      "electionOnly": {
+       "closeAnchored": null,
+       "electionAnchored": null
+      },
+      "electionContractsLeftOut": {
+       "no election-anchored price (no stored trade in the window)": 51
+      },
+      "leftOutWithLaterStoredTradeOnStraddlingDay": 25,
+      "postHoc": {
+       "note": "Not in SPEC; added after the SPEC tables were seen. Non-election contracts close-anchored plus every election contract with a qualifying election-anchored price at this horizon (contract sets differ from the dashboard row).",
+       "electionAnchoredAll": null,
+       "combined": {
+        "contracts": 299,
+        "events": 156,
+        "brier": 0.093818,
+        "winRate": 0.866221,
+        "meanPrice": 0.858696,
+        "bias": 0.007525
+       }
+      },
+      "electionInDashboardRow": {
+       "contracts": 51,
+       "events": 36,
+       "brier": 0.000278,
+       "winRate": 1.0,
+       "meanPrice": 0.984314,
+       "bias": 0.015686
+      },
+      "brierDashboardMinusExcluded": -0.01363,
+      "identicalSetComparison": "none: no election contract has a qualifying price under both anchors, so Published, Re-anchored and Excluded coincide"
+     },
+     "90": {
+      "dashboardAsPublished": {
+       "contracts": 218,
+       "events": 67,
+       "brier": 0.127029,
+       "winRate": 0.798165,
+       "meanPrice": 0.833257,
+       "bias": -0.035092
+      },
+      "electionContractsInDashboardRow": 16,
+      "electionPricesInDashboardRowTradedAfterFirstPollsClose": 0,
+      "published": {
+       "contracts": 202,
+       "events": 59,
+       "brier": 0.118886,
+       "winRate": 0.826733,
+       "meanPrice": 0.853861,
+       "bias": -0.027129
+      },
+      "reanchored": {
+       "contracts": 202,
+       "events": 59,
+       "brier": 0.118886,
+       "winRate": 0.826733,
+       "meanPrice": 0.853861,
+       "bias": -0.027129
+      },
+      "excluded": {
+       "contracts": 202,
+       "events": 59,
+       "brier": 0.118886,
+       "winRate": 0.826733,
+       "meanPrice": 0.853861,
+       "bias": -0.027129
+      },
+      "electionOnly": {
+       "closeAnchored": null,
+       "electionAnchored": null
+      },
+      "electionContractsLeftOut": {
+       "no election-anchored price (no stored trade in the window)": 16
+      },
+      "leftOutWithLaterStoredTradeOnStraddlingDay": 0,
+      "postHoc": {
+       "note": "Not in SPEC; added after the SPEC tables were seen. Non-election contracts close-anchored plus every election contract with a qualifying election-anchored price at this horizon (contract sets differ from the dashboard row).",
+       "electionAnchoredAll": null,
+       "combined": {
+        "contracts": 202,
+        "events": 59,
+        "brier": 0.118886,
+        "winRate": 0.826733,
+        "meanPrice": 0.853861,
+        "bias": -0.027129
+       }
+      },
+      "electionInDashboardRow": {
+       "contracts": 16,
+       "events": 8,
+       "brier": 0.229831,
+       "winRate": 0.4375,
+       "meanPrice": 0.573125,
+       "bias": -0.135625
+      },
+      "brierDashboardMinusExcluded": 0.008143,
+      "identicalSetComparison": "none: no election contract has a qualifying price under both anchors, so Published, Re-anchored and Excluded coincide"
+     }
+    }
+   }
+  },
+  "W": {
+   "contracts": 599,
+   "events": 201,
+   "scopes": {
+    "All Politics": {
+     "1": {
+      "dashboardAsPublished": {
+       "contracts": 14112,
+       "events": 1906,
+       "brier": 0.133433,
+       "winRate": 0.802792,
+       "meanPrice": 0.799087,
+       "bias": 0.003705
+      },
+      "electionContractsInDashboardRow": 82,
+      "electionPricesInDashboardRowTradedAfterFirstPollsClose": 81,
+      "published": {
+       "contracts": 14108,
+       "events": 1903,
+       "brier": 0.133408,
+       "winRate": 0.802807,
+       "meanPrice": 0.799038,
+       "bias": 0.003769
+      },
+      "reanchored": {
+       "contracts": 14108,
+       "events": 1903,
+       "brier": 0.134522,
+       "winRate": 0.801177,
+       "meanPrice": 0.798021,
+       "bias": 0.003156
+      },
+      "excluded": {
+       "contracts": 14030,
+       "events": 1849,
+       "brier": 0.134136,
+       "winRate": 0.801711,
+       "meanPrice": 0.798052,
+       "bias": 0.003659
+      },
+      "electionOnly": {
+       "closeAnchored": {
+        "contracts": 78,
+        "events": 54,
+        "brier": 0.002449,
+        "winRate": 1.0,
+        "meanPrice": 0.97641,
+        "bias": 0.02359
+       },
+       "electionAnchored": {
+        "contracts": 78,
+        "events": 54,
+        "brier": 0.204058,
+        "winRate": 0.705128,
+        "meanPrice": 0.792436,
+        "bias": -0.087308
+       }
+      },
+      "electionContractsLeftOut": {
+       "election-anchored price only": 463,
+       "no election-anchored price (no stored trade in the window)": 6
+      },
+      "leftOutWithLaterStoredTradeOnStraddlingDay": 0,
+      "postHoc": {
+       "note": "Not in SPEC; added after the SPEC tables were seen. Non-election contracts close-anchored plus every election contract with a qualifying election-anchored price at this horizon (contract sets differ from the dashboard row).",
+       "electionAnchoredAll": {
+        "contracts": 540,
+        "events": 195,
+        "brier": 0.082461,
+        "winRate": 0.887037,
+        "meanPrice": 0.857,
+        "bias": 0.030037
+       },
+       "combined": {
+        "contracts": 14570,
+        "events": 2044,
+        "brier": 0.132221,
+        "winRate": 0.804873,
+        "meanPrice": 0.800237,
+        "bias": 0.004636
+       }
+      },
+      "electionInDashboardRow": {
+       "contracts": 82,
+       "events": 57,
+       "brier": 0.013127,
+       "winRate": 0.987805,
+       "meanPrice": 0.976098,
+       "bias": 0.011707
+      },
+      "brierDashboardMinusExcluded": -0.000703,
+      "brierPublishedMinusReanchored": -0.001114,
+      "brierPublishedMinusExcluded": -0.000728,
+      "bootstrap": {
+       "publishedMinusReanchored95": [-0.001567, -0.000728],
+       "publishedMinusExcluded95": [-0.001115, -0.000462],
+       "resamples": 2000,
+       "resamplesWithExcludedSet": 2000
+      }
+     },
+     "7": {
+      "dashboardAsPublished": {
+       "contracts": 3507,
+       "events": 942,
+       "brier": 0.14434,
+       "winRate": 0.788138,
+       "meanPrice": 0.796536,
+       "bias": -0.008397
+      },
+      "electionContractsInDashboardRow": 94,
+      "electionPricesInDashboardRowTradedAfterFirstPollsClose": 61,
+      "published": {
+       "contracts": 3471,
+       "events": 923,
+       "brier": 0.145621,
+       "winRate": 0.786229,
+       "meanPrice": 0.794875,
+       "bias": -0.008646
+      },
+      "reanchored": {
+       "contracts": 3471,
+       "events": 923,
+       "brier": 0.148304,
+       "winRate": 0.783348,
+       "meanPrice": 0.792313,
+       "bias": -0.008966
+      },
+      "excluded": {
+       "contracts": 3413,
+       "events": 884,
+       "brier": 0.147948,
+       "winRate": 0.782889,
+       "meanPrice": 0.791989,
+       "bias": -0.0091
+      },
+      "electionOnly": {
+       "closeAnchored": {
+        "contracts": 58,
+        "events": 39,
+        "brier": 0.008691,
+        "winRate": 0.982759,
+        "meanPrice": 0.964655,
+        "bias": 0.018103
+       },
+       "electionAnchored": {
+        "contracts": 58,
+        "events": 39,
+        "brier": 0.169255,
+        "winRate": 0.810345,
+        "meanPrice": 0.811379,
+        "bias": -0.001034
+       }
+      },
+      "electionContractsLeftOut": {
+       "election-anchored price only": 287,
+       "no election-anchored price (no stored trade in the window)": 36
+      },
+      "leftOutWithLaterStoredTradeOnStraddlingDay": 1,
+      "postHoc": {
+       "note": "Not in SPEC; added after the SPEC tables were seen. Non-election contracts close-anchored plus every election contract with a qualifying election-anchored price at this horizon (contract sets differ from the dashboard row).",
+       "electionAnchoredAll": {
+        "contracts": 344,
+        "events": 96,
+        "brier": 0.053981,
+        "winRate": 0.944767,
+        "meanPrice": 0.894012,
+        "bias": 0.050756
+       },
+       "combined": {
+        "contracts": 3757,
+        "events": 980,
+        "brier": 0.139344,
+        "winRate": 0.797711,
+        "meanPrice": 0.801331,
+        "bias": -0.00362
+       }
+      },
+      "electionInDashboardRow": {
+       "contracts": 94,
+       "events": 58,
+       "brier": 0.013352,
+       "winRate": 0.978723,
+       "meanPrice": 0.961596,
+       "bias": 0.017128
+      },
+      "brierDashboardMinusExcluded": -0.003608,
+      "brierPublishedMinusReanchored": -0.002683,
+      "brierPublishedMinusExcluded": -0.002327,
+      "bootstrap": {
+       "publishedMinusReanchored95": [-0.004158, -0.001427],
+       "publishedMinusExcluded95": [-0.003692, -0.001316],
+       "resamples": 2000,
+       "resamplesWithExcludedSet": 2000
+      }
+     },
+     "30": {
+      "dashboardAsPublished": {
+       "contracts": 1243,
+       "events": 542,
+       "brier": 0.124675,
+       "winRate": 0.822204,
+       "meanPrice": 0.8221,
+       "bias": 0.000105
+      },
+      "electionContractsInDashboardRow": 113,
+      "electionPricesInDashboardRowTradedAfterFirstPollsClose": 113,
+      "published": {
+       "contracts": 1131,
+       "events": 462,
+       "brier": 0.136977,
+       "winRate": 0.804598,
+       "meanPrice": 0.806295,
+       "bias": -0.001698
+      },
+      "reanchored": {
+       "contracts": 1131,
+       "events": 462,
+       "brier": 0.137207,
+       "winRate": 0.803714,
+       "meanPrice": 0.805871,
+       "bias": -0.002157
+      },
+      "excluded": {
+       "contracts": 1130,
+       "events": 461,
+       "brier": 0.137098,
+       "winRate": 0.804425,
+       "meanPrice": 0.806133,
+       "bias": -0.001708
+      },
+      "electionOnly": {
+       "closeAnchored": {
+        "contracts": 1,
+        "events": 1,
+        "brier": 0.0001,
+        "winRate": 1.0,
+        "meanPrice": 0.99,
+        "bias": 0.01
+       },
+       "electionAnchored": {
+        "contracts": 1,
+        "events": 1,
+        "brier": 0.2601,
+        "winRate": 0.0,
+        "meanPrice": 0.51,
+        "bias": -0.51
+       }
+      },
+      "electionContractsLeftOut": {
+       "below 51% under one anchor": 1,
+       "no election-anchored price (no stored trade in the window)": 111
+      },
+      "leftOutWithLaterStoredTradeOnStraddlingDay": 35,
+      "postHoc": {
+       "note": "Not in SPEC; added after the SPEC tables were seen. Non-election contracts close-anchored plus every election contract with a qualifying election-anchored price at this horizon (contract sets differ from the dashboard row).",
+       "electionAnchoredAll": {
+        "contracts": 1,
+        "events": 1,
+        "brier": 0.2601,
+        "winRate": 0.0,
+        "meanPrice": 0.51,
+        "bias": -0.51
+       },
+       "combined": {
+        "contracts": 1131,
+        "events": 462,
+        "brier": 0.137207,
+        "winRate": 0.803714,
+        "meanPrice": 0.805871,
+        "bias": -0.002157
+       }
+      },
+      "electionInDashboardRow": {
+       "contracts": 113,
+       "events": 81,
+       "brier": 0.000442,
+       "winRate": 1.0,
+       "meanPrice": 0.98177,
+       "bias": 0.01823
+      },
+      "brierDashboardMinusExcluded": -0.012423,
+      "brierPublishedMinusReanchored": -0.00023,
+      "brierPublishedMinusExcluded": -0.000121,
+      "bootstrap": {
+       "publishedMinusReanchored95": [-0.000769, 0.0],
+       "publishedMinusExcluded95": [-0.000404, 0.0],
+       "resamples": 2000,
+       "resamplesWithExcludedSet": 2000
+      }
+     },
+     "90": {
+      "dashboardAsPublished": {
+       "contracts": 469,
+       "events": 202,
+       "brier": 0.126339,
+       "winRate": 0.808102,
+       "meanPrice": 0.822942,
+       "bias": -0.01484
+      },
+      "electionContractsInDashboardRow": 98,
+      "electionPricesInDashboardRowTradedAfterFirstPollsClose": 0,
+      "published": {
+       "contracts": 371,
+       "events": 181,
+       "brier": 0.131776,
+       "winRate": 0.80593,
+       "meanPrice": 0.817547,
+       "bias": -0.011617
+      },
+      "reanchored": {
+       "contracts": 371,
+       "events": 181,
+       "brier": 0.131776,
+       "winRate": 0.80593,
+       "meanPrice": 0.817547,
+       "bias": -0.011617
+      },
+      "excluded": {
+       "contracts": 371,
+       "events": 181,
+       "brier": 0.131776,
+       "winRate": 0.80593,
+       "meanPrice": 0.817547,
+       "bias": -0.011617
+      },
+      "electionOnly": {
+       "closeAnchored": null,
+       "electionAnchored": null
+      },
+      "electionContractsLeftOut": {
+       "no election-anchored price (no stored trade in the window)": 98
+      },
+      "leftOutWithLaterStoredTradeOnStraddlingDay": 0,
+      "postHoc": {
+       "note": "Not in SPEC; added after the SPEC tables were seen. Non-election contracts close-anchored plus every election contract with a qualifying election-anchored price at this horizon (contract sets differ from the dashboard row).",
+       "electionAnchoredAll": null,
+       "combined": {
+        "contracts": 371,
+        "events": 181,
+        "brier": 0.131776,
+        "winRate": 0.80593,
+        "meanPrice": 0.817547,
+        "bias": -0.011617
+       }
+      },
+      "electionInDashboardRow": {
+       "contracts": 98,
+       "events": 21,
+       "brier": 0.105758,
+       "winRate": 0.816327,
+       "meanPrice": 0.843367,
+       "bias": -0.027041
+      },
+      "brierDashboardMinusExcluded": -0.005437,
+      "identicalSetComparison": "none: no election contract has a qualifying price under both anchors, so Published, Re-anchored and Excluded coincide"
+     }
+    },
+    "Elections and primaries": {
+     "1": {
+      "dashboardAsPublished": {
+       "contracts": 465,
+       "events": 210,
+       "brier": 0.04784,
+       "winRate": 0.931183,
+       "meanPrice": 0.939742,
+       "bias": -0.008559
+      },
+      "electionContractsInDashboardRow": 82,
+      "electionPricesInDashboardRowTradedAfterFirstPollsClose": 81,
+      "published": {
+       "contracts": 461,
+       "events": 207,
+       "brier": 0.046335,
+       "winRate": 0.932755,
+       "meanPrice": 0.939479,
+       "bias": -0.006725
+      },
+      "reanchored": {
+       "contracts": 461,
+       "events": 207,
+       "brier": 0.080447,
+       "winRate": 0.882863,
+       "meanPrice": 0.908351,
+       "bias": -0.025488
+      },
+      "excluded": {
+       "contracts": 383,
+       "events": 153,
+       "brier": 0.055273,
+       "winRate": 0.91906,
+       "meanPrice": 0.931958,
+       "bias": -0.012898
+      },
+      "electionOnly": {
+       "closeAnchored": {
+        "contracts": 78,
+        "events": 54,
+        "brier": 0.002449,
+        "winRate": 1.0,
+        "meanPrice": 0.97641,
+        "bias": 0.02359
+       },
+       "electionAnchored": {
+        "contracts": 78,
+        "events": 54,
+        "brier": 0.204058,
+        "winRate": 0.705128,
+        "meanPrice": 0.792436,
+        "bias": -0.087308
+       }
+      },
+      "electionContractsLeftOut": {
+       "election-anchored price only": 463,
+       "no election-anchored price (no stored trade in the window)": 6
+      },
+      "leftOutWithLaterStoredTradeOnStraddlingDay": 0,
+      "postHoc": {
+       "note": "Not in SPEC; added after the SPEC tables were seen. Non-election contracts close-anchored plus every election contract with a qualifying election-anchored price at this horizon (contract sets differ from the dashboard row).",
+       "electionAnchoredAll": {
+        "contracts": 540,
+        "events": 195,
+        "brier": 0.082461,
+        "winRate": 0.887037,
+        "meanPrice": 0.857,
+        "bias": 0.030037
+       },
+       "combined": {
+        "contracts": 923,
+        "events": 348,
+        "brier": 0.071179,
+        "winRate": 0.900325,
+        "meanPrice": 0.888104,
+        "bias": 0.012221
+       }
+      },
+      "electionInDashboardRow": {
+       "contracts": 82,
+       "events": 57,
+       "brier": 0.013127,
+       "winRate": 0.987805,
+       "meanPrice": 0.976098,
+       "bias": 0.011707
+      },
+      "brierDashboardMinusExcluded": -0.007433,
+      "brierPublishedMinusReanchored": -0.034112,
+      "brierPublishedMinusExcluded": -0.008938,
+      "bootstrap": {
+       "publishedMinusReanchored95": [-0.050287, -0.021883],
+       "publishedMinusExcluded95": [-0.016457, -0.004456],
+       "resamples": 2000,
+       "resamplesWithExcludedSet": 2000
+      }
+     },
+     "7": {
+      "dashboardAsPublished": {
+       "contracts": 439,
+       "events": 209,
+       "brier": 0.082117,
+       "winRate": 0.888383,
+       "meanPrice": 0.879522,
+       "bias": 0.008861
+      },
+      "electionContractsInDashboardRow": 94,
+      "electionPricesInDashboardRowTradedAfterFirstPollsClose": 61,
+      "published": {
+       "contracts": 403,
+       "events": 190,
+       "brier": 0.087589,
+       "winRate": 0.880893,
+       "meanPrice": 0.87263,
+       "bias": 0.008263
+      },
+      "reanchored": {
+       "contracts": 403,
+       "events": 190,
+       "brier": 0.110698,
+       "winRate": 0.856079,
+       "meanPrice": 0.850571,
+       "bias": 0.005509
+      },
+      "excluded": {
+       "contracts": 345,
+       "events": 151,
+       "brier": 0.100853,
+       "winRate": 0.863768,
+       "meanPrice": 0.857159,
+       "bias": 0.006609
+      },
+      "electionOnly": {
+       "closeAnchored": {
+        "contracts": 58,
+        "events": 39,
+        "brier": 0.008691,
+        "winRate": 0.982759,
+        "meanPrice": 0.964655,
+        "bias": 0.018103
+       },
+       "electionAnchored": {
+        "contracts": 58,
+        "events": 39,
+        "brier": 0.169255,
+        "winRate": 0.810345,
+        "meanPrice": 0.811379,
+        "bias": -0.001034
+       }
+      },
+      "electionContractsLeftOut": {
+       "election-anchored price only": 287,
+       "no election-anchored price (no stored trade in the window)": 36
+      },
+      "leftOutWithLaterStoredTradeOnStraddlingDay": 1,
+      "postHoc": {
+       "note": "Not in SPEC; added after the SPEC tables were seen. Non-election contracts close-anchored plus every election contract with a qualifying election-anchored price at this horizon (contract sets differ from the dashboard row).",
+       "electionAnchoredAll": {
+        "contracts": 344,
+        "events": 96,
+        "brier": 0.053981,
+        "winRate": 0.944767,
+        "meanPrice": 0.894012,
+        "bias": 0.050756
+       },
+       "combined": {
+        "contracts": 689,
+        "events": 247,
+        "brier": 0.077451,
+        "winRate": 0.904209,
+        "meanPrice": 0.875559,
+        "bias": 0.02865
+       }
+      },
+      "electionInDashboardRow": {
+       "contracts": 94,
+       "events": 58,
+       "brier": 0.013352,
+       "winRate": 0.978723,
+       "meanPrice": 0.961596,
+       "bias": 0.017128
+      },
+      "brierDashboardMinusExcluded": -0.018736,
+      "brierPublishedMinusReanchored": -0.023109,
+      "brierPublishedMinusExcluded": -0.013264,
+      "bootstrap": {
+       "publishedMinusReanchored95": [-0.035915, -0.012398],
+       "publishedMinusExcluded95": [-0.021551, -0.007597],
+       "resamples": 2000,
+       "resamplesWithExcludedSet": 2000
+      }
+     },
+     "30": {
+      "dashboardAsPublished": {
+       "contracts": 350,
+       "events": 192,
+       "brier": 0.080188,
+       "winRate": 0.885714,
+       "meanPrice": 0.877,
+       "bias": 0.008714
+      },
+      "electionContractsInDashboardRow": 113,
+      "electionPricesInDashboardRowTradedAfterFirstPollsClose": 113,
+      "published": {
+       "contracts": 238,
+       "events": 112,
+       "brier": 0.117713,
+       "winRate": 0.831933,
+       "meanPrice": 0.827731,
+       "bias": 0.004202
+      },
+      "reanchored": {
+       "contracts": 238,
+       "events": 112,
+       "brier": 0.118806,
+       "winRate": 0.827731,
+       "meanPrice": 0.825714,
+       "bias": 0.002017
+      },
+      "excluded": {
+       "contracts": 237,
+       "events": 111,
+       "brier": 0.11821,
+       "winRate": 0.831224,
+       "meanPrice": 0.827046,
+       "bias": 0.004177
+      },
+      "electionOnly": {
+       "closeAnchored": {
+        "contracts": 1,
+        "events": 1,
+        "brier": 0.0001,
+        "winRate": 1.0,
+        "meanPrice": 0.99,
+        "bias": 0.01
+       },
+       "electionAnchored": {
+        "contracts": 1,
+        "events": 1,
+        "brier": 0.2601,
+        "winRate": 0.0,
+        "meanPrice": 0.51,
+        "bias": -0.51
+       }
+      },
+      "electionContractsLeftOut": {
+       "below 51% under one anchor": 1,
+       "no election-anchored price (no stored trade in the window)": 111
+      },
+      "leftOutWithLaterStoredTradeOnStraddlingDay": 35,
+      "postHoc": {
+       "note": "Not in SPEC; added after the SPEC tables were seen. Non-election contracts close-anchored plus every election contract with a qualifying election-anchored price at this horizon (contract sets differ from the dashboard row).",
+       "electionAnchoredAll": {
+        "contracts": 1,
+        "events": 1,
+        "brier": 0.2601,
+        "winRate": 0.0,
+        "meanPrice": 0.51,
+        "bias": -0.51
+       },
+       "combined": {
+        "contracts": 238,
+        "events": 112,
+        "brier": 0.118806,
+        "winRate": 0.827731,
+        "meanPrice": 0.825714,
+        "bias": 0.002017
+       }
+      },
+      "electionInDashboardRow": {
+       "contracts": 113,
+       "events": 81,
+       "brier": 0.000442,
+       "winRate": 1.0,
+       "meanPrice": 0.98177,
+       "bias": 0.01823
+      },
+      "brierDashboardMinusExcluded": -0.038022,
+      "brierPublishedMinusReanchored": -0.001093,
+      "brierPublishedMinusExcluded": -0.000497,
+      "bootstrap": {
+       "publishedMinusReanchored95": [-0.003733, 0.0],
+       "publishedMinusExcluded95": [-0.001762, 0.0],
+       "resamples": 2000,
+       "resamplesWithExcludedSet": 2000
+      }
+     },
+     "90": {
+      "dashboardAsPublished": {
+       "contracts": 218,
+       "events": 67,
+       "brier": 0.127029,
+       "winRate": 0.798165,
+       "meanPrice": 0.833257,
+       "bias": -0.035092
+      },
+      "electionContractsInDashboardRow": 98,
+      "electionPricesInDashboardRowTradedAfterFirstPollsClose": 0,
+      "published": {
+       "contracts": 120,
+       "events": 46,
+       "brier": 0.1444,
+       "winRate": 0.783333,
+       "meanPrice": 0.825,
+       "bias": -0.041667
+      },
+      "reanchored": {
+       "contracts": 120,
+       "events": 46,
+       "brier": 0.1444,
+       "winRate": 0.783333,
+       "meanPrice": 0.825,
+       "bias": -0.041667
+      },
+      "excluded": {
+       "contracts": 120,
+       "events": 46,
+       "brier": 0.1444,
+       "winRate": 0.783333,
+       "meanPrice": 0.825,
+       "bias": -0.041667
+      },
+      "electionOnly": {
+       "closeAnchored": null,
+       "electionAnchored": null
+      },
+      "electionContractsLeftOut": {
+       "no election-anchored price (no stored trade in the window)": 98
+      },
+      "leftOutWithLaterStoredTradeOnStraddlingDay": 0,
+      "postHoc": {
+       "note": "Not in SPEC; added after the SPEC tables were seen. Non-election contracts close-anchored plus every election contract with a qualifying election-anchored price at this horizon (contract sets differ from the dashboard row).",
+       "electionAnchoredAll": null,
+       "combined": {
+        "contracts": 120,
+        "events": 46,
+        "brier": 0.1444,
+        "winRate": 0.783333,
+        "meanPrice": 0.825,
+        "bias": -0.041667
+       }
+      },
+      "electionInDashboardRow": {
+       "contracts": 98,
+       "events": 21,
+       "brier": 0.105758,
+       "winRate": 0.816327,
+       "meanPrice": 0.843367,
+       "bias": -0.027041
+      },
+      "brierDashboardMinusExcluded": -0.017371,
+      "identicalSetComparison": "none: no election contract has a qualifying price under both anchors, so Published, Re-anchored and Excluded coincide"
+     }
+    }
+   }
+  }
+ },
+ "postHocSweep": {
+  "note": "Not in SPEC.md. Added in review round 1 (finding R1-1), after the SPEC tables were published, because the dashboard serves every horizon, not only 1/7/30/90 days. Rows are the Kalshi dashboard row as published (recomputed from the panel and checked against dist/data/kalshi/ to 6 decimals) and the same row without its post-election prices: qualifying prices of election-set contracts traded at or after the first polls closed. Descriptive; no interval.",
+  "columns": [
+   "day",
+   "rowContracts",
+   "rowEvents",
+   "rowBrier",
+   "postElection",
+   "postElectionShare",
+   "postElectionBrier",
+   "withoutContracts",
+   "withoutEvents",
+   "withoutBrier",
+   "withoutWinRate",
+   "withoutMeanPrice"
+  ],
+  "days": [1, 90],
+  "tables": {
+   "S": {
+    "All topics": [
+     [1, 120917, 34522, 0.144311, 18, 0.000149, 0.000117, 120899, 34504, 0.144332, 0.782827, 0.781314],
+     [2, 59392, 17270, 0.139376, 28, 0.000471, 0.000111, 59364, 17244, 0.139442, 0.788862, 0.791325],
+     [3, 40765, 10802, 0.129054, 27, 0.000662, 0.000111, 40738, 10777, 0.12914, 0.80733, 0.804716],
+     [4, 34577, 9427, 0.128268, 16, 0.000463, 0.000213, 34561, 9411, 0.128327, 0.807905, 0.807726],
+     [5, 28801, 8380, 0.128001, 28, 0.000972, 0.000164, 28773, 8356, 0.128125, 0.811142, 0.808963],
+     [6, 22642, 7122, 0.128096, 29, 0.001281, 0.000183, 22613, 7097, 0.12826, 0.811038, 0.810215],
+     [7, 14172, 4977, 0.13212, 26, 0.001835, 0.000169, 14146, 4955, 0.132362, 0.806447, 0.805471],
+     [8, 11970, 4247, 0.125268, 23, 0.001921, 0.000204, 11947, 4225, 0.125509, 0.814179, 0.811266],
+     [9, 10531, 3744, 0.12528, 23, 0.002184, 0.000165, 10508, 3722, 0.125554, 0.816045, 0.81013],
+     [10, 9966, 3629, 0.12466, 24, 0.002408, 0.000188, 9942, 3606, 0.12496, 0.82076, 0.812779],
+     [11, 9563, 3473, 0.120377, 22, 0.002301, 0.000168, 9541, 3453, 0.120655, 0.826433, 0.817805],
+     [12, 9004, 3232, 0.122299, 13, 0.001444, 0.000192, 8991, 3219, 0.122476, 0.822823, 0.815536],
+     [13, 8452, 3024, 0.121147, 38, 0.004496, 0.000163, 8414, 2993, 0.121694, 0.82339, 0.820813],
+     [14, 7718, 2809, 0.117904, 31, 0.004017, 0.000158, 7687, 2784, 0.118379, 0.829843, 0.820122],
+     [15, 6985, 2593, 0.120773, 36, 0.005154, 0.000239, 6949, 2560, 0.121398, 0.824147, 0.818172],
+     [16, 6721, 2510, 0.120151, 62, 0.009225, 0.000187, 6659, 2462, 0.121268, 0.824448, 0.816942],
+     [17, 6307, 2378, 0.118415, 45, 0.007135, 0.000213, 6262, 2341, 0.119265, 0.827052, 0.816942],
+     [18, 6171, 2320, 0.118153, 37, 0.005996, 0.000203, 6134, 2288, 0.118865, 0.830616, 0.818777],
+     [19, 6178, 2316, 0.116038, 39, 0.006313, 0.000154, 6139, 2283, 0.116775, 0.833035, 0.817824],
+     [20, 6259, 2294, 0.115929, 49, 0.007829, 0.000186, 6210, 2254, 0.116842, 0.831723, 0.818699],
+     [21, 5973, 2258, 0.119464, 42, 0.007032, 0.000221, 5931, 2222, 0.120309, 0.828359, 0.814421],
+     [22, 5638, 2201, 0.118976, 52, 0.009223, 0.000204, 5586, 2157, 0.120082, 0.825636, 0.81468],
+     [23, 5506, 2126, 0.118767, 38, 0.006902, 0.000247, 5468, 2094, 0.11959, 0.833394, 0.813508],
+     [24, 5262, 2084, 0.121233, 47, 0.008932, 0.000234, 5215, 2045, 0.122323, 0.824545, 0.811043],
+     [25, 5255, 2100, 0.120797, 41, 0.007802, 0.000244, 5214, 2064, 0.121745, 0.822209, 0.811203],
+     [26, 5432, 2059, 0.120102, 38, 0.006996, 0.000247, 5394, 2026, 0.120946, 0.826474, 0.815971],
+     [27, 5491, 2134, 0.122374, 46, 0.008377, 0.000259, 5445, 2096, 0.123406, 0.818549, 0.814648],
+     [28, 4966, 1942, 0.12199, 56, 0.011277, 0.000348, 4910, 1897, 0.123377, 0.823625, 0.813183],
+     [29, 4578, 1821, 0.124903, 62, 0.013543, 0.000266, 4516, 1774, 0.126614, 0.817759, 0.810558],
+     [30, 4257, 1738, 0.128499, 51, 0.01198, 0.000278, 4206, 1702, 0.130053, 0.810033, 0.812404],
+     [31, 3898, 1586, 0.124577, 47, 0.012057, 0.000532, 3851, 1550, 0.126091, 0.819527, 0.812251],
+     [32, 3868, 1598, 0.123488, 61, 0.01577, 0.000266, 3807, 1555, 0.125462, 0.821644, 0.815051],
+     [33, 3715, 1579, 0.122159, 58, 0.015612, 0.000279, 3657, 1534, 0.124092, 0.820891, 0.817665],
+     [34, 3591, 1567, 0.125586, 89, 0.024784, 0.000252, 3502, 1503, 0.128771, 0.819246, 0.810063],
+     [35, 3182, 1386, 0.120656, 53, 0.016656, 0.000294, 3129, 1342, 0.122695, 0.820709, 0.812566],
+     [36, 3085, 1339, 0.124264, 65, 0.02107, 0.000326, 3020, 1292, 0.126931, 0.821854, 0.813507],
+     [37, 2833, 1254, 0.121819, 57, 0.02012, 0.000365, 2776, 1210, 0.124312, 0.819164, 0.811326],
+     [38, 2832, 1284, 0.122364, 64, 0.022599, 0.01498, 2768, 1236, 0.124846, 0.821893, 0.817655],
+     [39, 2780, 1226, 0.12315, 67, 0.024101, 0.009479, 2713, 1179, 0.125958, 0.816439, 0.818618],
+     [40, 2795, 1266, 0.123105, 73, 0.026118, 0.009356, 2722, 1212, 0.126156, 0.818883, 0.818718],
+     [41, 2892, 1264, 0.117128, 91, 0.031466, 0.003834, 2801, 1199, 0.120809, 0.821492, 0.822078],
+     [42, 2672, 1232, 0.119494, 71, 0.026572, 0.005397, 2601, 1179, 0.122609, 0.818147, 0.824121],
+     [43, 2538, 1203, 0.11695, 82, 0.032309, 0.005883, 2456, 1145, 0.120658, 0.826954, 0.819927],
+     [44, 2461, 1166, 0.114862, 92, 0.037383, 0.006068, 2369, 1102, 0.119087, 0.832841, 0.823149],
+     [45, 2304, 1110, 0.115103, 93, 0.040365, 0.001118, 2211, 1049, 0.119897, 0.829489, 0.819597],
+     [46, 2397, 1109, 0.115887, 94, 0.039216, 0.003405, 2303, 1043, 0.120478, 0.823708, 0.821489],
+     [47, 2343, 1067, 0.118459, 99, 0.042254, 0.003339, 2244, 1003, 0.123538, 0.819073, 0.825463],
+     [48, 2304, 1064, 0.116689, 114, 0.049479, 0.002534, 2190, 990, 0.122632, 0.820091, 0.823726],
+     [49, 2124, 1029, 0.119215, 112, 0.052731, 0.004653, 2012, 956, 0.125592, 0.814115, 0.825189],
+     [50, 2054, 966, 0.121674, 115, 0.055988, 0.0059, 1939, 895, 0.128541, 0.813822, 0.820304],
+     [51, 2103, 1011, 0.12302, 119, 0.056586, 0.006457, 1984, 936, 0.130011, 0.813004, 0.822656],
+     [52, 2051, 979, 0.117913, 124, 0.060458, 0.008544, 1927, 906, 0.12495, 0.822522, 0.822735],
+     [53, 2044, 989, 0.116733, 140, 0.068493, 0.010626, 1904, 907, 0.124535, 0.819853, 0.824065],
+     [54, 2114, 1013, 0.11273, 141, 0.066698, 0.012728, 1973, 928, 0.119877, 0.829194, 0.827446],
+     [55, 2236, 1000, 0.115671, 151, 0.067531, 0.018206, 2085, 914, 0.122729, 0.822062, 0.827535],
+     [56, 2104, 1006, 0.116514, 159, 0.07557, 0.023996, 1945, 914, 0.124077, 0.822108, 0.825841],
+     [57, 2014, 955, 0.112777, 150, 0.074479, 0.035616, 1864, 869, 0.118987, 0.830472, 0.828374],
+     [58, 1943, 932, 0.113981, 174, 0.089552, 0.055033, 1769, 835, 0.119779, 0.821368, 0.824562],
+     [59, 1902, 920, 0.114937, 87, 0.045741, 0.000316, 1815, 867, 0.120431, 0.820937, 0.823085],
+     [60, 2025, 966, 0.118072, 104, 0.051358, 0.000247, 1921, 907, 0.124451, 0.819885, 0.82469],
+     [61, 2093, 931, 0.11115, 117, 0.055901, 0.000265, 1976, 872, 0.117716, 0.830466, 0.830111],
+     [62, 2098, 947, 0.123996, 7, 0.003337, 0.000729, 2091, 942, 0.124409, 0.826877, 0.823534],
+     [63, 1997, 906, 0.122501, 5, 0.002504, 0.00032, 1992, 903, 0.122807, 0.830321, 0.821918],
+     [64, 1912, 878, 0.112683, 7, 0.003661, 0.000143, 1905, 873, 0.113097, 0.84042, 0.826588],
+     [65, 1771, 836, 0.118987, 8, 0.004517, 0.000313, 1763, 832, 0.119526, 0.828134, 0.819166],
+     [66, 1741, 824, 0.120076, 4, 0.002298, 0.000175, 1737, 821, 0.120353, 0.830743, 0.824168],
+     [67, 1784, 814, 0.115334, 5, 0.002803, 0.00016, 1779, 811, 0.115658, 0.838673, 0.828685],
+     [68, 1853, 831, 0.111712, 7, 0.003778, 0.0001, 1846, 827, 0.112135, 0.842362, 0.827481],
+     [69, 1840, 852, 0.118195, 0, 0.0, null, 1840, 852, 0.118195, 0.832065, 0.824538],
+     [70, 1699, 774, 0.119412, 2, 0.001177, 0.0001, 1697, 773, 0.119552, 0.829699, 0.822834],
+     [71, 1656, 772, 0.119257, 4, 0.002415, 0.0001, 1652, 769, 0.119546, 0.830508, 0.824691],
+     [72, 1604, 761, 0.113616, 1, 0.000623, 0.0001, 1603, 760, 0.113686, 0.838428, 0.828104],
+     [73, 1594, 755, 0.120265, 2, 0.001255, 0.00085, 1592, 754, 0.120416, 0.826633, 0.825546],
+     [74, 1639, 758, 0.116411, 2, 0.00122, 0.0085, 1637, 757, 0.116543, 0.835064, 0.825901],
+     [75, 1636, 728, 0.11724, 2, 0.001222, 0.0001, 1634, 727, 0.117383, 0.837209, 0.825245],
+     [76, 1632, 755, 0.123172, 0, 0.0, null, 1632, 755, 0.123172, 0.827206, 0.820086],
+     [77, 1536, 696, 0.120233, 0, 0.0, null, 1536, 696, 0.120233, 0.82487, 0.821543],
+     [78, 1454, 675, 0.122255, 0, 0.0, null, 1454, 675, 0.122255, 0.827373, 0.817215],
+     [79, 1443, 655, 0.120716, 0, 0.0, null, 1443, 655, 0.120716, 0.824671, 0.823444],
+     [80, 1457, 647, 0.125567, 0, 0.0, null, 1457, 647, 0.125567, 0.818806, 0.828367],
+     [81, 1514, 659, 0.12742, 0, 0.0, null, 1514, 659, 0.12742, 0.814399, 0.82607],
+     [82, 1496, 671, 0.129272, 0, 0.0, null, 1496, 671, 0.129272, 0.810829, 0.822126],
+     [83, 1548, 672, 0.125524, 0, 0.0, null, 1548, 672, 0.125524, 0.808786, 0.824509],
+     [84, 1416, 617, 0.127309, 0, 0.0, null, 1416, 617, 0.127309, 0.800141, 0.82096],
+     [85, 1405, 606, 0.128672, 0, 0.0, null, 1405, 606, 0.128672, 0.800712, 0.822021],
+     [86, 1388, 593, 0.124329, 0, 0.0, null, 1388, 593, 0.124329, 0.814121, 0.820079],
+     [87, 1206, 521, 0.120516, 0, 0.0, null, 1206, 521, 0.120516, 0.823383, 0.821459],
+     [88, 1263, 562, 0.123186, 0, 0.0, null, 1263, 562, 0.123186, 0.81631, 0.812977],
+     [89, 1332, 579, 0.127743, 0, 0.0, null, 1332, 579, 0.127743, 0.804054, 0.815473],
+     [90, 1303, 578, 0.131073, 0, 0.0, null, 1303, 578, 0.131073, 0.802763, 0.810913]
+    ],
+    "All Politics": [
+     [1, 14112, 1906, 0.133433, 18, 0.001276, 0.000117, 14094, 1888, 0.133603, 0.80254, 0.798843],
+     [2, 10836, 1692, 0.137895, 28, 0.002584, 0.000111, 10808, 1666, 0.138252, 0.79765, 0.795083],
+     [3, 8742, 1583, 0.140463, 27, 0.003089, 0.000111, 8715, 1558, 0.140898, 0.793804, 0.796355],
+     [4, 7353, 1484, 0.138023, 16, 0.002176, 0.000213, 7337, 1468, 0.138324, 0.79801, 0.799598],
+     [5, 6496, 1390, 0.135923, 28, 0.00431, 0.000164, 6468, 1366, 0.13651, 0.805195, 0.807036],
+     [6, 5107, 1205, 0.138299, 29, 0.005678, 0.000183, 5078, 1180, 0.139087, 0.803072, 0.801449],
+     [7, 3507, 942, 0.14434, 26, 0.007414, 0.000169, 3481, 920, 0.145417, 0.786556, 0.795108],
+     [8, 2972, 861, 0.134767, 23, 0.007739, 0.000204, 2949, 839, 0.135816, 0.799932, 0.803666],
+     [9, 2723, 830, 0.132066, 23, 0.008447, 0.000165, 2700, 808, 0.13319, 0.805926, 0.802537],
+     [10, 2531, 826, 0.138488, 24, 0.009482, 0.000188, 2507, 803, 0.139812, 0.804148, 0.801639],
+     [11, 2420, 794, 0.13375, 22, 0.009091, 0.000168, 2398, 774, 0.134975, 0.81151, 0.806985],
+     [12, 2322, 768, 0.134993, 13, 0.005599, 0.000192, 2309, 755, 0.135752, 0.809008, 0.802616],
+     [13, 2269, 769, 0.138866, 38, 0.016747, 0.000163, 2231, 738, 0.141228, 0.802331, 0.807795],
+     [14, 2153, 752, 0.127817, 31, 0.014399, 0.000158, 2122, 727, 0.129682, 0.81951, 0.810905],
+     [15, 2021, 740, 0.128761, 36, 0.017813, 0.000239, 1985, 707, 0.131092, 0.815617, 0.81261],
+     [16, 1937, 720, 0.132812, 62, 0.032008, 0.000187, 1875, 672, 0.137197, 0.804267, 0.809035],
+     [17, 1783, 697, 0.129194, 45, 0.025238, 0.000213, 1738, 660, 0.132533, 0.807825, 0.811375],
+     [18, 1746, 667, 0.120142, 37, 0.021191, 0.000203, 1709, 635, 0.122738, 0.823288, 0.818408],
+     [19, 1689, 663, 0.123056, 39, 0.023091, 0.000154, 1650, 630, 0.125961, 0.818182, 0.812715],
+     [20, 1758, 671, 0.117712, 49, 0.027873, 0.000186, 1709, 631, 0.121081, 0.825044, 0.818882],
+     [21, 1678, 660, 0.12457, 42, 0.02503, 0.000221, 1636, 624, 0.127762, 0.815403, 0.811051],
+     [22, 1592, 654, 0.112726, 52, 0.032663, 0.000204, 1540, 610, 0.116526, 0.827922, 0.817526],
+     [23, 1470, 611, 0.119754, 38, 0.02585, 0.000247, 1432, 579, 0.122926, 0.831704, 0.814001],
+     [24, 1441, 626, 0.119832, 47, 0.032616, 0.000234, 1394, 587, 0.123864, 0.826399, 0.815653],
+     [25, 1388, 619, 0.11467, 41, 0.029539, 0.000244, 1347, 583, 0.118153, 0.829993, 0.816169],
+     [26, 1403, 582, 0.115217, 38, 0.027085, 0.000247, 1365, 549, 0.118418, 0.83663, 0.818747],
+     [27, 1447, 623, 0.111815, 46, 0.03179, 0.000259, 1401, 585, 0.115477, 0.827266, 0.825632],
+     [28, 1472, 600, 0.115525, 56, 0.038043, 0.000348, 1416, 555, 0.12008, 0.826977, 0.827987],
+     [29, 1361, 594, 0.119438, 62, 0.045555, 0.000266, 1299, 547, 0.125126, 0.817552, 0.813433],
+     [30, 1243, 542, 0.124675, 51, 0.04103, 0.000278, 1192, 506, 0.129997, 0.814597, 0.815159],
+     [31, 1195, 511, 0.122113, 47, 0.039331, 0.000532, 1148, 475, 0.127091, 0.818815, 0.819625],
+     [32, 1235, 535, 0.110873, 61, 0.049393, 0.000266, 1174, 492, 0.11662, 0.833901, 0.824923],
+     [33, 1240, 541, 0.111738, 58, 0.046774, 0.000279, 1182, 496, 0.117207, 0.830795, 0.826963],
+     [34, 1170, 539, 0.117188, 89, 0.076068, 0.000252, 1081, 475, 0.126816, 0.821462, 0.81605],
+     [35, 1098, 503, 0.11118, 53, 0.04827, 0.000294, 1045, 459, 0.116804, 0.833493, 0.819636],
+     [36, 1109, 499, 0.117165, 65, 0.058611, 0.000326, 1044, 452, 0.124439, 0.828544, 0.81683],
+     [37, 1014, 475, 0.119774, 57, 0.056213, 0.000365, 957, 431, 0.126886, 0.819227, 0.81117],
+     [38, 979, 495, 0.114205, 64, 0.065373, 0.01498, 915, 447, 0.121145, 0.832787, 0.824273],
+     [39, 998, 464, 0.113243, 67, 0.067134, 0.009479, 931, 417, 0.120711, 0.829216, 0.823878],
+     [40, 981, 471, 0.112425, 73, 0.074414, 0.009356, 908, 417, 0.120712, 0.829295, 0.824868],
+     [41, 978, 485, 0.10301, 91, 0.093047, 0.003834, 887, 420, 0.113185, 0.837655, 0.831094],
+     [42, 922, 467, 0.106, 71, 0.077007, 0.005397, 851, 414, 0.114393, 0.830787, 0.836169],
+     [43, 921, 466, 0.102677, 82, 0.089034, 0.005883, 839, 408, 0.112138, 0.848629, 0.834219],
+     [44, 923, 477, 0.102917, 92, 0.099675, 0.006068, 831, 413, 0.113639, 0.848375, 0.836065],
+     [45, 900, 456, 0.100059, 93, 0.103333, 0.001118, 807, 395, 0.111461, 0.853779, 0.832069],
+     [46, 885, 448, 0.106244, 94, 0.106215, 0.003405, 791, 382, 0.118465, 0.840708, 0.838673],
+     [47, 870, 450, 0.10281, 99, 0.113793, 0.003339, 771, 386, 0.115583, 0.840467, 0.836122],
+     [48, 880, 447, 0.09991, 114, 0.129545, 0.002534, 766, 373, 0.114402, 0.843342, 0.834961],
+     [49, 816, 440, 0.101814, 112, 0.137255, 0.004653, 704, 367, 0.117272, 0.838068, 0.838253],
+     [50, 790, 426, 0.099418, 115, 0.14557, 0.0059, 675, 355, 0.115351, 0.848889, 0.840222],
+     [51, 825, 433, 0.107803, 119, 0.144242, 0.006457, 706, 358, 0.124885, 0.832861, 0.841941],
+     [52, 824, 424, 0.094934, 124, 0.150485, 0.008544, 700, 351, 0.110237, 0.852857, 0.844014],
+     [53, 817, 435, 0.099709, 140, 0.171359, 0.010626, 677, 353, 0.118131, 0.837518, 0.836233],
+     [54, 820, 432, 0.091365, 141, 0.171951, 0.012728, 679, 347, 0.107695, 0.852725, 0.844934],
+     [55, 884, 420, 0.092393, 151, 0.170814, 0.018206, 733, 334, 0.107676, 0.847203, 0.847599],
+     [56, 881, 434, 0.091465, 159, 0.180477, 0.023996, 722, 342, 0.106323, 0.855956, 0.848019],
+     [57, 866, 430, 0.092304, 150, 0.17321, 0.035616, 716, 344, 0.10418, 0.860335, 0.847682],
+     [58, 883, 419, 0.090339, 174, 0.197055, 0.055033, 709, 322, 0.099004, 0.856135, 0.851283],
+     [59, 880, 411, 0.09542, 87, 0.098864, 0.000316, 793, 358, 0.105854, 0.842371, 0.839887],
+     [60, 895, 429, 0.094829, 104, 0.116201, 0.000247, 791, 370, 0.107264, 0.845765, 0.840872],
+     [61, 966, 408, 0.087428, 117, 0.121118, 0.000265, 849, 349, 0.09944, 0.862191, 0.855807],
+     [62, 981, 411, 0.106769, 7, 0.007136, 0.000729, 974, 406, 0.107531, 0.858316, 0.839322],
+     [63, 906, 397, 0.11033, 5, 0.005519, 0.00032, 901, 394, 0.11094, 0.850166, 0.831154],
+     [64, 950, 415, 0.101159, 7, 0.007368, 0.000143, 943, 410, 0.101909, 0.862142, 0.838346],
+     [65, 817, 362, 0.100513, 8, 0.009792, 0.000313, 809, 358, 0.101504, 0.859085, 0.844203],
+     [66, 801, 365, 0.102143, 4, 0.004994, 0.000175, 797, 362, 0.102655, 0.865747, 0.846424],
+     [67, 820, 339, 0.093835, 5, 0.006098, 0.00016, 815, 336, 0.09441, 0.87362, 0.852933],
+     [68, 808, 332, 0.106704, 7, 0.008663, 0.0001, 801, 328, 0.107636, 0.857678, 0.845481],
+     [69, 797, 337, 0.103175, 0, 0.0, null, 797, 337, 0.103175, 0.863237, 0.84931],
+     [70, 724, 302, 0.10627, 2, 0.002762, 0.0001, 722, 301, 0.106564, 0.853186, 0.850734],
+     [71, 708, 305, 0.106862, 4, 0.00565, 0.0001, 704, 302, 0.107469, 0.84375, 0.851378],
+     [72, 698, 297, 0.098188, 1, 0.001433, 0.0001, 697, 296, 0.098328, 0.863702, 0.852339],
+     [73, 716, 298, 0.100309, 2, 0.002793, 0.00085, 714, 297, 0.100587, 0.854342, 0.85402],
+     [74, 711, 287, 0.101235, 2, 0.002813, 0.0085, 709, 286, 0.101497, 0.856135, 0.850691],
+     [75, 685, 273, 0.104184, 2, 0.00292, 0.0001, 683, 272, 0.104488, 0.847731, 0.849941],
+     [76, 668, 283, 0.114282, 0, 0.0, null, 668, 283, 0.114282, 0.83982, 0.840644],
+     [77, 644, 265, 0.10606, 0, 0.0, null, 644, 265, 0.10606, 0.846273, 0.841196],
+     [78, 625, 260, 0.108818, 0, 0.0, null, 625, 260, 0.108818, 0.8528, 0.846064],
+     [79, 586, 232, 0.10444, 0, 0.0, null, 586, 232, 0.10444, 0.849829, 0.854403],
+     [80, 665, 259, 0.112046, 0, 0.0, null, 665, 259, 0.112046, 0.843609, 0.85209],
+     [81, 632, 264, 0.122794, 0, 0.0, null, 632, 264, 0.122794, 0.822785, 0.845918],
+     [82, 643, 250, 0.10699, 0, 0.0, null, 643, 250, 0.10699, 0.847589, 0.850964],
+     [83, 610, 252, 0.110889, 0, 0.0, null, 610, 252, 0.110889, 0.842623, 0.852344],
+     [84, 543, 225, 0.117149, 0, 0.0, null, 543, 225, 0.117149, 0.808471, 0.837293],
+     [85, 559, 217, 0.119516, 0, 0.0, null, 559, 217, 0.119516, 0.806798, 0.841073],
+     [86, 580, 214, 0.115278, 0, 0.0, null, 580, 214, 0.115278, 0.827586, 0.847448],
+     [87, 539, 196, 0.104995, 0, 0.0, null, 539, 196, 0.104995, 0.842301, 0.840501],
+     [88, 511, 205, 0.120933, 0, 0.0, null, 511, 205, 0.120933, 0.819961, 0.818239],
+     [89, 466, 192, 0.128414, 0, 0.0, null, 466, 192, 0.128414, 0.798283, 0.822554],
+     [90, 469, 202, 0.126339, 0, 0.0, null, 469, 202, 0.126339, 0.808102, 0.822942]
+    ],
+    "Elections and primaries": [
+     [1, 465, 210, 0.04784, 18, 0.03871, 0.000117, 447, 192, 0.049762, 0.928412, 0.93774],
+     [2, 505, 238, 0.05758, 28, 0.055446, 0.000111, 477, 212, 0.060953, 0.91195, 0.910692],
+     [3, 510, 239, 0.067633, 27, 0.052941, 0.000111, 483, 214, 0.071408, 0.89234, 0.88528],
+     [4, 454, 214, 0.071679, 16, 0.035242, 0.000213, 438, 198, 0.074289, 0.890411, 0.8821],
+     [5, 496, 215, 0.063524, 28, 0.056452, 0.000164, 468, 191, 0.067314, 0.905983, 0.889038],
+     [6, 449, 214, 0.079229, 29, 0.064588, 0.000183, 420, 189, 0.084687, 0.87619, 0.873143],
+     [7, 439, 209, 0.082117, 26, 0.059226, 0.000169, 413, 187, 0.087276, 0.881356, 0.872712],
+     [8, 408, 205, 0.070166, 23, 0.056373, 0.000204, 385, 183, 0.074345, 0.898701, 0.881091],
+     [9, 422, 202, 0.076353, 23, 0.054502, 0.000165, 399, 180, 0.080745, 0.877193, 0.884637],
+     [10, 378, 202, 0.081722, 24, 0.063492, 0.000188, 354, 179, 0.08725, 0.872881, 0.869266],
+     [11, 362, 191, 0.076313, 22, 0.060773, 0.000168, 340, 171, 0.08124, 0.876471, 0.877382],
+     [12, 344, 177, 0.068952, 13, 0.037791, 0.000192, 331, 164, 0.071653, 0.900302, 0.872054],
+     [13, 378, 199, 0.076451, 38, 0.100529, 0.000163, 340, 168, 0.084977, 0.879412, 0.881176],
+     [14, 358, 189, 0.065165, 31, 0.086592, 0.000158, 327, 164, 0.071328, 0.905199, 0.879664],
+     [15, 345, 199, 0.067853, 36, 0.104348, 0.000239, 309, 166, 0.075731, 0.89644, 0.876893],
+     [16, 359, 221, 0.068427, 62, 0.172702, 0.000187, 297, 173, 0.082672, 0.875421, 0.874545],
+     [17, 356, 214, 0.067168, 45, 0.126404, 0.000213, 311, 177, 0.076856, 0.884244, 0.870386],
+     [18, 356, 196, 0.057549, 37, 0.103933, 0.000203, 319, 164, 0.0642, 0.905956, 0.884671],
+     [19, 341, 202, 0.067435, 39, 0.11437, 0.000154, 302, 169, 0.076123, 0.887417, 0.880464],
+     [20, 367, 207, 0.054027, 49, 0.133515, 0.000186, 318, 167, 0.062323, 0.902516, 0.888899],
+     [21, 347, 209, 0.079508, 42, 0.121037, 0.000221, 305, 173, 0.090426, 0.87541, 0.862328],
+     [22, 343, 200, 0.074721, 52, 0.151603, 0.000204, 291, 156, 0.088037, 0.865979, 0.871959],
+     [23, 305, 177, 0.070133, 38, 0.12459, 0.000247, 267, 145, 0.08008, 0.88015, 0.87809],
+     [24, 363, 211, 0.063736, 47, 0.129477, 0.000234, 316, 172, 0.073181, 0.901899, 0.883766],
+     [25, 351, 198, 0.055518, 41, 0.116809, 0.000244, 310, 162, 0.062828, 0.909677, 0.889806],
+     [26, 354, 195, 0.05814, 38, 0.107345, 0.000247, 316, 162, 0.065102, 0.905063, 0.891076],
+     [27, 376, 210, 0.051402, 46, 0.12234, 0.000259, 330, 172, 0.058531, 0.918182, 0.895303],
+     [28, 418, 223, 0.059275, 56, 0.133971, 0.000348, 362, 178, 0.068391, 0.900552, 0.884641],
+     [29, 393, 220, 0.07523, 62, 0.157761, 0.000266, 331, 173, 0.089272, 0.879154, 0.857523],
+     [30, 350, 192, 0.080188, 51, 0.145714, 0.000278, 299, 156, 0.093818, 0.866221, 0.858696],
+     [31, 355, 187, 0.081287, 47, 0.132394, 0.000532, 308, 151, 0.09361, 0.873377, 0.871883],
+     [32, 385, 204, 0.066479, 61, 0.158442, 0.000266, 324, 161, 0.078945, 0.895062, 0.885957],
+     [33, 377, 211, 0.059759, 58, 0.153846, 0.000279, 319, 166, 0.070573, 0.909091, 0.892884],
+     [34, 400, 224, 0.067104, 89, 0.2225, 0.000252, 311, 160, 0.086235, 0.897106, 0.873408],
+     [35, 333, 183, 0.066949, 53, 0.159159, 0.000294, 280, 139, 0.079566, 0.9, 0.874286],
+     [36, 340, 188, 0.061154, 65, 0.191176, 0.000326, 275, 141, 0.075532, 0.912727, 0.862],
+     [37, 326, 178, 0.062245, 57, 0.174847, 0.000365, 269, 134, 0.075357, 0.914498, 0.865948],
+     [38, 331, 183, 0.062633, 64, 0.193353, 0.01498, 267, 135, 0.074056, 0.906367, 0.867079],
+     [39, 312, 172, 0.059601, 67, 0.214744, 0.009479, 245, 125, 0.073308, 0.906122, 0.869388],
+     [40, 334, 193, 0.06186, 73, 0.218563, 0.009356, 261, 139, 0.076546, 0.904215, 0.869502],
+     [41, 362, 209, 0.053988, 91, 0.251381, 0.003834, 271, 144, 0.070829, 0.918819, 0.877011],
+     [42, 348, 201, 0.061226, 71, 0.204023, 0.005397, 277, 148, 0.075536, 0.902527, 0.873791],
+     [43, 369, 209, 0.059563, 82, 0.222222, 0.005883, 287, 151, 0.0749, 0.909408, 0.86899],
+     [44, 387, 209, 0.061508, 92, 0.237726, 0.006068, 295, 145, 0.078797, 0.901695, 0.880814],
+     [45, 382, 204, 0.051978, 93, 0.243455, 0.001118, 289, 143, 0.068345, 0.913495, 0.885087],
+     [46, 378, 201, 0.058442, 94, 0.248677, 0.003405, 284, 135, 0.076658, 0.908451, 0.890634],
+     [47, 379, 193, 0.062909, 99, 0.261214, 0.003339, 280, 129, 0.083971, 0.9, 0.883964],
+     [48, 411, 204, 0.050155, 114, 0.277372, 0.002534, 297, 130, 0.068434, 0.915825, 0.888283],
+     [49, 375, 204, 0.045718, 112, 0.298667, 0.004653, 263, 131, 0.063206, 0.927757, 0.890989],
+     [50, 374, 201, 0.047719, 115, 0.307487, 0.0059, 259, 130, 0.066288, 0.918919, 0.89139],
+     [51, 407, 209, 0.052413, 119, 0.292383, 0.006457, 288, 134, 0.071402, 0.909722, 0.898403],
+     [52, 421, 210, 0.053476, 124, 0.294537, 0.008544, 297, 137, 0.072235, 0.909091, 0.895219],
+     [53, 404, 211, 0.053001, 140, 0.346535, 0.010626, 264, 129, 0.075473, 0.901515, 0.896553],
+     [54, 419, 213, 0.047871, 141, 0.336516, 0.012728, 278, 128, 0.065695, 0.913669, 0.899424],
+     [55, 449, 216, 0.048821, 151, 0.336303, 0.018206, 298, 130, 0.064334, 0.912752, 0.900101],
+     [56, 464, 224, 0.046992, 159, 0.342672, 0.023996, 305, 132, 0.05898, 0.92459, 0.895672],
+     [57, 443, 215, 0.060703, 150, 0.3386, 0.035616, 293, 129, 0.073547, 0.904437, 0.883754],
+     [58, 491, 220, 0.056926, 174, 0.354379, 0.055033, 317, 123, 0.057966, 0.921136, 0.902965],
+     [59, 514, 223, 0.066383, 87, 0.169261, 0.000316, 427, 170, 0.079844, 0.882904, 0.86377],
+     [60, 514, 224, 0.061491, 104, 0.202335, 0.000247, 410, 165, 0.077026, 0.887805, 0.86661],
+     [61, 618, 227, 0.050729, 117, 0.18932, 0.000265, 501, 168, 0.062515, 0.92016, 0.881796],
+     [62, 641, 229, 0.086115, 7, 0.01092, 0.000729, 634, 224, 0.087058, 0.888013, 0.851924],
+     [63, 601, 221, 0.090401, 5, 0.008319, 0.00032, 596, 218, 0.091156, 0.879195, 0.845302],
+     [64, 599, 228, 0.087867, 7, 0.011686, 0.000143, 592, 223, 0.088904, 0.880068, 0.848733],
+     [65, 508, 199, 0.077946, 8, 0.015748, 0.000313, 500, 195, 0.079188, 0.892, 0.86436],
+     [66, 508, 184, 0.076206, 4, 0.007874, 0.000175, 504, 181, 0.076809, 0.89881, 0.871508],
+     [67, 471, 153, 0.064504, 5, 0.010616, 0.00016, 466, 150, 0.065194, 0.918455, 0.880837],
+     [68, 458, 154, 0.069497, 7, 0.015284, 0.0001, 451, 150, 0.070574, 0.91796, 0.875521],
+     [69, 452, 149, 0.075575, 0, 0.0, null, 452, 149, 0.075575, 0.911504, 0.880177],
+     [70, 420, 140, 0.071475, 2, 0.004762, 0.0001, 418, 139, 0.071816, 0.913876, 0.874809],
+     [71, 393, 135, 0.072321, 4, 0.010178, 0.0001, 389, 132, 0.073063, 0.899743, 0.876247],
+     [72, 414, 141, 0.06784, 1, 0.002415, 0.0001, 413, 140, 0.068004, 0.910412, 0.879613],
+     [73, 414, 135, 0.069199, 2, 0.004831, 0.00085, 412, 134, 0.06953, 0.90534, 0.880024],
+     [74, 396, 125, 0.073659, 2, 0.005051, 0.0085, 394, 124, 0.07399, 0.901015, 0.877868],
+     [75, 369, 124, 0.075686, 2, 0.00542, 0.0001, 367, 123, 0.076098, 0.899183, 0.873542],
+     [76, 343, 121, 0.073956, 0, 0.0, null, 343, 121, 0.073956, 0.909621, 0.866589],
+     [77, 348, 109, 0.078239, 0, 0.0, null, 348, 109, 0.078239, 0.902299, 0.870029],
+     [78, 322, 112, 0.087624, 0, 0.0, null, 322, 112, 0.087624, 0.897516, 0.859938],
+     [79, 301, 101, 0.082346, 0, 0.0, null, 301, 101, 0.082346, 0.893688, 0.869502],
+     [80, 350, 114, 0.088765, 0, 0.0, null, 350, 114, 0.088765, 0.888571, 0.877229],
+     [81, 341, 118, 0.083894, 0, 0.0, null, 341, 118, 0.083894, 0.876833, 0.881056],
+     [82, 342, 113, 0.076096, 0, 0.0, null, 342, 113, 0.076096, 0.891813, 0.88193],
+     [83, 334, 116, 0.081269, 0, 0.0, null, 334, 116, 0.081269, 0.886228, 0.880778],
+     [84, 275, 94, 0.095858, 0, 0.0, null, 275, 94, 0.095858, 0.843636, 0.860873],
+     [85, 289, 90, 0.106889, 0, 0.0, null, 289, 90, 0.106889, 0.823529, 0.857889],
+     [86, 316, 86, 0.095941, 0, 0.0, null, 316, 86, 0.095941, 0.857595, 0.876646],
+     [87, 278, 79, 0.083118, 0, 0.0, null, 278, 79, 0.083118, 0.877698, 0.863633],
+     [88, 263, 79, 0.102777, 0, 0.0, null, 263, 79, 0.102777, 0.855513, 0.838935],
+     [89, 205, 62, 0.109465, 0, 0.0, null, 205, 62, 0.109465, 0.829268, 0.843366],
+     [90, 218, 67, 0.127029, 0, 0.0, null, 218, 67, 0.127029, 0.798165, 0.833257]
+    ]
+   },
+   "W": {
+    "All topics": [
+     [1, 120917, 34522, 0.144311, 81, 0.00067, 0.012795, 120836, 34466, 0.144399, 0.782722, 0.781213],
+     [2, 59392, 17270, 0.139376, 63, 0.001061, 0.000138, 59329, 17219, 0.139524, 0.788737, 0.791209],
+     [3, 40765, 10802, 0.129054, 60, 0.001472, 0.000293, 40705, 10754, 0.129244, 0.807174, 0.80457],
+     [4, 34577, 9427, 0.128268, 67, 0.001938, 0.000345, 34510, 9382, 0.128517, 0.807621, 0.807462],
+     [5, 28801, 8380, 0.128001, 72, 0.0025, 0.004751, 28729, 8336, 0.12831, 0.810853, 0.808728],
+     [6, 22642, 7122, 0.128096, 67, 0.002959, 0.000204, 22575, 7065, 0.128476, 0.81072, 0.809918],
+     [7, 14172, 4977, 0.13212, 61, 0.004304, 0.000225, 14111, 4924, 0.13269, 0.805967, 0.805024],
+     [8, 11970, 4247, 0.125268, 60, 0.005013, 0.000193, 11910, 4200, 0.125899, 0.813602, 0.810719],
+     [9, 10531, 3744, 0.12528, 73, 0.006932, 0.00016, 10458, 3695, 0.126154, 0.815165, 0.809279],
+     [10, 9966, 3629, 0.12466, 56, 0.005619, 0.000216, 9910, 3578, 0.125363, 0.820182, 0.812221],
+     [11, 9563, 3473, 0.120377, 56, 0.005856, 0.000195, 9507, 3424, 0.121085, 0.825813, 0.817202],
+     [12, 9004, 3232, 0.122299, 41, 0.004554, 0.000185, 8963, 3197, 0.122858, 0.822269, 0.814998],
+     [13, 8452, 3024, 0.121147, 66, 0.007809, 0.000194, 8386, 2968, 0.122099, 0.8228, 0.820262],
+     [14, 7718, 2809, 0.117904, 68, 0.008811, 0.000197, 7650, 2754, 0.11895, 0.82902, 0.819322],
+     [15, 6985, 2593, 0.120773, 69, 0.009878, 0.000233, 6916, 2531, 0.121976, 0.823308, 0.817373],
+     [16, 6721, 2510, 0.120151, 100, 0.014879, 0.000213, 6621, 2429, 0.121963, 0.823441, 0.815975],
+     [17, 6307, 2378, 0.118415, 86, 0.013636, 0.000235, 6221, 2307, 0.120049, 0.825912, 0.815832],
+     [18, 6171, 2320, 0.118153, 83, 0.01345, 0.000219, 6088, 2252, 0.119761, 0.829336, 0.817511],
+     [19, 6178, 2316, 0.116038, 107, 0.01732, 0.000214, 6071, 2234, 0.11808, 0.831165, 0.815943],
+     [20, 6259, 2294, 0.115929, 113, 0.018054, 0.000192, 6146, 2207, 0.118057, 0.829971, 0.816948],
+     [21, 5973, 2258, 0.119464, 86, 0.014398, 0.000309, 5887, 2186, 0.121205, 0.827077, 0.813168],
+     [22, 5638, 2201, 0.118976, 96, 0.017027, 0.0003, 5542, 2122, 0.121032, 0.824251, 0.813353],
+     [23, 5506, 2126, 0.118767, 76, 0.013803, 0.000347, 5430, 2065, 0.120424, 0.832228, 0.812339],
+     [24, 5262, 2084, 0.121233, 107, 0.020334, 0.000391, 5155, 1999, 0.123741, 0.822502, 0.809061],
+     [25, 5255, 2100, 0.120797, 102, 0.01941, 0.00032, 5153, 2017, 0.123182, 0.820105, 0.809166],
+     [26, 5432, 2059, 0.120102, 100, 0.018409, 0.000385, 5332, 1980, 0.122347, 0.824456, 0.814051],
+     [27, 5491, 2134, 0.122374, 111, 0.020215, 0.000426, 5380, 2044, 0.12489, 0.816357, 0.812651],
+     [28, 4966, 1942, 0.12199, 108, 0.021748, 0.000443, 4858, 1856, 0.124692, 0.821737, 0.8114],
+     [29, 4578, 1821, 0.124903, 129, 0.028178, 0.000405, 4449, 1723, 0.128513, 0.815015, 0.808006],
+     [30, 4257, 1738, 0.128499, 113, 0.026545, 0.000442, 4144, 1657, 0.131991, 0.807191, 0.809901],
+     [31, 3898, 1586, 0.124577, 130, 0.03335, 0.000488, 3768, 1498, 0.128858, 0.815552, 0.808516],
+     [32, 3868, 1598, 0.123488, 156, 0.040331, 0.000394, 3712, 1492, 0.128661, 0.81708, 0.810792],
+     [33, 3715, 1579, 0.122159, 154, 0.041454, 0.000343, 3561, 1473, 0.127427, 0.816063, 0.813204],
+     [34, 3591, 1567, 0.125586, 171, 0.047619, 0.001904, 3420, 1441, 0.13177, 0.814912, 0.806272],
+     [35, 3182, 1386, 0.120656, 129, 0.040541, 0.002847, 3053, 1290, 0.125634, 0.816246, 0.8087],
+     [36, 3085, 1339, 0.124264, 131, 0.042464, 0.001916, 2954, 1243, 0.12969, 0.817874, 0.810058],
+     [37, 2833, 1254, 0.121819, 133, 0.046947, 0.002773, 2700, 1161, 0.127683, 0.814074, 0.806881],
+     [38, 2832, 1284, 0.122364, 137, 0.048376, 0.011634, 2695, 1188, 0.127992, 0.817069, 0.813763],
+     [39, 2780, 1226, 0.12315, 137, 0.049281, 0.010434, 2643, 1132, 0.128993, 0.811578, 0.814956],
+     [40, 2795, 1266, 0.123105, 157, 0.056172, 0.008255, 2638, 1153, 0.12994, 0.813116, 0.814155],
+     [41, 2892, 1264, 0.117128, 176, 0.060858, 0.005753, 2716, 1134, 0.124346, 0.815906, 0.817695],
+     [42, 2672, 1232, 0.119494, 156, 0.058383, 0.008981, 2516, 1117, 0.126346, 0.813196, 0.819543],
+     [43, 2538, 1203, 0.11695, 156, 0.061466, 0.008588, 2382, 1095, 0.124046, 0.821998, 0.815621],
+     [44, 2461, 1166, 0.114862, 175, 0.071109, 0.011861, 2286, 1048, 0.122747, 0.828521, 0.818198],
+     [45, 2304, 1110, 0.115103, 179, 0.077691, 0.009099, 2125, 993, 0.124032, 0.824471, 0.814231],
+     [46, 2397, 1109, 0.115887, 185, 0.07718, 0.006952, 2212, 989, 0.124998, 0.816456, 0.815909],
+     [47, 2343, 1067, 0.118459, 202, 0.086214, 0.009946, 2141, 946, 0.128697, 0.811303, 0.819206],
+     [48, 2304, 1064, 0.116689, 223, 0.096788, 0.008265, 2081, 934, 0.128308, 0.811629, 0.816665],
+     [49, 2124, 1029, 0.119215, 230, 0.108286, 0.006023, 1894, 895, 0.132961, 0.802534, 0.816737],
+     [50, 2054, 966, 0.121674, 229, 0.11149, 0.013682, 1825, 833, 0.135225, 0.804932, 0.811485],
+     [51, 2103, 1011, 0.12302, 238, 0.113172, 0.016671, 1865, 877, 0.136592, 0.803753, 0.81341],
+     [52, 2051, 979, 0.117913, 258, 0.125792, 0.01691, 1793, 842, 0.132446, 0.810931, 0.812131],
+     [53, 2044, 989, 0.116733, 259, 0.126712, 0.01252, 1785, 845, 0.131854, 0.808964, 0.814106],
+     [54, 2114, 1013, 0.11273, 272, 0.128666, 0.011751, 1842, 868, 0.127641, 0.818132, 0.81721],
+     [55, 2236, 1000, 0.115671, 301, 0.134615, 0.012211, 1935, 852, 0.131764, 0.808786, 0.81678],
+     [56, 2104, 1006, 0.116514, 308, 0.146388, 0.017279, 1796, 851, 0.133532, 0.808463, 0.814878],
+     [57, 2014, 955, 0.112777, 301, 0.149454, 0.024376, 1713, 808, 0.128311, 0.816696, 0.817093],
+     [58, 1943, 932, 0.113981, 350, 0.180134, 0.033191, 1593, 770, 0.131732, 0.802888, 0.809937],
+     [59, 1902, 920, 0.114937, 282, 0.148265, 0.012768, 1620, 804, 0.132722, 0.801852, 0.806858],
+     [60, 2025, 966, 0.118072, 302, 0.149136, 0.009278, 1723, 843, 0.137141, 0.800348, 0.809762],
+     [61, 2093, 931, 0.11115, 402, 0.192069, 0.011955, 1691, 807, 0.134732, 0.804258, 0.809521],
+     [62, 2098, 947, 0.123996, 12, 0.00572, 0.000558, 2086, 940, 0.124706, 0.826462, 0.82315],
+     [63, 1997, 906, 0.122501, 8, 0.004006, 0.000375, 1989, 901, 0.122992, 0.830065, 0.821679],
+     [64, 1912, 878, 0.112683, 10, 0.00523, 0.00036, 1902, 871, 0.113274, 0.840168, 0.826356],
+     [65, 1771, 836, 0.118987, 13, 0.00734, 0.000469, 1758, 829, 0.119863, 0.827645, 0.81872],
+     [66, 1741, 824, 0.120076, 7, 0.004021, 0.000257, 1734, 819, 0.12056, 0.83045, 0.823893],
+     [67, 1784, 814, 0.115334, 8, 0.004484, 0.000275, 1776, 809, 0.115853, 0.838401, 0.828429],
+     [68, 1853, 831, 0.111712, 13, 0.007016, 0.004608, 1840, 824, 0.112469, 0.841848, 0.827092],
+     [69, 1840, 852, 0.118195, 7, 0.003804, 0.005357, 1833, 849, 0.118626, 0.831424, 0.824015],
+     [70, 1699, 774, 0.119412, 6, 0.003531, 0.000867, 1693, 771, 0.119832, 0.829297, 0.822487],
+     [71, 1656, 772, 0.119257, 11, 0.006643, 0.001245, 1645, 766, 0.120046, 0.829787, 0.824085],
+     [72, 1604, 761, 0.113616, 4, 0.002494, 0.000375, 1600, 758, 0.113899, 0.838125, 0.827819],
+     [73, 1594, 755, 0.120265, 6, 0.003764, 0.000617, 1588, 752, 0.120718, 0.826196, 0.825157],
+     [74, 1639, 758, 0.116411, 6, 0.003661, 0.003033, 1633, 755, 0.116828, 0.83466, 0.825511],
+     [75, 1636, 728, 0.11724, 9, 0.005501, 0.001078, 1627, 725, 0.117883, 0.836509, 0.824597],
+     [76, 1632, 755, 0.123172, 0, 0.0, null, 1632, 755, 0.123172, 0.827206, 0.820086],
+     [77, 1536, 696, 0.120233, 0, 0.0, null, 1536, 696, 0.120233, 0.82487, 0.821543],
+     [78, 1454, 675, 0.122255, 0, 0.0, null, 1454, 675, 0.122255, 0.827373, 0.817215],
+     [79, 1443, 655, 0.120716, 0, 0.0, null, 1443, 655, 0.120716, 0.824671, 0.823444],
+     [80, 1457, 647, 0.125567, 0, 0.0, null, 1457, 647, 0.125567, 0.818806, 0.828367],
+     [81, 1514, 659, 0.12742, 0, 0.0, null, 1514, 659, 0.12742, 0.814399, 0.82607],
+     [82, 1496, 671, 0.129272, 0, 0.0, null, 1496, 671, 0.129272, 0.810829, 0.822126],
+     [83, 1548, 672, 0.125524, 0, 0.0, null, 1548, 672, 0.125524, 0.808786, 0.824509],
+     [84, 1416, 617, 0.127309, 0, 0.0, null, 1416, 617, 0.127309, 0.800141, 0.82096],
+     [85, 1405, 606, 0.128672, 0, 0.0, null, 1405, 606, 0.128672, 0.800712, 0.822021],
+     [86, 1388, 593, 0.124329, 0, 0.0, null, 1388, 593, 0.124329, 0.814121, 0.820079],
+     [87, 1206, 521, 0.120516, 0, 0.0, null, 1206, 521, 0.120516, 0.823383, 0.821459],
+     [88, 1263, 562, 0.123186, 0, 0.0, null, 1263, 562, 0.123186, 0.81631, 0.812977],
+     [89, 1332, 579, 0.127743, 0, 0.0, null, 1332, 579, 0.127743, 0.804054, 0.815473],
+     [90, 1303, 578, 0.131073, 0, 0.0, null, 1303, 578, 0.131073, 0.802763, 0.810913]
+    ],
+    "All Politics": [
+     [1, 14112, 1906, 0.133433, 81, 0.00574, 0.012795, 14031, 1850, 0.134129, 0.801725, 0.798052],
+     [2, 10836, 1692, 0.137895, 63, 0.005814, 0.000138, 10773, 1641, 0.138701, 0.796992, 0.794457],
+     [3, 8742, 1583, 0.140463, 60, 0.006863, 0.000293, 8682, 1535, 0.141431, 0.79302, 0.795638],
+     [4, 7353, 1484, 0.138023, 67, 0.009112, 0.000345, 7286, 1439, 0.139289, 0.796596, 0.79829],
+     [5, 6496, 1390, 0.135923, 72, 0.011084, 0.004751, 6424, 1346, 0.137393, 0.803861, 0.805974],
+     [6, 5107, 1205, 0.138299, 67, 0.013119, 0.000204, 5040, 1148, 0.140134, 0.801587, 0.800052],
+     [7, 3507, 942, 0.14434, 61, 0.017394, 0.000225, 3446, 889, 0.146892, 0.784388, 0.793175],
+     [8, 2972, 861, 0.134767, 60, 0.020188, 0.000193, 2912, 814, 0.13754, 0.79739, 0.801332],
+     [9, 2723, 830, 0.132066, 73, 0.026809, 0.00016, 2650, 781, 0.1357, 0.802264, 0.799034],
+     [10, 2531, 826, 0.138488, 56, 0.022126, 0.000216, 2475, 775, 0.141617, 0.801616, 0.799261],
+     [11, 2420, 794, 0.13375, 56, 0.02314, 0.000195, 2364, 745, 0.136914, 0.808799, 0.804404],
+     [12, 2322, 768, 0.134993, 41, 0.017657, 0.000185, 2281, 733, 0.137417, 0.806664, 0.800346],
+     [13, 2269, 769, 0.138866, 66, 0.029088, 0.000194, 2203, 713, 0.14302, 0.799818, 0.805533],
+     [14, 2153, 752, 0.127817, 68, 0.031584, 0.000197, 2085, 697, 0.131979, 0.816307, 0.807803],
+     [15, 2021, 740, 0.128761, 69, 0.034142, 0.000233, 1952, 678, 0.133305, 0.8125, 0.809682],
+     [16, 1937, 720, 0.132812, 100, 0.051626, 0.000213, 1837, 639, 0.14003, 0.800218, 0.805384],
+     [17, 1783, 697, 0.129194, 86, 0.048233, 0.000235, 1697, 626, 0.135729, 0.803182, 0.807171],
+     [18, 1746, 667, 0.120142, 83, 0.047537, 0.000219, 1663, 599, 0.126127, 0.8184, 0.813764],
+     [19, 1689, 663, 0.123056, 107, 0.063351, 0.000214, 1582, 581, 0.131365, 0.810367, 0.805278],
+     [20, 1758, 671, 0.117712, 113, 0.064278, 0.000192, 1645, 584, 0.125784, 0.818237, 0.812347],
+     [21, 1678, 660, 0.12457, 86, 0.051251, 0.000309, 1592, 588, 0.131283, 0.810302, 0.806325],
+     [22, 1592, 654, 0.112726, 96, 0.060302, 0.0003, 1496, 575, 0.119941, 0.822861, 0.812694],
+     [23, 1470, 611, 0.119754, 76, 0.051701, 0.000347, 1394, 550, 0.126264, 0.827116, 0.809462],
+     [24, 1441, 626, 0.119832, 107, 0.074254, 0.000391, 1334, 541, 0.129412, 0.818591, 0.808201],
+     [25, 1388, 619, 0.11467, 102, 0.073487, 0.00032, 1286, 536, 0.12374, 0.821928, 0.808243],
+     [26, 1403, 582, 0.115217, 100, 0.071276, 0.000385, 1303, 503, 0.12403, 0.828856, 0.811021],
+     [27, 1447, 623, 0.111815, 111, 0.07671, 0.000426, 1336, 533, 0.121069, 0.818862, 0.818121],
+     [28, 1472, 600, 0.115525, 108, 0.07337, 0.000443, 1364, 514, 0.124637, 0.820381, 0.822199],
+     [29, 1361, 594, 0.119438, 129, 0.094783, 0.000405, 1232, 496, 0.131902, 0.80763, 0.804375],
+     [30, 1243, 542, 0.124675, 113, 0.090909, 0.000442, 1130, 461, 0.137098, 0.804425, 0.806133],
+     [31, 1195, 511, 0.122113, 130, 0.108787, 0.000488, 1065, 423, 0.136959, 0.804695, 0.806986],
+     [32, 1235, 535, 0.110873, 156, 0.126316, 0.000394, 1079, 429, 0.126845, 0.819277, 0.81114],
+     [33, 1240, 541, 0.111738, 154, 0.124194, 0.000343, 1086, 435, 0.127534, 0.815838, 0.813158],
+     [34, 1170, 539, 0.117188, 171, 0.146154, 0.001904, 999, 413, 0.136922, 0.806807, 0.803564],
+     [35, 1098, 503, 0.11118, 129, 0.117486, 0.002847, 969, 407, 0.125602, 0.820433, 0.808008],
+     [36, 1109, 499, 0.117165, 131, 0.118124, 0.001916, 978, 403, 0.132602, 0.816973, 0.806636],
+     [37, 1014, 475, 0.119774, 133, 0.131164, 0.002773, 881, 382, 0.137437, 0.803632, 0.797537],
+     [38, 979, 495, 0.114205, 137, 0.139939, 0.011634, 842, 399, 0.130894, 0.81829, 0.812387],
+     [39, 998, 464, 0.113243, 137, 0.137275, 0.010434, 861, 370, 0.129602, 0.815331, 0.813066],
+     [40, 981, 471, 0.112425, 157, 0.160041, 0.008255, 824, 358, 0.132273, 0.811893, 0.810886],
+     [41, 978, 485, 0.10301, 176, 0.179959, 0.005753, 802, 355, 0.124354, 0.820449, 0.817207],
+     [42, 922, 467, 0.106, 156, 0.169197, 0.008981, 766, 352, 0.125758, 0.815927, 0.822467],
+     [43, 921, 466, 0.102677, 156, 0.169381, 0.008588, 765, 358, 0.121864, 0.835294, 0.822196],
+     [44, 923, 477, 0.102917, 175, 0.189599, 0.011861, 748, 359, 0.12422, 0.836898, 0.822366],
+     [45, 900, 456, 0.100059, 179, 0.198889, 0.009099, 721, 339, 0.122641, 0.841886, 0.817739],
+     [46, 885, 448, 0.106244, 185, 0.20904, 0.006952, 700, 328, 0.132485, 0.82, 0.823271],
+     [47, 870, 450, 0.10281, 202, 0.232184, 0.009946, 668, 329, 0.130892, 0.818862, 0.81771],
+     [48, 880, 447, 0.09991, 223, 0.253409, 0.008265, 657, 317, 0.131016, 0.820396, 0.81446],
+     [49, 816, 440, 0.101814, 230, 0.281863, 0.006023, 586, 306, 0.139411, 0.805461, 0.813567],
+     [50, 790, 426, 0.099418, 229, 0.289873, 0.013682, 561, 293, 0.134415, 0.827094, 0.815579],
+     [51, 825, 433, 0.107803, 238, 0.288485, 0.016671, 587, 299, 0.144752, 0.807496, 0.816474],
+     [52, 824, 424, 0.094934, 258, 0.313107, 0.01691, 566, 287, 0.130499, 0.823322, 0.815459],
+     [53, 817, 435, 0.099709, 259, 0.317013, 0.01252, 558, 291, 0.140178, 0.806452, 0.806971],
+     [54, 820, 432, 0.091365, 272, 0.331707, 0.011751, 548, 287, 0.130882, 0.821168, 0.814708],
+     [55, 884, 420, 0.092393, 301, 0.340498, 0.012211, 583, 272, 0.133791, 0.809605, 0.817067],
+     [56, 881, 434, 0.091465, 308, 0.349603, 0.017279, 573, 279, 0.131342, 0.82199, 0.819424],
+     [57, 866, 430, 0.092304, 301, 0.347575, 0.024376, 565, 283, 0.128492, 0.826549, 0.818637],
+     [58, 883, 419, 0.090339, 350, 0.396376, 0.033191, 533, 257, 0.127866, 0.812383, 0.816398],
+     [59, 880, 411, 0.09542, 282, 0.320455, 0.012768, 598, 295, 0.134397, 0.797659, 0.801405],
+     [60, 895, 429, 0.094829, 302, 0.33743, 0.009278, 593, 306, 0.138398, 0.797639, 0.802901],
+     [61, 966, 408, 0.087428, 402, 0.416149, 0.011955, 564, 284, 0.141222, 0.799645, 0.807057],
+     [62, 981, 411, 0.106769, 12, 0.012232, 0.000558, 969, 404, 0.108084, 0.857585, 0.838576],
+     [63, 906, 397, 0.11033, 8, 0.00883, 0.000375, 898, 392, 0.111309, 0.849666, 0.830657],
+     [64, 950, 415, 0.101159, 10, 0.010526, 0.00036, 940, 408, 0.102231, 0.861702, 0.837915],
+     [65, 817, 362, 0.100513, 13, 0.015912, 0.000469, 804, 355, 0.102131, 0.858209, 0.843383],
+     [66, 801, 365, 0.102143, 7, 0.008739, 0.000257, 794, 360, 0.103041, 0.865239, 0.845907],
+     [67, 820, 339, 0.093835, 8, 0.009756, 0.000275, 812, 334, 0.094757, 0.873153, 0.852463],
+     [68, 808, 332, 0.106704, 13, 0.016089, 0.004608, 795, 325, 0.108373, 0.856604, 0.844717],
+     [69, 797, 337, 0.103175, 7, 0.008783, 0.005357, 790, 334, 0.104042, 0.862025, 0.848316],
+     [70, 724, 302, 0.10627, 6, 0.008287, 0.000867, 718, 299, 0.107151, 0.852368, 0.85007],
+     [71, 708, 305, 0.106862, 11, 0.015537, 0.001245, 697, 299, 0.108529, 0.842181, 0.850215],
+     [72, 698, 297, 0.098188, 4, 0.005731, 0.000375, 694, 294, 0.098751, 0.863112, 0.851787],
+     [73, 716, 298, 0.100309, 6, 0.00838, 0.000617, 710, 295, 0.101151, 0.853521, 0.85331],
+     [74, 711, 287, 0.101235, 6, 0.008439, 0.003033, 705, 284, 0.102071, 0.855319, 0.849929],
+     [75, 685, 273, 0.104184, 9, 0.013139, 0.001078, 676, 270, 0.105556, 0.846154, 0.848639],
+     [76, 668, 283, 0.114282, 0, 0.0, null, 668, 283, 0.114282, 0.83982, 0.840644],
+     [77, 644, 265, 0.10606, 0, 0.0, null, 644, 265, 0.10606, 0.846273, 0.841196],
+     [78, 625, 260, 0.108818, 0, 0.0, null, 625, 260, 0.108818, 0.8528, 0.846064],
+     [79, 586, 232, 0.10444, 0, 0.0, null, 586, 232, 0.10444, 0.849829, 0.854403],
+     [80, 665, 259, 0.112046, 0, 0.0, null, 665, 259, 0.112046, 0.843609, 0.85209],
+     [81, 632, 264, 0.122794, 0, 0.0, null, 632, 264, 0.122794, 0.822785, 0.845918],
+     [82, 643, 250, 0.10699, 0, 0.0, null, 643, 250, 0.10699, 0.847589, 0.850964],
+     [83, 610, 252, 0.110889, 0, 0.0, null, 610, 252, 0.110889, 0.842623, 0.852344],
+     [84, 543, 225, 0.117149, 0, 0.0, null, 543, 225, 0.117149, 0.808471, 0.837293],
+     [85, 559, 217, 0.119516, 0, 0.0, null, 559, 217, 0.119516, 0.806798, 0.841073],
+     [86, 580, 214, 0.115278, 0, 0.0, null, 580, 214, 0.115278, 0.827586, 0.847448],
+     [87, 539, 196, 0.104995, 0, 0.0, null, 539, 196, 0.104995, 0.842301, 0.840501],
+     [88, 511, 205, 0.120933, 0, 0.0, null, 511, 205, 0.120933, 0.819961, 0.818239],
+     [89, 466, 192, 0.128414, 0, 0.0, null, 466, 192, 0.128414, 0.798283, 0.822554],
+     [90, 469, 202, 0.126339, 0, 0.0, null, 469, 202, 0.126339, 0.808102, 0.822942]
+    ],
+    "Elections and primaries": [
+     [1, 465, 210, 0.04784, 81, 0.174194, 0.012795, 384, 154, 0.055233, 0.919271, 0.931615],
+     [2, 505, 238, 0.05758, 63, 0.124752, 0.000138, 442, 187, 0.065767, 0.904977, 0.90457],
+     [3, 510, 239, 0.067633, 60, 0.117647, 0.000293, 450, 191, 0.076612, 0.884444, 0.877978],
+     [4, 454, 214, 0.071679, 67, 0.147577, 0.000345, 387, 169, 0.084029, 0.875969, 0.868346],
+     [5, 496, 215, 0.063524, 72, 0.145161, 0.004751, 424, 171, 0.073504, 0.896226, 0.881462],
+     [6, 449, 214, 0.079229, 67, 0.14922, 0.000204, 382, 157, 0.09309, 0.863874, 0.861832],
+     [7, 439, 209, 0.082117, 61, 0.138952, 0.000225, 378, 156, 0.095333, 0.87037, 0.862275],
+     [8, 408, 205, 0.070166, 60, 0.147059, 0.000193, 348, 158, 0.08223, 0.887931, 0.869799],
+     [9, 422, 202, 0.076353, 73, 0.172986, 0.00016, 349, 153, 0.092291, 0.859599, 0.869799],
+     [10, 378, 202, 0.081722, 56, 0.148148, 0.000216, 322, 151, 0.095898, 0.860248, 0.857702],
+     [11, 362, 191, 0.076313, 56, 0.154696, 0.000195, 306, 142, 0.090243, 0.862745, 0.865261],
+     [12, 344, 177, 0.068952, 41, 0.119186, 0.000185, 303, 142, 0.078257, 0.891089, 0.861386],
+     [13, 378, 199, 0.076451, 66, 0.174603, 0.000194, 312, 143, 0.092582, 0.86859, 0.871795],
+     [14, 358, 189, 0.065165, 68, 0.189944, 0.000197, 290, 134, 0.080399, 0.893103, 0.866138],
+     [15, 345, 199, 0.067853, 69, 0.2, 0.000233, 276, 137, 0.084758, 0.884058, 0.863877],
+     [16, 359, 221, 0.068427, 100, 0.278552, 0.000213, 259, 140, 0.094764, 0.857143, 0.858263],
+     [17, 356, 214, 0.067168, 86, 0.241573, 0.000235, 270, 143, 0.088487, 0.866667, 0.852926],
+     [18, 356, 196, 0.057549, 83, 0.233146, 0.000219, 273, 128, 0.074979, 0.89011, 0.867546],
+     [19, 341, 202, 0.067435, 107, 0.313783, 0.000214, 234, 120, 0.098172, 0.854701, 0.849872],
+     [20, 367, 207, 0.054027, 113, 0.307902, 0.000192, 254, 120, 0.077977, 0.877953, 0.864213],
+     [21, 347, 209, 0.079508, 86, 0.247839, 0.000309, 261, 137, 0.105604, 0.854406, 0.842146],
+     [22, 343, 200, 0.074721, 96, 0.279883, 0.0003, 247, 121, 0.103646, 0.842105, 0.852389],
+     [23, 305, 177, 0.070133, 76, 0.24918, 0.000347, 229, 116, 0.093294, 0.860262, 0.861092],
+     [24, 363, 211, 0.063736, 107, 0.294766, 0.000391, 256, 126, 0.090213, 0.878906, 0.860898],
+     [25, 351, 198, 0.055518, 102, 0.290598, 0.00032, 249, 115, 0.078129, 0.88755, 0.866908],
+     [26, 354, 195, 0.05814, 100, 0.282486, 0.000385, 254, 116, 0.080878, 0.88189, 0.869094],
+     [27, 376, 210, 0.051402, 111, 0.295213, 0.000426, 265, 120, 0.072754, 0.898113, 0.874528],
+     [28, 418, 223, 0.059275, 108, 0.258373, 0.000443, 310, 137, 0.079771, 0.883871, 0.868677],
+     [29, 393, 220, 0.07523, 129, 0.328244, 0.000405, 264, 122, 0.111792, 0.848485, 0.826439],
+     [30, 350, 192, 0.080188, 113, 0.322857, 0.000442, 237, 111, 0.11821, 0.831224, 0.827046],
+     [31, 355, 187, 0.081287, 130, 0.366197, 0.000488, 225, 99, 0.127971, 0.826667, 0.831333],
+     [32, 385, 204, 0.066479, 156, 0.405195, 0.000394, 229, 98, 0.111498, 0.851528, 0.846332],
+     [33, 377, 211, 0.059759, 154, 0.408488, 0.000343, 223, 105, 0.100791, 0.869955, 0.854036],
+     [34, 400, 224, 0.067104, 171, 0.4275, 0.001904, 229, 98, 0.11579, 0.860262, 0.839476],
+     [35, 333, 183, 0.066949, 129, 0.387387, 0.002847, 204, 87, 0.107484, 0.862745, 0.839412],
+     [36, 340, 188, 0.061154, 131, 0.385294, 0.001916, 209, 92, 0.098285, 0.885167, 0.828565],
+     [37, 326, 178, 0.062245, 133, 0.407975, 0.002773, 193, 85, 0.103228, 0.880829, 0.825285],
+     [38, 331, 183, 0.062633, 137, 0.413897, 0.011634, 194, 87, 0.098648, 0.871134, 0.831598],
+     [39, 312, 172, 0.059601, 137, 0.439103, 0.010434, 175, 78, 0.098091, 0.868571, 0.8344],
+     [40, 334, 193, 0.06186, 157, 0.47006, 0.008255, 177, 80, 0.109408, 0.858757, 0.825593],
+     [41, 362, 209, 0.053988, 176, 0.486188, 0.005753, 186, 79, 0.09963, 0.88172, 0.838118],
+     [42, 348, 201, 0.061226, 156, 0.448276, 0.008981, 192, 86, 0.103674, 0.875, 0.835781],
+     [43, 369, 209, 0.059563, 156, 0.422764, 0.008588, 213, 101, 0.096896, 0.882629, 0.837887],
+     [44, 387, 209, 0.061508, 175, 0.452196, 0.011861, 212, 91, 0.10249, 0.882075, 0.85],
+     [45, 382, 204, 0.051978, 179, 0.468586, 0.009099, 203, 87, 0.089788, 0.896552, 0.85665],
+     [46, 378, 201, 0.058442, 185, 0.489418, 0.006952, 193, 81, 0.107798, 0.865285, 0.859275],
+     [47, 379, 193, 0.062909, 202, 0.532982, 0.009946, 177, 72, 0.123353, 0.853107, 0.842316],
+     [48, 411, 204, 0.050155, 223, 0.542579, 0.008265, 188, 74, 0.099845, 0.87766, 0.847553],
+     [49, 375, 204, 0.045718, 230, 0.613333, 0.006023, 145, 70, 0.108682, 0.868966, 0.834138],
+     [50, 374, 201, 0.047719, 229, 0.612299, 0.013682, 145, 68, 0.101474, 0.889655, 0.836276],
+     [51, 407, 209, 0.052413, 238, 0.584767, 0.016671, 169, 75, 0.102748, 0.87574, 0.849704],
+     [52, 421, 210, 0.053476, 258, 0.612827, 0.01691, 163, 73, 0.111352, 0.852761, 0.83816],
+     [53, 404, 211, 0.053001, 259, 0.641089, 0.01252, 145, 67, 0.125308, 0.834483, 0.833448],
+     [54, 419, 213, 0.047871, 272, 0.649165, 0.011751, 147, 68, 0.114705, 0.85034, 0.835306],
+     [55, 449, 216, 0.048821, 301, 0.670379, 0.012211, 148, 68, 0.123278, 0.831081, 0.833041],
+     [56, 464, 224, 0.046992, 308, 0.663793, 0.017279, 156, 69, 0.105658, 0.865385, 0.836154],
+     [57, 443, 215, 0.060703, 301, 0.679458, 0.024376, 142, 68, 0.137706, 0.816901, 0.806549],
+     [58, 491, 220, 0.056926, 350, 0.712831, 0.033191, 141, 58, 0.115845, 0.836879, 0.835603],
+     [59, 514, 223, 0.066383, 282, 0.548638, 0.012768, 232, 107, 0.131553, 0.801724, 0.784655],
+     [60, 514, 224, 0.061491, 302, 0.587549, 0.009278, 212, 101, 0.135869, 0.792453, 0.784434],
+     [61, 618, 227, 0.050729, 402, 0.650485, 0.011955, 216, 103, 0.122893, 0.833333, 0.788796],
+     [62, 641, 229, 0.086115, 12, 0.018721, 0.000558, 629, 222, 0.087748, 0.887122, 0.850874],
+     [63, 601, 221, 0.090401, 8, 0.013311, 0.000375, 593, 216, 0.091615, 0.878583, 0.844621],
+     [64, 599, 228, 0.087867, 10, 0.016694, 0.00036, 589, 221, 0.089353, 0.879457, 0.848098],
+     [65, 508, 199, 0.077946, 13, 0.025591, 0.000469, 495, 192, 0.079981, 0.890909, 0.863232],
+     [66, 508, 184, 0.076206, 7, 0.01378, 0.000257, 501, 179, 0.077267, 0.898204, 0.870838],
+     [67, 471, 153, 0.064504, 8, 0.016985, 0.000275, 463, 148, 0.065614, 0.917927, 0.880194],
+     [68, 458, 154, 0.069497, 13, 0.028384, 0.004608, 445, 147, 0.071393, 0.916854, 0.874562],
+     [69, 452, 149, 0.075575, 7, 0.015487, 0.005357, 445, 146, 0.076679, 0.910112, 0.878899],
+     [70, 420, 140, 0.071475, 6, 0.014286, 0.000867, 414, 137, 0.072498, 0.913043, 0.873889],
+     [71, 393, 135, 0.072321, 11, 0.02799, 0.001245, 382, 129, 0.074367, 0.897906, 0.874581],
+     [72, 414, 141, 0.06784, 4, 0.009662, 0.000375, 410, 138, 0.068498, 0.909756, 0.878878],
+     [73, 414, 135, 0.069199, 6, 0.014493, 0.000617, 408, 132, 0.070207, 0.904412, 0.879044],
+     [74, 396, 125, 0.073659, 6, 0.015152, 0.003033, 390, 122, 0.074746, 0.9, 0.876769],
+     [75, 369, 124, 0.075686, 9, 0.02439, 0.001078, 360, 121, 0.077551, 0.897222, 0.871556],
+     [76, 343, 121, 0.073956, 0, 0.0, null, 343, 121, 0.073956, 0.909621, 0.866589],
+     [77, 348, 109, 0.078239, 0, 0.0, null, 348, 109, 0.078239, 0.902299, 0.870029],
+     [78, 322, 112, 0.087624, 0, 0.0, null, 322, 112, 0.087624, 0.897516, 0.859938],
+     [79, 301, 101, 0.082346, 0, 0.0, null, 301, 101, 0.082346, 0.893688, 0.869502],
+     [80, 350, 114, 0.088765, 0, 0.0, null, 350, 114, 0.088765, 0.888571, 0.877229],
+     [81, 341, 118, 0.083894, 0, 0.0, null, 341, 118, 0.083894, 0.876833, 0.881056],
+     [82, 342, 113, 0.076096, 0, 0.0, null, 342, 113, 0.076096, 0.891813, 0.88193],
+     [83, 334, 116, 0.081269, 0, 0.0, null, 334, 116, 0.081269, 0.886228, 0.880778],
+     [84, 275, 94, 0.095858, 0, 0.0, null, 275, 94, 0.095858, 0.843636, 0.860873],
+     [85, 289, 90, 0.106889, 0, 0.0, null, 289, 90, 0.106889, 0.823529, 0.857889],
+     [86, 316, 86, 0.095941, 0, 0.0, null, 316, 86, 0.095941, 0.857595, 0.876646],
+     [87, 278, 79, 0.083118, 0, 0.0, null, 278, 79, 0.083118, 0.877698, 0.863633],
+     [88, 263, 79, 0.102777, 0, 0.0, null, 263, 79, 0.102777, 0.855513, 0.838935],
+     [89, 205, 62, 0.109465, 0, 0.0, null, 205, 62, 0.109465, 0.829268, 0.843366],
+     [90, 218, 67, 0.127029, 0, 0.0, null, 218, 67, 0.127029, 0.798165, 0.833257]
+    ]
+   }
+  },
+  "summary": {
+   "S": {
+    "All topics": {
+     "daysWithPostElectionPrices": [1, 75],
+     "postElectionPrices": 4206,
+     "peakShare": {
+      "day": 58,
+      "share": 0.089552,
+      "postElection": 174,
+      "rowContracts": 1943,
+      "rowBrier": 0.113981,
+      "withoutBrier": 0.119779
+     },
+     "daysWithShareAtLeast25pct": [],
+     "daysWithShareAtLeast10pct": [],
+     "maxShareDays62to90": 0.004517,
+     "shareRangeDays1to30": [0.000149, 0.013543]
+    },
+    "All Politics": {
+     "daysWithPostElectionPrices": [1, 75],
+     "postElectionPrices": 4206,
+     "peakShare": {
+      "day": 58,
+      "share": 0.197055,
+      "postElection": 174,
+      "rowContracts": 883,
+      "rowBrier": 0.090339,
+      "withoutBrier": 0.099004
+     },
+     "daysWithShareAtLeast25pct": [],
+     "daysWithShareAtLeast10pct": [
+      [45, 58],
+      [60, 61]
+     ],
+     "maxShareDays62to90": 0.009792,
+     "shareRangeDays1to30": [0.001276, 0.045555]
+    },
+    "Elections and primaries": {
+     "daysWithPostElectionPrices": [1, 75],
+     "postElectionPrices": 4206,
+     "peakShare": {
+      "day": 58,
+      "share": 0.354379,
+      "postElection": 174,
+      "rowContracts": 491,
+      "rowBrier": 0.056926,
+      "withoutBrier": 0.057966
+     },
+     "daysWithShareAtLeast25pct": [
+      [41, 41],
+      [47, 58]
+     ],
+     "daysWithShareAtLeast10pct": [
+      [13, 13],
+      [15, 61]
+     ],
+     "maxShareDays62to90": 0.015748,
+     "shareRangeDays1to30": [0.035242, 0.172702]
+    }
+   },
+   "W": {
+    "All topics": {
+     "daysWithPostElectionPrices": [1, 75],
+     "postElectionPrices": 9216,
+     "peakShare": {
+      "day": 61,
+      "share": 0.192069,
+      "postElection": 402,
+      "rowContracts": 2093,
+      "rowBrier": 0.11115,
+      "withoutBrier": 0.134732
+     },
+     "daysWithShareAtLeast25pct": [],
+     "daysWithShareAtLeast10pct": [
+      [49, 61]
+     ],
+     "maxShareDays62to90": 0.00734,
+     "shareRangeDays1to30": [0.00067, 0.028178]
+    },
+    "All Politics": {
+     "daysWithPostElectionPrices": [1, 75],
+     "postElectionPrices": 9216,
+     "peakShare": {
+      "day": 61,
+      "share": 0.416149,
+      "postElection": 402,
+      "rowContracts": 966,
+      "rowBrier": 0.087428,
+      "withoutBrier": 0.141222
+     },
+     "daysWithShareAtLeast25pct": [
+      [48, 61]
+     ],
+     "daysWithShareAtLeast10pct": [
+      [31, 61]
+     ],
+     "maxShareDays62to90": 0.016089,
+     "shareRangeDays1to30": [0.00574, 0.094783]
+    },
+    "Elections and primaries": {
+     "daysWithPostElectionPrices": [1, 75],
+     "postElectionPrices": 9216,
+     "peakShare": {
+      "day": 58,
+      "share": 0.712831,
+      "postElection": 350,
+      "rowContracts": 491,
+      "rowBrier": 0.056926,
+      "withoutBrier": 0.115845
+     },
+     "daysWithShareAtLeast25pct": [
+      [16, 16],
+      [19, 20],
+      [22, 22],
+      [24, 61]
+     ],
+     "daysWithShareAtLeast10pct": [
+      [1, 61]
+     ],
+     "maxShareDays62to90": 0.028384,
+     "shareRangeDays1to30": [0.117647, 0.328244]
+    }
+   }
+  }
+ }
+}

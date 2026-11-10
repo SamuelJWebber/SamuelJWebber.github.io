@@ -1,0 +1,1 @@
+{"url":"https://api.elections.kalshi.com/trade-api/v2/historical/markets/CREDITCDEF-23-Q3-2.77/candlesticks?start_ts=1698505200&end_ts=1698591600&period_interval=60","retrievedAt":"2026-11-06T20:13:29.877228+00:00","sha256":"1db2a84fdef0e670262a2b67ae350f1c734e519974e1895770bbfa6baf2ffe01","response":{"candlesticks":[],"ticker":"CREDITCDEF-23-Q3-2.77"}}

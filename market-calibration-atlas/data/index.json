@@ -1,0 +1,146 @@
+{
+  "venues": [
+    {
+      "id": "all",
+      "name": "All markets",
+      "money": "Five real-money venues and one play-money venue",
+      "scope": "All six venues combined, including Manifold’s historical play-money markets.",
+      "method": "Each eligible contract on each venue counts once per horizon. A race or game traded on two venues contributes to both. Event counts distinguish the two venues’ records. For trading volume, each contract is classified against its own venue’s median for that topic and horizon before the groups are combined.",
+      "sources": []
+    },
+    {
+      "id": "polymarket",
+      "name": "Polymarket",
+      "scope": "166,966 resolved binary contracts across 53,199 parent events, February 2023 to March 2026. The archive covers 84 detailed topics, including politics, crypto, weather and sports. The longest observed horizon is 663 days.",
+      "method": "For each contract, track the Yes token when available, otherwise the first listed outcome. Use the last trade in the latest fully completed trading hour within the 24 hours before the cutoff. Days count back from the earlier of scheduled expiration and recorded close. Settlement comes from the winning token. Contracts sharing the exchange event ID count as one parent event.",
+      "money": "Real money",
+      "sources": [
+        {
+          "label": "Akey, Grégoire, Harvie and Martineau · source data",
+          "url": "https://huggingface.co/datasets/vgregoire/polymarket-users/tree/91ddb961b090de18fd79e79edd8fa15f36ca11b9"
+        },
+        {
+          "label": "Authors’ data documentation",
+          "url": "https://www.vincentgregoire.com/polymarket-users-data/"
+        },
+        {
+          "label": "CC BY 4.0 license",
+          "url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ]
+    },
+    {
+      "id": "kalshi",
+      "name": "Kalshi",
+      "scope": "148,693 contracts across 37,179 parent events, July 2021 to January 2026. The archive covers 82 detailed topics. The longest observed horizon is 1,153 days. Only one contract traded at the three-year mark.",
+      "method": "Track the exchange’s Yes price on the latest positive-size trade in the 24 hours before each cutoff. Days count back from the reported trading close, which can follow the public result. Each contract has a final Yes or No settlement. The exchange’s event ID groups contracts, and series names and tags determine the topic. Multi-event combinations are excluded.",
+      "money": "Real money",
+      "sources": [
+        {
+          "label": "TrevorJS · historical Kalshi trades and settlements",
+          "url": "https://huggingface.co/datasets/TrevorJS/kalshi-trades"
+        },
+        {
+          "label": "Kalshi · series metadata",
+          "url": "https://api.elections.kalshi.com/trade-api/v2/series"
+        },
+        {
+          "label": "CC BY 4.0 license",
+          "url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ]
+    },
+    {
+      "id": "predictit",
+      "name": "PredictIt",
+      "scope": "301 contracts across 300 US election races in selected 2016–2024 archives. Coverage centers on congressional and presidential races. For 2024, the sample contains one national contract. The longest observed horizon is 739 days.",
+      "method": "Use the final traded price on the trading date that falls the specified number of calendar days before the general election or decisive runoff. On hourly records use the last traded hour of the New York trading date. Zero-volume days are excluded. Party markets generally track the Democratic contract. Candidate races track the named proposition. Outcomes are checked against vote results, and the event is the underlying race.",
+      "money": "Real money",
+      "sources": [
+        {
+          "label": "2016 and 2020 · archived PredictIt prices",
+          "url": "https://github.com/k5cents/predelect"
+        },
+        {
+          "label": "2018 · congressional market histories",
+          "url": "https://github.com/k5cents/models-markets"
+        },
+        {
+          "label": "2020 and 2022 · traded prices and results",
+          "url": "https://github.com/slchism/Do-Prediction-Markets-Predict-Elections-Better-Than-Polling-"
+        },
+        {
+          "label": "2024 · PredictIt national election contract data",
+          "url": "https://www.predictit.org/Resource/DownloadMarketChartData?marketid=7456&timespan=90d"
+        },
+        {
+          "label": "Federal Election Commission · official results",
+          "url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/"
+        }
+      ]
+    },
+    {
+      "id": "iem",
+      "name": "Iowa Electronic Markets",
+      "scope": "19 contracts on seven US presidential elections, 2000–2024. These contracts pay on the national popular vote. Four 2004 contracts also specify a vote-share threshold. The longest observed horizon is 886 days.",
+      "method": "Each contract is a party’s winning proposition or a winner-and-margin proposition. The last trade on the specified calendar date before election day supplies the price. Only dates with positive volume qualify. The seven election years supply the event IDs. In 2000 and 2016 the Democratic national popular-vote contracts won.",
+      "money": "Real money",
+      "sources": [
+        {
+          "label": "University of Iowa · market price histories",
+          "url": "https://iemweb.biz.uiowa.edu/iem_pricehistory/pricehistory/"
+        },
+        {
+          "label": "University of Iowa · 2000 contract definitions",
+          "url": "https://iemweb.biz.uiowa.edu/iem_prospectus/2000-u-s-presidential-election-winner-takes-all-market/"
+        },
+        {
+          "label": "University of Iowa · 2004 contracts and spin-offs",
+          "url": "https://iemweb.biz.uiowa.edu/iem_prospectus/2004-u-s-presidential-winner-takes-all-market/"
+        },
+        {
+          "label": "Federal Election Commission · official results",
+          "url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/"
+        }
+      ]
+    },
+    {
+      "id": "intrade",
+      "name": "Intrade",
+      "scope": "190 party contracts on 100 state-election outcomes across the 2008 and 2012 US presidential elections. The longest observed horizon is 723 days. States in the same national election can move together.",
+      "method": "A contract pays on the named party winning the state's popular vote. Use the exchange’s session close on the specified calendar date before election day, divided by 100. Rows require a valid positive price and positive session volume. Democratic and Republican contracts remain separate when both traded. The state and election year identify the event.",
+      "money": "Real money",
+      "sources": [
+        {
+          "label": "Kosuke Imai · Quantitative Social Science, chapter 4 data",
+          "url": "https://github.com/kosukeimai/qss/tree/master/PREDICTION"
+        },
+        {
+          "label": "2008 archive documentation",
+          "url": "https://kosukeimai.github.io/qss-package/reference/intrade08.html"
+        },
+        {
+          "label": "2012 archive documentation",
+          "url": "https://kosukeimai.github.io/qss-package/reference/intrade12.html"
+        }
+      ]
+    },
+    {
+      "id": "manifold",
+      "name": "Manifold",
+      "scope": "43,391 public, topic-tagged binary questions across 65 topics, with cutoffs from December 2021 to July 2024. The archive includes community and personal questions alongside public events. The longest observed horizon is 832 days. The sample predates Manifold’s cash sweepstakes.",
+      "method": "Track the Yes probability immediately after the last executed Mana trade within the 24 hours before each cutoff. Days count back from the earlier of reported close and resolution. Trades must have nonzero amounts and shares. Resolution is the platform-recorded Yes or No, often determined by the author. Each question supplies one event ID, so related questions can still be correlated. Eligibility requires a community topic tag and excludes flagged non-predictive questions.",
+      "money": "Play money",
+      "sources": [
+        {
+          "label": "Manifold · historical data, documentation and use terms",
+          "url": "https://docs.manifold.markets/data"
+        },
+        {
+          "label": "Manifold · introduction of later cash sweepstakes",
+          "url": "https://news.manifold.markets/p/cash-prizes-are-here"
+        }
+      ]
+    }
+  ]
+}

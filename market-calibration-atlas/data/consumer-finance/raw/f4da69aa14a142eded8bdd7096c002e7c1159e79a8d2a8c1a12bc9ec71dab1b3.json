@@ -1,0 +1,1 @@
+{"url":"https://api.elections.kalshi.com/trade-api/v2/historical/markets/KXCCDELINQ-26AUG30-T2.96/candlesticks?start_ts=1787443200&end_ts=1787529600&period_interval=60","retrievedAt":"2026-11-06T20:17:01.413179+00:00","sha256":"013a4bd12c6f50c50794bc919e4abe674a03f9809775099e6df9ad6b85d20f72","response":{"candlesticks":[],"ticker":"KXCCDELINQ-26AUG30-T2.96"}}

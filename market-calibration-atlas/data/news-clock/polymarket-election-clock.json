@@ -1,0 +1,918 @@
+{
+ "meta": {
+  "study": "Polymarket election clock: the panel's 2024 US general-election contracts against election night (news-clock Tier E2)",
+  "generatedAt": "2026-11-09T23:21:42+00:00",
+  "source": "Atlas Polymarket panel; question metadata from the pinned Polymarket Users markets.parquet (revision 91ddb961b090de18fd79e79edd8fa15f36ca11b9); statutory Election Day and poll-closing time",
+  "sourceSha256": "ca0a8438097fa830a2f94025e46196f4ff7a803656419e041f5c86c081c4a723",
+  "panelSha256": "c4303a271aef248aaf60baf0fcdab347632e4e994ab4bda87f71a927dd1d2c2a",
+  "firstPollsClose": "2024-11-05T23:00:00Z",
+  "panelAnchorRule": "earlier of scheduled end (expiration_time) and close_time (asserted per contract)",
+  "claims": "Descriptive lower bound. No result could be public before the first polls closed; this does not say when any race was called. Parser rules use question text only."
+ },
+ "parser": {
+  "contracts": 4426,
+  "mappedToElectionDay2024": 598,
+  "coverage": [
+   {
+    "group": "unmapped",
+    "detail": "names a non-US place or body (date not mapped)",
+    "contracts": 2347
+   },
+   {
+    "group": "unmapped",
+    "detail": "primary, caucus, nomination or runoff (date not mapped)",
+    "contracts": 530
+   },
+   {
+    "group": "unmapped",
+    "detail": "no US or non-US marker recognised (date not mapped)",
+    "contracts": 495
+   },
+   {
+    "group": "unmapped",
+    "detail": "other question naming a US state, party or office (date not mapped)",
+    "contracts": 323
+   },
+   {
+    "group": "us-2024-national",
+    "detail": "National or multi-race result",
+    "contracts": 218
+   },
+   {
+    "group": "us-2024-single-race",
+    "detail": "President (state)",
+    "contracts": 153
+   },
+   {
+    "group": "unmapped",
+    "detail": "not a vote result (event before or around an election)",
+    "contracts": 133
+   },
+   {
+    "group": "us-2024-single-race",
+    "detail": "Senate",
+    "contracts": 110
+   },
+   {
+    "group": "us-2024-call-timing",
+    "detail": "Race-call timing",
+    "contracts": 43
+   },
+   {
+    "group": "us-2024-single-race",
+    "detail": "Governor",
+    "contracts": 33
+   },
+   {
+    "group": "us-2024-single-race",
+    "detail": "House",
+    "contracts": 20
+   },
+   {
+    "group": "us-2024-single-race",
+    "detail": "Congressional district (president or House; question does not say)",
+    "contracts": 15
+   },
+   {
+    "group": "us-2024-single-race",
+    "detail": "Local or ballot measure",
+    "contracts": 6
+   }
+  ]
+ },
+ "singleRace": {
+  "all": {
+   "events": 124,
+   "contracts": 337,
+   "panelObservations": 23915,
+   "anchorMinusFirstPollsCloseDays": {
+    "n": 337,
+    "min": -5.958333333333333,
+    "p10": -0.4583333333333333,
+    "median": -0.4583333333333333,
+    "p90": -0.4583333333333333,
+    "max": 20.806284722222223
+   },
+   "closeMinusFirstPollsCloseDays": {
+    "n": 337,
+    "min": 0.41715277777777776,
+    "p10": 0.5628055555555556,
+    "median": 1.0388425925925926,
+    "p90": 4.023476851851852,
+    "max": 28.48296296296296
+   },
+   "scheduledEndMinusFirstPollsCloseDays": {
+    "n": 337,
+    "min": -5.958333333333333,
+    "p10": -0.4583333333333333,
+    "median": -0.4583333333333333,
+    "p90": -0.4583333333333333,
+    "max": 55.541666666666664
+   },
+   "contractsAnchoredBeforeFirstPollsClose": 329,
+   "contractsClosedAfterFirstPollsClose": 337,
+   "tradedAfterFirstPollsClose": 106,
+   "tradedAfterFirstPollsCloseShare": 0.004432364624712523,
+   "panelDaysOfObservationsAfterFirstPollsClose": {
+    "n": 106,
+    "min": 1,
+    "p10": 2.0,
+    "median": 10.0,
+    "p90": 16.0,
+    "max": 17
+   },
+   "byPanelDay": {
+    "1": {
+     "observations": 254,
+     "afterFirstPollsClose": 8
+    },
+    "3": {
+     "observations": 262,
+     "afterFirstPollsClose": 6
+    },
+    "7": {
+     "observations": 281,
+     "afterFirstPollsClose": 2
+    },
+    "14": {
+     "observations": 254,
+     "afterFirstPollsClose": 7
+    },
+    "30": {
+     "observations": 265,
+     "afterFirstPollsClose": 0
+    },
+    "60": {
+     "observations": 137,
+     "afterFirstPollsClose": 0
+    }
+   },
+   "brierBeforeFirstPollsClose": 0.040090474274301915,
+   "brierAfterFirstPollsClose": 0.012967291921740148
+  },
+  "offices": {
+   "Congressional district (president or House; question does not say)": {
+    "events": 5,
+    "contracts": 15,
+    "panelObservations": 771,
+    "anchorMinusFirstPollsCloseDays": {
+     "n": 15,
+     "min": -0.4583333333333333,
+     "p10": -0.4583333333333333,
+     "median": -0.4583333333333333,
+     "p90": -0.4583333333333333,
+     "max": -0.4583333333333333
+    },
+    "closeMinusFirstPollsCloseDays": {
+     "n": 15,
+     "min": 0.8404050925925926,
+     "p10": 0.8796018518518518,
+     "median": 0.9410416666666667,
+     "p90": 1.8496342592592592,
+     "max": 1.9166550925925927
+    },
+    "scheduledEndMinusFirstPollsCloseDays": {
+     "n": 15,
+     "min": -0.4583333333333333,
+     "p10": -0.4583333333333333,
+     "median": -0.4583333333333333,
+     "p90": -0.4583333333333333,
+     "max": -0.4583333333333333
+    },
+    "contractsAnchoredBeforeFirstPollsClose": 15,
+    "contractsClosedAfterFirstPollsClose": 15,
+    "tradedAfterFirstPollsClose": 0,
+    "tradedAfterFirstPollsCloseShare": 0.0,
+    "panelDaysOfObservationsAfterFirstPollsClose": null,
+    "byPanelDay": {
+     "1": {
+      "observations": 4,
+      "afterFirstPollsClose": 0
+     },
+     "3": {
+      "observations": 7,
+      "afterFirstPollsClose": 0
+     },
+     "7": {
+      "observations": 13,
+      "afterFirstPollsClose": 0
+     },
+     "14": {
+      "observations": 9,
+      "afterFirstPollsClose": 0
+     },
+     "30": {
+      "observations": 14,
+      "afterFirstPollsClose": 0
+     },
+     "60": {
+      "observations": 4,
+      "afterFirstPollsClose": 0
+     }
+    },
+    "brierBeforeFirstPollsClose": 0.014562652872307336,
+    "brierAfterFirstPollsClose": null
+   },
+   "Governor": {
+    "events": 11,
+    "contracts": 33,
+    "panelObservations": 1625,
+    "anchorMinusFirstPollsCloseDays": {
+     "n": 33,
+     "min": -1.4583333333333333,
+     "p10": -1.4583333333333333,
+     "median": -0.4583333333333333,
+     "p90": -0.4583333333333333,
+     "max": -0.4583333333333333
+    },
+    "closeMinusFirstPollsCloseDays": {
+     "n": 33,
+     "min": 0.9548032407407407,
+     "p10": 1.0244421296296298,
+     "median": 1.2641666666666667,
+     "p90": 1.3067592592592594,
+     "max": 14.78545138888889
+    },
+    "scheduledEndMinusFirstPollsCloseDays": {
+     "n": 33,
+     "min": -1.4583333333333333,
+     "p10": -1.4583333333333333,
+     "median": -0.4583333333333333,
+     "p90": -0.4583333333333333,
+     "max": -0.4583333333333333
+    },
+    "contractsAnchoredBeforeFirstPollsClose": 33,
+    "contractsClosedAfterFirstPollsClose": 33,
+    "tradedAfterFirstPollsClose": 0,
+    "tradedAfterFirstPollsCloseShare": 0.0,
+    "panelDaysOfObservationsAfterFirstPollsClose": null,
+    "byPanelDay": {
+     "1": {
+      "observations": 9,
+      "afterFirstPollsClose": 0
+     },
+     "3": {
+      "observations": 17,
+      "afterFirstPollsClose": 0
+     },
+     "7": {
+      "observations": 22,
+      "afterFirstPollsClose": 0
+     },
+     "14": {
+      "observations": 22,
+      "afterFirstPollsClose": 0
+     },
+     "30": {
+      "observations": 24,
+      "afterFirstPollsClose": 0
+     },
+     "60": {
+      "observations": 8,
+      "afterFirstPollsClose": 0
+     }
+    },
+    "brierBeforeFirstPollsClose": 0.024190400505394064,
+    "brierAfterFirstPollsClose": null
+   },
+   "House": {
+    "events": 20,
+    "contracts": 20,
+    "panelObservations": 559,
+    "anchorMinusFirstPollsCloseDays": {
+     "n": 20,
+     "min": -0.4583333333333333,
+     "p10": -0.4583333333333333,
+     "median": -0.4583333333333333,
+     "p90": -0.4583333333333333,
+     "max": 7.27525462962963
+    },
+    "closeMinusFirstPollsCloseDays": {
+     "n": 20,
+     "min": 0.9099884259259259,
+     "p10": 1.3398333333333332,
+     "median": 7.280266203703704,
+     "p90": 22.351895833333334,
+     "max": 28.48296296296296
+    },
+    "scheduledEndMinusFirstPollsCloseDays": {
+     "n": 20,
+     "min": -0.4583333333333333,
+     "p10": -0.4583333333333333,
+     "median": -0.4583333333333333,
+     "p90": -0.4583333333333333,
+     "max": 55.541666666666664
+    },
+    "contractsAnchoredBeforeFirstPollsClose": 19,
+    "contractsClosedAfterFirstPollsClose": 20,
+    "tradedAfterFirstPollsClose": 3,
+    "tradedAfterFirstPollsCloseShare": 0.005366726296958855,
+    "panelDaysOfObservationsAfterFirstPollsClose": {
+     "n": 3,
+     "min": 1,
+     "p10": 1.2,
+     "median": 2.0,
+     "p90": 2.8,
+     "max": 3
+    },
+    "byPanelDay": {
+     "1": {
+      "observations": 17,
+      "afterFirstPollsClose": 1
+     },
+     "3": {
+      "observations": 14,
+      "afterFirstPollsClose": 1
+     },
+     "7": {
+      "observations": 10,
+      "afterFirstPollsClose": 0
+     },
+     "14": {
+      "observations": 15,
+      "afterFirstPollsClose": 0
+     },
+     "30": {
+      "observations": 5,
+      "afterFirstPollsClose": 0
+     },
+     "60": {
+      "observations": 5,
+      "afterFirstPollsClose": 0
+     }
+    },
+    "brierBeforeFirstPollsClose": 0.2124935884393114,
+    "brierAfterFirstPollsClose": 0.0016366675835746412
+   },
+   "Local or ballot measure": {
+    "events": 1,
+    "contracts": 6,
+    "panelObservations": 343,
+    "anchorMinusFirstPollsCloseDays": {
+     "n": 6,
+     "min": -0.4583333333333333,
+     "p10": -0.4583333333333333,
+     "median": -0.4583333333333333,
+     "p90": -0.4583333333333333,
+     "max": -0.4583333333333333
+    },
+    "closeMinusFirstPollsCloseDays": {
+     "n": 6,
+     "min": 3.945775462962963,
+     "p10": 3.9810127314814814,
+     "median": 4.0234143518518515,
+     "p90": 4.023553240740741,
+     "max": 4.023587962962963
+    },
+    "scheduledEndMinusFirstPollsCloseDays": {
+     "n": 6,
+     "min": -0.4583333333333333,
+     "p10": -0.4583333333333333,
+     "median": -0.4583333333333333,
+     "p90": -0.4583333333333333,
+     "max": -0.4583333333333333
+    },
+    "contractsAnchoredBeforeFirstPollsClose": 6,
+    "contractsClosedAfterFirstPollsClose": 6,
+    "tradedAfterFirstPollsClose": 0,
+    "tradedAfterFirstPollsCloseShare": 0.0,
+    "panelDaysOfObservationsAfterFirstPollsClose": null,
+    "byPanelDay": {
+     "1": {
+      "observations": 4,
+      "afterFirstPollsClose": 0
+     },
+     "3": {
+      "observations": 6,
+      "afterFirstPollsClose": 0
+     },
+     "7": {
+      "observations": 6,
+      "afterFirstPollsClose": 0
+     },
+     "14": {
+      "observations": 6,
+      "afterFirstPollsClose": 0
+     },
+     "30": {
+      "observations": 4,
+      "afterFirstPollsClose": 0
+     },
+     "60": {
+      "observations": 0,
+      "afterFirstPollsClose": 0
+     }
+    },
+    "brierBeforeFirstPollsClose": 0.1588235989547814,
+    "brierAfterFirstPollsClose": null
+   },
+   "President (state)": {
+    "events": 51,
+    "contracts": 153,
+    "panelObservations": 14348,
+    "anchorMinusFirstPollsCloseDays": {
+     "n": 153,
+     "min": -5.958333333333333,
+     "p10": -0.4583333333333333,
+     "median": -0.4583333333333333,
+     "p90": -0.4583333333333333,
+     "max": -0.4583333333333333
+    },
+    "closeMinusFirstPollsCloseDays": {
+     "n": 153,
+     "min": 0.41715277777777776,
+     "p10": 0.5256527777777777,
+     "median": 0.6936805555555555,
+     "p90": 1.401342592592594,
+     "max": 14.776747685185185
+    },
+    "scheduledEndMinusFirstPollsCloseDays": {
+     "n": 153,
+     "min": -5.958333333333333,
+     "p10": -0.4583333333333333,
+     "median": -0.4583333333333333,
+     "p90": -0.4583333333333333,
+     "max": -0.4583333333333333
+    },
+    "contractsAnchoredBeforeFirstPollsClose": 153,
+    "contractsClosedAfterFirstPollsClose": 153,
+    "tradedAfterFirstPollsClose": 0,
+    "tradedAfterFirstPollsCloseShare": 0.0,
+    "panelDaysOfObservationsAfterFirstPollsClose": null,
+    "byPanelDay": {
+     "1": {
+      "observations": 147,
+      "afterFirstPollsClose": 0
+     },
+     "3": {
+      "observations": 144,
+      "afterFirstPollsClose": 0
+     },
+     "7": {
+      "observations": 144,
+      "afterFirstPollsClose": 0
+     },
+     "14": {
+      "observations": 123,
+      "afterFirstPollsClose": 0
+     },
+     "30": {
+      "observations": 135,
+      "afterFirstPollsClose": 0
+     },
+     "60": {
+      "observations": 88,
+      "afterFirstPollsClose": 0
+     }
+    },
+    "brierBeforeFirstPollsClose": 0.03355039024177378,
+    "brierAfterFirstPollsClose": null
+   },
+   "Senate": {
+    "events": 36,
+    "contracts": 110,
+    "panelObservations": 6269,
+    "anchorMinusFirstPollsCloseDays": {
+     "n": 110,
+     "min": -0.4583333333333333,
+     "p10": -0.4583333333333333,
+     "median": -0.4583333333333333,
+     "p90": -0.4583333333333333,
+     "max": 20.806284722222223
+    },
+    "closeMinusFirstPollsCloseDays": {
+     "n": 110,
+     "min": 0.6088194444444445,
+     "p10": 0.948386574074074,
+     "median": 1.1517476851851853,
+     "p90": 7.45802777777786,
+     "max": 26.99386574074074
+    },
+    "scheduledEndMinusFirstPollsCloseDays": {
+     "n": 110,
+     "min": -0.4583333333333333,
+     "p10": -0.4583333333333333,
+     "median": -0.4583333333333333,
+     "p90": -0.4583333333333333,
+     "max": 41.541666666666664
+    },
+    "contractsAnchoredBeforeFirstPollsClose": 103,
+    "contractsClosedAfterFirstPollsClose": 110,
+    "tradedAfterFirstPollsClose": 103,
+    "tradedAfterFirstPollsCloseShare": 0.016430052639974477,
+    "panelDaysOfObservationsAfterFirstPollsClose": {
+     "n": 103,
+     "min": 1,
+     "p10": 2.0,
+     "median": 10.0,
+     "p90": 16.0,
+     "max": 17
+    },
+    "byPanelDay": {
+     "1": {
+      "observations": 73,
+      "afterFirstPollsClose": 7
+     },
+     "3": {
+      "observations": 74,
+      "afterFirstPollsClose": 5
+     },
+     "7": {
+      "observations": 86,
+      "afterFirstPollsClose": 2
+     },
+     "14": {
+      "observations": 79,
+      "afterFirstPollsClose": 7
+     },
+     "30": {
+      "observations": 83,
+      "afterFirstPollsClose": 0
+     },
+     "60": {
+      "observations": 32,
+      "afterFirstPollsClose": 0
+     }
+    },
+    "brierBeforeFirstPollsClose": 0.04054053957319537,
+    "brierAfterFirstPollsClose": 0.013297310106346912
+   }
+  }
+ },
+ "national": {
+  "events": 44,
+  "contracts": 218,
+  "panelObservations": 21924,
+  "anchorMinusFirstPollsCloseDays": {
+   "n": 218,
+   "min": -106.65194444444444,
+   "p10": -1.1083333333333318,
+   "median": -0.4583333333333333,
+   "p90": 41.70046180555556,
+   "max": 42.09200231481481
+  },
+  "closeMinusFirstPollsCloseDays": {
+   "n": 218,
+   "min": -106.65194444444444,
+   "p10": 1.0690648148148147,
+   "median": 28.463680555555555,
+   "p90": 42.08830787037037,
+   "max": 42.343402777777776
+  },
+  "scheduledEndMinusFirstPollsCloseDays": {
+   "n": 218,
+   "min": -1.4583333333333333,
+   "p10": -0.9583333333333334,
+   "median": -0.4583333333333333,
+   "p90": 55.041666666667176,
+   "max": 86.54166666666667
+  },
+  "contractsAnchoredBeforeFirstPollsClose": 168,
+  "contractsClosedAfterFirstPollsClose": 217,
+  "tradedAfterFirstPollsClose": 1739,
+  "tradedAfterFirstPollsCloseShare": 0.07931946725050174,
+  "panelDaysOfObservationsAfterFirstPollsClose": {
+   "n": 1739,
+   "min": 1,
+   "p10": 4.0,
+   "median": 19.0,
+   "p90": 36.0,
+   "max": 42
+  },
+  "byPanelDay": {
+   "1": {
+    "observations": 207,
+    "afterFirstPollsClose": 45
+   },
+   "3": {
+    "observations": 212,
+    "afterFirstPollsClose": 49
+   },
+   "7": {
+    "observations": 186,
+    "afterFirstPollsClose": 49
+   },
+   "14": {
+    "observations": 180,
+    "afterFirstPollsClose": 49
+   },
+   "30": {
+    "observations": 142,
+    "afterFirstPollsClose": 33
+   },
+   "60": {
+    "observations": 116,
+    "afterFirstPollsClose": 0
+   }
+  },
+  "brierBeforeFirstPollsClose": 0.06284883174206371,
+  "brierAfterFirstPollsClose": 0.017814883411157664
+ },
+ "callTiming": {
+  "events": 6,
+  "contracts": 43,
+  "panelObservations": 468,
+  "anchorMinusFirstPollsCloseDays": {
+   "n": 43,
+   "min": -139.86832175925926,
+   "p10": -0.267497685185185,
+   "median": 0.7771990740740741,
+   "p90": 1.069356481481482,
+   "max": 3.5055324074074075
+  },
+  "closeMinusFirstPollsCloseDays": {
+   "n": 43,
+   "min": -139.86832175925926,
+   "p10": 0.4965879629629629,
+   "median": 0.7805324074074074,
+   "p90": 1.069356481481482,
+   "max": 3.5055324074074075
+  },
+  "scheduledEndMinusFirstPollsCloseDays": {
+   "n": 43,
+   "min": -0.4583333333333333,
+   "p10": -0.25833333333333314,
+   "median": 11.541666666666666,
+   "p90": 34.541666666666664,
+   "max": 34.541666666666664
+  },
+  "contractsAnchoredBeforeFirstPollsClose": 5,
+  "contractsClosedAfterFirstPollsClose": 42,
+  "tradedAfterFirstPollsClose": 10,
+  "tradedAfterFirstPollsCloseShare": 0.021367521367521368,
+  "panelDaysOfObservationsAfterFirstPollsClose": {
+   "n": 10,
+   "min": 1,
+   "p10": 1.0,
+   "median": 2.0,
+   "p90": 3.0,
+   "max": 3
+  },
+  "byPanelDay": {
+   "1": {
+    "observations": 40,
+    "afterFirstPollsClose": 4
+   },
+   "3": {
+    "observations": 39,
+    "afterFirstPollsClose": 3
+   },
+   "7": {
+    "observations": 21,
+    "afterFirstPollsClose": 0
+   },
+   "14": {
+    "observations": 2,
+    "afterFirstPollsClose": 0
+   },
+   "30": {
+    "observations": 1,
+    "afterFirstPollsClose": 0
+   },
+   "60": {
+    "observations": 0,
+    "afterFirstPollsClose": 0
+   }
+  },
+  "brierBeforeFirstPollsClose": 0.038008191737350455,
+  "brierAfterFirstPollsClose": 0.028740200000000004
+ },
+ "allMapped": {
+  "events": 174,
+  "contracts": 598,
+  "panelObservations": 46307,
+  "anchorMinusFirstPollsCloseDays": {
+   "n": 598,
+   "min": -139.86832175925926,
+   "p10": -0.9583333333333334,
+   "median": -0.4583333333333333,
+   "p90": 2.809343750000061,
+   "max": 42.09200231481481
+  },
+  "closeMinusFirstPollsCloseDays": {
+   "n": 598,
+   "min": -139.86832175925926,
+   "p10": 0.6018958333333334,
+   "median": 1.2482812499999998,
+   "p90": 42.05044907407407,
+   "max": 42.343402777777776
+  },
+  "scheduledEndMinusFirstPollsCloseDays": {
+   "n": 598,
+   "min": -5.958333333333333,
+   "p10": -0.9583333333333334,
+   "median": -0.4583333333333333,
+   "p90": 34.541666666666664,
+   "max": 86.54166666666667
+  },
+  "contractsAnchoredBeforeFirstPollsClose": 502,
+  "contractsClosedAfterFirstPollsClose": 596,
+  "tradedAfterFirstPollsClose": 1855,
+  "tradedAfterFirstPollsCloseShare": 0.04005873841967737,
+  "panelDaysOfObservationsAfterFirstPollsClose": {
+   "n": 1855,
+   "min": 1,
+   "p10": 4.0,
+   "median": 17.0,
+   "p90": 36.0,
+   "max": 42
+  },
+  "byPanelDay": {
+   "1": {
+    "observations": 501,
+    "afterFirstPollsClose": 57
+   },
+   "3": {
+    "observations": 513,
+    "afterFirstPollsClose": 58
+   },
+   "7": {
+    "observations": 488,
+    "afterFirstPollsClose": 51
+   },
+   "14": {
+    "observations": 436,
+    "afterFirstPollsClose": 56
+   },
+   "30": {
+    "observations": 408,
+    "afterFirstPollsClose": 33
+   },
+   "60": {
+    "observations": 253,
+    "afterFirstPollsClose": 0
+   }
+  },
+  "brierBeforeFirstPollsClose": 0.05040325570336805,
+  "brierAfterFirstPollsClose": 0.017596774768575543
+ },
+ "anchoredAfterFirstPollsClose": {
+  "block": {
+   "events": 13,
+   "contracts": 96,
+   "panelObservations": 4214,
+   "anchorMinusFirstPollsCloseDays": {
+    "n": 96,
+    "min": 0.4958449074074074,
+    "p10": 0.7575694444444445,
+    "median": 28.456608796296297,
+    "p90": 42.085092592592595,
+    "max": 42.09200231481481
+   },
+   "closeMinusFirstPollsCloseDays": {
+    "n": 96,
+    "min": 0.4958449074074074,
+    "p10": 0.757650462962963,
+    "median": 28.456608796296297,
+    "p90": 42.085208333333334,
+    "max": 42.343402777777776
+   },
+   "scheduledEndMinusFirstPollsCloseDays": {
+    "n": 96,
+    "min": 0.5416666666666666,
+    "p10": 5.041666666666667,
+    "median": 40.541666666666664,
+    "p90": 86.54166666666667,
+    "max": 86.54166666666667
+   },
+   "contractsAnchoredBeforeFirstPollsClose": 0,
+   "contractsClosedAfterFirstPollsClose": 96,
+   "tradedAfterFirstPollsClose": 1855,
+   "tradedAfterFirstPollsCloseShare": 0.44019933554817275,
+   "panelDaysOfObservationsAfterFirstPollsClose": {
+    "n": 1855,
+    "min": 1,
+    "p10": 4.0,
+    "median": 17.0,
+    "p90": 36.0,
+    "max": 42
+   },
+   "byPanelDay": {
+    "1": {
+     "observations": 89,
+     "afterFirstPollsClose": 57
+    },
+    "3": {
+     "observations": 91,
+     "afterFirstPollsClose": 58
+    },
+    "7": {
+     "observations": 70,
+     "afterFirstPollsClose": 51
+    },
+    "14": {
+     "observations": 58,
+     "afterFirstPollsClose": 56
+    },
+    "30": {
+     "observations": 34,
+     "afterFirstPollsClose": 33
+    },
+    "60": {
+     "observations": 18,
+     "afterFirstPollsClose": 0
+    }
+   },
+   "brierBeforeFirstPollsClose": 0.08472021253737153,
+   "brierAfterFirstPollsClose": 0.017596774768575543
+  },
+  "questions": [
+   "AP doesn't call the election by November 20?",
+   "CO-8 election: Caraveo (D) vs. Evans (R)",
+   "Democrats win popular vote by 0-1%?",
+   "Democrats win popular vote by 1-2%?",
+   "Democrats win popular vote by 2-3%?",
+   "Democrats win popular vote by 3-4%?",
+   "Democrats win popular vote by 4-5%?",
+   "Democrats win popular vote by 5-6%?",
+   "Democrats win popular vote by 6-7%?",
+   "Democrats win popular vote by 7% or more?",
+   "GOP wins popular vote by 0-1%?",
+   "GOP wins popular vote by 1-2%?",
+   "GOP wins popular vote by 1.5-1.75%?",
+   "GOP wins popular vote by 1.75-2.0%?",
+   "GOP wins popular vote by 2-3%?",
+   "GOP wins popular vote by 2.0-2.25%?",
+   "GOP wins popular vote by 2.25% or more?",
+   "GOP wins popular vote by 3-4%?",
+   "GOP wins popular vote by 4-5%?",
+   "GOP wins popular vote by 5-6%?",
+   "GOP wins popular vote by 6-7%?",
+   "GOP wins popular vote by 7% or more?",
+   "GOP wins popular vote by less than 1.5%?",
+   "Neither a Democrat nor a Republican wins popular vote?",
+   "Record turnout in 2024 Presidential election?",
+   "State wide recount in Presidential Election?",
+   "Which party wins 2024 US Presidential Election?",
+   "Will Alaska be the last state to be called by the AP?",
+   "Will Arizona be the last state to be called by the AP?",
+   "Will Colorado be the last state to be called by the AP?",
+   "Will Florida be the last state to be called by the AP?",
+   "Will Gallego win Arizona Senate election by 0-1%?",
+   "Will Gallego win Arizona Senate election by 1-2%?",
+   "Will Gallego win Arizona Senate election by 2-3%?",
+   "Will Gallego win Arizona Senate election by 3% or more?",
+   "Will Georgia be the last state to be called by the AP?",
+   "Will Kari Lake win Arizona Senate election by 0-1%?",
+   "Will Kari Lake win Arizona Senate election by 1-2%?",
+   "Will Kari Lake win Arizona Senate election by 2% or more?",
+   "Will Maine be the last state to be called by the AP?",
+   "Will Michigan be the last state to be called by the AP?",
+   "Will Minnesota be the last state to be called by the AP?",
+   "Will Nevada be the last state to be called by the AP?",
+   "Will New Hampshire be the last state to be called by the AP?",
+   "Will New Mexico be the last state to be called by the AP?",
+   "Will North Carolina be the last state to be called by the AP?",
+   "Will Pennsylvania be the last state to be called by the AP?",
+   "Will Republicans control 218 or fewer seats in the House after the election?",
+   "Will Republicans control 219 seats in the House after the election?",
+   "Will Republicans control 220 seats in the House after the election?",
+   "Will Republicans control 221 seats in the House after the election?",
+   "Will Republicans control 222 seats in the House after the election?",
+   "Will Republicans control 223 seats in the House after the election?",
+   "Will Republicans control 224 seats in the House after the election?",
+   "Will Republicans control 225 seats in the House after the election?",
+   "Will Republicans control 226 seats in the House after the election?",
+   "Will Republicans control 227 seats in the House after the election?",
+   "Will Republicans control 228 seats in the House after the election?",
+   "Will Republicans control 229 seats in the House after the election?",
+   "Will Republicans control 230 or more seats in the House after the election?",
+   "Will Trump get over 50% of the Popular Vote?",
+   "Will Virginia be the last state to be called by the AP?",
+   "Will Wisonsin be the last state to be called by the AP?",
+   "Will another state be the last state to be called by the AP?",
+   "Will the AP call the election by November 12?",
+   "Will the AP call the election by November 30?",
+   "Will the AP call the election by November 6?",
+   "Will the AP call the election by November 7?",
+   "Will the AP call the election by November 8?",
+   "Will the AP call the election by November 9?",
+   "Will the AP call the election on November 10?",
+   "Will the AP call the election on November 11?",
+   "Will the AP call the election on November 12?",
+   "Will the AP call the election on November 13?",
+   "Will the AP call the election on November 14?",
+   "Will the AP call the election on November 15?",
+   "Will the AP call the election on November 16?",
+   "Will the AP call the election on November 17?",
+   "Will the AP call the election on November 18?",
+   "Will the AP call the election on November 19?",
+   "Will the AP call the election on November 20?",
+   "Will the AP call the election on November 6?",
+   "Will the AP call the election on November 7?",
+   "Will the AP call the election on November 8?",
+   "Will the AP call the election on November 9?",
+   "Will there be 130,000,000-135,000,000 votes cast in the U.S. Presidential Election?",
+   "Will there be 135,000,000-140,000,000 votes cast in the U.S. Presidential Election?",
+   "Will there be 140,000,000-145,000,000 votes cast in the U.S. Presidential Election?",
+   "Will there be 145,000,000-150,000,000 votes cast in the U.S. Presidential Election?",
+   "Will there be 150,000,000-155,000,000 votes cast in the U.S. Presidential Election?",
+   "Will there be 155,000,000-160,000,000 votes cast in the U.S. Presidential Election?",
+   "Will there be 160,000,000-165,000,000 votes cast in the U.S. Presidential Election?",
+   "Will there be 165,000,000-170,000,000 votes cast in the U.S. Presidential Election?",
+   "Will there be 170,000,000-175,000,000 votes cast in the U.S. Presidential Election?",
+   "Will there be 175,000,000 or more votes cast in the U.S. Presidential Election?",
+   "Will there be less than 130,000,000 votes cast in the U.S. Presidential Election?"
+  ]
+ }
+}

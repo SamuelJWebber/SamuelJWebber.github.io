@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7f9">
+  <meta name="author" content="Samuel Webber">
+  <meta name="description" content="Five follow-up studies: when news became public versus contract close, what that does to the dashboard's election scores, frozen out-of-sample and forward tests of overreaction, and consumer-credit forecasts against a point-in-time baseline.">
+  <title>Follow-up studies · Market Calibration Atlas</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%231d3d74'/%3E%3Cpath d='M9 34 19 22 25 25 38 11' fill='none' stroke='%23a9e6c9' stroke-width='5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="research.css">
+  <link rel="stylesheet" href="followups.css">
+  <script defer src="followups.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#studies">Skip to studies</a>
+  <header><div class="head">
+    <a class="brand" href="index.html"><svg width="33" height="33" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" fill="#203d70" rx="8"/><path d="m7 29 9-11 6 4 11-14" stroke="#b9ead0" stroke-width="3.5" fill="none"/></svg><span>Market Calibration Atlas</span></a>
+    <nav class="section-nav" aria-label="Dashboard sections"><a class="back" href="index.html">Main dashboard</a><a class="back" href="research.html">Research studies</a><a class="back" href="consumer-finance.html">Consumer Finance</a><a class="back" href="source.html">Code &amp; methods</a></nav>
+  </div></header>
+  <main>
+    <div class="intro">
+      <p class="eyebrow"><span class="dot"></span> FOLLOW-UP STUDIES · NOVEMBER 2026</p>
+      <h1>Which clock, which sample,<br><span>which baseline?</span></h1>
+      <p class="lede">Five checks on earlier results: when the answer became public compared with when trading closed, what that does to the dashboard's election scores, whether the overreaction seen in March holds in a month nobody had looked at and then in a later period on another exchange, and whether consumer-credit markets beat a forecast built only from published history.</p>
+      <p class="byline">Specifications for studies 08–10 were committed before their test data were fetched or scored, and for study 11 before any re-anchored score was computed. Code and frozen inputs are in <code>studies/</code> in the source repository.</p>
+    </div>
+    <div class="reading-note"><strong>These results are descriptive.</strong> None is a causal estimate or a trading return. Intervals are approximate 95% Student-t intervals clustered by parent event unless stated; lower Brier is better.</div>
+    <nav class="study-nav five" aria-label="Follow-up studies">
+      <a href="#clocks"><span>07</span> News vs close</a><a href="#reaction"><span>08</span> Out-of-sample reaction</a><a href="#forward"><span>09</span> Forward, Kalshi</a><a href="#baseline"><span>10</span> Credit baseline</a><a href="#election"><span>11</span> Election clock</a>
+    </nav>
+    <p id="load-status" class="load-status" role="status">Loading five studies…</p>
+    <div id="studies">
+      <section class="study pending" id="clocks" aria-labelledby="clocks-title"><h2 id="clocks-title">07 · News vs close</h2><p>Loading study…</p></section>
+      <section class="study pending" id="reaction" aria-labelledby="reaction-title"><h2 id="reaction-title">08 · Out-of-sample reaction</h2><p>Loading study…</p></section>
+      <section class="study pending" id="forward" aria-labelledby="forward-title"><h2 id="forward-title">09 · Forward, Kalshi</h2><p>Loading study…</p></section>
+      <section class="study pending" id="baseline" aria-labelledby="baseline-title"><h2 id="baseline-title">10 · Credit baseline</h2><p>Loading study…</p></section>
+      <section class="study pending" id="election" aria-labelledby="election-title"><h2 id="election-title">11 · Election clock on the dashboard</h2><p>Loading study…</p></section>
+    </div>
+    <noscript><p class="reading-note">JavaScript is needed to load the results. Download them directly: <a href="data/news-clock/clock-audit.json">news clock</a>, <a href="data/reaction-oos/reaction-oos.json">out-of-sample reaction</a>, <a href="data/reaction-forward/reaction-forward.json">forward reaction</a>, <a href="data/consumer-baseline/comparison.json">credit baseline</a>, <a href="data/election-effect/election-effect.json">election clock on the dashboard</a>.</p></noscript>
+    <footer><p>Market Calibration Atlas · Follow-up studies</p><p><a href="research.html">Six earlier research studies</a><span> · </span><a href="index.html">Return to the dashboard</a></p></footer>
+  </main>
+</body>
+</html>

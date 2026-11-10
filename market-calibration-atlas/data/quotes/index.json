@@ -1,0 +1,12 @@
+[
+  {
+    "id": "kalshi",
+    "label": "Kalshi",
+    "note": "Sample of Kalshi contracts with a trade and two-sided closing quotes in the same hour."
+  },
+  {
+    "id": "predictit",
+    "label": "PredictIt",
+    "note": "Selected 2022 Senate and governor races. This archive kept races where the FiveThirtyEight forecast differed from a PredictIt buy or sell price by at least 7.5\u00a2, so results describe this selected sample."
+  }
+]

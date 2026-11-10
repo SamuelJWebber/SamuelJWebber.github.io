@@ -1,0 +1,13 @@
+{
+  "2026-Q1": {
+    "anchor": "2026-05-18T00:00:00+00:00",
+    "classification": "conservative manually selected earlier date bound; not an archived first-publication timestamp",
+    "indexedSourceUrl": "https://www.federalreserve.gov/datadownload/review.aspx?rel=chgdel",
+    "indexedSourceObservedOn": "2026-11-06",
+    "indexedExcerpt": "Charge-off and Delinquency Rates - last released Monday, May 18, 2026",
+    "indexedSearchQuery": "site:federalreserve.gov/datadownload/review.aspx?rel=chgdel \"May 18, 2026\"",
+    "alfredReleaseDate": "2026-05-19",
+    "alfredSourceUrl": "https://alfred.stlouisfed.org/release/downloaddates?ff=txt&rid=231",
+    "note": "A search-indexed earlier version of the Fed DDP page reported May 18. The HTML frozen in this bundle now reports the later August 25 release, so it does not itself verify the May 18 text. We use the earlier May 18 day bound conservatively rather than the May 19 ALFRED date. This manual override is exposed for challenge; it is not proof of the first moment the data became public."
+  }
+}

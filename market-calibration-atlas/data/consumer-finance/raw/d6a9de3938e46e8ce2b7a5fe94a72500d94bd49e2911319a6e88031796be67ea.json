@@ -1,0 +1,1 @@
+{"url":"https://api.elections.kalshi.com/trade-api/v2/historical/markets/MORTGAGEDEF-24-Q1-1.69/candlesticks?start_ts=1713571200&end_ts=1713657600&period_interval=60","retrievedAt":"2026-11-06T20:18:43.538240+00:00","sha256":"ec4296412c0adaadd308de64332049d4ff808f103e104c3acfa8791d993bb483","response":{"candlesticks":[],"ticker":"MORTGAGEDEF-24-Q1-1.69"}}

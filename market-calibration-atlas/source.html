@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Samuel Webber"><meta name="theme-color" content="#f6f7f9">
+  <meta name="description" content="Download the Market Calibration Atlas source code, reproduce studies, inspect data hashes and propose corrections.">
+  <title>Code &amp; contributions · Market Calibration Atlas</title>
+  <link rel="stylesheet" href="research.css"><link rel="stylesheet" href="source.css">
+</head>
+<body>
+<a class="skip-link" href="#source-main">Skip to source information</a>
+<header><div class="head"><a class="brand" href="index.html">Market Calibration Atlas</a><nav class="page-links" aria-label="Dashboard pages"><a href="index.html">Dashboard</a><a href="consumer-finance.html">Consumer Finance</a><a href="research.html">Research</a><a href="source.html" aria-current="page">Code &amp; contribute</a></nav></div></header>
+<main id="source-main">
+  <div class="intro"><p class="eyebrow"><span class="dot"></span> OPEN TO INSPECTION</p><h1>Check the work.<br><span>Make it better.</span></h1><p class="lede">Download the code behind every dashboard view, trace the inputs and challenge the conclusions. The source snapshot includes the original venue builders, current analyses and the website itself. The earlier PDF and standalone HTML export scripts are preserved too.</p><p class="byline">Created by <a href="https://www.linkedin.com/in/samuelwebber" rel="author noopener noreferrer" target="_blank">Samuel Webber ↗</a></p><div class="study-actions"><a class="download" href="downloads/source-code.zip" download>Download all source code · ZIP ↓</a><a class="source-download" href="downloads/reproduce.zip" download>Earlier research inputs &amp; reproduction bundle ↓</a></div></div>
+  <div class="reading-note"><strong>A source snapshot you can identify.</strong> Every included source file and every separately published data file has a SHA-256 hash. The source is also preserved in the Site’s version history. The download is public; this Site does not currently host an issue tracker or pull requests.</div>
+  <div id="source-stats" class="metrics" aria-live="polite"><div class="metric"><div class="metric-value metric-text">Loading manifest…</div><div class="metric-label">Download links above work independently.</div></div></div>
+  <section class="study" aria-labelledby="inside-title"><div class="eyebrow">WHAT IS SAVED</div><h2 id="inside-title">From collection to the chart</h2><div class="source-grid"><div><h3>Current code</h3><p>All Python analysis and collection scripts, all HTML/CSS/JavaScript for the dashboard, the consumer-finance work, and documentation for the six additional studies.</p></div><div><h3>Original venue builders</h3><p>Preserved collection and construction code for Polymarket, Kalshi, PredictIt, Manifold, IEM and Intrade, recovered from the earlier reproducibility archive. Version 12 export builders are preserved with their original limitations.</p></div><div><h3>Traceable inputs</h3><p>The manifest lists published data paths, download URLs, sizes and hashes. Selected frozen inputs remain in the research bundle; larger files are separate downloads.</p></div></div><p class="coverage-note"><strong>Reproduction has boundaries.</strong> Some original builders retain their historical folder paths. Not all upstream raw archives are redistributed, and external APIs can change. The README identifies these limits; a complete raw-data rebuild is not a single command.</p><p class="source-links"><a href="downloads/source-readme.md" download>Read the README ↓</a><a href="downloads/source-manifest.json" download>Source &amp; data manifest ↓</a></p></section>
+  <section class="study" aria-labelledby="reproduce-title"><div class="eyebrow">START WITH THE SNAPSHOT</div><h2 id="reproduce-title">Inspect, reproduce, extend</h2><ol class="steps"><li><strong>Download and verify the code.</strong> Extract the ZIP, open a terminal in that folder and run:<pre><code>python scripts/check_source_bundle.py --directory .</code></pre></li><li><strong>Restore the published chart data.</strong> These commands verify downloaded hashes and serve the website locally:<pre><code>python scripts/restore_public_data.py --prefix dist/data/
+python -m http.server 8000 --directory dist</code></pre><p>Open <code>http://localhost:8000</code>. This runs the existing results; it does not recompute the studies.</p></li><li><strong>Recompute a specific result.</strong> Read the study’s instructions, restore its required inputs and run its analysis script. Record the source snapshot, data hashes, dependency versions and exact command.</li><li><strong>Make a reviewable proposal.</strong> Use the report template and contribution guide. Explain the original result, your change and its effect on the same sample. A local Git repository or your own hosted fork can produce a patch.</li></ol><p class="source-links"><a href="downloads/report-template.md" download>Download a research / issue template ↓</a><a href="downloads/contributing.md" download>Contribution &amp; patch guide ↓</a></p><p class="hint">There is no submission form or automated review system here. Share your report and patch with the author through a channel you already use. The <a href="https://www.linkedin.com/in/samuelwebber" target="_blank" rel="noopener noreferrer">author profile ↗</a> is a contact reference, not an issue tracker.</p></section>
+  <section class="study" aria-labelledby="audit-title"><div class="eyebrow">FIND THE ASSUMPTION</div><h2 id="audit-title">The most useful things to challenge</h2><div class="source-grid"><div><h3>What was knowable?</h3><p>Was the quote recorded before the result was public? Does the clock describe the economic period, release, trading close or settlement? Did revised data enter an earlier forecast?</p></div><div><h3>What actually qualified?</h3><p>Are missing prices, stale quotes, wide spreads and untraded listings excluded visibly? Are matched horizons comparing the same contracts?</p></div><div><h3>How much evidence is independent?</h3><p>Many strike prices can settle on one release. Check event weighting, uncertainty, correlated outcomes, exploratory comparisons and whether improvements survive later data.</p></div></div></section>
+  <section class="study" aria-labelledby="files-title"><div class="eyebrow">EXACT FILE INVENTORY</div><h2 id="files-title">Explore the release manifest</h2><p class="hint">File hashes identify this snapshot. They do not establish that a model or source is correct.</p><div class="manifest-controls"><label for="file-kind">Show<select id="file-kind"><option value="source">Included code &amp; documents</option><option value="data">Separate public data &amp; downloads</option></select></label><label for="file-search">Find a file<input id="file-search" type="search" placeholder="e.g. consumer, shock, kalshi"></label></div><p id="file-count" class="hint" role="status">Loading inventory…</p><div class="manifest-scroll"><table><thead><tr><th>File</th><th>Size</th><th>SHA-256</th></tr></thead><tbody id="file-rows"></tbody></table></div><details class="hash-detail"><summary>ZIP identity and source provenance</summary><div id="snapshot-detail"><p>See the <a href="downloads/source-manifest.json">downloadable manifest</a>.</p></div></details></section>
+  <p class="source-rights">Retain source credits and provider terms when reusing data. Public availability does not change third-party licenses. Manifold’s original research exports have noncommercial restrictions; see the preserved source notes. No private lender or borrower data is included.</p>
+  <footer><p>Market Calibration Atlas · Code &amp; contributions</p><p><a href="index.html">Dashboard</a> · <a href="consumer-finance.html">Consumer Finance</a> · <a href="research.html">Research studies</a></p></footer>
+</main>
+<script>
+(() => {
+  let manifest;
+  const $ = id => document.getElementById(id);
+  const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const size = n => n >= 1e6 ? (n/1e6).toFixed(2)+' MB' : n >= 1e3 ? (n/1e3).toFixed(1)+' KB' : n+' B';
+  function render() {
+    if (!manifest) return;
+    const data = $('file-kind').value === 'data';
+    const all = data ? manifest.public_data_files : manifest.source_files;
+    const q = $('file-search').value.trim().toLowerCase();
+    const rows = all.filter(r => r.path.toLowerCase().includes(q));
+    $('file-count').textContent = rows.length+' of '+all.length+' files'+(data ? ' · downloads are separate from the source ZIP' : ' · included in the source ZIP');
+    $('file-rows').innerHTML = rows.map(r => '<tr><td>'+(data ? '<a href="'+esc(r.url)+'" download>'+esc(r.path)+'</a>' : '<code>'+esc(r.path)+'</code>')+'</td><td>'+size(r.bytes)+'</td><td><code class="file-hash" title="'+esc(r.sha256)+'">'+esc(r.sha256)+'</code></td></tr>').join('');
+  }
+  $('file-kind').addEventListener('change',render);
+  $('file-search').addEventListener('input',render);
+  fetch('downloads/source-manifest.json').then(r => {if(!r.ok) throw new Error('Manifest unavailable'); return r.json();}).then(m => {
+    manifest=m;
+    $('source-stats').innerHTML = [[''+m.source_files.length,'source files in the ZIP'],[''+m.public_data_files.length,'public data files inventoried'],[size(m.archive.bytes),'source download'],[m.generated_at.slice(0,10),'snapshot packaged · UTC']].map(x=>'<div class="metric"><div class="metric-value">'+esc(x[0])+'</div><div class="metric-label">'+esc(x[1])+'</div></div>').join('');
+    $('snapshot-detail').innerHTML = '<p><strong>Snapshot:</strong> <code>'+esc(m.snapshot_id)+'</code></p><p><strong>Source content SHA-256:</strong> <code>'+esc(m.source_content_sha256)+'</code></p><p><strong>ZIP SHA-256:</strong> <code>'+esc(m.archive.sha256)+'</code></p><p><strong>Base commit before packaging:</strong> <code>'+esc(m.base_commit||'not available')+'</code></p><p>'+esc(m.base_commit_note)+'</p>';
+    render();
+  }).catch(error=>{ $('source-stats').innerHTML='<p class="reading-note">The manifest could not be loaded. The downloads and instructions remain available above.</p>'; $('file-count').textContent=error.message; });
+})();
+</script>
+</body>
+</html>
