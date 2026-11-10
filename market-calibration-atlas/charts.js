@@ -194,14 +194,17 @@
     });
   }
 
-  function horizon(container, series, selectedDay, onDay, metric='brier') {
+  // alt (optional): rows in the same layout for the same days without 2024 US election prices traded after the polls
+  // closed (dist/election-caveat.js); drawn as a dashed line and named in the tooltip (review round 2, R2-2).
+  function horizon(container, series, selectedDay, onDay, metric='brier', alt=null) {
     const m = metrics[metric] || metrics.brier;
     const data = (series || []).filter(r=>num(r[0])&&num(r[m.column])&&+r[1]>0).sort((a,b)=>a[0]-b[0]);
+    const other = new Map((alt || []).filter(r=>num(r[0])&&num(r[m.column])&&+r[1]>0).map(r=>[+r[0],r]));
     setup(container,data,'No horizons have observations for this measure.',(p,rows)=>{
       const {svg,w,left,right,top,bottom} = p;
       const min=+rows[0][0],max=+rows[rows.length-1][0];
       const x=d=>min===max?(left+right)/2:left+(d-min)/(max-min)*(right-left);
-      const values=rows.map(r=>+r[m.column]);
+      const values=rows.map(r=>+r[m.column]).concat([...other.values()].filter(r=>+r[0]>=min&&+r[0]<=max).map(r=>+r[m.column]));
       const negative=m.unit==='pp'?Math.min(0,...values):0;
       const positive=Math.max(0,...values);
       const rawStep=Math.max(positive-negative,.01)/4;
@@ -230,12 +233,29 @@
       });
       add(svg,'path',{d:path,fill:'none',stroke:m.color,'stroke-width':2,'stroke-linejoin':'round','stroke-linecap':'round'});
       if(singletons) add(svg,'path',{d:singletons,fill:'none',stroke:m.color,'stroke-width':2,'stroke-linecap':'round'});
+      if(other.size) {
+        let dashed='',dots='';
+        rows.forEach((r,i)=>{
+          const o=other.get(+r[0]);
+          if(!o) return;
+          const prev=i>0 && other.has(+rows[i-1][0]) && +rows[i-1][0]+1===+r[0], next=i<rows.length-1 && other.has(+rows[i+1][0]) && +r[0]+1===+rows[i+1][0];
+          const px=x(+r[0]).toFixed(2), py=y(+o[m.column]).toFixed(2);
+          dashed+=(prev?'L':'M')+px+' '+py+' ';
+          if(!prev && !next) dots+='M'+px+' '+py+'h0.01 ';
+        });
+        add(svg,'path',{d:dashed,fill:'none',stroke:'#b4561d','stroke-width':1.8,'stroke-dasharray':'5 3','stroke-linejoin':'round'});
+        if(dots) add(svg,'path',{d:dots,fill:'none',stroke:'#b4561d','stroke-width':4,'stroke-linecap':'round'});
+      }
       const selected=points.findIndex(v=>+v.row[0]===+selectedDay);
       if (num(selectedDay) && selectedDay>=min && selectedDay<=max) {
         line(svg,x(selectedDay),top,x(selectedDay),bottom,{stroke:'#6a7790','stroke-width':1,'stroke-dasharray':'4 4'});
         if(selected>=0) add(svg,'circle',{cx:points[selected].x,cy:points[selected].y,r:4.8,stroke:m.color,fill:'white','stroke-width':2});
       }
-      const explain=r=>'Day '+count(r[0])+' · '+m.name+' '+m.format(+r[m.column])+'\n'+count(r[1])+' contracts · '+count(r[2])+' events';
+      const explain=r=>{
+        const o=other.get(+r[0]);
+        return 'Day '+count(r[0])+' · '+m.name+' '+m.format(+r[m.column])+'\n'+count(r[1])+' contracts · '+count(r[2])+' events'+
+          (o?'\nWithout post-election prices: '+m.format(+o[m.column])+' on '+count(o[1])+' contracts':'');
+      };
       interactions(p,points,selected,m.name+' by forecast horizon',explain,typeof onDay==='function' ? r=>onDay(+r[0]) : null);
     });
   }

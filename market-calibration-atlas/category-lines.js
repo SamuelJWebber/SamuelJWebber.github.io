@@ -177,12 +177,24 @@
     byId('scope').textContent=venue+' · Compare categories across the same forecast horizons.';
     const rows=chosen.flatMap(t=>days.map(day=>({topic:t,day,row:rowAt(t,day)})));
     const observed=rows.filter(d=>valid(d.row,metric));
+    // Election clock (follow-up study 11, review round 2 R2-2): rows holding 2024 US election prices traded after the
+    // polls closed get a ring and their value without those prices (dist/election-caveat.js). A paired sample is a
+    // subset of the rows, so it gets the full rows' counts as a footnote instead.
+    const A=window.AtlasElectionCaveat, withoutKey={2:'brier',3:'winRate',4:'bias'}[metric.index];
+    const flagOf=(topic,day,row)=>!pairedSample && A && row ? A.check(ctx.caveat,ctx.venue,topic,day,row) : null;
+    const flags=rows.map(d=>flagOf(d.topic,d.day,d.row));
+    const unavailable=flags.some(f=>f&&f.unavailable), ringed=flags.some(f=>f&&!f.unavailable);
+    if(A) A.footnote('category-election',byId('method'),unavailable?A.UNAVAILABLE:pairedSample
+      ? A.rowsNote(ctx.caveat,ctx.venue,chosen.flatMap(t=>[far,near].map(day=>({topic:t,day}))))
+      : ringed?'Ringed points include 2024 US election prices traded after the polls closed on 5 November 2024. Inspect one for the count and its value without them.':'',
+      ringed&&!unavailable?'election-ring':null);
+    const postElection=i=>{const f=flags[i];return f?(f.unavailable?'unavailable':f.contracts):(A&&A.VENUES.includes(ctx.venue)&&!pairedSample?0:'');};
     byId('measure').textContent=metric.name;
     byId('rows').innerHTML=rows.map(({topic,day,row})=>'<tr><td>'+ctx.escape(broadName(topic))+'</td><td>'+count(day)+'</td><td>'+(valid(row,metric)?metric.format(row[metric.index]):'—')+'</td><td>'+count(row?.[0]||0)+'</td><td>'+count(row?.[1]||0)+'</td></tr>').join('');
     byId('export').disabled=!observed.length;
     byId('export').onclick=()=>ctx.exportCSV(ctx.venue+'-category-chart-'+(pairedSample?'paired-'+far+'-'+near:'eligible')+'-'+metric.index+'.csv',
-      ['venue','event_type','days_before_cutoff','metric','value','value_unit','contracts','events','status','sample','paired_horizons'],
-      rows.map(({topic,day,row})=>[venue,topic.name,day,metric.name,valid(row,metric)?row[metric.index]:'',metric===metrics.brier?'Brier score':'probability units (1.0 = 100%)',row?.[0]||0,row?.[1]||0,valid(row,metric)?'Observed':'No eligible observation',pairedSample?'Same contracts at both horizons':'Eligible at each horizon',pairedSample?pair:'']));
+      ['venue','event_type','days_before_cutoff','metric','value','value_unit','contracts','events','status','sample','paired_horizons','post_election_contracts'],
+      rows.map(({topic,day,row},i)=>[venue,topic.name,day,metric.name,valid(row,metric)?row[metric.index]:'',metric===metrics.brier?'Brier score':'probability units (1.0 = 100%)',row?.[0]||0,row?.[1]||0,valid(row,metric)?'Observed':'No eligible observation',pairedSample?'Same contracts at both horizons':'Eligible at each horizon',pairedSample?pair:'',postElection(i)]));
     const plot=byId('plot');
     plot.replaceChildren();byId('readout').textContent='';
     if(!observed.length) {
@@ -228,9 +240,12 @@
       const color=colors.get(t.id);
       add('path',{d:path,fill:'none',stroke:color,'stroke-width':2.3,'stroke-linejoin':'round','stroke-linecap':'round'});
       for(const {day,row,px,py} of points) {
-        const text=broadName(t)+' · '+day+(day===1?' day':' days')+' · '+metric.name+' '+metric.format(row[metric.index])+' · '+count(row[0])+' contracts · '+count(row[1])+' events';
+        const flag=flagOf(t,day,row), late=flag&&!flag.unavailable;
+        const text=broadName(t)+' · '+day+(day===1?' day':' days')+' · '+metric.name+' '+metric.format(row[metric.index])+' · '+count(row[0])+' contracts · '+count(row[1])+' events'+
+          (late?' · '+A.phrase(flag,w=>metric.format(w[withoutKey])):'');
         const g=add('g',{tabindex:0,role:'img','aria-label':text,class:'category-point'});
         g.append(element('title',{},text),element('circle',{cx:px,cy:py,r:8,fill:'transparent'}),element('circle',{cx:px,cy:py,r:3.8,fill:row[0]<20?'white':color,stroke:color,'stroke-width':1.8}));
+        if(late) g.append(element('circle',{cx:px,cy:py,r:7,fill:'none',stroke:'#b4561d','stroke-width':1.6}));
         const show=()=>{byId('readout').textContent=text;};
         g.onpointerenter=g.onclick=g.onfocus=show;
       }

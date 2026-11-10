@@ -1,0 +1,8 @@
+/* Election-clock markers (follow-up study 11; review round 2, R2-2 and R2-3). */
+#election-caveat.election-caveat-minor{background:#f5f7fa;border-color:var(--line);color:var(--muted);padding:8px 12px;font-size:12px}
+#election-caveat.election-caveat-minor a{color:inherit}
+.election-flag{font-size:12px;line-height:1.45;color:#7a4413;margin:8px 0 0}
+.election-flag a{color:inherit}
+.election-key{display:inline-block;width:18px;height:0;border-top:2px dashed #b4561d;vertical-align:middle;margin-right:5px}
+.election-ring{display:inline-block;width:8px;height:8px;border:2px solid #b4561d;border-radius:50%;vertical-align:-1px;margin-right:5px}
+.matrix-flag{color:#a4521a;font-weight:700;margin-left:2px}

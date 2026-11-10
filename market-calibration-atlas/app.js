@@ -11,7 +11,15 @@
   const metas = {};
   const q = new URLSearchParams(location.search);
   const state = {venue:q.get('venue') || 'all', topic:q.get('topic') || '0', day:validDay(q.get('day'))||1, tab:parseTab()};
-  let venues = [], current = null, pending = 0, oddsRequest = 0;
+  let venues = [], current = null, pending = 0, oddsRequest = 0, caveatFiles = null;
+  const election = () => window.AtlasElectionCaveat;  // dist/election-caveat.js (study 11, review R2-2)
+  // Post-election prices in a row, for CSV columns: '' where no election note covers the venue.
+  function postElection(day,s) {
+    const a=election();
+    if(!a || !a.VENUES.includes(state.venue)) return '';
+    const c=a.check(caveatFiles,state.venue,topic(),day,s);
+    return !c?0:c.unavailable?'unavailable':c.contracts;
+  }
   const topic = () => metas[state.venue].topics.find(v => v.id === state.topic);
   function validDay(v) { return Number.isSafeInteger(+v) && +v > 0 && +v < 100000 ? +v : 0; }
   function parseTab() { return ['charts','intraday','validation','spreads','compare','history','coverage'].includes(location.hash.slice(1)) ? location.hash.slice(1) : 'explore'; }
@@ -80,7 +88,7 @@
     $('controls').scrollIntoView({behavior:'smooth',block:'start'});
   }
   function context() {
-    return {venues,metas,venue:state.venue,topic:topic(),day:state.day,loadData,readJSON,resolveRows,select,chooseDay,exportCSV,formatPct,formatInt,formatGap,escape};
+    return {venues,metas,venue:state.venue,topic:topic(),day:state.day,loadData,readJSON,resolveRows,select,chooseDay,exportCSV,formatPct,formatInt,formatGap,escape,caveat:caveatFiles};
   }
   function openView(tab) {
     state.tab=tab;
@@ -121,15 +129,24 @@
     $('bandnote').textContent=(mode==='original'?'Each row is a distinct quoted chance, including fractional percentages.':'Each row is an exact whole percentage from 51% through 100% that has observations.')+' Gap is the win rate minus the quote. '+(criterion==='best'||criterion==='worst'?'Small samples can rank highly by chance.':'Each contract counts once at this horizon.');
     $('download').disabled=!data.length;
     $('download').onclick=()=>exportCSV(state.venue+'-day-'+state.day+'-topic-'+state.topic+'-'+mode,
-      ['venue','topic','days','side','price_selection','quoted_probability','observed_win_rate','gap_pp','wins','contracts','events'],
-      data.map(r=>[state.venue,topic().name,state.day,'favorite',mode,r.p,r.y,(r.y-r.p)*100,r.wins,r.n,r.events]));
+      ['venue','topic','days','side','price_selection','quoted_probability','observed_win_rate','gap_pp','wins','contracts','events','row_post_election_contracts'],
+      data.map(r=>[state.venue,topic().name,state.day,'favorite',mode,r.p,r.y,(r.y-r.p)*100,r.wins,r.n,r.events,postElection(state.day,record?.s)]));
   }
   function renderTrend() {
     const series=Object.entries(current||{}).map(([d,r])=>[+d,...r.s]);
-    window.AtlasCharts.horizon($('trendchart'),series,state.day,chooseDay,$('trendmetric').value);
+    // Days whose row holds post-election prices get a dashed line for the same row without them (R2-2).
+    const a=election(), flagged=a?a.series(caveatFiles,state.venue,topic(),current):{unavailable:false,days:{}};
+    const alt=Object.entries(flagged.days).filter(([,c])=>c.without).map(([d,c])=>[+d,c.without.contracts,c.without.events,c.without.brier,c.without.winRate,c.without.bias]);
+    window.AtlasCharts.horizon($('trendchart'),series,state.day,chooseDay,$('trendmetric').value,alt);
+    if(a) {
+      const days=Object.keys(flagged.days).map(Number), peak=days.reduce((m,d)=>flagged.days[d].share>flagged.days[m].share?d:m,days[0]);
+      a.footnote('trend-election',$('trendchart'),flagged.unavailable?a.UNAVAILABLE:days.length?'Dashed line: the same rows without 2024 US election prices traded after the polls closed on 5 November 2024 (days '+a.runs(days)+'; at most '+a.pct(flagged.days[peak].share)+' of a row, at '+formatInt(peak)+' days).':'',flagged.unavailable?null:'election-key');
+    }
+    const covered=a&&a.VENUES.includes(state.venue);
     $('trend-export').onclick=()=>exportCSV(state.venue+'-topic-'+state.topic+'-all-horizons',
-      ['venue','event_type','days','contracts','events','brier','favorite_win_rate','signed_bias_pp'],
-      series.sort((a,b)=>a[0]-b[0]).map(([d,n,e,b,h,c])=>[state.venue,topic().name,d,n,e,b,h,c*100]));
+      ['venue','event_type','days','contracts','events','brier','favorite_win_rate','signed_bias_pp','post_election_contracts','brier_without_post_election','favorite_win_rate_without_post_election','signed_bias_pp_without_post_election'],
+      series.sort((a,b)=>a[0]-b[0]).map(([d,n,e,b,h,c])=>{const f=flagged.days[d],w=f?.without;
+        return [state.venue,topic().name,d,n,e,b,h,c*100,flagged.unavailable?'unavailable':f?f.contracts:covered?0:'',w?w.brier:'',w?w.winRate:'',w?w.bias*100:''];}));
   }
   function renderExplore(record) {
     const s=record?.s;
@@ -148,6 +165,11 @@
 
     modesTable(record);renderTrend();
   }
+  // The topics PairedBars.renderCategories draws (paired-bars.js), plus the pooled row its summary line describes.
+  function landingTopics() {
+    const all=metas[state.venue].topics, broad=all.filter(t=>t.kind==='broad'), t=topic();
+    return t.kind!=='all'?[t]:[t,...(broad.length===1?all.filter(x=>x.kind==='detail'):broad)];
+  }
   async function matched(revision, inCharts=false) {
     const menu=$(inCharts?'charts-pair':'pair');
     const panel=$(inCharts?'charts-paired-results':'matched'), key=menu.value;
@@ -155,7 +177,11 @@
       const pairs=await readJSON('data/'+state.venue+'/matched.json');
       if (revision!==pending || key!==menu.value) return;
       const row=pairs[state.topic]?.[key], [a,b]=key.split('/');
-      if (!inCharts) PairedBars.renderCategories($('landing-category-bars'),$('landing-category-summary'),context(),pairs,a,b);
+      if (!inCharts) {
+        PairedBars.renderCategories($('landing-category-bars'),$('landing-category-summary'),context(),pairs,a,b);
+        if(election()) election().footnote('landing-election',$('landing-category-bars'),$('landing-category-bars').childElementCount?
+          election().rowsNote(caveatFiles,state.venue,landingTopics().flatMap(t=>[a,b].map(d=>({topic:t,day:+d})))):'',null);
+      }
       if (!row || !row[0]) {panel.textContent='No contracts had qualifying prices at both horizons.';return;}
       const [n,e,far,near,farHit,nearHit,farGap,nearGap]=row;
       const allA=!inCharts && current?.[a]?.s, allB=!inCharts && current?.[b]?.s;
@@ -167,6 +193,10 @@
         '<p class="hint">'+formatInt(n)+' matched contracts across '+formatInt(e)+' events. The favorite qualified at both horizons.</p>'+
         (allA && allB?'<p class="hint">Across all eligible contracts, the '+a+'-day view includes '+formatInt(allA[0])+' contracts and the '+b+'-day view includes '+formatInt(allB[0])+'. The table above holds the contracts fixed.</p>':'');
       window.PairedBars.render(panel,a,b,row);
+      if(election()) {
+        const p=document.createElement('p');p.className='election-flag';p.id=panel.id+'-election';panel.append(p);
+        election().footnote(p.id,null,election().rowsNote(caveatFiles,state.venue,[a,b].map(d=>({topic:topic(),day:+d}))),null);
+      }
     } catch(e) {
       if (revision===pending && key===menu.value) {
         panel.textContent='Matched comparison unavailable. Reload to retry.';
@@ -199,6 +229,10 @@
       $('chart-reading').textContent={brier:'Lower Brier scores mean forecasts were closer to the outcomes. A 50% forecast on every contract scores 0.25.',hit:'Favorite win rate is the share of contracts won by the side priced at 51% or above. An event type with more heavy favorites can have a higher win rate.',bias:'Signed bias is the actual favorite win rate minus the average forecast, in percentage points. Zero means they agree on average.'}[metric];
       try { await Promise.all([CalendarLines.render(context(),metric),CategoryLines.render(context(),metric),matched(revision,true)]); }
       catch(err) { if(revision===pending) showError(err); }
+      // Calendar points are grouped by forecast date; post-election prices were traded from 5 Nov 2024 to Feb 2025.
+      const a=election(), last=a?a.lastDay(caveatFiles,state.venue,topic()):0;
+      if(a && revision===pending) a.footnote('cal-election',document.getElementById('cal-note'),
+        a.VENUES.includes(state.venue)&&a.missing(caveatFiles,state.venue)?a.UNAVAILABLE:last?'Election clock: for horizons up to '+formatInt(last)+' days, points for 2024 and 2025 (quarters Q4 2024 and Q1 2025) include 2024 US election prices traded after the polls closed on 5 November 2024.':'',null);
       return;
     }
     if (state.tab==='spreads') {
@@ -255,7 +289,8 @@
   }
   async function initialize() {
     venues=(await readJSON('data/index.json')).venues;
-    await Promise.all(venues.map(async v=>{metas[v.id]=await readJSON('data/'+v.id+'/meta.json');}));
+    await Promise.all([...venues.map(async v=>{metas[v.id]=await readJSON('data/'+v.id+'/meta.json');}),
+      (async()=>{if(election())caveatFiles=await election().load(readJSON);})()]);
     if(!metas[state.venue])state.venue=venues[0].id;
     venues.forEach(v=>$('venue').append(new Option(v.name,v.id)));
     for(const [id,k] of [['gran','gran'],['trendmetric','trend'],['compare-match','match'],['pair','pair'],['sort','sort']])setChoice(id,q.get(k));

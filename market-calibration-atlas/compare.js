@@ -92,6 +92,10 @@
       }
     }
     if(!results.length) blankRow(body,7,'No venues are available.');
+    // Election clock (study 11, review R2-2): the full Kalshi and Polymarket rows behind these prices.
+    const A=window.AtlasElectionCaveat;
+    if(A) A.footnote('cross-election',body.closest('.scroll')||body.closest('table'),A.rowsNote(ctx.caveat,'all',
+      results.filter(r=>r.topic && ['kalshi','polymarket'].includes(r.venue.id)).map(r=>({topic:r.topic,day:+day,venue:r.venue.id}))),null);
     button.disabled=!results.some(r=>!r.reason);
     button.onclick=()=>ctx.exportCSV('venue-comparison-'+day+'d-'+price+'pct-'+match+(isWindow?'-'+radius+'pp':'')+'.csv',
       ['venue','event_type','days_before_cutoff','side','price_matching','target_favorite_pct','margin_pp','mean_price','observed_rate','gap_actual_minus_price','wins','contracts','events','status'],
@@ -124,6 +128,10 @@
     if(serial!==matrixGeneration || current!==ctx) return;
     const metadata=meta.topics.filter(t=>!filter||t.name.toLowerCase().includes(filter));
     const escape=ctx.escape,exportRows=[];
+    // Election clock (study 11, review R2-2): a dagger on cells whose row holds 2024 US election prices traded after
+    // the polls closed; the CSV gets their count.
+    const A=window.AtlasElectionCaveat, covered=A&&A.VENUES.includes(ctx.venue);
+    let daggers=0,unavailableCells=0;
     table.innerHTML='<thead><tr><th scope="col">Event type</th>'+horizons.map(d=>'<th scope="col">'+d+'d</th>').join('')+'</tr></thead><tbody></tbody>';
     const body=table.tBodies[0];
     if(!metadata.length) blankRow(body,horizons.length+1,'No event type matches your search.');
@@ -131,18 +139,25 @@
       const cells=horizons.map(day=>{
         const arr=day===requested && custom ? daily?.[t.id] : t.bench?.[day];
         const unready=day===requested && custom && unavailable;
-        exportRows.push([sourceFor(ctx)?.name||ctx.venue,t.name,t.kind,day,...(arr||['','','','','']),unready?'Could not load this day':(arr?'Observed':'No observation')]);
+        const flag=covered&&arr?A.check(ctx.caveat,ctx.venue,t,day,arr):null, late=flag&&!flag.unavailable;
+        if(late) daggers++; else if(flag) unavailableCells++;
+        exportRows.push([sourceFor(ctx)?.name||ctx.venue,t.name,t.kind,day,...(arr||['','','','','']),unready?'Could not load this day':(arr?'Observed':'No observation'),
+          flag?(late?flag.contracts:'unavailable'):(covered&&arr?0:'')]);
         if(!arr || arr[metric.index]==null) return '<td class="dim" title="'+(unready?'Could not load this day':arr?'No qualifying favorite':'No eligible observation')+'">'+(unready?'Unavailable':'—')+'</td>';
         const text=metricValue(ctx,metric,arr[metric.index]);
-        const description=t.name+', '+countDays(day)+', '+metric.name+' '+text+'; '+ctx.formatInt(arr[0])+' contracts in '+ctx.formatInt(arr[1])+' events';
-        return '<td><button class="matrix-value" data-topic="'+escape(String(t.id))+'" data-day="'+day+'" title="'+escape(description)+'" aria-label="'+escape(description)+'">'+escape(text)+'</button></td>';
+        const description=t.name+', '+countDays(day)+', '+metric.name+' '+text+'; '+ctx.formatInt(arr[0])+' contracts in '+ctx.formatInt(arr[1])+' events'+
+          (late?'; '+A.phrase(flag,w=>metricValue(ctx,metric,{0:w.contracts,1:w.events,2:w.brier,3:w.winRate,4:w.bias}[metric.index])):'');
+        return '<td><button class="matrix-value" data-topic="'+escape(String(t.id))+'" data-day="'+day+'" title="'+escape(description)+'" aria-label="'+escape(description)+'">'+escape(text)+'</button>'+
+          (late?'<span class="matrix-flag" aria-hidden="true">†</span>':'')+'</td>';
       });
       return '<tr><th scope="row">'+escape(t.name)+'</th>'+cells.join('')+'</tr>';
     });
     if(metadata.length) body.innerHTML=html.join('');
+    if(A) A.footnote('matrix-election',table.closest('.scroll')||table,unavailableCells?A.UNAVAILABLE:daggers?
+      '† Values marked with a dagger come from rows that include 2024 US election prices traded after the polls closed on 5 November 2024, so for those prices "days before cutoff" is not days before the result. Hover or focus a value for the count and the value without them; the CSV has a post_election_contracts column.':'',null);
     table.onclick=e=>{const target=e.target.closest('button[data-topic][data-day]');if(target)ctx.select(ctx.venue,target.dataset.topic,+target.dataset.day);};
     button.disabled=!exportRows.length;
-    button.onclick=()=>ctx.exportCSV(ctx.venue+'-topic-horizons.csv',['venue','event_type','group_level','days_before_cutoff','contracts','events','brier_score','favorite_win_rate','signed_bias_probability_units','status'],exportRows);
+    button.onclick=()=>ctx.exportCSV(ctx.venue+'-topic-horizons.csv',['venue','event_type','group_level','days_before_cutoff','contracts','events','brier_score','favorite_win_rate','signed_bias_probability_units','status','post_election_contracts'],exportRows);
   }
 
   function render(ctx) {
