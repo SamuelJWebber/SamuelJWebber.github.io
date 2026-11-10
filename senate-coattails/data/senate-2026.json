@@ -1,0 +1,302 @@
+{
+ "generated": "2026-11-09",
+ "family": "senate",
+ "insert_after": "confirmation",
+ "status": "Unofficial: no certification was recorded for any of the 29 states when the counts were retrieved (2026-11-09). Rerun on certified counts.",
+ "view": {
+  "id": "y2026",
+  "label": "Out of sample · 2026 (unofficial counts)",
+  "title": "Held out from fitting · 2026 midterms",
+  "sample": "29 Senate races · unofficial counts",
+  "period": "2026 · counts retrieved 2026-11-09",
+  "errorLabel": "Mean absolute error (points)",
+  "models": [
+   {
+    "label": "Baseline",
+    "error": 5.250169163899455,
+    "secondary": 7.595918489732685,
+    "gain": 0,
+    "ci": null,
+    "baseline": true
+   },
+   {
+    "label": "+ Prior electoral performance",
+    "error": 4.983429836194859,
+    "secondary": 7.045622097333448,
+    "gain": 0.2667393277045962,
+    "ci": [
+     -0.46172827897707397,
+     1.0006504894713697
+    ],
+    "baseline": false
+   }
+  ],
+  "reading": "The frozen model beats its baseline by 0.27 points (+0.97 in 2016–22, +0.91 in 2024), and the 95% interval (-0.46 to +1.00) includes zero. Both models under-predicted Democrats (average signed error -2.4 and -1.2 points). Both missed the same six winners (IA, KS, ME, MS, SC, TX). Counts are unofficial in all 29 states; uncalled: MS.",
+  "method": "Pre-registered before scoring (studies/senate-2026/PROTOCOL.md). Same features, eligibility and code as the earlier stages; fitted on every eligible race through 2024 and never on 2026. The model was fixed on 2026-11-05, two days after Election Day, so this is a held-out test, not a forecast issued before the election. Without any refit (the stored 2022 model) the gain is +0.33. Dropping every 2026 nominee's earlier races from training (the study's new-candidates rule) gives +0.29. Incumbency is each senator's actual pre-election status, including appointees. Excluded from the ballot rules: AK (Top-four nonpartisan system: no party nominees (frozen source coded Alaska 2022 with none)); ID (0 Democratic and 1 Republican candidates on the general-election ballot); NE (0 Democratic and 1 Republican candidates on the general-election ballot); SD (0 Democratic and 1 Republican candidates on the general-election ballot); the Florida and Ohio specials are excluded as all specials are. Votes: CNN results API, checked against the North Carolina, Colorado, Iowa and South Carolina state feeds. Rerun after certification.",
+  "predictions": [
+   {
+    "state": "AL",
+    "year": 2026,
+    "dem": "EVERETT WESS",
+    "rep": "BARRY MOORE",
+    "actual": 0.45287741872378345,
+    "prediction": 0.417878963981418,
+    "baseline": 0.4494812432486983
+   },
+   {
+    "state": "AR",
+    "year": 2026,
+    "dem": "HALLIE SHOFFNER",
+    "rep": "TOM COTTON",
+    "actual": 0.4387304715088025,
+    "prediction": 0.3823738179700703,
+    "baseline": 0.3617357716894611
+   },
+   {
+    "state": "CO",
+    "year": 2026,
+    "dem": "JOHN HICKENLOOPER",
+    "rep": "MARK BAISLEY",
+    "actual": 0.63305419874236,
+    "prediction": 0.632357365076247,
+    "baseline": 0.6548551827579846
+   },
+   {
+    "state": "DE",
+    "year": 2026,
+    "dem": "CHRIS COONS",
+    "rep": "MIKE KATZ",
+    "actual": 0.6356519646347236,
+    "prediction": 0.6574699916790034,
+    "baseline": 0.6651907532706698
+   },
+   {
+    "state": "GA",
+    "year": 2026,
+    "dem": "JON OSSOFF",
+    "rep": "MIKE COLLINS",
+    "actual": 0.5902605854390386,
+    "prediction": 0.5896541286364654,
+    "baseline": 0.6167830944257767
+   },
+   {
+    "state": "IA",
+    "year": 2026,
+    "dem": "JOSH TUREK",
+    "rep": "ASHLEY HINSON",
+    "actual": 0.5216311943874837,
+    "prediction": 0.4780951621636283,
+    "baseline": 0.4986457934439737
+   },
+   {
+    "state": "IL",
+    "year": 2026,
+    "dem": "JULIANA STRATTON",
+    "rep": "DON TRACY",
+    "actual": 0.6233112849064153,
+    "prediction": 0.5629892803418903,
+    "baseline": 0.567959055663372
+   },
+   {
+    "state": "KS",
+    "year": 2026,
+    "dem": "ADAM HAMILTON",
+    "rep": "ROGER MARSHALL",
+    "actual": 0.5260546301165931,
+    "prediction": 0.4213560697733941,
+    "baseline": 0.4038308246381724
+   },
+   {
+    "state": "KY",
+    "year": 2026,
+    "dem": "CHARLES BOOKER",
+    "rep": "ANDY BARR",
+    "actual": 0.43826625041331896,
+    "prediction": 0.4574389544725085,
+    "baseline": 0.4490669669950113
+   },
+   {
+    "state": "LA",
+    "year": 2026,
+    "dem": "JAMIE DAVIS",
+    "rep": "JULIA LETLOW",
+    "actual": 0.4911823104631581,
+    "prediction": 0.4473184056869087,
+    "baseline": 0.4735175815288205
+   },
+   {
+    "state": "MA",
+    "year": 2026,
+    "dem": "ED MARKEY",
+    "rep": "JOHN DEATON",
+    "actual": 0.6635237147995218,
+    "prediction": 0.6667790418369565,
+    "baseline": 0.6960734062375684
+   },
+   {
+    "state": "ME",
+    "year": 2026,
+    "dem": "TROY JACKSON",
+    "rep": "SUSAN COLLINS",
+    "actual": 0.5312389459101805,
+    "prediction": 0.4653854489595979,
+    "baseline": 0.4700957883927409
+   },
+   {
+    "state": "MI",
+    "year": 2026,
+    "dem": "ABDUL EL-SAYED",
+    "rep": "MIKE ROGERS",
+    "actual": 0.5361467914108041,
+    "prediction": 0.5110503590615251,
+    "baseline": 0.5324919077087049
+   },
+   {
+    "state": "MN",
+    "year": 2026,
+    "dem": "PEGGY FLANAGAN",
+    "rep": "MICHELE TAFOYA",
+    "actual": 0.5521729722350707,
+    "prediction": 0.539531789928729,
+    "baseline": 0.5488067843528631
+   },
+   {
+    "state": "MS",
+    "year": 2026,
+    "dem": "SCOTT COLOM",
+    "rep": "CINDY HYDE-SMITH",
+    "actual": 0.5013789985063528,
+    "prediction": 0.4044327820907266,
+    "baseline": 0.3848437136305938
+   },
+   {
+    "state": "MT",
+    "year": 2026,
+    "dem": "ALANI BANKHEAD",
+    "rep": "KURT ALME",
+    "actual": 0.2008947716925526,
+    "prediction": 0.4534621498740717,
+    "baseline": 0.4785337470888365
+   },
+   {
+    "state": "NC",
+    "year": 2026,
+    "dem": "ROY COOPER",
+    "rep": "MICHAEL WHATLEY",
+    "actual": 0.6003231286559949,
+    "prediction": 0.5132700968520524,
+    "baseline": 0.5273649735700857
+   },
+   {
+    "state": "NH",
+    "year": 2026,
+    "dem": "CHRIS PAPPAS",
+    "rep": "JOHN SUNUNU",
+    "actual": 0.5700291100770825,
+    "prediction": 0.5165771582538385,
+    "baseline": 0.544514552070029
+   },
+   {
+    "state": "NJ",
+    "year": 2026,
+    "dem": "CORY BOOKER",
+    "rep": "JUSTIN MURPHY",
+    "actual": 0.6401921768414752,
+    "prediction": 0.6224742694059677,
+    "baseline": 0.6400081176016288
+   },
+   {
+    "state": "NM",
+    "year": 2026,
+    "dem": "BEN RAY LUJAN",
+    "rep": "LARRY MARKER",
+    "actual": 0.6326011114328659,
+    "prediction": 0.6138201156987219,
+    "baseline": 0.6403297547089777
+   },
+   {
+    "state": "OK",
+    "year": 2026,
+    "dem": "N'KIYLA JASMINE THOMAS",
+    "rep": "KEVIN HERN",
+    "actual": 0.4071029714848339,
+    "prediction": 0.4038611642636935,
+    "baseline": 0.4380361696861999
+   },
+   {
+    "state": "OR",
+    "year": 2026,
+    "dem": "JEFF MERKLEY",
+    "rep": "DAVID BROCK SMITH",
+    "actual": 0.6007910000199468,
+    "prediction": 0.6550505448641579,
+    "baseline": 0.6649303323097477
+   },
+   {
+    "state": "RI",
+    "year": 2026,
+    "dem": "JACK REED",
+    "rep": "RAYMOND MCKAY",
+    "actual": 0.6952852464891517,
+    "prediction": 0.6704469815081597,
+    "baseline": 0.6629460287016968
+   },
+   {
+    "state": "SC",
+    "year": 2026,
+    "dem": "ANNIE ANDREWS",
+    "rep": "DARLINE GRAHAM",
+    "actual": 0.5230040944607273,
+    "prediction": 0.417314934542305,
+    "baseline": 0.3990036755227986
+   },
+   {
+    "state": "TN",
+    "year": 2026,
+    "dem": "MARQUITA BRADSHAW",
+    "rep": "BILL HAGERTY",
+    "actual": 0.4379186454636075,
+    "prediction": 0.3863836983137725,
+    "baseline": 0.3651727587868468
+   },
+   {
+    "state": "TX",
+    "year": 2026,
+    "dem": "JAMES TALARICO",
+    "rep": "KEN PAXTON",
+    "actual": 0.5616847772567053,
+    "prediction": 0.4766015705629963,
+    "baseline": 0.4974263249049883
+   },
+   {
+    "state": "VA",
+    "year": 2026,
+    "dem": "MARK WARNER",
+    "rep": "BERT MIZUSAWA",
+    "actual": 0.6148322253101759,
+    "prediction": 0.6242724742114883,
+    "baseline": 0.6396233575341469
+   },
+   {
+    "state": "WV",
+    "year": 2026,
+    "dem": "RACHEL FETTY ANDERSON",
+    "rep": "SHELLEY MOORE CAPITO",
+    "actual": 0.3940180486772872,
+    "prediction": 0.3170585594452104,
+    "baseline": 0.3297375294756166
+   },
+   {
+    "state": "WY",
+    "year": 2026,
+    "dem": "JAMES BYRD",
+    "rep": "HARRIET HAGEMAN",
+    "actual": 0.34764010381620686,
+    "prediction": 0.3623545355723137,
+    "baseline": 0.4041473691418828
+   }
+  ],
+  "predictionModel": "Baseline + prior electoral performance, fitted through 2024"
+ },
+ "coverage_note": "2026: 29 more Senate races, held out from fitting (model fixed 2026-11-05, after Election Day; unofficial counts, gain +0.27, interval includes zero)."
+}

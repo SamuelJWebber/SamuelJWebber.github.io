@@ -1,0 +1,500 @@
+{
+  "updated": "2026-11-05",
+  "status": "Verified inputs and proposed design; no new coattail effect estimated",
+  "stats": {
+    "additional_close_events": 14,
+    "official_close_runoffs": 4,
+    "runoffs_audited": 14,
+    "archive_matched_cases": 5,
+    "archive_surveys": 13,
+    "archive_comparison_versions": 18
+  },
+  "examples": [
+    {
+      "id": "GA_2020_Civiqs_May",
+      "state": "Georgia",
+      "cycle": 2020,
+      "pollster": "Civiqs",
+      "sponsor": "Daily Kos",
+      "field_start": "2020-05-16",
+      "field_end": "2020-05-18",
+      "n": 1339,
+      "population": "Registered voters",
+      "mode": "Online selected Civiqs panel",
+      "moe_pct": 3.1,
+      "primary_date": "2020-06-09",
+      "source_url": "https://civiqs.com/documents/Civiqs_DailyKos_GA_banner_book_2020_05_h79s1a.pdf",
+      "questions": [
+        {
+          "number": 1,
+          "candidate": "Sarah Riggs Amico",
+          "pct": 42,
+          "opponent": "David Perdue",
+          "opponent_pct": 45
+        },
+        {
+          "number": 2,
+          "candidate": "Teresa Tomlinson",
+          "pct": 44,
+          "opponent": "David Perdue",
+          "opponent_pct": 45
+        },
+        {
+          "number": 3,
+          "candidate": "Jon Ossoff",
+          "pct": 47,
+          "opponent": "David Perdue",
+          "opponent_pct": 45
+        }
+      ],
+      "question_location": "PDF page2; crosstabs pages5-7",
+      "verified_design": "Same survey questionnaire has all three hypothetical matchup questions. Random assignment or rotation not documented.",
+      "notes": "Ossoff advantage: 3 pp margin over Tomlinson, 5 pp over Amico. Ossoff primary was not close; useful quality-measure proof, not a close-primary RD observation.",
+      "release_date": "2020-05-19",
+      "article_url": "https://www.dailykos.com/stories/2020/5/19/1946161/community/New-Daily-Kos-Civiqs-poll-reveals-Biden-ahead-in-Georgia-Dems-competitive-in-both-Senate-contests/"
+    },
+    {
+      "id": "CO_2010_PPP_May",
+      "state": "Colorado",
+      "cycle": 2010,
+      "pollster": "Public Policy Polling",
+      "field_start": "2010-05-14",
+      "field_end": "2010-05-16",
+      "release_date": "2010-05-19",
+      "n": 1060,
+      "population": "Colorado voters",
+      "mode": "Automated telephone (keypad responses shown)",
+      "moe_pct": 3.0,
+      "primary_date": "2010-08-10",
+      "source_url": "https://e1.nmcdn.io/assets/ppp/wp-content/uploads/2017/09/PPP_Release_CO_519.pdf",
+      "article_url": "https://publicpolicypolling.blogspot.com/2010/05/bennet-now-leads-general.html",
+      "questions": [
+        {
+          "number": 9,
+          "candidate": "Jane Norton",
+          "pct": 41,
+          "opponent": "Michael Bennet",
+          "opponent_pct": 44
+        },
+        {
+          "number": 10,
+          "candidate": "Ken Buck",
+          "pct": 39,
+          "opponent": "Michael Bennet",
+          "opponent_pct": 45
+        }
+      ],
+      "question_location": "PDF page2, Q9 and Q10",
+      "verified_design": "Both general-election matchups in same questionnaire. No documented random assignment.",
+      "notes": "Norton +3 pp margin over Buck in May. August poll flips ranking; MUST lock time window and aggregation before outcome analysis. The Democratic nomination was also unresolved; a future Bennet win cannot retrospectively choose the common opponent."
+    },
+    {
+      "id": "CO_2010_PPP_August",
+      "state": "Colorado",
+      "cycle": 2010,
+      "pollster": "Public Policy Polling",
+      "field_start": "2010-08-07",
+      "field_end": "2010-08-08",
+      "release_date": "2010-08-10",
+      "n": 1015,
+      "population": "Colorado voters",
+      "mode": "Automated telephone",
+      "moe_pct": 3.1,
+      "primary_date": "2010-08-10",
+      "source_url": "https://e1.nmcdn.io/assets/ppp/wp-content/uploads/2017/09/PPP_Release_CO_810.pdf",
+      "article_url": "https://publicpolicypolling.blogspot.com/2010/08/colorado-senate-general.html",
+      "questions": [
+        {
+          "number": 8,
+          "candidate": "Jane Norton",
+          "pct": 40,
+          "opponent": "Michael Bennet",
+          "opponent_pct": 46
+        },
+        {
+          "number": 9,
+          "candidate": "Ken Buck",
+          "pct": 43,
+          "opponent": "Michael Bennet",
+          "opponent_pct": 46
+        },
+        {
+          "number": 10,
+          "candidate": "Jane Norton",
+          "pct": 43,
+          "opponent": "Andrew Romanoff",
+          "opponent_pct": 42
+        },
+        {
+          "number": 11,
+          "candidate": "Ken Buck",
+          "pct": 42,
+          "opponent": "Andrew Romanoff",
+          "opponent_pct": 43
+        }
+      ],
+      "question_location": "PDF page2, Q8-Q11",
+      "verified_design": "Same questionnaire all four potential general-election matchups. No documented random assignment.",
+      "notes": "Field before primary; release on primary morning 10:55AM before tally. Buck +3 pp margin vs Bennet, but Norton +2 pp margin vs Romanoff. Opponent-specific appeal, not universal intrinsic talent. The Democratic nomination was also unresolved; a future Bennet win cannot retrospectively choose the common opponent."
+    },
+    {
+      "id": "MS_2014_PPP_Nov2013",
+      "state": "Mississippi",
+      "cycle": 2014,
+      "pollster": "Public Policy Polling",
+      "field_start": "2013-11-15",
+      "field_end": "2013-11-17",
+      "release_date": "2013-11-19",
+      "n": 502,
+      "population": "Mississippi voters; includes oversample of 422 Republican primary voters",
+      "mode": "Automated telephone",
+      "moe_pct": 4.4,
+      "nomination_runoff_date": "2014-06-24",
+      "source_url": "https://e1.nmcdn.io/assets/ppp/wp-content/uploads/2017/09/PPP_Release_MS_1119.pdf",
+      "questions": [
+        {
+          "number": 8,
+          "candidate": "Thad Cochran",
+          "pct": 50,
+          "opponent": "Travis Childers",
+          "opponent_pct": 33
+        },
+        {
+          "number": 14,
+          "candidate": "Chris McDaniel",
+          "pct": 41,
+          "opponent": "Travis Childers",
+          "opponent_pct": 38
+        }
+      ],
+      "question_location": "PDF page2 Q8; page3 Q14",
+      "verified_design": "Same survey report and questionnaire. No documented random assignment.",
+      "notes": "Cochran +14 pp comparative margin. Early snapshot; incumbent recognition is part of measured appeal. Must not use July 2014 post-runoff PPP counterfactual poll as pre-treatment. This is outside the proposed 90-day main polling window: measurement feasibility and a 365-day sensitivity candidate, not automatically an eligible main observation."
+    },
+    {
+      "id": "GA_2014_Rasmussen_May",
+      "state": "Georgia",
+      "cycle": 2014,
+      "pollster": "Rasmussen Reports",
+      "field_start": "2014-05-21",
+      "field_end": "2014-05-22",
+      "n": 750,
+      "population": "Likely voters",
+      "mode": "Telephone; fieldwork Pulse Opinion Research",
+      "moe_pct": 4.0,
+      "nomination_runoff_date": "2014-07-22",
+      "source_url": "https://www.rasmussenreports.com/public_content/archive/election_2014_archive/georgia/georgia_senate_nunn_d_holds_slight_edge_over_gop_finalists",
+      "question_url": "https://www.rasmussenreports.com/public_content/politics/elections/election_2014/georgia/questions/questions_ga_senate_may_21_22_2014",
+      "questions": [
+        {
+          "number": 3,
+          "candidate": "Jack Kingston",
+          "pct": 41,
+          "opponent": "Michelle Nunn",
+          "opponent_pct": 47
+        },
+        {
+          "number": 4,
+          "candidate": "David Perdue",
+          "pct": 42,
+          "opponent": "Michelle Nunn",
+          "opponent_pct": 45
+        }
+      ],
+      "verified_design": "Explicit sequential hypothetical questions in same survey. No documented random assignment.",
+      "notes": "Perdue +3 pp comparative margin. Conducted AFTER first primary but BEFORE decisive runoff, hence pre-treatment only if treatment is runoff nomination."
+    },
+    {
+      "id": "WV_2018_ResearchAmerica_Aug2017",
+      "state": "West Virginia",
+      "cycle": 2018,
+      "pollster": "Research America",
+      "sponsor": "MetroNews",
+      "field_start": "2017-08-11",
+      "field_end": "2017-08-20",
+      "n": 400,
+      "population": "Likely voters across all 55 counties",
+      "mode": "Mixed landline, cellphone, and opt-in online",
+      "primary_date": "2018-05-08",
+      "source_url": "https://wvmetronews.com/2017/09/01/metronews-west-virginia-poll-how-would-manchin-fare-versus-jenkins-or-morrisey/",
+      "questions": [
+        {
+          "candidate": "Evan Jenkins",
+          "pct": 40,
+          "opponent": "Joe Manchin",
+          "opponent_pct": 50
+        },
+        {
+          "candidate": "Patrick Morrisey",
+          "pct": 38,
+          "opponent": "Joe Manchin",
+          "opponent_pct": 52
+        }
+      ],
+      "verified_design": "Sponsor article reports both hypothetical matchups from same 400 respondent survey. Full question wording or random assignment not confirmed.",
+      "notes": "Jenkins +4 pp comparative margin. Long pre-primary lead. Do not assume probabilistic margin-of-error for mixed opt-in sample."
+    },
+    {
+      "id": "KY_2020_Civiqs_June",
+      "state": "Kentucky",
+      "cycle": 2020,
+      "pollster": "Civiqs / Data for Progress",
+      "field_start": "2020-06-13",
+      "field_end": "2020-06-15",
+      "n": 898,
+      "population": "Registered voters",
+      "primary_date": "2020-06-23",
+      "source_url": "https://www.filesforprogress.org/datasets/2020/6/ky/Civiqs_DataforProgress_KY_banner_book_2020_06.pdf",
+      "questions": [
+        {
+          "number": 2,
+          "candidate": "Charles Booker",
+          "pct": 38,
+          "opponent": "Mitch McConnell",
+          "opponent_pct": 52
+        },
+        {
+          "number": 1,
+          "candidate": "Amy McGrath",
+          "pct": 33,
+          "opponent": "Mitch McConnell",
+          "opponent_pct": 53
+        }
+      ],
+      "verified_design": "Both hypothetical matchups in the same survey. No documented random assignment of candidate names or question order.",
+      "notes": "Booker +5 raw candidate-support points, +6 margin points. Both questions also include Brad Barron at 4%. Poll ends eight days before the primary, so it is outside the old donor study\u2019s 30-day cutoff. General-election poll questions do not establish coattails."
+    }
+  ],
+  "nomination_additions": [
+    {
+      "state": "CT",
+      "year": 2006,
+      "party": "D",
+      "round": "Primary",
+      "winner": "LAMONT, EDWARD M",
+      "runner_up": "LIEBERMAN, JOSEPH",
+      "margin_pp": 3.600000000000003,
+      "source_url": "https://doi.org/10.7910/DVN/D03ULS",
+      "verification": "Cowburn source shares, normalized over top two. Official dates and exact vote totals require confirmation. Defeated contender subsequently remained in the general election: retain nomination ITT; do not exclude using postprimary behavior."
+    },
+    {
+      "state": "DE",
+      "year": 2006,
+      "party": "R",
+      "round": "Primary",
+      "winner": "TING, JAN",
+      "runner_up": "PROTACK, MICHAEL D",
+      "margin_pp": 2.905569007263918,
+      "source_url": "https://doi.org/10.7910/DVN/D03ULS",
+      "verification": "Cowburn source shares, normalized over top two. Official dates and exact vote totals require confirmation."
+    },
+    {
+      "state": "MD",
+      "year": 2006,
+      "party": "D",
+      "round": "Primary",
+      "winner": "CARDIN, BENJAMIN L",
+      "runner_up": "MFUME, KWEISI",
+      "margin_pp": 3.8004750593824195,
+      "source_url": "https://doi.org/10.7910/DVN/D03ULS",
+      "verification": "Cowburn source shares, normalized over top two. Official dates and exact vote totals require confirmation."
+    },
+    {
+      "state": "IA",
+      "year": 2008,
+      "party": "R",
+      "round": "Primary",
+      "winner": "REED, CHRISTOPHER",
+      "runner_up": "EICHHORN, GEORGE SCOTT",
+      "margin_pp": 1.1461318051575942,
+      "source_url": "https://doi.org/10.7910/DVN/D03ULS",
+      "verification": "Cowburn source shares, normalized over top two. Official dates and exact vote totals require confirmation."
+    },
+    {
+      "state": "SC",
+      "year": 2008,
+      "party": "D",
+      "round": "Decisive first round",
+      "winner": "Bob Conley",
+      "runner_up": "Michael Cone",
+      "winner_votes": 74185,
+      "runner_up_votes": 73127,
+      "margin_pp": 0.7182035407841859,
+      "source_url": "https://www.fec.gov/documents/1659/2008congresults.xls",
+      "verification": "Official FEC votes checked. State has runoff rules but this nomination required no runoff."
+    },
+    {
+      "state": "WY",
+      "year": 2008,
+      "party": "D",
+      "round": "Primary",
+      "winner": "CARTER, NICHOLAS H",
+      "runner_up": "GOODENOUGH, KEITH",
+      "margin_pp": 1.3649136892814133,
+      "source_url": "https://doi.org/10.7910/DVN/D03ULS",
+      "verification": "Cowburn source shares, normalized over top two. Official dates and exact vote totals require confirmation."
+    },
+    {
+      "state": "AK",
+      "year": 2010,
+      "party": "R",
+      "round": "Primary",
+      "winner": "MILLER, JOSEPH W",
+      "runner_up": "MURKOWSKI, LISA",
+      "margin_pp": 1.8000000000000016,
+      "source_url": "https://doi.org/10.7910/DVN/D03ULS",
+      "verification": "Cowburn source shares, normalized over top two. Official dates and exact vote totals require confirmation. Defeated contender subsequently remained in the general election: retain nomination ITT; do not exclude using postprimary behavior."
+    },
+    {
+      "state": "AR",
+      "year": 2010,
+      "party": "D",
+      "round": "Final runoff",
+      "winner": "Lincoln, Blanche Lambert",
+      "runner_up": "Halter, Bill",
+      "winner_votes": 134756,
+      "runner_up_votes": 124405,
+      "margin_pp": 3.994042313465375,
+      "source_url": "https://www.fec.gov/documents/1677/results10.xls",
+      "verification": "Official FEC final-round votes checked. Quality and measurement dates remain separate eligibility checks."
+    },
+    {
+      "state": "GA",
+      "year": 2014,
+      "party": "R",
+      "round": "Final runoff",
+      "winner": "Perdue, David Alfred",
+      "runner_up": "Kingston, J. H. \"Jack\"",
+      "winner_votes": 245951,
+      "runner_up_votes": 237448,
+      "margin_pp": 1.7590023976052909,
+      "source_url": "https://www.fec.gov/documents/1705/results14.xls",
+      "verification": "Official FEC final-round votes checked. Quality and measurement dates remain separate eligibility checks."
+    },
+    {
+      "state": "HI",
+      "year": 2014,
+      "party": "D",
+      "round": "Primary",
+      "winner": "SCHATZ, BRIAN EMANUEL",
+      "runner_up": "HANABUSA, COLLEEN WAKAKO",
+      "margin_pp": 0.7862759113652593,
+      "source_url": "https://doi.org/10.7910/DVN/D03ULS",
+      "verification": "Cowburn source shares, normalized over top two. Official dates and exact vote totals require confirmation."
+    },
+    {
+      "state": "MS",
+      "year": 2014,
+      "party": "R",
+      "round": "Final runoff",
+      "winner": "Cochran, Thad",
+      "runner_up": "McDaniel, Chris",
+      "winner_votes": 194972,
+      "runner_up_votes": 187249,
+      "margin_pp": 2.020558786670539,
+      "source_url": "https://www.fec.gov/documents/1705/results14.xls",
+      "verification": "Official FEC final-round votes checked. Quality and measurement dates remain separate eligibility checks."
+    },
+    {
+      "state": "VT",
+      "year": 2018,
+      "party": "R",
+      "round": "Primary",
+      "winner": "PAIGE, H BROOKE",
+      "runner_up": "ZUPAN, LAWRENCE",
+      "margin_pp": 2.1992912236814655,
+      "source_url": "https://doi.org/10.7910/DVN/D03ULS",
+      "verification": "Cowburn source shares, normalized over top two. Official dates and exact vote totals require confirmation. Winner subsequently withdrew: retain nomination ITT and record replacement."
+    },
+    {
+      "state": "KY",
+      "year": 2020,
+      "party": "D",
+      "round": "Primary",
+      "winner": "MCGRATH, AMY",
+      "runner_up": "BOOKER, CHARLES",
+      "margin_pp": 3.1818181818181848,
+      "source_url": "https://doi.org/10.7910/DVN/D03ULS",
+      "verification": "Cowburn source shares, normalized over top two. Official dates and exact vote totals require confirmation. Source FEC candidate IDs require correction before donor linkage."
+    },
+    {
+      "state": "TX",
+      "year": 2020,
+      "party": "D",
+      "round": "Final runoff",
+      "winner": "Hegar, Mary \"MJ\" ",
+      "runner_up": "West, Royce",
+      "winner_votes": 502516,
+      "runner_up_votes": 459457,
+      "margin_pp": 4.476113154943018,
+      "source_url": "https://www.fec.gov/documents/4228/federalelections2020.xlsx",
+      "verification": "Official FEC final-round votes checked. Quality and measurement dates remain separate eligibility checks."
+    }
+  ],
+  "data_map": [
+    {
+      "need": "Candidate appeal before nomination",
+      "source": "Original hypothetical general-election surveys",
+      "status": "Seven original-source examples; broader archive audit recovered 13 surveys across five nomination cases.",
+      "limitation": "Same survey is not randomized assignment; sampling error, recognition, ordering and sparse historical coverage remain. No fitted appeal model.",
+      "url": "https://www.filesforprogress.org/datasets/2020/6/ky/Civiqs_DataforProgress_KY_banner_book_2020_06.pdf"
+    },
+    {
+      "need": "The actual nomination-deciding contest",
+      "source": "FEC certified primary and runoff returns + Cowburn annotations",
+      "status": "Eight FEC cycles, 2006\u20132020, inspected for final Senate runoffs; four of 14 final runoffs are within five points. Nine additional conventional-primary candidates plus SC 2008 bring the new-event list to 14.",
+      "limitation": "Not a completed expanded analysis cohort. Official dates, exact votes for Cowburn additions, quality availability and special-election coverage still need audit. First-round margins cannot stand in for runoff assignment.",
+      "url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/"
+    },
+    {
+      "need": "Scalable appeal proxy",
+      "source": "FEC individual-contribution and filing records",
+      "status": "Existing study has pre-primary donor counts for 130 candidate appearances.",
+      "limitation": "Train and validate only against pre-primary appeal gaps. Distinct disclosed identities are not all small-dollar donors; old receipt-dated extracts are not complete archival filing vintages.",
+      "url": "https://www.fec.gov/campaign-finance-data/contributions-individuals-file-description/"
+    },
+    {
+      "need": "Same-ballot teammate votes",
+      "source": "Official returns; MIT Election Data and Science Lab",
+      "status": "House, governor and precinct returns available, with different coverage across years.",
+      "limitation": "A statewide nomination is one assignment, even with thousands of precinct rows. Include all districts with verified coverage, flag independents and uncontested races; do not let postnomination contest status choose the sample.",
+      "url": "https://electionlab.mit.edu/data"
+    },
+    {
+      "need": "A denominator that keeps mobilization",
+      "source": "Census citizen voting-age population and population estimates",
+      "status": "Historical ACS five-year CVAP files are available below the state level.",
+      "limitation": "Use a vintage published before treatment. CVAP approximates the eligible population, not exact legal eligibility. A fixed registered-voter cohort omits induced new registrations.",
+      "url": "https://www.census.gov/programs-surveys/decennial-census/about/voting-rights/cvap.html"
+    },
+    {
+      "need": "Participation and timing",
+      "source": "North Carolina absentee and voter-history files",
+      "status": "Actual 2020 absentee file and precinct-by-voting-mode results inspected.",
+      "limitation": "Voter history has participation, not secret choices. Mail return date is not necessarily vote date. Early/late voters self-select, so their comparison alone is not a natural experiment.",
+      "url": "https://www.ncsbe.gov/results-data/absentee-and-provisional-data"
+    },
+    {
+      "need": "Ticket splitting and ballot rolloff",
+      "source": "2020 cast-vote-record database",
+      "status": "Published database covers 42.7 million ballots in 20 states and 362 counties.",
+      "limitation": "No voting dates or nonvoters; incomplete geographic coverage. It improves outcome measurement, not assignment. Do not link anonymous ballots to identities.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11604945/"
+    },
+    {
+      "need": "Independent check of an event effect",
+      "source": "Candidate shocks with predetermined voting access",
+      "status": "Published designs use unexpected campaign shocks and pre-existing early-voting rules.",
+      "limitation": "Identifies a particular shock under strong exposure/control assumptions, not the full all-star effect. National and party-brand reactions can be mechanisms; dividing by own-vote changes needs additional assumptions.",
+      "url": "https://kjmccrary.github.io/coattails/draft.pdf"
+    }
+  ],
+  "archive_scope": "Bounded archive audit of 65 old nomination pairs plus nine newly identified conventional-primary cases. Coverage is not a census of available surveys. Additional original sources are separate from archive counts.",
+  "causal_estimand": "Effect of nominating the candidate with greater measured pre-primary general-election appeal instead of their actual primary rival, among close nominations.",
+  "not_estimated": [
+    "A new coattail coefficient",
+    "A donor-to-poll appeal model",
+    "A causal Ossoff-specific effect",
+    "A universal charisma multiplier"
+  ]
+}

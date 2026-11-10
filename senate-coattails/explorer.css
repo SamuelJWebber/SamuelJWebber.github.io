@@ -1,0 +1,78 @@
+.coattail-explorer {
+  --ce-ink:#172b27; --ce-muted:#536760; --ce-teal:#176754; --ce-rule:#cdd6cc; --ce-soft:#ecf0e7;
+  min-width:0; color:var(--ce-ink); font:400 14px/1.4 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-variant-numeric:tabular-nums;
+}
+.coattail-explorer *, .coattail-explorer *::before, .coattail-explorer *::after { box-sizing:border-box }
+.coattail-explorer [hidden] { display:none !important }
+.coattail-explorer button,.coattail-explorer input,.coattail-explorer select { font:inherit; color:inherit; letter-spacing:normal }
+.coattail-explorer button { cursor:pointer }
+.coattail-explorer button:disabled { cursor:default }
+.coattail-explorer :is(button,input,select):focus-visible { outline:2px solid var(--ce-teal); outline-offset:2px }
+.ce-filters { display:grid; grid-template-columns:minmax(145px,1.45fr) minmax(125px,1fr) minmax(115px,.85fr) minmax(145px,1fr); gap:14px; margin:0 }
+.ce-filters label { display:flex; flex-direction:column; gap:7px; color:var(--ce-muted); font-size:12px; font-weight:650 }
+.ce-filters input,.ce-filters select { width:100%; height:41px; border:1px solid var(--ce-rule); border-radius:5px; background:#fffef9; color:var(--ce-ink); font-size:14px; font-weight:450 }
+.ce-filters select { padding:0 28px 0 11px }
+.ce-search-field { position:relative; display:block }
+.ce-search-field svg { position:absolute; left:11px; top:12px; color:var(--ce-muted); pointer-events:none }
+.ce-search-field input { padding:0 8px 0 35px }
+.ce-search-field input::placeholder { color:#63746c }
+.ce-summary,.ce-pagination { display:flex; justify-content:space-between; align-items:center; gap:12px }
+.ce-summary { margin:23px 0 9px; min-height:30px }
+.ce-count,.ce-pages { color:var(--ce-muted); font-size:13px }
+.coattail-explorer .ce-download { display:inline-flex; align-items:center; gap:6px; background:none; border:0; padding:5px 0 5px 5px; color:var(--ce-teal); font-size:12.5px; font-weight:650 }
+.ce-download:hover:not(:disabled) { text-decoration:underline }
+.ce-download:disabled { opacity:.45 }
+.ce-table { border-top:1px solid #9aaea1 }
+.ce-table-head,.ce-row { display:grid; grid-template-columns:minmax(0,1.8fr) minmax(76px,.8fr) minmax(72px,.73fr) minmax(80px,.73fr) 18px; align-items:center; gap:12px }
+.ce-table-head { padding:10px 12px; background:#eeefe8; border-bottom:1px solid var(--ce-rule); color:var(--ce-muted); font-size:11px; font-weight:650; text-transform:uppercase; letter-spacing:.035em }
+.ce-table-head span:nth-child(3),.ce-table-head span:nth-child(4) { text-align:right }
+.ce-record { border-bottom:1px solid var(--ce-rule) }
+.coattail-explorer .ce-row { width:100%; border:none; border-radius:0; text-align:left; padding:10px 12px; min-height:55px; background:transparent; color:var(--ce-ink) }
+.ce-row:hover,.ce-row[aria-expanded="true"] { background:#eaf1e8 }
+.ce-row:focus-visible { outline-offset:-2px !important }
+.ce-person { display:flex; flex-direction:column; gap:1px; min-width:0 }
+.ce-name { font-family:Georgia,"Times New Roman",serif; font-size:18px; line-height:1.18; font-weight:500; overflow-wrap:anywhere }
+.ce-party,.ce-election span { color:var(--ce-muted); font-size:12px }
+.ce-election { display:flex; gap:6px; align-items:baseline }
+.ce-election strong,.ce-score { font-size:14px; font-weight:580 }
+.ce-score { text-align:right }
+.ce-mobile-label,.ce-mobile-party { display:none }
+.ce-chevron { justify-self:end; color:var(--ce-teal) }
+.ce-row[aria-expanded="true"] .ce-chevron { transform:rotate(180deg) }
+.ce-details { padding:15px 14px 14px; background:#eef3ea; border-top:1px solid #d8e1d7 }
+.ce-details dl { margin:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px }
+.ce-details dt { margin:0 0 3px; color:var(--ce-muted); font-size:11.5px; font-weight:600 }
+.ce-details dd { margin:0; font-size:18px; font-weight:650; color:var(--ce-ink) }
+.ce-details dd.ce-missing { font-size:13px; font-weight:500 }
+.ce-details dl div > span { display:block; color:var(--ce-muted); font-size:11.5px }
+.coattail-explorer .ce-details p,.coattail-explorer .ce-coverage { color:var(--ce-muted); font:400 12px/1.55 system-ui,sans-serif }
+.coattail-explorer .ce-details p { margin:12px 0 0 }
+.coattail-explorer .ce-coverage { margin:16px 0 0 }
+.ce-pagination { margin-top:12px }
+.ce-page-actions { display:flex; gap:8px }
+.ce-page-actions button,.ce-empty button { padding:7px 11px; font-size:12px; font-weight:600; border:1px solid var(--ce-rule); border-radius:4px; background:transparent; color:var(--ce-teal) }
+.ce-page-actions button:hover:not(:disabled),.ce-empty button:hover { background:var(--ce-soft) }
+.ce-page-actions button:disabled { color:#7d8881; opacity:.65 }
+.ce-empty { padding:32px 12px; display:flex; align-items:center; justify-content:center; gap:13px; border-block:1px solid var(--ce-rule) }
+@media(max-width:800px){
+  .ce-filters { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px 14px }
+  .ce-details dl { grid-template-columns:repeat(2,minmax(0,1fr)) }
+}
+@media(max-width:540px){
+  .ce-filters { grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:9px 10px }
+  .ce-summary { margin-top:16px }
+  .ce-table-head { display:none }
+  .coattail-explorer .ce-row { grid-template-columns:minmax(0,1fr) 49px 54px 12px; gap:6px; align-items:center; padding:10px 4px; min-height:67px }
+  .ce-person { grid-column:1; grid-row:1; padding-bottom:15px }
+  .ce-name { font-size:17px; line-height:1.2 }
+  .ce-party { display:none }
+  .ce-election { grid-column:1; grid-row:1; align-self:end; gap:5px; font-size:11px; color:var(--ce-muted); flex-direction:row; justify-content:flex-start }
+  .ce-mobile-party { display:inline }
+  .ce-election strong,.ce-election span { font-size:11px; font-weight:500 }
+  .ce-score { grid-row:1; display:flex; flex-direction:column; align-items:end; align-self:center; line-height:1.25; font-size:14px }
+  .ce-mobile-label { display:inline; font-size:10px; color:var(--ce-muted); font-weight:500; margin-bottom:2px }
+  .ce-details { padding:12px 9px }
+  .ce-coverage { margin-top:13px }
+  .ce-download { white-space:nowrap }
+}

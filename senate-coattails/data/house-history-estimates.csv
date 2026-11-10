@@ -1,0 +1,13 @@
+model,outcome,n_district_races,n_senate_elections,states,first_year,last_year,state_fixed_effects,estimate_pp_per_10,lower95,upper95,se,controls
+"Current baseline, same matched sample",d2pshare,2151,323,48,1984,2020,True,-0.37142888,-1.20720124,0.46434348,0.41544740,"normalvote_demean,incumbency"
+Current baseline plus prior House result,d2pshare,2151,323,48,1984,2020,True,-0.45809450,-1.22637881,0.31018981,0.38190030,"normalvote_demean,incumbency,house_previous"
+"Pre-election baseline, same matched sample",d2pshare,2151,323,48,1984,2020,True,-0.15524136,-1.07589369,0.76541098,0.45763970,"baseline_previous,incumbency"
+Pre-election baseline plus prior House result,d2pshare,2151,323,48,1984,2020,True,-0.37361193,-1.17322783,0.42600396,0.39747467,"baseline_previous,incumbency,house_previous"
+Previous House election placebo,house_previous,2151,323,48,1984,2020,True,-0.13191454,-0.98904138,0.72521229,0.42606232,"baseline_previous,incumbency_previous"
+"Change in House share, pre-election baseline",house_change,2151,323,48,1984,2020,True,-0.36371376,-1.24829954,0.52087202,0.43971167,"baseline_previous,incumbency,incumbency_previous"
+"Current outcome, common controls",d2pshare,2151,323,48,1984,2020,True,-0.28974681,-1.17741763,0.59792400,0.44124518,"baseline_previous,incumbency,incumbency_previous"
+"Previous outcome, common controls",house_previous,2151,323,48,1984,2020,True,0.07396695,-0.64521928,0.79315317,0.35749453,"baseline_previous,incumbency,incumbency_previous"
+"Pre-election baseline, same matched sample; year FE only",d2pshare,2151,323,48,1984,2020,False,0.56364522,-0.10767923,1.23496967,0.33370330,"baseline_previous,incumbency"
+Pre-election baseline plus prior House result; year FE only,d2pshare,2151,323,48,1984,2020,False,-0.10657603,-0.66094205,0.44779000,0.27556537,"baseline_previous,incumbency,house_previous"
+Previous House election placebo; year FE only,house_previous,2151,323,48,1984,2020,False,0.84063025,0.16192284,1.51933767,0.33737324,"baseline_previous,incumbency_previous"
+"Change in House share, pre-election baseline; year FE only",house_change,2151,323,48,1984,2020,False,-0.53544720,-1.12424554,0.05335115,0.29268106,"baseline_previous,incumbency,incumbency_previous"

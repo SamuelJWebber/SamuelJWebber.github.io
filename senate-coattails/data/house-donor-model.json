@@ -1,0 +1,102 @@
+{
+  "label": "Early contributor breadth model for own primary success",
+  "selected_using": "2014 and 2016 development Brier score",
+  "training_years": [
+    2004,
+    2006,
+    2008,
+    2010,
+    2012,
+    2014,
+    2016
+  ],
+  "frozen_test_years": [
+    2018,
+    2020
+  ],
+  "training_rows": 3708,
+  "target": "Probability of winning own partisan House primary in the historical candidate cohort",
+  "intercept": 1.1428316078833443,
+  "numeric_coefficients": {
+    "inc": 2.089794817388957,
+    "log_field_size": -1.545676016370243,
+    "log_breadth": 0.22694799395524703
+  },
+  "categorical_coefficients": {
+    "candidate_quality": {
+      "Current Incumbent": 0.4364896767156319,
+      "Missing": 0.07886049176917731,
+      "Not Elected": -0.3872885212164268,
+      "Other Elected": -0.15983291449846151,
+      "State Legislator": 0.06787459109250257
+    },
+    "party": {
+      "Democrat": 0.07666893287247335,
+      "Republican": -0.040565609010052996
+    },
+    "primary_type": {
+      "Closed Primary": -0.049173297814683506,
+      "Open Primary": 0.02444643116640016,
+      "Partially-Closed": 0.06083019051070697
+    },
+    "state_abbrev": {
+      "AK": 0.015121612006952877,
+      "AL": -0.20284098683866608,
+      "AR": -0.025805898907545217,
+      "AZ": -0.13275008745432185,
+      "CA": -0.0034808466839851577,
+      "CO": -0.20783652564191843,
+      "CT": -0.08922653487891859,
+      "DE": 0.09270884803510697,
+      "FL": -0.315420395021903,
+      "GA": -0.302039967058586,
+      "HI": -0.046502163159418665,
+      "IA": -0.04807031872083775,
+      "ID": 0.0475934248381064,
+      "IL": -0.16921905767401232,
+      "IN": 0.2789751761306293,
+      "KS": -0.013152314770200563,
+      "KY": 0.3535577135790378,
+      "MA": -0.08026184241517537,
+      "MD": 0.23284942027049665,
+      "ME": -0.13933160053210955,
+      "MI": -0.12386976216996874,
+      "MN": 0.10946827941679993,
+      "MO": 0.26026705265932415,
+      "MS": 0.008685881187441836,
+      "MT": -0.01113217629621568,
+      "NC": 0.16232102726267236,
+      "ND": 0.010540440212789617,
+      "NE": 0.09354822993575587,
+      "NH": 0.12015205578109636,
+      "NJ": 0.1913410934735765,
+      "NM": -0.03529673974548872,
+      "NV": 0.39193368500772785,
+      "NY": -0.3354370828254538,
+      "OH": 0.3198489461435727,
+      "OK": -0.14632877756530932,
+      "OR": 0.19244869199554127,
+      "PA": -0.12413014347852791,
+      "RI": -0.02364698652599181,
+      "SC": -0.02121007171584735,
+      "SD": -0.06731025884176618,
+      "TN": 0.18409889117101125,
+      "TX": -0.10850728507131059,
+      "UT": -0.14678458387761664,
+      "VA": -0.2629983967542332,
+      "VT": 0.031062180516836665,
+      "WA": 0.026308871780658702,
+      "WI": -0.02936837273360116,
+      "WV": 0.09986672725492446,
+      "WY": 0.02536425256129345
+    }
+  },
+  "formula": "z = intercept + numeric coefficients * [inc, ln(1+field size), ln(1+observed contributor names)] + category coefficients; probability = 1/(1+exp(-z)). Unseen categories contribute zero.",
+  "limitations": [
+    "Not a charisma or coattail effect estimate.",
+    "Observed distinct contributor names includes entities and may merge different people or split aliases.",
+    "Candidates in source reached $5,000 by primary; predictor is not validated for complete entrant population.",
+    "Retrospective receipt-date records lack disclosure-vintage reconstruction.",
+    "Use the state filing deadline for breadth. No in-state donor filter is available."
+  ]
+}

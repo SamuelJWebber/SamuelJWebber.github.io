@@ -1,0 +1,1402 @@
+{
+  "updated": "2026-11-06",
+  "status": "Executed and assembled evidence; no verified all-star causal estimate",
+  "studies": [
+    {
+      "id": "united-states",
+      "title": "United States · experience and early money",
+      "stage": "Models executed; causal checks fail",
+      "stage_class": "executed",
+      "summary": "Official primary results support a direct nominee-trait comparison. Experience estimates are unstable, and the apparent fundraising association is already present in the preceding presidential vote.",
+      "metrics": [
+        {
+          "value": "79",
+          "label": "eligible near-tied nominations, 2012–2020"
+        },
+        {
+          "value": "24",
+          "label": "prior-office experience contrasts"
+        },
+        {
+          "value": "64",
+          "label": "early-receipt ranking contrasts"
+        },
+        {
+          "value": "38",
+          "label": "same-sample past-vote checks"
+        }
+      ],
+      "treatment": "A contender with prior elected-office experience narrowly wins rather than narrowly loses the House nomination. A second, conditional analysis ranks first-report receipts; its candidate-level reporting dates are not verified.",
+      "outcome": "Same-party presidential vote share within the House district in the same election. This is an upward same-ballot spillover outcome, not the nominee’s own House vote or Senate-to-governor coattails.",
+      "scope": "No credible positive or negative all-star effect established. This is a completed nomination pipeline and a negative identification result: the donor-money association fails the prior-outcome check.",
+      "results": [
+        {
+          "label": "Prior experience, primary ±5 pp model",
+          "value": "+5.08 pp",
+          "detail": "95% interval −40.40 to +50.57; 24 nominations, 15 states, 12 experience wins / 12 losses."
+        },
+        {
+          "label": "Experience party-composition check",
+          "value": "p=.047",
+          "detail": "Party balance differs near the cutoff in this small sample; bandwidth and simpler-model signs are unstable."
+        },
+        {
+          "label": "Early receipts, conditional primary model",
+          "value": "−8.75 pp",
+          "detail": "95% interval −16.53 to −0.96; 64 nominations. Reporting timing is unverified, and the prior-outcome check fails."
+        },
+        {
+          "label": "Same 38 nominations: current / prior gap",
+          "value": "−17.69 / −16.99 pp",
+          "detail": "The difference is −0.70 pp, 95% interval −5.24 to +3.83. Subtracting the past does not establish causal assignment."
+        }
+      ],
+      "requirements": [
+        {
+          "label": "Decisive nomination and exact margin",
+          "status": "Rebuilt from official data",
+          "detail": "FEC House primary rosters replace rounded research margins and eventual-nominee labels. Conventional primary filters exclude unverified runoff/top-two cases."
+        },
+        {
+          "label": "Pre-treatment experience",
+          "status": "Assembled",
+          "detail": "Prior elected-office trait from Thomsen candidate records; only discordant, matched contender pairs enter."
+        },
+        {
+          "label": "Early fundraising timing",
+          "status": "Unresolved",
+          "detail": "First-report amounts are available but candidate-level coverage dates are absent. Zero receipts may mean no filing, not zero supporters."
+        },
+        {
+          "label": "Comparable outcome definition",
+          "status": "Audited and restricted",
+          "detail": "2008 excluded from the main two-party-share analysis because its district variable matches rounded all-vote shares."
+        },
+        {
+          "label": "Balance and robustness",
+          "status": "Failed / inconclusive",
+          "detail": "Prior-outcome, party-composition, alternative-window and same-sample change checks are visible. No causal headline selected from the significant rows."
+        },
+        {
+          "label": "Turnout-inclusive fixed denominator",
+          "status": "Missing in this outcome panel",
+          "detail": "Presidential vote share is observed; votes per fixed pre-primary population have not been constructed. No separate turnout or persuasion mechanism is estimated."
+        }
+      ],
+      "tables": [
+        {
+          "title": "Your prior-election confounding check",
+          "note": "Identical 38-nomination subset, stable district boundaries, state-clustered intervals. This post-fit diagnostic does not rescue the primary causal design.",
+          "columns": [
+            {
+              "key": "outcome",
+              "label": "Outcome"
+            },
+            {
+              "key": "estimate",
+              "label": "Estimate (pp)"
+            },
+            {
+              "key": "interval",
+              "label": "95% interval"
+            },
+            {
+              "key": "n",
+              "label": "Nominations"
+            }
+          ],
+          "rows": [
+            {
+              "outcome": "Current presidential vote",
+              "estimate": "-17.69",
+              "interval": "-32.26 to -3.13",
+              "n": 38
+            },
+            {
+              "outcome": "Previous presidential vote",
+              "estimate": "-16.99",
+              "interval": "-33.59 to -0.39",
+              "n": 38
+            },
+            {
+              "outcome": "Current minus previous",
+              "estimate": "-0.70",
+              "interval": "-5.24 to +3.83",
+              "n": 38
+            }
+          ]
+        },
+        {
+          "title": "Experience comparison: specification sensitivity",
+          "note": "The pre-treatment trait is prior elected office. Wide intervals and changing signs are substantive limits, not evidence that effects are zero.",
+          "columns": [
+            {
+              "key": "model",
+              "label": "Model"
+            },
+            {
+              "key": "bandwidth",
+              "label": "Window (±pp)"
+            },
+            {
+              "key": "n",
+              "label": "Nominations"
+            },
+            {
+              "key": "effect",
+              "label": "Estimate (pp)"
+            },
+            {
+              "key": "interval",
+              "label": "95% interval"
+            }
+          ],
+          "rows": [
+            {
+              "model": "Local linear",
+              "bandwidth": 2.5,
+              "n": 15,
+              "effect": "+18.75",
+              "interval": "-43.95 to +81.45"
+            },
+            {
+              "model": "Local linear",
+              "bandwidth": 5,
+              "n": 24,
+              "effect": "+5.08",
+              "interval": "-40.40 to +50.57"
+            },
+            {
+              "model": "Local linear",
+              "bandwidth": 10,
+              "n": 40,
+              "effect": "-4.01",
+              "interval": "-22.64 to +14.62"
+            },
+            {
+              "model": "Difference with party/year effects",
+              "bandwidth": 5,
+              "n": 24,
+              "effect": "-6.12",
+              "interval": "-14.14 to +1.89"
+            }
+          ]
+        }
+      ],
+      "caveats": [
+        "Prior elected office is experience; receipt dollars are money. Neither is validated charisma or unique-donor breadth.",
+        "Small-sample local-linear estimates can extrapolate sharply at the cutoff. State-clustered t intervals are approximate; no bias-corrected RD claim is made.",
+        "Some nominations share a district presidential outcome. They are not independent voter-level observations; inference is clustered by state.",
+        "Post-fit change estimates are diagnostics, not a replacement primary result chosen after seeing an inconvenient balance test.",
+        "The original Senate donor study remains separately available and inconclusive; this new House exercise does not replace its frozen protocol.",
+        "The US nomination margin uses all recorded party-primary candidate votes; Chile and Argentina screens use the top-two denominator. The counts are not a pooled common-bandwidth sample."
+      ],
+      "sources": [
+        {
+          "label": "Official FEC election results",
+          "url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/"
+        },
+        {
+          "label": "Thomsen candidate replication",
+          "url": "https://doi.org/10.7910/DVN/POMRS8"
+        },
+        {
+          "label": "Cowburn primary replication",
+          "url": "https://doi.org/10.7910/DVN/D03ULS"
+        },
+        {
+          "label": "DeLuca–Moskowitz–Schneer paper",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/ajps.70025"
+        }
+      ]
+    },
+    {
+      "id": "argentina",
+      "title": "Argentina · close mayoral nominations",
+      "stage": "Identity and outcome panel assembled",
+      "stage_class": "assembled",
+      "summary": "The 75-close-nomination panel now has 71 separate provincial-outcome joins and 67 fully named candidate pairs. A prior-winner comparison yields only three discordant pairs.",
+      "metrics": [
+        {
+          "value": "75",
+          "label": "primaries within 5 top-two margin points"
+        },
+        {
+          "value": "67",
+          "label": "pairs with both candidate names"
+        },
+        {
+          "value": "71",
+          "label": "separate provincial outcome joins"
+        },
+        {
+          "value": "3",
+          "label": "discordant prior-winner pairs"
+        }
+      ],
+      "treatment": "A contender with a pre-primary trait narrowly wins rather than narrowly loses the mayoral nomination. The concrete trait audited here is winning the preceding mayoral general election.",
+      "outcome": "Same-coalition governor and provincial-legislative votes per 100 primary-roll electors. Mayor and council share a municipal ticket and cannot supply an independent council-vote outcome.",
+      "scope": "No causal coefficient fitted. Previous winner is a narrow pre-treatment attribute, not a validated all-star score or proof of active incumbency.",
+      "results": [
+        {
+          "label": "Candidate identities",
+          "value": "67/75 complete pairs",
+          "detail": "All 2015 and 2019 pairs named; eight 2011 pairs remain incomplete. Three slot matches rely on provisional blank-faction elimination."
+        },
+        {
+          "label": "Prior-winner comparison",
+          "value": "1 nominated / 2 defeated",
+          "detail": "Only three discordant cases across 2015 and 2019; the 2019-only subset has one treated case and no control."
+        }
+      ],
+      "requirements": [
+        {
+          "label": "Official votes and separate outcomes",
+          "status": "Joined",
+          "detail": "Primary and general-election files; 71 of 75 upper-ticket joins; missing rows remain missing."
+        },
+        {
+          "label": "Candidate identity",
+          "status": "Partial",
+          "detail": "67 complete pairs, 134 of 150 slots. Contemporary newspaper rosters are not certified final nomination lists."
+        },
+        {
+          "label": "Fixed denominator",
+          "status": "Audited",
+          "detail": "Primary electorate counts agree across all three offices in 75 cases; law sets the primary roll before the vote."
+        },
+        {
+          "label": "Candidate support measure",
+          "status": "Unresolved",
+          "detail": "No complete independent appeal or donor series for both contenders. Previous-winner identity comparisons available in 32 pairs."
+        },
+        {
+          "label": "Ballot and coalition rules",
+          "status": "Qualified",
+          "detail": "1.5% qualification arithmetic, general participation and cross-ticket attachment rules are tracked. Later slate integration can be part of treatment."
+        }
+      ],
+      "tables": [
+        {
+          "title": "The three prior-winner contrasts",
+          "columns": [
+            {
+              "key": "event_id",
+              "label": "Event"
+            },
+            {
+              "key": "prior_winner_name",
+              "label": "Prior winner"
+            },
+            {
+              "key": "first_candidate_name",
+              "label": "Primary winner"
+            },
+            {
+              "key": "prior_winner_oriented_margin_pp",
+              "label": "Oriented margin (pp)"
+            }
+          ],
+          "rows": [
+            {
+              "event_id": "2015-083-135",
+              "first_candidate_name": "Mariano Barroso",
+              "second_candidate_name": "Walter Battistella",
+              "prior_winner_name": "Walter Battistella",
+              "prior_winner_oriented_margin_pp": "-1.529",
+              "prior_winner_nominated": 0,
+              "legislative_general_votes_per_100_primary_electors": 37.97380604590131
+            },
+            {
+              "event_id": "2015-087-135",
+              "first_candidate_name": "Javier Martínez",
+              "second_candidate_name": "Héctor Gutiérrez",
+              "prior_winner_name": "Héctor Gutiérrez",
+              "prior_winner_oriented_margin_pp": "-1.596",
+              "prior_winner_nominated": 0,
+              "legislative_general_votes_per_100_primary_electors": 36.20238474491421
+            },
+            {
+              "event_id": "2019-055-135",
+              "first_candidate_name": "Eduardo Campana",
+              "second_candidate_name": "Gilberto Alegre",
+              "prior_winner_name": "Eduardo Campana",
+              "prior_winner_oriented_margin_pp": "+3.324",
+              "prior_winner_nominated": 1,
+              "legislative_general_votes_per_100_primary_electors": 40.47354203082791
+            }
+          ],
+          "note": "These three observations are coverage evidence; their differences are not causal estimates."
+        }
+      ],
+      "caveats": [
+        "Prior party performance is a balance check, not an instrument for coattails.",
+        "Primary winners and runners-up can represent different factions. The upper-ticket coalition and ballot attachments require an ex ante mapping.",
+        "Do not drop later withdrawals or council-slate integration to obtain a cleaner-looking treatment effect."
+      ],
+      "sources": [
+        {
+          "label": "Official Buenos Aires results",
+          "url": "https://catalogo.datos.gba.gob.ar/dataset/resultados-electorales-provinciales"
+        },
+        {
+          "label": "2015 candidate roster",
+          "url": "https://www.latecla.info/69872-0"
+        },
+        {
+          "label": "2019 candidate roster",
+          "url": "https://www.latecla.info/103095-0"
+        }
+      ]
+    },
+    {
+      "id": "chile",
+      "title": "Chile · donors and mayoral primaries",
+      "stage": "Three cycles joined; donor coverage audited",
+      "stage_class": "assembled",
+      "summary": "All 202 primary contests now join to general-election outcomes. Among 31 near-ties, six 2016 races have distinguishable reported donor-ID counts; timing, small gaps and coalition imbalance prevent a causal interpretation.",
+      "metrics": [
+        {
+          "value": "202",
+          "label": "nomination contests joined to outcomes"
+        },
+        {
+          "value": "31",
+          "label": "within 5 top-two margin points"
+        },
+        {
+          "value": "560",
+          "label": "primary candidates across three cycles"
+        },
+        {
+          "value": "6",
+          "label": "2016 close pairs with separated donor-ID counts"
+        }
+      ],
+      "treatment": "Nomination of the contender with greater measured pre-primary individual support. Public donor names and anonymous contributions require completeness checks and bounds before this ranking is accepted.",
+      "outcome": "Council votes for a preselected party family on the separate ballot, divided by the reported general electorate, plus vote share and turnout. All 202 events join, but local coalition membership and a fixed pre-primary denominator remain to be validated.",
+      "scope": "No validated all-star effect. The six-case donor comparison is descriptive, and only two ranks remain separated at the 14-day-earlier cutoff.",
+      "results": [
+        {
+          "label": "Accepted names and results",
+          "value": "209/209 matched",
+          "detail": "All 66 winner flags agree with final primary results."
+        },
+        {
+          "label": "General 2024 outcomes",
+          "value": "66/66 joined",
+          "detail": "Council data include 13,867 candidates across 346 communes."
+        },
+        {
+          "label": "Finance row correction",
+          "value": "6,230 + 944",
+          "detail": "Finance transactions and transfer records, respectively; worksheet headers/blanks are excluded. Neither is a count of unique people."
+        },
+        {
+          "label": "Runners-up on council ballot",
+          "value": "26 exact name matches",
+          "detail": "Among 66 primary runners-up; 14 further token matches require identity validation. This is a possible roster-response mechanism."
+        },
+        {
+          "label": "2016 reported donor-ID coverage",
+          "value": "141/153 anonymous; 231/241 public",
+          "detail": "Checksum-valid donor IDs on coded income rows. This is observed-record completeness, not proof all campaign receipts are present."
+        },
+        {
+          "label": "Six-case descriptive contrast",
+          "value": "−4.26 pp",
+          "detail": "Higher donor-count nominee wins in three and loses in three. All three wins are Nueva Mayoría; two losses are Chile Vamos. Not a causal estimate."
+        },
+        {
+          "label": "Cutoff sensitivity",
+          "value": "6 separated ranks → 2",
+          "detail": "Four pairs become 0–0 at 14 days before the primary. Ñuñoa is the largest observed gap: 30 reported valid donor IDs versus 1."
+        }
+      ],
+      "requirements": [
+        {
+          "label": "Primary votes and identities",
+          "status": "Assembled",
+          "detail": "2016: 96 contests; 2020: 40; 2024: 66. All top-two margins use the same stated denominator."
+        },
+        {
+          "label": "Separate outcomes",
+          "status": "All 202 joined",
+          "detail": "96 contests in 2016, 40 in 2020→2021, and 66 in 2024. Local pact mapping and baseline electorate validity remain qualified."
+        },
+        {
+          "label": "Unique individual donors",
+          "status": "2016 partially usable",
+          "detail": "2016 donor IDs permit reported-person counts. 2020/2024 IDs are mostly missing. Finance completeness, missing campaigns and cutoff sensitivity prevent a definitive quality ranking."
+        },
+        {
+          "label": "Anonymous donor bounds",
+          "status": "Conditional",
+          "detail": "Legal caps can bound counts only with reconciled cash records, known granularity and verified candidate limits. Ambiguous rankings remain ambiguous."
+        },
+        {
+          "label": "Power and balance",
+          "status": "Failed / limited",
+          "detail": "Six ID-ranked near-ties in 2016, with party-family imbalance and five gaps involving only 0–3 donors. No confirmatory model."
+        }
+      ],
+      "tables": [
+        {
+          "title": "Official primary coverage",
+          "columns": [
+            {
+              "key": "year",
+              "label": "Primary year"
+            },
+            {
+              "key": "candidates",
+              "label": "Candidates"
+            },
+            {
+              "key": "contests",
+              "label": "Contests"
+            },
+            {
+              "key": "close",
+              "label": "Within 5 pp"
+            }
+          ],
+          "rows": [
+            {
+              "year": 2016,
+              "candidates": 248,
+              "contests": 96,
+              "close": 15
+            },
+            {
+              "year": 2020,
+              "candidates": 103,
+              "contests": 40,
+              "close": 12
+            },
+            {
+              "year": 2024,
+              "candidates": 209,
+              "contests": 66,
+              "close": 4
+            }
+          ],
+          "note": ""
+        },
+        {
+          "title": "Six 2016 reported-donor comparisons",
+          "note": "Counts refer to checksum-valid identifiers in observed pre-primary receipts, not a complete donor census. Zero observed records does not prove zero supporters. Outcomes include possible primary-loser council candidacies.",
+          "columns": [
+            {
+              "key": "commune",
+              "label": "Commune"
+            },
+            {
+              "key": "winner",
+              "label": "Primary winner"
+            },
+            {
+              "key": "runner",
+              "label": "Runner-up"
+            },
+            {
+              "key": "winner_checksum_valid_distinct_donor_ids",
+              "label": "Winner donor IDs"
+            },
+            {
+              "key": "runner_checksum_valid_distinct_donor_ids",
+              "label": "Runner donor IDs"
+            },
+            {
+              "key": "margin_top2_pp",
+              "label": "Margin (pp)"
+            }
+          ],
+          "rows": [
+            {
+              "primary_year": 2016,
+              "general_year": 2016,
+              "commune": "CONCON",
+              "pact": "CHILE VAMOS",
+              "winner": "LUIS RIVERA CANEO",
+              "winner_party": "UNION DEMOCRATA INDEPENDIENTE",
+              "winner_votes": 684,
+              "runner": "ENRIQUE GASTO ROSSELOT",
+              "runner_party": "RENOVACION NACIONAL",
+              "runner_votes": 675,
+              "candidate_count": 2,
+              "third_votes": null,
+              "margin_top2_pp": 0.662,
+              "margin_all_pp": 0.6622516556291391,
+              "winner_flag_consistent": true,
+              "registered": 34300,
+              "general_ballots": 15373,
+              "council_valid_votes": 14589,
+              "coalition_council_votes": 6587,
+              "coalition_council_seats": 4,
+              "coalition_council_votes_per_registered": 0.1920408163265306,
+              "council_coalition_mapping_status": "fixed_party_family_preliminary_local_pact_audit_pending",
+              "winner_general_link": "exact",
+              "winner_general_name": "LUIS RIVERA CANEO",
+              "winner_general_office": "mayor",
+              "winner_general_votes": 4337,
+              "winner_donor_receipt_rows": 2,
+              "winner_public_receipt_rows": 2,
+              "winner_anonymous_receipt_rows": 0,
+              "winner_checksum_valid_distinct_donor_ids": 2,
+              "winner_receipt_rows_missing_valid_id": 0,
+              "winner_positive_cash_rows_unknown_date": 0,
+              "winner_donor_id_lower": 2,
+              "winner_donor_id_upper_conditional": 2,
+              "winner_strict_observed_id_count_complete": true,
+              "runner_general_link": "unmatched_or_ambiguous",
+              "runner_general_name": null,
+              "runner_general_office": null,
+              "runner_general_votes": null,
+              "runner_donor_receipt_rows": 3,
+              "runner_public_receipt_rows": 3,
+              "runner_anonymous_receipt_rows": 0,
+              "runner_checksum_valid_distinct_donor_ids": 3,
+              "runner_receipt_rows_missing_valid_id": 0,
+              "runner_positive_cash_rows_unknown_date": 0,
+              "runner_donor_id_lower": 3,
+              "runner_donor_id_upper_conditional": 3,
+              "runner_strict_observed_id_count_complete": true,
+              "donor_id_interval_rank_conditional": "runner_higher",
+              "causal_estimate": null,
+              "higher_reported_donor_nominee_won": false,
+              "winner_donors_14_days_before": 0,
+              "runner_donors_14_days_before": 3,
+              "rank_14_days_before": "runner_higher"
+            },
+            {
+              "primary_year": 2016,
+              "general_year": 2016,
+              "commune": "LINARES",
+              "pact": "NUEVA MAYORIA",
+              "winner": "FRESIA EUGENIA YANEZ YANEZ",
+              "winner_party": "PARTIDO POR LA DEMOCRACIA",
+              "winner_votes": 1055,
+              "runner": "ROBINSON EDGARDO FLORES CASTILLO",
+              "runner_party": "PARTIDO DEMOCRATA CRISTIANO",
+              "runner_votes": 1011,
+              "candidate_count": 3,
+              "third_votes": 866,
+              "margin_top2_pp": 2.13,
+              "margin_all_pp": 1.500682128240109,
+              "winner_flag_consistent": true,
+              "registered": 79055,
+              "general_ballots": 26488,
+              "council_valid_votes": 24964,
+              "coalition_council_votes": 10102,
+              "coalition_council_seats": 4,
+              "coalition_council_votes_per_registered": 0.12778445386123585,
+              "council_coalition_mapping_status": "fixed_party_family_preliminary_local_pact_audit_pending",
+              "winner_general_link": "exact",
+              "winner_general_name": "FRESIA EUGENIA YANEZ YANEZ",
+              "winner_general_office": "mayor",
+              "winner_general_votes": 10040,
+              "winner_donor_receipt_rows": 1,
+              "winner_public_receipt_rows": 0,
+              "winner_anonymous_receipt_rows": 1,
+              "winner_checksum_valid_distinct_donor_ids": 1,
+              "winner_receipt_rows_missing_valid_id": 0,
+              "winner_positive_cash_rows_unknown_date": 0,
+              "winner_donor_id_lower": 1,
+              "winner_donor_id_upper_conditional": 1,
+              "winner_strict_observed_id_count_complete": true,
+              "runner_general_link": "unmatched_or_ambiguous",
+              "runner_general_name": null,
+              "runner_general_office": null,
+              "runner_general_votes": null,
+              "runner_donor_receipt_rows": 0,
+              "runner_public_receipt_rows": 0,
+              "runner_anonymous_receipt_rows": 0,
+              "runner_checksum_valid_distinct_donor_ids": 0,
+              "runner_receipt_rows_missing_valid_id": 0,
+              "runner_positive_cash_rows_unknown_date": 0,
+              "runner_donor_id_lower": 0,
+              "runner_donor_id_upper_conditional": 0,
+              "runner_strict_observed_id_count_complete": true,
+              "donor_id_interval_rank_conditional": "winner_higher",
+              "causal_estimate": null,
+              "higher_reported_donor_nominee_won": true,
+              "winner_donors_14_days_before": 0,
+              "runner_donors_14_days_before": 0,
+              "rank_14_days_before": "tied"
+            },
+            {
+              "primary_year": 2016,
+              "general_year": 2016,
+              "commune": "NUNOA",
+              "pact": "NUEVA MAYORIA",
+              "winner": "HELIA MOLINA MILMAN",
+              "winner_party": "PARTIDO POR LA DEMOCRACIA",
+              "winner_votes": 2753,
+              "runner": "PAULA MENDOZA BRAVO",
+              "runner_party": "PARTIDO SOCIALISTA DE CHILE",
+              "runner_votes": 2529,
+              "candidate_count": 4,
+              "third_votes": 2106,
+              "margin_top2_pp": 4.241,
+              "margin_all_pp": 2.8618883352497764,
+              "winner_flag_consistent": true,
+              "registered": 182372,
+              "general_ballots": 64955,
+              "council_valid_votes": 59765,
+              "coalition_council_votes": 20231,
+              "coalition_council_seats": 4,
+              "coalition_council_votes_per_registered": 0.11093259930252451,
+              "council_coalition_mapping_status": "fixed_party_family_preliminary_local_pact_audit_pending",
+              "winner_general_link": "exact",
+              "winner_general_name": "HELIA MOLINA MILMAN",
+              "winner_general_office": "mayor",
+              "winner_general_votes": 22327,
+              "winner_donor_receipt_rows": 31,
+              "winner_public_receipt_rows": 24,
+              "winner_anonymous_receipt_rows": 7,
+              "winner_checksum_valid_distinct_donor_ids": 30,
+              "winner_receipt_rows_missing_valid_id": 0,
+              "winner_positive_cash_rows_unknown_date": 0,
+              "winner_donor_id_lower": 30,
+              "winner_donor_id_upper_conditional": 30,
+              "winner_strict_observed_id_count_complete": true,
+              "runner_general_link": "exact",
+              "runner_general_name": "PAULA MENDOZA BRAVO",
+              "runner_general_office": "council",
+              "runner_general_votes": 3934,
+              "runner_donor_receipt_rows": 1,
+              "runner_public_receipt_rows": 0,
+              "runner_anonymous_receipt_rows": 1,
+              "runner_checksum_valid_distinct_donor_ids": 1,
+              "runner_receipt_rows_missing_valid_id": 0,
+              "runner_positive_cash_rows_unknown_date": 0,
+              "runner_donor_id_lower": 1,
+              "runner_donor_id_upper_conditional": 1,
+              "runner_strict_observed_id_count_complete": true,
+              "donor_id_interval_rank_conditional": "winner_higher",
+              "causal_estimate": null,
+              "higher_reported_donor_nominee_won": true,
+              "winner_donors_14_days_before": 30,
+              "runner_donors_14_days_before": 0,
+              "rank_14_days_before": "winner_higher"
+            },
+            {
+              "primary_year": 2016,
+              "general_year": 2016,
+              "commune": "LANCO",
+              "pact": "NUEVA MAYORIA",
+              "winner": "MARIA LUISA VARGAS PELLET",
+              "winner_party": "PARTIDO DEMOCRATA CRISTIANO",
+              "winner_votes": 995,
+              "runner": "JUAN ROCHA AGUILERA",
+              "runner_party": "PARTIDO SOCIALISTA DE CHILE",
+              "runner_votes": 914,
+              "candidate_count": 2,
+              "third_votes": null,
+              "margin_top2_pp": 4.243,
+              "margin_all_pp": 4.243059193294918,
+              "winner_flag_consistent": true,
+              "registered": 15542,
+              "general_ballots": 7172,
+              "council_valid_votes": 6757,
+              "coalition_council_votes": 3732,
+              "coalition_council_seats": 4,
+              "coalition_council_votes_per_registered": 0.24012353622442414,
+              "council_coalition_mapping_status": "fixed_party_family_preliminary_local_pact_audit_pending",
+              "winner_general_link": "exact",
+              "winner_general_name": "MARIA LUISA VARGAS PELLET",
+              "winner_general_office": "mayor",
+              "winner_general_votes": 2278,
+              "winner_donor_receipt_rows": 1,
+              "winner_public_receipt_rows": 0,
+              "winner_anonymous_receipt_rows": 1,
+              "winner_checksum_valid_distinct_donor_ids": 1,
+              "winner_receipt_rows_missing_valid_id": 0,
+              "winner_positive_cash_rows_unknown_date": 0,
+              "winner_donor_id_lower": 1,
+              "winner_donor_id_upper_conditional": 1,
+              "winner_strict_observed_id_count_complete": true,
+              "runner_general_link": "unmatched_or_ambiguous",
+              "runner_general_name": null,
+              "runner_general_office": null,
+              "runner_general_votes": null,
+              "runner_donor_receipt_rows": 0,
+              "runner_public_receipt_rows": 0,
+              "runner_anonymous_receipt_rows": 0,
+              "runner_checksum_valid_distinct_donor_ids": 0,
+              "runner_receipt_rows_missing_valid_id": 0,
+              "runner_positive_cash_rows_unknown_date": 0,
+              "runner_donor_id_lower": 0,
+              "runner_donor_id_upper_conditional": 0,
+              "runner_strict_observed_id_count_complete": true,
+              "donor_id_interval_rank_conditional": "winner_higher",
+              "causal_estimate": null,
+              "higher_reported_donor_nominee_won": true,
+              "winner_donors_14_days_before": 0,
+              "runner_donors_14_days_before": 0,
+              "rank_14_days_before": "tied"
+            },
+            {
+              "primary_year": 2016,
+              "general_year": 2016,
+              "commune": "PUCHUNCAVI",
+              "pact": "CHILE VAMOS",
+              "winner": "MARCOS MORALES URETA",
+              "winner_party": "RENOVACION NACIONAL",
+              "winner_votes": 1140,
+              "runner": "ANA VILLARROEL PACHECO",
+              "runner_party": "UNION DEMOCRATA INDEPENDIENTE",
+              "runner_votes": 1039,
+              "candidate_count": 3,
+              "third_votes": 199,
+              "margin_top2_pp": 4.635,
+              "margin_all_pp": 4.247266610597141,
+              "winner_flag_consistent": true,
+              "registered": 13809,
+              "general_ballots": 7735,
+              "council_valid_votes": 7371,
+              "coalition_council_votes": 3149,
+              "coalition_council_seats": 3,
+              "coalition_council_votes_per_registered": 0.22803968426388588,
+              "council_coalition_mapping_status": "fixed_party_family_preliminary_local_pact_audit_pending",
+              "winner_general_link": "exact",
+              "winner_general_name": "MARCOS MORALES URETA",
+              "winner_general_office": "mayor",
+              "winner_general_votes": 2031,
+              "winner_donor_receipt_rows": 0,
+              "winner_public_receipt_rows": 0,
+              "winner_anonymous_receipt_rows": 0,
+              "winner_checksum_valid_distinct_donor_ids": 0,
+              "winner_receipt_rows_missing_valid_id": 0,
+              "winner_positive_cash_rows_unknown_date": 0,
+              "winner_donor_id_lower": 0,
+              "winner_donor_id_upper_conditional": 0,
+              "winner_strict_observed_id_count_complete": true,
+              "runner_general_link": "exact",
+              "runner_general_name": "ANA VILLARROEL PACHECO",
+              "runner_general_office": "council",
+              "runner_general_votes": 858,
+              "runner_donor_receipt_rows": 1,
+              "runner_public_receipt_rows": 0,
+              "runner_anonymous_receipt_rows": 1,
+              "runner_checksum_valid_distinct_donor_ids": 1,
+              "runner_receipt_rows_missing_valid_id": 0,
+              "runner_positive_cash_rows_unknown_date": 0,
+              "runner_donor_id_lower": 1,
+              "runner_donor_id_upper_conditional": 1,
+              "runner_strict_observed_id_count_complete": true,
+              "donor_id_interval_rank_conditional": "runner_higher",
+              "causal_estimate": null,
+              "higher_reported_donor_nominee_won": false,
+              "winner_donors_14_days_before": 0,
+              "runner_donors_14_days_before": 0,
+              "rank_14_days_before": "tied"
+            },
+            {
+              "primary_year": 2016,
+              "general_year": 2016,
+              "commune": "TILTIL",
+              "pact": "NUEVA MAYORIA",
+              "winner": "CESAR EUGENIO MENA RETAMAL",
+              "winner_party": "PARTIDO DEMOCRATA CRISTIANO",
+              "winner_votes": 1033,
+              "runner": "BARBARA ANDREA GONZALEZ ZUNIGA",
+              "runner_party": "INDEPENDIENTES LISTA B",
+              "runner_votes": 938,
+              "candidate_count": 2,
+              "third_votes": null,
+              "margin_top2_pp": 4.82,
+              "margin_all_pp": 4.819888381532217,
+              "winner_flag_consistent": true,
+              "registered": 13602,
+              "general_ballots": 6194,
+              "council_valid_votes": 5913,
+              "coalition_council_votes": 2539,
+              "coalition_council_seats": 3,
+              "coalition_council_votes_per_registered": 0.18666372592265842,
+              "council_coalition_mapping_status": "fixed_party_family_preliminary_local_pact_audit_pending",
+              "winner_general_link": "exact",
+              "winner_general_name": "CESAR EUGENIO MENA RETAMAL",
+              "winner_general_office": "mayor",
+              "winner_general_votes": 2075,
+              "winner_donor_receipt_rows": 0,
+              "winner_public_receipt_rows": 0,
+              "winner_anonymous_receipt_rows": 0,
+              "winner_checksum_valid_distinct_donor_ids": 0,
+              "winner_receipt_rows_missing_valid_id": 0,
+              "winner_positive_cash_rows_unknown_date": 0,
+              "winner_donor_id_lower": 0,
+              "winner_donor_id_upper_conditional": 0,
+              "winner_strict_observed_id_count_complete": true,
+              "runner_general_link": "exact",
+              "runner_general_name": "BARBARA ANDREA GONZALEZ ZUNIGA",
+              "runner_general_office": "council",
+              "runner_general_votes": 475,
+              "runner_donor_receipt_rows": 2,
+              "runner_public_receipt_rows": 0,
+              "runner_anonymous_receipt_rows": 2,
+              "runner_checksum_valid_distinct_donor_ids": 2,
+              "runner_receipt_rows_missing_valid_id": 0,
+              "runner_positive_cash_rows_unknown_date": 0,
+              "runner_donor_id_lower": 2,
+              "runner_donor_id_upper_conditional": 2,
+              "runner_strict_observed_id_count_complete": true,
+              "donor_id_interval_rank_conditional": "runner_higher",
+              "causal_estimate": null,
+              "higher_reported_donor_nominee_won": false,
+              "winner_donors_14_days_before": 0,
+              "runner_donors_14_days_before": 0,
+              "rank_14_days_before": "tied"
+            }
+          ]
+        }
+      ],
+      "caveats": [
+        "Donation transactions, transfer batches and unique individuals are distinct. Missing finance records must not be coded as zero support.",
+        "Primary losers may run for council. Keep the total coalition outcome, disclose that it includes those candidates, and do not call it a pure effect on unrelated teammates.",
+        "Coalition definitions must be fixed before nomination; later public records are usable only if measurement is not affected by nomination success.",
+        "The permutation p=.40 in the downloadable six-case diagnostic assumes exchangeable labels; that assumption has not been established and is not causal evidence."
+      ],
+      "sources": [
+        {
+          "label": "SERVEL primary documents",
+          "url": "https://www.servel.cl/biblioteca-de-documentos/procesos-electorales/elecciones-2024/documentos-elecciones-2024/documentos-elecciones-primarias-2024/"
+        },
+        {
+          "label": "Campaign-finance law",
+          "url": "https://www.bcn.cl/leychile/navegar?i=1107658"
+        },
+        {
+          "label": "Official 2024 council results ZIP",
+          "url": "https://recursos-powerbi.s3.us-east-1.amazonaws.com/download/2024/2024_10_Concejales_DatosEleccion.zip"
+        }
+      ]
+    },
+    {
+      "id": "new-zealand",
+      "title": "New Zealand · a random legislative opportunity",
+      "stage": "Exact lottery pilot executed",
+      "stage_class": "executed",
+      "summary": "Official bill-lottery rosters now join to separate party ballots. The small next-election pilot is inconclusive: 74 eligible MP-term observations, with only five selected winners.",
+      "metrics": [
+        {
+          "value": "90",
+          "label": "archived draw documents"
+        },
+        {
+          "value": "5,871",
+          "label": "repeated roster entries"
+        },
+        {
+          "value": "74",
+          "label": "eligible MP-term outcome units"
+        },
+        {
+          "value": "5",
+          "label": "selected winners in three draws"
+        }
+      ],
+      "treatment": "Random selection of an MP’s proposed bill for a legislative opportunity. The cohort uses the earliest indexed draw in each of three terms with unchanged electorate boundaries.",
+      "outcome": "Change in votes for the baseline party in the MP’s baseline electorate, per 100 valid party votes at the preceding election. The denominator is fixed before assignment, retaining turnout and persuasion.",
+      "scope": "This tests an opportunity to build a reputation. It does not randomly assign a talented nominee or measure an increase in appeal. Local party-ballot support is distinct from national totals or MMP seats.",
+      "results": [
+        {
+          "label": "Weighted point summary",
+          "value": "−0.665 votes per 100 baseline votes",
+          "detail": "74 eligible units, five treated, three lotteries. No average-effect confidence interval is claimed."
+        },
+        {
+          "label": "Exact within-draw tests",
+          "value": "p=.273 / .698 / .971",
+          "detail": "All 74,953 possible within-draw allocations enumerated. Conservative Bonferroni global sharp-null p=.818."
+        },
+        {
+          "label": "Later opportunities among initial controls",
+          "value": "At least 37/69",
+          "detail": "Observed later winners in the incomplete archive; retained as specified. Later exposure may dilute or offset the initial assignment."
+        },
+        {
+          "label": "Fleming published Table 1",
+          "value": "Reproduced from correct deposit",
+          "detail": "N=5,474; own-candidate-vote coefficients .097782 and .163507 with party effects. Party identification is not a separate party-ballot outcome."
+        }
+      ],
+      "requirements": [
+        {
+          "label": "Actual lottery risk sets",
+          "status": "Rebuilt",
+          "detail": "90 documents; 85 structurally coherent single-stage draws, two staged draws, three unresolved anomalies."
+        },
+        {
+          "label": "Baseline cohort and outcomes",
+          "status": "Joined",
+          "detail": "74 eligible units and no missing primary outcome joins. Later rerunning, retirement and switching do not determine inclusion."
+        },
+        {
+          "label": "Assignment inference",
+          "status": "Executed with correction",
+          "detail": "Exact per-draw tests; no independent fixed-roster permutation across changing historical cohorts."
+        },
+        {
+          "label": "Interference and treatment meaning",
+          "status": "Assumptions remain",
+          "detail": "National party and policy effects can cross electorates. No exclusion-valid charisma instrument."
+        },
+        {
+          "label": "Archive and power",
+          "status": "Limited",
+          "detail": "Indexed archive is incomplete; only three primary draw events and five treated eligible units."
+        }
+      ],
+      "tables": [
+        {
+          "title": "The three lottery comparisons",
+          "columns": [
+            {
+              "key": "date",
+              "label": "Draw date"
+            },
+            {
+              "key": "entries",
+              "label": "All entrants / winners"
+            },
+            {
+              "key": "eligible",
+              "label": "Eligible / selected"
+            },
+            {
+              "key": "effect",
+              "label": "HT estimate"
+            },
+            {
+              "key": "p",
+              "label": "Exact p"
+            }
+          ],
+          "rows": [
+            {
+              "date": "2009-09-24",
+              "entries": "33 / 1",
+              "eligible": "12 / 1",
+              "effect": "-17.457",
+              "p": "0.273"
+            },
+            {
+              "date": "2015-03-19",
+              "entries": "68 / 3",
+              "eligible": "34 / 1",
+              "effect": "+3.526",
+              "p": "0.698"
+            },
+            {
+              "date": "2021-03-11",
+              "entries": "54 / 3",
+              "eligible": "28 / 3",
+              "effect": "+1.442",
+              "p": "0.971"
+            }
+          ],
+          "note": "Estimate scale: party votes per 100 baseline valid party votes. Sharp-null reference intervals in the data are not treatment-effect confidence intervals."
+        }
+      ],
+      "caveats": [
+        "List-only MPs stay in the lottery risk set but receive no invented local electorate outcome.",
+        "A sharp-null rejection would establish some effect of assignment under the randomization assumptions, not uniquely a personal-candidate channel.",
+        "The original published study conditions on rerunning and does not directly answer this project’s total coattail question.",
+        "The prior DOI attribution was corrected: ADOPTC is Fleming; EYVIDZ is Williams and Indridason."
+      ],
+      "sources": [
+        {
+          "label": "Official parliamentary draw archive",
+          "url": "https://www3.parliament.nz/en/pb/bills-and-laws/members-bills-ballots-archive/"
+        },
+        {
+          "label": "Official election archive",
+          "url": "https://archive.electionresults.govt.nz/"
+        },
+        {
+          "label": "Fleming paper",
+          "url": "https://onlinelibrary.wiley.com/doi/full/10.1111/lsq.12335"
+        },
+        {
+          "label": "Correct Fleming replication",
+          "url": "https://doi.org/10.7910/DVN/ADOPTC"
+        }
+      ]
+    },
+    {
+      "id": "germany",
+      "title": "Germany · timing, incumbency and nominations",
+      "stage": "Benchmarks and diagnostics executed",
+      "stage_class": "executed",
+      "summary": "The election-timing result reproduces, but additional clustered trend checks reveal qualifications. A separate incumbency reconstruction is sensitive to specification and has unresolved boundary changes.",
+      "metrics": [
+        {
+          "value": "401",
+          "label": "municipalities in timing baseline"
+        },
+        {
+          "value": "+3.03 pp",
+          "label": "timing effect on turnout"
+        },
+        {
+          "value": "+0.95 pp",
+          "label": "incumbent-party council share"
+        },
+        {
+          "value": "2",
+          "label": "public nomination-to-outcome examples"
+        }
+      ],
+      "treatment": "The main study changes whether mayoral and council elections coincide. The separate historical constituency study changes whether a party barely wins a district seat; the next-election outcome is party-list support.",
+      "outcome": "Council vote-mark share and turnout in Lower Saxony; separate Bundestag second-vote share in the incumbency reconstruction. These are different outcomes and interventions.",
+      "scope": "Neither timing nor party incumbency identifies an exceptional nominee’s same-ballot coattails. The two nomination examples establish a data join, not a causal estimate.",
+      "results": [
+        {
+          "label": "Timing → turnout",
+          "value": "+3.03 pp",
+          "detail": "95% interval +2.66 to +3.41; 1,203 observations, 401 municipality clusters."
+        },
+        {
+          "label": "Timing → incumbent-party council share",
+          "value": "+0.95 pp",
+          "detail": "95% interval +0.01 to +1.88; 624 observations, 291 clusters."
+        },
+        {
+          "label": "Controls added → turnout",
+          "value": "+3.08 pp",
+          "detail": "1,145 observations / 382 municipalities; original executable controls reproduced."
+        },
+        {
+          "label": "Auxiliary trend checks",
+          "value": "Some clustered tests reject",
+          "detail": "Federal turnout p=.046, major-party p=.047, SPD p=.037; European SPD p=.041. Exploratory multiple-outcome tests, not a definitive refutation."
+        },
+        {
+          "label": "Historical incumbency RD, ±5 pp",
+          "value": "SPD +0.46; CDU/CSU +0.38 pp",
+          "detail": "Year-adjusted local-linear 95% intervals −1.13 to +2.05 and −0.74 to +1.51. Boundary verification incomplete."
+        }
+      ],
+      "requirements": [
+        {
+          "label": "Timing baseline and robustness",
+          "status": "Executed",
+          "detail": "Controls, year heterogeneity, six placebos, council pretrends, federal/European trends and party-composition checks."
+        },
+        {
+          "label": "Uncertainty convention",
+          "status": "Corrected",
+          "detail": "CR1 now includes the common intercept. Python implementation validated against all eight printed Stata 15 manual SEs."
+        },
+        {
+          "label": "Candidate panel",
+          "status": "Partial",
+          "detail": "Two public close nominations joined to 2021 outcomes; one historical Braunschweig personal-appeal linkage. No full risk set."
+        },
+        {
+          "label": "Historical district boundaries",
+          "status": "Unresolved",
+          "detail": "Same name and number do not prove unchanged boundaries; the 1993 redraw is a documented problem."
+        },
+        {
+          "label": "GLES nomination microdata",
+          "status": "Restricted",
+          "detail": "2025 dataset covers 2,149 aspirants, but safeguarded access requires a contract and individual-linkage coordination."
+        }
+      ],
+      "tables": [
+        {
+          "title": "Two public nomination examples",
+          "columns": [
+            {
+              "key": "nominee",
+              "label": "Nominee"
+            },
+            {
+              "key": "rival",
+              "label": "Rival"
+            },
+            {
+              "key": "votes",
+              "label": "Decisive vote"
+            },
+            {
+              "key": "district",
+              "label": "2021 district"
+            },
+            {
+              "key": "second",
+              "label": "CDU second votes"
+            }
+          ],
+          "rows": [
+            {
+              "nominee": "Sabine Buder",
+              "rival": "Hans-Georg von der Marwitz",
+              "votes": "110–105",
+              "district": "59 · Märkisch-Oderland – Barnim II",
+              "second": "26,254"
+            },
+            {
+              "nominee": "Klaus Wiener",
+              "rival": "Annette Leonhardt",
+              "votes": "96–91, second round",
+              "district": "104 · Mettmann I",
+              "second": "43,354"
+            }
+          ],
+          "note": "Do not compare these two outcome totals as a treatment effect. Later party-list status is not a valid selection filter."
+        }
+      ],
+      "caveats": [
+        "Some mayor-party composition differs substantially between concurrent and nonconcurrent elections; a quality interaction cannot inherit random candidate composition.",
+        "Council voters may cast three vote marks. Council share is not a percentage of distinct voters.",
+        "The historical reconstruction has 1,955 rows per party versus 1,958 in the published study; it is not an exact replication.",
+        "The two 2021 outcome denominators are general-election electorates, not verified fixed pre-nomination populations.",
+        "The prior-appeal example uses a council result revised after a precinct rerun; it is only a linkage proof."
+      ],
+      "sources": [
+        {
+          "label": "Timing replication files",
+          "url": "https://zenodo.org/records/18230905"
+        },
+        {
+          "label": "Stata 15 manual",
+          "url": "https://www.stata.com/manuals15/xtxtreg.pdf"
+        },
+        {
+          "label": "Hainmueller–Kern paper",
+          "url": "https://www.mit.edu/~jhainm/Paper/HK2008Contamination.pdf"
+        },
+        {
+          "label": "Official historical district results",
+          "url": "https://www.bundeswahlleiterin.de/dam/jcr/ce2d2b6a-f211-4355-8eea-355c98cd4e47/btw_kerg.zip"
+        },
+        {
+          "label": "GLES restricted dataset",
+          "url": "https://access.gesis.org/dbk/80871"
+        }
+      ]
+    },
+    {
+      "id": "spain",
+      "title": "Spain · bans across concurrent ballots",
+      "stage": "Reproduction and sensitivity executed",
+      "stage_class": "executed",
+      "summary": "Main, municipality and entropy-weighted estimates reproduce. HonestDiD sensitivity shows the reduced-form support effect can include zero when departures from parallel trends are allowed.",
+      "metrics": [
+        {
+          "value": "3,360",
+          "label": "precinct–office–election rows"
+        },
+        {
+          "value": "182",
+          "label": "municipalities"
+        },
+        {
+          "value": "0.27–0.31",
+          "label": "pp support spillover per pp"
+        },
+        {
+          "value": "6",
+          "label": "elections, 1987–2007"
+        }
+      ],
+      "treatment": "Selective bans on Batasuna-linked party lists in one or both of simultaneous municipal and provincial elections in 2007.",
+      "outcome": "The paper’s support measure: party votes plus invalid ballots, divided by registered voters. The party encouraged invalid voting where banned. This is not simply valid votes for teammates.",
+      "scope": "A reproduced party-availability benchmark under the study’s parallel-trend and IV assumptions. It is not an estimate of candidate talent or a multiplier to apply to Ossoff.",
+      "results": [
+        {
+          "label": "Baseline concurrent-ban effect",
+          "value": "-0.667 pp",
+          "detail": "Municipality-clustered 95% interval -1.327 to -0.006; N=3360, clusters=182."
+        },
+        {
+          "label": "Baseline spillover ratio",
+          "value": "+0.274 pp / pp",
+          "detail": "Municipality-clustered 95% interval +0.074 to +0.473; N=3360, clusters=182."
+        },
+        {
+          "label": "Adjusted pretrends concurrent-ban effect",
+          "value": "-0.809 pp",
+          "detail": "Municipality-clustered 95% interval -1.371 to -0.247; N=3360, clusters=182."
+        },
+        {
+          "label": "Adjusted pretrends spillover ratio",
+          "value": "+0.315 pp / pp",
+          "detail": "Municipality-clustered 95% interval +0.160 to +0.469; N=3360, clusters=182."
+        },
+        {
+          "label": "Municipality aggregation robustness",
+          "value": "0.257 / 0.302 pp per pp",
+          "detail": "Baseline / adjusted; 2,184 rows, 182 municipality clusters. Separate from clustering the precinct panel by municipality."
+        },
+        {
+          "label": "Entropy balancing, population-support ratio",
+          "value": "0.397 / 0.401 pp per pp",
+          "detail": "Baseline / adjusted; translated deposited algorithm reproduces original rounding. These are a separate weighted specification."
+        },
+        {
+          "label": "Event-study sensitivity, M̄ = 1",
+          "value": "Support interval includes zero",
+          "detail": "Eligible-population reduced-form interval −1.444 to +0.139 pp. This is not an interval for the IV ratio."
+        },
+        {
+          "label": "First zero-containing bound on tested grid",
+          "value": "M̄ = 0.8 / 0.4 / 1.2",
+          "detail": "Population support / voter-share support / turnout, respectively. Grid 0.1 to 1.5; not exact continuous breakdown thresholds."
+        }
+      ],
+      "requirements": [
+        {
+          "label": "Source files and main model",
+          "status": "Executed",
+          "detail": "All 21 deposited files acquired; Python translation reproduces ten rounded main-table coefficients."
+        },
+        {
+          "label": "Municipal inference",
+          "status": "Executed",
+          "detail": "Both municipality aggregation and clustering of the original precinct panel."
+        },
+        {
+          "label": "Independent ban roster",
+          "status": "Missing",
+          "detail": "Original executable code infers bans from zero party votes; no court-order roster was independently joined."
+        },
+        {
+          "label": "Parallel trends and exclusion",
+          "status": "Assumptions remain",
+          "detail": "Reproducing the coefficient does not establish that bans affect the concurrent vote only through the modeled channel."
+        },
+        {
+          "label": "Remaining deposited robustness",
+          "status": "Executed",
+          "detail": "Entropy-balancing translation and all 45 HonestDiD relative-magnitude bounds ran; R event-study coefficients cross-checked against Python."
+        }
+      ],
+      "caveats": [
+        "Invalid ballots are included in both legal and banned settings. Interpreting them all as party support is part of the measurement strategy.",
+        "The legal intervention concerns a party linked to ETA, not randomly assigning good or bad candidates.",
+        "The 0.27–0.31 ratios are baseline versus adjusted specifications, not the bounds of one confidence interval.",
+        "At M̄=1, support sensitivity bounds include zero. The sensitivity analysis concerns reduced-form concurrent-ban effects and cannot be substituted for an IV-ratio confidence interval.",
+        "M̄=1 allows the unobserved treated–control gap to drift over 2003–2007 as much as its largest earlier election-to-election drift. It bounds changes in that counterfactual gap, not the gap level. The intervals incorporate uncertainty about pre-trends."
+      ],
+      "sources": [
+        {
+          "label": "Arenas (2024) paper",
+          "url": "https://journals.sagepub.com/doi/10.1177/20531680241229930"
+        },
+        {
+          "label": "CC0 replication deposit",
+          "url": "https://doi.org/10.7910/DVN/JEJPVM"
+        },
+        {
+          "label": "HonestDiD method and software",
+          "url": "https://github.com/asheshrambachan/HonestDiD#background"
+        },
+        {
+          "label": "Executed support sensitivity figure (PDF)",
+          "url": "data/spain-support-sensitivity.pdf"
+        }
+      ]
+    },
+    {
+      "id": "brazil",
+      "title": "Brazil · randomized audit disclosure",
+      "stage": "Outcomes assembled; assignment unresolved",
+      "stage_class": "assembled",
+      "summary": "Council votes are reconciled across the official files. The reconstructed audit-draw roster fails an exact published-sample check, so a new causal coefficient is withheld.",
+      "metrics": [
+        {
+          "value": "56,948",
+          "label": "municipality × party outcome rows"
+        },
+        {
+          "value": "5,560",
+          "label": "municipalities with council outcomes"
+        },
+        {
+          "value": "676",
+          "label": "official audit selection records"
+        },
+        {
+          "value": "670 ≠ 669",
+          "label": "reconstructed vs published unique towns"
+        }
+      ],
+      "treatment": "Potential early versus late disclosure of randomly selected municipal audits. A mixed audit disclosure is not the same as a negative scandal or a high-quality candidate.",
+      "outcome": "Separate council votes for a party fixed before disclosure, including nominal candidate votes plus party-label votes. Later mayoral rerunning must not determine inclusion.",
+      "scope": "No causal council effect estimated. The original disclosure roster, eligibility and report timing are not interchangeable with the recovered lottery draw dates.",
+      "results": [
+        {
+          "label": "Vote reconciliation",
+          "value": "All 56,948 rows agree",
+          "detail": "Party nominal votes equal candidate-vote aggregation; label votes are added exactly once."
+        },
+        {
+          "label": "Seat reconciliation",
+          "value": "51,811 observed seats",
+          "detail": "Historic MÉDIA status counts as elected. Campos and Vassouras council outcomes are missing, accounting for 27 additional listed vacancies."
+        },
+        {
+          "label": "Audit roster validation",
+          "value": "676 selections / 670 towns",
+          "detail": "Six repeats reconstructed; the paper reports seven repeats / 669 towns. Dropping one missing outcome would coincidentally yield 669 and is not validation."
+        }
+      ],
+      "requirements": [
+        {
+          "label": "Official council outcomes",
+          "status": "Prepared and reconciled",
+          "detail": "Candidate, party, turnout, vacancy and coalition files acquired; public outputs exclude personal registration fields."
+        },
+        {
+          "label": "Audit selection names",
+          "status": "Mapped",
+          "detail": "All 676 records mapped to municipality IDs using 12 explicit name aliases."
+        },
+        {
+          "label": "Disclosure dates and exact cohort",
+          "status": "Unresolved",
+          "detail": "Some pre-election draws had reports released after election day. Draw date cannot substitute for disclosure date."
+        },
+        {
+          "label": "Lottery eligibility and baseline party",
+          "status": "Unresolved",
+          "detail": "Eligible population thresholds changed; fix pre-audit party and mayor-term status without conditioning on rerunning."
+        },
+        {
+          "label": "Original study data",
+          "status": "Not obtained",
+          "detail": "The exact 2008 microdata were not found; other studies have different samples, and access/request barriers remain."
+        }
+      ],
+      "caveats": [
+        "An audit can change beliefs about municipal administration and the party as well as the mayor. It is not an exclusion-valid charisma instrument.",
+        "The recovered 2004 voter denominator is contemporaneous, not frozen before audit assignment.",
+        "Post-2015 CGU audits cannot all be treated as randomized lotteries.",
+        "No researcher outreach, login, or data agreement was completed."
+      ],
+      "sources": [
+        {
+          "label": "TSE 2004 election results",
+          "url": "https://dadosabertos.tse.jus.br/dataset/resultados-2004"
+        },
+        {
+          "label": "TSE candidate data",
+          "url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2004"
+        },
+        {
+          "label": "Muço (2025) party-network spillovers",
+          "url": "https://doi.org/10.1016/j.jebo.2025.106897"
+        },
+        {
+          "label": "Different 2011 replication archive",
+          "url": "https://www.openicpsr.org/openicpsr/project/112431/version/V1/view"
+        }
+      ]
+    }
+  ]
+}

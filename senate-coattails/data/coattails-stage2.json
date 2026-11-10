@@ -1,0 +1,96 @@
+{
+  "models": {
+    "star": {
+      "description": "One party has a top-decile historical Senate candidate relative to its opponent. The lower decile and known-history indicators enter separately. Both-party star presence cancels in this relative comparison.",
+      "reading": "The historical star estimates are imprecise and include zero. There are 36 top-decile nominee appearances in the full House sample and 23 in the governor sample. Recent held-out samples contain only 2 House star cases and 0 governor star cases, so they cannot establish a reliable modern all-star effect.",
+      "coverage": "House: 3,389 districts across 499 state elections and 49 states, each state election weighted equally. Governor: 285 races in 43 states. *Only one matched House district contributes in 2022 because most boundaries changed. Coefficient intervals allow correlation within states.",
+      "rows": [
+        {
+          "office": "House",
+          "estimate": -0.6351895975197419,
+          "low": -2.672931339952658,
+          "high": 1.4025521449131744,
+          "races": 3389,
+          "state_elections": 499,
+          "years": "1982\u20132022*"
+        },
+        {
+          "office": "Governor",
+          "estimate": -3.435846917899127,
+          "low": -9.335532257054291,
+          "high": 2.4638384212560385,
+          "races": 285,
+          "state_elections": 285,
+          "years": "1982\u20132020"
+        }
+      ]
+    },
+    "continuous": {
+      "description": "Each 10-point increase in the Democratic-versus-Republican Senate historical-performance advantage. The outcome is the Democratic vote share in the other office. This continuous comparison is the primary statistical test.",
+      "reading": "Across the full history, both estimates include zero. A separate House model refitted only on 2016\u20132022 is positive (+2.86 points), so the relationship is sensitive to the period. The fixed historical model does not improve held-out teammate forecasts. This does not establish a stable causal spillover.",
+      "coverage": "House: 3,389 districts across 499 state elections and 49 states, each state election weighted equally. Governor: 285 races in 43 states. *Only one matched House district contributes in 2022 because most boundaries changed. Coefficient intervals allow correlation within states.",
+      "rows": [
+        {
+          "office": "House",
+          "estimate": -0.0132748958795538,
+          "low": -0.5239329711622652,
+          "high": 0.4973831794031575,
+          "races": 3389,
+          "state_elections": 499,
+          "years": "1982\u20132022*"
+        },
+        {
+          "office": "Governor",
+          "estimate": 0.4397268090137046,
+          "low": -1.2532375814673615,
+          "high": 2.1326911994947717,
+          "races": 285,
+          "state_elections": 285,
+          "years": "1982\u20132020"
+        }
+      ]
+    }
+  },
+  "forecasts": [
+    {
+      "office": "House",
+      "sample": "595 district races / 90 state elections \u00b7 2016\u20132022*",
+      "baseline": 4.946009452130041,
+      "augmented": 5.051550789855055,
+      "low": -0.160617431038472,
+      "high": -0.0536643530648064
+    },
+    {
+      "office": "Governor",
+      "sample": "32 governor races / 30 states \u00b7 2016\u20132020",
+      "baseline": 5.511736303768262,
+      "augmented": 5.545243425068523,
+      "low": -0.0741932420594288,
+      "high": 0.0076369317135284
+    }
+  ],
+  "forecast_note": "MAE is percentage points; positive improvement means less error. House fits through 2014 before its test; governor keeps its fit through 2008. These are within-office comparisons, not a ranking across offices. The predictor is continuous strength. Only 2 top-decile House cases and no top-decile governor cases occur in these test samples, so this is not an out-of-time validation of exceptional candidates specifically.",
+  "periods": [
+    {
+      "label": "1982\u20132022 \u00b7 full sample",
+      "estimate": -0.0132748958795538,
+      "low": -0.5239329711622652,
+      "high": 0.4973831794031575,
+      "state_elections": 499
+    },
+    {
+      "label": "2000\u20132022 \u00b7 refitted",
+      "estimate": 0.1659380401988508,
+      "low": -0.5919173948599339,
+      "high": 0.9237934752576356,
+      "state_elections": 282
+    },
+    {
+      "label": "2016\u20132022 \u00b7 refitted diagnostic",
+      "estimate": 2.8633809533340155,
+      "low": 1.3651463119097762,
+      "high": 4.361615594758255,
+      "state_elections": 90
+    }
+  ]
+}

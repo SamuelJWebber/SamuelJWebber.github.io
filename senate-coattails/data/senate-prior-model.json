@@ -1,0 +1,45 @@
+{
+  "model": "prior_performance",
+  "trained_through": 2022,
+  "confirmation_year": 2024,
+  "target": "Democratic two-party share",
+  "features": [
+    "prior_pres_lean",
+    "incumbency",
+    "white_house_party",
+    "midterm_white_house",
+    "prior_candidate_advantage",
+    "prior_D_observed",
+    "prior_R_observed"
+  ],
+  "training_means": {
+    "prior_pres_lean": -0.023618344749290632,
+    "incumbency": -0.007598784194528876,
+    "white_house_party": -0.1398176291793313,
+    "midterm_white_house": -0.044072948328267476,
+    "prior_candidate_advantage": 0.00361432084945722,
+    "prior_D_observed": 0.39361702127659576,
+    "prior_R_observed": 0.4133738601823708
+  },
+  "training_scales": {
+    "prior_pres_lean": 0.08323913821720483,
+    "incumbency": 0.89558532179432,
+    "white_house_party": 0.9909305453389228,
+    "midterm_white_house": 0.714837193945953,
+    "prior_candidate_advantage": 0.09829261604732618,
+    "prior_D_observed": 0.4889232593778622,
+    "prior_R_observed": 0.49281335986011326
+  },
+  "intercept": 0.49750389059011235,
+  "coefficients": {
+    "prior_pres_lean": 0.05667762937519106,
+    "incumbency": 0.0412837223240273,
+    "white_house_party": -0.009641800219864218,
+    "midterm_white_house": -0.0067851246554397155,
+    "prior_candidate_advantage": 0.03305099843665706,
+    "prior_D_observed": 0.015855912808754608,
+    "prior_R_observed": -0.003798143800967576
+  },
+  "prediction": "clip(intercept + sum(coefficients[k] * ((x[k] or missing-imputation training_mean[k]) - training_mean[k]) / training_scale[k]),0,1)",
+  "warning": "Zero is a legitimate feature value, not missing. This is the frozen confirmation model, not a2026 election forecast. Prior results are computed with benchmark.py; no causal interpretation."
+}

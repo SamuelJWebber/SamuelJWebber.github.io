@@ -1,0 +1,22 @@
+{
+ "generated": "2026-11-09",
+ "forecasts": [
+  {
+   "office": "House",
+   "sample": "136 district races / 24 states · 2026, unofficial",
+   "baseline": 4.774736396245097,
+   "augmented": 4.807510326036819,
+   "low": -0.12937718234086318,
+   "high": 0.059983268313789834
+  },
+  {
+   "office": "Governor",
+   "sample": "20 governor races / 20 states · 2026, unofficial",
+   "baseline": 6.431750502426341,
+   "augmented": 6.452714971592312,
+   "low": -0.06794227027988489,
+   "high": 0.02839770247322063
+  }
+ ],
+ "note": "2026 rows: the same frozen fits applied after the 2026 midterms, pre-registered in studies/stage2-2026/PROTOCOL.md. The fits date from 2026-11-05, after Election Day, so this is a held-out test, not a prospective one. Unofficial CNN counts. Five redrawn states are excluded from the House rows. Senate strength again does not improve either forecast."
+}
