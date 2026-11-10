@@ -6,6 +6,7 @@ within a few minutes.
 
 | Folder | Source (private) | Live |
 | --- | --- | --- |
+| `citibike-dashboard/` | SamuelJWebber/citibike-dashboard, `dashboard.html` (published as `index.html`) | https://samueljwebber.github.io/citibike-dashboard/ |
 | `market-calibration-atlas/` | SamuelJWebber/market-calibration-atlas, `dist/` | https://samueljwebber.github.io/market-calibration-atlas/ |
 | `nyc-street-flow/` | SamuelJWebber/nyc-street-flow, `dist/` | https://samueljwebber.github.io/nyc-street-flow/ |
 | `senate-coattails/` | SamuelJWebber/senate-coattails, `dist/` | https://samueljwebber.github.io/senate-coattails/ |
@@ -23,6 +24,11 @@ abs-risk and ski-rentals-2027.
    - **ChatGPT (GitHub connector):** make the same file change in this repository's folder and commit it, so the
      two stay identical.
 3. Check the live page.
+
+**citibike-dashboard is the exception:** it has no `dist/`, only one self-contained `dashboard.html`, which its
+`tools/publish_site.py` copies here as `citibike-dashboard/index.html`. Its monthly refresh runs on GitHub Actions
+inside the private repository and does **not** publish here, so run that script after each refresh (around the
+14th) or the public copy falls a month behind.
 
 ## Rules
 
