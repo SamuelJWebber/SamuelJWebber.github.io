@@ -1,0 +1,10 @@
+{
+  "raw_rows": 416,
+  "weekday_rows": 384,
+  "per_day_groups": 64,
+  "pooled_groups": 32,
+  "original_aggregate_means_reproduced": true,
+  "specifications": 105,
+  "quantile_unit_checks": true,
+  "note": "Deterministic arithmetic validation, not causal validity."
+}

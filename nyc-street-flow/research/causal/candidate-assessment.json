@@ -1,0 +1,88 @@
+{
+  "checked_on": "2026-11-05",
+  "purpose": "Screen genuine moving-lane conversions for a new empirical analysis of flow and time, beyond the Brooklyn Bridge pandemic case.",
+  "scoring": "Ordinal data-readiness score 0-4, not causal validity or probability: 0=wrong intervention; 1=historical descriptive evidence only; 2=usable counts/time but alignment or counterfactual missing; 3=run-level outcome plus contemporaneous comparison observations, still important identification problems; 4=aligned multimode repeated pre/post outcomes with defensible controls. No investigated candidate scored4.",
+  "selected": "prospect-park-west-2010",
+  "candidates": [
+    {
+      "id": "prospect-park-west-2010",
+      "readiness_score": 3,
+      "genuine_moving_lane_conversion": true,
+      "treatment": "Three moving lanes to two, June2010; bike path, signal retiming, islands and loading changes. Separate June27 B69 rerouting also changes this corridor and two comparison streets.",
+      "obtained": "DOT67-page summary and underlying data;416 travel-time runs extracted,384 weekday runs in four corridors over two before and two after weekdays. Reproduce.py and tidyCSV provided in ppw/.",
+      "exact_tables": "PDF p51 route/period summary; pp52-59 individual runs; p40 dated motor peak counts; pp41-46 hourly motor tables; pp5/16 bicycle aggregate observations; pp47-48 combined-mode display uses unmatched dates/locations.",
+      "dates": "Travel time May11-12,2010 versusOct19-20,2010; bicycleJun9,2009 versusAug17,Sep15,Oct12,Nov9,2010 weekdays; motorApr2009/May2010 versusOct2010.",
+      "controls": "6thNB,7thSB,8thNB same surveyed days and half-hour schedule. 7th/8th directly affected by B69 relocation; 6th opposite direction and susceptible to diversion. Only one pre wave prevents a parallel-trend test.",
+      "result": "PPW mean driving time change-7.125sec; controlled daily change ranges-35.833 to+10.917sec across individual controls. Hypothetical equal25drives on each corridor changes+0.920vehicle-minutes per100drives. No causal confidence interval or observed all-person total.",
+      "url": "https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf",
+      "web_refs": ["turn7763017view0","turn2404319view0"],
+      "remaining_gap": "No aligned all-person flow, repeated-pre time waves, or uncontaminated direction-matched control. Study estimates street/bus-change package context, not bike-lane-only effect."
+    },
+    {
+      "id": "first-second-avenues-2010",
+      "readiness_score": 2,
+      "genuine_moving_lane_conversion": true,
+      "treatment": "Moving lanes removed for protected bike facilities and bus priority; M15 SBS launchedOct10,2010.",
+      "obtained": "2011 M15 progress report and September2011 CB8 presentation downloaded in first-second/.",
+      "exact_tables": "Progress report PDF p21 Figures14/15 vehicle volumes at five intersections per avenue; p22 Figure10 bicycle counts; p20 taxi speed diagrams. SeptemberCB8 presentation p4 motor volumes; p7 bicycle counts.",
+      "dates": "MotorJune2009 versusApril2011; taxiNovember2009 versusNovember2010; bicycle2010 versus2011 seasonal averages (body saysApril-October, tableApril-September).",
+      "controls": "Upstream avenue segments have different bus/bike treatments and SecondAvenueSubway works. No untreated comparison raw travel-time panel located.",
+      "url": "https://www.nyc.gov/html/brt/downloads/pdf/201111_1st2nd_progress_report.pdf",
+      "extra_urls": ["https://www.nyc.gov/html/dot/downloads/pdf/201109_1st_2nd_aves_bicycle_paths_cb8.pdf"],
+      "web_refs": ["turn5674454view1","turn5674454view0"],
+      "remaining_gap": "Different dates/geographies and bundled SBS/fare/signal changes. Public taxi trip endpoints alone cannot reproduce DOT's80%-on-route GPS restriction."
+    },
+    {
+      "id": "ninth-avenue-2007-2008",
+      "readiness_score": 1,
+      "genuine_moving_lane_conversion": true,
+      "treatment": "Four unassigned moving lanes to three through lanes, initially16th-23rdStreet fall2007;23rd-31st extension2008.",
+      "obtained": "DOTSeptember2014report downloaded;pp20-21 explicitly identify lane removal. NACTO project description verifies geometry. Original2008DOT report link currently404.",
+      "controls": "Economic reports have comparison corridors, but these are sales controls, not verified traffic-flow or travel-time panels.",
+      "url": "https://www.nyc.gov/html/dot/downloads/pdf/2014-09-03-bicycle-path-data-analysis.pdf",
+      "extra_urls": ["https://nacto.org/latest/ninth-avenue-complete-street-new-york-city/","https://www.nyc.gov/html/dot/downloads/pdf/rr_ite_08_9thave.PDF"],
+      "web_refs": ["turn3185331view2","turn6018668view1"],
+      "remaining_gap": "No acquired aligned raw motor/bicycle pre/post with credible control. Sales-control evidence does not fill that gap."
+    },
+    {
+      "id": "pulaski-2015-2016",
+      "readiness_score": 2,
+      "genuine_moving_lane_conversion": true,
+      "treatment": "One southbound car lane becomes protected two-way bikeway. Construction documented by September2015; a prior plan scheduled April2015 start. OpeningApril29,2016; later punch-list work. Exact temporary and permanent lane-closure dates not verified. Existing three Brooklyn-bound lanes already merged to two at McGuinness/Green Street, so lane removal does not by itself establish lost bottleneck capacity.",
+      "obtained": "Opening press release and2016bridge report; sensor metadata downloaded. Pulaski automated bicycle series startsJune24,2017, after treatment. Companion analyst obtained2014-18 hourly McGuinness motor data, an approach corridor rather than bridge screenline.",
+      "dates": "Manual bike/pedestrian countsApril2009 andApril2013 are bothpre. Automatedbikefirstdata2017-06-24. MotorATR2016postsample includesJuly4holiday; construction should not be coded asfullyuntreated.",
+      "controls": "Potential NYSDOTcontinuous motor stations require separate availability/pretrend checks; no matched pre2016automatic bicycle outcome.",
+      "url": "https://www.nyc.gov/html/dot/html/pr2016/pr16-044.shtml",
+      "extra_urls": ["https://www.nyc.gov/html/dot/downloads/pdf/dot_bridgereport16.pdf","https://data.cityofnewyork.us/resource/6up2-gnw8.json?$limit=1000","https://www.nyc.gov/html/dot/downloads/pdf/2013-12-pulaski-bridge-bicycle-path.pdf","https://www.nyc.gov/html/dot/html/pr2015/pr15-096.shtml"],
+      "web_refs": ["turn7763017view2","turn5594043search10","turn5594043search8"],
+      "remaining_gap": "Approach motor flows cannot be added to bridge bicycle counts. No continuous pre-bike series, exact lane-closure event, or bus-occupancy series verified."
+    },
+    {
+      "id": "columbus-2010-2011",
+      "readiness_score": 0,
+      "genuine_moving_lane_conversion": false,
+      "reason_excluded": "Officialproject page and2014reportp26 explicitly say no lane removal; existing moving lanes retained and narrowed.",
+      "obtained": "2011assessment and2012postimplementation PDFs downloaded in columbus/;2012p7 gives AM/PM bicycles111→127/200→236 and motor3250→2948/2847→2739, but different dates and cross-sections.",
+      "url": "https://www.nyc.gov/html/dot/downloads/pdf/2102-12-columbus-ave-post-implementation.pdf",
+      "extra_urls": ["https://www.nyc.gov/html/dot/html/about/projects-2010.shtml"],
+      "web_refs": ["turn7083128view1","turn3185331view0"]
+    },
+    {
+      "id": "eighth-avenue-23rd-34th-2010",
+      "readiness_score": 0,
+      "genuine_moving_lane_conversion": false,
+      "reason_excluded": "DOT2014reportp24 explicitly no lane removal. Widely cited14% travel-time improvement applies to this lane-narrowing segment. Separate14th-23rd2009segment had part-time lane removal, but acquired time study isnot that segment.",
+      "url": "https://www.nyc.gov/html/dot/downloads/pdf/2014-09-03-bicycle-path-data-analysis.pdf",
+      "extra_urls": ["https://www.nyc.gov/html/mancb4/downloads/pdf/missing%20archive%20resos/40%20TRANS%20Letter%20to%20DOT%20re%208th%20Ave%20Bike%20Lane.pdf"],
+      "web_refs": ["turn3185331view2","turn7112903search7"]
+    },
+    {
+      "id": "sixth-avenue-2016",
+      "readiness_score": 0,
+      "genuine_moving_lane_conversion": false,
+      "reason_excluded": "Official2016project page says bike-lane upgrade maintained existing number of moving lanes. Do not conflate with later2024-25widening projects.",
+      "url": "https://www.nyc.gov/html/dot/html/about/projects-2016.shtml",
+      "web_refs": ["turn4819281search0"]
+    }
+  ]
+}

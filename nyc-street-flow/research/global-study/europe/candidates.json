@@ -1,0 +1,176 @@
+[
+  {
+    "id": "berlin-popup-2020",
+    "city": "Berlin",
+    "country": "Germany",
+    "corridor": "2020 popup bicycle lanes, multiple arterial streets",
+    "treatment_type": "Motor travel lane converted to bicycle lane",
+    "lane_conversion_verified": true,
+    "treatment_start": "2020-03-25",
+    "treatment_end": "2020-07-07",
+    "treatment_date_precision": "Staggered street-specific dates in paper Figure 2; exact segments and extensions still require as-built audit",
+    "study_period": "2019–2020 in published evaluation; official hourly archive 2015–2025",
+    "priority": "High: motor outcome replication; insufficient for all-person flow",
+    "data_acquired": true,
+    "data_files": [
+      "berlin-station-metadata.xlsx",
+      "berlin-readme.txt",
+      "berlin-archive-list.xml",
+      "mq_hr_2019_02.csv.gz",
+      "mq_hr_2019_07.csv.gz",
+      "mq_hr_2020_02.csv.gz",
+      "mq_hr_2020_07.csv.gz",
+      "berlin-mq-coverage-audit.csv",
+      "berlin-treatment-road-hourly-sample.csv.gz"
+    ],
+    "outcomes_available": [
+      "Hourly total motor vehicles, cars, lorries by direction-cross-section",
+      "Hourly point speeds in km/h",
+      "Lane detector metadata and archive",
+      "Published controlled motor speed and lane-average volume estimates"
+    ],
+    "outcomes_missing": [
+      "Aligned bicycle counts at all treatment cross-sections",
+      "Car and bus passenger occupancy",
+      "Door-to-door journey time",
+      "All-mode person flow across a diversion screenline"
+    ],
+    "comparison_design": "Published station/date/hour fixed effects and event study; 23 treated stations on six streets vs 192 controls; nearby stations excluded. New replication should use modern staggered treatment estimators, strict pretrend and spillover tests.",
+    "published_findings": "Adjusted motor point speed coefficient −4.123 km/h; log speed −0.122 (~−11.5%). Log lane-average volume −0.00540, statistically inconclusive. These are reported published results, not newly replicated.",
+    "limitations": [
+      "COVID demand and recovery coincide with treatment; political selection and parallel trends need scrutiny",
+      "Paper averages lane volumes, not whole-road total; measurement target differs from all-person flow",
+      "2022 official metadata flags some motor detectors deinstalled for Radspur (bike lane), with removal dates blank",
+      "2025 archive reprocessing may differ from author data; do not mix quality regimes",
+      "No transit loads or complete journey times"
+    ],
+    "sources": [
+      {
+        "url": "https://www.uni-potsdam.de/fileadmin/projects/lsfiwi/docs/Publikationen/Philipp_Cycling.pdf",
+        "role": "Primary academic study",
+        "locator": "Figure 2; data section printed pp8–10; Table 1",
+        "ref": "turn1509017view1"
+      },
+      {
+        "url": "https://api.viz.berlin.de/daten/verkehrsdetektion",
+        "role": "Official raw traffic archive; warns of 2025 historical revision",
+        "ref": "turn1509017view0"
+      },
+      {
+        "url": "https://mdhopendata.blob.core.windows.net/verkehrsdetektion/ReadMe.txt",
+        "role": "Official data dictionary"
+      },
+      {
+        "url": "https://mdhopendata.blob.core.windows.net/verkehrsdetektion/Stammdaten_Verkehrsdetektion_2022_07_20.xlsx",
+        "role": "Official lane detector metadata"
+      }
+    ],
+    "readiness": "Raw motor sample and coverage audit completed; full causal replication and all-person flow unresolved"
+  },
+  {
+    "id": "paris-rivoli-2020",
+    "city": "Paris",
+    "country": "France",
+    "corridor": "Rue de Rivoli, site 10004 at 88 rue de Rivoli / Nicolas Flamel",
+    "treatment_type": "Motor carriageway reallocation plus restriction of ordinary through motor traffic",
+    "lane_conversion_verified": true,
+    "treatment_start": "2020-05-11",
+    "treatment_end": "2020-05-11",
+    "treatment_date_precision": "Policy commencement; phased physical works need exact segment audit",
+    "study_period": "Thermal site first record 2020-05-22T22:00Z; latest observed 2026-11-04T22:00Z",
+    "priority": "High for aligned multimodal measurement; fails pre-treatment baseline in this feed",
+    "data_acquired": true,
+    "data_files": [
+      "paris-multimodal-metadata.json",
+      "paris-multimodal-documentation.pdf",
+      "paris-rivoli-history-coverage.json",
+      "paris-rivoli-geometry.json",
+      "paris-rivoli-sample-week.json",
+      "paris-rivoli-sample-aggregate.csv"
+    ],
+    "outcomes_available": [
+      "Hourly thermal-camera bicycle, scooter, powered-two-wheeler, light vehicle, heavy vehicle, bus/coach counts",
+      "Direction and entry-exit lane trajectory at one camera",
+      "Same-site, same-hour modal classification"
+    ],
+    "outcomes_missing": [
+      "Pre-11-May-2020 baseline at this site",
+      "Vehicle occupants and bus passengers",
+      "Rail flow and complete journey time"
+    ],
+    "comparison_design": "Cannot run before/after May2020 with this feed alone. Use for occupancy sensitivity and later interventions after verifying stable camera geometry; acquire older pre-treatment manual/loop counts and matched unaffected corridors.",
+    "published_findings": null,
+    "limitations": [
+      "First camera observations occur after intervention",
+      "Treatment also restricts general traffic and occurs during COVID; cannot isolate cycle-lane effect",
+      "nb_usagers means vehicles, not people",
+      "Vehicle classification and site geometry evolve; missing category-hour rows must not be silently treated as observed zeros",
+      "Do not sum cameras in series or infer metro diversion from street counts"
+    ],
+    "sources": [
+      {
+        "url": "https://opendata.paris.fr/explore/dataset/comptage-multimodal-comptages/",
+        "role": "Official hourly multimodal data and schema",
+        "ref": "turn1509017view3"
+      },
+      {
+        "url": "https://www.paris.fr/pages/la-rue-de-rivoli-reservee-aux-pietons-et-aux-velos-7792",
+        "role": "Official treatment description"
+      },
+      {
+        "url": "https://www.legifrance.gouv.fr/ceta/id/CETATEXT000047318155",
+        "role": "Primary court text describes May11 2020 traffic restriction and authorized-vehicle lane"
+      },
+      {
+        "url": "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/comptage-multimodal-comptages/attachments/documentation_v3_1_pdf",
+        "role": "Official documentation; printed p5 defines site10004 trajectories"
+      }
+    ],
+    "readiness": "Post-treatment multimodal sample acquired and schema verified; excluded from causal before/after estimate"
+  },
+  {
+    "id": "paris-voltaire-2017-2019",
+    "city": "Paris",
+    "country": "France",
+    "corridor": "Boulevard Voltaire, République–Nation",
+    "treatment_type": "Protected cycle tracks with motor carriageway/capacity reduction; bus-stop and streetscape changes",
+    "lane_conversion_verified": true,
+    "treatment_start": "2017-07-01",
+    "treatment_end": "2019-07-01",
+    "treatment_date_precision": "Month precision; dates use day01 placeholders. Staged sections through July2019; need exact segment opening dates.",
+    "study_period": "Potential pre-COVID 2015–2019 study; aligned raw series not yet acquired",
+    "priority": "Medium: pre-COVID alternative, data alignment not certified",
+    "data_acquired": false,
+    "data_files": [],
+    "outcomes_available": [
+      "Official construction staging and final cross-section description",
+      "2017 project presentation includes baseline motor traffic and forecast capacity change"
+    ],
+    "outcomes_missing": [
+      "Verified aligned pre/post bike and motor screenline counts",
+      "Bus passenger loads and observed bus journey times",
+      "Credible matched-control panel"
+    ],
+    "comparison_design": "Segment-level staggered before/after with adjacent diversion screenline and matched untreated arterials; distinguish construction from permanent opening.",
+    "published_findings": null,
+    "limitations": [
+      "Final street has one moving lane per direction except two-lane intersection approaches; exact baseline lane counts must be digitized segment by segment",
+      "The cited 20% capacity reduction is a forecast in the project presentation, not an observed flow estimate",
+      "Bus islands and other streetscape changes make treatment a bundle",
+      "Thermal multimodal feed begins too late for 2017 baseline; older loop/bike archives require joining"
+    ],
+    "sources": [
+      {
+        "url": "https://mairie11.paris.fr/pages/l-amenagement-cyclable-du-boulevard-voltaire-9957",
+        "role": "Official completed project description and staged works",
+        "ref": "turn1509017view2"
+      },
+      {
+        "url": "https://cdn.paris.fr/paris/2020/09/15/89f9315e78619441d6678ea8d007905b.pdf",
+        "role": "April18 2017 official project presentation; baseline geometry and projected capacity",
+        "locator": "PDF pages 4,8,12,22"
+      }
+    ],
+    "readiness": "Treatment verified, acquisition candidate only; no computed causal effect"
+  }
+]

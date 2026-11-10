@@ -1,0 +1,19 @@
+{
+  "checked_on": "2026-11-05",
+  "acquired": true,
+  "original_doi": "10.5281/zenodo.3973038",
+  "resolved_record": 4015974,
+  "archive_version": "v.0.4-beta",
+  "archive_publication_date": "2020-09-05",
+  "archive_bytes": 1169146,
+  "archive_sha256": "4130e70aa6071ca92b884d1f11cd13bfab901387a24122ad0a0dc44a30b9ea68",
+  "md5_matches_repository": true,
+  "file_count": 36,
+  "panel_path": "smkraus-popup-bikelanes-64b2f1c/data/counters/panelAll.dta",
+  "panel_bytes_present": 134,
+  "panel_is_git_lfs_pointer": true,
+  "referenced_panel_bytes": 330454481,
+  "referenced_panel_sha256": "919dc2c2272287cc02a586dd5522c4550a82e196a8b359224dcbfb6b75707b95",
+  "full_estimate_reproduced": false,
+  "reason": "Archive contains code and historical output files but only a Git LFS pointer for the advertised final panel. The linked GitHub repository and media object returned HTTP404 during retrieval. Do not substitute the archived 2020 output table for the final2021 paper."
+}

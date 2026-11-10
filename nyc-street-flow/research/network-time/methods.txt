@@ -1,0 +1,35 @@
+NYC STREET FLOW — COMPLETE-JOURNEY SCENARIO ACCOUNTING
+Version 1 · November 5, 2026
+
+STATUS
+This calculator is a scenario tool. All preset counts, mode switches and times are invented for illustration. They are not measured NYC outcomes, calibrated forecasts, causal estimates, or a benefit-cost analysis.
+
+UNIT AND COHORT
+The unit is one person's comparable complete journey. Count car occupants, not cars, and bus/subway travelers, not vehicles or station entries. Include access, waiting, transfers, parking and egress in elapsed journey time. Assign one mutually exclusive main mode to each multimodal journey; do not count the same journey again for its feeder legs.
+
+The same fixed traveler cohort makes one journey before and after. Preserve origin, destination, purpose and departure-window composition. Real evaluations should standardize repeated observations to the baseline trip mix and report support and missingness. People who switch mode remain in the cohort.
+
+CALCULATION
+For baseline main mode i, let N_i be travelers and t_i their average complete before minutes. Let n_ij be people who change from baseline mode i to after mode j, with mean complete after duration t_ij. Staying travelers are n_ii = N_i minus all switches out of i. Counts may be fractional to represent survey weights.
+
+Total before person-minutes = sum_i N_i * t_i.
+Total after person-minutes = sum_i sum_j n_ij * t_ij.
+Minutes saved = before minus after.
+Mean complete time change = (after minus before) / sum_i N_i.
+
+The per-origin baseline mean applies to the entire group, including people who later switch. No assumption that individual switchers had the same baseline time is needed for the aggregate group total. Each switching subgroup can have a distinct after time. The UI follows each original group when reporting its change in minutes; after-mode traveler counts are separately shown and are not that group's denominator.
+
+Inputs are rejected if any are missing, non-finite or negative; if a mode's switches exceed its baseline group; if total baseline travelers is zero; or if any count exceeds 10,000,000 or any time exceeds 1,440 minutes. An occupied baseline, staying or switching group must have strictly positive complete journey time; zero is allowed only for unused fields. No invalid scenario is silently normalized. Counts are conserved by construction. These numerical caps bound the tool, not plausible effect sizes.
+
+BREAK-EVEN
+For the entered scenario, additional complete minutes per post-scenario car traveler at break-even = total minutes saved / post-scenario car travelers. This affects all remaining car occupants, not only drivers, and all other counts and times stay fixed. A negative threshold means car time must decrease to offset an existing total time loss. If no car travelers remain, this quotient is undefined. A uniform reduction that would make any occupied car group have negative complete time is flagged as infeasible. Dashed brown chart sections include infeasible alternatives; feasibility is exported for each frontier point.
+
+The frontier varies only the number of baseline car travelers who switch to subway. Other switches and all journey times stay fixed. The admissible horizontal range is zero through baseline car travelers minus car switches to other modes. As more car travelers switch, their before cohort weight stays the same; their after time changes from the entered car-stayer duration to the entered car-to-subway duration. The extra-car-time threshold is recomputed on remaining car travelers, including other modes that switch into cars. The chart may clip thresholds beyond plus/minus 60 minutes; CSV retains exact values. It is not a behavioral model or a causal prediction.
+
+THROUGHPUT AND INDUCED TRIPS
+No person-throughput estimate is produced. Dividing an arbitrarily selected cohort by hours would not estimate a screenline. Measure unique travelers crossing a prespecified boundary per hour with aligned directions, times, modes and alternate routes. Network accounting must include rail alternatives and road diversions without double counting.
+
+Added and forgone trips fall outside this fixed-cohort scenario. Added journeys can increase total minutes while improving access; suppressed journeys can reduce total minutes while making travelers worse off. Report trip counts, trip completion, destinations reachable and unserved demand separately from standardized journey time. The tool does not model equilibrium travel demand, service frequency, congestion feedback, crowding, reliability, safety, accessibility, comfort, cost or emissions.
+
+REPRODUCIBILITY
+Scenario JSON contains mode order, every input, evidence-status label and derived totals. Traveler CSV supplies all 25 transitions plus baseline groups. Frontier CSV includes exact values at 101 switch-count settings. The shareable URL stores the numerical input arrays and schema version; no server or personal travel records are needed. Mathematical implementation: dist/network-time.mjs. Arithmetic checks: tests/network-time.test.mjs.

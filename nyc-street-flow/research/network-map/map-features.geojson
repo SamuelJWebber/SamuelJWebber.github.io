@@ -1,0 +1,582 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.9693,
+            40.67365
+          ],
+          [
+            -73.97955,
+            40.66055
+          ]
+        ]
+      },
+      "properties": {
+        "case_id": "ppw",
+        "id": "ppw-lane",
+        "title": "PPW: three moving lanes → two",
+        "group": "project",
+        "description": "A two-way protected bikeway replaced a moving motor lane in June 2010. This line shows the corridor approximately, not lane engineering geometry.",
+        "status": "Verified conversion · approximate drawing",
+        "sources": [
+          "ppw",
+          "ppw_design"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9713,
+          40.67115
+        ]
+      },
+      "properties": {
+        "case_id": "ppw",
+        "id": "ppw-motor",
+        "title": "Motor counter · Carroll Street",
+        "group": "observed",
+        "description": "The published motor before/after counts were collected near Carroll Street. Vehicles are not people: bus passengers and other vehicle occupancy must be added correctly.",
+        "status": "Observed vehicle counts · hand-positioned point",
+        "sources": [
+          "ppw"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.975,
+          40.6664
+        ]
+      },
+      "properties": {
+        "case_id": "ppw",
+        "id": "ppw-bike",
+        "title": "Bike count · between 4th and 5th Streets",
+        "group": "observed",
+        "description": "The original bicycle sheets identify the block between Fourth and Fifth Streets. It is not the Carroll Street motor-count location, and the survey dates differ.",
+        "status": "Observed bike passages · hand-positioned point",
+        "sources": [
+          "ppw"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.9759,
+            40.6766
+          ],
+          [
+            -73.9862,
+            40.6635
+          ]
+        ]
+      },
+      "properties": {
+        "case_id": "ppw",
+        "id": "ppw-six",
+        "title": "Sixth Avenue · northbound comparator",
+        "group": "comparison",
+        "description": "Travel-time comparison in the DOT survey. Opposite direction to PPW; a useful sensitivity test, not a validated untreated control.",
+        "status": "Timed runs · direction mismatch",
+        "sources": [
+          "ppw"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.9737,
+            40.6756
+          ],
+          [
+            -73.984,
+            40.6625
+          ]
+        ]
+      },
+      "properties": {
+        "case_id": "ppw",
+        "id": "ppw-seven",
+        "title": "Seventh Avenue · southbound comparator",
+        "group": "comparison",
+        "description": "Same-direction travel-time comparison. The B69 moved here in June 2010, alongside bus-service changes, so this road is co-treated. The line is a corridor guide, not exact timed-run endpoints.",
+        "status": "Timed runs · affected by bus rerouting",
+        "sources": [
+          "ppw",
+          "b69"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.9715,
+            40.67465
+          ],
+          [
+            -73.9818,
+            40.6615
+          ]
+        ]
+      },
+      "properties": {
+        "case_id": "ppw",
+        "id": "ppw-eight",
+        "title": "Eighth Avenue · northbound comparator",
+        "group": "comparison",
+        "description": "Opposite-direction travel-time comparison. B69 northbound service left Eighth Avenue in June 2010, so this comparator is also affected.",
+        "status": "Timed runs · affected by bus rerouting",
+        "sources": [
+          "ppw",
+          "b69"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              -73.9693,
+              40.67365
+            ],
+            [
+              -73.97955,
+              40.66055
+            ]
+          ],
+          [
+            [
+              -73.9715,
+              40.67465
+            ],
+            [
+              -73.9818,
+              40.6615
+            ]
+          ],
+          [
+            [
+              -73.9737,
+              40.6756
+            ],
+            [
+              -73.984,
+              40.6625
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "case_id": "ppw",
+        "id": "ppw-b69",
+        "title": "B69 moved from PPW / Eighth to Seventh",
+        "group": "bus",
+        "description": "Effective June 27, 2010, the B69 moved from PPW southbound and Eighth Avenue northbound to Seventh Avenue. Service levels changed too. Highlighted corridors show this route change, not individual passengers or full bus routes.",
+        "status": "Documented route change · approximate corridor highlights",
+        "sources": [
+          "b69"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            -73.971046,
+            40.675235
+          ],
+          [
+            -73.980305,
+            40.666271
+          ],
+          [
+            -73.979493,
+            40.660365
+          ]
+        ]
+      },
+      "properties": {
+        "case_id": "ppw",
+        "id": "ppw-rail",
+        "title": "Nearby subway stations",
+        "group": "rail",
+        "description": "Grand Army Plaza, Seventh Avenue and 15 St–Prospect Park are possible access points, not evidence that travelers switched modes. Markers use official station-center coordinates; entrances, historical service and complete journey paths are not shown.",
+        "status": "Station geography only · no attributed passenger change",
+        "sources": [
+          "subway",
+          "map"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.96575,
+            40.7616
+          ],
+          [
+            -73.94902,
+            40.7847
+          ]
+        ]
+      },
+      "properties": {
+        "case_id": "third",
+        "id": "third-lane",
+        "title": "Project · E59–E96",
+        "group": "project",
+        "description": "The 2023 redesign combined a bike lane, bus lane, intersection changes and traffic calming. The design changes five general moving lanes to three, plus the bus and bike lanes. It cannot isolate a bike-lane-only effect.",
+        "status": "Verified bundled redesign · approximate line",
+        "sources": [
+          "third",
+          "third_design"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.9621,
+            40.7666
+          ],
+          [
+            -73.94857,
+            40.78532
+          ]
+        ]
+      },
+      "properties": {
+        "case_id": "third",
+        "id": "third-measured",
+        "title": "Measured bus segment · E67–E97 northbound",
+        "group": "observed",
+        "description": "The matched bus timepoints are E67 to E97, a published segment distance of 1.472 miles. The segment includes one block north of the E96 project limit. Run-weighted time is not passenger-weighted complete journey time.",
+        "status": "Observed bus segment times · approximate line",
+        "sources": [
+          "bus"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.95107,
+            40.78567
+          ],
+          [
+            -73.96387,
+            40.76814
+          ]
+        ]
+      },
+      "properties": {
+        "case_id": "third",
+        "id": "third-lex",
+        "title": "Lexington · E96–E68 southbound",
+        "group": "comparison",
+        "description": "Primary bus comparison uses the same three route/service types in the opposite direction. Its pre-period divergence is large enough to challenge a causal interpretation.",
+        "status": "Comparison segment · pre-trend concern",
+        "sources": [
+          "bus"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.951,
+            40.7725
+          ],
+          [
+            -73.9428,
+            40.7839
+          ]
+        ]
+      },
+      "properties": {
+        "case_id": "third",
+        "id": "third-first",
+        "title": "First Avenue · E79–E97 northbound",
+        "group": "comparison",
+        "description": "M15 Local provides a same-direction bus comparison. Route, street and operating conditions differ from Third Avenue.",
+        "status": "Alternative comparison · not an untreated guarantee",
+        "sources": [
+          "bus"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.9724,
+            40.7622
+          ],
+          [
+            -73.9552,
+            40.786
+          ]
+        ]
+      },
+      "properties": {
+        "case_id": "third",
+        "id": "third-madison",
+        "title": "Madison · E57–E95 northbound",
+        "group": "comparison",
+        "description": "M3/M4 are retained for this comparison. M1 timepoints changed in April 2024 and are excluded. Corridor lines illustrate the named endpoints approximately.",
+        "status": "Alternative comparison · fixed service selection",
+        "sources": [
+          "bus"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              -73.967967,
+              40.762526
+            ],
+            [
+              -73.96387,
+              40.768141
+            ],
+            [
+              -73.959874,
+              40.77362
+            ],
+            [
+              -73.955589,
+              40.779492
+            ],
+            [
+              -73.95107,
+              40.785672
+            ]
+          ],
+          [
+            [
+              -73.958424,
+              40.768799
+            ],
+            [
+              -73.951787,
+              40.777891
+            ],
+            [
+              -73.947152,
+              40.784318
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "case_id": "third",
+        "id": "third-rail",
+        "title": "Lexington / Second Avenue subway context",
+        "group": "rail",
+        "description": "Official station centers are connected schematically along the two nearby subway corridors. These lines are not surveyed tunnel alignments or observed passenger paths. Station usage does not identify car-to-subway switching.",
+        "status": "Rail geography only · no attributed mode shift",
+        "sources": [
+          "subway",
+          "map"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.95265,
+            40.735
+          ],
+          [
+            -73.95225,
+            40.7387
+          ],
+          [
+            -73.95145,
+            40.743
+          ]
+        ]
+      },
+      "properties": {
+        "case_id": "pulaski",
+        "id": "pulaski-lane",
+        "title": "Pulaski: southbound moving lane converted",
+        "group": "project",
+        "description": "One Brooklyn-bound / southbound car lane was converted to a two-way protected bikeway. DOT describes the scheme between Jackson Avenue in Queens and Eagle Street in Brooklyn. This is the 2016 bridge project, not the later McGuinness redesign.",
+        "status": "Verified moving-lane conversion · approximate drawing",
+        "sources": [
+          "pulaski",
+          "pulaski_design"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9488,
+          40.72549
+        ]
+      },
+      "properties": {
+        "case_id": "pulaski",
+        "id": "pulaski-counter",
+        "title": "McGuinness motor counter · station 021284",
+        "group": "observed",
+        "description": "The 2016 NYSDOT inventory places this counter between I-278 and Greenpoint Avenue. It records vehicles traveling through this point, including trips that may enter or leave before reaching Pulaski. Station continuity still needs verification.",
+        "status": "Official inventory coordinate · count continuity unresolved",
+        "sources": [
+          "counter"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.9477,
+            40.7237
+          ],
+          [
+            -73.9488,
+            40.72549
+          ],
+          [
+            -73.9502,
+            40.7296
+          ],
+          [
+            -73.95265,
+            40.735
+          ]
+        ]
+      },
+      "properties": {
+        "case_id": "pulaski",
+        "id": "pulaski-approach",
+        "title": "McGuinness approach and intervening junctions",
+        "group": "comparison",
+        "description": "This approximate approach line connects the counter area to Eagle Street. Intersecting streets can add or remove traffic. Before conversion, the three Brooklyn-bound lanes already merged to two approaching McGuinness / Green Street; losing a marked lane therefore does not establish a reduction in the network bottleneck capacity. Northbound is not assumed unaffected.",
+        "status": "Documented downstream merge · not a control group",
+        "sources": [
+          "counter",
+          "pulaski",
+          "pulaski_plan"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              -73.951277,
+              40.724635
+            ],
+            [
+              -73.954449,
+              40.731352
+            ],
+            [
+              -73.949724,
+              40.744065
+            ],
+            [
+              -73.943832,
+              40.746554
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "case_id": "pulaski",
+        "id": "pulaski-rail",
+        "title": "Crosstown subway stations",
+        "group": "rail",
+        "description": "Nassau Avenue, Greenpoint Avenue, 21 Street and Court Square provide rail context. Straight joins between station centers are schematic, not tunnel geometry. No observed car-to-subway switching is inferred.",
+        "status": "Official station centers · schematic connections",
+        "sources": [
+          "subway",
+          "map"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9514924,
+          40.742563
+        ]
+      },
+      "properties": {
+        "case_id": "pulaski",
+        "id": "pulaski-bike",
+        "title": "Bike counter · published registry location",
+        "group": "observed",
+        "description": "The November 2026 registry gives this site coordinate and a June 24, 2017 series start, after conversion. It also lists a May 2022 equipment installation; the displayed point does not verify the 2017 hardware location or continuity. There is no pre-conversion automatic baseline.",
+        "status": "Registry site point · historical hardware continuity unverified",
+        "sources": [
+          "bike_registry",
+          "bikes",
+          "pulaski"
+        ]
+      }
+    }
+  ]
+}

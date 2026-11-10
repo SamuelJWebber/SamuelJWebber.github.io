@@ -1,0 +1,116 @@
+[
+  {
+    "id": "s7y8-dkgd",
+    "name": "EZ Pass Readers 2021",
+    "rowsUpdatedAt": 1791321135,
+    "description": "E-Z Pass readers are installed throughout NYC to determine traffic speed on local streets. The collected data was used to plan traffic calming and reorganizations of NYC streets. Projects like Midtown in Motion (MIM), a congestion management program served midtown Manhattan from 1st to 9th Avenue between 42nd to 57th Streets was conducted to make best adjustments for driver's needs.\nFor a full list of annual EZ Pass Readers datasets please follow <a href=\"https://data.cityofnewyork.us/browse?Data-Collection_Data-Collection=DOT+EZ+Pass+Readers&sortBy=relevance&page=1&pageSize=20\">this link</a>.",
+    "url": "https://data.cityofnewyork.us/d/s7y8-dkgd",
+    "columns": [
+      "sid",
+      "link_name",
+      "borough",
+      "polyline",
+      "link_length_ft",
+      "aggregation_period_sec",
+      "n_samples",
+      "median_calculation_timestamp",
+      "median_tt_sec",
+      "median_speed_fps"
+    ]
+  },
+  {
+    "id": "2dzd-mqxq",
+    "name": "EZ Pass Readers 2022",
+    "rowsUpdatedAt": 1791329294,
+    "description": "E-Z Pass readers are installed throughout NYC to determine traffic speed on local streets. The collected data was used to plan traffic calming and reorganizations of NYC streets. Projects like Midtown in Motion (MIM), a congestion management program served midtown Manhattan from 1st to 9th Avenue between 42nd to 57th Streets was conducted to make best adjustments for driver's needs.\nFor a full list of annual EZ Pass Readers datasets please follow <a href=\"https://data.cityofnewyork.us/browse?Data-Collection_Data-Collection=DOT+EZ+Pass+Readers&sortBy=relevance&page=1&pageSize=20\">this link</a>.",
+    "url": "https://data.cityofnewyork.us/d/2dzd-mqxq",
+    "columns": [
+      "sid",
+      "link_name",
+      "borough",
+      "polyline",
+      "link_length_ft",
+      "aggregation_period_sec",
+      "n_samples",
+      "median_calculation_timestamp",
+      "median_tt_sec",
+      "median_speed_fps"
+    ]
+  },
+  {
+    "id": "pi8f-savx",
+    "name": "EZ Pass Readers 2023",
+    "rowsUpdatedAt": 1791343687,
+    "description": "E-Z Pass readers are installed throughout NYC to determine traffic speed on local streets. The collected data was used to plan traffic calming and reorganizations of NYC streets. Projects like Midtown in Motion (MIM), a congestion management program served midtown Manhattan from 1st to 9th Avenue between 42nd to 57th Streets was conducted to make best adjustments for driver's needs.\nFor a full list of annual EZ Pass Readers datasets please follow <a href=\"https://data.cityofnewyork.us/browse?Data-Collection_Data-Collection=DOT+EZ+Pass+Readers&sortBy=relevance&page=1&pageSize=20\">this link</a>.",
+    "url": "https://data.cityofnewyork.us/d/pi8f-savx",
+    "columns": [
+      "sid",
+      "link_name",
+      "borough",
+      "polyline",
+      "link_length_ft",
+      "aggregation_period_sec",
+      "n_samples",
+      "median_calculation_timestamp",
+      "median_tt_sec",
+      "median_speed_fps"
+    ]
+  },
+  {
+    "id": "7ank-n7rd",
+    "name": "EZ Pass Readers 2024",
+    "rowsUpdatedAt": 1791346072,
+    "description": "E-Z Pass readers are installed throughout NYC to determine traffic speed on local streets. The collected data was used to plan traffic calming and reorganizations of NYC streets. Projects like Midtown in Motion (MIM), a congestion management program served midtown Manhattan from 1st to 9th Avenue between 42nd to 57th Streets was conducted to make best adjustments for driver's needs.\nData ranges from Jan 1, 2024 to December 31, 2024.\nFor a full list of annual EZ Pass Readers datasets please follow <a href=\"https://data.cityofnewyork.us/browse?Data-Collection_Data-Collection=DOT+EZ+Pass+Readers&sortBy=relevance&page=1&pageSize=20\">this link</a>.",
+    "url": "https://data.cityofnewyork.us/d/7ank-n7rd",
+    "columns": [
+      "sid",
+      "link_name",
+      "borough",
+      "polyline",
+      "link_length_ft",
+      "aggregation_period_sec",
+      "n_samples",
+      "median_calculation_timestamp",
+      "median_tt_sec",
+      "median_speed_fps"
+    ]
+  },
+  {
+    "id": "5dxh-vk2s",
+    "name": "EZ Pass Readers 2025",
+    "rowsUpdatedAt": 1791354110,
+    "description": "E-Z Pass readers are installed throughout NYC to determine traffic speed on local streets. The collected data was used to plan traffic calming and reorganizations of NYC streets. Projects like Midtown in Motion (MIM), a congestion management program served midtown Manhattan from 1st to 9th Avenue between 42nd to 57th Streets was conducted to make best adjustments for driver's needs.\nFor a full list of annual EZ Pass Readers datasets please follow <a href=\"https://data.cityofnewyork.us/browse?Data-Collection_Data-Collection=DOT+EZ+Pass+Readers&sortBy=relevance&page=1&pageSize=20\">this link</a>.",
+    "url": "https://data.cityofnewyork.us/d/5dxh-vk2s",
+    "columns": [
+      "sid",
+      "link_name",
+      "borough",
+      "polyline",
+      "link_length_ft",
+      "aggregation_period_sec",
+      "n_samples",
+      "median_calculation_timestamp",
+      "median_tt_sec",
+      "median_speed_fps"
+    ]
+  },
+  {
+    "id": "6a2s-2t65",
+    "name": "EZ Pass Readers 2026",
+    "rowsUpdatedAt": 1793866253,
+    "description": "E-Z Pass readers are installed throughout NYC to determine traffic speed on local streets. The collected data was used to plan traffic calming and reorganizations of NYC streets. Projects like Midtown in Motion (MIM), a congestion management program served midtown Manhattan from 1st to 9th Avenue between 42nd to 57th Streets was conducted to make best adjustments for driver's needs.\nFor a full list of annual EZ Pass Readers datasets please follow <a href=\"https://data.cityofnewyork.us/browse?Data-Collection_Data-Collection=DOT+EZ+Pass+Readers&sortBy=relevance&page=1&pageSize=20\">this link</a>.",
+    "url": "https://data.cityofnewyork.us/d/6a2s-2t65",
+    "columns": [
+      "sid",
+      "link_name",
+      "borough",
+      "polyline",
+      "link_length_ft",
+      "aggregation_period_sec",
+      "n_samples",
+      "median_calculation_timestamp",
+      "median_tt_sec",
+      "median_speed_fps"
+    ]
+  }
+]

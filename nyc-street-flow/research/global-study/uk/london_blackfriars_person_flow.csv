@@ -1,0 +1,3 @@
+location,direction,time,survey_date,facility,people_per_hour,source,source_page,inference
+Blackfriars Bridge,northbound,08:00-09:00,not provided in table,main carriageway,1542,https://content.tfl.gov.uk/segregated-cycling-infrastructure-evidence-pack.pdf,17,"post-opening snapshot, not causal before-after"
+Blackfriars Bridge,northbound,08:00-09:00,not provided in table,cycle track,1938,https://content.tfl.gov.uk/segregated-cycling-infrastructure-evidence-pack.pdf,17,"post-opening snapshot, not causal before-after"

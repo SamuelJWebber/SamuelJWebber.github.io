@@ -1,0 +1,328 @@
+{
+  "title": "McGuinness Boulevard: official 2026 evaluation and identification audit",
+  "assembled_on": "2026-11-05",
+  "status": "Observed before/after descriptive evidence; causal effect on all-mode person flow and complete journey time remains unidentified",
+  "source_manifest": "mcguinness-source-manifest.json",
+  "primary_sources": {
+    "dot_april_2026": "https://www.nyc.gov/html/dot/downloads/pdf/mcguinness-blvd-calyer-st-freeman-st-apr2026.pdf",
+    "cb1_april_2026_with_appendix": "https://www.nyc.gov/assets/brooklyncb1/downloads/pdf/meeting-minutes/Combined-Public-Hearing-Board-Meeting-Minutes-04-14-26-Part-1.pdf",
+    "dot_september_2024": "https://www.nyc.gov/html/dot/downloads/pdf/mcguinness-blvd-update-sept2024.pdf",
+    "dot_november_2024_construction": "https://www.nyc.gov/html/dot/html/pr2024/travel-advisory-mcguinness-boulevard.shtml",
+    "current_projects": "https://www.nyc.gov/html/dot/html/about/current-projects.shtml",
+    "cb1_september_2023_dot_report": "https://www.nyc.gov/assets/brooklyncb1/downloads/pdf/meeting-minutes/Combined-Public-Hearing-and-Board-Meeting-Minutes-10-11-2023.pdf"
+  },
+  "treatment_definition": [
+    {
+      "phase": "Northern 2023",
+      "geography": "Calyer St to Pulaski Bridge; April 2026 map labels Freeman–Calyer late 2023",
+      "installed_month": "2023-10",
+      "capacity": "One permanent moving lane and a second daytime moving lane per direction; second lane becomes parking overnight",
+      "daytime_hours": "07:00–19:00",
+      "weekday_weekend_detail": "2023 cabinet minutes confirm clock hours but not weekday/weekend/holiday exceptions. September 2024 proposed-design slide3 mentions most overnight and weekend parking; obtain as-built signs before encoding day-of-week exposure.",
+      "bicycle_treatment": "New full-time barrier-protected bicycle lanes",
+      "source_pages": {
+        "dot_april_2026": [
+          5,
+          7,
+          19
+        ],
+        "cb1_september_2023_dot_report": [
+          140
+        ]
+      },
+      "hours_source": "DOT liaison report to September 21, 2023 District Service Cabinet, included in October 11 CB1 minutes PDF p140: northern construction starting; 07:00–19:00 two moving lanes each direction; 19:00–07:00 one lane"
+    },
+    {
+      "phase": "Southern 2024",
+      "geography": "Calyer St to Meeker Ave",
+      "construction_start_interval": "Preparation in week preceding 2024-11-02 announcement; major roadway reconfiguration scheduled 2024-11-04; several weeks, weather permitting",
+      "capacity": "One moving lane per direction throughout the day",
+      "bicycle_treatment": "Parking-protected bicycle lane each direction",
+      "cointerventions": [
+        "Pedestrian islands",
+        "Loading zones",
+        "Intersection/Meeker improvements",
+        "Later punch-list work and connecting conventional bike lanes"
+      ],
+      "completion_date": null,
+      "source_pages": {
+        "dot_april_2026": [
+          5,
+          7
+        ]
+      },
+      "note": "September 2024 slide 3 showed the earlier proposed daytime two-lane design. Do not use that proposal as the implemented southern design; November construction notice supersedes it."
+    },
+    {
+      "phase": "Northern 2026",
+      "geography": "Calyer St to Freeman St",
+      "design": "One moving lane all day in each direction; existing left-turn bays maintained; parking-protected bike lanes, seven shorter crossings, turning treatments and loading/parking changes",
+      "capacity_change": "Removal of existing daytime-only second moving lane; no corresponding overnight reduction in nominal moving-lane count",
+      "bicycle_baseline": "Bike lanes already existed from 2023; wider/parking-protected configuration replaces earlier barrier/rush-hour-lane arrangement",
+      "estimand": "Incremental daytime capacity/curb/protection package; not first introduction of bike access",
+      "verified_completion_date": null,
+      "source_pages": {
+        "dot_april_2026": [
+          19,
+          21,
+          22
+        ]
+      },
+      "note": "An announced or expected construction completion is not an observed treatment activation date. Obtain segment-level sign/marking completion logs."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "motor_peak",
+      "source": "dot_april_2026",
+      "pages": [
+        11
+      ],
+      "data_file": "mcguinness-peak-motor-counts-digitized.csv",
+      "years": [
+        2023,
+        2025
+      ],
+      "window": "Two weeks of midweek ATR data in Fall; exact dates and AM/PM peak durations unstated",
+      "sites": [
+        "NB Green–Freeman",
+        "SB Freeman–Green",
+        "NB Humboldt–Newton",
+        "SB Newton–Bayard"
+      ],
+      "author_report": "Southern vehicle volumes down 100–400 during peak times; northern volumes increased; Manhattan unchanged; Leonard/Humboldt increased but within street capacity",
+      "what_it_measures": "Vehicles at separate cross-sections, not people or complete trips",
+      "uncertainties": [
+        "Exact count dates",
+        "Peak-hour definitions",
+        "Aggregation weights",
+        "Vehicle classifications",
+        "Variability/standard errors",
+        "Occupancy",
+        "Raw side-street counts"
+      ],
+      "network_aggregation_allowed": false,
+      "reason": "Northern and southern locations are serial sections of the same corridor; summing can double-count vehicles, and no aligned parallel-street counts or boundary accounting is supplied"
+    },
+    {
+      "id": "motor_time_profiles",
+      "source": "cb1_april_2026_with_appendix",
+      "pages": [
+        69,
+        70,
+        71
+      ],
+      "dot_slide_numbers": [
+        34,
+        35,
+        36
+      ],
+      "data_file": "mcguinness-north-time-profiles-digitized.csv",
+      "years": [
+        2021,
+        2023,
+        2025
+      ],
+      "geography": "McGuinness between Green and Freeman, both directions",
+      "window": "Two-week average ATRs counted in October/November",
+      "axis_unit": "Number of vehicles per hour",
+      "extraction": "Illustrative descriptive digitization, not raw observations: 93 vector bars per direction per year; tick labels suggest 15-minute time grid from 00:00 to 23:00; digitized values rounded to nearest 10",
+      "raw_window_semantics": "Unknown whether hourly rolling windows, annualized 15-minute counts, or another smoothing/aggregation; do not sum bars as independent counts",
+      "author_reports": [
+        "Southbound AM volumes lower in 2025 than 2021",
+        "Southbound and PM peak volumes lower in 2023 than 2021",
+        "Southbound PM volumes higher in 2025 than 2023"
+      ],
+      "causal_use": "Time-of-day description and potential exposure checks, not sufficient independent pretrends or a causal daytime-versus-night effect"
+    },
+    {
+      "id": "cycling",
+      "source": "dot_april_2026",
+      "pages": [
+        12
+      ],
+      "data_file": "mcguinness-bicycle-counts-digitized.csv",
+      "geography": "McGuinness at Greenpoint Ave",
+      "years": [
+        2021,
+        2025
+      ],
+      "window": "One hour; date and clock hour not stated",
+      "digitized_approximate_total": {
+        "2021": 23,
+        "2025": 51
+      },
+      "digitized_approximate_street": {
+        "2021": 10,
+        "2025": 51
+      },
+      "digitized_approximate_sidewalk": {
+        "2021": 13,
+        "2025": 0
+      },
+      "limitations": [
+        "Baseline is 2021 rather than motor-count 2023",
+        "Unknown day/weather/clock-hour comparability",
+        "All-bicycle count, not Citi Bike share",
+        "Cannot identify newly induced cycling versus rerouting",
+        "No defensible all-mode sum with the motor charts"
+      ]
+    },
+    {
+      "id": "pulaski_cycle_growth",
+      "source": "dot_april_2026",
+      "pages": [
+        12
+      ],
+      "reported_percent": 11,
+      "reported_crossings_change": 123000,
+      "reported_period": "from 2025 to 2026",
+      "status": "Period ambiguous in an April 2026 presentation; do not treat as full calendar-year comparison or silently change years",
+      "next_step": "Recalculate equal-period counts from raw continuous-counter data and obtain DOT clarification"
+    },
+    {
+      "id": "road_travel_time",
+      "source": "dot_april_2026",
+      "pages": [
+        8
+      ],
+      "provider": "INRIX",
+      "geography": "Whole McGuinness segment Meeker Ave to Pulaski Bridge",
+      "years": [
+        2019,
+        2023,
+        2024,
+        2025
+      ],
+      "window": "October and November, Tuesdays/Wednesdays/Thursdays",
+      "author_report_change_seconds": {
+        "NB_min": 40,
+        "NB_max": 70,
+        "SB_min": 5,
+        "SB_max": 60
+      },
+      "comparison_label": "Longer than previous years after southern installation; not a supplied formal estimate with specified reference year and uncertainty",
+      "limitations": [
+        "Whole-corridor segment time, not southern-only time",
+        "October 2023 overlaps northern installation",
+        "October/November 2024 overlaps southern installation",
+        "INRIX sample size/composition and weighting unknown",
+        "Vehicle travel times not passenger-weighted",
+        "No access, parking, waiting, transfers or complete journey times"
+      ]
+    },
+    {
+      "id": "surrounding_travel_time",
+      "source": "dot_april_2026",
+      "pages": [
+        9
+      ],
+      "appendix_source": "cb1_april_2026_with_appendix",
+      "appendix_pages": [
+        72
+      ],
+      "appendix_slide": 37,
+      "provider": "INRIX",
+      "years": [
+        2019,
+        2023,
+        2024,
+        2025
+      ],
+      "window": "October/November; 2019 missing on some smaller streets, including Humboldt",
+      "studied_corridors": [
+        "Manhattan Ave",
+        "Greenpoint Ave",
+        "11 St Queens",
+        "Apollo St",
+        "Humboldt St",
+        "Kingsland Ave",
+        "Driggs Ave",
+        "BQE",
+        "LIE",
+        "Queens Midtown Tunnel"
+      ],
+      "printed_graphs": [
+        "Manhattan Ave NB Meeker to Freeman",
+        "Humboldt Greenpoint to McGuinness",
+        "Greenpoint Ave WB Kingsland to West St",
+        "BQE Kosciuszko Bridge to Grand"
+      ],
+      "qualification": "Appendix acknowledges some BQE southbound midday travel-time increase, not similarly observed in January/February 2025",
+      "control_role": "Potential diversion outcomes; exclude from an untreated control pool unless spillover exposure can be ruled out"
+    },
+    {
+      "id": "prospective_traffic_forecast",
+      "source": "dot_april_2026",
+      "pages": [
+        21,
+        22
+      ],
+      "status": "Engineering projection, not observed effect",
+      "condition": "30–40% AM/PM peak vehicle-volume reduction would be required to preserve existing level of service after northern lane removal",
+      "other_report": "More than 30% of McGuinness vehicles have neither origin nor destination in Greenpoint; method not supplied",
+      "adaptation": "DOT anticipates initial delay and diversion, with ongoing signal, loading/curb and marking changes"
+    }
+  ],
+  "source_inconsistency": {
+    "summary_claim_pages": [
+      26
+    ],
+    "summary_claim": "Traffic has not shifted to adjacent neighborhood streets",
+    "qualifying_detail_page": 11,
+    "qualifying_detail": "Leonard St and Humboldt St vehicle volumes increased",
+    "interpretation": "Do not repeat the blanket summary as evidence of no diversion; raw counts and a formal comparison are needed to determine magnitude and cause"
+  },
+  "transit_coverage": {
+    "B62": "No passenger counts, load profiles, speed or journey-time series in evaluation",
+    "B48": "No passenger counts, load profiles, speed or journey-time series in evaluation",
+    "G_subway": "No ridership or journey-time series in evaluation",
+    "7_subway": "No ridership or journey-time series in evaluation",
+    "bus_facility": "CB1 PDF p65 / slide30 depicts southbound bus boarding island near Freeman/Pulaski; this is a design element, not a measured bus benefit"
+  },
+  "proposed_causal_design": {
+    "primary_target": "Network/OD-area effect of the implemented redesign package on person throughput and passenger-weighted complete journey time",
+    "2024_design": "Controlled event-study or synthetic comparison using unaffected matched corridors, pretrends and donor exclusion for spillovers; distinguish phases and exclude construction windows",
+    "2026_time_of_day_contrast": "Northern before/after change during former second-lane hours minus overnight change, then subtract the same day/night contrast on external comparison corridors",
+    "why_not_yet_identified": [
+      "Exact treatment completion and sign-hours unknown",
+      "Off-hours receive protection/parking/pedestrian changes even if moving-lane count is stable",
+      "Daytime/nighttime demand and mode shares may have different trends",
+      "Northern/southern sections affect each other",
+      "Continuous before/after raw counts are missing",
+      "Concurrent network, transit and policy changes need adjustment"
+    ],
+    "appropriate_claim_if_successful": "Daytime treatment effect MINUS nighttime treatment effect of the northern redesign package, under parallel changes in the day–night outcome gap relative to comparison corridors. This identifies the daytime effect alone only if the nighttime effect is zero or independently identified.",
+    "inappropriate_claim": "A pure isolated effect of adding a bike lane, or an instrumental-variable estimate using daytime availability as an exclusion-valid instrument",
+    "capacity_vs_realized_flow": "Observed count reductions can reflect rerouting, mode substitution, suppressed trips or timing changes; demonstrate saturated-flow conditions before interpreting counts as road capacity"
+  },
+  "network_aggregation": {
+    "computed": false,
+    "reason": "No aligned common-boundary all-mode counts, occupancies or complete-journey time samples. Counting the same traveler at northern/southern sections or a bike-to-subway transfer twice would inflate totals.",
+    "required_design": "Predefine a common screenline/catchment and count each crossing once, or use person-linked OD journeys. Report local cross-section flow separately from network completed-trip throughput."
+  },
+  "priority_data_requests": [
+    "DOT raw ATR interval files underlying April2026 slide11 and appendix34–36: dates/times, location IDs, directions, interval semantics, vehicle classification, quality/missingness flags, aggregation code; include Leonard, Humboldt, Manhattan and all parallel crossings",
+    "DOT raw bicycle observation sheets underlying slide12: exact day/hour, direction, sidewalk/street, count protocol and weather; obtain aligned motor/bus/walking observations",
+    "DOT/INRIX raw segment travel-time samples and aggregation definitions for main and diversion corridors in 2019 and 2021–2026, exact geometries, sample sizes, vehicle classes and quality fields",
+    "DOT segment-level actual 2023/2024/2026 markings/sign activation dates, as-built weekday/weekend/holiday regulations and signal/curb modification dates",
+    "MTA B62/B48 stop-to-stop APC passenger loads and AVL travel/wait times across the same boundary/time windows; route/service-change histories",
+    "MTA G/7 station-hour entries plus route OD allocation, loads and wait/runtime/transfer distributions; distinguish station entries from screenline passenger flow",
+    "Person-level travel diary or privacy-preserving consenting OD panel linking complete trips and modes, so car-to-subway substitution and door-to-door time are measurable",
+    "Vehicle occupancy samples by class/direction/time and matched traffic saturation/queue indicators; do not assume each vehicle equals one person",
+    "Clarification of the Pulaski 11%/123000 reporting dates and the no-neighborhood-shift summary versus Leonard/Humboldt increases"
+  ],
+  "artifacts": [
+    "mcguinness-apr2026.pdf",
+    "mcguinness-apr2026-with-appendix.pdf",
+    "brooklyncb1-apr2026-minutes-part1.pdf",
+    "mcguinness-sept2024.pdf",
+    "mcguinness-jun2022.pdf",
+    "mcguinness-peak-motor-counts-digitized.csv",
+    "mcguinness-bicycle-counts-digitized.csv",
+    "mcguinness-north-time-profiles-digitized.csv",
+    "extract_mcguinness_2026.py",
+    "mcguinness-source-manifest.json",
+    "mcguinness-reported-travel-time-ranges.csv"
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "retrieved_at": "2026-11-06",
+  "primary_only_for_findings": true,
+  "data_files": {
+    "london_raw_hourly_count_rows": 1368,
+    "london_survey_direction_totals": 114,
+    "manchester_original_tables_extracted": 82,
+    "manchester_selected_csv_tables": 10,
+    "manchester_bus_time_calculations": 12,
+    "manchester_parallel_road_index_rows": 30
+  },
+  "critical_flags": [
+    {
+      "source": "TfL evidence pack p17",
+      "issue": "5x normalized roadspace efficiency is not5x actual carried people",
+      "checked": "1938/1542=1.2568, cycle55.69% of these two facilities"
+    },
+    {
+      "source": "TfL evidence pack p13",
+      "issue": "Table compares modelled to observed times, not pre-to-post",
+      "checked": "Never use its table asbefore/aftercausal change"
+    },
+    {
+      "source": "FOI-1339-2021",
+      "issue": "Response references tables for5% calculation andbusloadmethods; attachments notexposed inretrievedHTML; executor403",
+      "checked": "5% notindependently reproduced,18%capacitynotobserved"
+    },
+    {
+      "source": "DfTcount6751",
+      "issue": "2015-2024extrapolatedfrom2014;2016treatmentnotmeasuredbynewcount",
+      "checked": "APIqualityflag retained"
+    },
+    {
+      "source": "DfTcount56614",
+      "issue": "2012-2015extrapolatedfrom2011 then2016freshcount",
+      "checked": "Avoidfalsebikegrowthfrommethodrefresh"
+    },
+    {
+      "source": "DfTcounts56614,73304,75396",
+      "issue": "IdenticalAADFseries acrossadjacentlinks",
+      "checked": "Not independentreplicates"
+    },
+    {
+      "source": "DfTcount58306",
+      "issue": "2018rawcyclecount1 vs2258in2014 suggests separatedtrackcoverageorcountqualityproblem",
+      "checked": "Do not interpretasbikecollapsedwithoutgeometricaudit"
+    },
+    {
+      "source": "ManchesterTable4.10",
+      "issue": "PMpublished\u221220%disagreeswith40:38\u219229:25",
+      "checked": "Independentcalculation\u221227.6046%; rawtimespreserved"
+    },
+    {
+      "source": "ManchesterTable5.13",
+      "issue": "PMpooledcomparatorindicesidenticalinbothdirections",
+      "checked": "Preservedsource;rawGPSpanelnotavailabletoaudit"
+    },
+    {
+      "source": "ManchesterTables5.9\u20135.11",
+      "issue": "Sitecountsumdoublecountstravellers;parallelcyclebaselineseasonsdifferent",
+      "checked": "Noall-siteuniquepersonclaim"
+    },
+    {
+      "source": "Bhuyan2021",
+      "issue": "Causalstudyistreatment2007-2014earlybarrierfreeroutes,not2016protectedlaneremoval",
+      "checked": "Methodprecedentonly"
+    }
+  ],
+  "source_index": [
+    {
+      "name": "TfL2017segregatedcyclinginfrastructureevidencepack",
+      "url": "https://content.tfl.gov.uk/segregated-cycling-infrastructure-evidence-pack.pdf",
+      "locator": "PDFpages12\u201313journeytimes;16\u201317capacityandpeople",
+      "retrieval": "WebtoolfullPDFtextandpage17visible;directexecutordownload403"
+    },
+    {
+      "name": "TfLFOI1339",
+      "url": "https://tfl.gov.uk/corporate/transparency/freedom-of-information/foi-request-detail?referenceId=FOI-1339-2021",
+      "locator": "Answerpublished3November2020",
+      "retrieval": "Webtext;referencedattachmentsnotretrieved"
+    },
+    {
+      "name": "TfLNorthSouthproposal",
+      "url": "https://content.tfl.gov.uk/board-20150204-part-1-item-07d-propose-csh-appx2-ns.pdf",
+      "locator": "PDFp2roadlanereplacement;textandmapPDFp4",
+      "retrieval": "Webtext+mapimagescreenshotinspected"
+    },
+    {
+      "name": "TfLparliamentaryevidence",
+      "url": "https://committees.parliament.uk/writtenevidence/77255/html/",
+      "locator": "paras5.6\u20135.8",
+      "retrieval": "Webtext;18%capacityclaimseparatefromobserved5%"
+    },
+    {
+      "name": "ManchesterTfGMfinalevaluationMay2025",
+      "url": "https://assets.ctfassets.net/nv7y93idf4jq/55vJ8zHHCDR7dnj7oyuSbe/7cdba94ff01594bb1ac4ccadde2721ca/Bus_Priority_Programme_-_final_evaluation_full_report.docx",
+      "locator": "Tables4.6,4.8\u20134.10,5.8\u20135.13;sections5.4\u20135.9,7.1",
+      "retrieval": "FulloriginalDOCXdownloaded;82tablesextractedfromXML;tableIDsarestablelocators,paginationnotverified"
+    },
+    {
+      "name": "DfTtrafficAPI",
+      "url": "https://roadtraffic.dft.gov.uk/api-documentation",
+      "locator": "GETapi/raw-countsfilter[count_point_id];GETapi/average-annual-daily-flow",
+      "retrieval": "RawJSONdownloadedfor5manualcountpointsand4AADFlinks"
+    },
+    {
+      "name": "Bhuyanetal2021",
+      "url": "https://arxiv.org/pdf/2003.08993",
+      "locator": "Tables11and12;publishedDOI10.1214/21-AOAS1450",
+      "retrieval": "FullPDFdownloaded,textretained"
+    }
+  ]
+}

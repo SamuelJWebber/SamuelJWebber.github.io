@@ -1,0 +1,30 @@
+MTA passenger-time supplement
+
+Sum published total_apt and total_att over disjoint month/line/period rows, divided by summed num_passengers for the average.
+Within the same line/month/period cells present in every selected year, weight each year’s APT and ATT means by the corresponding 2019 num_passengers, and divide by total 2019 weights.
+
+These are model-derived time differences from scheduled service for unlinked train legs, not directly observed individual journey durations or door-to-door travel time.
+
+The selection contains whole lines that serve Brooklyn. It does not isolate riders, trips or time spent in Brooklyn, and it is not every Brooklyn-serving line.
+
+A person transferring between selected lines contributes multiple legs. Aggregate minutes are the modeled extra time on those legs; represented legs are not unique people or complete linked journeys.
+
+total_apt and total_att already contain passenger weighting. Do not multiply them by passenger counts again or add this layer to runtime/OD-derived minutes.
+
+Coverage is weekdays 06:00–23:00 only. Peak combines 07:00–10:00 and 16:00–19:00; offpeak is the remaining covered weekday hours. These windows differ from the end-to-end runtime dataset.
+
+Additional times can be negative; retain signed totals. They measure net time relative to the contemporary timetable, not gross delay, total travel time, or a constant 2019 schedule.
+
+Faster or slower scheduled service can change the metric. Fixed 2019 weights hold the line/month/period passenger mix constant but do not hold OD, schedule, train assignment or measurement technology constant.
+
+In September 2024 MTA introduced a revised pipeline, including data-source and schedule fixes; scheduled-hold handling alone increased ATT about two seconds in MTA assessment. Pre/post values are not perfectly methodologically identical.
+
+In November 2023 MTA lengthened fare-card trip matching; prior customer metrics were not revised. Fare-evasion scaling, representative OD models and data-exclusion rules also affect represented volumes.
+
+Monthly totals vary with modeled demand and number of weekdays as well as service. Same calendar months reduce seasonality but do not equalize weekday counts, holidays, disruptions or other confounders.
+
+No causal lane-conversion effect, mode switching, or corridor-specific net benefit can be identified from these comparisons.
+
+Source: https://data.ny.gov/d/r7qk-6tcy
+Overview: https://data.ny.gov/api/views/r7qk-6tcy/files/6df4aa7f-70eb-4e44-b1ce-bc4a1ad3379a?download=true&filename=MTA_SubwayCustomerJourneyFocusedMetrics_Overview.pdf
+Dictionary: https://data.ny.gov/api/views/r7qk-6tcy/files/b916d86e-edb6-4c4c-90a2-d392ce54236b?download=true&filename=MTA_SubwayCustomerJourneyFocusedMetrics_DataDictionary.pdf

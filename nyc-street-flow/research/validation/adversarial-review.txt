@@ -1,0 +1,80 @@
+NYC STREET FLOW — INDEPENDENT REVIEW OF THE DASHBOARD EXPANSION
+Review date: November 5, 2026
+
+RESULT
+The released arithmetic audited here reconciles. No reviewed calculation
+establishes a causal all-mode effect of a bike-lane conversion. That scientific
+limit remains visible in the dashboard; arithmetic validation is not causal
+validation. Browser and visual checks are documented separately by the site owner.
+
+INDEPENDENT CHECKS
+1. Recomputed 1,008 McGuinness directional and hourly estimates from 5,404
+   released source direction-day rows. The separate pandas implementation
+   reconstructs common dates, quality exclusions, matching and equal cell weights.
+   Nine numeric fields per comparison reconcile; maximum absolute discrepancy
+   is 1.46e-11, consistent with floating-point summation.
+2. Recomputed the PPW survey distributions from raw observations using NumPy:
+   64 per-day groups and 32 pooled-wave groups. Counts, means, medians, quartiles,
+   P90, minima and maxima reconcile. These are descriptive survey quantiles,
+   not confidence intervals or estimates of long-run commute reliability.
+3. Checked all 20 possible mode-switch directions, 500 reproducibly generated
+   weighted cohorts, no-change and invalid-input cases. The journey calculator
+   conserves travelers and reconciles weighted totals and means without counting
+   switchers twice. It is a hypothetical fixed-cohort calculation, not throughput.
+4. Checked PPW passenger and occupancy reversal identities across both periods,
+   all three motor baselines and multiple occupancy and passenger assumptions.
+   Default conditional ranges reconcile: AM -71.57 to +142.43 people/hour;
+   PM -39.67 to +86.43 people/hour. These are neither empirical hard bounds nor
+   causal confidence intervals.
+5. Reviewed the geographical and editorial separation of bridge vs approach
+   counter, observed segments vs complete journeys, distant donors vs local
+   diversion routes, and measured inputs vs modeled totals and missing outcomes.
+
+ISSUES CORRECTED DURING REVIEW
+- The legacy PPW uniform-occupancy result is now labeled a scenario. The project
+  overview uses the bus-adjusted range and links directly to its assumptions.
+- Similar-looking Third Avenue time estimates now link to the longer fixed-mix
+  comparison, rather than appearing as independent confirmations.
+- Occupied journey groups require positive complete time. Missing/blank inputs
+  cannot silently become zero travel time.
+- A uniform car-time reduction that would require negative travel time is marked
+  infeasible. Inactive zero-time alternatives do not crash the frontier; they are
+  omitted with a reason until their hypothetical times are supplied.
+- JSON scenario exports omit the CSV-oriented byte-order mark so strict JSON
+  readers can parse the file.
+- Reversal-calculator assumptions are preserved in shareable view parameters.
+  Nonfinite results and invalid bus-run inputs are rejected.
+- Pulaski timing language no longer treats a September 2015 public update as
+  proof that all earlier months were free of preparatory work. The earlier
+  Jan–Feb check is shown with its short and incomplete support; the broader
+  earlier comparison remains a sensitivity.
+
+UNRESOLVED SCIENTIFIC LIMITS
+- McGuinness station 021284 is not a Pulaski Bridge passenger counter. Its counts
+  do not measure speed, capacity, vehicle occupancy, or total network travelers.
+  Permanent lane-closure timing and detector continuity still require confirmation.
+- The directional donor roads are in the Bronx, not demonstrated untreated
+  equivalents. Lower observed traffic may reflect demand, diversion, switching,
+  suppressed journeys or detector changes. Northbound is not assumed untreated.
+- PPW has two weekday survey dates per wave; the bus reroute and other street
+  changes affect its comparison roads. Modal count dates and locations differ.
+- Third Avenue is a bundled redesign. Its pre-period divergence and incomplete
+  passenger/whole-journey evidence prevent a bike-lane-only causal claim.
+- The fixed-cohort time tool deliberately holds traveler count and composition
+  fixed. New or forgone trips need separate reporting; minimizing total travel
+  minutes alone is not a complete welfare or accessibility objective.
+- Source coverage, raw counts, model choices and scenario assumptions are distinct
+  sources of uncertainty. Neither the number of rows nor the number of favorable
+  specifications is a probability that a policy works.
+
+REPRODUCE THESE CHECKS
+python independent_data_audit.py
+  Requires pandas and NumPy. Uses files in ../directional, ../estimate-lab and
+  ../causal. Its JSON result records input hashes.
+node independent_math_audit.mjs
+  Requires Node.js and the released dashboard modules. Uses no browser or network.
+
+Outputs: independent-data-audit.json; independent-math-audit.json.
+These scripts independently check arithmetic rather than importing the data
+producer functions. The calculator audit imports the public pure calculation
+functions and checks them against separate sums and accounting identities.

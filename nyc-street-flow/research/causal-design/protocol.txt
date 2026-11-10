@@ -1,0 +1,84 @@
+NYC STREET FLOW — TARGET TRIAL AND RETROSPECTIVE EMULATION
+Prepared 5 November 2026 | Samuel Webber
+Status: design specification and verified availability audit, not a new causal estimate.
+This is a retrospective protocol: published post-treatment results have already been examined. It is not a preregistration written before seeing outcomes.
+
+1. THE QUESTION AND THE COMPARISON
+
+For eligible NYC corridor networks, what changes if an approved redesign that removes a motor-vehicle moving lane is implemented now rather than delayed for 12 months? The comparison is the same network in the same calendar period without that redesign. The policy effect includes rerouting, changes in departure time, mode switching, induced demand and foregone travel. Unless component assignment can genuinely be separated, the treatment is the entire redesign package: bike protection, vehicle lanes, parking/loading, pedestrian islands and signal changes.
+
+Three primary outcomes must remain distinct:
+(A) Directional person-crossing events per hour over a fixed, GIS-audited network screenline, with motor occupancy, bicycle/walking counts and transit passengers on the actual crossing links. Count parallel edges at one cut; never add serial counts. This is realized throughput, not unique people or maximum capacity.
+(B) Complete elapsed travel time for a fixed baseline distribution of origin, destination, purpose and departure window. Include access, vehicle/bike search, waiting, travel, transfers, parking/docking and egress. Allow route and mode to change. Report travel times and unserved/canceled/foregone travel needs jointly rather than assigning a failed journey zero minutes.
+(C) Total travel minutes per baseline population member-day, alongside completed trips and achieved activities. Include people who switch modes or stop making a trip in follow-up. A reduction in minutes caused by losing access to work or school is not a mobility success.
+
+Capacity is a separate secondary question requiring comparable arrival demand, queue/backlog and discharge measurements under saturation. A count decline can arise without a decline in capacity; a higher count can simply reflect higher demand.
+
+2. THE IDEAL EXPERIMENT
+
+Recruit multiple engineering-approved, funded, ready-to-build projects that verifiably remove a moving lane. Define corridor NETWORK clusters using pre-policy route substitution and queue propagation, not administrative street names. Pair or stratify clusters on baseline demand, transit service, network connectivity, occupancy, existing bike access and seasonal patterns. Randomly assign one of each pair to immediate implementation and the other to a common 12-month delayed start. All projects ultimately proceed. Randomization must be acceptable to the city and preserve safety obligations; it is a proposed experiment, not something this dashboard has conducted.
+
+Measure both arms simultaneously, before and after, including external effects. With cross-cluster spillovers, enlarge/partition the clusters or use a separately justified exposure/saturation design. Report local and wider-network estimands separately. Log actual implementation and adherence. Analyze the assigned policy (intention to treat), including construction disruption and later adaptation; show construction and mature-operation effects separately.
+
+Continuous, synchronized measurements: vehicle classification/volume/queues; occupancy sampling; all-bike and walking counts; bus/rail on-board loads at the boundary; journey-time distributions. Recruit a probability-based or calibrated baseline traveler/population panel with diaries or consenting GPS and follow mode changes and attrition. Add a fixed OD/purpose/departure trip menu to compare travel opportunities consistently. Do not recruit only current cyclists, current drivers, successful ride-hail trips or people who still commute after treatment.
+
+Select the number of independent networks using baseline covariance, plausible effect sizes, clustering, missingness and desired precision. Thousands of rides within one network do not create thousands of randomized policy units. Simulate power and minimum detectable effects rather than declaring an unsupported fixed sample-size target.
+
+3. THE BEST OBSERVATIONAL EMULATION
+
+The highest-value new administrative data are the universe of eligible/approved/ready projects, planned and actual work dates, and contemporaneously documented reasons for delay. These create a candidate comparison queue. They do NOT automatically establish as-if random timing. Check whether anticipated demand, collisions, political pressure, utility works, funding, staffing, transit works or contractor priorities explain the sequence. Weather and political intervention are not automatically valid instruments.
+
+For multiple genuinely comparable conversions with adequate support, estimate cohort-by-time effects with untreated or not-yet-treated, unexposed network controls. Avoid a naive two-way-fixed-effect regression that uses already-treated corridors as controls. For a single suitable case, use an external synthetic/comparison network trained only on the pre-period, reserve pre-period blocks for forecasting validation, and report the identifying assumptions plainly.
+
+Freeze eligibility, geometry, outcomes, construction exclusion/transition rules, donors, weight construction, missing-data rules and policy-relevant thresholds before the next fitted outcome analysis. Use same-calendar contrasts. Weather, holidays and genuinely external service/construction changes may help adjustment. Do NOT adjust the total-effect model for post-policy mode share, route, traffic volume or other mediators.
+
+Check event-time pre-patterns and held-out prediction; donor and window influence; leave-one-donor-out; plausible larger network boundaries; negative-control locations and placebo dates; differential trend and spillover sensitivity. A nonsignificant pretrend test or good pre-fit does not prove the counterfactual. Choose sensitivity deviations using transportation knowledge rather than selecting the smallest range that preserves a desired answer. Account for temporal correlation and the limited number of treated networks. Permutation/placebo inference is conditional on the donor-exchangeability argument.
+
+4. IMMEDIATE PILOT: McGUINNESS SOUTH, LATE 2024
+
+The southern Calyer–Meeker project is a verified moving-lane reduction to one lane in each direction with parking-protected bike lanes and other changes. Official November 2, 2024 notice reports preparation the preceding week and major roadway reconfiguration scheduled November 4. Exact block activation and completion dates are not verified. The October/November 2024 average is therefore not a clean pre-period. Earlier northern installation in October 2023, summer 2024 Freeman crossing work, 2025 punch-list work and later connections also need exposure coding.
+
+Start by measuring mode-specific effects on a fixed geography. For HVFHV, use pre-policy OD-zone × departure-day/hour × provider composition as a standardization distribution; explicitly report cells that lose support and quantity/composition changes. Zones 112 (Greenpoint), 145 (LIC/Hunters Point) and 146 (LIC/Queens Plaza) provide a public feasibility sample, not a certified McGuinness route sample. Do not select on the actual post-policy route: rerouting is an outcome. Request-to-dropoff includes observed waiting and the occupied ride; it omits access/egress and canceled/unmatched requests. Public data do not identify passenger occupancy. Do not call it all-population commute time.
+
+Construct external donor networks from baseline geography and travel demand, then certify their own treatment/service calendars and spillover exposure. McGuinness north, Leonard, Humboldt and other likely alternatives are outcomes, not default controls. Queens Boulevard changed in the same autumn and shares parts of the wider approach network; it is a possible separate replication, not an untreated McGuinness comparator.
+
+Potential concurrent shocks include NYC congestion pricing, G-train construction/service, the Queens bus network redesign, other bicycle/road projects, Citi Bike expansion, weather and changes in ride-hail demand. Establish actual dates and exposure from primary records before using them in a model. A citywide date effect will not remove a shock with different exposure across corridors; it can also subtract network-wide policy benefits when controls themselves receive those benefits.
+
+Use actual raw ATR observations and all-bike counts only where dates, time windows, direction and boundary match. Public annual map timestamps are not count dates. The previously used NYSDOT 021284 series does not currently provide a verified continuous modern baseline: the 2022 Region 11 continuous-count archive omits it, and its 2024 map record points back to a 2021 count. Check newer short-count records separately; never silently interpolate a continuous series across this gap.
+
+The April 2026 DOT deck provides a useful descriptive audit: motor counts compare two unspecified fall midweek weeks in 2023 and 2025; bicycle chart compares an unspecified hour in 2021 with 2025; travel-time plots use October/November midweek periods. The expanded CB1 appendix contains northern time-of-day profiles. These are different observation designs and cannot be summed into one person-flow effect. Digitized graph values are approximate source-chart reconstructions, not raw observations, and cannot supply sampling uncertainty. The northern profile bars have unverified rolling-window semantics and MUST NOT be summed.
+
+5. SEPARATE REPLICATION: McGUINNESS NORTH, 2026
+
+The northern bikeway already existed. The 2026 project removes the second daytime vehicle lane while changing bike protection/width, parking/loading, pedestrian islands and turning arrangements. A contemporaneous September 21, 2023 DOT report, attached to the October 11 CB1 minutes, describes two vehicle lanes 07:00–19:00 and one overnight. Historical sign schedules, weekends/holidays, actual use and 2026 operational completion still need verification.
+
+A before/after day-minus-night contrast, less the same contrast in external controls, estimates DAYTIME POLICY EFFECT MINUS NIGHTTIME POLICY EFFECT under a parallel-changes-in-gaps assumption. It is not the daytime effect unless nighttime's effect is zero or independently identified; overnight protection, parking, enforcement, queues and demand can change too. It is not the all-day total or an isolated bike-lane component. Treat clock-time discontinuities and this triple difference as secondary diagnostics, not a magic natural experiment.
+
+6. WHAT PUBLIC DATA CAN AND CANNOT REPLACE
+
+Citi Bike trip endpoints/timestamps identify dock-to-dock OD activity, not actual routes, private bicycles or complete journeys. Convert Citi Bike road crossings to all-bike crossings only using a measured share at the SAME crossing/time; station starts divided by a citywide share are invalid. GBFS availability shows current bikes/docks and can support a prospectively collected access measure, but a current feed does not backfill missing historical empty/full periods.
+
+MTA bus boarding estimates and subway station entries can reveal changes in demand. They are not on-board passengers crossing the chosen screenline. Inferred subway OD needs route allocation, transfers and uncertainty; stop boardings need alighting/load reconstruction or APC. Segment runtimes omit waiting/access/egress. Individual car-to-subway identities are not necessary to identify the total policy effect under credible assignment and complete aggregate outcomes; they are useful for mechanism claims.
+
+NYMTC Hub Bound reports can anchor person/vehicle and transit volumes at appropriate Manhattan boundaries. Annual representative survey days do not provide continuous daily measurements at McGuinness. CMS travel diaries can inform population distributions; the 2024 wave predates southern construction and public regions are too coarse for a local repeated panel. ACS/LODES supply baseline commuter context, not daily complete-travel outcomes. Commercial probe data can improve road timing but cannot by themselves supply all-person flow or causal assignment.
+
+Where only some modes are measured, publish the measured-part estimate and the omitted-mode effect needed to reverse its sign. If total effect = observed-mode effect + missing-mode effect, a positive observed sum becomes a positive total only if the missing effect exceeds minus the observed sum. Combine sampling, counterfactual and measurement uncertainty. Do not call a partial sum a lower bound without a defensible lower bound for every missing component.
+
+7. ACCEPTANCE RULES
+
+Treatment fidelity: verified active dates, geometry, operating hours and co-treatments.
+Observation support: repeated matched treated/donor observations; documented sensor and missingness changes.
+Assignment credibility: reason for timing, external controls beyond spillovers, plausible counterfactual and held-out pre-period performance.
+Robustness: policy-relevant magnitude evaluated against predeclared donor, window, boundary and trend-sensitivity analyses; unstable direction reported honestly.
+All-mode flow: matched screenline/time, motor occupancy and transit loads, or justified bounds preserving the sign.
+Complete journeys: fixed baseline population/menu, all journey components and unserved travel handled.
+Capacity: comparable demand and queues/discharges under saturation.
+Generalization: more than one corridor, or an explicit restricted transportability argument.
+
+A failure of the all-mode gate does not invalidate a properly identified narrower outcome. Conversely, perfect measurement does not fix endogenous assignment. The present project has not established a valid natural experiment or a total causal benefit/harm.
+
+8. REPRODUCIBILITY AND NEXT ACQUISITIONS
+
+See design.json for the dashboard contract; data-map.json for detailed availability; candidates.json for geometry/timing provenance; methods.json for primary methods and similar studies; mcguinness-2026-evaluation.json for the source audit; tlc-feasibility-summary.json for actual API queries and record checks; and reproduction.zip for snapshots/scripts. The TLC audit is a coverage test only: 2023 and 2024 May 1–7 have different weekday composition and are not compared as effects.
+
+New requests are specified in acquisition-brief.txt. They have NOT been sent. Existing DOT/NYSDOT requests and the prepared MTA request retain their separate statuses. No new account, credential, fee or agency communication is implied by this protocol.

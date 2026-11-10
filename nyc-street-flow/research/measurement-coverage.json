@@ -1,0 +1,90 @@
+[
+  {
+    "measure": "Bicycle crossings",
+    "source": "NYC DOT automatic counts",
+    "url": "https://data.cityofnewyork.us/Transportation/Bicycle-and-Pedestrian-Counts/ct66-47at",
+    "resolution": "15 minutes; directional sensor flows",
+    "usable": "Bridge cycling time series after sensor identity and completeness checks",
+    "gap": "Sensor relocation/calibration; bike brand not identified; adjacent bridge diversion"
+  },
+  {
+    "measure": "Motor traffic",
+    "source": "NYC DOT Automated Traffic Volume Counts",
+    "url": "https://data.cityofnewyork.us/Transportation/Automated-Traffic-Volume-Counts/7ym2-wayt",
+    "resolution": "15-minute sample counts; not continuous",
+    "usable": "Expanded explicit-name audit: Brooklyn Bridge automated counts in 2009, 2010, 2012, 2013, 2016, 2020, 2022 and 2025; classification snapshots in 2016, 2019 and 2024",
+    "gap": "No aligned June 2021/2022 rows in the extracted bridge series; no occupancy. Named-record coverage is not an exhaustive spatial search or a validity certificate."
+  },
+  {
+    "measure": "Motor occupants and bus passengers",
+    "source": "NYMTC Hub Bound",
+    "url": "https://www.nymtc.org/hub-bound-travel",
+    "resolution": "Annual representative fall weekday, hourly mode-specific profiles",
+    "usable": "Long-run sector context and partial avenue comparisons",
+    "gap": "Modes need not share survey dates; cannot substitute for daily matched measurement"
+  },
+  {
+    "measure": "Pedestrians",
+    "source": "NYC DOT biannual pedestrian counts",
+    "url": "https://data.cityofnewyork.us/Transportation/Bi-Annual-Pedestrian-Counts/cqsj-cfgu",
+    "resolution": "Selected spring/fall survey dates, peak periods",
+    "usable": "Bridge walking context at the published periods",
+    "gap": "Sparse days; not synchronized with June bike sample or all motor/transit surveys"
+  },
+  {
+    "measure": "Subway trips",
+    "source": "MTA OD estimates2021/2022",
+    "url": "https://data.ny.gov/d/rapa-97zv",
+    "resolution": "Month \u00d7 weekday \u00d7 departure hour \u00d7 station-complex pair",
+    "usable": "Same-month borough-pair subway demand; full2021\u201322 monthly panels",
+    "gap": "Inferred destinations, no actual route, exact day, total travel time or prior mode; cannot sum with bridge counts as synchronized evidence"
+  },
+  {
+    "measure": "Bicycle trip time",
+    "source": "Citi Bike trip histories",
+    "url": "https://citibikenyc.com/system-data",
+    "resolution": "Trip timestamps and docking stations",
+    "usable": "Compare fixed OD, hour, member status and bicycle type",
+    "gap": "No actual route; rental duration may contain stops; excludes access/egress and personal bikes"
+  },
+  {
+    "measure": "Bus trip time",
+    "source": "MTA bus timepoints",
+    "url": "https://data.ny.gov/d/58t6-89vi",
+    "resolution": "Monthly average actual segment time by day type and hour, with bus trip counts",
+    "usable": "Comparable bus in-vehicle travel time",
+    "gap": "No complete passenger journey, access/wait/transfers or point-specific passenger loads"
+  },
+  {
+    "measure": "Local Citi Bike share",
+    "source": "DCP classified counts + published local field studies",
+    "url": "https://data.cityofnewyork.us/d/qfs9-xn8t",
+    "resolution": "DCP fall/year/location/day-type samples, 2013\u20132015; exact within-day windows absent",
+    "usable": "57 positive-bicycle-denominator DCP records at 15 sites, including six zero Citi Bike counts",
+    "gap": "Historical local shares vary; no current universal multiplier or aligned project before/after calibration; dock OD does not reveal route"
+  },
+  {
+    "measure": "All-mode door-to-door minutes",
+    "source": "NYC DOT Citywide Mobility Survey 2024 + repeat panel still required",
+    "url": "https://data.cityofnewyork.us/d/wgnh-qwsg",
+    "resolution": "Linked resident-adult journey and observed elapsed time",
+    "usable": "74,935 weighted linked journeys across purposes; main-mode shares and explicit missing-time scenarios",
+    "gap": "Unknown access/egress time in many transit journeys; independent estimator does not exactly replicate DOT headline; no repeated traveler outcome across lane opening"
+  },
+  {
+    "measure": "Subway actual runtime",
+    "source": "MTA end-to-end runtime, paths and stations",
+    "url": "https://data.ny.gov/d/sp9g-mzjh",
+    "resolution": "Month \u00d7 exact full train path \u00d7 direction \u00d7 departure period",
+    "usable": "Fixed-path, fixed-weight two-year comparisons and a separate common five-year basket",
+    "gap": "Full train path rather than passenger journey; filtered observations, incomplete capture and methodological changes"
+  },
+  {
+    "measure": "Subway extra passenger-minutes",
+    "source": "MTA customer journey focused metrics",
+    "url": "https://data.ny.gov/d/r7qk-6tcy",
+    "resolution": "Monthly whole-line and period modeled additional platform/train time",
+    "usable": "Published passenger-weighted totals and fixed-2019-mix per-leg means",
+    "gap": "Unlinked legs, changing contemporary schedule, pre/post methodology changes; not total journey time or bike-lane effect"
+  }
+]

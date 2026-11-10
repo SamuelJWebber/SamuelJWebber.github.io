@@ -1,0 +1,9 @@
+window,metric,paired_days,baseline_candidate_start,baseline_candidate_end,pair_offset_days,before_daily_mean,after_daily_mean,change_daily_mean,change_pct,interpretation
+all_modes_14_day_pairs,total_bicycles,6,2009-06-30,2009-07-09,14,3713.6666666666665,5527.666666666667,1814.0000000000005,48.84660263890137,same-weekday complete-pair descriptive comparison; not causal; not all-person flow
+all_modes_14_day_pairs,total_pedestrians,6,2009-06-30,2009-07-09,14,2362.3333333333335,2647.8333333333335,285.5,12.085508677860869,same-weekday complete-pair descriptive comparison; not causal; not all-person flow
+all_modes_14_day_pairs,total_vehicles,6,2009-06-30,2009-07-09,14,65127.333333333336,65114.333333333336,-13.0,-0.019960897114368326,same-weekday complete-pair descriptive comparison; not causal; not all-person flow
+bike_vehicle_28_day_pairs,total_bicycles,11,2009-06-16,2009-07-09,28,3665.7272727272725,5286.727272727273,1621.0000000000005,44.2204201076309,same-weekday complete-pair descriptive comparison; not causal; not all-person flow
+bike_vehicle_28_day_pairs,total_vehicles,11,2009-06-16,2009-07-09,28,64073.545454545456,63821.90909090909,-251.6363636363676,-0.3927305128056058,same-weekday complete-pair descriptive comparison; not causal; not all-person flow
+immediate_four_weekdays_sensitivity,total_bicycles,4,2009-07-06,2009-07-09,7,2843.5,5931,3087.5,108.58097415157376,same-weekday complete-pair descriptive comparison; not causal; not all-person flow
+immediate_four_weekdays_sensitivity,total_pedestrians,4,2009-07-06,2009-07-09,7,2058.25,2835.5,777.25,37.76266245596989,same-weekday complete-pair descriptive comparison; not causal; not all-person flow
+immediate_four_weekdays_sensitivity,total_vehicles,4,2009-07-06,2009-07-09,7,65845.25,62223,-3622.25,-5.5011561198416,same-weekday complete-pair descriptive comparison; not causal; not all-person flow

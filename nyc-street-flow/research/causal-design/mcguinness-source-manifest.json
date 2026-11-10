@@ -1,0 +1,37 @@
+[
+  {
+    "file": "mcguinness-apr2026.pdf",
+    "url": "https://www.nyc.gov/html/dot/downloads/pdf/mcguinness-blvd-calyer-st-freeman-st-apr2026.pdf",
+    "sha256": "20cf7e8ca7ac8a8f7114dbd900bca7b40839e0e6dd5d14a5792e7dccf6fd503e",
+    "bytes": 5823398,
+    "pages": 28
+  },
+  {
+    "file": "brooklyncb1-apr2026-minutes-part1.pdf",
+    "url": "https://www.nyc.gov/assets/brooklyncb1/downloads/pdf/meeting-minutes/Combined-Public-Hearing-Board-Meeting-Minutes-04-14-26-Part-1.pdf",
+    "sha256": "cfaab8e970d5602c8fec9ec1a2e4f3797525e69284bd2c40c1fd81abad4ef161",
+    "bytes": 21218190,
+    "pages": 144
+  },
+  {
+    "file": "mcguinness-sept2024.pdf",
+    "url": "https://www.nyc.gov/html/dot/downloads/pdf/mcguinness-blvd-update-sept2024.pdf",
+    "sha256": "bc97ced0493b6f061043596c0f148d2f192d1df8fa0ab66463d0814765becebf",
+    "bytes": 2833186,
+    "pages": 8
+  },
+  {
+    "file": "mcguinness-jun2022.pdf",
+    "url": "https://www.nyc.gov/html/dot/downloads/pdf/mcguinness-blvd-complete-street-jun2022.pdf",
+    "sha256": "be93553aa569efde56294662d023255544cd8d2f8711857d84a3ad825cae1909",
+    "bytes": 8928520,
+    "pages": 29
+  },
+  {
+    "file": "cb1-oct11-2023-minutes.pdf",
+    "url": "https://www.nyc.gov/assets/brooklyncb1/downloads/pdf/meeting-minutes/Combined-Public-Hearing-and-Board-Meeting-Minutes-10-11-2023.pdf",
+    "sha256": "70816f4a95f1bb6547e6f8856b04dec102eee919ce37f26537a7064842cd81f4",
+    "bytes": 33101854,
+    "pages": 206
+  }
+]

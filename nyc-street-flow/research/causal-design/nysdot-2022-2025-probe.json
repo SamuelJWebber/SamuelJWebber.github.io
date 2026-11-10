@@ -1,0 +1,36 @@
+[
+  {
+    "year": 2022,
+    "url": "https://www.dot.ny.gov/divisions/engineering/technical-services/highway-data-services/hdsb/repository/CC_Volume_Data_R11_2022.zip",
+    "status": 200,
+    "bytes": 839791,
+    "type": "application/zip",
+    "files": [
+      "CC_Volume_Data_R11_2022.xlsx"
+    ],
+    "error": "new-line character seen in unquoted field - do you need to open the file with newline=''?",
+    "kind": "Error",
+    "seconds": 6.7
+  },
+  {
+    "year": 2023,
+    "url": "https://www.dot.ny.gov/divisions/engineering/technical-services/highway-data-services/hdsb/repository/CC_Volume_Data_R11_2023.zip",
+    "error": "HTTP Error 406: Not Acceptable",
+    "kind": "HTTPError",
+    "seconds": 10.41
+  },
+  {
+    "year": 2024,
+    "url": "https://www.dot.ny.gov/divisions/engineering/technical-services/highway-data-services/hdsb/repository/CC_Volume_Data_R11_2024.zip",
+    "error": "HTTP Error 406: Not Acceptable",
+    "kind": "HTTPError",
+    "seconds": 10.41
+  },
+  {
+    "year": 2025,
+    "url": "https://www.dot.ny.gov/divisions/engineering/technical-services/highway-data-services/hdsb/repository/CC_Volume_Data_R11_2025.zip",
+    "error": "HTTP Error 406: Not Acceptable",
+    "kind": "HTTPError",
+    "seconds": 10.4
+  }
+]

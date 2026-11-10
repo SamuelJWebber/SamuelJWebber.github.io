@@ -1,0 +1,57 @@
+{
+  "berlin-readme.txt": {
+    "url": "https://mdhopendata.blob.core.windows.net/verkehrsdetektion/ReadMe.txt",
+    "bytes": 4704,
+    "sha256": "51be6b4a50dc31ff005d71274d404b07d58a25077b4142589ea1eb6f1c7458af"
+  },
+  "berlin-station-metadata.xlsx": {
+    "url": "https://mdhopendata.blob.core.windows.net/verkehrsdetektion/Stammdaten_Verkehrsdetektion_2022_07_20.xlsx",
+    "bytes": 71969,
+    "sha256": "e26bfd05349f8feb215c61f4f12cd8db7650f4b727b28e7ee005c1c96f44daa7"
+  },
+  "mq_hr_2019_02.csv.gz": {
+    "url": "https://mdhopendata.blob.core.windows.net/verkehrsdetektion/2019/alte_qualitaetssicherung/Messquerschnitte/mq_hr_2019_02.csv.gz",
+    "bytes": 1911077,
+    "sha256": "05f0f75efdc935ab639566ac76424d4c979c27e0387a8404695e7907af4e9796"
+  },
+  "mq_hr_2019_07.csv.gz": {
+    "url": "https://mdhopendata.blob.core.windows.net/verkehrsdetektion/2019/alte_qualitaetssicherung/Messquerschnitte/mq_hr_2019_07.csv.gz",
+    "bytes": 1993127,
+    "sha256": "543009fbe5b3fa2ef62f6b64ada170e5398021e34dfbf46bddd0c2f443945b06"
+  },
+  "mq_hr_2020_02.csv.gz": {
+    "url": "https://mdhopendata.blob.core.windows.net/verkehrsdetektion/2020/alte_qualitaetssicherung/Messquerschnitte/mq_hr_2020_02.csv.gz",
+    "bytes": 1950907,
+    "sha256": "fcee2f98c5f67a4460ab6645f42224a9f274c6b3b1e75bf309decedc561f7aba"
+  },
+  "mq_hr_2020_07.csv.gz": {
+    "url": "https://mdhopendata.blob.core.windows.net/verkehrsdetektion/2020/alte_qualitaetssicherung/Messquerschnitte/mq_hr_2020_07.csv.gz",
+    "bytes": 2059332,
+    "sha256": "64b4b98732ef38e7188aabbcd9e047df49d548ddfebd4d8b60bf2157b8289c80"
+  },
+  "paris-multimodal-metadata.json": {
+    "url": "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/comptage-multimodal-comptages",
+    "bytes": 13330,
+    "sha256": "0c4031e22c19e3a5c3a35a0eb6b4f6b9169eb647485a0ffee1e2347793ab7a76"
+  },
+  "paris-rivoli-sample-week.json": {
+    "url": "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/comptage-multimodal-comptages/exports/json?where=id_site%3D%2710004%27+AND+t+%3E%3D+date%272021-09-06T00%3A00%3A00Z%27+AND+t+%3C+date%272021-09-13T00%3A00%3A00Z%27",
+    "bytes": 879401,
+    "sha256": "bd5799dbea7f9fc67dee79265efa635103523fc8d1a15f560642e325a3905121"
+  },
+  "paris-rivoli-history-coverage.json": {
+    "url": "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/comptage-multimodal-comptages/records?select=min%28t%29+as+first_hour%2Cmax%28t%29+as+last_hour%2Ccount%28%2A%29+as+rows&where=id_site%3D%2710004%27&limit=1",
+    "bytes": 139,
+    "sha256": "ffd831573f0aa3f85577859f8278b4a060efa183e8fbfc9fc3ff946064e6bc8e"
+  },
+  "paris-rivoli-geometry.json": {
+    "url": "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/comptage-multimodal-sites-et-trajectoires-de-comptage/records?where=id_site%3D%2710004%27&limit=100",
+    "bytes": 2871,
+    "sha256": "cf877706fd455019a008802ce2e34c49275478110c074e0ca9f33296f81c9464"
+  },
+  "paris-multimodal-documentation.pdf": {
+    "url": "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/comptage-multimodal-comptages/attachments/documentation_v3_1_pdf",
+    "bytes": 1008904,
+    "sha256": "4667443ad64bcf79b8e5a69c9ba6aa8ac6e5085da9deda935ac664ca25a00e92"
+  }
+}

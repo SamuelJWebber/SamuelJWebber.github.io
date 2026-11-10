@@ -1,0 +1,57 @@
+{
+  "updated_date": "2026-11-09",
+  "time_zone": "America/New_York",
+  "fees_authorized": false,
+  "requests": [
+    {
+      "id": "A1",
+      "agency": "NYC DOT",
+      "scope": "Existing Third Avenue E59–E96 evaluation records, 2022–2024: index, methods and small sample",
+      "status": "not_accepted_by_email",
+      "sent_date": "2026-11-05",
+      "agency_receipt_verified": false,
+      "case_number": null,
+      "status_note": "Emailed November 5. NYC DOT's FOIL mailbox replied the same day that it does not accept new requests by email; all requests must be filed through NYC OpenRecords. No request exists yet. Refiling needs the requester's own OpenRecords account."
+    },
+    {
+      "id": "B1",
+      "agency": "MTA / New York City Transit",
+      "scope": "Existing Third Avenue bus passenger and service records: first stage",
+      "status": "prepared_submission_pending",
+      "agency_receipt_verified": false,
+      "case_number": null,
+      "status_note": "Prepared November 5. MTA's records portal needs an account, which the requester has not created. Not submitted."
+    },
+    {
+      "id": "C",
+      "agency": "NYSDOT",
+      "scope": "Station 021284 / 02_1284 / CC0280 metadata and quality-control records",
+      "status": "acknowledged",
+      "sent_date": "2026-11-05",
+      "acknowledged_date": "2026-11-05",
+      "agency_receipt_verified": true,
+      "case_number": "R013587-110526",
+      "status_note": "Acknowledged November 5 through NYSDOT's FOIL Records Access Center. The agency will say within 20 business days (about December 7) whether records exist. Acknowledgment is not delivery."
+    },
+    {
+      "id": "A2",
+      "agency": "NYC DOT",
+      "scope": "Larger follow-up after coverage review",
+      "status": "draft_not_sent"
+    },
+    {
+      "id": "B2",
+      "agency": "MTA / New York City Transit",
+      "scope": "Larger follow-up after coverage review",
+      "status": "draft_not_sent"
+    },
+    {
+      "id": "D",
+      "agency": "NYC DOT",
+      "scope": "Optional historical Prospect Park West archive request",
+      "status": "draft_not_sent"
+    }
+  ],
+  "verification": "Checked November 9, 2026 by reading agency replies in the requester's mailbox. Nothing was sent. No agency message after November 5 was found.",
+  "note": "Sent means outgoing message verified. It does not establish agency acknowledgment, record availability or delivery of data. No private contact information or authentication details are published."
+}

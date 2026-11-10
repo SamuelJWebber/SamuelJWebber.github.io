@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-06",
+  "scope": "Release checks; no inference of causal validity. Browser checks separately documented.",
+  "checks": [
+    {
+      "check": "JavaScript syntax",
+      "files": 31,
+      "passed": true
+    },
+    {
+      "check": "node tests/network-time.test.mjs",
+      "passed": true
+    },
+    {
+      "check": "node tests/global-evidence.test.mjs",
+      "passed": true
+    },
+    {
+      "check": "python scripts/verify-acquisition.py",
+      "passed": true
+    },
+    {
+      "check": "python dist/research/global-study/verify.py",
+      "passed": true
+    },
+    {
+      "check": "python dist/research/causal-design/verify.py",
+      "passed": true
+    },
+    {
+      "check": "node dist/research/estimate-lab/test.mjs",
+      "passed": true
+    },
+    {
+      "check": "node dist/research/network-map/verify-map.mjs",
+      "passed": true
+    },
+    {
+      "check": "node dist/research/validation/independent_math_audit.mjs",
+      "passed": true
+    },
+    {
+      "check": "python dist/research/validation/independent_data_audit.py",
+      "passed": true
+    },
+    {
+      "check": "All downloadable ZIP integrity",
+      "passed": true,
+      "files": 26
+    },
+    {
+      "check": "Literal local asset and download targets",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

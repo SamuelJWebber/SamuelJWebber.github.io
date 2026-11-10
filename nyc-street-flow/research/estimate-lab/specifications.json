@@ -1,0 +1,842 @@
+[
+  {
+    "study": "PPW driving segment",
+    "window": "daily_07_19",
+    "control": "7th_same_direction",
+    "sample": "both_days",
+    "change_seconds": -35.833333333333314,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "daily_07_19",
+    "control": "7th_same_direction",
+    "sample": "tuesday",
+    "change_seconds": -18.75,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "daily_07_19",
+    "control": "7th_same_direction",
+    "sample": "wednesday",
+    "change_seconds": -52.916666666666664,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "daily_07_19",
+    "control": "6th_reverse_direction",
+    "sample": "both_days",
+    "change_seconds": -5.791666666666686,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "daily_07_19",
+    "control": "6th_reverse_direction",
+    "sample": "tuesday",
+    "change_seconds": -8.625,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "daily_07_19",
+    "control": "6th_reverse_direction",
+    "sample": "wednesday",
+    "change_seconds": -2.9583333333333335,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "daily_07_19",
+    "control": "8th_reverse_direction",
+    "sample": "both_days",
+    "change_seconds": 10.916666666666657,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "daily_07_19",
+    "control": "8th_reverse_direction",
+    "sample": "tuesday",
+    "change_seconds": 24,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "daily_07_19",
+    "control": "8th_reverse_direction",
+    "sample": "wednesday",
+    "change_seconds": -2.1666666666666665,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "daily_07_19",
+    "control": "all_three_equal",
+    "sample": "both_days",
+    "change_seconds": -10.236111111111114,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "daily_07_19",
+    "control": "all_three_equal",
+    "sample": "tuesday",
+    "change_seconds": -1.1250000000000004,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "daily_07_19",
+    "control": "all_three_equal",
+    "sample": "wednesday",
+    "change_seconds": -19.34722222222222,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "daily_07_19",
+    "control": "northbound_equal",
+    "sample": "both_days",
+    "change_seconds": 2.562499999999986,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "daily_07_19",
+    "control": "northbound_equal",
+    "sample": "tuesday",
+    "change_seconds": 7.6875,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "daily_07_19",
+    "control": "northbound_equal",
+    "sample": "wednesday",
+    "change_seconds": -2.5625,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "am_07_10",
+    "control": "7th_same_direction",
+    "sample": "both_days",
+    "change_seconds": -63.16666666666666,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "am_07_10",
+    "control": "7th_same_direction",
+    "sample": "tuesday",
+    "change_seconds": -76.83333333333333,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "am_07_10",
+    "control": "7th_same_direction",
+    "sample": "wednesday",
+    "change_seconds": -49.5,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "am_07_10",
+    "control": "6th_reverse_direction",
+    "sample": "both_days",
+    "change_seconds": 26.666666666666686,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "am_07_10",
+    "control": "6th_reverse_direction",
+    "sample": "tuesday",
+    "change_seconds": 54.666666666666664,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "am_07_10",
+    "control": "6th_reverse_direction",
+    "sample": "wednesday",
+    "change_seconds": -1.3333333333333333,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "am_07_10",
+    "control": "8th_reverse_direction",
+    "sample": "both_days",
+    "change_seconds": 22.166666666666686,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "am_07_10",
+    "control": "8th_reverse_direction",
+    "sample": "tuesday",
+    "change_seconds": 14.166666666666666,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "am_07_10",
+    "control": "8th_reverse_direction",
+    "sample": "wednesday",
+    "change_seconds": 30.166666666666668,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "am_07_10",
+    "control": "all_three_equal",
+    "sample": "both_days",
+    "change_seconds": -4.777777777777763,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "am_07_10",
+    "control": "all_three_equal",
+    "sample": "tuesday",
+    "change_seconds": -2.666666666666667,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "am_07_10",
+    "control": "all_three_equal",
+    "sample": "wednesday",
+    "change_seconds": -6.888888888888888,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "am_07_10",
+    "control": "northbound_equal",
+    "sample": "both_days",
+    "change_seconds": 24.416666666666686,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "am_07_10",
+    "control": "northbound_equal",
+    "sample": "tuesday",
+    "change_seconds": 34.416666666666664,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "am_07_10",
+    "control": "northbound_equal",
+    "sample": "wednesday",
+    "change_seconds": 14.416666666666666,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "midday_10_14",
+    "control": "7th_same_direction",
+    "sample": "both_days",
+    "change_seconds": -43.9375,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "midday_10_14",
+    "control": "7th_same_direction",
+    "sample": "tuesday",
+    "change_seconds": -14.625,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "midday_10_14",
+    "control": "7th_same_direction",
+    "sample": "wednesday",
+    "change_seconds": -73.25,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "midday_10_14",
+    "control": "6th_reverse_direction",
+    "sample": "both_days",
+    "change_seconds": -3.375,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "midday_10_14",
+    "control": "6th_reverse_direction",
+    "sample": "tuesday",
+    "change_seconds": -6.625,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "midday_10_14",
+    "control": "6th_reverse_direction",
+    "sample": "wednesday",
+    "change_seconds": -0.125,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "midday_10_14",
+    "control": "8th_reverse_direction",
+    "sample": "both_days",
+    "change_seconds": 36.3125,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "midday_10_14",
+    "control": "8th_reverse_direction",
+    "sample": "tuesday",
+    "change_seconds": 60,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "midday_10_14",
+    "control": "8th_reverse_direction",
+    "sample": "wednesday",
+    "change_seconds": 12.625,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "midday_10_14",
+    "control": "all_three_equal",
+    "sample": "both_days",
+    "change_seconds": -3.666666666666667,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "midday_10_14",
+    "control": "all_three_equal",
+    "sample": "tuesday",
+    "change_seconds": 12.916666666666666,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "midday_10_14",
+    "control": "all_three_equal",
+    "sample": "wednesday",
+    "change_seconds": -20.25,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "midday_10_14",
+    "control": "northbound_equal",
+    "sample": "both_days",
+    "change_seconds": 16.46875,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "midday_10_14",
+    "control": "northbound_equal",
+    "sample": "tuesday",
+    "change_seconds": 26.6875,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "midday_10_14",
+    "control": "northbound_equal",
+    "sample": "wednesday",
+    "change_seconds": 6.25,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "pm_16_19",
+    "control": "7th_same_direction",
+    "sample": "both_days",
+    "change_seconds": -32.16666666666666,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "pm_16_19",
+    "control": "7th_same_direction",
+    "sample": "tuesday",
+    "change_seconds": -31.666666666666668,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "pm_16_19",
+    "control": "7th_same_direction",
+    "sample": "wednesday",
+    "change_seconds": -32.666666666666664,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "pm_16_19",
+    "control": "6th_reverse_direction",
+    "sample": "both_days",
+    "change_seconds": -28.916666666666686,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "pm_16_19",
+    "control": "6th_reverse_direction",
+    "sample": "tuesday",
+    "change_seconds": -52.833333333333336,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "pm_16_19",
+    "control": "6th_reverse_direction",
+    "sample": "wednesday",
+    "change_seconds": -5,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "pm_16_19",
+    "control": "8th_reverse_direction",
+    "sample": "both_days",
+    "change_seconds": -1.3333333333333428,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "pm_16_19",
+    "control": "8th_reverse_direction",
+    "sample": "tuesday",
+    "change_seconds": 4.833333333333333,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "pm_16_19",
+    "control": "8th_reverse_direction",
+    "sample": "wednesday",
+    "change_seconds": -7.5,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "pm_16_19",
+    "control": "all_three_equal",
+    "sample": "both_days",
+    "change_seconds": -20.80555555555556,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "pm_16_19",
+    "control": "all_three_equal",
+    "sample": "tuesday",
+    "change_seconds": -26.555555555555557,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "pm_16_19",
+    "control": "all_three_equal",
+    "sample": "wednesday",
+    "change_seconds": -15.055555555555554,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "pm_16_19",
+    "control": "northbound_equal",
+    "sample": "both_days",
+    "change_seconds": -15.125000000000014,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "pm_16_19",
+    "control": "northbound_equal",
+    "sample": "tuesday",
+    "change_seconds": -24.0,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "PPW driving segment",
+    "window": "pm_16_19",
+    "control": "northbound_equal",
+    "sample": "wednesday",
+    "change_seconds": -6.25,
+    "pre_placebo_seconds": null
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "am",
+    "control": "lexington",
+    "sample": "jan_jun",
+    "change_seconds": -7.718396109935581,
+    "pre_placebo_seconds": 30.175091607507866
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "am",
+    "control": "lexington",
+    "sample": "jan_mar",
+    "change_seconds": -9.908976122030944,
+    "pre_placebo_seconds": 30.175091607507866
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "am",
+    "control": "lexington",
+    "sample": "apr_jun",
+    "change_seconds": -5.5278160978402155,
+    "pre_placebo_seconds": 30.175091607507866
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "am",
+    "control": "first",
+    "sample": "jan_jun",
+    "change_seconds": -23.482144571482586,
+    "pre_placebo_seconds": 48.58395837186962
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "am",
+    "control": "first",
+    "sample": "jan_mar",
+    "change_seconds": -1.1315634019401706,
+    "pre_placebo_seconds": 48.58395837186962
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "am",
+    "control": "first",
+    "sample": "apr_jun",
+    "change_seconds": -45.832725741024994,
+    "pre_placebo_seconds": 48.58395837186962
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "am",
+    "control": "madison",
+    "sample": "jan_jun",
+    "change_seconds": -13.94299598938763,
+    "pre_placebo_seconds": 19.44104037646879
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "am",
+    "control": "madison",
+    "sample": "jan_mar",
+    "change_seconds": -17.413721224566252,
+    "pre_placebo_seconds": 19.44104037646879
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "am",
+    "control": "madison",
+    "sample": "apr_jun",
+    "change_seconds": -10.472270754209006,
+    "pre_placebo_seconds": 19.44104037646879
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "am",
+    "control": "third_south",
+    "sample": "jan_jun",
+    "change_seconds": -7.589326006079019,
+    "pre_placebo_seconds": 48.38112849846143
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "am",
+    "control": "third_south",
+    "sample": "jan_mar",
+    "change_seconds": 10.371838661484476,
+    "pre_placebo_seconds": 48.38112849846143
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "am",
+    "control": "third_south",
+    "sample": "apr_jun",
+    "change_seconds": -25.550490673642514,
+    "pre_placebo_seconds": 48.38112849846143
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "am",
+    "control": "third_north",
+    "sample": "jan_jun",
+    "change_seconds": 72.19520167020407,
+    "pre_placebo_seconds": 56.67146705943943
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "am",
+    "control": "third_north",
+    "sample": "jan_mar",
+    "change_seconds": 51.38637697466551,
+    "pre_placebo_seconds": 56.67146705943943
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "am",
+    "control": "third_north",
+    "sample": "apr_jun",
+    "change_seconds": 93.0040263657426,
+    "pre_placebo_seconds": 56.67146705943943
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "pm",
+    "control": "lexington",
+    "sample": "jan_jun",
+    "change_seconds": -45.2212831031327,
+    "pre_placebo_seconds": 70.72197763602703
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "pm",
+    "control": "lexington",
+    "sample": "jan_mar",
+    "change_seconds": -8.223336318853463,
+    "pre_placebo_seconds": 70.72197763602703
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "pm",
+    "control": "lexington",
+    "sample": "apr_jun",
+    "change_seconds": -82.21922988741193,
+    "pre_placebo_seconds": 70.72197763602703
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "pm",
+    "control": "first",
+    "sample": "jan_jun",
+    "change_seconds": -40.06439845664441,
+    "pre_placebo_seconds": 26.352205065467512
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "pm",
+    "control": "first",
+    "sample": "jan_mar",
+    "change_seconds": -22.73948966882403,
+    "pre_placebo_seconds": 26.352205065467512
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "pm",
+    "control": "first",
+    "sample": "apr_jun",
+    "change_seconds": -57.389307244464774,
+    "pre_placebo_seconds": 26.352205065467512
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "pm",
+    "control": "madison",
+    "sample": "jan_jun",
+    "change_seconds": -40.89507260610168,
+    "pre_placebo_seconds": -11.400925221107439
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "pm",
+    "control": "madison",
+    "sample": "jan_mar",
+    "change_seconds": -31.036237996320605,
+    "pre_placebo_seconds": -11.400925221107439
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "pm",
+    "control": "madison",
+    "sample": "apr_jun",
+    "change_seconds": -50.753907215882755,
+    "pre_placebo_seconds": -11.400925221107439
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "pm",
+    "control": "third_south",
+    "sample": "jan_jun",
+    "change_seconds": -43.15563352553751,
+    "pre_placebo_seconds": -6.496772833228144
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "pm",
+    "control": "third_south",
+    "sample": "jan_mar",
+    "change_seconds": -39.251174229992024,
+    "pre_placebo_seconds": -6.496772833228144
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "pm",
+    "control": "third_south",
+    "sample": "apr_jun",
+    "change_seconds": -47.06009282108299,
+    "pre_placebo_seconds": -6.496772833228144
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "pm",
+    "control": "third_north",
+    "sample": "jan_jun",
+    "change_seconds": 38.367556392777395,
+    "pre_placebo_seconds": 28.186018209492666
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "pm",
+    "control": "third_north",
+    "sample": "jan_mar",
+    "change_seconds": 50.74046215742703,
+    "pre_placebo_seconds": 28.186018209492666
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "pm",
+    "control": "third_north",
+    "sample": "apr_jun",
+    "change_seconds": 25.994650628127765,
+    "pre_placebo_seconds": 28.186018209492666
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "combined",
+    "control": "lexington",
+    "sample": "jan_jun",
+    "change_seconds": -27.951684806618704,
+    "pre_placebo_seconds": 52.05065683840237
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "combined",
+    "control": "lexington",
+    "sample": "jan_mar",
+    "change_seconds": -8.999551821376409,
+    "pre_placebo_seconds": 52.05065683840237
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "combined",
+    "control": "lexington",
+    "sample": "apr_jun",
+    "change_seconds": -46.903817791860995,
+    "pre_placebo_seconds": 52.05065683840237
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "combined",
+    "control": "first",
+    "sample": "jan_jun",
+    "change_seconds": -32.67120380610238,
+    "pre_placebo_seconds": 37.07196345014887
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "combined",
+    "control": "first",
+    "sample": "jan_mar",
+    "change_seconds": -12.381055271134553,
+    "pre_placebo_seconds": 37.07196345014887
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "combined",
+    "control": "first",
+    "sample": "apr_jun",
+    "change_seconds": -52.961352341070224,
+    "pre_placebo_seconds": 37.07196345014887
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "combined",
+    "control": "madison",
+    "sample": "jan_jun",
+    "change_seconds": -28.484540976059716,
+    "pre_placebo_seconds": 2.8151018883910166
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "combined",
+    "control": "madison",
+    "sample": "jan_mar",
+    "change_seconds": -24.758234760903434,
+    "pre_placebo_seconds": 2.8151018883910166
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "combined",
+    "control": "madison",
+    "sample": "apr_jun",
+    "change_seconds": -32.210847191216,
+    "pre_placebo_seconds": 2.8151018883910166
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "combined",
+    "control": "third_south",
+    "sample": "jan_jun",
+    "change_seconds": -26.63891774683073,
+    "pre_placebo_seconds": 19.831230159962004
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "combined",
+    "control": "third_south",
+    "sample": "jan_mar",
+    "change_seconds": -15.49811439902589,
+    "pre_placebo_seconds": 19.831230159962004
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "combined",
+    "control": "third_south",
+    "sample": "apr_jun",
+    "change_seconds": -37.77972109463556,
+    "pre_placebo_seconds": 19.831230159962004
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "combined",
+    "control": "third_north",
+    "sample": "jan_jun",
+    "change_seconds": 53.90562273427291,
+    "pre_placebo_seconds": 41.097348580514286
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "combined",
+    "control": "third_north",
+    "sample": "jan_mar",
+    "change_seconds": 51.0474094094512,
+    "pre_placebo_seconds": 41.097348580514286
+  },
+  {
+    "study": "Third Avenue bus segment",
+    "window": "combined",
+    "control": "third_north",
+    "sample": "apr_jun",
+    "change_seconds": 56.76383605909461,
+    "pre_placebo_seconds": 41.097348580514286
+  }
+]

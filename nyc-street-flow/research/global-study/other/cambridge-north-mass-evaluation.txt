@@ -1,0 +1,1500 @@
+MEMORANDUM
+        November 17, 2022
+        To: Cambridge Traffic, Parking, and Transportation Department
+        From: Michelle Danila, PE, PTOE; Chris Puglisi, PE, RSP1; Kristen Braley, EIT
+        Project: Engineering Services for Separated Bike Lane Project, Massachusetts Avenue (Dudley Street to
+        Alewife Brook Parkway
+
+        Re: Post-Implementation Travel Time Analysis of Massachusetts Avenue
+
+
+
+
+The northern section of Massachusetts Avenue consisted of two general purpose travel lanes, conventional bike
+lanes, and curbside parking/loading lanes travelling northbound and southbound. As spurred by Cambridge’s
+Cycling Safety Ordinance, the street was reconfigured to consist of one general purpose travel lane, a bus-
+only/parking/loading lane, and separated bike lanes in both directions in late-November/early-December 2021.
+The post-implementation study summarized in this technical memorandum is intended to provide insight to
+vehicle and transit travel times and ridership trends along the corridor before and after installation of the new
+cross section.
+
+Study Area
+Massachusetts Avenue, typically called “Mass Ave,” between Dudley Street and Alewife Brook Parkway is an
+urban principal arterial roadway owned and maintained by the City of Cambridge. This 0.4-mile segment
+intersects key pedestrian and bicycle network paths including the Alewife Linear Park and Somerville Community
+Path at Cedar Street and the Alewife Greenway Bike Path at Alewife Brook Parkway (Figure 1).
+                                    Figure 1. Massachusetts Avenue Study Area
+
+
+
+Corridor Modifications
+Before the street reconfiguration, the corridor consisted of two general purpose travel lanes, conventional bike
+lanes, and curbside parking/loading lanes in each direction (Figure 2).
+
+
+
+
+                                                                                                                   2
+                                                    Figure 2. Before Cross Section
+Cambridge’s Cycling Safety Ordinance requires that separated bike lanes be installed along the entirety of
+Massachusetts Avenue in Cambridge by Spring 2026. While the cross section did provide dedicated space for
+bicyclists, the conventional bike lanes were not comfortable for all users and were often blocked by double parked
+vehicles.
+The Massachusetts Bay Transportation Authority (MBTA) Bus Route 77 travelling from Arlington Heights to
+Harvard Station runs along Massachusetts Avenue for the duration of the study area, including a connection to
+the Porter Square Red Line Station. Route 77 is a Key Bus route as noted in the MBTA’s State of the Bus System
+report released in 2018. A Key Bus route is one that “serve(s) high passenger demand in high-density travel
+corridors, providing higher frequency services for longer spans.”1 Though this route is a Key Bus route, it often
+saw delay along Massachusetts Avenue with run times “regularly exceeding their scheduled running times” by
+three to ten minutes depending on the time of day and direction (Figure 3, Figure 4).2
+
+
+
+
+1
+  State of the Bus System, Massachusetts Bay Transportation Authority, 2018
+(https://cdn.mbta.com/sites/default/files/projects/betterbus/documents/mbta-better-bus-project-state-of-the-bus-system-2018-v2.pdf)
+2
+  Route 77 Better Bus Project Profile, Massachusetts Bay Transportation Authority, 2018
+(https://cdn.mbta.com/sites/default/files/projects/betterbus/route-profiles/77.pdf)
+
+
+
+
+                                                                                                                                      3
+Figure 3. Scheduled and Median Travel Times for Inbound Trips (Arlington Heights to Harvard Square) (Source: Route
+                                          77 Better Bus Project Profile)
+
+
+
+
+                                                                                                                4
+  Figure 4. Scheduled and Median Travel Times for Outbound Trips (Harvard Square to Arlington Heights) (Source:
+                                      Route 77 Better Bus Project Profile)
+To address the Cycling Safety Ordinance’s call for separated bike facilities and the high-delay experienced by
+Route 77 riders, in late-November/early-December 2021, the cross section was reconfigured to consist of one
+general purpose travel lane, a dedicated bus lane that in some sections can be used for loading/parking in off-
+peak hours, and separated bike lanes within the existing curb-to-curb width (Figure 5). The northbound dedicated
+bus lane operates as a bus-only lane at all times; however, the southbound dedicated bus lane operates as a
+bus-only lane during peak hours and loading/parking between 9:00 am and 10:00 pm.
+
+
+
+
+                                          Figure 5. After Cross Section
+To understand the implications of the installed cross section to motor vehicles and transit vehicles, data was
+collected and provided by the Regional Integrated Transportation Information System (RITIS) and the MBTA to
+
+
+
+
+                                                                                                                  5
+evaluate general motor vehicle travel times, transit vehicle travel times, and transit ridership before and after the
+reconfiguration. Within context, pre- and post-implementation data will provide an understanding of how travel
+times along the corridor and ridership has changed.
+
+RITIS Travel Time Data
+Data Collection
+RITIS is a crowd-sourced “Big Data” aggregate that provides up-to-date and historical transportation-related
+information, such as travel time and speed. It has been used to observe the impacts of the reconfigured cross
+section along Massachusetts Avenue during periods immediately preceding the installation of the project and
+immediately following, on weekdays (Tuesday, Wednesday, Thursday), and weekends (Saturday). Additional
+periods were collected before the COVID-19 Pandemic and approximately six months after implementation to
+understand changes on travel patterns and travel times. The time periods collected are outlined in Table 1. Dates
+were selected to avoid peak COVID-19 outbreaks, influences of holidays/holiday weekends (Christmas, Memorial
+Day, Veterans Day), and April school vacation week.
+
+                                     Table 1. Travel Time Evaluation Periods
+
+                                     Immediately Surrounding                    Pre-Pandemic and 6-mo After
+                  Days                  Implementation                                Implementation
+
+                                      Before                 After                 Before                  After
+
+               Tuesday,
+ Weekday      Wednesday,          Nov 2-4, 2021        Dec 14-16, 2021      April 30-May 9, 2019     May 3-12, 2022
+               Thursday
+
+ Weekend        Saturday           Nov 6, 2021           Dec 18, 2021          May 4-11, 2019        May 7-14, 2022
+
+
+
+RITIS collects data by segment. For Massachusetts Avenue the segment used extends from Somerville Avenue
+to the south and Alewife Brook Parkway to the north (Figure 6). To account for outside impacts during these time
+periods (pandemic-related fluctuations in traffic, events throughout Cambridge, etc.), Broadway (a generally east-
+west corridor travelling through Cambridge) was selected as a “control corridor”, with data available between
+Quincy Street and Prospect Street (Figure 6). Broadway was selected as the control corridor as opposed to other
+roadways in Cambridge as it:
+       Does not run parallel to Massachusetts Avenue and is therefore not a viable alternate route that may be
+        impacted by the project,
+       Has similar traffic volume and geometric characteristics to Massachusetts Avenue, and
+       Supports MBTA bus routes.
+
+
+
+
+                                                                                                                        6
+                 Figure 6. Travel Time Analysis Limits on Massachusetts Avenue and Broadway
+
+Motor Vehicle Travel Time Analysis
+
+Immediately Before and After Installation: November 2021 versus December 2021
+Generally, travel times on Massachusetts Avenue increased between 2-12% immediately following installation
+(Table 2, Table 3). The exceptions include the northbound weekday morning peak hour (decreased 6%) and the
+northbound full weekend average (decreased 1%). Compared to Broadway where travel times generally remained
+similar to or decreased pre- and post-installation, the increases along Massachusetts Avenue suggest that the
+project caused some additional delay for drivers following installation.
+
+
+
+
+                                                                                                            7
+          Table 2. Nov/Dec 2021 Weekday Travel Times on Massachusetts Avenue in minutes
+                                     Northbound                               Southbound
+                       Nov    Dec                       %       Nov    Dec                       %
+                                      Difference                               Difference
+                       2021   2021                 Difference   2021   2021                 Difference
+Full Day Average        5.1    5.2       +0.1         +2%        4.6    4.7      +0.2          +4%
+AM Peak Period (7-
+                        5.6    5.3       -0.3         -6%       6.0    6.2       +0.3         +5%
+9AM)
+PM Peak Period (4-
+                        7.3    7.9       +0.6         +8%       5.1    5.6       +0.5         +9%
+6PM)
+Off-peak Period
+                        5.4    5.9       +0.5        +10%       4.9    5.3       +0.4         +7%
+(9AM-4PM)
+
+
+
+          Table 3. Nov/Dec 2021 Weekend Travel Times on Massachusetts Avenue in minutes
+                                     Northbound                               Southbound
+                       Nov    Dec                       %       Nov    Dec                       %
+                                      Difference                               Difference
+                       2021   2021                 Difference   2021   2021                 Difference
+Full Day Average        4.5    4.4       -0.1          -1%       4.4    4.5       0.1          +2%
+Saturday Midday
+                        5.1    5.7       0.6         +12%        5.0    5.4       0.4          +9%
+(10AM-2PM)
+
+
+
+                   Table 4. Nov/Dec 2021 Weekday Travel Times on Broadway in minutes
+                                     Eastbound                                Westbound
+                       Nov    Dec                       %       Nov    Dec                       %
+                                      Difference                               Difference
+                       2021   2021                 Difference   2021   2021                 Difference
+Full Day Average        3.2    3.2        0.0          -1%       3.2    3.0       -0.2          -5%
+AM Peak Period (7-
+                        4.4    4.3        0.0         0%        3.5    3.5        0.0          -2%
+9AM)
+PM Peak Period (4-
+                        3.9    3.8       -0.1         -3%       3.8    3.8        0.0         +1%
+6PM)
+Off-peak Period
+                        3.7    3.8        0.1         3%        3.6    3.4        -0.2         -5%
+(9AM-4PM)
+
+
+
+                   Table 5. Nov/Dec 2021 Weekend Travel Times on Broadway in minutes
+                                     Eastbound                                Westbound
+                       Nov    Dec                       %       Nov    Dec                       %
+                                      Difference                               Difference
+                       2021   2021                 Difference   2021   2021                 Difference
+Full Day Average        2.9    2.7       -0.2          -7%       2.7    2.6       -0.1          -2%
+Saturday Midday
+                        3.5    3.0       -0.5        -15%        2.9    2.8       -0.1         -3%
+(10AM-2PM)
+
+
+
+
+                                                                                                         8
+Pre-Pandemic versus 6-months After Installation: May 2019 versus May 2022
+Travel times on Massachusetts Avenue in 2022 generally remained similar to or were shorter than travel times in
+2019 in both directions. Travel times increased by 1-4% in the weekday evening peak and weekday off peak
+periods, but otherwise decreased by 3-24% (Table 6). On weekends, average travel times decreased by
+approximately 30 seconds travelling northbound and 6 seconds travelling southbound (Table 7). On Broadway,
+eastbound travel times generally increased during all time periods except for weekday mornings and westbound
+travel times generally decreased except for the weekday evening peak hour (Table 8, Table 9).
+
+              Table 6. 2019/2022 Weekday Travel Times on Massachusetts Avenue in minutes
+                                        Northbound                                   Southbound
+                                                            %                                            %
+                         2019   2022     Difference                 2019    2022      Difference
+                                                       Difference                                   Difference
+ Full Day Average        5.7     5.0        -0.7          -12%       4.9     4.7         -0.2           -4%
+ AM Peak Period (7-
+                         6.9     5.2        -1.7         -24%        6.6     6.4         -0.2          -3%
+ 9AM)
+ PM Peak Period (4-
+                         8.0     8.2        +0.1          +2%        5.2     5.4        +0.2          +4%
+ 6PM)
+ Off-peak Period
+                         5.9     5.5        -0.4          -7%        5.0     5.1        +0.1          +1%
+ (9AM-4PM)
+
+
+
+             Table 7. 2019/2022 Weekend Travel Times on Massachusetts Avenue in minutes
+                                        Northbound                                   Southbound
+                                                            %                                            %
+                        2019    2022     Difference                 2019    2022      Difference
+                                                       Difference                                   Difference
+ Full Day Average        5.0    4.5         -0.5          -10%       4.5     4.4         -0.1           -2%
+ Saturday Midday
+                         5.7    5.4         -0.3          -5%        4.9     5.3         +0.5          +9%
+ (10AM-2PM)
+
+
+
+                      Table 8. 2019/2022 Weekday Travel Times on Broadway in minutes
+                                        Eastbound                                    Westbound
+                                                            %                                            %
+                        2019     2022     Difference                 2019     2022     Difference
+                                                       Difference                                   Difference
+ Full Day Average        3.1      3.2        0.0           1%         3.3      3.1         -0.2         -7%
+ AM Peak Period
+                         4.5      4.1        -0.4         -8%         3.7      3.4         -0.3        -8%
+ (7-9AM)
+ PM Peak Period
+                         3.5      3.9        0.4          11%         3.8      3.9         0.1         +2%
+ (4-6PM)
+ Off-peak Period
+                         3.6      3.7        0.1          4%          3.6      3.4         -0.2        -7%
+ (9AM-4PM)
+
+
+
+
+                                                                                                                  9
+                     Table 9. 2019/2022 Weekend Travel Times on Broadway in minutes
+                                        Eastbound                                     Westbound
+                                                            %                                             %
+                        2019     2022     Difference                  2019     2022     Difference
+                                                       Difference                                    Difference
+ Full Day Average        2.8      2.9       +0.1          +4%          3.0      2.7        -0.3          -9%
+ Saturday Midday
+                         3.0      3.4       +0.4         +12%          3.3      3.1        -0.2          -5%
+ (10AM-2PM)
+
+
+While Massachusetts Avenue saw greater variability in travel times immediately before and after implementation
+compared to Broadway, the similar overall trends between 2019 and 2022 on the two roadways suggest that the
+installation affected travel times on Massachusetts Avenue for a short period of time but have since stabilized.
+
+MBTA Bus Travel Times and Ridership
+The MBTA provided 2019 and 2022 bus ridership and travel time data for Route 77 between its stops through the
+project area including those listed below and shown in Figure 7:
+       Inbound service (Arlington Heights to Harvard Square)
+            » Magoun Street to Cottage Park Avenue
+            » Cottage Park Avenue to Cedar Street
+            » Cedar Street to Norris Street
+       Outbound service (Harvard Square to Arlington Heights)
+            » Shea Road to Cameron Avenue (2022 only)
+            » Dover Street to Cameron Avenue (2019 only)
+            » Cameron Avenue to Churchill Avenue
+            » Churchill Avenue to Gladstone Street
+            » Gladstone Street to Route 16
+Ridership and travel time data are an average of all days in May 2019 and in May 2022, allowing for pre- and
+post-installation comparison of bus operations along Massachusetts Avenue. The Shea Road bus stop was
+introduced through this project and, since the distance between Dover Street and Cameron Avenue is greater
+than the distance between Shea Road and Cameron Avenue, the travel times before and after implementation
+between these stops was not compared. All ridership and travel time data are included as an Attachment.
+
+
+
+
+                                                                                                               10
+     Figure 7. Inbound and Outbound Bus Segments with Available Travel Time Data in 2019 and 2022. Travel time data
+    from Shea Road to Cameron Avenue is only available in 2022 and data from Dover Street to Cameron Avenue is only
+                             available in 2019 and were therefore not compared in this study
+
+Ridership
+Following the initial onset of the COVID-19 Pandemic in March 2020, the entire MBTA system saw a drastic
+decrease in ridership on all buses, subway lines, and the commuter rail system. As of October 2022, bus ridership
+has been between 70-73% of pre-Pandemic ridership.3 As is prevalent throughout the entire system, bus ridership
+on Route 77 decreased in May 2022 compared to May 2019 by between 8-16% (Table 10). Though ridership is
+less than that of pre-installation conditions, ridership along Route 77 is recovering to pre-pandemic levels faster
+than the average route in the MBTA system. While this does not explicitly indicate an increase in ridership
+following installation of the dedicated bus lanes along Massachusetts Avenue, it does highlight the prevalence of
+Route 77 as a high-use, Key Bus route that transit users rely on.
+
+
+
+
+3
+  Cawley, Gayla. “MBTA ridership levels nearing pandemic-era highs after fall boost.” October 15, 2022.
+(https://www.bostonherald.com/2022/10/15/mbta-ridership-levels-nearing-pandemic-era-highs-after-fall-boost/)
+
+
+
+
+                                                                                                                 11
+                         Table 10. 2019/2022 Average Hourly Ridership on Route 77
+
+                                       May 2019 Average      May 2022 Average       Difference   % Difference
+ Inbound Service
+ Magoun St to Cottage Park Dr                   68                    62                -5            -8%
+ Cottage Park Dr to Cedar St                    71                    65                -6            -9%
+ Cedar St to Norris St                          75                    66                -9            -12%
+ Outbound Service
+ Shea Rd/Dover St to Cameron Ave               78                     65                -13           -16%
+ Cameron Ave to Churchill Ave                   75                    65                -10           -14%
+ Churchill Ave to Gladstone St                  72                    62                -10           -13%
+ Gladstone St to Route 16                       71                    62                -10           -13%
+
+Travel Times
+MBTA Bus Route 77 runs along the duration of the study area from Arlington Heights to Harvard Station. The Key
+Bus route was often subject to delays resulting in long travel times while operating in mixed-traffic conditions.
+Following the installation of the dedicated bus lanes, Route 77’s median daily run times decreased between all
+bus stops by approximately 23% travelling inbound and 40% outbound (Table 11). Travel times between stops in
+both directions are consistently lower post installation than when the bus was operating in mixed traffic and see
+less variability in those travel times throughout the day (Figure 8, Figure 9). For example, an outbound bus in May
+2019 would typically take between 111 seconds (nearly 2 minutes) to travel between Cameron Avenue and
+Churchill Avenue and that time could range between approximately 44 seconds and 303 seconds (approximately
+5 minutes) (Table 12, Table 13). In May 2022, that same trip took an average of 35 seconds and could range
+between 23 seconds and 45 seconds. With the installation of the dedicated bus lane along Massachusetts
+Avenue, Route 77 riders are experiencing shorter travel times and more consistent service.
+
+
+
+
+                                                                                                                 12
+             Table 11. 2019/2022 Changes in Median Travel Times between Bus Stops
+
+                       Inbound Bus Stop                                  Outbound Bus Stop
+
+           Magoun       Cottage        Cedar              Cameron       Churchill       Gladstone
+From
+             St         Park Ave        St                  Ave           Ave               St
+                                                Average                                             Average
+           Cottage                    Norris              Churchill     Gladstone
+To                       Cedar St                                                       Route 16
+           Park Ave                    St                   Ave             St
+
+Full Day
+            -23%           -28%        -21%      -23%       -68%           -41%           -30%       -40%
+Average
+
+7-9 AM      -26%           -42%        -27%      -31%       -76%           -44%           -12%       -40%
+
+4-6 PM      -11%           -29%        -14%      -17%       -83%           -44%           -24%       -50%
+
+
+
+
+              Median Travel Times between Inbound Bus Stops
+90
+
+80
+
+70
+
+60
+
+50
+
+40
+
+30
+
+20
+
+10
+
+ 0
+
+
+
+
+                   Magoun St to Cottage Park Ave 2019      Magoun St to Cottage Park Ave 2022
+                   Cottage Park Ave to Cedar St 2019       Cottage Park Ave to Cedar St 2022
+                   Cedar St to Norris St 2019              Cedar St to Norris St 2022
+
+                   Figure 8. 2019/2022 Median Travel Times between Inbound Bus Stops
+
+
+
+
+                                                                                                            13
+                                                  Median Travel Times between Outbound Bus Stops
+                                    350
+
+
+                                    300
+  Travel Time Between Stops (sec)
+
+
+
+
+                                    250
+
+
+                                    200
+
+
+                                    150
+
+
+                                    100
+
+
+                                     50
+
+
+                                      0
+
+
+
+
+                                                   Cameron Ave to Churchill Ave 2019        Cameron Ave to Churchill Ave 2022
+                                                   Churchill Ave to Gladstone St 2019       Churchill Ave to Gladstone St 2022
+                                                   Gladstone St to Route 16 2019            Gladstone St to Route 16 2022
+
+                                          Figure 9. Median Travel Times between Outbound Bus Stops in May 2019 and May 2022
+
+   Table 12. 2019/2022 Average, Minimum, and Maximum Travel Times between Inbound Bus Stops (in
+                                             seconds)
+
+                                                                            May 2019                               May 2022
+
+Inbound Stops                                                 Average     Min      Max   Difference   Average     Min    Max     Difference
+
+Magoun St to Cottage Park Ave                                    54        36      79       43           41       26        58      32
+
+Cottage Park Ave to Cedar St                                     42        30      66       36           31        22       36      14
+
+Cedar St to Norris St                                            55        39      72       33           44       29        56      27
+
+
+
+
+                                                                                                                                              14
+  Table 13. 2019/2022 Average, Minimum, and Maximum Travel Times between Outbound Bus Stops (in
+                                             seconds)
+
+                                                    May 2019                              May 2022
+
+ Outbound Stops                        Average     Min   Max    Difference    Average    Min   Max    Difference
+
+ Cameron Ave to Churchill Ave             111      44    303        259          35       23    45         22
+
+ Churchill Ave to Gladstone St            53       19     82        63           31       20    42         22
+
+ Gladstone St to Route 16                 56       21     89        68           39       14    72         58
+
+
+Conclusion
+The reconfiguration of the northern Massachusetts Avenue segment between Dudley Street and Alewife Brook
+Parkway reallocated vehicle space to provide people biking fully separated bike lanes and the Bus Route 77 a
+dedicated bus-only lane during peak hours. While travel times along the corridor for all motor vehicles increased
+immediately following implementation, they have since stabilized and travel time trends are similar to those on the
+control corridor, Broadway. Bus-specific travel times through the study area have decreased drastically while
+operating in the bus-only lanes and travel times vary less than pre-pandemic, mixed-traffic conditions.
+Furthermore, though Route 77 ridership has not reached pre-pandemic levels, ridership has recovered at a higher
+rate than other buses throughout the MBTA system. The project has provided bicyclists more comfortable,
+connected facilities and transit users shorter and more consistent operations without sacrificing private vehicle
+operations along Massachusetts Avenue.
+
+
+
+
+                                                                                                                 15
+Attachments
+                                          Magoun Street to Cottage Park Avenue
+
+Travel Time        2019 Median                     2022 Median   Difference    % Difference
+           5:00 AM      48                              26           ‐22          ‐46%
+           6:00 AM      39                             37.5          ‐1.5          ‐4%
+           7:00 AM      57                             40.5         ‐16.5         ‐29%
+           8:00 AM      79                              58           ‐21          ‐27%
+           9:00 AM      64                              50           ‐14          ‐22%
+         10:00 AM       55                             44.5         ‐10.5         ‐19%
+         11:00 AM       55                              44           ‐11          ‐20%
+         12:00 PM       69                              45           ‐24          ‐35%
+           1:00 PM      64                              40           ‐24          ‐38%
+           2:00 PM      53                              40           ‐13          ‐25%
+           3:00 PM      66                              50           ‐16          ‐24%
+           4:00 PM     51.5                             54            2.5           5%
+           5:00 PM      48                              47            ‐1           ‐2%
+           6:00 PM     69.5                             49          ‐20.5         ‐29%
+           7:00 PM      48                             45.5          ‐2.5          ‐5%
+           8:00 PM      49                             38.5         ‐10.5         ‐21%
+           9:00 PM      40                              33            ‐7          ‐18%
+         10:00 PM       44                              28           ‐16          ‐36%
+         11:00 PM       40                             28.5         ‐11.5         ‐29%
+         12:00 AM       36                              27            ‐9          ‐25%
+  Full Day Average     53.8                            41.3         ‐12.5         ‐23%
+   7‐9am Average       66.7                            49.5         ‐17.2         ‐26%
+    4‐6pm average      56.3                            50.0          ‐6.3         ‐11%
+
+
+                                                  Median Travel Time
+   Travel time between stops (sec)
+
+
+
+
+                                     90
+                                     80
+                                     70
+                                     60
+                                     50
+                                     40
+                                     30
+                                     20
+                                     10
+                                      0
+
+
+
+
+                                                  2019 Median    2022 Median
+                                            Magoun Street to Cottage Park Avenue
+                                            2019 90th        2022 90th
+Travel Time                                 Percentile       Percentile   Difference        % Difference
+           5:00 AM                              87             45.8          ‐41.2             ‐47%
+           6:00 AM                              81             66.7          ‐14.3             ‐18%
+           7:00 AM                              93             90.2           ‐2.8              ‐3%
+           8:00 AM                            117.7             100          ‐17.7             ‐15%
+           9:00 AM                             81.6            79.4           ‐2.2              ‐3%
+         10:00 AM                              77.4            83.1            5.7               7%
+         11:00 AM                              95.5            68.7          ‐26.8             ‐28%
+         12:00 PM                              90.6              78          ‐12.6             ‐14%
+           1:00 PM                              88             79.6           ‐8.4             ‐10%
+           2:00 PM                             76.8            81.2            4.4               6%
+           3:00 PM                            114.1              81          ‐33.1             ‐29%
+           4:00 PM                              88             88.1            0.1               0%
+           5:00 PM                             84.6              85            0.4               0%
+           6:00 PM                            106.5              78          ‐28.5             ‐27%
+           7:00 PM                             80.2            74.4           ‐5.8              ‐7%
+           8:00 PM                              84             76.6           ‐7.4              ‐9%
+           9:00 PM                             78.2            58.8          ‐19.4             ‐25%
+         10:00 PM                               69             58.8          ‐10.2             ‐15%
+         11:00 PM                               70             51.9          ‐18.1             ‐26%
+         12:00 AM                              68.2              43          ‐25.2             ‐37%
+  Full Day Average                            86.6             73.4          ‐13.2             ‐15%
+   7‐9am Average                               97.4            89.9           ‐7.6              ‐8%
+    4‐6pm average                              93.0             83.7          ‐9.3             ‐10%
+
+
+                                                  90th Percentile Travel Time
+    Travel time between stops (sec)
+
+
+
+
+                                      140
+                                      120
+                                      100
+                                      80
+                                      60
+                                      40
+                                      20
+                                       0
+
+
+
+
+                                                 2019 90th Percentile     2022 90th Percentile
+                             Magoun Street to Cottage Park Avenue
+
+Ridership                    May 2019   May 2022       Difference   % Difference
+          5:00 AM               47         44              ‐3.1         ‐7%
+          6:00 AM               62         62              ‐0.2          0%
+          7:00 AM              177         98             ‐79.2        ‐45%
+          8:00 AM              104        188              83.9         81%
+          9:00 AM              151         73             ‐78.3        ‐52%
+        10:00 AM               107         69             ‐38.3        ‐36%
+        11:00 AM                50         51               1.2          2%
+        12:00 PM                50         57               6.4         13%
+          1:00 PM               45         79              34.2         76%
+          2:00 PM               56         65               9.3         17%
+          3:00 PM               76         91              15.0         20%
+          4:00 PM              104         75             ‐28.3        ‐27%
+          5:00 PM               67         82              15.2         23%
+          6:00 PM               70         61              ‐8.6        ‐12%
+          7:00 PM               51         39             ‐12.5        ‐24%
+          8:00 PM               26         28               2.1          8%
+          9:00 PM               40         39              ‐0.9         ‐2%
+        10:00 PM                46         30             ‐16.3        ‐35%
+        11:00 PM                15         9               ‐5.1        ‐35%
+        12:00 AM                6          6               ‐0.5         ‐8%
+ Full Day Average              67.5       62.3             ‐5.2         ‐8%
+  7‐9am Average               144.0      119.5            ‐24.5        ‐17%
+   4‐6pm average               80.1       72.8             ‐7.2         ‐9%
+
+
+                                          Ridership
+                       200
+                       180
+                       160
+    Hourly Ridership
+
+
+
+
+                       140
+                       120
+                       100
+                        80
+                        60
+                        40
+                        20
+                         0
+
+
+
+
+                                        May 2019      May 2022
+                                         Cottage Park Avenue to Cedar Street
+
+      Travel Time 2019 Median                    2022 Median   Difference     % Difference
+         5:00 AM       38                             25           ‐13           ‐34%
+         6:00 AM       32                             29            ‐3            ‐9%
+         7:00 AM       57                             32           ‐25           ‐44%
+         8:00 AM       66                             35           ‐31           ‐47%
+         9:00 AM      54.5                            36          ‐18.5          ‐34%
+        10:00 AM       43                             34            ‐9           ‐21%
+        11:00 AM      35.5                           35.5           0              0%
+        12:00 PM       36                             35            ‐1            ‐3%
+         1:00 PM       40                             32            ‐8           ‐20%
+         2:00 PM       54                             30           ‐24           ‐44%
+         3:00 PM      39.5                            33           ‐6.5          ‐16%
+         4:00 PM       44                             33           ‐11           ‐25%
+         5:00 PM      41.5                            33           ‐8.5          ‐20%
+         6:00 PM       52                             32           ‐20           ‐38%
+         7:00 PM      44.5                            32          ‐12.5          ‐28%
+         8:00 PM       32                             30            ‐2            ‐6%
+         9:00 PM       39                             25           ‐14           ‐36%
+        10:00 PM       31                             24            ‐7           ‐23%
+        11:00 PM       30                             26            ‐4           ‐13%
+        12:00 AM       38                             22           ‐16           ‐42%
+Full Day Average      42.4                           30.7         ‐11.7          ‐28%
+ 7‐9am Average        59.2                           34.3         ‐24.8          ‐42%
+  4‐6pm average       45.8                           32.7         ‐13.2          ‐29%
+
+
+                                                 Median Travel Time
+                                    70
+  Travel time between stops (sec)
+
+
+
+
+                                    60
+                                    50
+                                    40
+                                    30
+                                    20
+                                    10
+                                    0
+
+
+
+
+                                                 2019 Median    2022 Median
+                                           Cottage Park Avenue to Cedar Street
+                                          2019 90th        2022 90th
+      Travel Time                         Percentile       Percentile    Difference       % Difference
+         5:00 AM                              57               40            ‐17             ‐30%
+         6:00 AM                             50.8              41            ‐9.8            ‐19%
+         7:00 AM                              85               49            ‐36             ‐42%
+         8:00 AM                            114.9              57           ‐57.9            ‐50%
+         9:00 AM                             77.5            55.5            ‐22             ‐28%
+        10:00 AM                             70.6              44           ‐26.6            ‐38%
+        11:00 AM                             47.5            45.5             ‐2              ‐4%
+        12:00 PM                              54             47.8            ‐6.2            ‐11%
+         1:00 PM                              65             48.2           ‐16.8            ‐26%
+         2:00 PM                             67.4            43.1           ‐24.3            ‐36%
+         3:00 PM                             68.4              52           ‐16.4            ‐24%
+         4:00 PM                             65.4              51           ‐14.4            ‐22%
+         5:00 PM                             71.5            52.2           ‐19.3            ‐27%
+         6:00 PM                             84.5            54.7           ‐29.8            ‐35%
+         7:00 PM                             61.7            51.1           ‐10.6            ‐17%
+         8:00 PM                             72.9              48           ‐24.9            ‐34%
+         9:00 PM                              62               38            ‐24             ‐39%
+        10:00 PM                              50               37            ‐13             ‐26%
+        11:00 PM                             40.8              38            ‐2.8             ‐7%
+        12:00 AM                             53.6              37           ‐16.6            ‐31%
+Full Day Average                            66.0             46.5           ‐19.5            ‐30%
+ 7‐9am Average                               92.5            53.8           ‐38.6            ‐42%
+  4‐6pm average                              73.8             52.6          ‐21.2            ‐29%
+
+                                                90th Percentile Travel Time
+                                    140
+  Travel time between stops (sec)
+
+
+
+
+                                    120
+                                    100
+                                    80
+                                    60
+                                    40
+                                    20
+                                     0
+
+
+
+
+                                               2019 90th Percentile     2022 90th Percentile
+                             Cottage Park Avenue to Cedar Street
+
+Ridership                    May 2019   May 2022       Difference   % Difference
+          5:00 AM               32         46              13.8         43%
+          6:00 AM               83         64             ‐18.9        ‐23%
+          7:00 AM              182         99             ‐83.5        ‐46%
+          8:00 AM              107        192              85.0         80%
+          9:00 AM              157         75             ‐82.5        ‐52%
+        10:00 AM               110         73             ‐37.0        ‐34%
+        11:00 AM                52         54               1.3          2%
+        12:00 PM                57         61               4.1          7%
+          1:00 PM               51         83              32.1         63%
+          2:00 PM               63         70               7.2         11%
+          3:00 PM               88         98              10.5         12%
+          4:00 PM               90         78             ‐11.9        ‐13%
+          5:00 PM               89         85              ‐3.7         ‐4%
+          6:00 PM               73         65              ‐8.1        ‐11%
+          7:00 PM               54         40             ‐13.2        ‐25%
+          8:00 PM               26         28               2.0          8%
+          9:00 PM               41         39              ‐2.3         ‐6%
+        10:00 PM                46         30             ‐16.5        ‐36%
+        11:00 PM                15         9               ‐5.3        ‐36%
+        12:00 AM                6          6               ‐0.6         ‐9%
+ Full Day Average              71.1       64.7             ‐6.4         ‐9%
+  7‐9am Average               148.9      121.9            ‐27.0        ‐18%
+   4‐6pm average               84.1       76.2             ‐7.9         ‐9%
+
+                                          Ridership
+                       250
+
+                       200
+    Hourly Ridership
+
+
+
+
+                       150
+
+                       100
+
+                       50
+
+                        0
+
+
+
+
+                                        May 2019      May 2022
+                                          Cedar Street to Norris Street
+
+      Travel Time 2019 Median                 2022 Median   Difference    % Difference
+         5:00 AM       40                          31            ‐9          ‐23%
+         6:00 AM       46                          35           ‐11          ‐24%
+         7:00 AM      61.5                         42          ‐19.5         ‐32%
+         8:00 AM       54                          50            ‐4           ‐7%
+         9:00 AM       72                          45           ‐27          ‐38%
+        10:00 AM       65                          45           ‐20          ‐31%
+        11:00 AM       49                         48.5          ‐0.5          ‐1%
+        12:00 PM       61                          44           ‐17          ‐28%
+         1:00 PM       61                         47.5         ‐13.5         ‐22%
+         2:00 PM      57.5                         42          ‐15.5         ‐27%
+         3:00 PM       51                         44.5          ‐6.5         ‐13%
+         4:00 PM      50.5                         52            1.5           3%
+         5:00 PM       67                          53           ‐14          ‐21%
+         6:00 PM      66.5                         53          ‐13.5         ‐20%
+         7:00 PM      66.5                         56          ‐10.5         ‐16%
+         8:00 PM       53                          44            ‐9          ‐17%
+         9:00 PM       50                          40           ‐10          ‐20%
+        10:00 PM       39                         34.5          ‐4.5         ‐12%
+        11:00 PM       47                          34           ‐13          ‐28%
+        12:00 AM       47                          29           ‐18          ‐38%
+Full Day Average      55.2                        43.5         ‐11.7         ‐21%
+ 7‐9am Average        62.5                        45.7         ‐16.8         ‐27%
+ 4‐6pm Average        61.3                        52.7          ‐8.7         ‐14%
+
+                                             Median Travel Time
+                                     80
+   Travel time between stops (sec)
+
+
+
+
+                                     70
+                                     60
+                                     50
+                                     40
+                                     30
+                                     20
+                                     10
+                                      0
+
+
+
+
+                                             2019 Median    2022 Median
+                                               Cedar Street to Norris Street
+                                         2019 90th        2022 90th
+      Travel Time                        Percentile       Percentile   Difference        % Difference
+         5:00 AM                             82             58.8          ‐23.2             ‐28%
+         6:00 AM                           77.8               68           ‐9.8             ‐13%
+         7:00 AM                           105.6            81.9          ‐23.7             ‐22%
+         8:00 AM                             96               88            ‐8               ‐8%
+         9:00 AM                           102.4            75.8          ‐26.6             ‐26%
+        10:00 AM                             98             86.3          ‐11.7             ‐12%
+        11:00 AM                           104.5              84          ‐20.5             ‐20%
+        12:00 PM                             98             78.7          ‐19.3             ‐20%
+         1:00 PM                           97.2               78          ‐19.2             ‐20%
+         2:00 PM                           78.9               77           ‐1.9              ‐2%
+         3:00 PM                           96.6               82          ‐14.6             ‐15%
+         4:00 PM                           103.3              80          ‐23.3             ‐23%
+         5:00 PM                            105             86.3          ‐18.7             ‐18%
+         6:00 PM                            115             85.6          ‐29.4             ‐26%
+         7:00 PM                           100.6            87.7          ‐12.9             ‐13%
+         8:00 PM                           82.8               82           ‐0.8              ‐1%
+         9:00 PM                           86.3               82           ‐4.3              ‐5%
+        10:00 PM                           77.6               66          ‐11.6             ‐15%
+        11:00 PM                             87             60.9          ‐26.1             ‐30%
+        12:00 AM                           63.6             61.7           ‐1.9              ‐3%
+Full Day Average                           92.9             77.5          ‐15.4             ‐17%
+ 7‐9am Average                             101.3            81.9          ‐19.4             ‐19%
+ 4‐6pm Average                             107.8             84.0         ‐23.8             ‐22%
+
+                                                90th Percentile Travel Time
+                                   140
+ Travel time between stops (sec)
+
+
+
+
+                                   120
+                                   100
+                                   80
+                                   60
+                                   40
+                                   20
+                                    0
+
+
+
+
+                                               2019 90th Percentile    2022 90th Percentile
+                                Cedar Street to Norris Street
+
+       Ridership           May 2019    May 2022      Difference   % Difference
+         5:00 AM              44          47              3.1          7%
+         6:00 AM              86          65            ‐21.0        ‐24%
+         7:00 AM             128          99            ‐29.2        ‐23%
+         8:00 AM             171         180              9.2          5%
+         9:00 AM             147          92            ‐54.5        ‐37%
+       10:00 AM              133          74            ‐59.0        ‐44%
+       11:00 AM               55          55             ‐0.9         ‐2%
+       12:00 PM               61          63              1.7          3%
+         1:00 PM              54          83             29.1         53%
+         2:00 PM              64          72              8.6         13%
+         3:00 PM              91          98              6.6          7%
+         4:00 PM              98          80            ‐17.8        ‐18%
+         5:00 PM              93          87             ‐5.4         ‐6%
+         6:00 PM              73          65             ‐8.0        ‐11%
+         7:00 PM              59          42            ‐17.0        ‐29%
+         8:00 PM              28          29              1.4          5%
+         9:00 PM              42          39             ‐2.8         ‐7%
+       10:00 PM               46          30            ‐16.2        ‐35%
+       11:00 PM               15          10             ‐5.2        ‐35%
+       12:00 AM                7           6             ‐1.5        ‐20%
+Full Day Average             74.8        65.9            ‐8.9        ‐12%
+ 7‐9am Average              148.6       123.8           ‐24.8        ‐17%
+ 4‐6pm Average               87.8        77.4           ‐10.4        ‐12%
+
+                                         Ridership
+                     200
+                     180
+                     160
+  Hourly Ridership
+
+
+
+
+                     140
+                     120
+                     100
+                      80
+                      60
+                      40
+                      20
+                       0
+
+
+
+
+                                       May 2019      May 2022
+                                                              Cameron Avenue to Churchill Avenue
+
+      Travel Time 2019 Median 2022 Median                                                                                                                   Difference                              % Difference
+         5:00 AM       44          30                                                                                                                           ‐14                                    ‐32%
+         6:00 AM       54          32                                                                                                                           ‐22                                    ‐40%
+         7:00 AM      257          36                                                                                                                          ‐221                                    ‐86%
+         8:00 AM      138          39                                                                                                                           ‐99                                    ‐72%
+         9:00 AM       61          34                                                                                                                           ‐27                                    ‐44%
+        10:00 AM       57          35                                                                                                                           ‐22                                    ‐38%
+        11:00 AM       94          34                                                                                                                           ‐60                                    ‐64%
+        12:00 PM       62          36                                                                                                                           ‐26                                    ‐42%
+         1:00 PM       68          34                                                                                                                           ‐34                                    ‐50%
+         2:00 PM       90          40                                                                                                                           ‐50                                    ‐56%
+         3:00 PM      236          45                                                                                                                          ‐192                                    ‐81%
+         4:00 PM      206          44                                                                                                                          ‐162                                    ‐79%
+         5:00 PM      303          44                                                                                                                          ‐260                                    ‐86%
+         6:00 PM      227          39                                                                                                                          ‐188                                    ‐83%
+         7:00 PM      100          34                                                                                                                           ‐66                                    ‐66%
+         8:00 PM       67          33                                                                                                                           ‐34                                    ‐51%
+         9:00 PM       63          33                                                                                                                           ‐30                                    ‐48%
+        10:00 PM       54          32                                                                                                                           ‐22                                    ‐41%
+        11:00 PM       49          32                                                                                                                           ‐17                                    ‐35%
+        12:00 AM       64          30                                                                                                                           ‐34                                    ‐53%
+         1:00 AM       45          23                                                                                                                           ‐22                                    ‐49%
+Full Day Average      111          35                                                                                                                           ‐76                                    ‐68%
+ 7‐9am Average        152          36                                                                                                                          ‐116                                    ‐76%
+  4‐6pm average       245          42                                                                                                                          ‐203                                    ‐83%
+
+                                                                                                 Median Travel Time
+                                    350
+  Travel time between stops (sec)
+
+
+
+
+                                    300
+                                    250
+                                    200
+                                    150
+                                    100
+                                    50
+                                     0
+                                                                                                                   12:00 PM
+                                                                                                                              1:00 PM
+                                                                                                                                        2:00 PM
+                                                                                                                                                  3:00 PM
+                                                                                                                                                            4:00 PM
+                                                                                                                                                                      5:00 PM
+                                                                                                                                                                                6:00 PM
+                                                                                                                                                                                          7:00 PM
+                                                                                                                                                                                                     8:00 PM
+                                                                                                                                                                                                               9:00 PM
+                                                                                                                                                                                                                         10:00 PM
+                                                                                                                                                                                                                                    11:00 PM
+                                          5:00 AM
+                                                    6:00 AM
+                                                              7:00 AM
+                                                                        8:00 AM
+                                                                                  9:00 AM
+                                                                                            10:00 AM
+                                                                                                        11:00 AM
+
+
+
+
+                                                                                                                                                                                                                                               12:00 AM
+                                                                                                                                                                                                                                                          1:00 AM
+
+
+
+
+                                                                                                       2019 Median                                          2022 Median
+                                                                Cameron Avenue to Churchill Avenue
+                                                                    2019 90th                                      2022 90th
+      Travel Time                                                   Percentile                                     Percentile                               Difference                              % Difference
+         5:00 AM                                                        78                                            44                                        ‐34                                    ‐44%
+         6:00 AM                                                       105                                            51                                        ‐54                                    ‐52%
+         7:00 AM                                                       453                                            59                                       ‐395                                    ‐87%
+         8:00 AM                                                       358                                            60                                       ‐298                                    ‐83%
+         9:00 AM                                                       102                                            48                                        ‐54                                    ‐53%
+        10:00 AM                                                       108                                            46                                        ‐62                                    ‐58%
+        11:00 AM                                                       119                                            56                                        ‐63                                    ‐53%
+        12:00 PM                                                       115                                            48                                        ‐67                                    ‐58%
+         1:00 PM                                                       100                                            58                                        ‐42                                    ‐42%
+         2:00 PM                                                       150                                            64                                        ‐86                                    ‐57%
+         3:00 PM                                                       330                                            67                                       ‐263                                    ‐80%
+         4:00 PM                                                       329                                            69                                       ‐260                                    ‐79%
+         5:00 PM                                                       409                                            70                                       ‐339                                    ‐83%
+         6:00 PM                                                       316                                            56                                       ‐260                                    ‐82%
+         7:00 PM                                                       140                                            51                                        ‐89                                    ‐64%
+         8:00 PM                                                       110                                            54                                        ‐55                                    ‐51%
+         9:00 PM                                                       103                                            46                                        ‐57                                    ‐55%
+        10:00 PM                                                       122                                            44                                        ‐79                                    ‐64%
+        11:00 PM                                                        96                                            47                                        ‐49                                    ‐51%
+        12:00 AM                                                        84                                            49                                        ‐35                                    ‐42%
+         1:00 AM                                                        67                                            40                                        ‐27                                    ‐41%
+Full Day Average                                                       181                                            54                                       ‐127                                    ‐70%
+ 7‐9am Average                                                         304                                            56                                       ‐249                                    ‐82%
+  4‐6pm average                                                        351                                             65                                      ‐286                                    ‐82%
+
+
+                                                                                   90th Percentile Travel Time
+                                    500
+  Travel time between stops (sec)
+
+
+
+
+                                    450
+                                    400
+                                    350
+                                    300
+                                    250
+                                    200
+                                    150
+                                    100
+                                     50
+                                      0
+                                                                                                                   12:00 PM
+                                                                                                                              1:00 PM
+                                                                                                                                        2:00 PM
+                                                                                                                                                  3:00 PM
+                                                                                                                                                            4:00 PM
+                                                                                                                                                                      5:00 PM
+                                                                                                                                                                                6:00 PM
+                                                                                                                                                                                          7:00 PM
+                                                                                                                                                                                                    8:00 PM
+                                                                                                                                                                                                              9:00 PM
+                                                                                                                                                                                                                        10:00 PM
+                                                                                                                                                                                                                                   11:00 PM
+                                          5:00 AM
+                                                    6:00 AM
+                                                              7:00 AM
+                                                                        8:00 AM
+                                                                                   9:00 AM
+                                                                                             10:00 AM
+                                                                                                        11:00 AM
+
+
+
+
+                                                                                                                                                                                                                                              12:00 AM
+                                                                                                                                                                                                                                                         1:00 AM
+
+
+
+
+                                                                                  2019 90th Percentile                                                      2022 90th Percentile
+                           Cameron Avenue to Churchill Avenue
+
+       Ridership            May 2019   May 2022      Difference   % Difference
+         5:00 AM               6         15               9          158%
+         6:00 AM              26         52              25           97%
+         7:00 AM              48         76               27          57%
+         8:00 AM              77         62              ‐14         ‐19%
+         9:00 AM              38         41               3            9%
+       10:00 AM               42         58               16          37%
+       11:00 AM               33         37                4          13%
+       12:00 PM               43         45                2           5%
+         1:00 PM              80         54              ‐26         ‐32%
+         2:00 PM              76         74               ‐2          ‐2%
+         3:00 PM              142        98              ‐44         ‐31%
+         4:00 PM              102        121              19          18%
+         5:00 PM              190        156             ‐34         ‐18%
+         6:00 PM              187        146             ‐41         ‐22%
+         7:00 PM              127        89              ‐38         ‐30%
+         8:00 PM              137        61              ‐75         ‐55%
+         9:00 PM              106        53              ‐54         ‐51%
+       10:00 PM               52         49               ‐4          ‐7%
+       11:00 PM               32         44               11          35%
+       12:00 AM               25         21               ‐5         ‐19%
+         1:00 AM               5          5                0          ‐5%
+Full Day Average              75         65              ‐10         ‐14%
+ 7‐9am Average                54         60                6          10%
+  4‐6pm average               159        141             ‐19         ‐12%
+
+
+                                         Ridership
+                     250
+
+                     200
+  Hourly Ridership
+
+
+
+
+                     150
+
+                     100
+
+                     50
+
+                      0
+
+
+
+
+                                       May 2019      May 2022
+                                                               Churchill Avenue to Gladstone Street
+                                                                             2019                                          2022                                                 %
+Travel Time                                                                 Median                                        Median                                Difference Difference
+           5:00 AM                                                            31                                            23                                       ‐8       ‐25%
+           6:00 AM                                                            39                                            26                                      ‐13       ‐33%
+           7:00 AM                                                            73                                            40                                      ‐33       ‐45%
+           8:00 AM                                                            70                                            34                                      ‐36       ‐51%
+           9:00 AM                                                            46                                            32                                      ‐14       ‐30%
+         10:00 AM                                                             37                                            30                                       ‐7       ‐19%
+         11:00 AM                                                             55                                            33                                      ‐22       ‐40%
+         12:00 PM                                                             57                                            32                                      ‐25       ‐44%
+           1:00 PM                                                            73                                            33                                      ‐40       ‐55%
+           2:00 PM                                                            51                                            34                                      ‐17       ‐33%
+           3:00 PM                                                            82                                            36                                      ‐46       ‐56%
+           4:00 PM                                                            67                                            39                                      ‐28       ‐42%
+           5:00 PM                                                            73                                            42                                      ‐31       ‐42%
+           6:00 PM                                                            68                                            33                                      ‐35       ‐51%
+           7:00 PM                                                            69                                            32                                      ‐38       ‐54%
+           8:00 PM                                                            51                                            32                                      ‐20       ‐38%
+           9:00 PM                                                            45                                            30                                      ‐15       ‐33%
+         10:00 PM                                                             32                                            27                                       ‐5       ‐14%
+         11:00 PM                                                             33                                            24                                       ‐9       ‐27%
+         12:00 AM                                                             38                                            24                                      ‐14       ‐37%
+           1:00 AM                                                            19                                            20                                        1        5%
+  Full Day Average                                                            53                                            31                                      ‐22       ‐41%
+   7‐9am Average                                                              63                                            35                                      ‐28       ‐44%
+    4‐6pm average                                                             69                                            38                                      ‐31       ‐45%
+
+                                                                                             Median Travel Time
+                                      90
+    Travel time between stops (sec)
+
+
+
+
+                                      80
+                                      70
+                                      60
+                                      50
+                                      40
+                                      30
+                                      20
+                                      10
+                                       0
+                                                                                                                   12:00 PM
+                                           5:00 AM
+                                                     6:00 AM
+                                                               7:00 AM
+                                                                         8:00 AM
+                                                                                   9:00 AM
+                                                                                             10:00 AM
+                                                                                                        11:00 AM
+
+
+                                                                                                                              1:00 PM
+                                                                                                                                        2:00 PM
+                                                                                                                                                  3:00 PM
+                                                                                                                                                            4:00 PM
+                                                                                                                                                                      5:00 PM
+                                                                                                                                                                                6:00 PM
+                                                                                                                                                                                          7:00 PM
+                                                                                                                                                                                                    8:00 PM
+                                                                                                                                                                                                              9:00 PM
+                                                                                                                                                                                                                        10:00 PM
+                                                                                                                                                                                                                                   11:00 PM
+                                                                                                                                                                                                                                              12:00 AM
+                                                                                                                                                                                                                                                         1:00 AM
+
+
+
+
+                                                                                              2019 Median                                                    2022 Median
+                                                       Churchill Avenue to Gladstone Street
+                                                                 2019 90th                                   2022 90th                                                  %
+Travel Time                                                      Percentile                                  Percentile                                 Difference Difference
+           5:00 AM                                                  53                                          37                                          ‐16       ‐30%
+           6:00 AM                                                  67                                          46                                          ‐21       ‐31%
+           7:00 AM                                                  101                                         83                                          ‐18       ‐18%
+           8:00 AM                                                  120                                         103                                         ‐17       ‐14%
+           9:00 AM                                                  74                                          57                                          ‐17       ‐23%
+         10:00 AM                                                   81                                          56                                          ‐25       ‐31%
+         11:00 AM                                                   81                                          57                                          ‐24       ‐30%
+         12:00 PM                                                   94                                          58                                          ‐36       ‐39%
+           1:00 PM                                                  115                                         56                                          ‐59       ‐51%
+           2:00 PM                                                  72                                          66                                           ‐5        ‐8%
+           3:00 PM                                                  132                                         85                                          ‐47       ‐36%
+           4:00 PM                                                  101                                         82                                          ‐19       ‐19%
+           5:00 PM                                                  101                                         82                                          ‐19       ‐19%
+           6:00 PM                                                  108                                         66                                          ‐42       ‐39%
+           7:00 PM                                                  174                                         64                                         ‐110       ‐63%
+           8:00 PM                                                  87                                          49                                          ‐39       ‐44%
+           9:00 PM                                                  72                                          48                                          ‐24       ‐34%
+         10:00 PM                                                   60                                          42                                          ‐18       ‐29%
+         11:00 PM                                                   56                                          36                                          ‐20       ‐35%
+         12:00 AM                                                   60                                          34                                          ‐26       ‐43%
+           1:00 AM                                                  32                                          33                                            1         3%
+  Full Day Average                                                  88                                          59                                          ‐29       ‐33%
+   7‐9am Average                                                    98                                          81                                          ‐17       ‐18%
+    4‐6pm average                                                   103                                          77                                         ‐27       ‐26%
+
+                                                                              90th Percentile Travel Time
+                                       200
+     Travel time between stops (sec)
+
+
+
+
+                                       180
+                                       160
+                                       140
+                                       120
+                                       100
+                                        80
+                                        60
+                                        40
+                                        20
+                                         0
+                                                                                                                     12:00 PM
+                                                                                                                                1:00 PM
+                                                                                                                                          2:00 PM
+                                                                                                                                                    3:00 PM
+                                                                                                                                                              4:00 PM
+                                                                                                                                                                        5:00 PM
+                                                                                                                                                                                  6:00 PM
+                                                                                                                                                                                            7:00 PM
+                                                                                                                                                                                                      8:00 PM
+                                                                                                                                                                                                                9:00 PM
+                                                                                                                                                                                                                          10:00 PM
+                                                                                                                                                                                                                                     11:00 PM
+                                             5:00 AM
+                                                       6:00 AM
+                                                                 7:00 AM
+                                                                           8:00 AM
+                                                                                     9:00 AM
+                                                                                               10:00 AM
+                                                                                                          11:00 AM
+
+
+
+
+                                                                                                                                                                                                                                                12:00 AM
+                                                                                                                                                                                                                                                           1:00 AM
+
+
+
+
+                                                                           2019 90th Percentile                                                                2022 90th Percentile
+                                           Churchill Avenue to Gladstone Street
+                                                                                                                                                             %
+Ridership                                                 May 2019                                  May 2022                                 Difference Difference
+          5:00 AM                                            6                                         15                                          9       155%
+          6:00 AM                                            25                                        51                                         26       107%
+          7:00 AM                                            39                                        72                                         33        85%
+          8:00 AM                                            52                                        62                                         10        20%
+          9:00 AM                                            51                                        38                                        ‐14       ‐26%
+        10:00 AM                                             42                                        49                                          7        18%
+        11:00 AM                                             32                                        36                                          4        13%
+        12:00 PM                                             43                                        43                                          1         2%
+          1:00 PM                                            76                                        53                                        ‐23       ‐30%
+          2:00 PM                                            45                                        73                                         28        62%
+          3:00 PM                                           172                                        75                                        ‐97       ‐56%
+          4:00 PM                                            81                                       136                                         55        68%
+          5:00 PM                                           199                                       152                                        ‐47       ‐24%
+          6:00 PM                                           181                                       141                                        ‐39       ‐22%
+          7:00 PM                                           124                                        70                                        ‐54       ‐43%
+          8:00 PM                                           129                                        77                                        ‐51       ‐40%
+          9:00 PM                                            91                                        51                                        ‐39       ‐43%
+        10:00 PM                                             64                                        48                                        ‐16       ‐25%
+        11:00 PM                                             32                                        42                                          9        29%
+        12:00 AM                                             25                                        16                                         ‐9       ‐36%
+          1:00 AM                                            5                                         8                                           3        59%
+ Full Day Average                                           72                                        62                                         ‐10       ‐13%
+  7‐9am Average                                             47                                        57                                          10       21%
+   4‐6pm average                                            154                                       143                                        ‐10        ‐7%
+
+
+                                                                                                    Ridership
+                      250
+
+                      200
+   Hourly Ridership
+
+
+
+
+                      150
+
+                      100
+
+                      50
+
+                       0
+                                                                                                    12:00 PM
+                            5:00 AM
+                                      6:00 AM
+                                                7:00 AM
+                                                          8:00 AM
+                                                                    9:00 AM
+                                                                              10:00 AM
+                                                                                         11:00 AM
+
+
+                                                                                                               1:00 PM
+                                                                                                                         2:00 PM
+                                                                                                                                   3:00 PM
+                                                                                                                                             4:00 PM
+                                                                                                                                                       5:00 PM
+                                                                                                                                                                 6:00 PM
+                                                                                                                                                                           7:00 PM
+                                                                                                                                                                                     8:00 PM
+                                                                                                                                                                                               9:00 PM
+                                                                                                                                                                                                         10:00 PM
+                                                                                                                                                                                                                    11:00 PM
+                                                                                                                                                                                                                               12:00 AM
+                                                                                                                                                                                                                                          1:00 AM
+
+
+
+
+                                                                                         May 2019                                            May 2022
+                                         Gladstone Street to Route 16
+
+      Travel Time 2019 Median 2022 Median                  Difference    % Difference
+         5:00 AM       21          21                            0            0%
+         6:00 AM       37          27                          ‐10          ‐26%
+         7:00 AM       77          59                          ‐19          ‐24%
+         8:00 AM       60          62                            2            3%
+         9:00 AM       44          39                           ‐5          ‐11%
+        10:00 AM       45          38                           ‐7          ‐16%
+        11:00 AM       40          35                           ‐5          ‐13%
+        12:00 PM       57          36                          ‐21          ‐37%
+         1:00 PM       89          56                          ‐33          ‐37%
+         2:00 PM       54          46                           ‐8          ‐15%
+         3:00 PM       66          45                          ‐21          ‐31%
+         4:00 PM       73          58                          ‐15          ‐20%
+         5:00 PM       74          72                           ‐2           ‐3%
+         6:00 PM       78          41                          ‐37          ‐48%
+         7:00 PM       84          40                          ‐44          ‐52%
+         8:00 PM       72          36                          ‐36          ‐50%
+         9:00 PM       59          32                          ‐28          ‐47%
+        10:00 PM       41          31                          ‐10          ‐24%
+        11:00 PM       33          24                           ‐9          ‐26%
+        12:00 AM       25          19                           ‐6          ‐24%
+         1:00 AM       59          14                          ‐45          ‐76%
+Full Day Average       56          39                          ‐17          ‐30%
+ 7‐9am Average         60          53                           ‐7          ‐12%
+  4‐6pm average        75          57                          ‐18          ‐24%
+
+                                            Median Travel Time
+                                   100
+ Travel time between stops (sec)
+
+
+
+
+                                    90
+                                    80
+                                    70
+                                    60
+                                    50
+                                    40
+                                    30
+                                    20
+                                    10
+                                     0
+
+
+
+
+                                             2019 Median   2022 Median
+                                              Gladstone Street to Route 16
+                                          2019 90th      2022 90th
+      Travel Time                         Percentile     Percentile   Difference     % Difference
+         5:00 AM                             37             35             ‐2            ‐5%
+         6:00 AM                             91             56            ‐35           ‐39%
+         7:00 AM                             112            102           ‐10            ‐9%
+         8:00 AM                             111            116             5             5%
+         9:00 AM                             108            83            ‐25           ‐23%
+        10:00 AM                             99             67            ‐32           ‐33%
+        11:00 AM                             81             79             ‐2            ‐3%
+        12:00 PM                             114            84            ‐30           ‐26%
+         1:00 PM                             125            108           ‐17           ‐14%
+         2:00 PM                             111            89            ‐22           ‐20%
+         3:00 PM                             117            105           ‐12           ‐10%
+         4:00 PM                             129            98            ‐31           ‐24%
+         5:00 PM                             121            112            ‐9            ‐8%
+         6:00 PM                             114            105           ‐10            ‐8%
+         7:00 PM                             142            87            ‐55           ‐39%
+         8:00 PM                             128            89            ‐39           ‐30%
+         9:00 PM                             100            71            ‐29           ‐29%
+        10:00 PM                             94             68            ‐26           ‐27%
+        11:00 PM                             72             46            ‐26           ‐36%
+        12:00 AM                             44             33            ‐11           ‐26%
+         1:00 AM                             63             23            ‐40           ‐64%
+Full Day Average                             100            79            ‐22           ‐22%
+ 7‐9am Average                               110            100           ‐10            ‐9%
+  4‐6pm average                              121            105           ‐17           ‐14%
+
+                                               90th Percentile Travel Time
+                                    160
+  Travel time between stops (sec)
+
+
+
+
+                                    140
+                                    120
+                                    100
+                                     80
+                                     60
+                                     40
+                                     20
+                                      0
+
+
+
+
+                                              2019 90th Percentile    2022 90th Percentile
+                             Gladstone Street to Route 16
+
+       Ridership          May 2019    May 2022     Difference   % Difference
+         5:00 AM             6           23             17         279%
+         6:00 AM             24          51             27         109%
+         7:00 AM             31          72             41         133%
+         8:00 AM             60          54             ‐6         ‐10%
+         9:00 AM             52          38            ‐15         ‐28%
+       10:00 AM              41          49              8          19%
+       11:00 AM              31          36              4          14%
+       12:00 PM              42          43              1           3%
+         1:00 PM             75          51            ‐23         ‐31%
+         2:00 PM             45          72             27          61%
+         3:00 PM            171          75            ‐96         ‐56%
+         4:00 PM             80         135             55          69%
+         5:00 PM            179         149            ‐30         ‐17%
+         6:00 PM            197         140            ‐57         ‐29%
+         7:00 PM            122          68            ‐54         ‐44%
+         8:00 PM            128          77            ‐51         ‐40%
+         9:00 PM             88          51            ‐37         ‐42%
+       10:00 PM              63          47            ‐16         ‐25%
+       11:00 PM              32          41              9          28%
+       12:00 AM              25          16             ‐9         ‐35%
+         1:00 AM             5           8               3          59%
+Full Day Average            71          62             ‐10         ‐13%
+ 7‐9am Average              48          55               7          14%
+  4‐6pm average             152         141            ‐11          ‐7%
+
+                                       Ridership
+                    250
+
+                    200
+ Hourly Ridership
+
+
+
+
+                    150
+
+                    100
+
+                    50
+
+                     0
+
+
+
+
+                                     May 2019      May 2022
+

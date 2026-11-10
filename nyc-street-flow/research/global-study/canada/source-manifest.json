@@ -1,0 +1,30 @@
+[
+  {
+    "filename": "bloor-2017-report.pdf",
+    "url": "https://www.toronto.ca/wp-content/uploads/2017/10/8ef6-cycling-bloor-backgroundfile-107582.pdf",
+    "bytes": 280374,
+    "sha256": "60013e749074d6715d4135335dcf17bd3f9f52d80ef8a036e00454e40a39c2d2",
+    "retrieved_session_date": "2026-11-06"
+  },
+  {
+    "filename": "bloor-2017-metrics.pdf",
+    "url": "https://www.toronto.ca/wp-content/uploads/2017/10/9697-Cycling-Bloor-Attachment-1.pdf",
+    "bytes": 56941,
+    "sha256": "361fad542dba286bd6811cd798855166e4d52775aa285c1683061f36b53f8b9d",
+    "retrieved_session_date": "2026-11-06"
+  },
+  {
+    "filename": "calgary-2016-report.pdf",
+    "url": "https://www.calgary.ca/content/dam/www/transportation/tp/documents/cycling/city-centre-cycle-track/cycle-track-summary-report-nov-2016.pdf",
+    "bytes": 3606913,
+    "sha256": "2d16fedbde081a34d79710419ea5a2ae11aa1c6d7375c9ee82751e0576d2d171",
+    "retrieved_session_date": "2026-11-06"
+  },
+  {
+    "filename": "burrard-2009-2010-full.json",
+    "url": "https://opendata.vancouver.ca/api/explore/v2.1/catalog/datasets/bike-lane-statistics-for-burrard-bridge-2009-2010/exports/json",
+    "bytes": 172549,
+    "sha256": "f7a21baeb932faff6fd47a3c823ede19a830bfc8b50bc0470239f3c7d2379e4c",
+    "retrieved_session_date": "2026-11-06"
+  }
+]

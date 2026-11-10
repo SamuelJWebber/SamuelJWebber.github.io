@@ -1,0 +1,14 @@
+{
+  "checked_on": "2026-11-06",
+  "passed": true,
+  "tlc": {
+    "rows": 11904,
+    "valid": 11892,
+    "invalid": 12,
+    "missing": 0
+  },
+  "sources": 20,
+  "candidates": 10,
+  "gates": 8,
+  "scope": "Offline record/derived value checks, JSON validity, digitization labels and contract consistency. Not a causal validation."
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "file": "cambridge-north-mass-evaluation.pdf",
+    "url": "https://www.cambridgema.gov/-/media/Files/Traffic/2021/20221118_northmassavepostimplementationanalysis.pdf",
+    "bytes": 1301814,
+    "sha256": "fd8dc4c5fcc321dc524bdee4ac05c5d6ed74845895ee8bb5588979531fa22813"
+  },
+  {
+    "file": "cambridge-2021-traffic.pdf",
+    "url": "https://www.cambridgema.gov/-/media/Files/Traffic/dudleytoalewifebrookpkwy/2021trafficcountdata.pdf",
+    "bytes": 377161,
+    "sha256": "98852b6b370f249549638405c48d3318db05523aa65467d50a4b6b9f9a7988f3"
+  },
+  {
+    "file": "cambridge-2016-figures.pdf",
+    "url": "https://www.cambridgema.gov/-/media/Files/Traffic/dudleytoalewifebrookpkwy/MassAve_Figures_Dudley_ABP.pdf",
+    "bytes": 2135644,
+    "sha256": "79e9c036902aa790c529b2218d80bccaad61cf50aab4d9c06dfa8830f200a8a6"
+  }
+]

@@ -1,0 +1,93 @@
+{
+  "source": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/all/USW00094728.dly",
+  "station": "Central Park USW00094728",
+  "periods": {
+    "before": [
+      "2020-06-21",
+      "2021-06-20"
+    ],
+    "after": [
+      "2021-09-15",
+      "2022-09-14"
+    ]
+  },
+  "matched_rides": 4293,
+  "date_clusters": 678,
+  "missing_weather_rides": 0,
+  "unadjusted_fixed_cells": {
+    "Manhattan": {
+      "change_minutes": -0.6980891583153485,
+      "cluster95_minutes": [
+        -1.2176487049999924,
+        -0.17852961163070447
+      ]
+    },
+    "Brooklyn": {
+      "change_minutes": -1.4173371406975321,
+      "cluster95_minutes": [
+        -1.9430541581959728,
+        -0.8916201231990916
+      ]
+    },
+    "Brooklyn_minus_Manhattan": {
+      "change_minutes": -0.7192479823821836,
+      "cluster95_minutes": [
+        -1.4559695095129068,
+        0.017473544748539682
+      ]
+    }
+  },
+  "weather_adjusted": {
+    "Manhattan": {
+      "change_minutes": -0.7021683685613755,
+      "cluster95_minutes": [
+        -1.2241804746416072,
+        -0.18015626248114391
+      ]
+    },
+    "Brooklyn": {
+      "change_minutes": -1.413797909370634,
+      "cluster95_minutes": [
+        -1.938550998303489,
+        -0.8890448204377791
+      ]
+    },
+    "Brooklyn_minus_Manhattan": {
+      "change_minutes": -0.7116295408092586,
+      "cluster95_minutes": [
+        -1.4493568506310075,
+        0.02609776901249039
+      ]
+    }
+  },
+  "weather_and_weekday_adjusted": {
+    "Manhattan": {
+      "change_minutes": -0.6993503186127165,
+      "cluster95_minutes": [
+        -1.221496432907962,
+        -0.17720420431747075
+      ]
+    },
+    "Brooklyn": {
+      "change_minutes": -1.422717552966684,
+      "cluster95_minutes": [
+        -1.9476720097724427,
+        -0.8977630961609254
+      ]
+    },
+    "Brooklyn_minus_Manhattan": {
+      "change_minutes": -0.7233672343539677,
+      "cluster95_minutes": [
+        -1.4623678778708358,
+        0.015633409162900458
+      ]
+    }
+  },
+  "limitations": [
+    "Daily Central Park weather is an imperfect proxy for conditions at each trip time and bridge.",
+    "Temperature and precipitation enter linearly with common slopes across bridges.",
+    "These models do not control pandemic changes, changing riders or actual route choice.",
+    "Date clustering omits cross-date serial dependence and repeated riders.",
+    "Conditional intervals are sampling-only; they do not establish causal identification."
+  ]
+}

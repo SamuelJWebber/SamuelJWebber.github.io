@@ -1,0 +1,215 @@
+{
+  "title": "NYC Street Flow: project outcome scorecards",
+  "author": "Samuel Webber",
+  "updated": "2026-11-09",
+  "status": "Evidence inventory, not identified causal effects",
+  "definitions": {
+    "flow": "People crossing a fixed boundary per hour, direction and aligned time interval",
+    "time": "Mean minutes for comparable complete journeys, including access, waits and transfers",
+    "minutes": "Sum of complete journey minutes, reported alongside trip totals; separate fixed-composition and actual-mix measures"
+  },
+  "projects": [
+    {
+      "id": "prospect",
+      "name": "Prospect Park West",
+      "subtitle": "2010 · three moving lanes → two",
+      "flow": {
+        "type": "modeled",
+        "value": "−40 to +86 people/h",
+        "detail": "Evening street-count scenario after separately accounting for the B69. Requires stable 1.3-person non-B69 motor occupancy and transferred historical bus loads. This range is not a confidence interval."
+      },
+      "time": {
+        "type": "missing",
+        "value": "Complete journeys missing",
+        "detail": "Measured driving segment: controlled changes from −36 to +11 seconds across comparison streets, 7 a.m.–7 p.m. Only two weekdays before and two after; these do not represent every traveler’s trip."
+      },
+      "minutes": {
+        "type": "missing",
+        "value": "Not identified",
+        "detail": "No contemporaneous traveler weights or complete journey times for the affected network. Hypothetical fixed-drive totals remain scenarios."
+      },
+      "blockers": [
+        "Bicycle and vehicle observations use different sites and dates.",
+        "B69 relocation changes passenger flow on PPW and nearby streets.",
+        "Parallel streets had concurrent changes; the comparison cannot isolate the lane."
+      ],
+      "next": "Obtain retained synchronized passenger counts and B69 load/reroute records. If these were never collected, retain the conditional result rather than filling the gap with assumed riders.",
+      "links": [
+        [
+          "Passenger and driving tests",
+          "?evidence=causal&causal=flow#evidence"
+        ],
+        [
+          "DOT raw counts and timed runs",
+          "https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf"
+        ]
+      ]
+    },
+    {
+      "id": "third",
+      "name": "Third Avenue",
+      "subtitle": "2023 · combined bus, bike and street redesign",
+      "flow": {
+        "type": "modeled",
+        "value": "−211 people/h",
+        "detail": "Motor occupants + bus riders at E60th Street, 2022→2024, 16:00–19:00. Source occupancy estimates are included. Cycling is observed at E50th, outside the project; walking is missing at the motor boundary."
+      },
+      "time": {
+        "type": "missing",
+        "value": "Complete journeys missing",
+        "detail": "Measured bus segment: −28 seconds relative to Lexington, while the pre-period placebo is +52 seconds. Run-weighted time over E67th–E97th is not passenger-weighted door-to-door time."
+      },
+      "minutes": {
+        "type": "missing",
+        "value": "Loads and whole trips missing",
+        "detail": "Bus runs cannot supply passenger-minutes without segment loads. Add access, waits, transfers and other modes before evaluating the complete network."
+      },
+      "blockers": [
+        "Bus and bike lanes, intersection work and signal changes form one package.",
+        "The primary comparison fails a reassuring pre-period stability check.",
+        "Motor and bicycle counts do not share a boundary; bus onboard loads remain missing.",
+        "Route-level bus fare entries were already falling against other Upper East Side routes before construction, so they cannot show a package effect either."
+      ],
+      "next": "Use staged DOT and MTA records to verify treatment dates, timepoint continuity, bus loads and an eligible longer comparison history. Estimate the combined redesign unless its components can be separated.",
+      "links": [
+        [
+          "Controlled bus analysis",
+          "?evidence=causal&causal=bus#evidence"
+        ],
+        [
+          "MTA timepoint data",
+          "https://data.ny.gov/d/58t6-89vi"
+        ],
+        [
+          "DOT project completion",
+          "https://www.nyc.gov/html/dot/html/pr2023/completion-safety-project-third-ave.shtml"
+        ],
+        [
+          "Route ridership check",
+          "research/third-avenue-ridership/README.txt"
+        ]
+      ]
+    },
+    {
+      "id": "pulaski",
+      "name": "Pulaski / McGuinness approach",
+      "subtitle": "2015–16 construction · detector and bridge are different locations",
+      "flow": {
+        "type": "missing",
+        "value": "Vehicles ≠ people",
+        "detail": "Continuous directional vehicle counts at station 021284 support motor-volume comparisons. Occupancy, aligned bicycle counts and the bridge screenline are not supplied by that detector."
+      },
+      "time": {
+        "type": "missing",
+        "value": "Complete journeys missing",
+        "detail": "A motor-count record contains no elapsed journey time. Available Citi Bike records cannot reconstruct every private-bike, motor or transit traveler’s door-to-door trip."
+      },
+      "minutes": {
+        "type": "missing",
+        "value": "Not identified",
+        "detail": "Neither all-mode traveler weights nor complete time observations are aligned to a verified permanent lane-closure date."
+      },
+      "blockers": [
+        "Junctions between the detector and Pulaski Bridge allow entries, exits and diversion.",
+        "Permanent motor-lane closure timing and detector continuity need agency confirmation.",
+        "The automatic bridge bicycle series begins after conversion; the Bronx donor roads have incomplete common coverage."
+      ],
+      "next": "Verify station coordinates, direction codes, lane channels and quality logs before treating the motor series as continuous. Use shared calendar cells and present each direction separately.",
+      "links": [
+        [
+          "Directional and hourly counts",
+          "?workbench=directions#workbench"
+        ],
+        [
+          "Earlier motor-count diagnostics",
+          "?evidence=causal&causal=road#evidence"
+        ],
+        [
+          "NYSDOT traffic-data repository",
+          "https://www.dot.ny.gov/divisions/engineering/technical-services/highway-data-services/hdsb"
+        ]
+      ]
+    },
+    {
+      "id": "brooklyn",
+      "name": "Brooklyn Bridge",
+      "subtitle": "2021 · Manhattan-bound moving lane → two-way bikeway",
+      "flow": {
+        "type": "modeled",
+        "value": "−256 people/h",
+        "detail": "Representative evening profile, 2018→2024, both directions: motor occupants, cyclists and pedestrians. Motor occupancy is estimated by the source; the mode surveys are not synchronized."
+      },
+      "time": {
+        "type": "missing",
+        "value": "Complete journeys missing",
+        "detail": "Fixed-station Citi Bike trips and borough-level commute surveys supply separate context. They do not follow the same affected travelers before and after the conversion."
+      },
+      "minutes": {
+        "type": "missing",
+        "value": "Lane effect not identified",
+        "detail": "Survey-weighted usual-commute minutes can describe the borough pair. A changing number and mix of commuters prevents interpreting their total as daily minutes saved by the lane."
+      },
+      "blockers": [
+        "The intervention coincides with pandemic-era commuting changes.",
+        "Neighboring bridges can receive diverted travelers and have different pre-trends.",
+        "Subway, tunnel and ferry totals broaden the boundary but do not identify individual switches."
+      ],
+      "next": "Keep bridge, three-bridge and wider sector boundaries visible. Obtain aligned modal dates and a credible comparison design; do not infer a driver→subway transition from aggregate ridership changes.",
+      "links": [
+        [
+          "Bridge counts and benchmarks",
+          "#trends"
+        ],
+        [
+          "Rail, tunnels and commute context",
+          "#commutes"
+        ],
+        [
+          "NYMTC source reports",
+          "https://www.nymtc.org/hub-bound-travel"
+        ]
+      ]
+    },
+    {
+      "id": "amsterdam",
+      "name": "Tenth / Amsterdam Avenue",
+      "subtitle": "2019 · full-time moving lane → protected bikeway",
+      "flow": {
+        "type": "modeled",
+        "value": "−210 people/h",
+        "detail": "Northbound motor occupants + bus riders at W60th Street, 2018→2019, 16:00–19:00. The first comparison predates the pandemic. Aligned cycling and walking at this crossing are absent."
+      },
+      "time": {
+        "type": "missing",
+        "value": "Complete journeys missing",
+        "detail": "No matched all-mode complete journey panel establishes travel time changes caused by this conversion."
+      },
+      "minutes": {
+        "type": "missing",
+        "value": "Not identified",
+        "detail": "The motor-and-bus subtotal cannot be multiplied by an unrelated citywide or modal average to produce a defensible network time burden."
+      },
+      "blockers": [
+        "Cycling is counted at W50th Street, south of the original project section.",
+        "Walking at the motor boundary and comparable whole trips are missing.",
+        "Later comparisons add pandemic changes and a 2023 bikeway extension through the bicycle count site."
+      ],
+      "next": "Prioritize the 2018→2019 window, verify count dates and obtain a comparable untreated corridor. Add contemporaneous cycling and walking at W60th before reporting all-mode flow.",
+      "links": [
+        [
+          "Project explorer",
+          "?project=amsterdam#projects"
+        ],
+        [
+          "DOT design drawings",
+          "https://www.nyc.gov/html/dot/downloads/pdf/amsterdam-10th-ave-june2018.pdf"
+        ],
+        [
+          "NYMTC source reports",
+          "https://www.nymtc.org/hub-bound-travel"
+        ]
+      ]
+    }
+  ],
+  "request_status_url": "../request-status.json"
+}

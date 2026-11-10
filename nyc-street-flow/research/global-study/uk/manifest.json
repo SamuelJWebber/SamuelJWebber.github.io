@@ -1,0 +1,182 @@
+[
+  {
+    "file": "bhuyan.pdf",
+    "bytes": 1845356,
+    "sha256": "23a50f00da94cb612fca62f85543d0e216ff318228f398ef1296c28f3a3752ab"
+  },
+  {
+    "file": "bhuyan.txt",
+    "bytes": 103976,
+    "sha256": "66c1500fbccb17678ecab45c847b8a84f9b6a18fb45317d5669e6c9dea500dcb"
+  },
+  {
+    "file": "bhuyan_published_estimates.csv",
+    "bytes": 1729,
+    "sha256": "4595048157ea88ba4c643a4e249c994579ea3c2792c809ff4f20d896276623ef"
+  },
+  {
+    "file": "candidates.json",
+    "bytes": 10904,
+    "sha256": "2b71cfa640030513052cb0cc88f43377c2406d1e909d1e7342b6c81934fa2307"
+  },
+  {
+    "file": "dft_a201_points.json",
+    "bytes": 9458,
+    "sha256": "922dce60b48881546a35eebcb4d84b6f87e6881a462f49191f8057c6c57c26b8"
+  },
+  {
+    "file": "dft_a3211_points.json",
+    "bytes": 5961,
+    "sha256": "1b27ea9609260fe409b293f88ccf389119cf95ea8b5755f0611acd8572b22ea4"
+  },
+  {
+    "file": "dft_aadf_56614.json",
+    "bytes": 27779,
+    "sha256": "f72bf2ea49aa30710d79eb976c5ee49cad0bc4100313a32a4a7f8852808481bb"
+  },
+  {
+    "file": "dft_aadf_6751.json",
+    "bytes": 28152,
+    "sha256": "32747dbc51bee185f0c0d0e05cb29504f77f47de11042180c6d00649f80aabe5"
+  },
+  {
+    "file": "dft_aadf_73304.json",
+    "bytes": 28360,
+    "sha256": "9ef5b33b3130c54ec01faac03084871cf238fd15f22d2a373989bc520bd46b0a"
+  },
+  {
+    "file": "dft_aadf_75396.json",
+    "bytes": 28706,
+    "sha256": "edcc187fca1d05dc3e0884ba9e1722b33927b769757ddaca996dbd65abf90073"
+  },
+  {
+    "file": "dft_raw_18468.json",
+    "bytes": 366328,
+    "sha256": "ff5ac7ab252dfcdd043ac3d90baca1ea3fb65f90dcccf242f5d2b70343472e68"
+  },
+  {
+    "file": "dft_raw_47661.json",
+    "bytes": 143060,
+    "sha256": "18518c556795c74756ae688e0d2e456cbb16e9ec2c588a4b03544b99f5faa378"
+  },
+  {
+    "file": "dft_raw_48552.json",
+    "bytes": 311894,
+    "sha256": "3ba53049d039527d4b89eddfe9e6c73aa450747b954af108a4e31546c2359912"
+  },
+  {
+    "file": "dft_raw_56614.json",
+    "bytes": 263639,
+    "sha256": "4892478e1b5a01f60717ea26c749090e09f294c21cb4e64aeb0893e609a111c2"
+  },
+  {
+    "file": "dft_raw_58306.json",
+    "bytes": 287584,
+    "sha256": "219ce797fcefe45c2064d661dc52e2a007c36f0a6316914c67188acd9bf1b76a"
+  },
+  {
+    "file": "london_blackfriars_calculations.csv",
+    "bytes": 420,
+    "sha256": "21835f0d7f126460b9d3ab7210e7f804d854ea2810a89433cfc4a33e371ec72a"
+  },
+  {
+    "file": "london_blackfriars_person_flow.csv",
+    "bytes": 522,
+    "sha256": "088eb3992ce2c9234fcaa3c431f4546ae29f6f3b8b78da7713a791608e8029f9"
+  },
+  {
+    "file": "london_dft_aadf_with_quality.csv",
+    "bytes": 22538,
+    "sha256": "69489fb8a5e0ac7feeb3a53419146cf0aefb567952270e2a4335d3deed61cbdb"
+  },
+  {
+    "file": "london_dft_raw_counts.csv",
+    "bytes": 223249,
+    "sha256": "ed187fbb0f84b7ffb6a71e52fc2a37f39041cd467939835fe83486a18b43384d"
+  },
+  {
+    "file": "london_dft_survey_day_direction_totals.csv",
+    "bytes": 7190,
+    "sha256": "f5e3e3f837686bfdd1b83851c0fad19a06b683763a09f19ebc06b417a33589bc"
+  },
+  {
+    "file": "london_ew_modelled_vs_observed_times.csv",
+    "bytes": 1104,
+    "sha256": "930f2d6e34f34525d75c431aed4653338248eb2235f009f73e8eecdd06c27097"
+  },
+  {
+    "file": "manchester_all_tables.json",
+    "bytes": 94812,
+    "sha256": "37cfd311c4609e913218ac739300a048030faa7d9a39f463b6984dc3d5ef10ae"
+  },
+  {
+    "file": "manchester_bus_time_calculations.csv",
+    "bytes": 3541,
+    "sha256": "4332f1e1d38ec3af9a2add7c660373729b0edfee1b84908a76185de09c12b89c"
+  },
+  {
+    "file": "manchester_final_evaluation.docx",
+    "bytes": 9168443,
+    "sha256": "24c30b2a80d8e74e63568847073fed120ab8f51d9dbc6c9f67ac31693843137a"
+  },
+  {
+    "file": "manchester_final_evaluation.txt",
+    "bytes": 275404,
+    "sha256": "436c959c5596499e4c57afc722072015d0be17565e6115672629fa4225d5c509"
+  },
+  {
+    "file": "manchester_parallel_road_calculations.csv",
+    "bytes": 7334,
+    "sha256": "0c8884e667957a1fe04a5e0de2eb4b686e28c35d9d39e86d51a3c1fa0c53a16a"
+  },
+  {
+    "file": "manchester_table_4_10.csv",
+    "bytes": 205,
+    "sha256": "035c3a5642ecdefd9b1961daa201e9d0a762fc5a24b8239a0439dea9e33daee7"
+  },
+  {
+    "file": "manchester_table_4_6.csv",
+    "bytes": 327,
+    "sha256": "771e4096c86a7962163939a8e4fcb9796f72c3a02fa55b0d00b1b944f4d0bc29"
+  },
+  {
+    "file": "manchester_table_4_8.csv",
+    "bytes": 205,
+    "sha256": "97fa0b0c17f227d673bb579ec0ff5f704abaa8bf0e637740dad8ba9219fac5f5"
+  },
+  {
+    "file": "manchester_table_4_9.csv",
+    "bytes": 325,
+    "sha256": "09160c4ef9db8f2f471454a4a3f7cf45a891de5439872d06de272fe3b175579a"
+  },
+  {
+    "file": "manchester_table_5_10.csv",
+    "bytes": 334,
+    "sha256": "3396c90ea33e54b718f12b596764834bbddc098aba152542db44cc1dc4498763"
+  },
+  {
+    "file": "manchester_table_5_11.csv",
+    "bytes": 438,
+    "sha256": "9d3899c041f5bcb9201b8411cfcf827f0790ae574d541fe3b2617ded649f1fdc"
+  },
+  {
+    "file": "manchester_table_5_12.csv",
+    "bytes": 202,
+    "sha256": "e2416bc76f47aa0ea9d2aff067421182da30e06fa5b1f05cdf59aef0909516fc"
+  },
+  {
+    "file": "manchester_table_5_13.csv",
+    "bytes": 1289,
+    "sha256": "22177914fbb0c0e58323a2b941c2297bfa71f6e8ef0b6b5da7fd0f2d2186d7b1"
+  },
+  {
+    "file": "manchester_table_5_8.csv",
+    "bytes": 327,
+    "sha256": "d0ed9a2188dab5a7172f1821ce2707867a4e42c574235e9fde66578054b81256"
+  },
+  {
+    "file": "manchester_table_5_9.csv",
+    "bytes": 876,
+    "sha256": "a4fd8018b5a511465493c7304378c861f8edcd0b65ea0e9523002d61bc4da219"
+  }
+]

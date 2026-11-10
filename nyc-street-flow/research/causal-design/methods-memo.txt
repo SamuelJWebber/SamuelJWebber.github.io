@@ -1,0 +1,95 @@
+CAUSAL METHODS MEMO — NYC LANE CONVERSION STUDY
+Research date: 5 November 2026
+Purpose: choose a defensible design before adding more observations or fitting a more sophisticated model.
+
+RECOMMENDATION
+
+Run two tracks. Retrospectively, assemble a verified moving-lane-conversion registry and estimate bounded, mode-specific effects with genuinely unexposed controls. Prospectively, seek a randomized phase-in among already-approved, engineering-ready projects and install aligned measurement before construction. Public data can considerably strengthen the retrospective track, but cannot manufacture either random assignment or missing whole-journey/passenger observations.
+
+The causal unit is a conversion project and its affected network, not a Citi Bike ride. Millions of trip rows improve measurement; they do not create millions of independent treatment assignments.
+
+THE IDEAL EXPERIMENT
+
+Target the policy actually in dispute: replacing one continuous moving-vehicle lane with a protected cycling lane. Define geometry, direction, opening date, construction period, remaining lanes, turn pockets, parking changes, signal changes, and bus treatment. If the conversion necessarily includes other changes, estimate the effect of that package. A pure bike-lane effect requires independently varying the other components, for example a feasible factorial rollout; regression cannot separate perfectly coincident components.
+
+Among approved projects with comparable readiness, pair-match entire corridor networks on baseline demand, bottlenecks, transit service, land use, and pre-period outcomes, then randomly assign rollout timing. Publish the assignment and schedule before observing post-period outcomes. Every project can ultimately receive treatment. Preserve the randomized assignment for intention-to-treat analysis even if construction slips; assignment-to-received-treatment IV needs additional exclusion, monotonicity, and compliance assumptions.
+
+Randomization must be at a scale that contains meaningful route substitution. Adjacent streets are often affected outcomes, not controls. Measure the treated street, parallel routes and connecting approaches, plus a prespecified broader network. A daily lane-on/lane-off crossover would mainly identify an immediate traffic response and would have substantial carryover and adaptation problems for cycling infrastructure. It is not a substitute for months of stable access and modal adaptation.
+
+Use the same measured hours and days before and after. Record complete motor-vehicle counts by class and sampled occupants; all bicycles (including privately owned bikes); bus loads across the same boundary; pedestrians; and rail passengers crossing the relevant geographic boundary if the estimand includes rail. Run a consented, representative fixed travel-needs/cohort panel to measure door-to-door time including access, waiting, transfers, parking/search, and bike unlocking/returning. Measure unserved/suppressed trips and arrival reliability too. Cancellation cannot be scored as zero travel time and therefore a success.
+
+Report two outcomes separately:
+1. Realized person crossings per hour over a fixed screenline or nonduplicated completed journeys for a fixed geography, by mode and total. This is realized throughput, not engineering capacity; more flow is not automatically more welfare.
+2. Door-to-door minutes for a fixed baseline distribution of origin, destination, time and trip purpose, with completion/arrival outcomes. Also report actual aggregate person-minutes, explicitly decomposed into changed trip numbers, changed mix, and changed time. A policy can induce valuable new trips and raise total minutes while improving access; mean trip time can fall because long trips disappear. Neither alone proves welfare improvement.
+
+STRATEGY 1 — RANDOMIZED PHASE-IN (STRONGEST; REQUIRES AGENCY PARTNERSHIP)
+
+Identification: known random assignment of dates conditional on the matching/stratification design. Estimate intention-to-treat with randomization inference at project/network level; prespecify the adaptation horizon. Record exposure to other treated networks and either randomize groups large enough to contain it or explicitly estimate direct and spillover effects using the known exposure assignment.
+
+Assumptions: assignment honored in analysis; complete or appropriately modeled missing outcomes; treatment versions accurately recorded; sufficient independent clusters; prespecified interference mapping or negligible interference across clusters; no material anticipation outside the stated window. The estimand generalizes to approved eligible projects, not automatically every NYC street.
+
+Failure checks: balance/assignment audit, schedule deviations, construction contamination, sensor uptime, panel attrition by assignment, spillovers into controls, whole-network boundary sensitivity, and calibration of classification/occupancy. Power must use project-level covariance, not the number of trips. Randomization improves assignment credibility but does not fix an unmeasured outcome.
+
+STRATEGY 2 — VERIFIED MULTI-PROJECT STAGGERED EVENT STUDY (BEST RETROSPECTIVE TARGET)
+
+Build the project registry before choosing the most favorable outcome. Require actual moving-lane removal and exact dated segment geometry. Freeze baseline OD/departure weights, candidate donor criteria, exposure maps, construction/anticipation exclusions, post horizons, and relevant concurrent changes. Fit group-time average treatment effects using Callaway–Sant'Anna or a correctly specified imputation design; do not rely on naive two-way-fixed-effects event studies when effects or timing vary.
+
+Use never-treated or not-yet-treated AND not-yet-exposed donors. Avoid comparing treated corridors to adjacent detour routes. A network-exposure measure based on pre-treatment paths/connectivity is preferable to a distance-only rule; show several prespecified boundaries and exposure definitions. Do not use observed post-treatment route choice to determine who was treated, because route choice itself is an outcome.
+
+NYC inputs that can contribute now: project documents and historical street geometry; Citi Bike OD/time files as bikeshare outcomes; MTA fixed bus segment/hour travel-time data; TLC fixed OD/time vehicle-journey outcomes; DOT/NYS traffic and bike counters where they overlap; subway station entries as a separate catchment response. Recent public TLC zones do not reveal exact traversed streets; Citi Bike endpoints also do not reveal routes. Geography-specific route assignments from them are models requiring validation, not observed treatment exposure. Subway entries do not equal rail passengers crossing a road screenline.
+
+Identification assumptions: conditional parallel trends for untreated potential outcomes; no anticipation beyond specified exclusions; overlap/common support; stable measurement; correctly defined treatment/co-treatment and interference exposure; sufficiently unexposed donors. The estimator addresses heterogeneous timing effects under these assumptions. Matching, fixed effects, and more rows do not establish them.
+
+Failure checks: held-out pre-period prediction; event-study leads with simultaneous uncertainty; placebo dates and outcomes that should not respond; treatment-registry audit; donor leave-one-out; transit/service/signal/Citi Bike expansion/congestion-pricing confounding; missingness and OD composition; negative or implausibly concentrated weights; clustering at project or justified independent spatial units. A nonsignificant pretrend is not a pass certificate. Report sensitivity to trend violations using event-study coefficients and their full covariance; report the violation magnitude at which the sign becomes inconclusive.
+
+Claim allowed: project-average causal effects on the measured outcome, conditional on the design assumptions. A bus-segment effect is not a whole-journey effect; a bikeshare effect is not all-bike growth; a local relative effect is not an all-NYC equilibrium effect. Total person flow becomes claimable only when compatible modal components cover the same boundary/time and remaining uncertainty is bounded.
+
+STRATEGY 3 — ONE-PROJECT NETWORK SYNTHETIC CONTROL + SENSITIVITY (FEASIBLE NARROWER RESULT)
+
+For a particularly well-measured conversion, aggregate prespecified affected-network outcomes, build a donor pool outside its spillover network, and fit synthetic DiD or augmented/generalized synthetic control using pre-treatment data only. Reserve a block of pre-data for pseudo-post validation. Use simple DiD as a transparent benchmark and report donor weights, fit, effective donor count, extrapolation, and leave-one-out stability. Choose the estimator for the predeclared setting rather than selecting the method with a favorable result.
+
+SDID balances unit and time weights under its modeling conditions; augmented SC uses an outcome model to correct imperfect pre-fit and can extrapolate with negative weights. Neither creates random treatment assignment. Post-treatment shocks correlated with treatment, unknown donor contamination, and unobserved modal outcomes remain threats. For one treated project, ordinary trip-level clustered standard errors are not credible independent-project uncertainty. Placebo/randomization-style inference needs exchangeability assumptions; conditional conformal or model-based inference also has stated assumptions.
+
+For Third Avenue, the existing bus result is a corridor redesign package, and the observed pre-period drift is material. Extending only the post-series is not a cure. Improve pre-history and unexposed donors, explicitly handle congestion pricing and co-treatments, and run a trend sensitivity analysis. Do not label a hand-added plus/minus pretrend amount an HonestDiD confidence interval: HonestDiD requires estimated event coefficients, covariance, an explicit restriction on deviations, and appropriate inference.
+
+Partial identification is useful when some counts exist. Separate four uncertainties: sampling; counterfactual trend; occupancy/expansion factors; and missing modes/spillovers. With nonbus motor vehicles V, occupancy o, bicycles B, bus passengers U, rail screenline passengers R and pedestrians W, matched person flow is P=oV+B+U+R+W. Apply the design contrast to P using period-specific quantities. Bounds must permit occupancy and bikeshare share to change unless a shared value is a defended assumption. If B=C/s is used, C and s must refer to the same count event, geography and time; station starts divided by a citywide bike share cannot recover road crossings.
+
+Report the omitted-mode change or counterfactual bias needed to reverse the sign. A positive observed partial sum is a bound only if the omitted effect is constrained; without a credible bound it is just a partial outcome. Propagate interval arithmetic with correct signs in a difference-in-differences contrast, then separately account for sampling uncertainty. This can support a robust sign without precisely measuring everything, but only if the stated envelope is supported by data or explicit assumptions.
+
+WHAT WE SHOULD NOT CLAIM
+
+- Better fit is not proof that the counterfactual is correct.
+- Good pretrends are not proof against a treatment-time shock.
+- Fixed effects remove fixed confounders and common shocks, not corridor-specific changing shocks.
+- Spatially clustered standard errors handle correlated noise; they do not remove spillover bias.
+- Post car volume, bike ridership, route choice and mode share are mediators; ordinary adjustment for them changes or biases the total policy effect.
+- Weather, contractor delays, complaint-driven reversals and bike-share incentives are not automatically valid instruments for bike-lane conversion. Exclusion restrictions are particularly doubtful.
+- Modal-shift mediation requires additional assumptions or person-level evidence; simultaneous bike growth and lower car counts do not identify which people switched.
+
+PRIMARY LITERATURE AND VERIFIED LIMITS
+
+Klingen et al., thesis chapter 5 (2021), https://research.vu.nl/ws/files/123630572/J%20J%20%20Klingen%20-%20thesis.pdf . Locally rechecked primary text pp87,93–99. Manhattan 35 slices × two directions, weekly July2012–June2016. Protected route traversability is treatment; moving-lane removal is not the audited treatment. Table5.5 area-level log speed coefficient −0.013 (SE .011), taxi-flow +.007 (.028); both uncertain around zero. Authors explicitly note p99 that citywide time fixed effects abstract from overall modal shifts. Transferable idea: aggregate neighboring streets to capture local rerouting. Limit: still selected rollout, possible wider spillovers, taxi proxies, and no total person/door-to-door endpoint. No public processed replication package was located in this audit; raw sources are cited, but do not describe the analysis as reproduced from raw data.
+
+Schrauth, CEPA Discussion Paper48 (June2022), https://www.uni-potsdam.de/fileadmin/projects/lsfiwi/docs/Publikationen/Philipp_Cycling.pdf . Actual Berlin two-to-one/three-to-two moving-lane reductions; 23 treated sensors on six streets. Adjusted Table1 speed −4.123km/h, log speed −.122; log volume −.00540 is uncertain. Political/administrative rollout during COVID, not a lottery. Transferable idea: dated engineering changes plus continuous counts/speeds and contamination exclusions. Synthetic control in this paper is used for accidents, not speed. Fixed effects/lockdown interactions cannot guarantee absence of differential pandemic shocks; no all-mode endpoint.
+
+Cook et al., NBER33584, revision August2026, https://www.nber.org/papers/w33584 . NYC congestion-pricing study uses Google Maps network data and generalized synthetic control; current abstract reports cordon speeds +11% and benefits beyond the cordon. This is a network-measurement precedent, not evidence about lane conversion. Underlying granular Google data should not be assumed publicly downloadable. Earlier drafts have different title/horizon/numbers and must not be combined with the current version.
+
+Arora et al., Nature Cities3 (2026), https://www.nature.com/articles/s44284-026-00443-x . City routing-app switchback interventions measure network and whole-trip responses. Methods explicitly acknowledge NONRANDOM treatment assignment and use hierarchical Bayesian modeling. Thus do not call this an RCT. Main data are confidential; analysis code is public at https://github.com/google-research/google-research/tree/master/congestion_dispersion . Useful network-measurement precedent; physical-lane rollout still requires a different assignment/adaptation design.
+
+Liu, Siddiq and Zhang, Management Science71(9) (2025), https://doi.org/10.1287/mnsc.2022.00775 . Chicago study combines multimodal/network data in an equilibrium and route-planning model; publisher states an IV mode-choice estimation component. Useful model-based scenario framework, not a substitute for a NYC lane-conversion natural experiment. Numerical forecast claims are not repeated here because the full methods/IV exclusion conditions have not been independently audited in this turn.
+
+METHOD REFERENCES (IMPLEMENTATIONS AVAILABLE)
+
+Callaway and Sant'Anna (2021), Difference-in-Differences with Multiple Time Periods, https://doi.org/10.1016/j.jeconom.2020.12.001 ; author implementation and assumptions: https://bcallaway11.github.io/did/ .
+Arkhangelsky et al. (2021), Synthetic Difference-in-Differences, https://www.aeaweb.org/articles?id=10.1257/aer.20190159 ; AEA page links replication package.
+Ben-Michael, Feller and Rothstein (2021), The Augmented Synthetic Control Method, https://jesse-rothstein.com/wp-content/uploads/2021/07/Ben-Michael_Feller_Rothstein_Augsynth_JASA_2021.pdf .
+Rambachan and Roth (2023), A More Credible Approach to Parallel Trends, https://jonathandroth.github.io/assets/files/HonestParallelTrends_Main.pdf ; https://github.com/asheshrambachan/HonestDiD .
+Butts, Difference-in-Differences Estimation with Spatial Spillovers, working paper December2024, https://www.kylebutts.com/files/Spillover.pdf . Distinguish direct/switching and total-regime effects; remove exposed observations from untreated comparison pools.
+
+NEXT EXECUTABLE WORK
+
+1. Lock the project/geometry/assignment and co-treatment registry and independently audit it; retain excluded candidates with reasons.
+2. Produce a coverage matrix with actual joint pre/post hours for each outcome and candidate, distinguishing acquired data from accessible but unacquired data.
+3. Choose the smallest defensible causal endpoint supported by overlapping data, then freeze the donor pool and analysis choices before fitting post results.
+4. Run a pre-period-only donor/holdout audit; construct event coefficients and covariance for the chosen outcome; publish unadjusted and sensitivity results, including failures.
+5. Prepare a prospective measurement protocol and rollout randomization proposal. Requesting records or a data partnership requires no new MTA login to explain, and no existing account supplies the missing assignment design.

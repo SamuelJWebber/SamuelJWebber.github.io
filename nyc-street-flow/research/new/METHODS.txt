@@ -1,0 +1,103 @@
+LOCAL CITI BIKE SHARE CALIBRATION
+Checked 2026-11-05
+
+What is ready to use
+
+calibration.json contains 57 DCP location/year/day-type observations for 2013–2015,
+source links, original field names, counts, calculated fractions, reconciliation
+flags, same-location changes, historical reference samples and the NYU audit.
+dcp-local-shares.csv is the flat version for inspection/download. The other two
+top-level CSVs contain same-location changes and the prior-study comparisons.
+
+Raw DCP data are retained unmodified in raw/dcp_onstreet.json (108 rows) and
+raw/dcp_offstreet.json (89 rows). Metadata and the official data dictionary are
+also retained. SHA256 hashes identify the raw inputs used in calibration.json.
+
+DCP definitions and audit
+
+Keep years 2013–2015 and a positive all-bicycle denominator. Keep recorded zero
+Citi Bike counts: six of 57 selected records are zero. A recorded zero is a source
+value, not a missing observation, and cannot support a finite inverse multiplier.
+It does not establish that the underlying probability of a Citi crossing is zero.
+
+On-street share = citibike_all / cyclistvolume.
+Off-street share = citibike_all / cyclists_all.
+
+TotalUsers and AllUserVolume include other users and are not bicycle denominators.
+No aggregation across different sites or day types is offered as a citywide share.
+Ranges are descriptive spreads across published local observations, not confidence
+intervals. No binomial interval is supplied because sampling design, day clustering
+and within-day windows are insufficiently documented in this release.
+
+The official dictionary states annual fall counts. Neither the rows nor that
+dictionary supply exact dates or within-day start/end times for these 2013–2015
+records. Those fields remain null. An older 2001–2008 report's 12-hour method is
+not silently assigned to the later observations.
+
+All 57 Citi numerators are nonnegative and no greater than the reported cyclist
+denominator. Citi + non-Citi equals reported cyclists in 56 records. The exception:
+Route 9A Greenway at 80th St., weekday 2013: Citi 4 + non-Citi 1798 = 1802, while
+the reported all-cyclist field is 1802.5. The same source row has a 2-person gap
+between cyclists plus other classified users and all-user volume. Retain and flag
+the original values. Fractional published counts are not rounded or explained as
+averages without evidence. Five on-street rows have missing gender component(s);
+gender reconciliation is null there rather than filling the components with zero.
+
+A concrete same-site comparison: East River/E Houston, fall 2013, weekday
+298/1052 = 28.327%; weekend 65/454 = 14.317%. This supports keeping day type
+explicit. The difference is not attributed to a lane conversion.
+
+NYU correction and reproducible extraction
+
+The report methods and Figure 3 distinguish electric and pedal Citi Bike. However,
+Appendix C Tables C-2 through C-9 publish only Personal E-bike, Rental E-bike,
+Moped, Pedal bike, Other bike and Scooter. No mapping from Other bike to Citi Bike
+is documented in the inspected report. A Citi Bike numerator cannot be recovered
+from those published tables. All Citi shares remain null; citi_extractable=false.
+
+Source locations:
+  Figure 3: PDF page 23 (printed page 12).
+  Appendix C introduction and C-1 totals: PDF page 83 (printed C-1).
+  Tables C-2–C-4: PDF page 84 (printed C-2).
+  Tables C-5–C-7: PDF page 85 (printed C-3).
+  Tables C-8–C-9: PDF page 86 (printed C-4).
+
+nyu/extract.py parses all 384 device-count cells from PDF text. Table metadata
+and the eight date/status/time columns were checked against rendered page images.
+All 128 reconciliation checks pass: device rows sum to printed detailed totals;
+detailed totals reproduce C-1; C-1 rows reproduce its totals. Five sites produce
+eight detailed directional tables; the Queens northbound/southbound split is
+combined only where the source summary combines it.
+
+nyu/nyu-device-counts.csv retains device, delivery status, direction, date, period,
+count, source page/table/column. nyu/nyu-local-denominators.csv contains 32 local
+two-hour windows. Bicycle-labeled count sums the four bike-named categories;
+all-micromobility adds mopeds and scooters. These are explicit label-based sums,
+not a claim about how unpublished Citi Bike observations were recoded. 'Others'
+includes uncertain delivery-worker status and is not labeled pure non-delivery.
+
+Historical comparisons
+
+Pulaski November 2019: 205/960 overall, 189/853 peak, 16/107 off-peak. Its device
+definition puts throttle e-bikes with non-pedaling riders among motorized users.
+Hunter April–May 2019: published Citi Bike share 27.1% among 4,325 observations;
+no exact numerator is invented from that rounded percentage.
+Basch et al., published 2023: Table 1 yields 318/922 among bicycles, or 318/988
+among all listed micromobility. The roughly equal sample sizes per zone do not
+weight streets by traffic. Observation dates are not stated in inspected methods.
+
+These samples differ in geography, period, classification and collection design.
+None is a current citywide multiplier. Direct all-bike counters remain preferable
+to scaling a bike-share sample. Station trip endpoints do not identify crossings.
+
+Reproduction
+
+Use Python with pypdf installed for the PDF extraction:
+  python nyu/extract.py
+  python reproduce.py
+
+The second script uses the Python standard library and the retained raw files.
+Optional --refresh re-downloads DCP API rows and metadata before calculation.
+NYU extraction uses its retained report.pdf, downloading only if missing.
+The screenshots are provenance aids; regeneration of counts does not depend on
+image processing. No Site files were changed by this work.

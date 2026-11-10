@@ -1,0 +1,417 @@
+route,direction,date,weekday,period,run,start_time,hour,start_second,first_checkpoint_seconds,second_checkpoint_seconds,total_seconds,first_checkpoint,second_checkpoint,start_location,end_location,source_pdf_page,source_url
+PPW,South,2010-05-11,Tuesday,before,1,7:00,7,0,36,69,133,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-11,Tuesday,before,2,7:30,7,0,52,95,129,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-11,Tuesday,before,3,8:00,8,0,43,76,149,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-11,Tuesday,before,4,8:30,8,0,37,84,130,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-11,Tuesday,before,5,9:00,9,0,64,122,195,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-11,Tuesday,before,6,9:30,9,0,53,93,161,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-11,Tuesday,before,7,10:00,10,0,47,85,159,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-11,Tuesday,before,8,10:30,10,0,47,90,148,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-11,Tuesday,before,9,11:00,11,0,42,93,179,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-11,Tuesday,before,10,11:30,11,0,49,102,173,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-11,Tuesday,before,11,12:00,12,0,45,98,175,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-11,Tuesday,before,12,12:30,12,0,51,94,157,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-11,Tuesday,before,13,13:00,13,0,47,92,154,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-11,Tuesday,before,14,13:30,13,0,46,96,187,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-11,Tuesday,before,15,14:00,14,0,51,108,166,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-11,Tuesday,before,16,14:30,14,0,50,99,182,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-11,Tuesday,before,17,15:00,15,0,56,101,173,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-11,Tuesday,before,18,15:30,15,0,53,93,145,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-11,Tuesday,before,19,16:00,16,0,50,89,221,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-11,Tuesday,before,20,16:30,16,0,53,93,172,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-11,Tuesday,before,21,17:00,17,0,54,110,179,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-11,Tuesday,before,22,17:30,17,0,52,97,187,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-11,Tuesday,before,23,18:00,18,0,55,99,144,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-11,Tuesday,before,24,18:30,18,0,53,122,209,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,1,7:00,7,0,33,84,156,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,2,7:30,7,0,49,82,143,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,3,8:00,8,0,48,87,166,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,4,8:30,8,0,46,89,168,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,5,9:00,9,0,44,104,205,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,6,9:30,9,0,44,85,121,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,7,10:00,10,0,84,145,216,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,8,10:30,10,0,60,117,195,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,9,11:00,11,0,40,106,138,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,10,11:30,11,0,57,116,165,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,11,12:00,12,0,52,115,187,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,12,12:30,12,0,51,89,146,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,13,13:00,13,0,65,124,198,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,14,13:30,13,0,64,119,200,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,15,14:00,14,0,58,116,221,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,16,14:30,14,0,53,166,227,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,17,15:00,15,0,50,90,182,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,18,15:30,15,0,46,107,209,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,19,16:00,16,0,48,92,146,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,20,16:30,16,0,54,91,179,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,21,17:00,17,0,51,95,164,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,22,17:30,17,0,55,96,197,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,23,18:00,18,0,52,110,215,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-12,Wednesday,before,24,18:30,18,0,57,98,188,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-15,Saturday,before,1,12:00,12,0,50,107,177,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-15,Saturday,before,2,12:30,12,0,43,85,120,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-15,Saturday,before,3,13:00,13,0,47,99,141,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-05-15,Saturday,before,4,13:30,13,0,40,87,162,3 St,9 St,Union St,15 St,52,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,1,7:00,7,0,55,84,135,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,2,7:30,7,0,76,119,158,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,3,8:00,8,0,63,96,179,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,4,8:30,8,0,61,101,185,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,5,9:00,9,0,74,108,209,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,6,9:30,9,0,58,89,136,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,7,10:00,10,0,65,96,140,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,8,10:30,10,0,54,85,130,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,9,11:00,11,0,62,105,179,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,10,11:30,11,0,70,122,208,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,11,12:00,12,0,69,124,210,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,12,12:30,12,0,59,100,150,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,13,13:00,13,0,70,110,149,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,14,13:30,13,0,49,101,140,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,15,14:00,14,0,45,88,123,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,16,14:30,14,0,70,104,161,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,17,15:00,15,0,64,99,174,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,18,15:30,15,0,69,110,199,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,19,16:00,16,0,61,99,205,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,20,16:30,16,0,69,114,195,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,21,17:00,17,0,79,125,214,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,22,17:30,17,0,69,105,151,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,23,18:00,18,0,65,103,174,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-19,Tuesday,after,24,18:30,18,0,68,106,144,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,1,7:00,7,0,56,103,158,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,2,7:30,7,0,72,111,152,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,3,8:00,8,0,61,90,139,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,4,8:30,8,0,56,99,182,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,5,9:00,9,0,58,102,165,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,6,9:30,9,0,50,107,146,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,7,10:00,10,0,80,120,152,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,8,10:30,10,0,55,110,156,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,9,11:00,11,0,48,105,143,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,10,11:30,11,0,71,123,209,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,11,12:00,12,0,68,121,206,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,12,12:30,12,0,60,102,154,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,13,13:00,13,0,69,112,155,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,14,13:30,13,0,52,105,145,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,15,14:00,14,0,68,100,143,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,16,14:30,14,0,44,80,122,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,17,15:00,15,0,59,95,169,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,18,15:30,15,0,75,109,185,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,19,16:00,16,0,72,101,202,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,20,16:30,16,0,74,119,204,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,21,17:00,17,0,76,123,214,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,22,17:30,17,0,59,100,140,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,23,18:00,18,0,62,108,163,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-20,Wednesday,after,24,18:30,18,0,71,108,145,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-23,Saturday,after,1,12:00,12,0,79,120,189,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-23,Saturday,after,2,12:30,12,0,61,102,175,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-23,Saturday,after,3,13:00,13,0,49,90,182,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+PPW,South,2010-10-23,Saturday,after,4,13:30,13,0,65,111,183,3 St,9 St,Union St,15 St,53,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,1,7:00,7,0,78,121,164,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,2,7:30,7,0,85,130,174,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,3,8:00,8,0,91,246,330,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,4,8:30,8,0,124,232,318,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,5,9:00,9,0,118,190,273,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,6,9:30,9,0,88,135,222,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,7,10:00,10,0,81,124,218,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,8,10:30,10,0,84,129,218,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,9,11:00,11,0,57,116,250,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,10,11:30,11,0,128,311,412,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,11,12:00,12,0,85,128,211,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,12,12:30,12,0,126,316,387,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,13,13:00,13,0,78,123,224,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,14,13:30,13,0,79,129,208,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,15,14:00,14,0,70,116,199,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,16,14:30,14,0,71,179,276,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,17,15:00,15,0,138,188,290,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,18,15:30,15,0,89,126,274,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,19,16:00,16,0,80,136,230,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,20,16:30,16,0,88,182,280,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,21,17:00,17,0,76,126,226,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,22,17:30,17,0,81,180,284,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,23,18:00,18,0,85,137,283,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-11,Tuesday,before,24,18:30,18,0,85,132,227,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,1,7:00,7,0,82,136,210,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,2,7:30,7,0,87,139,224,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,3,8:00,8,0,81,183,286,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,4,8:30,8,0,118,184,288,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,5,9:00,9,0,148,203,339,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,6,9:30,9,0,145,191,291,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,7,10:00,10,0,75,137,271,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,8,10:30,10,0,117,176,226,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,9,11:00,11,0,73,126,221,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,10,11:30,11,0,80,134,272,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,11,12:00,12,0,121,184,265,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,12,12:30,12,0,77,161,256,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,13,13:00,13,0,78,120,208,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,14,13:30,13,0,79,120,210,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,15,14:00,14,0,78,122,208,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,16,14:30,14,0,80,126,275,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,17,15:00,15,0,72,124,215,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,18,15:30,15,0,125,196,331,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,19,16:00,16,0,80,135,276,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,20,16:30,16,0,86,135,226,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,21,17:00,17,0,85,137,267,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,22,17:30,17,0,82,129,220,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,23,18:00,18,0,86,135,219,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-12,Wednesday,before,24,18:30,18,0,78,170,261,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-15,Saturday,before,1,12:00,12,0,87,171,262,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-15,Saturday,before,2,12:30,12,0,88,136,276,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-15,Saturday,before,3,13:00,13,0,68,108,216,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-05-15,Saturday,before,4,13:30,13,0,109,172,265,9 St,3 St,15 St,Union St,54,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,1,7:00,7,0,56,117,200,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,2,7:30,7,0,75,133,206,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,3,8:00,8,0,79,129,215,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,4,8:30,8,0,79,115,285,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,5,9:00,9,0,80,137,300,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,6,9:30,9,0,78,165,295,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,7,10:00,10,0,82,175,299,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,8,10:30,10,0,81,128,185,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,9,11:00,11,0,77,131,225,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,10,11:30,11,0,81,125,191,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,11,12:00,12,0,75,121,188,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,12,12:30,12,0,56,111,173,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,13,13:00,13,0,80,118,176,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,14,13:30,13,0,69,121,185,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,15,14:00,14,0,56,111,172,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,16,14:30,14,0,78,181,234,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,17,15:00,15,0,78,177,402,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,18,15:30,15,0,77,122,240,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,19,16:00,16,0,73,119,243,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,20,16:30,16,0,55,112,210,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,21,17:00,17,0,58,117,270,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,22,17:30,17,0,72,123,281,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,23,18:00,18,0,64,110,236,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-19,Tuesday,after,24,18:30,18,0,78,130,232,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,1,7:00,7,0,57,104,171,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,2,7:30,7,0,72,131,231,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,3,8:00,8,0,94,194,299,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,4,8:30,8,0,191,246,360,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,5,9:00,9,0,90,130,192,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,6,9:30,9,0,86,126,187,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,7,10:00,10,0,80,174,297,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,8,10:30,10,0,75,121,236,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,9,11:00,11,0,80,127,242,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,10,11:30,11,0,82,128,195,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,11,12:00,12,0,81,126,192,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,12,12:30,12,0,63,119,181,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,13,13:00,13,0,75,115,179,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,14,13:30,13,0,72,121,181,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,15,14:00,14,0,87,132,243,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,16,14:30,14,0,60,169,275,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,17,15:00,15,0,72,170,341,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,18,15:30,15,0,60,121,239,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,19,16:00,16,0,65,117,245,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,20,16:30,16,0,68,116,222,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,21,17:00,17,0,63,122,263,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,22,17:30,17,0,81,127,292,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,23,18:00,18,0,74,131,233,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-20,Wednesday,after,24,18:30,18,0,80,133,238,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-23,Saturday,after,1,12:00,12,0,72,116,218,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-23,Saturday,after,2,12:30,12,0,67,110,215,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-23,Saturday,after,3,13:00,13,0,82,135,238,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+8 Ave,North,2010-10-23,Saturday,after,4,13:30,13,0,86,124,220,9 St,3 St,15 St,Union St,55,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,1,7:00,7,0,73,138,227,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,2,7:30,7,0,89,173,249,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,3,8:00,8,0,85,154,243,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,4,8:30,8,0,66,137,221,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,5,9:00,9,0,110,194,283,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,6,9:30,9,0,104,190,282,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,7,10:00,10,0,312,386,466,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,8,10:30,10,0,142,208,299,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,9,11:00,11,0,123,251,341,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,10,11:30,11,0,74,222,316,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,11,12:00,12,0,86,212,355,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,12,12:30,12,0,146,321,416,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,13,13:00,13,0,96,193,320,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,14,13:30,13,0,326,432,532,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,15,14:00,14,0,81,218,351,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,16,14:30,14,0,124,248,342,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,17,15:00,15,0,107,477,585,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,18,15:30,15,0,111,198,280,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,19,16:00,16,0,87,209,302,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,20,16:30,16,0,169,322,408,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,21,17:00,17,0,110,192,275,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,22,17:30,17,0,117,195,300,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,23,18:00,18,0,115,194,289,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-11,Tuesday,before,24,18:30,18,0,95,175,268,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,1,7:00,7,0,78,149,231,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,2,7:30,7,0,67,148,222,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,3,8:00,8,0,62,144,213,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,4,8:30,8,0,109,185,268,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,5,9:00,9,0,78,189,286,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,6,9:30,9,0,180,322,417,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,7,10:00,10,0,87,193,289,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,8,10:30,10,0,101,219,311,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,9,11:00,11,0,72,181,275,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,10,11:30,11,0,134,305,402,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,11,12:00,12,0,137,220,349,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,12,12:30,12,0,136,223,319,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,13,13:00,13,0,122,303,404,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,14,13:30,13,0,83,194,295,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,15,14:00,14,0,132,256,350,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,16,14:30,14,0,114,198,288,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,17,15:00,15,0,167,249,373,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,18,15:30,15,0,163,314,456,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,19,16:00,16,0,162,228,319,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,20,16:30,16,0,123,250,380,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,21,17:00,17,0,111,198,345,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,22,17:30,17,0,114,188,278,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,23,18:00,18,0,103,177,277,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-12,Wednesday,before,24,18:30,18,0,117,194,287,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-15,Saturday,before,1,12:00,12,0,124,209,278,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-15,Saturday,before,2,12:30,12,0,80,154,234,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-15,Saturday,before,3,13:00,13,0,143,271,365,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-05-15,Saturday,before,4,13:30,13,0,191,310,407,3 St,9 St,Union St,15 St,56,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,1,7:00,7,0,96,170,239,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,2,7:30,7,0,105,200,258,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,3,8:00,8,0,116,241,351,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,4,8:30,8,0,121,245,359,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,5,9:00,9,0,190,357,483,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,6,9:30,9,0,153,275,381,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,7,10:00,10,0,89,302,390,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,8,10:30,10,0,105,233,350,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,9,11:00,11,0,110,284,397,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,10,11:30,11,0,171,302,409,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,11,12:00,12,0,155,285,386,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,12,12:30,12,0,120,295,414,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,13,13:00,13,0,115,280,394,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,14,13:30,13,0,107,270,396,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,15,14:00,14,0,50,159,259,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,16,14:30,14,0,98,166,270,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,17,15:00,15,0,88,279,389,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,18,15:30,15,0,119,228,313,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,19,16:00,16,0,109,220,290,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,20,16:30,16,0,127,235,345,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,21,17:00,17,0,105,229,340,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,22,17:30,17,0,101,210,337,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,23,18:00,18,0,107,236,392,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-19,Tuesday,after,24,18:30,18,0,73,224,299,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,1,7:00,7,0,76,169,232,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,2,7:30,7,0,113,221,287,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,3,8:00,8,0,119,220,290,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,4,8:30,8,0,131,252,363,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,5,9:00,9,0,110,241,361,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,6,9:30,9,0,92,271,384,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,7,10:00,10,0,69,299,413,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,8,10:30,10,0,162,278,350,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,9,11:00,11,0,155,270,348,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,10,11:30,11,0,169,300,400,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,11,12:00,12,0,165,296,395,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,12,12:30,12,0,122,290,409,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,13,13:00,13,0,117,282,400,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,14,13:30,13,0,104,267,390,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,15,14:00,14,0,72,180,288,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,16,14:30,14,0,168,333,460,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,17,15:00,15,0,100,270,379,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,18,15:30,15,0,115,238,311,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,19,16:00,16,0,112,225,298,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,20,16:30,16,0,119,229,339,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,21,17:00,17,0,102,223,331,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,22,17:30,17,0,97,206,339,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,23,18:00,18,0,120,353,449,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-20,Wednesday,after,24,18:30,18,0,71,219,305,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-23,Saturday,after,1,12:00,12,0,106,207,320,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-23,Saturday,after,2,12:30,12,0,156,280,393,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-23,Saturday,after,3,13:00,13,0,107,283,401,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+7 Ave,South,2010-10-23,Saturday,after,4,13:30,13,0,119,340,456,3 St,9 St,Union St,15 St,57,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,1,7:00,7,0,43,143,211,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,2,7:30,7,0,82,200,304,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,3,8:00,8,0,74,192,265,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,4,8:30,8,0,85,190,332,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,5,9:00,9,0,81,147,231,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,6,9:30,9,0,84,150,213,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,7,10:00,10,0,86,187,268,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,8,10:30,10,0,83,183,252,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,9,11:00,11,0,45,182,262,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,10,11:30,11,0,45,121,205,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,11,12:00,12,0,138,231,301,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,12,12:30,12,0,82,183,265,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,13,13:00,13,0,85,178,256,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,14,13:30,13,0,85,184,257,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,15,14:00,14,0,82,188,258,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,16,14:30,14,0,89,194,289,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,17,15:00,15,0,41,136,202,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,18,15:30,15,0,85,183,249,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,19,16:00,16,0,44,131,197,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,20,16:30,16,0,87,187,256,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,21,17:00,17,0,37,123,196,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,22,17:30,17,0,89,181,216,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,23,18:00,18,0,82,184,254,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-11,Tuesday,before,24,18:30,18,0,81,184,262,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,1,7:00,7,0,45,123,203,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,2,7:30,7,0,51,126,195,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,3,8:00,8,0,81,194,301,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,4,8:30,8,0,89,197,306,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,5,9:00,9,0,40,121,196,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,6,9:30,9,0,93,183,253,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,7,10:00,10,0,83,176,244,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,8,10:30,10,0,43,139,306,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,9,11:00,11,0,47,200,270,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,10,11:30,11,0,85,181,253,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,11,12:00,12,0,78,180,255,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,12,12:30,12,0,83,179,261,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,13,13:00,13,0,84,182,261,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,14,13:30,13,0,87,182,260,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,15,14:00,14,0,91,185,275,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,16,14:30,14,0,107,250,379,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,17,15:00,15,0,142,306,392,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,18,15:30,15,0,82,180,257,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,19,16:00,16,0,35,124,239,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,20,16:30,16,0,81,189,258,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,21,17:00,17,0,89,205,327,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,22,17:30,17,0,83,180,250,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,23,18:00,18,0,89,181,260,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-12,Wednesday,before,24,18:30,18,0,84,185,266,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-15,Saturday,before,1,12:00,12,0,80,207,315,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-15,Saturday,before,2,12:30,12,0,86,179,256,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-15,Saturday,before,3,13:00,13,0,79,197,313,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-05-15,Saturday,before,4,13:30,13,0,43,137,247,9 St,3 St,15 St,Union St,58,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,1,7:00,7,0,73,111,177,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,2,7:30,7,0,72,109,173,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,3,8:00,8,0,79,152,229,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,4,8:30,8,0,86,159,236,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,5,9:00,9,0,85,171,291,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,6,9:30,9,0,75,142,227,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,7,10:00,10,0,89,147,225,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,8,10:30,10,0,74,139,213,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,9,11:00,11,0,94,170,277,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,10,11:30,11,0,85,148,270,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,11,12:00,12,0,87,159,273,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,12,12:30,12,0,79,161,277,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,13,13:00,13,0,127,197,273,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,14,13:30,13,0,93,203,285,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,15,14:00,14,0,53,130,244,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,16,14:30,14,0,76,192,365,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,17,15:00,15,0,76,149,271,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,18,15:30,15,0,83,160,274,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,19,16:00,16,0,93,164,271,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,20,16:30,16,0,79,155,276,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,21,17:00,17,0,85,166,331,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,22,17:30,17,0,80,201,279,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,23,18:00,18,0,88,151,285,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-19,Tuesday,after,24,18:30,18,0,81,144,227,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,1,7:00,7,0,71,107,167,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,2,7:30,7,0,78,153,221,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,3,8:00,8,0,136,272,395,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,4,8:30,8,0,84,157,232,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,5,9:00,9,0,75,146,221,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,6,9:30,9,0,63,98,209,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,7,10:00,10,0,92,150,230,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,8,10:30,10,0,74,140,200,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,9,11:00,11,0,80,147,208,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,10,11:30,11,0,84,146,260,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,11,12:00,12,0,83,143,257,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,12,12:30,12,0,82,163,275,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,13,13:00,13,0,116,219,269,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,14,13:30,13,0,103,213,287,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,15,14:00,14,0,86,153,281,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,16,14:30,14,0,93,207,290,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,17,15:00,15,0,81,161,274,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,18,15:30,15,0,79,155,270,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,19,16:00,16,0,86,161,273,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,20,16:30,16,0,90,210,285,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,21,17:00,17,0,84,175,321,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,22,17:30,17,0,84,208,284,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,23,18:00,18,0,71,134,221,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-20,Wednesday,after,24,18:30,18,0,82,146,225,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-23,Saturday,after,1,12:00,12,0,90,209,287,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-23,Saturday,after,2,12:30,12,0,86,167,294,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-23,Saturday,after,3,13:00,13,0,92,211,282,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+6 Ave,North,2010-10-23,Saturday,after,4,13:30,13,0,83,160,286,9 St,3 St,15 St,Union St,59,https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf

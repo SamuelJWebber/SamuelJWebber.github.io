@@ -1,0 +1,152 @@
+{
+  "checked_on": "2026-11-05",
+  "purpose": "Descriptive measurement improvements, not a causal lane-conversion estimate",
+  "analyses": {
+    "bicycle": "57 historical local Citi Bike/all-bicycle observations; zero counts retained",
+    "subway": "Fixed path/month/direction/period runtime and separate model-derived extra passenger-minutes",
+    "survey": "74,935 reconstructed linked adult-resident journeys; missing access times explicit",
+    "road": "12 classified vehicle snapshots and 250 directional-day presence records; no occupancy inference"
+  },
+  "files": [
+    {
+      "file": "METHODS.txt",
+      "bytes": 5705,
+      "sha256": "321ab94f67fddce5fa5b3254cb4d9d3fec07983ecdc97b8e0c18e432f9a3979c"
+    },
+    {
+      "file": "NYC_Mobility_Data_Catalog.xlsx",
+      "bytes": 162774,
+      "sha256": "d4d13c98f980bad7a21c408b91a8e5b4416d03d915d6300ad6bd051b6eabfc6c"
+    },
+    {
+      "file": "bike-reproducibility.zip",
+      "bytes": 4988002,
+      "sha256": "cc8145b12704f7f73b9d30be533087e14aa39e28b3fedb17879a552a4cdcdcf4"
+    },
+    {
+      "file": "bridge-atr-year-coverage.csv",
+      "bytes": 5514,
+      "sha256": "6486c06c2fd61acc9635d9c49d4fd67d4925c24ba96ff67836c31755f039f4f0"
+    },
+    {
+      "file": "bridge-class-mixes.csv",
+      "bytes": 70837,
+      "sha256": "daa5e51ef08eb26eff39da1a0362bcbf19147a4680c9009769e1921fd124c958"
+    },
+    {
+      "file": "calibration.json",
+      "bytes": 198410,
+      "sha256": "1acca2d2d977e21441f18fa1993b5c7e6d592b33e7bc0a5321e9cfa33e6fe49c"
+    },
+    {
+      "file": "catalog-merged.json",
+      "bytes": 446361,
+      "sha256": "0edaec13976bcf543830cffb821f320b552a39d2b01cbdafb54fee6261bfc9e7"
+    },
+    {
+      "file": "dcp-local-shares.csv",
+      "bytes": 29328,
+      "sha256": "3d155344cfdd94da0fc388b59fe3d82d0198292a8bb54ca330308caf33628250"
+    },
+    {
+      "file": "dcp-same-location-changes.csv",
+      "bytes": 16577,
+      "sha256": "ccf76a8bac5bd6c1209211dbaec0566a0fae90d33ed88bd55b9bd5182a9b6ad8"
+    },
+    {
+      "file": "mode-summary.csv",
+      "bytes": 5532,
+      "sha256": "8ace3d9866d34f935599a376f52d0e55609ff2ec013c10a87420dd27bffaebe5"
+    },
+    {
+      "file": "passenger-time-comparisons.csv",
+      "bytes": 162136,
+      "sha256": "0be6d41ade97347607473e0eefc0fa047e979655c4210b17efec0be3476363a8"
+    },
+    {
+      "file": "passenger-time-methods.txt",
+      "bytes": 2784,
+      "sha256": "2f1dc29d395dfcf3336221751bc3da652bb9f5bd6d355378d948e5a92caa7e3a"
+    },
+    {
+      "file": "passenger-time-supplement.json",
+      "bytes": 416377,
+      "sha256": "b853dfaa93b0bfc73f20059cb3cd8ec0104778c29614aecf7d9735e9a8a39d70"
+    },
+    {
+      "file": "reference-samples.csv",
+      "bytes": 3483,
+      "sha256": "1965307161ce6dc51a6bd5ac661bbd9bdfceabed85e00d6bee1fa61f72993505"
+    },
+    {
+      "file": "road-analysis.json",
+      "bytes": 225710,
+      "sha256": "f4326b5809ba2a64d2f5f9c3f74f9f5de50d4c98c32d6040eb2ad62961d1b06d"
+    },
+    {
+      "file": "road-reproducibility.zip",
+      "bytes": 59955,
+      "sha256": "4945ddef7304dc32fa9a5d3f4e4295f664246f3e58536464407f07153093b99a"
+    },
+    {
+      "file": "runtime-analysis.json",
+      "bytes": 1213290,
+      "sha256": "08a2edcc281b8f678e43760b7e774633b2b4849b6d998beda0f0b6301c226f45"
+    },
+    {
+      "file": "runtime-balanced-series.csv",
+      "bytes": 586360,
+      "sha256": "48f6b84cec623a789aa0e4e123d997291c48bc5ced3e7d0281c33e92bd6123a8"
+    },
+    {
+      "file": "runtime-methods.json",
+      "bytes": 4985,
+      "sha256": "0fa65d5a76351e02ce2d7ae7a91fb1138b157898d09bfebf314bb1a7f765bdb5"
+    },
+    {
+      "file": "runtime-monthly-comparisons.csv",
+      "bytes": 577376,
+      "sha256": "bf4389b799c42d1dcbfcb4ca5f5e36b865327e2a19f1d93dd34cd3de6a7a9eaf"
+    },
+    {
+      "file": "runtime-pairwise-comparisons.csv",
+      "bytes": 1176543,
+      "sha256": "ad369e5815fb9ba641db2298d357dd8818c69ff62c1df90f2c721a495c48c60b"
+    },
+    {
+      "file": "runtime_analysis.py",
+      "bytes": 20364,
+      "sha256": "1b3e6b1ba8cd90680d199f3dd9297a8535781e67b8c3233b8e12d8bfb85e7041"
+    },
+    {
+      "file": "subset-mode-summary.csv",
+      "bytes": 24477,
+      "sha256": "dce5df9198c98848d88ffb8fe2255c7c342256b5f577d24b507a70658a543460"
+    },
+    {
+      "file": "subway-reproducibility.zip",
+      "bytes": 4579935,
+      "sha256": "4e3af6bdc13b18b0e657a880f3d45cf286b15a990002e85ecfe0ff75736ad899"
+    },
+    {
+      "file": "survey-analysis.json",
+      "bytes": 426362,
+      "sha256": "8c46516f126e449f1c7cc33eaa492854f88d694a0ea7ec9654ba660f5c21d578"
+    },
+    {
+      "file": "survey-input-manifest.json",
+      "bytes": 1644,
+      "sha256": "34ea500abf7857016ea2c2b0c263db0310fa31ee48cc988307cbbea24fa43f41"
+    },
+    {
+      "file": "survey-methods.md",
+      "bytes": 9867,
+      "sha256": "f79fef6faaf223b84b6fb7589986c655ac1751b8bb230fba93131665c203f78f"
+    },
+    {
+      "file": "survey-reproducibility.zip",
+      "bytes": 8797683,
+      "sha256": "ccb9741db246dcfaa3811fac237ba708b8cd6d116e85bedc723d8aadc5f6c414"
+    }
+  ]
+}

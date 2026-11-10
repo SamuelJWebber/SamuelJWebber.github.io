@@ -1,0 +1,609 @@
+{
+  "metadata": {
+    "label": "Estimated subway OD trips, both directions",
+    "unit": "Trips per average weekday hour",
+    "sources": {
+      "2021": "https://data.ny.gov/d/rapa-97zv",
+      "2022": "https://data.ny.gov/d/nqnz-e9z9",
+      "stations": "https://data.ny.gov/d/39hk-dx4f",
+      "methods": "https://data.ny.gov/api/views/rapa-97zv/files/11596109-1af7-4a7e-9761-d557634415c6?download=true"
+    },
+    "method": "Sum estimated OD trips whose origin and inferred destination lie in the two boroughs, both directions. Equally weight Monday\u2013Friday. AM7\u201310 and PM16\u201319 each divide summed five weekday \u00d7 three hour cells by15. Borough mapping uses official complex IDs and same-borough station IDs for historical complexes; all424 observed origin complexes in each year are mapped. No trip records or travelers are linked across years.",
+    "caveats": [
+      "These are inferred OD estimates from return taps/swipes, scaled to origin entries; individual pairs are not exact counts.",
+      "No actual route, bridge/tunnel, exact trip date, previous mode, exit timestamp or door-to-door time is supplied.",
+      "Monthly averages include holidays; they cannot isolate June1\u201320 or other exact-day samples.",
+      "Published data contain populated OD pairs; January2021 has absent overnight cells. Daily totals are withheld where weekday24-hour coverage is incomplete. All AM and PM cells used here are present.",
+      "Current station registry is applied to historical IDs; all observed IDs map, but this does not independently validate inferred destinations.",
+      "A broad borough-pair recovery series is contextual; it does not identify a bike-lane effect or individual mode switching."
+    ]
+  },
+  "rows": [
+    {
+      "year": 2021,
+      "month": 1,
+      "borough": "Bk",
+      "weekday_hour_cells": 116,
+      "weekday_daily_trips": null,
+      "am_trips_per_hour": 22273.133233333334,
+      "pm_trips_per_hour": 24668.68124
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 303100.63094,
+      "am_trips_per_hour": 22741.048733333337,
+      "pm_trips_per_hour": 24243.22004
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 356062.66836,
+      "am_trips_per_hour": 25946.170380000003,
+      "pm_trips_per_hour": 28942.724213333335
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 388245.18206,
+      "am_trips_per_hour": 27995.997786666667,
+      "pm_trips_per_hour": 31324.53024
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 426200.57962,
+      "am_trips_per_hour": 29883.954266666668,
+      "pm_trips_per_hour": 34748.72762
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 476849.52895999997,
+      "am_trips_per_hour": 33338.55014,
+      "pm_trips_per_hour": 39362.85263333333
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 477950.93246,
+      "am_trips_per_hour": 33615.20300666666,
+      "pm_trips_per_hour": 40015.477646666666
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 486872.17828,
+      "am_trips_per_hour": 34524.15241333333,
+      "pm_trips_per_hour": 41076.43576666667
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 545359.49768,
+      "am_trips_per_hour": 41329.92507333333,
+      "pm_trips_per_hour": 45567.94134666667
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 623768.24852,
+      "am_trips_per_hour": 49148.26304666667,
+      "pm_trips_per_hour": 53142.85458666667
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 609246.6145200001,
+      "am_trips_per_hour": 46885.54254666667,
+      "pm_trips_per_hour": 51259.105639999994
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 546185.1188,
+      "am_trips_per_hour": 39995.75574,
+      "pm_trips_per_hour": 45315.72115333333
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "borough": "Q",
+      "weekday_hour_cells": 111,
+      "weekday_daily_trips": null,
+      "am_trips_per_hour": 19018.412333333334,
+      "pm_trips_per_hour": 20430.34968666667
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 252878.24868000002,
+      "am_trips_per_hour": 19186.75778666667,
+      "pm_trips_per_hour": 19720.032593333333
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 291823.4743,
+      "am_trips_per_hour": 21716.586613333333,
+      "pm_trips_per_hour": 23086.10005333333
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 310907.73424,
+      "am_trips_per_hour": 23010.170973333334,
+      "pm_trips_per_hour": 24503.401100000003
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 333039.45882,
+      "am_trips_per_hour": 24143.101473333332,
+      "pm_trips_per_hour": 26380.03329333333
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 366087.88613999996,
+      "am_trips_per_hour": 26521.860673333333,
+      "pm_trips_per_hour": 29199.002713333335
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 369287.52489999996,
+      "am_trips_per_hour": 26701.3433,
+      "pm_trips_per_hour": 29786.5966
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 384544.94581999996,
+      "am_trips_per_hour": 27968.176686666666,
+      "pm_trips_per_hour": 31354.834066666666
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 417668.743,
+      "am_trips_per_hour": 31433.067020000002,
+      "pm_trips_per_hour": 33899.69902666667
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 463216.5495,
+      "am_trips_per_hour": 36518.28618,
+      "pm_trips_per_hour": 38023.76611333333
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 454366.99627999996,
+      "am_trips_per_hour": 35032.35403333334,
+      "pm_trips_per_hour": 36865.65357333333
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 425429.22196000005,
+      "am_trips_per_hour": 31410.48562,
+      "pm_trips_per_hour": 33801.16934
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 474612.09022,
+      "am_trips_per_hour": 37304.88846666666,
+      "pm_trips_per_hour": 39963.038133333335
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 570527.16132,
+      "am_trips_per_hour": 45764.21918666667,
+      "pm_trips_per_hour": 48921.38428666667
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 643368.35212,
+      "am_trips_per_hour": 52839.92423333333,
+      "pm_trips_per_hour": 55321.997806666666
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 637532.6587799999,
+      "am_trips_per_hour": 51548.28644,
+      "pm_trips_per_hour": 54831.26445333333
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 652636.86628,
+      "am_trips_per_hour": 51872.67772666667,
+      "pm_trips_per_hour": 55332.39209333333
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 657448.11884,
+      "am_trips_per_hour": 50987.93574666666,
+      "pm_trips_per_hour": 56455.18927333333
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 604474.83126,
+      "am_trips_per_hour": 46481.84414666667,
+      "pm_trips_per_hour": 52099.647593333335
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 613775.9787399999,
+      "am_trips_per_hour": 47245.638,
+      "pm_trips_per_hour": 53512.61512
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 692009.85976,
+      "am_trips_per_hour": 55182.26394,
+      "pm_trips_per_hour": 59400.70346
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 728285.5698200001,
+      "am_trips_per_hour": 58931.30353333333,
+      "pm_trips_per_hour": 63322.00218666667
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 685221.3060399999,
+      "am_trips_per_hour": 54660.982853333335,
+      "pm_trips_per_hour": 58845.42921333333
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 666985.85318,
+      "am_trips_per_hour": 49402.45708,
+      "pm_trips_per_hour": 56980.82343333333
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 374558.97226,
+      "am_trips_per_hour": 29132.632106666668,
+      "pm_trips_per_hour": 30322.155573333333
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 436126.27041999996,
+      "am_trips_per_hour": 34699.79660666667,
+      "pm_trips_per_hour": 35938.75926
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 482292.70681999996,
+      "am_trips_per_hour": 39323.824140000004,
+      "pm_trips_per_hour": 39767.426686666666
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 485902.66924,
+      "am_trips_per_hour": 38872.69308,
+      "pm_trips_per_hour": 40183.42478666666
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 493500.03922,
+      "am_trips_per_hour": 38908.17678666666,
+      "pm_trips_per_hour": 40274.76904666667
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 498752.24768000003,
+      "am_trips_per_hour": 38562.180459999996,
+      "pm_trips_per_hour": 41244.524893333335
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 465507.91864,
+      "am_trips_per_hour": 35555.4654,
+      "pm_trips_per_hour": 38507.88773333333
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 479573.34907999996,
+      "am_trips_per_hour": 36365.38766,
+      "pm_trips_per_hour": 40487.207500000004
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 526018.00128,
+      "am_trips_per_hour": 40881.25256666667,
+      "pm_trips_per_hour": 43708.68893333334
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 543327.3750400001,
+      "am_trips_per_hour": 43845.19872,
+      "pm_trips_per_hour": 45225.961559999996
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 516058.33038,
+      "am_trips_per_hour": 41268.981999999996,
+      "pm_trips_per_hour": 42376.73208
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 508339.96890000004,
+      "am_trips_per_hour": 38376.885299999994,
+      "pm_trips_per_hour": 41267.45310666667
+    }
+  ],
+  "june": [
+    {
+      "year": 2021,
+      "month": 6,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 476849.52895999997,
+      "am_trips_per_hour": 33338.55014,
+      "pm_trips_per_hour": 39362.85263333333
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 366087.88613999996,
+      "am_trips_per_hour": 26521.860673333333,
+      "pm_trips_per_hour": 29199.002713333335
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "borough": "Bk",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 657448.11884,
+      "am_trips_per_hour": 50987.93574666666,
+      "pm_trips_per_hour": 56455.18927333333
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "borough": "Q",
+      "weekday_hour_cells": 120,
+      "weekday_daily_trips": 498752.24768000003,
+      "am_trips_per_hour": 38562.180459999996,
+      "pm_trips_per_hour": 41244.524893333335
+    }
+  ],
+  "coverage": [
+    {
+      "year": 2021,
+      "borough": "Bk",
+      "published_cells": 2012,
+      "expected_cells": 2016,
+      "absent_cells": [
+        {
+          "month": 1,
+          "day_of_week": "Monday",
+          "hour": 2
+        },
+        {
+          "month": 1,
+          "day_of_week": "Monday",
+          "hour": 3
+        },
+        {
+          "month": 1,
+          "day_of_week": "Wednesday",
+          "hour": 2
+        },
+        {
+          "month": 1,
+          "day_of_week": "Thursday",
+          "hour": 1
+        }
+      ],
+      "unknown_origin_ids": 0
+    },
+    {
+      "year": 2021,
+      "borough": "Q",
+      "published_cells": 2004,
+      "expected_cells": 2016,
+      "absent_cells": [
+        {
+          "month": 1,
+          "day_of_week": "Monday",
+          "hour": 1
+        },
+        {
+          "month": 1,
+          "day_of_week": "Monday",
+          "hour": 3
+        },
+        {
+          "month": 1,
+          "day_of_week": "Tuesday",
+          "hour": 2
+        },
+        {
+          "month": 1,
+          "day_of_week": "Tuesday",
+          "hour": 3
+        },
+        {
+          "month": 1,
+          "day_of_week": "Wednesday",
+          "hour": 2
+        },
+        {
+          "month": 1,
+          "day_of_week": "Wednesday",
+          "hour": 3
+        },
+        {
+          "month": 1,
+          "day_of_week": "Thursday",
+          "hour": 1
+        },
+        {
+          "month": 1,
+          "day_of_week": "Thursday",
+          "hour": 2
+        },
+        {
+          "month": 1,
+          "day_of_week": "Friday",
+          "hour": 3
+        },
+        {
+          "month": 1,
+          "day_of_week": "Saturday",
+          "hour": 3
+        },
+        {
+          "month": 1,
+          "day_of_week": "Sunday",
+          "hour": 2
+        },
+        {
+          "month": 1,
+          "day_of_week": "Sunday",
+          "hour": 3
+        }
+      ],
+      "unknown_origin_ids": 0
+    },
+    {
+      "year": 2022,
+      "borough": "Bk",
+      "published_cells": 2016,
+      "expected_cells": 2016,
+      "absent_cells": [],
+      "unknown_origin_ids": 0
+    },
+    {
+      "year": 2022,
+      "borough": "Q",
+      "published_cells": 2016,
+      "expected_cells": 2016,
+      "absent_cells": [],
+      "unknown_origin_ids": 0
+    }
+  ]
+}

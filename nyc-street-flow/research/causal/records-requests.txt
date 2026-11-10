@@ -1,0 +1,313 @@
+﻿EXISTING-RECORDS REQUEST TEMPLATES AND SUBMISSION STATUS
+Author: Samuel Webber
+Prepared: November 5, 2026
+
+Status checked November 9, 2026: NYSDOT acknowledged C on November 5 as
+R013587-110526. NYC DOT did not accept A1 by email (requests go through NYC
+OpenRecords only), so A1 is not yet filed. B1 (MTA) is prepared and awaits portal
+submission. A2, B2 and the optional PPW request remain drafts.
+The text below is the public template; private contact details are omitted.
+No fees are authorized. See ../request-status.json for machine-readable status.
+
+Stage 1 seeks existing indexes, documentation and a small existing-record sample.
+Stage 2 is a separate follow-up draft to narrow after the coverage response. Do
+not submit both stages automatically. Candidate comparison roads are not assumed
+to be untreated or unaffected by diverted traffic.
+
+TIMING NOTE ADDED NOVEMBER 5, 2026
+The original requested September 2015–April 2016 records window below is
+preserved as drafted/sent. It is not a verified complete construction interval.
+A December 2014 DOT plan scheduled an April 2015 start. Exact temporary and
+permanent Pulaski lane-closure dates remain unverified. See timing-clarification.txt.
+
+VERIFIED OFFICIAL ENTRY POINTS
+
+NYC DOT instructions:
+https://www.nyc.gov/html/dot/html/about/foil.shtml
+NYC OpenRecords portal; select Department of Transportation:
+https://a860-openrecords.nyc.gov/
+
+MTA instructions; its centralized team handles constituent agencies:
+https://www.mta.info/transparency/foil
+MTA FOIL Records Access Center:
+https://mtany.govqa.us/WEBAPP/_rs/
+
+NYSDOT instructions and link to its online request system:
+https://www.dot.ny.gov/main/foil-form-challenge
+NYSDOT FOIL Records Access Center:
+https://dotny.govqa.us/WEBAPP/_rs/
+NYSDOT traffic-data office and archive information:
+https://www.dot.ny.gov/divisions/engineering/technical-services/highway-data-services
+
+The official instructions were checked November 5, 2026. Portal availability can
+change; use the agency instruction page if a direct portal link fails.
+
+==========================================================================
+DRAFT A1 — NYC DOT: THIRD AVENUE RECORD INVENTORY AND IMPLEMENTATION HISTORY
+==========================================================================
+
+Subject: Existing Third Avenue E59–E96 evaluation records, 2022–2024 — first stage
+
+To the NYC DOT Records Access Officer:
+
+Please provide electronic copies of the following existing records dated January
+1, 2022 through December 31, 2024 concerning the Third Avenue project between East
+59th and East 96th Streets, Manhattan:
+
+1. Existing evaluation plans, count-location indexes, survey inventories, data
+   dictionaries and collection/quality-control documentation identifying vehicle
+   classification, vehicle occupancy, bicycle, pedestrian, bus-passenger and
+   travel-time observations used for this project. Include site/segment IDs,
+   coordinates or cross streets, directions, dates, observation intervals and
+   original units where recorded. This asks for maintained records, not a newly
+   compiled inventory or an assessment of what analysis is possible.
+
+2. Existing as-built plans, work orders, acceptance/completion logs and signal
+   timing or transit-signal-priority change logs establishing actual activation,
+   installation, removal or suspension dates for general traffic lanes, the bus
+   lane, bicycle lane, stops, loading rules, turn restrictions, signals and signal
+   priority. Include recorded temporary closures, construction phases and lane
+   availability. A press-release or project-wide completion date is not a
+   substitute for existing block/intersection activation records.
+
+3. Existing survey inventories and project/change logs for these candidate
+   comparison corridors, limited to the same dates: First, Lexington and Madison
+   Avenues between East 59th and East 96th Streets. Prioritize count locations at
+   or nearest East 60th, 72nd, 86th and 96th Streets. Include existing records of
+   concurrent lane, signal, bus-priority, stop or construction changes. These
+   records will be used to assess whether a comparison is suitable, not to presume
+   that these corridors were untreated.
+
+4. Any existing evaluation extracts or count sheets for May 8–14, 2023 and May
+   6–12, 2024 at the identified Third Avenue sites, limited to 07:00–10:00 and
+   16:00–19:00 local time. If those dates were not observed, please provide an
+   existing sample file or report from the nearest documented survey campaign;
+   do not generate replacement observations, estimates or new summaries.
+
+Native CSV/XLSX/GIS files and existing dictionaries are preferred where maintained;
+PDF is suitable for documents. Existing public download links are acceptable.
+Do not provide license plates, faces, identifiable video, individual travel
+histories or other personal identifiers. No new collection or analysis is
+requested. If responsive records are not maintained, a response to that effect
+is sufficient. Please provide separable responsive records where available.
+
+No fees or chargeable processing are authorized. Please notify me of any proposed
+charge and obtain separate agreement before incurring it. Electronic delivery is
+preferred. This stage does not authorize the larger follow-up below.
+
+Samuel Webber
+
+==========================================================================
+DRAFT A2 — NYC DOT: NARROWED OBSERVATION EXTRACT, AFTER STAGE A1
+==========================================================================
+
+Subject: Follow-up existing count, occupancy and travel-time records, 2022–2024
+
+To the NYC DOT Records Access Officer:
+
+Following the inventory response, I request the existing observations for the
+confirmed Third Avenue sites and selected comparison sites in the attached site
+list. That list will identify the exact IDs and directions before submission.
+The maximum geographic scope is Third Avenue E59–E96 and First, Lexington and
+Madison Avenues E59–E96; the date ceiling is January 1, 2022–December 31, 2024.
+
+Please provide maintained weekday observations for 06:00–20:00 local time, at their
+native interval, including the following fields where already recorded:
+
+- Actual date/time, time zone/DST convention, site and direction, collection
+  method, observed minutes, missing intervals, revisions and quality flags.
+- Motor counts by recorded class, identifying whether buses are included; bicycle
+  and pedestrian counts with directions and count-boundary definitions.
+- Existing occupancy tally sheets or anonymized occupancy aggregates by vehicle
+  class, date and interval, with sample size and whether drivers are included.
+- Existing onboard bus-load counts, if DOT holds them, distinguished from stop
+  boardings and from counts of bus vehicles.
+- Actual segment-traversal observations or existing aggregates, endpoints,
+  direction, sample size and inclusion/exclusion rules. Keep observed travel
+  times separate from modeled speeds, schedules and free-flow benchmarks.
+- Maintained weather, incidents, closures, construction and observation notes.
+
+For records already published, links and the applicable version are acceptable.
+Do not create synchronized observations where collection dates differ, infer
+occupancy, count new video, estimate missing modes or perform a before/after
+analysis. Please retain separate source units and existing suppression flags.
+No personal identifiers are requested. Native electronic files are preferred.
+No fees are authorized; seek separate agreement before chargeable work.
+
+Samuel Webber
+
+==========================================================================
+DRAFT B1 — MTA / NYCT: BUS LOAD AND RUNTIME DOCUMENTATION, FIRST STAGE
+==========================================================================
+
+Subject: Existing M101/M102/M103 segment load and runtime records, 2022–2024
+
+To the MTA FOIL Team, for New York City Transit:
+
+Please provide existing data dictionaries, coverage/retention documentation,
+methodology documents and route/stop change records for January 1, 2022 through
+December 31, 2024 covering these route/service and segment combinations:
+
+- M101 Limited, M102 Local and M103 Local, northbound Third Avenue E67–E97,
+  public timepoint stop pair 402688 to 403777. The final block is outside the
+  E59–E96 street project; retain the actual endpoints rather than relabeling it.
+- The same services, southbound Lexington Avenue E96–E68, 403418 to 403422.
+- The same services, northbound Third Avenue across East 60th Street: stop pair
+  405480 (E57) to 403545 (E60, north of 60th Street); for the M101 Limited,
+  402682 (E50) to 403545. These are GTFS stop IDs (MTA feed, October 2026).
+- The same services, northbound Third Avenue E23–E42, 403855 to 402679.
+- M101 Limited, northbound Third Avenue E99–E125, 401946 to 402502.
+
+Identifiers above refer to published dataset 58t6-89vi. Please include existing
+stop-ID, route-pattern and timepoint crosswalks where identifiers changed. Retain
+the geographic descriptions if an identifier is not valid for part of the period.
+
+Requested documentation concerns actual run/stop arrival and departure times,
+segment runtime, dwell, scheduled and delivered service, headways, canceled or
+short-turned trips, and onboard passenger loads or boarding/alighting records.
+Include existing sampling, expansion, inferred-alighting, missingness and
+suppression rules. Distinguish measured APC loads from modeled loads or fare
+boardings. Include existing records of stop moves, route changes, detours, bus
+lane/TSP activation and changes to the underlying measurement pipeline.
+
+As a limited sample, please provide existing records for May 8–14, 2023 and May
+6–12, 2024, 07:00–10:00 and 16:00–19:00 local time, for the first three segment pairs.
+Supply the maintained native records or existing aggregates; no new analysis or
+new privacy aggregation is requested. An existing deidentified extract or
+disclosable aggregate may substitute if the native record contains identifiers.
+
+I do not request fare-card or OMNY identifiers, transaction histories, passenger
+identifiers, employee identities, operator IDs or individual-linked travel data.
+Use existing nonpersonal run/trip keys only where needed to relate service and
+load records. Public links are acceptable where the requested information is
+already available. No fees are authorized; seek separate agreement before any
+chargeable work. Electronic delivery is preferred.
+
+Samuel Webber
+
+==========================================================================
+DRAFT B2 — MTA / NYCT: NARROWED BUS PANEL, AFTER STAGE B1
+==========================================================================
+
+Subject: Follow-up existing bus operations and passenger-load extract
+
+To the MTA FOIL Team:
+
+After confirming coverage in the first response, please provide the maintained
+records for the confirmed M101/M102/M103 segment pairs listed in that request,
+January 1, 2022–December 31, 2024, weekdays 06:00–20:00 local time. The follow-up
+will identify the exact retained fields and segment IDs before submission.
+
+Prioritize actual segment/stop times and contemporaneous onboard loads or
+boarding/alighting counts that can be related using existing nonpersonal
+date/run/stop keys. Include maintained trip counts, actual and scheduled headways,
+completed/canceled/short-turned service indicators, route/service class, direction,
+quality flags and supplied passenger expansion factors. If only existing
+aggregates are available, provide their documented geography, time intervals,
+denominators and weighting methods. Do not multiply boarding counts into onboard
+loads or infer a new origin–destination matrix for this request.
+
+A second priority, only after coverage and scope are confirmed, is the same
+existing documentation and records for M15 Local on First Avenue E79–E97
+(401712 to 903275), and M1/M3/M4 Local on Madison Avenue E57–E95
+(400363 to 404191). These are candidate comparisons, not presumed controls.
+
+No new collection, reconstruction or analysis is requested. Do not include
+personal, fare-media or employee identifiers. No fees are authorized; notify me
+and obtain separate agreement before chargeable work. Native electronic files
+and existing dictionaries are preferred.
+
+Samuel Webber
+
+==========================================================================
+DRAFT C — NYSDOT: STATION 021284 INSTRUMENT AND LOCATION CONTINUITY
+==========================================================================
+
+Subject: Existing station 021284 / 02_1284 / CC0280 metadata and QC records
+
+To the NYSDOT Records Access Officer / Highway Data Services Bureau:
+
+Please provide existing station history and instrument documentation for the
+McGuinness Boulevard continuous traffic station identified as 021284, 02_1284,
+CCID 0280 / CC0280 and DOTID 256355. The 2016 inventory gives approximately
+40.72549, -73.94880, with I-278 to Greenpoint Avenue as the corridor; the 2015
+file instead describes Meeker Avenue N to Greenpoint Avenue. These identify a
+McGuinness approach location, not a verified Pulaski Bridge screenline.
+
+First priority, January 1, 2014–December 31, 2018:
+
+1. Existing installation/as-built diagrams, station-history cards and dated
+   coordinates or reference-marker records showing sensor placement, covered
+   lanes, direction and any relocation, replacement or renumbering.
+2. Existing instrument model/serial history, calibration and validation records,
+   maintenance/outage logs, lane/channel mapping and changes in detection or
+   classification technology.
+3. Existing field definitions and crosswalks for ROAD 99/-99 in 2014–2015 and
+   FEDERAL_DIRECTION 1/5 from 2016 onward; definitions of LANES_IN_DIRECTION and
+   whether that field describes detected lanes or roadway inventory. Include
+   existing documentation linking the inventory's differently dated products
+   (volume 2014, classification 2012, speed 2011 and WIM 2009) to their applicable
+   instrument, location and period; the inventory's 2016 file date is not assumed
+   to be each product's observation date.
+4. Existing count-processing, time-zone/DST, imputation, correction, missing-value
+   and zero-count documentation, with retained QA flags or correction logs for
+   the published Region11 continuous-count files. Include records explaining
+   changed station or location descriptions, if maintained. Prioritize existing
+   raw-data status, outage or processing records for December 25, 2015–January 7,
+   2016, where the acquired count series has a gap across the format transition.
+5. Existing station notes or closure/work logs documenting the measurement context
+   during September 2015–April 2016. Do not infer the Pulaski lane-closure date
+   from the bicycle opening or reconstruct one for this request.
+
+Second priority, after this metadata review: retained 2021 station-history and
+instrument-change records necessary to determine whether the same location and
+channels continued. The public hourly counts themselves have already been
+downloaded; please prioritize continuity and QA records rather than duplicate
+annual archives. If a record is held by another custodian, an existing referral
+or public link is welcome. Do not create a continuity analysis or certify a
+causal interpretation of the counts.
+
+Electronic copies are preferred. No personal identifiers or new measurements
+are requested. No fees are authorized; obtain separate agreement before any
+chargeable work.
+
+Samuel Webber
+
+==========================================================================
+OPTIONAL DRAFT D — NYC DOT: DISTINCT HISTORICAL PPW RECORDS REQUEST
+==========================================================================
+
+Subject: Archived Prospect Park West evaluation source records, 2009–2010
+
+To the NYC DOT Records Access Officer:
+
+This is a separate historical request, not an extension of the Third Avenue
+request. Please provide existing source sheets, electronic tables and collection
+metadata behind the January2011 PPW evaluation:
+https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+
+The initial scope is motor counts at Carroll Street and 11th Street on
+April 21–23, 2009; May 11–13 and 18–20, 2010; and October 19–21 and 26–28, 2010;
+and bicycle counts near 4th Street on June 9, 2009 and October 12, 2010. Prioritize
+07:00–10:00 and 16:00–19:00. Include maintained vehicle-class/occupancy or pedestrian
+observations for those sites and dates, if any, and original interval missingness
+or correction notes. Do not generate unobserved modes or synchronized counts.
+
+Please also provide existing source documentation held by DOT for B69 onboard
+loads and actual bus runs at PPW during the above campaigns, plus the count dates,
+stop definitions and source on/off-count records behind the B69 entries in Table14
+(printed page52) of the August2009 Downtown Brooklyn existing-conditions report:
+https://www.nyc.gov/html/dot/downloads/pdf/dbstc-existing-future-conditions-report.pdf
+
+The published Table14 maxima are not assumed to describe the PPW evaluation dates.
+Existing DOT correspondence or implementation records documenting the June2010
+B69 relocation, signal timing and lane activation may be included if held in the
+evaluation project file. No agency-wide email search, new survey or new load
+estimate is requested. If MTA holds the underlying bus records instead, please
+identify that custodian in the response rather than undertake a new analysis.
+
+Native electronic records or archived PDFs are preferred. Do not provide personal
+identifiers. No fees are authorized; seek separate agreement before chargeable
+work.
+
+Samuel Webber

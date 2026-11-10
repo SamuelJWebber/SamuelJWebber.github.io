@@ -1,0 +1,5 @@
+route,direction,peak,modelled_minutes,observed_min_minutes,observed_max_minutes,source,source_page,warning
+East-West CS3,westbound,AM,21,15,16,https://content.tfl.gov.uk/segregated-cycling-infrastructure-evidence-pack.pdf,13,"Prediction versus on-street observation, NOT before/after; eastbound construction/bedding-in and different junction assumptions"
+East-West CS3,westbound,PM,15,15,16,https://content.tfl.gov.uk/segregated-cycling-infrastructure-evidence-pack.pdf,13,"Prediction versus on-street observation, NOT before/after; eastbound construction/bedding-in and different junction assumptions"
+East-West CS3,eastbound,AM,12,15,20,https://content.tfl.gov.uk/segregated-cycling-infrastructure-evidence-pack.pdf,13,"Prediction versus on-street observation, NOT before/after; eastbound construction/bedding-in and different junction assumptions"
+East-West CS3,eastbound,PM,13,25,30,https://content.tfl.gov.uk/segregated-cycling-infrastructure-evidence-pack.pdf,13,"Prediction versus on-street observation, NOT before/after; eastbound construction/bedding-in and different junction assumptions"

@@ -1,0 +1,119 @@
+{
+  "created": "2020-09-05T11:04:50.477080+00:00",
+  "modified": "2020-09-06T00:59:25.433462+00:00",
+  "id": 4015974,
+  "conceptrecid": "3973038",
+  "doi": "10.5281/zenodo.4015974",
+  "conceptdoi": "10.5281/zenodo.3973038",
+  "doi_url": "https://doi.org/10.5281/zenodo.4015974",
+  "metadata": {
+    "title": "Effect of pop-up bike lanes on cycling in European cities (code and data)",
+    "doi": "10.5281/zenodo.4015974",
+    "publication_date": "2020-09-05",
+    "description": "<p>Data and code to reproduce paper estimating the effect of pop-up bike lanes on cycling in European cities.</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Sebastian Kraus",
+        "affiliation": null
+      },
+      {
+        "name": "Nicolas Koch",
+        "affiliation": null
+      }
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/smkraus/popup-bikelanes/tree/v.0.4-beta",
+        "relation": "isSupplementTo",
+        "scheme": "url"
+      }
+    ],
+    "version": "v.0.4-beta",
+    "resource_type": {
+      "title": "Software",
+      "type": "software"
+    },
+    "license": {
+      "id": "other-open"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 2,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "3973038"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Effect of pop-up bike lanes on cycling in European cities (code and data)",
+  "links": {
+    "self": "https://zenodo.org/api/records/4015974",
+    "self_html": "https://zenodo.org/records/4015974",
+    "preview_html": "https://zenodo.org/records/4015974?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.4015974",
+    "self_doi": "https://doi.org/10.5281/zenodo.4015974",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.4015974",
+    "reserve_doi": "https://zenodo.org/api/records/4015974/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/3973038",
+    "parent_html": "https://zenodo.org/records/3973038",
+    "parent_doi": "https://doi.org/10.5281/zenodo.3973038",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.3973038",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:4015974/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:4015974/sequence/default",
+    "files": "https://zenodo.org/api/records/4015974/files",
+    "media_files": "https://zenodo.org/api/records/4015974/media-files",
+    "latest": "https://zenodo.org/api/records/4015974/versions/latest",
+    "latest_html": "https://zenodo.org/records/4015974/latest",
+    "versions": "https://zenodo.org/api/records/4015974/versions",
+    "draft": "https://zenodo.org/api/records/4015974/draft",
+    "access_links": "https://zenodo.org/api/records/4015974/access/links",
+    "access_grants": "https://zenodo.org/api/records/4015974/access/grants",
+    "access_users": "https://zenodo.org/api/records/4015974/access/users",
+    "access_request": "https://zenodo.org/api/records/4015974/access/request",
+    "access": "https://zenodo.org/api/records/4015974/access",
+    "communities": "https://zenodo.org/api/records/4015974/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/4015974/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/4015974/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/4015974/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/4015974/quota-increase",
+    "requests": "https://zenodo.org/api/records/4015974/requests"
+  },
+  "updated": "2020-09-06T00:59:25.433462+00:00",
+  "recid": "4015974",
+  "revision": 4,
+  "files": [
+    {
+      "id": "9f1b4154-7682-44eb-b81a-a9e40b23da20",
+      "key": "smkraus/popup-bikelanes-v.0.4-beta.zip",
+      "size": 1169146,
+      "checksum": "md5:680d0c1456031a1d21435c688d861f27",
+      "links": {
+        "self": "https://zenodo.org/api/records/4015974/files/smkraus/popup-bikelanes-v.0.4-beta.zip/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "118485"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 395,
+    "unique_downloads": 382,
+    "views": 2560,
+    "unique_views": 1982,
+    "version_downloads": 339,
+    "version_unique_downloads": 327,
+    "version_unique_views": 1712,
+    "version_views": 2257
+  },
+  "state": "done",
+  "submitted": true
+}

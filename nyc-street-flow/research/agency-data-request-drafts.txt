@@ -1,0 +1,57 @@
+DRAFTS ONLY — NOT SENT
+Prepared for Samuel Webber / NYC Street Flow, November 5, 2026.
+Replace bracketed details and confirm the desired project list before sending.
+
+TO NYC DOT — MATCHED COUNTS, OCCUPANCY AND COUNTER VALIDATION
+
+Subject: Data request for evaluating person flow and journey time after driving-lane conversions
+
+Hello,
+
+I am conducting an independent analysis of whether converting a moving traffic lane to a protected bikeway changes total person throughput and comparable journey times. The public analysis is at https://nyc-street-flow.smartgoldfish.chatgpt.site/.
+
+I would appreciate existing machine-readable records for the following projects, including records held by consultants. I am requesting existing data and metadata, not asking DOT to conduct a new study.
+
+Priority project: Brooklyn Bridge, where the protected bikeway opened September 14, 2021. Ideally the period is January 1, 2019–December 31, 2024, retaining construction dates and including the Manhattan and Williamsburg bridges as possible diversion routes. The clean preconstruction and post-opening windows will be documented separately.
+
+Additional projects if records are available: Prospect Park West (June 2010), Pulaski Bridge (April 2016), Amsterdam Avenue (2019), and Third Avenue (2023). Please identify exact project limits and implementation dates in the relevant records rather than treating each avenue as a single corridor.
+
+For each location, please provide available:
+
+1. Directional motor-vehicle counts by classification and clock interval, survey dates, locations, observed duration, coverage, missing-data flags and any adjustments. Fifteen-minute or hourly records would be ideal.
+2. Occupancy observations by vehicle class and corresponding place/time, including numbers of vehicles observed, occupants, unknown occupancy, sampling methods and expansion factors. Please identify whether buses, taxis, for-hire vehicles, trucks and private cars are separate and whether drivers are included.
+3. Simultaneous pedestrian, bicycle, e-bike and other micromobility counts, with any Citi Bike classification observations. Please identify paths omitted by a sensor after a route change.
+4. Sensor and flow-channel definitions, physical/comprehensive series relationships, calibration records, replacement or relocation dates, overlap/manual validation, and the meaning of raw/modified/imputed flags. Of particular interest is the transition from Brooklyn Bridge promenade sensor 100010022 to roadway sensor 300020241 and comprehensive series 300020904.
+5. Individual or aggregated timed runs/probe travel times with route endpoints, dates, departure times, mode and stop-delay definitions. Aggregates are sufficient where individual records cannot be released.
+6. Construction/closure dates, before/after lane geometries, traffic signal timing changes, turning restrictions, bus-route changes and any local control/diversion counts used in the project's evaluation.
+
+Please retain unavailable fields as missing. A representative fall weekday profile is useful context, but we need its underlying count dates to determine which records can be aligned across modes. Documentation, data dictionaries, source reports and existing APIs are welcome if they make a file transfer unnecessary.
+
+Thank you,
+Samuel Webber
+[contact email]
+
+
+TO MTA — TRANSIT PASSENGER CROSSINGS AND COMPLETE JOURNEY COMPONENTS
+
+Subject: Existing transit data for an all-mode study of NYC street redesigns
+
+Hello,
+
+I am conducting an independent analysis of person throughput and journey times around NYC conversions of moving traffic lanes to bikeways. The public work is at https://nyc-street-flow.smartgoldfish.chatgpt.site/.
+
+The priority case is the Brooklyn Bridge bikeway opening in September 2021. I am seeking existing 2019–2024 data sufficient to include trips that shifted between driving, cycling, bus and subway, with all modes compared on aligned dates, directions and time windows. No new survey is requested.
+
+Please identify available records or public sources for:
+
+1. Subway origin–destination estimates, expansion factors and methodology; date/time coverage; uncertainty; transfer handling; route-choice assumptions; and any changes in measurement or payment coverage. Station entries alone cannot establish whether a passenger crossed the relevant boundary.
+2. Passenger loads by direction and train/run across relevant Brooklyn–Manhattan rail crossings, or documented estimates from which these can be derived. Please include timestamp definitions, sample coverage, imputation flags and validation.
+3. Actual train/bus arrival and departure times, run identifiers, segment endpoints, headways and disruptions, including wait/transfer information where already measured. Scheduled travel times or capacity would be kept separate from observed journeys and ridership.
+4. Bus passenger loads from APC/farebox or other existing surveys at relevant corridor crossings, plus passenger-weighted journey times where available. For Prospect Park West, historical B69 passenger and route-change records around June 2010 would help distinguish route diversion from a change in person throughput.
+5. Existing travel diaries or survey aggregates linking origin, destination, departure period, access/egress, waiting and in-vehicle time before and after these projects. Anonymous aggregate outputs are sufficient; I do not seek names, fare-media identifiers or exact personal home/work addresses.
+
+If reliable all-mode inference is not possible from available records, information on these limitations is itself valuable. Please provide the appropriate data dictionaries and identify whether each result is observed, modeled or unavailable.
+
+Thank you,
+Samuel Webber
+[contact email]

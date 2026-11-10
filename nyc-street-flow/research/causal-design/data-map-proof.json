@@ -1,0 +1,586 @@
+{
+  "checked_on": "2026-11-06",
+  "note": "Selected small results actually acquired. Calendar-level 2026 NYSDOT records were not downloaded. Failed queries do not establish spatial absence.",
+  "nysdot_2022": {
+    "url": "https://www.dot.ny.gov/divisions/engineering/technical-services/highway-data-services/hdsb/repository/CC_Volume_Data_R11_2022.zip",
+    "station_coverage": [
+      {
+        "station": "01_0003",
+        "rows": 727,
+        "year": "2022.0",
+        "months": [
+          "1.0",
+          "10.0",
+          "11.0",
+          "12.0",
+          "2.0",
+          "3.0",
+          "4.0",
+          "5.0",
+          "6.0",
+          "7.0",
+          "8.0",
+          "9.0"
+        ]
+      },
+      {
+        "station": "01_0009",
+        "rows": 278,
+        "year": "2022.0",
+        "months": [
+          "1.0",
+          "10.0",
+          "11.0",
+          "3.0",
+          "7.0",
+          "8.0"
+        ]
+      },
+      {
+        "station": "01_0027",
+        "rows": 579,
+        "year": "2022.0",
+        "months": [
+          "1.0",
+          "11.0",
+          "12.0",
+          "3.0",
+          "4.0",
+          "5.0",
+          "6.0",
+          "7.0",
+          "8.0",
+          "9.0"
+        ]
+      },
+      {
+        "station": "02_0011",
+        "rows": 702,
+        "year": "2022.0",
+        "months": [
+          "1.0",
+          "10.0",
+          "11.0",
+          "12.0",
+          "2.0",
+          "3.0",
+          "4.0",
+          "5.0",
+          "6.0",
+          "7.0",
+          "8.0",
+          "9.0"
+        ]
+      },
+      {
+        "station": "05_0041",
+        "rows": 653,
+        "year": "2022.0",
+        "months": [
+          "1.0",
+          "10.0",
+          "11.0",
+          "2.0",
+          "3.0",
+          "4.0",
+          "5.0",
+          "6.0",
+          "7.0",
+          "8.0",
+          "9.0"
+        ]
+      },
+      {
+        "station": "05_0045",
+        "rows": 650,
+        "year": "2022.0",
+        "months": [
+          "1.0",
+          "10.0",
+          "11.0",
+          "2.0",
+          "3.0",
+          "4.0",
+          "5.0",
+          "6.0",
+          "7.0",
+          "8.0",
+          "9.0"
+        ]
+      },
+      {
+        "station": "05_0069",
+        "rows": 664,
+        "year": "2022.0",
+        "months": [
+          "1.0",
+          "10.0",
+          "11.0",
+          "12.0",
+          "2.0",
+          "4.0",
+          "5.0",
+          "6.0",
+          "7.0",
+          "8.0",
+          "9.0"
+        ]
+      },
+      {
+        "station": "05_0910",
+        "rows": 136,
+        "year": "2022.0",
+        "months": [
+          "1.0",
+          "10.0",
+          "3.0"
+        ]
+      },
+      {
+        "station": "06_0010",
+        "rows": 666,
+        "year": "2022.0",
+        "months": [
+          "1.0",
+          "10.0",
+          "11.0",
+          "2.0",
+          "3.0",
+          "4.0",
+          "5.0",
+          "6.0",
+          "7.0",
+          "8.0",
+          "9.0"
+        ]
+      }
+    ],
+    "target_021284_rows": 0
+  },
+  "nysdot_aadt": {
+    "url": "https://www.dot.ny.gov/divisions/engineering/technical-services/hds-respository/Tab/GDB_Shapefile_AADT_2024-2025.gdb.zip",
+    "where": "RCSTA = 21284",
+    "2024": [
+      {
+        "RCSTA": 21284,
+        "RC_STATION": "02_1284",
+        "RdName": "McGUINNESS BLVD",
+        "BegDesc": "MEEKER AVE N",
+        "EndDesc": "GREENPOINT AVE",
+        "CALCULATION_YEAR": 2024,
+        "AE_FLAG": "",
+        "AADT": null,
+        "YEAR_LAST_ACT": 2021,
+        "MONTH_LAST_ACT": 2,
+        "DAY_LAST_ACT": 26,
+        "AADT_LAST_ACT": null,
+        "YEAR_2LAST_ACT": 2020,
+        "AADT_2LAST_ACT": 28342,
+        "YEAR_3LAST_ACT": 2019,
+        "AADT_3LAST_ACT": 37395
+      }
+    ],
+    "2025_matches": 0
+  },
+  "drakewell": {
+    "base": "https://nysdottrafficdata.drakewell.com/",
+    "public_site_id": "FF4E2AF3-63ED-4879-B722-BA50A31E7ECA",
+    "detail": {
+      "FF4E2AF3-63ED-4879-B722-BA50A31E7ECA": {
+        "id": "FF4E2AF3-63ED-4879-B722-BA50A31E7ECA",
+        "node": "NYSDOT_SC",
+        "cosit": "028000000000",
+        "name": "0280",
+        "description": "McGUINNESS BLVD from MEEKER AVE N to GREENPOINT AVE",
+        "isDisabled": false,
+        "collectionInterval": 0,
+        "speedLimit": null,
+        "bearing": 340,
+        "location": {
+          "lat": 40.72364,
+          "lng": -73.94768
+        },
+        "parameters": {
+          "tz": "US/Eastern",
+          "hz": null,
+          "enableqc": "1",
+          "driveson": "r",
+          "fhwa": "1",
+          "fipsstatecode": "36",
+          "duration": "perm",
+          "noqcbefore": "2020-01-01",
+          "use": "temp",
+          "summaryinterval": "60m",
+          "directionality": "N"
+        },
+        "siteParameters": {
+          "directionality": "N"
+        },
+        "nodeParameters": {
+          "driveson": "r",
+          "fhwa": "1",
+          "enableqc": "1",
+          "fipsstatecode": "36",
+          "tz": "US/Eastern",
+          "duration": "perm",
+          "noqcbefore": "2020-01-01",
+          "use": "temp",
+          "summaryinterval": "60m"
+        },
+        "sysParameters": {
+          "tz": "America/New_York",
+          "hz": null,
+          "enableqc": "0"
+        },
+        "tz": "US/Eastern",
+        "accessParameters": {
+          "node": {
+            "node": "NYSDOT_SC",
+            "cosit": "028000000000"
+          },
+          "siteGroups": []
+        },
+        "latestData": "2026-03-06 00:00:00"
+      }
+    },
+    "quality_approved_types_2022_2025": {
+      "siteId": "FF4E2AF3-63ED-4879-B722-BA50A31E7ECA",
+      "dType": 0,
+      "dTypeStrings": []
+    },
+    "summary": [
+      {
+        "siteId": "FF4E2AF3-63ED-4879-B722-BA50A31E7ECA",
+        "year": 2026,
+        "coverage": 0.006,
+        "totalCount": 43534,
+        "speedAvg": null,
+        "speed85Pct": null,
+        "hgvPml": null,
+        "aadt": null,
+        "aadtMethod": null
+      }
+    ]
+  },
+  "ezpass_partitions": [
+    {
+      "id": "s7y8-dkgd",
+      "name": "EZ Pass Readers 2021",
+      "url": "https://data.cityofnewyork.us/d/s7y8-dkgd",
+      "rowsUpdatedAt": 1791321135,
+      "columns": [
+        "sid",
+        "link_name",
+        "borough",
+        "polyline",
+        "link_length_ft",
+        "aggregation_period_sec",
+        "n_samples",
+        "median_calculation_timestamp",
+        "median_tt_sec",
+        "median_speed_fps"
+      ]
+    },
+    {
+      "id": "2dzd-mqxq",
+      "name": "EZ Pass Readers 2022",
+      "url": "https://data.cityofnewyork.us/d/2dzd-mqxq",
+      "rowsUpdatedAt": 1791329294,
+      "columns": [
+        "sid",
+        "link_name",
+        "borough",
+        "polyline",
+        "link_length_ft",
+        "aggregation_period_sec",
+        "n_samples",
+        "median_calculation_timestamp",
+        "median_tt_sec",
+        "median_speed_fps"
+      ]
+    },
+    {
+      "id": "pi8f-savx",
+      "name": "EZ Pass Readers 2023",
+      "url": "https://data.cityofnewyork.us/d/pi8f-savx",
+      "rowsUpdatedAt": 1791343687,
+      "columns": [
+        "sid",
+        "link_name",
+        "borough",
+        "polyline",
+        "link_length_ft",
+        "aggregation_period_sec",
+        "n_samples",
+        "median_calculation_timestamp",
+        "median_tt_sec",
+        "median_speed_fps"
+      ]
+    },
+    {
+      "id": "7ank-n7rd",
+      "name": "EZ Pass Readers 2024",
+      "url": "https://data.cityofnewyork.us/d/7ank-n7rd",
+      "rowsUpdatedAt": 1791346072,
+      "columns": [
+        "sid",
+        "link_name",
+        "borough",
+        "polyline",
+        "link_length_ft",
+        "aggregation_period_sec",
+        "n_samples",
+        "median_calculation_timestamp",
+        "median_tt_sec",
+        "median_speed_fps"
+      ]
+    },
+    {
+      "id": "5dxh-vk2s",
+      "name": "EZ Pass Readers 2025",
+      "url": "https://data.cityofnewyork.us/d/5dxh-vk2s",
+      "rowsUpdatedAt": 1791354110,
+      "columns": [
+        "sid",
+        "link_name",
+        "borough",
+        "polyline",
+        "link_length_ft",
+        "aggregation_period_sec",
+        "n_samples",
+        "median_calculation_timestamp",
+        "median_tt_sec",
+        "median_speed_fps"
+      ]
+    },
+    {
+      "id": "6a2s-2t65",
+      "name": "EZ Pass Readers 2026",
+      "url": "https://data.cityofnewyork.us/d/6a2s-2t65",
+      "rowsUpdatedAt": 1793866253,
+      "columns": [
+        "sid",
+        "link_name",
+        "borough",
+        "polyline",
+        "link_length_ft",
+        "aggregation_period_sec",
+        "n_samples",
+        "median_calculation_timestamp",
+        "median_tt_sec",
+        "median_speed_fps"
+      ]
+    }
+  ],
+  "b62_boardings": {
+    "name": "bus-stop-b62-coverage",
+    "url": "https://data.ny.gov/resource/fvdm-uavx.json?%24select=min%28month%29+as+first%2Cmax%28month%29+as+last%2Ccount%28%2A%29+as+rows%2Ccount%28distinct+stop_id%29+as+stops&%24where=route_id%3D%27B62%27",
+    "status": "acquired",
+    "rows": [
+      {
+        "first": "2024-01-01T00:00:00.000",
+        "last": "2026-09-01T00:00:00.000",
+        "rows": "538322",
+        "stops": "133"
+      }
+    ]
+  },
+  "b62_segments_2023_2024": {
+    "url": "https://data.ny.gov/resource/58t6-89vi.json?%24select=year%2Cmin%28month%29+as+first_month%2Cmax%28month%29+as+last_month%2Ccount%28%2A%29+as+rows%2Ccount%28distinct+timepoint_stop_id%29+as+timepoints&%24where=route_id%3D%27B62%27&%24group=year",
+    "rows": [
+      {
+        "year": "2023",
+        "first_month": "1",
+        "last_month": "12",
+        "rows": "24227",
+        "timepoints": "13"
+      },
+      {
+        "year": "2024",
+        "first_month": "1",
+        "last_month": "12",
+        "rows": "24340",
+        "timepoints": "13"
+      }
+    ]
+  },
+  "b62_segments_2025_2026": {
+    "url": "https://data.ny.gov/resource/kufs-yh3x.json?%24select=year%2Cmin%28month%29+as+first_month%2Cmax%28month%29+as+last_month%2Ccount%28%2A%29+as+rows%2Ccount%28distinct+timepoint_stop_id%29+as+timepoints&%24where=route_id%3D%27B62%27&%24group=year",
+    "rows": [
+      {
+        "year": "2025",
+        "first_month": "1",
+        "last_month": "12",
+        "rows": "25305",
+        "timepoints": "15"
+      },
+      {
+        "year": "2026",
+        "first_month": "1",
+        "last_month": "9",
+        "rows": "18403",
+        "timepoints": "12"
+      }
+    ]
+  },
+  "b62_distinct_months_2023_2024": {
+    "url": "https://data.ny.gov/resource/58t6-89vi.json?%24select=year%2Ccount%28distinct+month%29+as+months%2Cmin%28month%29+as+first_month%2Cmax%28month%29+as+last_month&%24where=route_id%3D%27B62%27&%24group=year",
+    "rows": [
+      {
+        "year": "2023",
+        "months": "12",
+        "first_month": "1",
+        "last_month": "12"
+      },
+      {
+        "year": "2024",
+        "months": "12",
+        "first_month": "1",
+        "last_month": "12"
+      }
+    ]
+  },
+  "b62_distinct_months_2025_2026": {
+    "url": "https://data.ny.gov/resource/kufs-yh3x.json?%24select=year%2Ccount%28distinct+month%29+as+months%2Cmin%28month%29+as+first_month%2Cmax%28month%29+as+last_month&%24where=route_id%3D%27B62%27&%24group=year",
+    "rows": [
+      {
+        "year": "2025",
+        "months": "12",
+        "first_month": "1",
+        "last_month": "12"
+      },
+      {
+        "year": "2026",
+        "months": "9",
+        "first_month": "1",
+        "last_month": "9"
+      }
+    ]
+  },
+  "atr_name_sample": {
+    "url": "https://data.cityofnewyork.us/resource/7ym2-wayt.json?%24where=upper%28street%29+like+%27%25MCGUINNESS%25%27&%24limit=5",
+    "rows": [
+      {
+        "requestid": "12231",
+        "boro": "Brooklyn",
+        "yr": "2010",
+        "m": "9",
+        "d": "19",
+        "hh": "4",
+        "mm": "0",
+        "vol": "59",
+        "segmentid": "145630",
+        "wktgeom": "POINT (997449.9 206984.2)",
+        "street": "NB BRIDGE ENTRANCE ON MCGUINNESS (N/O FREEMAN)",
+        "fromst": "FREEMAN ST",
+        "tost": "EAGLE ST",
+        "direction": "NB"
+      },
+      {
+        "requestid": "12231",
+        "boro": "Brooklyn",
+        "yr": "2010",
+        "m": "9",
+        "d": "19",
+        "hh": "4",
+        "mm": "15",
+        "vol": "66",
+        "segmentid": "145630",
+        "wktgeom": "POINT (997449.9 206984.2)",
+        "street": "NB BRIDGE ENTRANCE ON MCGUINNESS (N/O FREEMAN)",
+        "fromst": "FREEMAN ST",
+        "tost": "EAGLE ST",
+        "direction": "NB"
+      },
+      {
+        "requestid": "12231",
+        "boro": "Brooklyn",
+        "yr": "2010",
+        "m": "9",
+        "d": "19",
+        "hh": "4",
+        "mm": "30",
+        "vol": "71",
+        "segmentid": "145630",
+        "wktgeom": "POINT (997449.9 206984.2)",
+        "street": "NB BRIDGE ENTRANCE ON MCGUINNESS (N/O FREEMAN)",
+        "fromst": "FREEMAN ST",
+        "tost": "EAGLE ST",
+        "direction": "NB"
+      },
+      {
+        "requestid": "12231",
+        "boro": "Brooklyn",
+        "yr": "2010",
+        "m": "9",
+        "d": "19",
+        "hh": "4",
+        "mm": "45",
+        "vol": "89",
+        "segmentid": "145630",
+        "wktgeom": "POINT (997449.9 206984.2)",
+        "street": "NB BRIDGE ENTRANCE ON MCGUINNESS (N/O FREEMAN)",
+        "fromst": "FREEMAN ST",
+        "tost": "EAGLE ST",
+        "direction": "NB"
+      },
+      {
+        "requestid": "12231",
+        "boro": "Brooklyn",
+        "yr": "2010",
+        "m": "9",
+        "d": "19",
+        "hh": "5",
+        "mm": "0",
+        "vol": "74",
+        "segmentid": "145630",
+        "wktgeom": "POINT (997449.9 206984.2)",
+        "street": "NB BRIDGE ENTRANCE ON MCGUINNESS (N/O FREEMAN)",
+        "fromst": "FREEMAN ST",
+        "tost": "EAGLE ST",
+        "direction": "NB"
+      }
+    ]
+  },
+  "atr_recent_name_filter": {
+    "url": "https://data.cityofnewyork.us/resource/7ym2-wayt.json?%24where=upper%28street%29+like+%27%25MCGUINNESS%25%27+and+yr%3E%3D2022&%24limit=5",
+    "rows": []
+  },
+  "subway_od_sample": {
+    "name": "subway-od-sample",
+    "url": "https://data.ny.gov/resource/28vm-gjqr.json?%24limit=1",
+    "status": "acquired",
+    "rows": [
+      {
+        "year": "2026",
+        "month": "5",
+        "day_of_week": "Monday",
+        "hour_of_day": "14",
+        "timestamp": "2026-05-04T14:00:00.000",
+        "origin_station_complex_id": "455",
+        "origin_station_complex_name": "69 St (7)",
+        "origin_latitude": "40.746325",
+        "origin_longitude": "-73.896403",
+        "destination_station_complex_id": "610",
+        "destination_station_complex_name": "Grand Central-42 St (4,5,6,7,S)",
+        "destination_latitude": "40.751992",
+        "destination_longitude": "-73.97735933",
+        "estimated_average_ridership": "3.0985",
+        "origin_point": {
+          "type": "Point",
+          "coordinates": [
+            -73.896403,
+            40.746325
+          ]
+        },
+        "destination_point": {
+          "type": "Point",
+          "coordinates": [
+            -73.97735933,
+            40.751992
+          ]
+        }
+      }
+    ]
+  }
+}

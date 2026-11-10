@@ -1,0 +1,1394 @@
+{
+  "source_urls": [
+    "https://citibikenyc.com/system-data",
+    "https://s3.amazonaws.com/tripdata/2021-citibike-tripdata.zip",
+    "https://s3.amazonaws.com/tripdata/2022-citibike-tripdata.zip"
+  ],
+  "periods": [
+    "2021-01-01/2021-06-20",
+    "2022-01-01/2022-06-20"
+  ],
+  "primary": {
+    "settings": {
+      "radius_m": 750,
+      "duration_minutes": [
+        4,
+        90
+      ],
+      "minimum_each_year": 3,
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "june_end_day": 20,
+      "excluded_shifted_docks": []
+    },
+    "dock_check": {
+      "over_50m_ids": [],
+      "largest_median_shift_m": 4.760680544364409
+    },
+    "Brooklyn": {
+      "eligible": [
+        2929,
+        4719
+      ],
+      "matched_rides": [
+        529,
+        626
+      ],
+      "matched_cells": 94,
+      "matched_dock_pairs": 26,
+      "weighted_mean_minutes": [
+        16.589596660365473,
+        15.790113288858052
+      ],
+      "mean_change_minutes": -0.7994833715074208,
+      "weighted_within_cell_median_minutes": [
+        15.58812095148078,
+        14.952713468809076
+      ],
+      "weighted_within_cell_p90_minutes": [
+        20.84508352236925,
+        19.56481629489603
+      ],
+      "conditional_cluster95_minutes": [
+        -1.4266875092161748,
+        -0.1722792337986666
+      ],
+      "cluster_se": 0.31772990334082113,
+      "leave_one_dock_pair_out_mean_change_range": [
+        -1.025154529958881,
+        -0.5567884950106172
+      ]
+    },
+    "Manhattan": {
+      "eligible": [
+        1780,
+        2516
+      ],
+      "matched_rides": [
+        283,
+        290
+      ],
+      "matched_cells": 49,
+      "matched_dock_pairs": 16,
+      "weighted_mean_minutes": [
+        14.16665730270907,
+        13.793911978822457
+      ],
+      "mean_change_minutes": -0.37274532388661186,
+      "weighted_within_cell_median_minutes": [
+        12.856380918727917,
+        13.76505397526502
+      ],
+      "weighted_within_cell_p90_minutes": [
+        19.35380905771496,
+        16.009545995288576
+      ],
+      "conditional_cluster95_minutes": [
+        -1.1883356347231726,
+        0.442844986949949
+      ],
+      "cluster_se": 0.4131628206001133,
+      "leave_one_dock_pair_out_mean_change_range": [
+        -0.7272374166425409,
+        0.22940852485445593
+      ]
+    },
+    "Brooklyn_minus_Manhattan": {
+      "mean_change_minutes": -0.4267380476208089,
+      "conditional_cluster95_minutes": [
+        -1.4606794548727655,
+        0.6072033596311477
+      ],
+      "cluster_se": 0.5237754084122196
+    }
+  },
+  "monthly": {
+    "1": {
+      "settings": {
+        "radius_m": 750,
+        "duration_minutes": [
+          4,
+          90
+        ],
+        "minimum_each_year": 3,
+        "months": [
+          1
+        ],
+        "june_end_day": 20,
+        "excluded_shifted_docks": []
+      },
+      "dock_check": {
+        "over_50m_ids": [],
+        "largest_median_shift_m": 0.0629570117146716
+      },
+      "Brooklyn": {
+        "eligible": [
+          369,
+          321
+        ],
+        "matched_rides": [
+          20,
+          19
+        ],
+        "matched_cells": 3,
+        "matched_dock_pairs": 3,
+        "weighted_mean_minutes": [
+          16.068163333333334,
+          17.145997555555553
+        ],
+        "mean_change_minutes": 1.0778342222222186,
+        "weighted_within_cell_median_minutes": [
+          16.110115,
+          17.493923333333335
+        ],
+        "weighted_within_cell_p90_minutes": [
+          17.251646,
+          18.362802
+        ],
+        "conditional_cluster95_minutes": [
+          0.1882696754820764,
+          1.9673987689623607
+        ],
+        "cluster_se": 0.4355758429760315,
+        "leave_one_dock_pair_out_mean_change_range": [
+          0.5274827777777755,
+          1.8558359722222217
+        ]
+      },
+      "Manhattan": {
+        "eligible": [
+          194,
+          279
+        ],
+        "matched_rides": [
+          43,
+          33
+        ],
+        "matched_cells": 7,
+        "matched_dock_pairs": 3,
+        "weighted_mean_minutes": [
+          15.699799224806203,
+          13.795266382428942
+        ],
+        "mean_change_minutes": -1.904532842377261,
+        "weighted_within_cell_median_minutes": [
+          13.721454651162793,
+          13.810710077519381
+        ],
+        "weighted_within_cell_p90_minutes": [
+          24.602841085271315,
+          15.904552248062016
+        ],
+        "conditional_cluster95_minutes": [
+          -4.565866371011113,
+          0.7568006862565912
+        ],
+        "cluster_se": 1.3031236456343327,
+        "leave_one_dock_pair_out_mean_change_range": [
+          -4.56852888888889,
+          1.4869140096618347
+        ]
+      },
+      "Brooklyn_minus_Manhattan": {
+        "mean_change_minutes": 2.9823670645994795,
+        "conditional_cluster95_minutes": [
+          0.14971286251740334,
+          5.815021266681556
+        ],
+        "cluster_se": 1.3870109217514983
+      }
+    },
+    "2": {
+      "settings": {
+        "radius_m": 750,
+        "duration_minutes": [
+          4,
+          90
+        ],
+        "minimum_each_year": 3,
+        "months": [
+          2
+        ],
+        "june_end_day": 20,
+        "excluded_shifted_docks": []
+      },
+      "dock_check": {
+        "over_50m_ids": [],
+        "largest_median_shift_m": 4.824914209108605
+      },
+      "Brooklyn": {
+        "eligible": [
+          233,
+          448
+        ],
+        "matched_rides": [
+          24,
+          23
+        ],
+        "matched_cells": 6,
+        "matched_dock_pairs": 5,
+        "weighted_mean_minutes": [
+          15.591614583333335,
+          14.691963599537036
+        ],
+        "mean_change_minutes": -0.8996509837962989,
+        "weighted_within_cell_median_minutes": [
+          15.421191666666665,
+          14.304642708333333
+        ],
+        "weighted_within_cell_p90_minutes": [
+          16.721648888888886,
+          16.21265847222222
+        ],
+        "conditional_cluster95_minutes": [
+          -1.683621693022232,
+          -0.11568027457036578
+        ],
+        "cluster_se": 0.38208356047397063,
+        "leave_one_dock_pair_out_mean_change_range": [
+          -1.6660837673611104,
+          0.2844820216049381
+        ]
+      },
+      "Manhattan": {
+        "eligible": [
+          130,
+          280
+        ],
+        "matched_rides": [
+          11,
+          7
+        ],
+        "matched_cells": 2,
+        "matched_dock_pairs": 1,
+        "weighted_mean_minutes": [
+          15.10083484848485,
+          12.87580909090909
+        ],
+        "mean_change_minutes": -2.225025757575759,
+        "weighted_within_cell_median_minutes": [
+          14.687331818181818,
+          12.804547727272727
+        ],
+        "weighted_within_cell_p90_minutes": [
+          19.174071212121213,
+          14.124967727272727
+        ],
+        "conditional_cluster95_minutes": [
+          -4.019775461068626,
+          -0.4302760540828925
+        ],
+        "cluster_se": 0.8747066042138728,
+        "leave_one_dock_pair_out_mean_change_range": [
+          null,
+          null
+        ]
+      },
+      "Brooklyn_minus_Manhattan": {
+        "mean_change_minutes": 1.3253747737794601,
+        "conditional_cluster95_minutes": [
+          -0.5643671633466032,
+          3.2151167109055234
+        ],
+        "cluster_se": 0.9210029395447981
+      }
+    },
+    "3": {
+      "settings": {
+        "radius_m": 750,
+        "duration_minutes": [
+          4,
+          90
+        ],
+        "minimum_each_year": 3,
+        "months": [
+          3
+        ],
+        "june_end_day": 20,
+        "excluded_shifted_docks": []
+      },
+      "dock_check": {
+        "over_50m_ids": [],
+        "largest_median_shift_m": 4.760680544364409
+      },
+      "Brooklyn": {
+        "eligible": [
+          452,
+          777
+        ],
+        "matched_rides": [
+          77,
+          83
+        ],
+        "matched_cells": 13,
+        "matched_dock_pairs": 9,
+        "weighted_mean_minutes": [
+          16.80177294372294,
+          13.436612764378479
+        ],
+        "mean_change_minutes": -3.3651601793444623,
+        "weighted_within_cell_median_minutes": [
+          16.145418181818187,
+          13.26749642857143
+        ],
+        "weighted_within_cell_p90_minutes": [
+          21.237264242424246,
+          15.426682943722945
+        ],
+        "conditional_cluster95_minutes": [
+          -4.640047592930118,
+          -2.0902727657588067
+        ],
+        "cluster_se": 0.6242494284502107,
+        "leave_one_dock_pair_out_mean_change_range": [
+          -4.294665463659148,
+          -2.1780089816849806
+        ]
+      },
+      "Manhattan": {
+        "eligible": [
+          263,
+          393
+        ],
+        "matched_rides": [
+          43,
+          38
+        ],
+        "matched_cells": 6,
+        "matched_dock_pairs": 5,
+        "weighted_mean_minutes": [
+          14.432564341085271,
+          12.582063323643412
+        ],
+        "mean_change_minutes": -1.850501017441859,
+        "weighted_within_cell_median_minutes": [
+          13.117677131782944,
+          12.55685988372093
+        ],
+        "weighted_within_cell_p90_minutes": [
+          19.411160620155037,
+          14.010961124031008
+        ],
+        "conditional_cluster95_minutes": [
+          -3.8987867688727738,
+          0.19778473398905572
+        ],
+        "cluster_se": 1.002944413763758,
+        "leave_one_dock_pair_out_mean_change_range": [
+          -3.4686962499999994,
+          -1.0834202976190466
+        ]
+      },
+      "Brooklyn_minus_Manhattan": {
+        "mean_change_minutes": -1.5146591619026033,
+        "conditional_cluster95_minutes": [
+          -3.8167826971461,
+          0.7874643733408933
+        ],
+        "cluster_se": 1.1272362451643085
+      }
+    },
+    "4": {
+      "settings": {
+        "radius_m": 750,
+        "duration_minutes": [
+          4,
+          90
+        ],
+        "minimum_each_year": 3,
+        "months": [
+          4
+        ],
+        "june_end_day": 20,
+        "excluded_shifted_docks": []
+      },
+      "dock_check": {
+        "over_50m_ids": [],
+        "largest_median_shift_m": 4.824914209108605
+      },
+      "Brooklyn": {
+        "eligible": [
+          580,
+          891
+        ],
+        "matched_rides": [
+          87,
+          110
+        ],
+        "matched_cells": 15,
+        "matched_dock_pairs": 9,
+        "weighted_mean_minutes": [
+          16.133236015325668,
+          15.059352101248988
+        ],
+        "mean_change_minutes": -1.0738839140766796,
+        "weighted_within_cell_median_minutes": [
+          14.9098438697318,
+          14.125904789272031
+        ],
+        "weighted_within_cell_p90_minutes": [
+          20.363207969348654,
+          18.832558908045982
+        ],
+        "conditional_cluster95_minutes": [
+          -2.8607987988376173,
+          0.7130309706842579
+        ],
+        "cluster_se": 0.8736988981333154,
+        "leave_one_dock_pair_out_mean_change_range": [
+          -2.110446331245168,
+          -0.4530548273976256
+        ]
+      },
+      "Manhattan": {
+        "eligible": [
+          331,
+          458
+        ],
+        "matched_rides": [
+          32,
+          47
+        ],
+        "matched_cells": 6,
+        "matched_dock_pairs": 4,
+        "weighted_mean_minutes": [
+          13.943227083333333,
+          13.352428974308472
+        ],
+        "mean_change_minutes": -0.5907981090248615,
+        "weighted_within_cell_median_minutes": [
+          12.271620833333333,
+          12.833319270833334
+        ],
+        "weighted_within_cell_p90_minutes": [
+          19.22828739583333,
+          15.635011302083335
+        ],
+        "conditional_cluster95_minutes": [
+          -2.495657221951675,
+          1.3140610039019518
+        ],
+        "cluster_se": 0.9313668615424938,
+        "leave_one_dock_pair_out_mean_change_range": [
+          -0.9419125685791558,
+          -0.3778900833333344
+        ]
+      },
+      "Brooklyn_minus_Manhattan": {
+        "mean_change_minutes": -0.4830858050518181,
+        "conditional_cluster95_minutes": [
+          -3.1852644663114966,
+          2.2190928562078605
+        ],
+        "cluster_se": 1.3212103939790005
+      }
+    },
+    "5": {
+      "settings": {
+        "radius_m": 750,
+        "duration_minutes": [
+          4,
+          90
+        ],
+        "minimum_each_year": 3,
+        "months": [
+          5
+        ],
+        "june_end_day": 20,
+        "excluded_shifted_docks": []
+      },
+      "dock_check": {
+        "over_50m_ids": [],
+        "largest_median_shift_m": 4.760680544364409
+      },
+      "Brooklyn": {
+        "eligible": [
+          725,
+          1379
+        ],
+        "matched_rides": [
+          199,
+          240
+        ],
+        "matched_cells": 34,
+        "matched_dock_pairs": 23,
+        "weighted_mean_minutes": [
+          16.752464154103855,
+          17.740836892600388
+        ],
+        "mean_change_minutes": 0.9883727384965333,
+        "weighted_within_cell_median_minutes": [
+          16.06008015075377,
+          16.883111474036852
+        ],
+        "weighted_within_cell_p90_minutes": [
+          20.67823417085427,
+          22.176963969849243
+        ],
+        "conditional_cluster95_minutes": [
+          -0.06897584508317811,
+          2.0457213220762447
+        ],
+        "cluster_se": 0.5177314027407864,
+        "leave_one_dock_pair_out_mean_change_range": [
+          0.4400115304671875,
+          1.48410175027556
+        ]
+      },
+      "Manhattan": {
+        "eligible": [
+          461,
+          619
+        ],
+        "matched_rides": [
+          80,
+          89
+        ],
+        "matched_cells": 14,
+        "matched_dock_pairs": 9,
+        "weighted_mean_minutes": [
+          13.243477291666666,
+          14.581768078448173
+        ],
+        "mean_change_minutes": 1.3382907867815064,
+        "weighted_within_cell_median_minutes": [
+          12.20101625,
+          14.938234687500001
+        ],
+        "weighted_within_cell_p90_minutes": [
+          17.352041083333337,
+          17.261419291666662
+        ],
+        "conditional_cluster95_minutes": [
+          -0.24414021786314088,
+          2.9207217914261534
+        ],
+        "cluster_se": 0.7748383423388033,
+        "leave_one_dock_pair_out_mean_change_range": [
+          0.115892375876889,
+          2.8771563296337237
+        ]
+      },
+      "Brooklyn_minus_Manhattan": {
+        "mean_change_minutes": -0.3499180482849731,
+        "conditional_cluster95_minutes": [
+          -2.408317388060026,
+          1.70848129149008
+        ],
+        "cluster_se": 1.007896538693482
+      }
+    },
+    "6": {
+      "settings": {
+        "radius_m": 750,
+        "duration_minutes": [
+          4,
+          90
+        ],
+        "minimum_each_year": 3,
+        "months": [
+          6
+        ],
+        "june_end_day": 20,
+        "excluded_shifted_docks": []
+      },
+      "dock_check": {
+        "over_50m_ids": [],
+        "largest_median_shift_m": 4.792795004205976
+      },
+      "Brooklyn": {
+        "eligible": [
+          570,
+          903
+        ],
+        "matched_rides": [
+          122,
+          151
+        ],
+        "matched_cells": 23,
+        "matched_dock_pairs": 13,
+        "weighted_mean_minutes": [
+          16.79726393442623,
+          14.608471270595297
+        ],
+        "mean_change_minutes": -2.1887926638309327,
+        "weighted_within_cell_median_minutes": [
+          14.89750423497268,
+          13.168077117486341
+        ],
+        "weighted_within_cell_p90_minutes": [
+          22.61360368852459,
+          19.294466680327872
+        ],
+        "conditional_cluster95_minutes": [
+          -3.934573322512872,
+          -0.4430120051489934
+        ],
+        "cluster_se": 0.8340948853430478,
+        "leave_one_dock_pair_out_mean_change_range": [
+          -2.4205054539964874,
+          -1.607680359086556
+        ]
+      },
+      "Manhattan": {
+        "eligible": [
+          401,
+          487
+        ],
+        "matched_rides": [
+          74,
+          76
+        ],
+        "matched_cells": 14,
+        "matched_dock_pairs": 9,
+        "weighted_mean_minutes": [
+          14.077050675675675,
+          13.972957286377287
+        ],
+        "mean_change_minutes": -0.10409338929838796,
+        "weighted_within_cell_median_minutes": [
+          12.891071846846849,
+          13.717969594594596
+        ],
+        "weighted_within_cell_p90_minutes": [
+          18.51544085585586,
+          16.32062015765766
+        ],
+        "conditional_cluster95_minutes": [
+          -1.9591883230518226,
+          1.7510015444550466
+        ],
+        "cluster_se": 0.8863227968385027,
+        "leave_one_dock_pair_out_mean_change_range": [
+          -1.4001846172839512,
+          0.4682941267513846
+        ]
+      },
+      "Brooklyn_minus_Manhattan": {
+        "mean_change_minutes": -2.0846992745325448,
+        "conditional_cluster95_minutes": [
+          -4.445326096709685,
+          0.2759275476445957
+        ],
+        "cluster_se": 1.1278546069287685
+      }
+    }
+  },
+  "sensitivities": {
+    "500m_90min_min3": {
+      "settings": {
+        "radius_m": 500,
+        "duration_minutes": [
+          4,
+          90
+        ],
+        "minimum_each_year": 3,
+        "months": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "june_end_day": 20,
+        "excluded_shifted_docks": []
+      },
+      "dock_check": {
+        "over_50m_ids": [],
+        "largest_median_shift_m": 4.760680544364409
+      },
+      "Brooklyn": {
+        "eligible": [
+          1607,
+          2768
+        ],
+        "matched_rides": [
+          407,
+          494
+        ],
+        "matched_cells": 70,
+        "matched_dock_pairs": 17,
+        "weighted_mean_minutes": [
+          16.323117280917284,
+          15.456072145064379
+        ],
+        "mean_change_minutes": -0.867045135852905,
+        "weighted_within_cell_median_minutes": [
+          15.143168755118756,
+          14.527205098280099
+        ],
+        "weighted_within_cell_p90_minutes": [
+          21.124974578214587,
+          19.734054598689596
+        ],
+        "conditional_cluster95_minutes": [
+          -1.6461718617100114,
+          -0.08791840999579859
+        ],
+        "cluster_se": 0.3946910493944812,
+        "leave_one_dock_pair_out_mean_change_range": [
+          -1.162728328508104,
+          -0.5510517101084463
+        ]
+      },
+      "Manhattan": {
+        "eligible": [
+          1190,
+          1808
+        ],
+        "matched_rides": [
+          248,
+          251
+        ],
+        "matched_cells": 40,
+        "matched_dock_pairs": 13,
+        "weighted_mean_minutes": [
+          14.004633602150538,
+          13.6577961105274
+        ],
+        "mean_change_minutes": -0.3468374916231376,
+        "weighted_within_cell_median_minutes": [
+          12.796407190860213,
+          13.638465961021506
+        ],
+        "weighted_within_cell_p90_minutes": [
+          19.27615862903226,
+          15.916296384408602
+        ],
+        "conditional_cluster95_minutes": [
+          -1.2207221549763367,
+          0.5270471717300615
+        ],
+        "cluster_se": 0.44269365095797675,
+        "leave_one_dock_pair_out_mean_change_range": [
+          -0.7516540731532153,
+          0.47941331673881676
+        ]
+      },
+      "Brooklyn_minus_Manhattan": {
+        "mean_change_minutes": -0.5202076442297674,
+        "conditional_cluster95_minutes": [
+          -1.6494197793927932,
+          0.6090044909332584
+        ],
+        "cluster_se": 0.5720377800237568
+      }
+    },
+    "1000m_90min_min3": {
+      "settings": {
+        "radius_m": 1000,
+        "duration_minutes": [
+          4,
+          90
+        ],
+        "minimum_each_year": 3,
+        "months": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "june_end_day": 20,
+        "excluded_shifted_docks": []
+      },
+      "dock_check": {
+        "over_50m_ids": [],
+        "largest_median_shift_m": 4.760680544364409
+      },
+      "Brooklyn": {
+        "eligible": [
+          4516,
+          6944
+        ],
+        "matched_rides": [
+          571,
+          662
+        ],
+        "matched_cells": 103,
+        "matched_dock_pairs": 34,
+        "weighted_mean_minutes": [
+          16.613586748394628,
+          15.981883283372872
+        ],
+        "mean_change_minutes": -0.6317034650217561,
+        "weighted_within_cell_median_minutes": [
+          15.641652714535901,
+          15.118275817279628
+        ],
+        "weighted_within_cell_p90_minutes": [
+          20.69438677758319,
+          19.728193701109166
+        ],
+        "conditional_cluster95_minutes": [
+          -1.2304878719035894,
+          -0.03291905813992291
+        ],
+        "cluster_se": 0.3033329984326415,
+        "leave_one_dock_pair_out_mean_change_range": [
+          -0.8384869497137157,
+          -0.3886464309677007
+        ]
+      },
+      "Manhattan": {
+        "eligible": [
+          2110,
+          3075
+        ],
+        "matched_rides": [
+          286,
+          295
+        ],
+        "matched_cells": 50,
+        "matched_dock_pairs": 17,
+        "weighted_mean_minutes": [
+          14.168992307692307,
+          13.831509160862781
+        ],
+        "mean_change_minutes": -0.3374831468295252,
+        "weighted_within_cell_median_minutes": [
+          12.87361048951049,
+          13.801557604895105
+        ],
+        "weighted_within_cell_p90_minutes": [
+          19.30403106060606,
+          16.041248694638696
+        ],
+        "conditional_cluster95_minutes": [
+          -1.1452737652608886,
+          0.4703074716018383
+        ],
+        "cluster_se": 0.40921164208422434,
+        "leave_one_dock_pair_out_mean_change_range": [
+          -0.6878435688807237,
+          0.2853444781794782
+        ]
+      },
+      "Brooklyn_minus_Manhattan": {
+        "mean_change_minutes": -0.29422031819223093,
+        "conditional_cluster95_minutes": [
+          -1.2965906189752523,
+          0.7081499825907904
+        ],
+        "cluster_se": 0.5077820754546563
+      }
+    },
+    "750m_60min_min3": {
+      "settings": {
+        "radius_m": 750,
+        "duration_minutes": [
+          4,
+          60
+        ],
+        "minimum_each_year": 3,
+        "months": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "june_end_day": 20,
+        "excluded_shifted_docks": []
+      },
+      "dock_check": {
+        "over_50m_ids": [],
+        "largest_median_shift_m": 4.760680544364409
+      },
+      "Brooklyn": {
+        "eligible": [
+          2920,
+          4706
+        ],
+        "matched_rides": [
+          528,
+          624
+        ],
+        "matched_cells": 94,
+        "matched_dock_pairs": 26,
+        "weighted_mean_minutes": [
+          16.47025779671717,
+          15.58872470396742
+        ],
+        "mean_change_minutes": -0.8815330927497502,
+        "weighted_within_cell_median_minutes": [
+          15.565545044191921,
+          14.921582307449496
+        ],
+        "weighted_within_cell_p90_minutes": [
+          20.519192664141414,
+          19.020398046085866
+        ],
+        "conditional_cluster95_minutes": [
+          -1.4132294665919856,
+          -0.3498367189075149
+        ],
+        "cluster_se": 0.26934745374081837,
+        "leave_one_dock_pair_out_mean_change_range": [
+          -1.1087397967043766,
+          -0.6565866412691205
+        ]
+      },
+      "Manhattan": {
+        "eligible": [
+          1778,
+          2512
+        ],
+        "matched_rides": [
+          280,
+          287
+        ],
+        "matched_cells": 48,
+        "matched_dock_pairs": 15,
+        "weighted_mean_minutes": [
+          14.190241607142857,
+          13.463004190500317
+        ],
+        "mean_change_minutes": -0.7272374166425397,
+        "weighted_within_cell_median_minutes": [
+          12.887825535714287,
+          13.279230267857145
+        ],
+        "weighted_within_cell_p90_minutes": [
+          19.400445404761907,
+          15.528487273809526
+        ],
+        "conditional_cluster95_minutes": [
+          -1.4865402517869257,
+          0.0320654185018463
+        ],
+        "cluster_se": 0.3846486365637858,
+        "leave_one_dock_pair_out_mean_change_range": [
+          -0.9170671115109424,
+          -0.4568684077190418
+        ]
+      },
+      "Brooklyn_minus_Manhattan": {
+        "mean_change_minutes": -0.1542956761072105,
+        "conditional_cluster95_minutes": [
+          -1.05679118485799,
+          0.748199832643569
+        ],
+        "cluster_se": 0.4571873709386533
+      }
+    },
+    "750m_120min_min3": {
+      "settings": {
+        "radius_m": 750,
+        "duration_minutes": [
+          4,
+          120
+        ],
+        "minimum_each_year": 3,
+        "months": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "june_end_day": 20,
+        "excluded_shifted_docks": []
+      },
+      "dock_check": {
+        "over_50m_ids": [],
+        "largest_median_shift_m": 4.760680544364409
+      },
+      "Brooklyn": {
+        "eligible": [
+          2931,
+          4724
+        ],
+        "matched_rides": [
+          530,
+          626
+        ],
+        "matched_cells": 94,
+        "matched_dock_pairs": 26,
+        "weighted_mean_minutes": [
+          16.745861698113206,
+          15.782156131709263
+        ],
+        "mean_change_minutes": -0.9637055664039433,
+        "weighted_within_cell_median_minutes": [
+          15.588934245283017,
+          14.945351053459119
+        ],
+        "weighted_within_cell_p90_minutes": [
+          21.28114752830189,
+          19.55568320125786
+        ],
+        "conditional_cluster95_minutes": [
+          -1.6619257981431894,
+          -0.26548533466469726
+        ],
+        "cluster_se": 0.35370533037543767,
+        "leave_one_dock_pair_out_mean_change_range": [
+          -1.1911432338531593,
+          -0.7186518442981421
+        ]
+      },
+      "Manhattan": {
+        "eligible": [
+          1780,
+          2516
+        ],
+        "matched_rides": [
+          283,
+          290
+        ],
+        "matched_cells": 49,
+        "matched_dock_pairs": 16,
+        "weighted_mean_minutes": [
+          14.16665730270907,
+          13.793911978822457
+        ],
+        "mean_change_minutes": -0.37274532388661186,
+        "weighted_within_cell_median_minutes": [
+          12.856380918727917,
+          13.76505397526502
+        ],
+        "weighted_within_cell_p90_minutes": [
+          19.35380905771496,
+          16.009545995288576
+        ],
+        "conditional_cluster95_minutes": [
+          -1.1883356347231726,
+          0.442844986949949
+        ],
+        "cluster_se": 0.4131628206001133,
+        "leave_one_dock_pair_out_mean_change_range": [
+          -0.7272374166425409,
+          0.22940852485445593
+        ]
+      },
+      "Brooklyn_minus_Manhattan": {
+        "mean_change_minutes": -0.5909602425173315,
+        "conditional_cluster95_minutes": [
+          -1.6374701380743961,
+          0.45554965303973316
+        ],
+        "cluster_se": 0.5301423698753733
+      }
+    },
+    "750m_90min_min1": {
+      "settings": {
+        "radius_m": 750,
+        "duration_minutes": [
+          4,
+          90
+        ],
+        "minimum_each_year": 1,
+        "months": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "june_end_day": 20,
+        "excluded_shifted_docks": []
+      },
+      "dock_check": {
+        "over_50m_ids": [],
+        "largest_median_shift_m": 4.760680544364409
+      },
+      "Brooklyn": {
+        "eligible": [
+          2929,
+          4719
+        ],
+        "matched_rides": [
+          1335,
+          1806
+        ],
+        "matched_cells": 599,
+        "matched_dock_pairs": 209,
+        "weighted_mean_minutes": [
+          17.113530112359552,
+          16.265709995131306
+        ],
+        "mean_change_minutes": -0.8478201172282454,
+        "weighted_within_cell_median_minutes": [
+          16.63785573033708,
+          15.860589550561798
+        ],
+        "weighted_within_cell_p90_minutes": [
+          19.697317223470662,
+          18.453950453183523
+        ],
+        "conditional_cluster95_minutes": [
+          -1.1745721978969152,
+          -0.5210680365595756
+        ],
+        "cluster_se": 0.16552650208356492,
+        "leave_one_dock_pair_out_mean_change_range": [
+          -1.0112750362971918,
+          -0.7314620227561638
+        ]
+      },
+      "Manhattan": {
+        "eligible": [
+          1780,
+          2516
+        ],
+        "matched_rides": [
+          815,
+          694
+        ],
+        "matched_cells": 304,
+        "matched_dock_pairs": 102,
+        "weighted_mean_minutes": [
+          15.179975460122701,
+          15.372430192091258
+        ],
+        "mean_change_minutes": 0.19245473196855656,
+        "weighted_within_cell_median_minutes": [
+          14.537464171779142,
+          15.337318987730061
+        ],
+        "weighted_within_cell_p90_minutes": [
+          18.30269962781186,
+          16.599542047034767
+        ],
+        "conditional_cluster95_minutes": [
+          -0.14969322649351385,
+          0.5346026904306269
+        ],
+        "cluster_se": 0.1733257662609575,
+        "leave_one_dock_pair_out_mean_change_range": [
+          0.06556049818388716,
+          0.46695662535475596
+        ]
+      },
+      "Brooklyn_minus_Manhattan": {
+        "mean_change_minutes": -1.040274849196802,
+        "conditional_cluster95_minutes": [
+          -1.5123001798692548,
+          -0.568249518524349
+        ],
+        "cluster_se": 0.23911921760729846
+      }
+    },
+    "750m_90min_min5": {
+      "settings": {
+        "radius_m": 750,
+        "duration_minutes": [
+          4,
+          90
+        ],
+        "minimum_each_year": 5,
+        "months": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "june_end_day": 20,
+        "excluded_shifted_docks": []
+      },
+      "dock_check": {
+        "over_50m_ids": [],
+        "largest_median_shift_m": 4.760680544364409
+      },
+      "Brooklyn": {
+        "eligible": [
+          2929,
+          4719
+        ],
+        "matched_rides": [
+          275,
+          307
+        ],
+        "matched_cells": 36,
+        "matched_dock_pairs": 13,
+        "weighted_mean_minutes": [
+          16.381040181818182,
+          14.71672294864705
+        ],
+        "mean_change_minutes": -1.6643172331711327,
+        "weighted_within_cell_median_minutes": [
+          15.331391212121213,
+          13.875172363636363
+        ],
+        "weighted_within_cell_p90_minutes": [
+          20.824382448484847,
+          18.778391454545456
+        ],
+        "conditional_cluster95_minutes": [
+          -2.534052370505149,
+          -0.7945820958371159
+        ],
+        "cluster_se": 0.440591578567636,
+        "leave_one_dock_pair_out_mean_change_range": [
+          -1.817639204234194,
+          -1.2933098445705757
+        ]
+      },
+      "Manhattan": {
+        "eligible": [
+          1780,
+          2516
+        ],
+        "matched_rides": [
+          136,
+          156
+        ],
+        "matched_cells": 16,
+        "matched_dock_pairs": 4,
+        "weighted_mean_minutes": [
+          13.018289460784313,
+          13.1454221528805
+        ],
+        "mean_change_minutes": 0.12713269209618616,
+        "weighted_within_cell_median_minutes": [
+          12.28800012254902,
+          12.767986519607842
+        ],
+        "weighted_within_cell_p90_minutes": [
+          16.897943161764708,
+          15.268516384803922
+        ],
+        "conditional_cluster95_minutes": [
+          -0.7007091058255751,
+          0.9549744900179474
+        ],
+        "cluster_se": 0.41936919516515103,
+        "leave_one_dock_pair_out_mean_change_range": [
+          -0.015593736446476587,
+          1.2179897584541066
+        ]
+      },
+      "Brooklyn_minus_Manhattan": {
+        "mean_change_minutes": -1.7914499252673188,
+        "conditional_cluster95_minutes": [
+          -2.995269013563147,
+          -0.5876308369714907
+        ],
+        "cluster_se": 0.6098322692215401
+      }
+    }
+  },
+  "excluding_moved_docks": {
+    "settings": {
+      "radius_m": 750,
+      "duration_minutes": [
+        4,
+        90
+      ],
+      "minimum_each_year": 3,
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "june_end_day": 20,
+      "excluded_shifted_docks": []
+    },
+    "dock_check": {
+      "over_50m_ids": [],
+      "largest_median_shift_m": 4.760680544364409
+    },
+    "Brooklyn": {
+      "eligible": [
+        2929,
+        4719
+      ],
+      "matched_rides": [
+        529,
+        626
+      ],
+      "matched_cells": 94,
+      "matched_dock_pairs": 26,
+      "weighted_mean_minutes": [
+        16.589596660365473,
+        15.790113288858052
+      ],
+      "mean_change_minutes": -0.7994833715074208,
+      "weighted_within_cell_median_minutes": [
+        15.58812095148078,
+        14.952713468809076
+      ],
+      "weighted_within_cell_p90_minutes": [
+        20.84508352236925,
+        19.56481629489603
+      ],
+      "conditional_cluster95_minutes": [
+        -1.4266875092161748,
+        -0.1722792337986666
+      ],
+      "cluster_se": 0.31772990334082113,
+      "leave_one_dock_pair_out_mean_change_range": [
+        -1.025154529958881,
+        -0.5567884950106172
+      ]
+    },
+    "Manhattan": {
+      "eligible": [
+        1780,
+        2516
+      ],
+      "matched_rides": [
+        283,
+        290
+      ],
+      "matched_cells": 49,
+      "matched_dock_pairs": 16,
+      "weighted_mean_minutes": [
+        14.16665730270907,
+        13.793911978822457
+      ],
+      "mean_change_minutes": -0.37274532388661186,
+      "weighted_within_cell_median_minutes": [
+        12.856380918727917,
+        13.76505397526502
+      ],
+      "weighted_within_cell_p90_minutes": [
+        19.35380905771496,
+        16.009545995288576
+      ],
+      "conditional_cluster95_minutes": [
+        -1.1883356347231726,
+        0.442844986949949
+      ],
+      "cluster_se": 0.4131628206001133,
+      "leave_one_dock_pair_out_mean_change_range": [
+        -0.7272374166425409,
+        0.22940852485445593
+      ]
+    },
+    "Brooklyn_minus_Manhattan": {
+      "mean_change_minutes": -0.4267380476208089,
+      "conditional_cluster95_minutes": [
+        -1.4606794548727655,
+        0.6072033596311477
+      ],
+      "cluster_se": 0.5237754084122196
+    }
+  },
+  "limitations": [
+    "Actual route and rider identity unobserved.",
+    "Classic member trips only; excludes e-bikes and casual riders.",
+    "Month/OD/time-window mix held at 2021 weights among cells with at least three rides in each year.",
+    "Intervals cluster by date, preserving shared-date covariance across bridges, and condition on chosen cells and baseline weights. They do not cover selection, routing, pandemic or causal-identification uncertainty.",
+    "Neighboring Manhattan Bridge can receive or lose diverted trips and is not an assured untreated control.",
+    "No weather adjustment or 12-month preperiod has been completed.",
+    "Times include rental stops and docking but exclude walking, waiting to obtain a bike, and destination access."
+  ]
+}

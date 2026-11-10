@@ -1,0 +1,13 @@
+outcome,estimand,method,estimate_percent,ci95_low,ci95_high,source,table,scope
+AADT,ATE,IPW-DID,-6.467,-14.141,-1.875,https://arxiv.org/pdf/2003.08993,11,2007-2014 CS2 CS3 CS7 CS8; NOT 2016 segregated lane conversions
+AADT,ATE,GLMM,-9.371,-13.205,-6.334,https://arxiv.org/pdf/2003.08993,11,2007-2014 CS2 CS3 CS7 CS8; NOT 2016 segregated lane conversions
+AADT,ATE,DR-GLMM,-9.479,-13.261,-6.37,https://arxiv.org/pdf/2003.08993,11,2007-2014 CS2 CS3 CS7 CS8; NOT 2016 segregated lane conversions
+AADT,ATT,IPW-DID,-6.536,-9.261,-3.487,https://arxiv.org/pdf/2003.08993,11,2007-2014 CS2 CS3 CS7 CS8; NOT 2016 segregated lane conversions
+AADT,ATT,GLMM,-6.95,-9.652,-4.986,https://arxiv.org/pdf/2003.08993,11,2007-2014 CS2 CS3 CS7 CS8; NOT 2016 segregated lane conversions
+AADT,ATT,DR-GLMM,-7.026,-9.684,-5.007,https://arxiv.org/pdf/2003.08993,11,2007-2014 CS2 CS3 CS7 CS8; NOT 2016 segregated lane conversions
+speed,ATE,IPW-DID,-0.423,-3.84,5.082,https://arxiv.org/pdf/2003.08993,12,2007-2014 CS2 CS3 CS7 CS8; NOT 2016 segregated lane conversions
+speed,ATE,GLMM,1.787,-0.895,3.919,https://arxiv.org/pdf/2003.08993,12,2007-2014 CS2 CS3 CS7 CS8; NOT 2016 segregated lane conversions
+speed,ATE,DR-GLMM,1.64,-0.99,3.834,https://arxiv.org/pdf/2003.08993,12,2007-2014 CS2 CS3 CS7 CS8; NOT 2016 segregated lane conversions
+speed,ATT,IPW-DID,1.025,-3.028,4.577,https://arxiv.org/pdf/2003.08993,12,2007-2014 CS2 CS3 CS7 CS8; NOT 2016 segregated lane conversions
+speed,ATT,GLMM,2.245,-0.713,4.795,https://arxiv.org/pdf/2003.08993,12,2007-2014 CS2 CS3 CS7 CS8; NOT 2016 segregated lane conversions
+speed,ATT,DR-GLMM,2.096,-0.813,4.704,https://arxiv.org/pdf/2003.08993,12,2007-2014 CS2 CS3 CS7 CS8; NOT 2016 segregated lane conversions

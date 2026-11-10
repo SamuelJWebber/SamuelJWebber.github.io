@@ -1,0 +1,38 @@
+bridge,start_station_id,end_station_id,window,n_2021,n_2022,mean_min_2021,mean_min_2022,weight_2021,start_station_name,end_station_name
+Brooklyn,4605.04,5207.01,weekday_offpeak,4,4,13.516670833333333,10.727562500000001,0.03278688524590164,Clinton St & Joralemon St,Centre St & Chambers St
+Brooklyn,4605.04,5279.03,weekday_peak,8,10,15.321233333333334,13.198193333333332,0.06557377049180328,Clinton St & Joralemon St,Centre St & Worth St
+Brooklyn,4677.01,5207.01,weekend,6,5,14.697652777777778,11.57282,0.04918032786885246,Cadman Plaza E & Tillary St,Centre St & Chambers St
+Brooklyn,4710.06,5207.01,weekday_offpeak,9,8,16.452651851851854,12.5288375,0.07377049180327869,Jay St & Tech Pl,Centre St & Chambers St
+Brooklyn,4710.06,5207.01,weekday_peak,9,5,12.211418518518519,10.568343333333333,0.07377049180327869,Jay St & Tech Pl,Centre St & Chambers St
+Brooklyn,4710.06,5207.01,weekend,5,3,20.091886666666664,12.67306111111111,0.040983606557377046,Jay St & Tech Pl,Centre St & Chambers St
+Brooklyn,5207.01,4596.05,weekday_peak,3,12,17.071366666666666,13.223325,0.02459016393442623,Centre St & Chambers St,Duffield St & Willoughby St
+Brooklyn,5207.01,4637.06,weekday_offpeak,4,11,14.638391666666667,15.352428787878786,0.03278688524590164,Centre St & Chambers St,Fulton St & Adams St
+Brooklyn,5207.01,4637.06,weekday_peak,8,8,15.683764583333334,12.711577083333333,0.06557377049180328,Centre St & Chambers St,Fulton St & Adams St
+Brooklyn,5207.01,4637.06,weekend,3,4,13.867194444444445,15.045825,0.02459016393442623,Centre St & Chambers St,Fulton St & Adams St
+Brooklyn,5207.01,4645.09,weekday_peak,6,4,27.95223888888889,14.528608333333333,0.04918032786885246,Centre St & Chambers St,Hicks St & Montague St
+Brooklyn,5207.01,4677.01,weekday_peak,4,6,12.7090375,13.842738888888888,0.03278688524590164,Centre St & Chambers St,Cadman Plaza E & Tillary St
+Brooklyn,5207.01,4677.01,weekend,3,7,17.950644444444446,20.21418333333333,0.02459016393442623,Centre St & Chambers St,Cadman Plaza E & Tillary St
+Brooklyn,5207.01,4710.06,weekday_offpeak,6,4,15.802349999999999,15.3593125,0.04918032786885246,Centre St & Chambers St,Jay St & Tech Pl
+Brooklyn,5207.01,4710.06,weekday_peak,3,8,17.197616666666665,16.47435625,0.02459016393442623,Centre St & Chambers St,Jay St & Tech Pl
+Brooklyn,5207.01,4710.06,weekend,5,4,31.452710000000003,28.48135,0.040983606557377046,Centre St & Chambers St,Jay St & Tech Pl
+Brooklyn,5207.01,4748.07,weekday_offpeak,5,9,19.69999,14.683538888888888,0.040983606557377046,Centre St & Chambers St,Clinton St & Tillary St
+Brooklyn,5207.01,4748.07,weekday_peak,9,9,11.802109259259261,16.051253703703704,0.07377049180327869,Centre St & Chambers St,Clinton St & Tillary St
+Brooklyn,5207.01,4748.07,weekend,6,9,20.30116388888889,13.953309259259258,0.04918032786885246,Centre St & Chambers St,Clinton St & Tillary St
+Brooklyn,5207.01,4789.03,weekday_offpeak,6,8,14.009133333333333,14.793135416666667,0.04918032786885246,Centre St & Chambers St,Clark St & Henry St
+Brooklyn,5207.01,4789.03,weekday_peak,3,5,14.115583333333333,14.09502,0.02459016393442623,Centre St & Chambers St,Clark St & Henry St
+Brooklyn,5288.08,4565.04,weekday_peak,4,4,16.7247875,19.441695833333334,0.03278688524590164,Park Pl & Church St,Schermerhorn St & Court St
+Brooklyn,5288.08,4645.09,weekday_peak,3,4,17.756555555555554,15.856908333333333,0.02459016393442623,Park Pl & Church St,Hicks St & Montague St
+Manhattan,4821.03,5270.07,weekday_offpeak,3,6,11.440405555555555,11.059658333333333,0.04054054054054054,Sands St & Jay St,Forsyth St & Canal St
+Manhattan,4821.03,5270.07,weekday_peak,5,6,11.44634,13.907058333333334,0.06756756756756757,Sands St & Jay St,Forsyth St & Canal St
+Manhattan,4895.03,5270.07,weekend,6,3,17.57093888888889,13.648827777777777,0.08108108108108109,Front St & Jay St,Forsyth St & Canal St
+Manhattan,4895.03,5453.05,weekday_peak,3,6,11.750927777777777,10.80182777777778,0.04054054054054054,Front St & Jay St,Forsyth St & Broome St
+Manhattan,4895.09,5270.07,weekday_offpeak,7,3,15.239221428571428,12.461288888888888,0.0945945945945946,Jay St & York St,Forsyth St & Canal St
+Manhattan,4895.09,5374.01,weekend,3,3,16.89562777777778,17.819222222222223,0.04054054054054054,Jay St & York St,Norfolk St & Broome St
+Manhattan,5270.07,4812.04,weekday_offpeak,6,5,13.245502777777778,12.65992,0.08108108108108109,Forsyth St & Canal St,Sands St Gate
+Manhattan,5270.07,4812.04,weekday_peak,3,4,24.583472222222223,15.893749999999999,0.04054054054054054,Forsyth St & Canal St,Sands St Gate
+Manhattan,5270.07,4812.04,weekend,3,3,18.687733333333334,16.302905555555558,0.04054054054054054,Forsyth St & Canal St,Sands St Gate
+Manhattan,5270.07,4895.03,weekend,3,3,23.640583333333336,18.098005555555556,0.04054054054054054,Forsyth St & Canal St,Front St & Jay St
+Manhattan,5270.07,4895.09,weekday_offpeak,13,13,11.67095512820513,14.97753717948718,0.17567567567567569,Forsyth St & Canal St,Jay St & York St
+Manhattan,5270.07,4895.09,weekday_peak,7,7,12.246092857142857,12.411030952380953,0.0945945945945946,Forsyth St & Canal St,Jay St & York St
+Manhattan,5270.07,4895.09,weekend,9,11,11.328266666666666,12.568851515151515,0.12162162162162163,Forsyth St & Canal St,Jay St & York St
+Manhattan,5270.07,4936.01,weekday_offpeak,3,3,10.833711111111112,18.250355555555554,0.04054054054054054,Forsyth St & Canal St,Front St & Washington St

@@ -1,0 +1,281 @@
+       JEUX DE DONNÉES
+COMPTAGES MULTIMODAUX
+Documentation | Novembre 2021
+Comptages multimodaux                                                                                                           Documentation - Octobre 2021
+
+
+
+
+SOMMAIRE
+INTRODUCTION ................................................................................................................................................................. 2
+
+I.         SITES DE COMPTAGES ........................................................................................................................................... 3
+
+II.        DONNÉES DE COMPTAGES.................................................................................................................................... 3
+
+III.       EXEMPLE D’INTERPRÉTATION DES DONNÉES ....................................................................................................... 3
+
+IV.        TRAJECTOIRES PAR SITE DE COMPTAGES ............................................................................................................. 5
+
+
+
+
+INTRODUCTION
+
+La Ville de Paris collecte des données de comptages des usagers par mode de déplacement, par file de circulation et
+par sens.
+
+Ces données sont élaborées par un algorithme d’intelligence artificielle qui analyse les images issues de caméras
+thermiques installées sur l’espace public.
+
+Les images issues de caméras thermiques ne permettent pas d’identifier des visages ou des plaques
+d’immatriculation. Les données ainsi collectées ne présentent pas de données à caractère personnel ou individuel.
+
+Les données sont mises à disposition via :
+
+           1. Un premier jeu de données qui décrit les trajectoires liées aux sites de comptages multimodaux
+           2. Un second jeu de données qui rassemble les comptages horaires par mode de déplacement, par file de
+              circulation, par sens et par site de comptage
+
+Cette documentation décrit ces deux jeux de données.
+
+
+
+
+2                                                         Ville de Paris - DVD/SD/SEE/Division Innovation & Données de Déplacements
+Comptages multimodaux                                                                    Documentation - Octobre 2021
+
+I.          TRAJECTOIRES LIÉES AUX SITES DE COMPTAGES
+Le jeu de données qui décrit les trajectoires liées aux sites de comptages multimodaux est constitué d’un tableau de
+quatre colonnes :
+
+       1.   id_trajectoire : Chaîne de caractères unique servant à identifier une trajectoire liée à un site
+       2.   id_site : Chaîne de caractères servant à identifier un site de comptage
+       3.   label : Chaîne de caractères servant de libellé pour le site de comptage
+       4.   lat : Décimal – latitude de la position du site de comptage (coordonnée GPS WGS84)
+       5.   lon : Décimal – longitude de la position du site de comptage (coordonnée GPS WGS84)
+       6.   voie : Description de la voie empruntée par les usagers comptés
+       7.   sens : Description du sens de déplacement des usagers comptés avec les points cardinaux : N pour Nord, O
+            pour Ouest, S pour Sud et E pour Est. Exemple : « N-S » signifie du Nord vers le Sud
+
+II.         DONNÉES DE COMPTAGES
+Le jeu de données qui rassemble les comptages horaires par mode de déplacement, par file de circulation, par sens
+et par site de comptage est constitué d’un tableau de cinq colonnes :
+
+       1. id_trajectoire : Chaîne de caractères unique servant à identifier une trajectoire liée à un site
+       2. t : Horodate de début du comptage horaire
+       3. id_site : Chaîne de caractères servant à identifier un site de comptage
+       4. mode : Chaîne de caractères servant à décrire le mode de déplacement des usagers
+               a. Trottinette : catégorie associée aux trottinettes. Cette catégorie n’existe pas pour tous les sites
+               b. Vélo : catégorie associée aux vélos. Cette catégorie n’existe pas pour tous les sites
+               c. Trottinettes+velos : catégorie qui cumule trottinettes et vélos lorsque la distinction entre ces deux
+                   modes n’est pas implémentée
+               d. 2 roues motorisées : catégorie associée aux deux-roues motorisés
+               e. Véhicule léger < 3,5t : catégorie associée aux véhicules légers (moins de 3,5 tonnes)
+               f. Véhicule lourd > 3,5t : catégorie associée aux véhicules lourds (plus de 3,5 tonnes)
+               g. Autobus et autocars : catégorie associée aux autobus & autocars
+       5. trajectoire : Chaîne de caractères servant à décrire la trajectoire des véhicules. Voir le chapitre associé pour
+          les détails par site.
+       6. nb_usagers : Entier correspondant au nombre de véhicules comptés par heure pour un site donné, un mode
+          de déplacement donné et une trajectoire donnée.
+
+
+
+
+III.        EXEMPLE D’INTERPRÉTATION DES DONNÉES
+
+
+
+
+La 2e ligne du tableau ci-dessus signifie : le 7 octobre 2021 entre minuit et 00h59m59s, sur le site 10004 [Paris] Rivoli
+x Nicolas Flamel, 52 vélos ont emprunté la piste cyclable dans le sens Est > Ouest (trajectoire 2 ->1).
+
+
+
+Ville de Paris - DVD/SD/SEE/Division Innovation & Données de Déplacements                                          3
+Comptages multimodaux                                              Documentation - Octobre 2021
+
+
+
+
+4                       Ville de Paris - DVD/SD/SEE/Division Innovation & Données de Déplacements
+Comptages multimodaux                                                                    Documentation - Octobre 2021
+
+IV.       TRAJECTOIRES PAR SITE DE COMPTAGES
+La colonne « trajectoire » du jeu de données de comptages est une chaîne de caractères de la forme « E -> S » où :
+
+         E désigne le numéro de la zone de début de détection (entrée)
+         S désigne le numéro de la zone de comptage (sortie)
+
+La trajectoire permet ainsi de définir la file de circulation et le sens de circulation. Dans les descriptions suivantes X
+désigne un nombre quelconque parmi ceux disponibles.
+
+Trajectoires pour le site de comptages 10004 [Paris] Rivoli x Nicolas Flamel
+
+
+
+
+Files de circulation :
+
+         X -> 1 : piste cyclable
+         X -> 2 : corona piste
+         X -> 3 : file de circulation générale
+
+Sens de circulation :
+
+         2 -> X, 4 -> X ou 5 -> X : circulation de l’Est vers l’Ouest
+         1 -> X ou 3 -> X : circulation de l’Ouest vers l’Est
+
+Exemple concret : « 1 -> 1 » désigne la circulation des usagers de la piste cyclable de l’Ouest vers l’Est
+
+
+
+
+Ville de Paris - DVD/SD/SEE/Division Innovation & Données de Déplacements                                          5
+Comptages multimodaux                                                           Documentation - Octobre 2021
+
+Trajectoires pour le site de comptages 10015 [Paris] Amsterdam x Clichy
+
+
+
+
+                                                                                    Sens de circulation :
+
+                                                                                               1 -> 1 : vers le Sud
+                                                                                               2 -> 2 : vers le Nord
+
+
+
+
+Trajectoires pour le site de comptages 10019 [Paris] Quai de Valmy
+
+
+
+
+                                                                                   Sens de circulation :
+
+                                                                                              1 -> 1 : vers le Nord
+                                                                                              2 -> 1 : vers le Sud
+
+
+
+
+6                                    Ville de Paris - DVD/SD/SEE/Division Innovation & Données de Déplacements
+Comptages multimodaux                                                               Documentation - Octobre 2021
+
+Trajectoires pour le site de comptages 10020 [Paris] Quai de Jemmapes
+
+
+
+
+                                                                                      Sens de circulation :
+
+                                                                                              1 -> 1 : vers le Nord
+                                                                                              2 -> 1 : vers le Sud
+
+
+
+
+Trajectoires pour le site de comptages 10022 [Paris] CF892 Rivoli x Bourdonnais
+
+
+
+
+                                                                                  Files de circulation :
+
+                                                                                         X -> 1 : file de circulation
+                                                                                          générale
+                                                                                         X -> 2 : corona piste
+                                                                                         X -> 3 : piste cyclable
+
+                                                                                  Sens de circulation :
+
+                                                                                         1 -> X, 3 -> X ou 5 -> X :
+                                                                                          circulation de l’Est vers
+                                                                                          l’Ouest
+                                                                                         2 -> X ou 4 -> X : circulation
+                                                                                          de l’Ouest vers l’Est
+
+
+
+
+Ville de Paris - DVD/SD/SEE/Division Innovation & Données de Déplacements                                       7
+Comptages multimodaux                                                           Documentation - Octobre 2021
+
+Trajectoires pour le site de comptages 10023 [Paris] CF318 Rivoli x Lobau
+
+
+
+
+                                                                                Trajectoires :
+
+                                                                                        1 -> 1 : piste cyclable vers
+                                                                                         l’Est
+                                                                                        2 -> 1 : piste cyclable vers
+                                                                                         l’Ouest
+                                                                                        3 -> 1 : corona piste vers l’Est
+                                                                                        4 -> 1 : corona piste vers
+                                                                                         l’Ouest
+                                                                                        5 -> 1 : file de circulation
+                                                                                         générale vers l’Ouest
+
+
+
+
+Trajectoires pour le site de comptages 10028 [Paris] CF4 Poissonnière x Montmartre EST
+
+
+
+                                                                                Files de circulation :
+
+                                                                                        1 -> X : file de circulation
+                                                                                         générale
+                                                                                        2 -> X : piste cyclable
+
+                                                                                Sens : vers l’Est
+
+
+
+
+8                                    Ville de Paris - DVD/SD/SEE/Division Innovation & Données de Déplacements
+Comptages multimodaux                                                          Documentation - Octobre 2021
+
+Trajectoires pour le site de comptages 10029 [Paris] CF4 Poissonnière x Montmartre OUEST
+
+
+
+
+                                                                              Files de circulation :
+
+                                                                                     1 -> X : file de circulation
+                                                                                      générale
+                                                                                     2 -> X : file de circulation
+                                                                                      générale
+                                                                                     3 -> X : piste cyclable
+
+                                                                              Sens : vers l’Ouest
+
+
+
+
+Trajectoires pour le site de comptages 10029 [Paris] CF4 Poissonnière x Montmartre OUEST
+
+
+
+
+                                                                              Trajectoires :
+
+                                                                                      1 -> 1 : Couloir bus vers le
+                                                                                       Nord
+                                                                                      2 -> 1 : file de circulation
+                                                                                       générale vers le Nord
+                                                                                      3 -> 2 : piste cyclable vers le
+                                                                                       Nord
+                                                                                      4 -> 2 : piste cyclable vers le
+                                                                                       Sud
+
+
+
+
+Ville de Paris - DVD/SD/SEE/Division Innovation & Données de Déplacements                                  9
+

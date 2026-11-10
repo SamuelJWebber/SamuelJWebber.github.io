@@ -1,0 +1,487 @@
+{
+  "checked_on": "2026-11-05",
+  "thesis": "Start with the experiment we would want: randomly phase in genuine moving-lane conversions across ready corridor networks, then measure everyone affected. Public data can approximate pieces of that trial. Better counts alone cannot explain why the projects were built when and where they were.",
+  "outcomes": [
+    {
+      "id": "flow",
+      "label": "People per hour",
+      "definition": "Effect on directional person-crossing events across one fixed network screenline, including cars, bicycles, walking, buses and relevant rail links. Include parallel routes once at the same cut.",
+      "pitfall": "Vehicles are not people; station entries are not screenline loads; serial links double-count. Realized counts do not establish maximum capacity."
+    },
+    {
+      "id": "time",
+      "label": "Time for comparable journeys",
+      "definition": "Effect on complete elapsed time for a fixed baseline distribution of origins, destinations, purposes and departure windows. Routes and modes may change; report unserved travel separately.",
+      "pitfall": "Average time among the people who still drive or complete a ride selects a changed population. Dock-to-dock and in-vehicle records omit journey stages."
+    },
+    {
+      "id": "minutes",
+      "label": "Total transport minutes and access",
+      "definition": "Effect on total travel minutes per baseline population member-day, reported with completed trips, foregone trips and achieved activities. Keep mode switchers and people who stop traveling in follow-up.",
+      "pitfall": "A canceled commute can reduce total minutes without improving mobility. More useful journeys may raise total minutes while improving access."
+    },
+    {
+      "id": "capacity",
+      "label": "Capacity versus observed flow",
+      "definition": "Effect on sustainable person discharge under comparable arrival demand and saturated conditions, with queues and backlog measured. Keep this secondary to observed flow and journey outcomes.",
+      "pitfall": "A road can carry fewer cars because demand rerouted or shifted to transit; that alone does not show lower capacity or lower all-mode throughput."
+    }
+  ],
+  "trial": [
+    {
+      "label": "Eligible units",
+      "ideal": "Multiple funded, approved corridor networks that genuinely lose a moving lane.",
+      "available": "Official design drawings, SIP geometry and project archives.",
+      "gap": "A complete eligible/ready-but-delayed queue and actual as-built geometry."
+    },
+    {
+      "label": "Assignment",
+      "ideal": "Randomize immediate conversion versus a 12-month delay within comparable network pairs.",
+      "available": "Observed implementation sequence and announcement dates.",
+      "gap": "Contemporaneous reasons for scheduling; no valid natural experiment established."
+    },
+    {
+      "label": "Treatment",
+      "ideal": "Same policy package with logged activation; separately assign components only if feasible.",
+      "available": "Street cross-sections and staged plans.",
+      "gap": "Exact active dates and signal, parking, bus and loading changes; a pure bike-only effect is usually unavailable."
+    },
+    {
+      "label": "Network boundary",
+      "ideal": "Predefine parallel alternatives and rail crossings; enlarge clusters for spillovers.",
+      "available": "Street/transit geometry, baseline OD and diversion-road studies.",
+      "gap": "An audited common cut and exposure map; nearby roads are often outcomes, not controls."
+    },
+    {
+      "label": "People per hour",
+      "ideal": "Simultaneous all-mode person-crossing events at one screenline.",
+      "available": "Bike/vehicle counters, bus boardings, inferred subway OD, NYMTC cordons.",
+      "gap": "Same-hour occupancy and on-board transit loads; synchronized all-mode coverage."
+    },
+    {
+      "label": "Journey minutes",
+      "ideal": "Follow a fixed baseline population and OD/purpose/departure menu; include unserved travel.",
+      "available": "TLC request-to-drop-off; Citi Bike ride time; bus segments; survey diaries.",
+      "gap": "Complete journey components and people who switch modes or abandon travel."
+    },
+    {
+      "label": "Follow-up",
+      "ideal": "Common calendar; report construction separately and track adaptation over 6/12 months.",
+      "available": "Multi-year public service-time records and some count campaigns.",
+      "gap": "Construction-overlap periods, missing detectors and changing services require an explicit calendar."
+    },
+    {
+      "label": "Analysis and uncertainty",
+      "ideal": "Estimate intention-to-treat effects using independent network assignment; simulate power.",
+      "available": "Group-time/event-study and synthetic-comparison methods.",
+      "gap": "A plausible counterfactual is still required; millions of trip rows do not create independent interventions."
+    },
+    {
+      "label": "Decision",
+      "ideal": "Evaluate flow, comparable time and access jointly; allow benefit, harm or ambiguity.",
+      "available": "Sensitivity labs and measurement audit already published.",
+      "gap": "Evidence-supported uncertainty for missing modes and trend departures, not favorable default assumptions."
+    }
+  ],
+  "sources": [
+    {
+      "id": "worklogs",
+      "mode": "design",
+      "name": "DOT plans, work logs and project queue",
+      "status": "Partial: plans verified",
+      "coverage": "Project plans and announcement dates; exact operating dates and ready-but-delayed queue remain incomplete.",
+      "role": "Establish genuine moving-lane removal, intervention package, time zero and an eligible comparison pool.",
+      "limit": "A press date or archive year is not the active date. Delays are not automatically random.",
+      "url": "https://data.cityofnewyork.us/d/if4c-w48d"
+    },
+    {
+      "id": "dot-evaluation",
+      "mode": [
+        "car",
+        "bike"
+      ],
+      "name": "McGuinness April 2026 evaluation",
+      "status": "Verified report; partial measurement",
+      "coverage": "Motor: two fall midweek weeks in 2023/2025. Bikes: unspecified hour in 2021/2025. Road times: Oct/Nov midweek. Extra profiles in CB1 appendix.",
+      "role": "Identify existing raw observations to recover; audit treated and diversion locations.",
+      "limit": "Different dates and boundaries cannot be added. Graph digitization is approximate; no uncertainty or passenger totals.",
+      "url": "https://www.nyc.gov/html/dot/downloads/pdf/mcguinness-blvd-calyer-st-freeman-st-apr2026.pdf"
+    },
+    {
+      "id": "nysdot",
+      "mode": "car",
+      "name": "NYSDOT counts: 021284 and modern site 0280",
+      "status": "Partial: modern coverage gap verified",
+      "coverage": "2022 continuous-count archive omits historical counter. The 2024 inventory points to a 2021 count. Viewer indicates a small 2026 short-count sample at a different point, latest timestamp March 6.",
+      "role": "Historical motor baseline; investigate the newer short count as a separate measurement.",
+      "limit": "No verified dense 2024 before/after panel or occupancy. Different detector coordinates require a spatial continuity check.",
+      "url": "https://nysdottrafficdata.drakewell.com/publicmultinodemap.asp"
+    },
+    {
+      "id": "atr",
+      "mode": "car",
+      "name": "DOT Automated Traffic Volume Counts",
+      "status": "Partial: local coverage unverified",
+      "coverage": "Public 15-minute count sessions with segment geometry, dates and direction. A McGuinness-name query finds older rows but none from 2022 onward; other aliases and spatial coverage remain unverified.",
+      "role": "Match the same road crossing, direction and observation windows to external donor networks.",
+      "limit": "Short campaigns are not continuous panels; vehicles are not people. Failed API queries do not prove no data exist.",
+      "url": "https://data.cityofnewyork.us/d/7ym2-wayt"
+    },
+    {
+      "id": "ezpass",
+      "mode": "car",
+      "name": "DOT local-street E-ZPass travel times",
+      "status": "Partial: annual sources verified",
+      "coverage": "2021–2026 annual partitions confirmed; local link coverage still requires a spatial join. Documented 2025 gap: May 17–June 30.",
+      "role": "Repeated segment timing at a constant geometry; potential road-time event study.",
+      "limit": "Sampled transponders are not vehicle volume; median segment time is not mean complete passenger time.",
+      "url": "https://data.cityofnewyork.us/d/7ank-n7rd"
+    },
+    {
+      "id": "tlc",
+      "mode": "car",
+      "name": "TLC high-volume ride-hail trips",
+      "status": "Verified: sample acquired",
+      "coverage": "May 1–7: 4,589 rows in 2023 and 7,315 in 2024 for Greenpoint ↔ LIC zones. Request, pickup and drop-off present; 11,892 pass timing checks.",
+      "role": "Build a fixed baseline OD × departure-time composition; measure pickup waiting and in-vehicle time separately.",
+      "limit": "Completed bookings only; no canceled requests, actual routes, passenger counts or access/egress. Sample weeks are availability checks, not a treatment contrast.",
+      "url": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page"
+    },
+    {
+      "id": "taxi",
+      "mode": "car",
+      "name": "Yellow and green taxi records",
+      "status": "Available: local panel not built",
+      "coverage": "Yellow monthly files from 2009; green from 2013; modern zone OD and reported passenger counts.",
+      "role": "Additional mode-specific times; clean reported taxi occupancy before weighting.",
+      "limit": "Taxi occupants do not represent all private cars. Route and complete journey remain unobserved.",
+      "url": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page"
+    },
+    {
+      "id": "bikescounter",
+      "mode": "bike",
+      "name": "DOT all-bicycle counters",
+      "status": "Partial: location-specific coverage",
+      "coverage": "Continuous counts at selected bridges/greenways plus campaign surveys. Pulaski automated series begins June 2017.",
+      "role": "All-bike crossing counts where a detector lies on the exact study boundary; weather/calendar alignment.",
+      "limit": "No continuous citywide coverage. A bridge count is not automatically the treated-street count; count changes may be diversion.",
+      "url": "https://www.nyc.gov/html/dot/html/bicyclists/bike-counts.shtml"
+    },
+    {
+      "id": "citibike",
+      "mode": "bike",
+      "name": "Citi Bike trip records",
+      "status": "Available: endpoint data",
+      "coverage": "Individual completed trips from 2013; modern start/end time, station/coordinates, bike type and membership.",
+      "role": "Fixed station catchments and OD activity; dock-to-dock duration; audit station supply and adjust only for external changes.",
+      "limit": "No actual route or current age/gender. Citywide Citi Bike share cannot expand station starts into all-bike road crossings.",
+      "url": "https://citibikenyc.com/system-data"
+    },
+    {
+      "id": "gbfs",
+      "mode": "bike",
+      "name": "Citi Bike GBFS availability",
+      "status": "Partial: live feed",
+      "coverage": "Live station information and bikes/docks available; historical coverage depends on an archive collected at the time.",
+      "role": "Measure bike/dock access constraints prospectively; explain observed trip suppression.",
+      "limit": "Live full/empty status cannot reconstruct an unrecorded historical series; dock access is only part of the journey.",
+      "url": "https://gbfs.citibikenyc.com/gbfs/gbfs.json"
+    },
+    {
+      "id": "bustime",
+      "mode": "bus",
+      "name": "MTA bus segment times",
+      "status": "Verified: B62 coverage acquired",
+      "coverage": "B62: distinct-month checks confirm all 12 months in 2023–2025 and Jan–Sep 2026. Route geometry and common timepoint support still need checking.",
+      "role": "Fixed timepoint pair × weekday × hour running-time panel; external comparison routes required.",
+      "limit": "Bus-trip weights are not passenger weights; no walking, waiting, transfer or egress. Segment may extend beyond treatment.",
+      "url": "https://data.ny.gov/d/58t6-89vi"
+    },
+    {
+      "id": "busboarding",
+      "mode": "bus",
+      "name": "MTA bus stop ridership estimates",
+      "status": "Verified: B62 coverage acquired",
+      "coverage": "B62: Jan 2024–Sep 2026; 538,322 aggregate rows across 133 historical stop IDs.",
+      "role": "Track estimated boarding demand on a constant stop set and service calendar.",
+      "limit": "Boardings are not on-board load at a screenline. Monthly weekday-hour means cannot match particular ATR survey days.",
+      "url": "https://data.ny.gov/d/fvdm-uavx"
+    },
+    {
+      "id": "busloads",
+      "mode": "bus",
+      "name": "MTA bus APC / on-board loads",
+      "status": "Missing: matched load extract",
+      "coverage": "Public stop-boardings product does not supply alightings or the requested on-board crossing loads.",
+      "role": "Convert bus flow into passengers and compute passenger-weighted time on the correct links.",
+      "limit": "Cannot be replaced by bus-trip count or a fixed occupancy borrowed from another route.",
+      "url": "https://www.mta.info/transparency/foil"
+    },
+    {
+      "id": "subwayod",
+      "mode": "subway",
+      "name": "MTA inferred subway OD",
+      "status": "Verified schema; partial measurement",
+      "coverage": "Annual sources from 2021; estimated average OD by month, weekday and hour. Live sample acquired.",
+      "role": "Measure modeled subway-demand response for a fixed baseline travel market; allocate paths with uncertainty.",
+      "limit": "No observed route, line load, transfer time or door-to-door time. Individual car-to-subway changes are not linked.",
+      "url": "https://data.ny.gov/d/28vm-gjqr"
+    },
+    {
+      "id": "subwayentries",
+      "mode": "subway",
+      "name": "MTA hourly subway entries",
+      "status": "Available: station-hour demand",
+      "coverage": "Station-complex entries in annual partitions; legacy turnstile series for earlier periods.",
+      "role": "Demand-response outcome and service-disruption context.",
+      "limit": "Nearby entries are not rail passengers crossing the road study boundary. Adding them to road counts can miscount.",
+      "url": "https://data.ny.gov/d/5wq4-mkjj"
+    },
+    {
+      "id": "nymtc",
+      "mode": [
+        "all",
+        "car",
+        "bus",
+        "subway"
+      ],
+      "name": "NYMTC Hub Bound Travel",
+      "status": "Available: annual benchmark",
+      "coverage": "Annual Manhattan cordon data with hourly mode/occupancy information; 2007–2024 archive confirmed.",
+      "role": "Person-flow benchmark and occupancy context when the exact screenline and survey periods match.",
+      "limit": "Sparse annual observation and multiple source dates; not a local McGuinness counter or a daily event-study panel.",
+      "url": "https://www.nymtc.org/hub-bound-travel-archive"
+    },
+    {
+      "id": "cms",
+      "mode": "journey",
+      "name": "Citywide Mobility Survey diaries",
+      "status": "Available: weak local treatment coverage",
+      "coverage": "Linked survey microdata, including 2024 fieldwork before the southern McGuinness conversion; public geography is coarse.",
+      "role": "Baseline mode/purpose distributions and journey components; calibrate a proposed population panel.",
+      "limit": "No repeated local before/after sample following the same travelers through the conversion.",
+      "url": "https://www.nyc.gov/html/dot/html/about/citywide-mobility-survey.shtml"
+    },
+    {
+      "id": "panel",
+      "mode": "journey",
+      "name": "Fixed population / trip-menu panel",
+      "status": "Missing: prospective collection needed",
+      "coverage": "No verified all-mode panel covering complete journeys, canceled trips and the chosen intervention.",
+      "role": "Measure door-to-door time and minutes per baseline person-day while retaining mode switchers and non-travelers.",
+      "limit": "Citi Bike, taxi and transit service records cannot reconstruct all missing components or people.",
+      "url": "https://nyc-street-flow.smartgoldfish.chatgpt.site/research/causal-design/acquisition-brief.txt"
+    },
+    {
+      "id": "walk",
+      "mode": "walk",
+      "name": "Walking counts and occupancy campaigns",
+      "status": "Missing: aligned local campaign",
+      "coverage": "Report-specific counts exist; a simultaneous all-mode network sample has not been assembled.",
+      "role": "Close the people-per-hour accounting at the same cut and times.",
+      "limit": "Do not assume walking or vehicle occupancy is unchanged; unmeasured effects can reverse a partial total.",
+      "url": "https://www.nyc.gov/html/dot/html/about/datafeeds.shtml"
+    },
+    {
+      "id": "weather",
+      "mode": "context",
+      "name": "Weather, works and service calendars",
+      "status": "Available: joins still needed",
+      "coverage": "NOAA weather plus official construction, transit service, street and station-change records.",
+      "role": "Address external shocks and exposure differences; verify congestion-pricing and transit-work timing.",
+      "limit": "Adjustment cannot establish assignment. Post-policy mode share and volume are mediators, not ordinary controls.",
+      "url": "https://www.ncei.noaa.gov/products/global-historical-climatology-network-hourly"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "mcguinness-2023-2024-2026",
+      "name": "McGuinness staged conversion",
+      "rank": 1,
+      "treatment": "2023 north added a permanent bikeway while preserving two daytime vehicle lanes and one overnight. The 2024 south project reduced traffic to one moving lane each direction. The 2026 north project removes the remaining daytime extra lane within an existing bikeway corridor.",
+      "status": "Candidate; identification unverified",
+      "reason": "April 2026 DOT evaluation contains vehicle, bicycle, diversion and travel-time evidence. Citi Bike and MTA records are supplementary demand proxies. ATR and local E-ZPass coverage require spatial and date joins. The connected north and south are contaminated controls. Day and night demand, parking and enforcement differ. Other transportation policies and service changes may confound the comparison. No valid instrument was identified.",
+      "next": "Get operating dates and sign schedules per block, raw dated count records, and synchronized parallel-road outcomes. The daytime rule is 07:00–19:00, not just rush-hour peaks; weekday and weekend signs remain to be certified.",
+      "url": "https://www.nyc.gov/html/dot/downloads/pdf/mcguinness-blvd-update-sept2024.pdf"
+    },
+    {
+      "id": "queens-blvd-skillman-roosevelt-2024",
+      "name": "Queens Boulevard, Skillman–Roosevelt",
+      "rank": 2,
+      "treatment": "Four full-time moving lanes become three each direction; curb rush-hour capacity also changes. The project adds protected bike lanes, parking/loading, pedestrian islands and signal changes.",
+      "status": "Candidate; identification unverified",
+      "reason": "Modern ATR, local E-ZPass, Citi Bike, TLC and MTA sources are potentially usable; repeated local coverage has not yet been certified. This is not an untreated control for McGuinness: both changed in autumn 2024 and share the Queensboro approach network. Earlier Queens Boulevard service-road projects have different geometry.",
+      "next": "Query local speed and count coverage and obtain daily installation records for September–November 2024. Include all parallel alternatives at the same cut and hour.",
+      "url": "https://www.nyc.gov/html/dot/downloads/pdf/queens-blvd-roosevelt-ave-skillman-ave-may2024.pdf"
+    },
+    {
+      "id": "tenth-amsterdam-52-72-2019",
+      "name": "Tenth/Amsterdam, West 52–72",
+      "rank": 3,
+      "treatment": "One of four full-time moving lanes is removed; west-curb PM rush-hour rules are eliminated. Three full-time through lanes remain. West 70–72 turn capacity is maintained.",
+      "status": "Candidate; identification unverified",
+      "reason": "Dense public TLC and Citi Bike OD records. NYMTC 60th Street counts may support motor and bus person flow. Cycling counts at 50th Street are outside the treated segment. TLC routes are unobserved and taxis are a selected subset. Nearby projects and traffic-policy changes may confound results. Local E-ZPass data begin too late for this baseline.",
+      "next": "Verify dates, audit 2018–2019 pre-trends, and retrieve raw NYMTC survey dates and locations.",
+      "url": "https://www.nyc.gov/html/dot/downloads/pdf/amsterdam-10th-ave-june2018.pdf"
+    },
+    {
+      "id": "amsterdam-72-110-2016",
+      "name": "Amsterdam, West 72–110",
+      "rank": 4,
+      "treatment": "Moving lanes were reduced to three through lanes with turning, loading and signal changes plus protected bicycle infrastructure.",
+      "status": "Candidate; identification unverified",
+      "reason": "DOT reports bicycle observations in October 2007, 2011 and 2015. A later deck reports January 2016 versus January 2017 taxi speeds. Citi Bike expanded to West 86th Street in fall 2015. Citi Bike supply expanded near the baseline. Signal and loading changes are part of the package. Taxi schema changes require consistent geography.",
+      "next": "Seek raw DOT road-specific taxi observations; otherwise use public OD exposure cautiously.",
+      "url": "https://www.nyc.gov/html/dot/downloads/pdf/amsterdam-avenue-cb7-feb2016.pdf"
+    },
+    {
+      "id": "skillman-43rd-2018",
+      "name": "Skillman/43rd Avenue mixed treatment",
+      "rank": 5,
+      "treatment": "Lower-volume blocks lose one moving lane; higher-volume blocks retain two. At Sunnyside Yards, one full-time lane plus a 07:00–10:00 lane is proposed. Conventional bike lanes existed from 2008.",
+      "status": "Candidate; identification unverified",
+      "reason": "Planning traffic collection occurred in 2017. Public Citi Bike and TLC OD records exist where service operated. Repeated all-bike and vehicle counts have not been obtained. Lane removal was deliberately assigned to lower-volume blocks; the within-project difference is endogenous. Traffic crosses block boundaries and all blocks receive bike protection.",
+      "next": "Digitize the treatment map into separate segments; verify as-built lane schedules and operating dates.",
+      "url": "https://www.nyc.gov/html/dot/downloads/pdf/skillman-ave-43rd-ave-june2018.pdf"
+    },
+    {
+      "id": "amsterdam-110-162-2019",
+      "name": "Amsterdam, West 110–162",
+      "rank": 6,
+      "treatment": "The official implemented-project description verifies two moving lanes reduced to one each direction, with left-turn and bicycle lanes.",
+      "status": "Candidate; identification unverified",
+      "reason": "Planning records contain 2017 bicycle counts. TLC, Citi Bike and temporary ATR data are potential outcomes; a post count at the same location is not yet certified. Some design is conventional rather than protected bike infrastructure. Supply expansion and neighborhood trends may confound results; late-2019 implementation would leave little pre-pandemic follow-up.",
+      "next": "Get the implementation month and as-built geometry, then check repeated counts before March 2020.",
+      "url": "https://www.nyc.gov/html/dot/html/about/projects-2019.shtml"
+    },
+    {
+      "id": "seagirt-2023",
+      "name": "Seagirt Boulevard, Rockaway Freeway–Beach Ninth",
+      "rank": 7,
+      "treatment": "An official retrospective verifies removal of one travel lane each direction for parking-protected bike lanes and pedestrian space.",
+      "status": "Candidate; identification unverified",
+      "reason": "ATR and local E-ZPass are potential sources, subject to coverage audit. A repeated all-bike counter has not been verified. Strong seasonality and the 2024 signal upgrade complicate inference. Citi Bike should not be assumed to represent this area.",
+      "next": "Audit speed/count locations and dates; recover all-bike counts at the same observation windows.",
+      "url": "https://www.nyc.gov/html/dot/html/pr2026/traffic-deaths-are-near-lowest-levels.shtml"
+    },
+    {
+      "id": "bailey-sedgwick-2026",
+      "name": "Bailey/Sedgwick Harlem River Greenway",
+      "rank": 8,
+      "treatment": "The proposal includes a vehicle-lane reduction and protected bike lanes. A 2026 retrospective confirms a built two-way bike lane, median and turn bays; precise lane counts still need as-built verification.",
+      "status": "Candidate; identification unverified",
+      "reason": "Modern motor, bus, subway and bicycle sources may cover the corridor. Bus changes are part of the package. The bus improvements prevent isolation of a bike-only component. Follow-up is short as of November 2026.",
+      "next": "Get phase dates and the bus-change calendar; query bus speeds, passenger counts and local road observations.",
+      "url": "https://www.nyc.gov/html/dot/html/pr2026/vision-zero-pedestrian-fatalities-reach-record-lows.shtml"
+    },
+    {
+      "id": "prospect-park-west-2010",
+      "name": "Prospect Park West benchmark",
+      "rank": 9,
+      "treatment": "Three moving lanes became two, together with a two-way bike path, signals and loading changes.",
+      "status": "Descriptive benchmark",
+      "reason": "Existing audit contains 384 weekday travel-time runs across four streets. Motor and bicycle observation dates are not aligned. B69 rerouting affects the treated and several comparison streets. One pre-period wave cannot establish parallel trends.",
+      "next": "Prioritize modern candidates for new data collection while retaining the historical evidence with clear limits.",
+      "url": "https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf"
+    },
+    {
+      "id": "west72-2026-proposed",
+      "name": "West 72nd Street proposed project",
+      "rank": 10,
+      "treatment": "A two-way parking-protected bicycle lane is proposed with turning, loading, signal and bus-boarding changes. Verify final moving-lane geometry before eligibility.",
+      "status": "Partial: prospective status unverified",
+      "reason": "Modern public sources are available in principle. Synchronized all-bike counts, occupancy and complete journey observations still need pre-measurement. We cannot randomize street works ourselves. The connected park and avenue network creates spillovers. A proposal is not a completed treatment.",
+      "next": "Verify present status and the final cross-section before selecting it for prospective collection.",
+      "url": "https://www.nyc.gov/html/dot/html/pr2026/nyc-dot-proposes-protected-bike-lane-for-72nd-street-manhattan.shtml"
+    }
+  ],
+  "gates": [
+    {
+      "id": "timing",
+      "label": "Treatment fidelity",
+      "status": "Partial",
+      "detail": "Geometry is documented; exact operating dates, time-of-week rules and co-treatment calendars remain incomplete."
+    },
+    {
+      "id": "support",
+      "label": "Comparable observations",
+      "status": "Partial",
+      "detail": "TLC and B62 service-time data exist. Matched road counts, detector continuity and donor support are not yet certified."
+    },
+    {
+      "id": "assignment",
+      "label": "Defensible counterfactual",
+      "status": "Not established",
+      "detail": "No random rollout or verified quasi-random queue found. Nearby diversion roads and connected McGuinness sections cannot be default controls."
+    },
+    {
+      "id": "robustness",
+      "label": "Sensitivity and falsification",
+      "status": "Pending",
+      "detail": "Hold-out pre-period prediction, donor/window/boundary checks and differential-trend sensitivity must precede a causal verdict."
+    },
+    {
+      "id": "flow",
+      "label": "All-mode person flow",
+      "status": "Missing components",
+      "detail": "Require synchronized crossing counts, private-car occupancy and transit loads, or defensible bounds that preserve the conclusion."
+    },
+    {
+      "id": "journey",
+      "label": "Complete journey time",
+      "status": "Missing components",
+      "detail": "Require baseline population/menu weighting, access/wait/transfer/egress and unserved travel. Completed service trips support a narrower claim."
+    },
+    {
+      "id": "capacity",
+      "label": "Capacity inference",
+      "status": "Not established",
+      "detail": "No comparable demand, queue and discharge study assembled."
+    },
+    {
+      "id": "generalization",
+      "label": "NYC-wide conclusion",
+      "status": "Not established",
+      "detail": "A result for one bundled redesign would not prove a universal bike-lane effect. Seek independent replications."
+    }
+  ],
+  "pilot": {
+    "title": "McGuinness south, late 2024: build a narrower study first",
+    "summary": "Study the southern redesign package against external, unaffected travel networks. First establish actual dates and repeated support for road, bus and ride-hail outcomes. The 2026 northern phase is a separate lane/curb change within an existing bikeway; north and south are not clean controls for each other.",
+    "probes": [
+      {
+        "label": "Ride-hail timing feasibility",
+        "value": "11,904 bookings",
+        "detail": "Two pre-treatment sample weeks; 11,892 valid timing records. No before/after effect calculated."
+      },
+      {
+        "label": "B62 running-time coverage",
+        "value": "2023–Sep 2026",
+        "detail": "Temporal coverage verified for a candidate nearby service. Route geometry, common monthly/timepoint support and donor choice still need certification."
+      },
+      {
+        "label": "Modern motor-counter support",
+        "value": "Coverage gap",
+        "detail": "2022 omits the old station; 2024 inventory refers to 2021. A small 2026 short count is a separate lead, not a dense 2024 panel."
+      }
+    ],
+    "steps": [
+      {
+        "label": "Recover the assignment and activation records",
+        "detail": "Obtain the approved/ready project queue, reasons for delay and actual block-by-block dates. Exclude mixed construction periods under a fixed rule."
+      },
+      {
+        "label": "Freeze the network and comparable travel market",
+        "detail": "Include diversion roads as outcomes, choose external donors using only pre-policy evidence, and fix baseline OD and departure-time weights."
+      },
+      {
+        "label": "Estimate measured outcomes under explicit assumptions",
+        "detail": "Use a controlled event study or pre-trained synthetic comparison, with held-out pre-period checks, placebos, donor exclusions and trend sensitivity. Keep bike, vehicle, bus and ride-hail outcomes separate initially."
+      },
+      {
+        "label": "Close person-flow and whole-journey gaps",
+        "detail": "Join raw dated counts to occupancy and transit loads on one boundary. Add a baseline traveler panel or credible missing-component bounds before claiming a total effect."
+      }
+    ]
+  }
+}

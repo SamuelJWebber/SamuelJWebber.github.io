@@ -1,0 +1,280 @@
+{
+  "research_date": "2026-11-05",
+  "status": "Design and primary-literature audit; no new causal effect estimated",
+  "core_finding": "Changing the counterfactual design adds causal credibility. Additional rows, fixed effects, matching and sophisticated estimators do not independently establish exogenous assignment or measure missing all-mode outcomes.",
+  "recommendation": "Run a retrospective verified-conversion cohort with bounded mode-specific outcomes, alongside a prospective randomized phase-in proposal with aligned measurement.",
+  "estimands": [
+    {
+      "id": "throughput",
+      "outcome": "Realized person crossings per hour at fixed screenline or nonduplicated completed journeys in fixed geography",
+      "interpretation": "All compatible modes must cover identical boundary/time; realized flow is not capacity or welfare."
+    },
+    {
+      "id": "travel_time",
+      "outcome": "Door-to-door minutes standardized to baseline origin, destination, departure-time and purpose distribution",
+      "interpretation": "Include access, wait, transfer and parking/search; report completed and unserved trip needs to avoid selective-cancellation bias."
+    },
+    {
+      "id": "actual_minutes",
+      "outcome": "Actual aggregate person-minutes",
+      "interpretation": "Decompose trip count, composition and within-cell time; more valuable new trips can increase minutes despite improved accessibility."
+    }
+  ],
+  "strategies": [
+    {
+      "id": "randomized_phasein",
+      "rank": 1,
+      "name": "Matched network-cluster randomized phase-in",
+      "feasibility": "Prospective; agency agreement required; cannot reconstruct random assignment from existing history",
+      "assignment": "Randomize opening windows among already-approved engineering-ready comparable projects; preserve assignment for intention-to-treat",
+      "analysis": "Randomization inference at project/network assignment level; prespecified interference exposure and adaptation horizons",
+      "data": "Aligned all-mode screenline passengers, classified vehicles and occupancy, full travel-needs/cohort journey diaries or GPS, construction and co-treatment audit",
+      "identifies": "Effect of the defined approved conversion package and assigned timing among eligible corridors",
+      "assumptions": [
+        "Known valid random assignment",
+        "No unmodeled interference across assigned networks",
+        "Measured outcome and defensible attrition handling",
+        "Accurate treatment versions and dates",
+        "Enough independent project clusters"
+      ],
+      "failure_tests": [
+        "Assignment/schedule deviation audit",
+        "Baseline balance",
+        "Attrition and sensor uptime by assignment",
+        "Parallel-route/broader-network spillover audit",
+        "Power based on project-level variation"
+      ],
+      "does_not_fix": [
+        "Unmeasured outcome components",
+        "Bundled treatment attribution",
+        "Generalization beyond eligible corridors"
+      ],
+      "avoid": "Daily physical lane switchbacks fail to capture months-long mode adaptation and carryover."
+    },
+    {
+      "id": "staggered_network_did",
+      "rank": 2,
+      "name": "Verified moving-lane-conversion cohort with exposure-aware staggered DiD",
+      "feasibility": "Best retrospective target if enough verified projects have overlapping pre/post outcomes and clean donors",
+      "assignment": "Observational project timing; requires conditional untreated parallel trends and no material anticipation",
+      "analysis": "Callaway–Sant’Anna group-time ATT or appropriate imputation estimator; never/not-yet-treated and unexposed donors; freeze baseline OD/time weights and network exposure",
+      "data": "Project registry plus matched-time counts, Citi Bike OD/time, MTA bus segment times, TLC OD/time, subway entry catchment responses; aggregate total only with compatible passenger boundaries",
+      "identifies": "Group-average effect on each measured outcome under stated trend/interference assumptions",
+      "assumptions": [
+        "Conditional parallel trends",
+        "No anticipation outside declared construction window",
+        "Common support",
+        "Stable measurement and fixed composition weights",
+        "No relevant unmeasured treatment-time local shocks",
+        "Accurate exposure map and unexposed controls"
+      ],
+      "failure_tests": [
+        "Held-out preperiod prediction",
+        "Leads with simultaneous uncertainty",
+        "Placebo dates and negative-control outcomes",
+        "Donor leave-one-out",
+        "Co-treatment and missingness audit",
+        "Network boundary/exposure sensitivity",
+        "Rambachan–Roth trend-violation sensitivity with full event covariance"
+      ],
+      "does_not_fix": [
+        "Endogenous timing from unobserved changing conditions",
+        "Missing modes or whole journeys",
+        "Cross-network spillovers outside the exposure map"
+      ],
+      "avoid": "Naive staggered two-way-fixed-effects coefficients; adjacent streets as supposedly unaffected controls; controlling away post-treatment mode share or volumes."
+    },
+    {
+      "id": "network_synth_bounds",
+      "rank": 3,
+      "name": "Single-project network synthetic counterfactual with honest sensitivity and missing-mode bounds",
+      "feasibility": "Useful narrower effect now when one candidate has a long preperiod and credible donor network; total all-mode answer remains conditional on measurement bounds",
+      "assignment": "Observational; weighted donor trends or latent outcome structure must forecast untreated outcomes after opening",
+      "analysis": "Prespecified SDID/augmented or generalized SC, pre-only fit, held-out pre-validation, simple DiD benchmark, donor and extrapolation diagnostics, trend and occupancy sensitivity",
+      "data": "Longer prehistory for measured outcome, unaffected donor outcomes, treatment date/package audit, supported uncertainty bounds on other modes and occupancy",
+      "identifies": "Outcome-specific causal effect or sign envelope conditional on counterfactual model and supported measurement bounds",
+      "assumptions": [
+        "Stable counterfactual outcome model or weighted trends",
+        "No donor contamination",
+        "No coincident unique local shock",
+        "Sufficient pre-period support",
+        "Supported bounds on unknown quantities"
+      ],
+      "failure_tests": [
+        "Holdout RMSPE and systematic forecast errors",
+        "Donor concentration/extrapolation/negative weights",
+        "Leave-one-donor-out",
+        "Placebo dates/units under justified exchangeability",
+        "Trend-violation breakdown value",
+        "Missing-mode/occupancy sign-reversal threshold"
+      ],
+      "does_not_fix": [
+        "Nonrandom assignment",
+        "Inseparable bus/signal/parking co-treatment",
+        "Underlying unmeasured journey components"
+      ],
+      "avoid": "Presenting trip-level standard errors as independent-project uncertainty; calling a manual plus/minus pretrend budget an HonestDiD confidence interval."
+    }
+  ],
+  "method_map": [
+    {
+      "method": "Random rollout",
+      "addresses": "Treatment assignment directly",
+      "does_not_address": "Outcome measurement, spillover design, treatment versions"
+    },
+    {
+      "method": "Group-time staggered DiD",
+      "addresses": "Heterogeneous treatment effects and timing comparisons",
+      "does_not_address": "Unmeasured nonparallel counterfactual trends"
+    },
+    {
+      "method": "Synthetic DiD / augmented SC",
+      "addresses": "Counterfactual balance and imperfect pre-fit under explicit model conditions",
+      "does_not_address": "Exogenous assignment, missing modes, bundled treatment"
+    },
+    {
+      "method": "Exposure mapping",
+      "addresses": "Defines and potentially identifies direct and spillover contrasts with unaffected donors",
+      "does_not_address": "Unknown residual spillovers or assignment confounding"
+    },
+    {
+      "method": "HonestDiD",
+      "addresses": "Sensitivity/inference under explicit bounded trend deviations",
+      "does_not_address": "Automatic validation of parallel trends"
+    },
+    {
+      "method": "Partial identification",
+      "addresses": "Supported uncertainty in occupancy, missing modal effects and counterfactual bias",
+      "does_not_address": "Unknown quantities with no defensible bound"
+    },
+    {
+      "method": "Day/night triple difference",
+      "addresses": "Difference in daytime versus nighttime policy effects if the triple counterfactual trend holds",
+      "does_not_address": "Daytime total effect unless the nighttime treatment effect is zero or known"
+    }
+  ],
+  "measurement_bounds": {
+    "screenline_identity": "P = o*V_nonbus + B + U_bus_passengers + R_rail_screenline_passengers + W_pedestrians",
+    "bikeshare_expansion": "B = C/s is meaningful only if Citi Bike count C and measured share s refer to the same crossing, geography and time; station starts cannot be expanded into road crossings with a citywide share.",
+    "contrast": "Use period-specific occupancy and expansion factors in the actual DiD/synthetic contrast. A common factor across periods is an additional assumption, not a fact.",
+    "uncertainty_layers": [
+      "Sampling",
+      "Counterfactual trend/model",
+      "Occupancy/expansion factors",
+      "Missing modes and spillovers"
+    ],
+    "sign_threshold": "If theta_observed is the measured-part effect, omitted effect must exceed -theta_observed for a positive total. Report supported omitted-effect envelope and sampling uncertainty separately.",
+    "caution": "A positive partial sum is not a positive lower bound without a defensible lower bound for omitted effects."
+  },
+  "literature": [
+    {
+      "id": "klingen2021",
+      "title": "Bikes lanes, road safety, and congestion, thesis chapter 5",
+      "url": "https://research.vu.nl/ws/files/123630572/J%20J%20%20Klingen%20-%20thesis.pdf",
+      "verification": "Full local primary text pp87,93–99 and Table5.5 rechecked",
+      "setting": "Manhattan July2012–June2016, 35 areas × 2 directions, weekly",
+      "treatment": "Protected-bike route traversability; not verified moving-lane removal",
+      "design": "Area-direction/week two-way FE; area aggregation reduces local rerouting bias",
+      "reported_coefficients": [
+        {
+          "outcome": "log area taxi-based traffic speed",
+          "estimate": -0.013,
+          "se": 0.011
+        },
+        {
+          "outcome": "log area taxi traffic flow",
+          "estimate": 0.007,
+          "se": 0.028
+        }
+      ],
+      "most_important_limit": "Authors explicitly note p99 that citywide time FE abstract from overall modal shifts; local relative result cannot answer total policy-wide mode switching",
+      "replication": "No public processed replication/code located in this audit; this is primary-text verification, not a raw-data replication"
+    },
+    {
+      "id": "schrauth2022",
+      "title": "The Causal Effect of Cycling Infrastructure on Traffic and Accidents: Evidence from Pop-up Bike Lanes in Berlin",
+      "url": "https://www.uni-potsdam.de/fileadmin/projects/lsfiwi/docs/Publikationen/Philipp_Cycling.pdf",
+      "verification": "Official June2022 59page working paper; primary Table1 rechecked locally",
+      "treatment": "Actual two-to-one/three-to-two moving-lane reductions",
+      "design": "Hourly sensor TWFE/event studies, lockdown×station interactions and 1km control exclusions; synthetic control only for accidents",
+      "reported_coefficients": [
+        {
+          "outcome": "vehicle speed km/h, adjusted",
+          "estimate": -4.123
+        },
+        {
+          "outcome": "log vehicle speed, adjusted",
+          "estimate": -0.122
+        },
+        {
+          "outcome": "log vehicle volume, adjusted",
+          "estimate": -0.0054,
+          "statistically_significant": false
+        }
+      ],
+      "most_important_limit": "Politically/administratively selected rollout during COVID, differential pandemic response and residual spillovers; no all-mode endpoint"
+    },
+    {
+      "id": "cook2026",
+      "title": "The Network-Wide Effects of Congestion Pricing: Evidence from New York City",
+      "url": "https://www.nber.org/papers/w33584",
+      "version": "August2026 revision of NBER33584",
+      "verification": "Current primary abstract; full current paper fetch blocked",
+      "design": "Google Maps granular network data with generalized synthetic control",
+      "finding_scope": "Current abstract reports cordon speed +11%; use as network-measurement precedent only",
+      "most_important_limit": "Different policy; underlying Google panel not verified publicly downloadable; do not mix earlier draft figures with current revision"
+    },
+    {
+      "id": "arora2026",
+      "title": "Urban congestion relief experiments through routing-app interventions",
+      "url": "https://www.nature.com/articles/s44284-026-00443-x",
+      "verification": "Full primary HTML methods and data availability inspected",
+      "design": "Nonrandom daily switchback routing-app intervention with hierarchical Bayesian outcome model",
+      "most_important_limit": "Explicitly nonrandom assignment; not an RCT and not a lane-conversion experiment",
+      "data_availability": "Underlying data confidential; analysis code public",
+      "code": "https://github.com/google-research/google-research/tree/master/congestion_dispersion"
+    },
+    {
+      "id": "liu2025",
+      "title": "Planning Bike Lanes with Data: Ridership, Congestion, and Path Selection",
+      "url": "https://doi.org/10.1287/mnsc.2022.00775",
+      "verification": "Publisher abstract; full paper too large for web fetch",
+      "design": "Chicago traffic-equilibrium and network optimization model; inverse optimization travel-time model and IV mode-choice component",
+      "most_important_limit": "Model-based scenario framework; full IV/exclusion conditions not audited here, therefore no numerical scenario figures repeated"
+    }
+  ],
+  "method_references": [
+    {
+      "id": "callaway_santanna2021",
+      "url": "https://doi.org/10.1016/j.jeconom.2020.12.001",
+      "implementation": "https://bcallaway11.github.io/did/"
+    },
+    {
+      "id": "sdid2021",
+      "url": "https://www.aeaweb.org/articles?id=10.1257/aer.20190159",
+      "implementation": "AEA page links replication package"
+    },
+    {
+      "id": "augmented_sc2021",
+      "url": "https://jesse-rothstein.com/wp-content/uploads/2021/07/Ben-Michael_Feller_Rothstein_Augsynth_JASA_2021.pdf"
+    },
+    {
+      "id": "honestdid2023",
+      "url": "https://jonathandroth.github.io/assets/files/HonestParallelTrends_Main.pdf",
+      "implementation": "https://github.com/asheshrambachan/HonestDiD"
+    },
+    {
+      "id": "butts_spillovers2024",
+      "url": "https://www.kylebutts.com/files/Spillover.pdf"
+    }
+  ],
+  "stop_rules": [
+    "No documented actual moving-lane removal: classify as another bike-infrastructure treatment.",
+    "No compatible passenger boundary/time or supported missing-mode bound: do not label outcome total person flow.",
+    "No measured door-to-door journey: do not label bus segment or dock-to-dock duration a complete commute.",
+    "No credible donor support or severe unbounded treatment-time shock: keep descriptive status.",
+    "Perfectly bundled interventions: label package effect; no separate bike-lane causal coefficient.",
+    "All candidate controls plausibly exposed: seek larger-network/outside donors or prospective design.",
+    "Only one independent project: do not claim millions of trip observations solve assignment uncertainty."
+  ]
+}

@@ -1,0 +1,10 @@
+field,valid_days,missing_days,first_valid,last_valid,pre_opening_valid_days
+northbound_pedestrians,548,31,2009-06-30,2010-12-31,11
+southbound_pedestrians,548,31,2009-06-30,2010-12-31,11
+total_pedestrians,548,31,2009-06-30,2010-12-31,11
+northbound_bicycles,562,17,2009-06-16,2010-12-31,25
+southbound_bicycles,562,17,2009-06-16,2010-12-31,25
+total_bicycles,562,17,2009-06-16,2010-12-31,25
+northbound_vehicles,522,57,2009-06-01,2010-12-31,29
+southbound_vehicles,523,56,2009-06-01,2010-12-31,30
+total_vehicles,523,56,2009-06-01,2010-12-31,30

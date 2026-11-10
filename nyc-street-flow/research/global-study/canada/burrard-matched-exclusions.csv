@@ -1,0 +1,18 @@
+window,before_date,after_date,reason
+all_modes_14_day_pairs,2009-06-30,2009-07-14,missing=total_vehicles
+all_modes_14_day_pairs,2009-07-01,2009-07-15,event_comment_before=Canada Day;after=None
+all_modes_14_day_pairs,2009-07-05,2009-07-19,missing=total_vehicles
+all_modes_14_day_pairs,2009-07-08,2009-07-22,event_comment_before=None;after=Fireworks
+bike_vehicle_28_day_pairs,2009-06-21,2009-07-19,missing=total_vehicles
+bike_vehicle_28_day_pairs,2009-06-22,2009-07-20,missing=total_vehicles
+bike_vehicle_28_day_pairs,2009-06-23,2009-07-21,missing=total_vehicles
+bike_vehicle_28_day_pairs,2009-06-24,2009-07-22,event_comment_before=None;after=Fireworks
+bike_vehicle_28_day_pairs,2009-06-25,2009-07-23,missing=total_vehicles
+bike_vehicle_28_day_pairs,2009-06-26,2009-07-24,missing=total_vehicles
+bike_vehicle_28_day_pairs,2009-06-27,2009-07-25,event_comment_before=None;after=Fireworks
+bike_vehicle_28_day_pairs,2009-06-30,2009-07-28,missing=total_vehicles
+bike_vehicle_28_day_pairs,2009-07-01,2009-07-29,event_comment_before=Canada Day;after=Fireworks
+bike_vehicle_28_day_pairs,2009-07-04,2009-08-01,event_comment_before=None;after=Fireworks
+bike_vehicle_28_day_pairs,2009-07-05,2009-08-02,missing=total_vehicles
+bike_vehicle_28_day_pairs,2009-07-06,2009-08-03,event_comment_before=None;after=BC Day
+bike_vehicle_28_day_pairs,2009-07-09,2009-08-06,missing=total_vehicles

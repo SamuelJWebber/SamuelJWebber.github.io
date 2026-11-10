@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-06",
+  "passed": true,
+  "environment": "Managed desktop preview through cloud browser",
+  "checks": [
+    "Causal design lazy tab loads actual JSON",
+    "Four outcome definitions render and query state updates",
+    "Source filter selects subway: 3 of 20 rows",
+    "Occupancy text search returns 5 of 20 rows; clearing restores 20",
+    "Ideal-trial disclosure displays all 9 requirements",
+    "Six tabs and pilot/source table visually readable"
+  ],
+  "limits": [
+    "No real mobile viewport test; responsive CSS inspected",
+    "Browser checks are functionality/layout checks, not evidence for causal identification"
+  ]
+}

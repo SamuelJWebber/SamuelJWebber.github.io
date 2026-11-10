@@ -1,0 +1,65 @@
+table,field,type,required_for,units,definition,missing_rule
+study_register,study_id,string,All analyses,identifier,Stable study/corridor identifier,Null with explicit missing_reason; never zero-fill
+study_register,boundary_id,string,Person flow,identifier,Defined street or network screenline; nested boundaries remain separate,Null with explicit missing_reason; never zero-fill
+study_register,geometry_version,string,All analyses,identifier,Versioned coordinates and crossing geometry,Null with explicit missing_reason; never zero-fill
+study_register,direction,enum,Person flow,direction,Direction of crossing relative to the registered geometry,Null with explicit missing_reason; never zero-fill
+study_register,treatment_scope,string,Causal analysis,text,Moving-lane change and all simultaneous bus/signal/parking/intersection changes,Null with explicit missing_reason; never zero-fill
+study_register,moving_lanes_before,integer,Conversion verification,lanes,Verified moving lanes by direction before the change,Null with explicit missing_reason; never zero-fill
+study_register,moving_lanes_after,integer,Conversion verification,lanes,Verified moving lanes by direction after the change,Null with explicit missing_reason; never zero-fill
+study_register,permanent_lane_closure_at,datetime,Treatment timing,ISO8601 with UTC offset,"Actual closure of moving lane, distinct from bike opening or announcement",Null with explicit missing_reason; never zero-fill
+study_register,construction_start_at,datetime,Treatment timing,ISO8601 with UTC offset,First potentially contaminating construction activity,Null with explicit missing_reason; never zero-fill
+study_register,implementation_end_at,datetime,Treatment timing,ISO8601 with UTC offset,End of implementation interval and source evidence,Null with explicit missing_reason; never zero-fill
+study_register,source_reference,string,All analyses,URL/file + page/record,"Drawing, log or administrative record that verifies treatment and date",Null with explicit missing_reason; never zero-fill
+measurement_manifest,record_id,string,All observations,identifier,"Unique raw-record key, preserving source provenance",Null with explicit missing_reason; never zero-fill
+measurement_manifest,source_file_hash,string,Reproducibility,SHA256,Immutable file hash plus a source filename and retrieval date,Null with explicit missing_reason; never zero-fill
+measurement_manifest,method_version,string,Comparability,identifier,"Survey expansion, sensor firmware or administrative matching-method version",Null with explicit missing_reason; never zero-fill
+measurement_manifest,valid_from_to,interval,Measurement continuity,ISO8601 with offset,Period for which location/channel/method is valid,Null with explicit missing_reason; never zero-fill
+measurement_manifest,quality_flag,enum[],QC,flags,Preserved source and analyst flags with reasons; flags do not silently delete rows,"Empty array means no known flags, not proven validity"
+measurement_manifest,missing_reason,enum,Missingness analysis,code,"Not collected, instrument failure, suppressed, incomplete or unknown",Null only for genuinely observed valid value
+flow_intervals,site_id,string,Person flow,identifier,Fixed counter or survey point linked to boundary and geometry,Null with explicit missing_reason; never zero-fill
+flow_intervals,interval_start,datetime,Person flow,ISO8601 with UTC offset,"Actual data collection start, not publication or typical-season date",Null with explicit missing_reason; never zero-fill
+flow_intervals,interval_end,datetime,Person flow,ISO8601 with UTC offset,Actual end; duration must remain positive through DST transitions,Null with explicit missing_reason; never zero-fill
+flow_intervals,direction,enum,Person flow,direction,Observed direction matched to the registered boundary,Null with explicit missing_reason; never zero-fill
+flow_intervals,mode_or_vehicle_class,enum,Person flow,classification,Walk/bike or mutually exclusive vehicle classes; distinguish buses,Null with explicit missing_reason; never zero-fill
+flow_intervals,count_unit,enum,Person flow,person/vehicle/crossing/boarding,Explicit unit; boardings and vehicles are not automatically person crossings,Null with explicit missing_reason; never zero-fill
+flow_intervals,raw_count,number,Person flow,count,Unexpanded observed count for the interval,Null with explicit missing_reason; never zero-fill
+flow_intervals,expansion_weight,number,Expanded flow,multiplier,Sampling expansion and its estimation method; one only if complete enumeration,Null with explicit missing_reason; never zero-fill
+flow_intervals,valid_observed_seconds,number,Coverage,seconds,Functioning observed duration within the interval,Null with explicit missing_reason; never zero-fill
+flow_intervals,includes_drivers,boolean,Occupant accounting,boolean,Whether occupant count includes drivers,Null with explicit missing_reason; never zero-fill
+flow_intervals,includes_bus_occupants,boolean,Occupant accounting,boolean,Whether motor-person subtotal already includes bus riders/drivers,Null with explicit missing_reason; never zero-fill
+flow_intervals,sampling_uncertainty,object,Uncertainty,variance/replicate weights,Design-based uncertainty or sufficient replication metadata,Null with explicit missing_reason; never zero-fill
+occupancy_samples,sample_id,string,Motor-person estimation,identifier,"Occupancy sample matched by site, direction, date/hour and vehicle class",Null with explicit missing_reason; never zero-fill
+occupancy_samples,sample_vehicles,integer,Motor-person estimation,vehicles,"Number of actually observed vehicles, before expansion",Null with explicit missing_reason; never zero-fill
+occupancy_samples,observed_occupants,integer,Motor-person estimation,people,Occupants in sampled vehicles; retain driver inclusion convention,Null with explicit missing_reason; never zero-fill
+occupancy_samples,sample_weights,object,Motor-person estimation,weights,Vehicle-class and sampling weights plus uncertainty metadata,Null with explicit missing_reason; never zero-fill
+transit_segment_loads,run_id,string,Transit person flow/time,identifier,Service trip/run linked to actual crossing time and segment,Null with explicit missing_reason; never zero-fill
+transit_segment_loads,segment_id,string,Transit person flow/time,identifier,Stop/station-to-stop/station segment containing the boundary crossing,Null with explicit missing_reason; never zero-fill
+transit_segment_loads,crossing_timestamp,datetime,Transit person flow,ISO8601 with UTC offset,"Estimated/observed crossing instant, with method",Null with explicit missing_reason; never zero-fill
+transit_segment_loads,onboard_passengers,number,Transit person flow/time,passengers,Load over the measured segment; separate from boardings and drivers,Null with explicit missing_reason; never zero-fill
+transit_segment_loads,actual_runtime_seconds,number,Segment passenger time,seconds,Actual elapsed time for the identical load segment,Null with explicit missing_reason; never zero-fill
+transit_segment_loads,load_method,enum,Uncertainty,observed/inferred/expanded,"Load provenance, coverage and expansion method",Null with explicit missing_reason; never zero-fill
+transit_segment_loads,driver_count,number,All-person crossing accounting,people,Count drivers once if included in the registered population,Null with explicit missing_reason; never zero-fill
+journeys,journey_id,string,Complete journey time,pseudonymous identifier,Unique journey key linking all legs; no direct personal identifiers,Null with explicit missing_reason; never zero-fill
+journeys,panel_person_id,string,Observed individual mode switching,pseudonymous identifier,Stable pseudonymous person linkage across waves; absent for repeated cross sections,Null with explicit missing_reason; never zero-fill
+journeys,wave,enum,Before/after,period,Survey wave and actual collection date,Null with explicit missing_reason; never zero-fill
+journeys,origin_zone,string,Comparable composition,zone,Prespecified origin zone sufficiently coarse for released data,Null with explicit missing_reason; never zero-fill
+journeys,destination_zone,string,Comparable composition,zone,Prespecified destination zone sufficiently coarse for released data,Null with explicit missing_reason; never zero-fill
+journeys,purpose,enum,Comparable composition,purpose,"Work, education, care, shopping, leisure or other prespecified purpose",Null with explicit missing_reason; never zero-fill
+journeys,departure_timestamp,datetime,Complete journey time,ISO8601 with UTC offset,"Actual departure from the origin, including access walking",Null with explicit missing_reason; never zero-fill
+journeys,arrival_timestamp,datetime,Complete journey time,ISO8601 with UTC offset,"Actual arrival at destination, including egress",Null with explicit missing_reason; never zero-fill
+journeys,elapsed_minutes,number,Complete journey time,minutes,Complete elapsed duration; do not sum incomplete leg times as a full journey,Null with explicit missing_reason; never zero-fill
+journeys,time_complete,boolean,Missing-time analysis,boolean,"Whether access, waits, travel, transfers, parking and egress are all covered",Null with explicit missing_reason; never zero-fill
+journeys,main_mode,enum,Composition and switching,mode,Consistent journey-level main-mode rule; all leg modes retained separately,Null with explicit missing_reason; never zero-fill
+journeys,survey_weight,number,Represented means/totals,multiplier,Journey population expansion weight with a documented denominator,Null with explicit missing_reason; never zero-fill
+journeys,replicate_weights,number[],Sampling uncertainty,weights,Design-based replicate weights or an equivalent variance design,Null with explicit missing_reason; never zero-fill
+journeys,journey_frequency,number,Period person-minutes,trips/period,"Frequency for the specified period, when converting usual-trip data to totals",Null with explicit missing_reason; never zero-fill
+journeys,trip_change_status,enum,Induced/suppressed trip accounting,continuing/new/forgone/unknown,"Reported trip status relative to baseline; causal status remains unobserved and is not inferred from a raw count decline",Null with explicit missing_reason; never zero-fill
+journeys,attrition_status,enum,Selection analysis,code,"Panel retention, nonresponse, eligibility or missing-wave status",Null with explicit missing_reason; never zero-fill
+comparison_register,comparison_id,string,Causal design,identifier,Candidate control corridor and its fixed measurement scope,Null with explicit missing_reason; never zero-fill
+comparison_register,eligibility_reason,string,Causal design,text,Eligibility fixed independently of post-treatment sign,Null with explicit missing_reason; never zero-fill
+comparison_register,concurrent_changes,object[],Causal design,dated events,"Projects, service changes, closures and other exposures",Null with explicit missing_reason; never zero-fill
+comparison_register,spillover_risk,string,Causal design,assessment,Whether diversions could expose the candidate to treatment,Null with explicit missing_reason; never zero-fill
+comparison_register,training_validation_periods,object,Pre-validation,calendar windows,Distinct pre-training and contiguous reserved validation windows,Null with explicit missing_reason; never zero-fill
+comparison_register,prespecified_effect,number,Design sensitivity,outcome units,Minimum substantively meaningful effect used for design and error assessment,Null with explicit missing_reason; never zero-fill
+comparison_register,analysis_lock_timestamp,datetime,Audit,ISO8601 with UTC offset,"When donor set, windows, exclusions and weights were frozen for new outcomes",Null with explicit missing_reason; never zero-fill
+comparison_register,outcome_inspection_status,string,Audit,text,Which outcomes were already viewed before the analysis plan,Null with explicit missing_reason; never zero-fill

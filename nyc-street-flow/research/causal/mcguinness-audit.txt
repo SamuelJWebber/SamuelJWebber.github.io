@@ -1,0 +1,141 @@
+﻿TIMING CLARIFICATION — November 5, 2026
+
+The January–August 2015 diagnostic is not verified as wholly untreated.
+DOT’s December 2014 plan scheduled an April 2015 project start and temporary
+lane closures; its September 22, 2015 release says construction recently began.
+The exact temporary and permanent lane-closure dates remain unverified.
+September 2015–April 2016 is the original analysis exclusion, not a proven
+complete construction interval. Original numerical estimates are unchanged.
+The newer directional analysis adds an earlier January–February diagnostic,
+which is still not proof of an unaffected comparison group.
+
+The design also states the existing three Brooklyn-bound lanes already merged
+to two approaching McGuinness Boulevard and Green Street. Lane count alone
+therefore does not establish the change in the road network’s bottleneck capacity.
+
+Sources:
+https://www.nyc.gov/html/dot/downloads/pdf/2014-12-pulaski-presentation.pdf
+https://www.nyc.gov/html/dot/html/pr2015/pr15-096.shtml
+
+--- Original arithmetic audit ---
+
+Independent McGuinness analysis audit — 2026-11-05
+
+Decision: report as a descriptive motor-count diagnostic at the McGuinness
+approach counter. Do not call it an identified Pulaski lane-removal effect,
+a bridge screenline result, or an all-person-flow result. No arithmetic error
+was found in the current 36 comparison rows.
+
+Files reviewed
+  analyze_mcguinness.py
+  mcguinness-analysis.json and two comparison CSVs
+  ../causal-road/nysdot-region11-bidirectional-days.csv
+  ../causal-road/nysdot-region11-directional-days.csv and reproduce.py
+  ../causal-road/feasibility.json
+
+Material presentation/design fixes
+
+1. Control validation does not use identical support across controls.
+   Boston's January–August 2014/2015 pre-check contains 34/40 cells and eight
+   months; Broadway's contains 22/40 cells and January–June only. Its absence
+   of July/August means the 11.10% and 4.54% monthly pre-RMSPE scores do not
+   constitute a like-for-like control ranking. Do not label Broadway a
+   validated counterfactual or select it solely by those scores.
+
+   A separate common-three-station sensitivity now uses the same dates and
+   month×weekday cells for both controls. It retains 21/40 pre-check cells,
+   January–June, and 65 baseline/63 later dates. Daily RMSPE is 7.24% for
+   Boston and 4.40% for Broadway. PM ranking reverses: Boston 5.50%, Broadway
+   6.80%. Neither is validated by this short, nonexperimental check.
+
+2. Window labels describe requested windows, not full observed panels.
+   The primary 2014/2016 pairwise Boston comparison retains 31/40 cells:
+   May–November only, with just Wednesday in May and no December. Broadway
+   retains 26/40 cells: May, June, September–December, without July/August.
+   These require visible retained-month/cell/date counts. A raw McGuinness
+   estimate also changes between controls because its source sample changes.
+
+   Equal month×weekday-cell weights are correctly implemented, but this is
+   not equal weighting of months: a month with five retained weekdays has
+   five times the weight of one with only one. Monthly pre-RMSPE instead
+   weights retained months equally. Both are acceptable descriptive choices
+   if their definitions and missingness are stated.
+
+3. The 2017 control comparison is especially fragile.
+   Pairwise retained cells are only 13/40 (Boston) and 11/40 (Broadway) for
+   unflagged observations. On dates/cells shared by all three stations,
+   only two May cells survive: four baseline and five 2017 dates. Its
+   cross-control variation should not be presented as a stable full-window
+   result. The Kosciuszko Bridge opening is an additional competing change.
+
+4. Describe the estimator accurately.
+   Main result = target-after mean / (target-before mean × control-after
+   mean / control-before mean) − 1, using equal retained-cell weights for
+   each of the four means. It is a ratio of means, not an equal-weight mean
+   of cell-specific relative effects. The code comment saying ratios are
+   averaged is inaccurate; its output formula is correct. Cell RMSE/median
+   use cell-specific ratios and are separate diagnostics.
+
+5. Flagging and completeness are availability screens, not fault diagnoses.
+   Zero values are retained in source totals and trigger possible_dropout.
+   Their exclusion is a sensitivity choice; do not label flagged rows proven
+   detector failures or remaining rows guaranteed accurate. Peak all_complete
+   results require only the selected three hours in each direction, not all
+   24 hours. The unflagged branch does require no missing/zero hourly values
+   anywhere that day. Label quality branches with those definitions.
+
+What can be reported now
+
+Using dates observed by all three stations and unflagged observations, the
+2014/2016 comparison retains 20/40 month×weekday cells: May (Wednesday only),
+June, September, October (Tuesday–Friday), and November. There are 70
+baseline paired dates and 66 later paired dates. All outcomes use these
+same dates/cells:
+
+                         Raw McGuinness     Scaled vs Boston   Scaled vs Broadway
+  Full day               −6.68%             −4.91%             −9.76%
+  07:00–10:00           −10.28%             −3.06%            −12.94%
+  16:00–19:00            −9.48%             −7.90%            −13.93%
+
+Suggested wording: On the available weekdays and calendar cells shared by
+three counters, McGuinness approach traffic was lower in 2016 than 2014.
+Scaling by two Bronx counters gives different-sized declines. The counter
+is not on the bridge; local route changes, construction, detector stability,
+and missing observations prevent attribution to the lane conversion.
+
+The pairwise production results can also be shown, provided their distinct
+support is explicit. They give unflagged daily scaled changes of −5.11%
+(Boston) and −10.65% (Broadway). Those are not two estimates on one common
+target sample. No causal confidence interval or all-person conversion is
+justified by the acquired data.
+
+Checks passed
+
+An independent standard-library reconstruction matches all 36 comparison
+rows; largest absolute numeric difference is 2.18e−11. The recorded input
+SHA256 matches the acquired CSV. Within each pair/year, target and control
+share exact dates. Corresponding years share month and weekday labels,
+not the same dates of the month or holidays. At least two paired source
+dates per retained cell is enforced, and September 2015–April 2016 does
+not enter the reported pre/post comparisons. Outcomes are vehicle counts,
+not passengers, trip completion, capacity, or travel time.
+
+Independent source QA confirms all 15,907 nonblank full-day totals contain
+two opposite direction records with 24 present, nonnegative values each;
+all sums reconcile. No duplicate station/date/source-direction records
+exist in the current 37,009 directional rows. Stable station identifiers
+support continuity, but the 2016 export schema drops instrument identifiers
+and detailed endpoints; unchanged calibration/placement cannot be certified.
+
+Optional implementation safeguards
+  Export exact retained cell/date membership for each displayed estimate.
+  Add observed-month labels rather than relying on requested-window names.
+  Generalize the source duplicate/opposite-direction assertions to every
+  station on future refreshes (current data pass; no current bug).
+
+Reproduction of audit
+  python causal-work/audit_mcguinness_independent.py
+  Machine-readable checks and common-sample sensitivity:
+  causal-work/mcguinness-audit-checks.json
+
+No production analysis or Site files were edited.

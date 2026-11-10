@@ -1,0 +1,12 @@
+{
+  "checked_on": "2026-11-05",
+  "passed": true,
+  "checks": [
+    "All comparison changes equal displayed after minus before; no mixed units in chart rows.",
+    "All Vancouver retained pairs match raw values, weekdays, event exclusions and published comparison means.",
+    "Toronto dashboard values match source transcriptions; three-corridor bicycle count index verified.",
+    "Window separation, proposed-design label, post-only chart suppression and Copenhagen source discrepancy verified.",
+    "All download targets exist."
+  ],
+  "scope": "Arithmetic, extraction consistency and presentation safeguards; not causal validation."
+}

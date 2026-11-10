@@ -1,0 +1,172 @@
+NYC STREET FLOW — STUDY PROTOCOL FOR ADDITIONAL EVIDENCE
+Author: Samuel Webber
+Prepared: November 5, 2026
+
+STATUS
+This plan extends analyses already inspected. It is a proposed protocol for
+future collection and newly acquired records, not a retroactive preregistration.
+Its criteria are proposed design decisions, not proof of identification.
+
+PRIMARY QUESTIONS
+1. Does a verified moving-car-lane conversion change the number of people crossing
+   a prespecified network boundary per hour, by direction and period?
+2. Does the conversion change complete journey time for a comparable traveler
+   population, allowing people to change route or mode?
+3. What happens to total person-minutes, trip numbers, and the distribution of
+   travel times? A decline in trips cannot automatically count as a time benefit.
+
+Do not infer capacity from realized flow. Demand, diversions and trip suppression
+can change realized use. Do not turn a segment-speed result into door-to-door
+time, or a before/after difference into a causal effect without a counterfactual.
+
+SCOPE AND TREATMENT REGISTER
+- Verify moving-lane removal from before/after drawings and dated work records.
+  Protected-lane installation alone does not establish that a car lane was lost.
+- Register project geometry, direction, lane counts, construction stages, actual
+  permanent lane-closure date and dates of other policy changes.
+- Treat bus, signal, parking, intersection and bike changes delivered together
+  as a package unless a credible separate design can identify components.
+- Prespecify street, nearby-alternative and wider-network boundaries. A wider
+  boundary can capture diversion but must avoid double-counting the same journey
+  at nested screenlines. Report nested totals separately, never add them.
+- Register eligible treated projects and candidate comparison corridors before
+  looking at new post-treatment results. Document all exclusions and reasons.
+
+OUTCOME A: PERSON THROUGHPUT
+For each timestamped interval and direction, estimate:
+  pedestrians + cyclists + non-bus motor occupants + bus occupants + rail/ferry
+  occupants crossing the same defined network boundary.
+Keep drivers explicitly defined. If a source includes bus drivers in bus totals,
+do not add them again. Do not add vehicles to occupants. Do not sum boardings,
+station entries or train legs as if they were screenline passengers.
+
+Use a fixed, documented treatment of movements that cross a boundary more than
+once. Distinguish crossing events from unique journeys. Directional counts should
+not silently cancel opposing movements. For aggregate totals, retain direction
+and disclose whether one journey can produce repeated crossings.
+
+The minimum compatible count record contains geometry/site, direction, actual
+collection date and interval, mode/class, observed or expanded count, valid
+coverage, source method, expansion factor and quality flags. Keep missing counts
+as missing, not zero. Occupancy samples need vehicle class, date/hour, direction,
+sample size, weights and uncertainty. Bus/rail loads must refer to the segment
+that crosses the boundary, not merely stops somewhere on the service.
+
+OUTCOME B: COMPLETE JOURNEY TIME
+Recruit or acquire a suitable repeated travel diary / consented journey sample.
+Register origin and destination zones, purpose, weekday and departure-period
+strata before treatment. Hold that composition fixed for the primary mean while
+allowing route and mode changes. Report actual-mix results separately.
+
+Elapsed time runs from departure at the origin to arrival at the destination.
+Include walking, dock access, waiting, parking, transfers, travel and egress.
+Link legs into journeys and count each journey once. Do not assume absent access
+time is zero. Retain complete and incomplete journeys, elapsed-time completeness,
+survey weights, panel retention and reasons for missingness. Analyze nonresponse
+and attrition; a balanced complete-case sample alone may select easier journeys.
+
+A stable person panel can observe mode switches, but a traveler taking several
+trips contributes several journeys. Repeated cross sections can estimate changes
+for fixed strata but cannot identify who personally switched mode.
+
+OUTCOME C: PERSON-MINUTES AND TRIP COUNTS
+Compute sum(weighted complete journey minutes) and sum(weighted journeys) for the
+same represented population and period. Report the weighted mean as their ratio.
+Report a fixed-trip-composition counterfactual alongside the actual totals.
+If trip numbers change, decompose composition/count change from within-stratum
+time change. Identify newly enabled, forgone and rerouted trips separately when
+observed; canceled trips are not automatically welfare gains.
+
+The scenario calculator in this dashboard is an accounting model. It cannot
+provide empirical mode-switch rates or causal travel times. Subway switching can
+reduce or increase complete journey time depending on access, waits, transfers
+and crowding. Add those effects once, in the same units and traveler population.
+
+COLLECTION CALENDAR AND COVERAGE
+- Seek at least two seasonal cycles of usable prehistory and a full post cycle
+  where feasible. These are planning targets, not universal sufficiency rules.
+- Determine sample size and duration using baseline variance, correlation by
+  corridor/day, anticipated missingness and a prespecified meaningful effect.
+  If available historical data cannot detect that effect, report the limitation.
+- Match time zone and DST explicitly; use timestamp offsets and interval lengths.
+  Do not equate a day with 24 values to a functioning sensor day.
+- Prespecify valid interval/day criteria. Publish flagged, unflagged and missing
+  coverage; investigate extended zeros, sensor moves and direction-code changes.
+- Collect all modes simultaneously where possible. If proxy substitution is
+  necessary, publish its calibration sample, uncertainty and transfer assumption.
+
+COUNTERFACTUAL AND ANALYSIS LOCK
+1. Define eligibility by road role, geography, transit access and stable
+   measurement, not by the sign of the post estimate.
+2. Screen candidate controls for their own projects, service changes and likely
+   exposure to rerouted travelers. Nearby diversion routes are outcomes as well
+   as possible controls; do not automatically call them untreated.
+3. Reserve contiguous pre-treatment blocks for validation. Fit on earlier blocks;
+   validate on reserved blocks without tuning to their outcome. Display all
+   eligible donors and their common support.
+4. Prespecify tolerance relative to a meaningful effect, not just a nonsignificant
+   pre-trend test. Report placebo effects, held-out error and calendar stability.
+5. Freeze new-record windows, weights, donor set and exclusions before inspecting
+   their post outcomes. Use fixed pre-treatment route/day/hour/month weights for
+   the primary composition-controlled result; report actual-mix results too.
+6. Retain direction, peak/off-peak and project-level results. Across many projects,
+   use timing-aware comparisons; do not use already exposed corridors as untreated
+   controls. Aggregate with prespecified target-population weights and acknowledge
+   that a mean can hide positive and negative project effects.
+
+UNCERTAINTY AND SENSITIVITY
+- Carry count expansion, occupancy and load-sampling uncertainty through totals.
+- Respect the assignment unit and temporal dependence. Thousands of runs on one
+  corridor are not thousands of independent lane conversions.
+- Show donor, baseline, event-window, missingness and measurement sensitivity.
+- Report medians and upper percentiles only for populations with underlying time
+  observations; do not infer a distribution from monthly means.
+- A range of analyst-chosen assumptions is not a confidence interval or an
+  empirical bound. Call a bound data-supported only when its restrictions are
+  justified. If missing modes can reverse a sign, quantify the threshold and
+  show whether any credible measurements restrict them beyond that threshold.
+- Reserve a final holdout or independent validation when enough data exist.
+  Publish failed checks and changes to the plan as well as successful estimates.
+
+ACCEPTANCE RULES
+A. Treatment date / measurement continuity unresolved: descriptive findings only.
+B. Missing aligned mode counts: report covered modes; no total-flow causal claim.
+C. Segment time without passenger loads: bus-run or vehicle-run effect only.
+D. Loads without complete journeys: segment passenger-minutes only.
+E. Valid complete journeys without an eligible comparison: observed time change,
+   not the causal effect of the conversion.
+F. All relevant gates supported: estimate the explicitly scoped effect, with
+   uncertainty and residual assumptions. A positive corridor result is not a
+   universal claim about every NYC bike lane.
+
+DATA PRODUCTS
+Companion measurement-data-contract.csv defines recommended tables and fields.
+Preserve immutable raw responses, retrieval dates, versions and file hashes.
+Release reproducible transformations, dictionaries, QC exclusions and aggregate
+outputs. Keep linkage identifiers pseudonymous; do not publish direct personal
+identifiers or detailed traces that identify travelers. These are study-design
+requirements, not a request to collect data without consent or agency approval.
+
+CURRENT REQUEST STATUS — NOVEMBER 5, 2026
+NYC DOT A1: initial Third Avenue evaluation-records request sent. Agency
+acknowledgment and case number are not yet verified.
+NYSDOT C: initial station 021284 metadata/QC request sent. Agency acknowledgment
+and case number are not yet verified.
+MTA B1: prepared, not submitted; account setup remains pending.
+No fees authorized. Larger A2/B2 follow-ups and optional historical PPW request
+have not been sent. Sent is not the same as acknowledged or fulfilled.
+
+REFERENCE INPUTS ALREADY USED BY THIS DASHBOARD
+NYC DOT PPW original count / travel-time tables:
+https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf
+MTA bus timepoint data:
+https://data.ny.gov/d/58t6-89vi
+NYSDOT traffic-data repository:
+https://www.dot.ny.gov/divisions/engineering/technical-services/highway-data-services/hdsb
+NYMTC Hub Bound Travel:
+https://www.nymtc.org/hub-bound-travel
+NYC DOT Citywide Mobility Survey guide:
+https://www.nyc.gov/html/dot/downloads/pdf/2024-cms-user-guide.pdf
+
+The recommendations above are our analysis design. These agencies' publications
+are data and method references; they do not endorse or validate our causal plan.

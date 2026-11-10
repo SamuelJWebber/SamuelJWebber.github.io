@@ -1,0 +1,588 @@
+{
+  "checked_on": "2026-11-06",
+  "purpose": "Map ideal causal measurements to accessible NYC data. This file does not estimate a causal effect.",
+  "headline": "Public bus and taxi data support service-time panels now. Total person-throughput and complete-journey causal effects still require aligned counts, occupancy and a credible comparison. A sparse 2026 McGuinness short-count summary is acquired, with latest timestamp March 6; it does not supply a dense 2024 panel.",
+  "sources": [
+    {
+      "id": "nysdot-mcguinness-021284",
+      "name": "NYSDOT McGuinness station 021284 / historical CC0280",
+      "status": "acquired_gap_verified",
+      "observation": "Observed hourly vehicle counts in earlier archives; annual inventory values can be modeled.",
+      "coverage": {
+        "prior_acquired_years": [
+          2014,
+          2015,
+          2016,
+          2017,
+          2018,
+          2021
+        ],
+        "archive_2022": "Downloaded the 839,791-byte XLSX archive. It contains 5,055 station-direction-day records at 9 stations; station 021284 is absent.",
+        "archive_2023_to_2025": "The official raw-download listing ends in 2022. Matching guessed 2023/24/25 URLs returned HTTP 406; this is not proof that no underlying data exist.",
+        "inventory_2024": "Exact RCSTA 21284 row: latest actual count dated 2021-02-26; current AADT missing. No exact station match in the 2025 layer.",
+        "modern_viewer": "Same-corridor site 0280 is listed as a short-count site. The public query for quality-approved data types from 2022-01-01 through 2026-01-01 returned none. The latest data timestamp is 2026-03-06. Its 2026 annual summary reports coverage 0.006 and 43,534 total vehicles.",
+        "calendar": "Calendar export encountered a reCAPTCHA check. Individual 2026 count dates and hourly records were not downloaded; the annual total cannot be assigned entirely to March from the acquired metadata."
+      },
+      "join": "Station identity, verified detector coordinates and direction, joined to local calendar hour. The historical coordinate is 40.72549,-73.94880; the modern short-count point is 40.72364,-73.94768. Verify this change before treating the sites as the same measurement location. The road section lies in the 2024 south McGuinness conversion, but a dense 2022–25 panel was not recovered.",
+      "usable_claim": "Historical motor-vehicle baseline and an acquired sparse 2026 short-count summary with latest timestamp March 6; no continuous 2024 before/after comparison.",
+      "limitations": [
+        "Counts are vehicles, with no occupancy.",
+        "The 2024 inventory year is not the year of the last actual observation.",
+        "The modern short-count location differs from the historical inventory point.",
+        "Annual coverage fraction is not a count of valid complete days.",
+        "A small 2026 sample does not repair the missing immediate 2024 before/after series."
+      ],
+      "urls": [
+        "https://www.dot.ny.gov/divisions/engineering/technical-services/highway-data-services/hdsb",
+        "https://www.dot.ny.gov/tdv",
+        "https://nysdottrafficdata.drakewell.com/publicmultinodemap.asp",
+        "https://nysdottrafficdata.drakewell.com/calendar_alt.asp?node=NYSDOT_SC&cosit=028000000000",
+        "https://www.dot.ny.gov/divisions/engineering/technical-services/hds-respository/Tab/GDB_Shapefile_AADT_2024-2025.gdb.zip"
+      ],
+      "tests": [
+        "nysdot-2022-station-coverage.json",
+        "nysdot-aadt-mcguinness-2024-2025.json",
+        "drakewell-0280-detail.json",
+        "drakewell-0280-2022-2025-types.json",
+        "drakewell-0280-summary.json"
+      ],
+      "fields": [
+        "RC_STATION",
+        "YEAR",
+        "MONTH",
+        "DAY",
+        "FEDERAL_DIRECTION",
+        "LANES_IN_DIRECTION",
+        "INTERVAL_01..24",
+        "AE_FLAG",
+        "YEAR_LAST_ACT",
+        "MONTH_LAST_ACT",
+        "DAY_LAST_ACT"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "dot-atr",
+      "name": "NYC DOT Automated Traffic Volume Counts",
+      "status": "public_api_partly_tested",
+      "observation": "Observed 15-minute vehicle counts from temporary count sessions.",
+      "coverage": {
+        "catalog": "Raw year field spans 2000–2026; latest bulk update March 2026.",
+        "tested": "A case-insensitive small-row query found 2010 NB BRIDGE ENTRANCE ON MCGUINNESS (N/O FREEMAN) records at segment 145630. The same name-containing filter with yr>=2022 returned no rows. This establishes no recent rows under that spelling, not no counts across other aliases or the corridor geometry. The earlier aggregate query failed with HTTP 503."
+      },
+      "join": "LION version 14 segment ID or geometry to a fixed screenline; year, month, day, hour and minute to a local 15-minute interval. Require the same locations, directions, seasons, hours and complete count days.",
+      "usable_claim": "Matched vehicle-count session comparisons, once treated and comparison sites have verified coverage.",
+      "limitations": [
+        "Temporary sessions are not a continuous citywide panel.",
+        "Vehicle counts are not person counts.",
+        "Missing intervals are not zero.",
+        "Road-name aliases and network-version changes can conceal coverage.",
+        "DOT’s April 2026 study uses ATR data, but those exact sessions have not been matched to this API."
+      ],
+      "urls": [
+        "https://data.cityofnewyork.us/d/7ym2-wayt",
+        "https://data.cityofnewyork.us/resource/7ym2-wayt.json",
+        "https://data.cityofnewyork.us/api/views/7ym2-wayt.json"
+      ],
+      "tests": [
+        "live-coverage-results.json",
+        "nyc-atr-mcguinness-anycase.json",
+        "nyc-atr-mcguinness-2022plus-limit.json"
+      ],
+      "fields": [
+        "requestid",
+        "boro",
+        "yr",
+        "m",
+        "d",
+        "hh",
+        "mm",
+        "vol",
+        "segmentid",
+        "wktgeom",
+        "street",
+        "fromst",
+        "tost",
+        "direction"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "dot-ezpass",
+      "name": "NYC DOT EZ Pass local-street travel times",
+      "status": "metadata_acquired_corridor_unverified",
+      "observation": "Median travel times from sampled vehicle transponders.",
+      "coverage": {
+        "partitions": [
+          {
+            "id": "s7y8-dkgd",
+            "name": "EZ Pass Readers 2021",
+            "url": "https://data.cityofnewyork.us/d/s7y8-dkgd",
+            "rowsUpdatedAt": 1791321135
+          },
+          {
+            "id": "2dzd-mqxq",
+            "name": "EZ Pass Readers 2022",
+            "url": "https://data.cityofnewyork.us/d/2dzd-mqxq",
+            "rowsUpdatedAt": 1791329294
+          },
+          {
+            "id": "pi8f-savx",
+            "name": "EZ Pass Readers 2023",
+            "url": "https://data.cityofnewyork.us/d/pi8f-savx",
+            "rowsUpdatedAt": 1791343687
+          },
+          {
+            "id": "7ank-n7rd",
+            "name": "EZ Pass Readers 2024",
+            "url": "https://data.cityofnewyork.us/d/7ank-n7rd",
+            "rowsUpdatedAt": 1791346072
+          },
+          {
+            "id": "5dxh-vk2s",
+            "name": "EZ Pass Readers 2025",
+            "url": "https://data.cityofnewyork.us/d/5dxh-vk2s",
+            "rowsUpdatedAt": 1791354110
+          },
+          {
+            "id": "6a2s-2t65",
+            "name": "EZ Pass Readers 2026",
+            "url": "https://data.cityofnewyork.us/d/6a2s-2t65",
+            "rowsUpdatedAt": 1793866253
+          }
+        ],
+        "legacy": "The combined erdf-2akx table covers 2021-04-08 through 2024-07-07 and overlaps annual partitions.",
+        "2025_warning": "Missing2025-05-17through2025-06-30",
+        "corridor": "The 2023 McGuinness aggregation returned HTTP 503; distinct-link and small 2024 corridor queries timed out. These are failed requests, not evidence that the corridor has no readers."
+      },
+      "join": "Match sid and polyline geometry across years, then join by timestamp. Freeze the link crosswalk and compare the same time windows, weekdays and lengths. Do not sum or average unweighted link medians as total person-minutes.",
+      "usable_claim": "Sampled local-street segment delay, after confirming treated and comparison link coverage.",
+      "limitations": [
+        "n_samples counts sampled transponders, not all vehicles.",
+        "Medians are not mean person journey times.",
+        "No occupancy, origin/destination, waiting, parking or access/egress times.",
+        "Transponder sample composition may change.",
+        "The portal warns of missing data from 2025-05-17 through 2025-06-30."
+      ],
+      "urls": [
+        "https://data.cityofnewyork.us/d/s7y8-dkgd",
+        "https://data.cityofnewyork.us/d/2dzd-mqxq",
+        "https://data.cityofnewyork.us/d/pi8f-savx",
+        "https://data.cityofnewyork.us/d/7ank-n7rd",
+        "https://data.cityofnewyork.us/d/5dxh-vk2s",
+        "https://data.cityofnewyork.us/d/6a2s-2t65",
+        "https://data.cityofnewyork.us/d/erdf-2akx"
+      ],
+      "tests": [
+        "ezpass-partition-metadata.json",
+        "live-coverage-results.json"
+      ],
+      "fields": [
+        "sid",
+        "link_name",
+        "borough",
+        "polyline",
+        "link_length_ft",
+        "aggregation_period_sec",
+        "n_samples",
+        "median_calculation_timestamp",
+        "median_tt_sec",
+        "median_speed_fps"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "mta-bus-stop",
+      "name": "MTA Bus Stop Ridership Estimates",
+      "status": "live_corridor_coverage_acquired",
+      "observation": "APC-derived estimated boardings; passengers already aboard are not reported.",
+      "coverage": {
+        "B62_first": "2024-01-01",
+        "B62_last": "2026-09-01",
+        "B62_rows": 538322,
+        "B62_distinct_stop_ids": 133,
+        "grain": "Month × weekday × hour × route × direction × stop"
+      },
+      "join": "Stop ID plus archived route geometry and direction to a fixed corridor catchment. Use a common stop set and crosswalk relocations. Month, weekday and hour align with bus segment and modeled subway OD summaries.",
+      "usable_claim": "Changes in boarding demand at B62 stops around the 2024 conversion.",
+      "limitations": [
+        "No alightings, onboard loads, OD or individual journey duration.",
+        "Boardings alone cannot recover people crossing a screenline.",
+        "Monthly weekday/hour averages do not identify the actual DOT count days.",
+        "Unavailable estimates may be null; do not replace them with zero.",
+        "Stop and route changes require verification."
+      ],
+      "urls": [
+        "https://data.ny.gov/d/fvdm-uavx",
+        "https://data.ny.gov/resource/fvdm-uavx.json"
+      ],
+      "tests": [
+        "bus-stop-b62-coverage.json"
+      ],
+      "fields": [
+        "month",
+        "weekday",
+        "day_type",
+        "hour",
+        "route_id",
+        "trip_type",
+        "stop_id",
+        "direction_id",
+        "stop_sequence",
+        "estimated_ridership"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "mta-bus-segment",
+      "name": "MTA Bus Segment Speeds",
+      "status": "live_corridor_coverage_acquired",
+      "observation": "Average actual bus segment running times and the number of bus trips supporting each estimate.",
+      "coverage": {
+        "B62_2023": {
+          "months": "1–12",
+          "rows": 24227,
+          "timepoints": 13
+        },
+        "B62_2024": {
+          "months": "1–12",
+          "rows": 24340,
+          "timepoints": 13
+        },
+        "B62_2025": {
+          "months": "1–12",
+          "rows": 25305,
+          "timepoints": 15
+        },
+        "B62_2026": {
+          "months": "1–9",
+          "rows": 18403,
+          "timepoints": 12
+        },
+        "distinct_months_verified": {
+          "2023": 12,
+          "2024": 12,
+          "2025": 12,
+          "2026": 9
+        }
+      },
+      "join": "Freeze timepoint pair, direction and route, then join month, weekday and hour. Check whether each pair crosses the converted section. Weight by bus_trip_count for a bus-trip mean; passenger weighting requires onboard loads. B62 is a candidate nearby/substitution service; this test has not established that any pair traverses the converted McGuinness section.",
+      "usable_claim": "A bus running-time component of a controlled event study.",
+      "limitations": [
+        "Not passenger-weighted without onboard loads.",
+        "Timepoint pairs may extend beyond the converted road section.",
+        "Excludes access, waiting, transfers and egress.",
+        "The number of B62 timepoints changes in 2025 and 2026.",
+        "Monthly summaries do not expose individual bus trips."
+      ],
+      "urls": [
+        "https://data.ny.gov/d/58t6-89vi",
+        "https://data.ny.gov/d/kufs-yh3x"
+      ],
+      "tests": [
+        "b62-segment-2023-2024.json",
+        "b62-segment-2025-2026.json",
+        "bus-segment-schema.json",
+        "b62-distinct-months-2023-24.json",
+        "b62-distinct-months-2025-26.json"
+      ],
+      "fields": [
+        "year",
+        "month",
+        "day_of_week",
+        "hour_of_day",
+        "route_id",
+        "direction",
+        "timepoint_stop_id",
+        "next_timepoint_stop_id",
+        "road_distance",
+        "average_travel_time",
+        "average_road_speed",
+        "bus_trip_count"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "mta-subway-od",
+      "name": "MTA Subway Origin-Destination Estimates",
+      "status": "live_schema_sample_acquired",
+      "observation": "Modeled average OD ridership, rather than observed tap-outs or onboard train loads.",
+      "coverage": {
+        "years": "Annual partitions cover 2021–2026.",
+        "live_sample": "The 2026 API returned an estimated 3.0985 average riders for origin complex 455 to destination 610 in May, Mondays at 14:00.",
+        "grain": "Month × weekday × hour × origin complex × destination complex"
+      },
+      "join": "Complex IDs and station geometry define baseline OD exposure to the corridor. Use the same monthly weekday/hour grouping as buses. A separate route-assignment model is required for train-line or screenline crossings.",
+      "usable_claim": "Changes in potentially substitutable subway OD demand, with exposure and destination inference stated explicitly.",
+      "limitations": [
+        "Destinations are inferred from the same card’s next or previous subway taps, up to five days away.",
+        "No observed route, line, transfers, journey duration or access/egress.",
+        "The timestamp is a representative calendar label, not an individual trip date.",
+        "Do not add nearby station entries or all OD trips to road crossings.",
+        "These records do not identify individual car-to-subway switches."
+      ],
+      "urls": [
+        "https://data.ny.gov/d/28vm-gjqr",
+        "https://data.ny.gov/d/y2qv-fytt",
+        "https://data.ny.gov/d/jsu2-fbtj",
+        "https://data.ny.gov/d/uhf3-t34z",
+        "https://data.ny.gov/d/nqnz-e9z9",
+        "https://data.ny.gov/d/rapa-97zv"
+      ],
+      "tests": [
+        "subway-od-sample.json"
+      ],
+      "fields": [
+        "origin_station_complex_id",
+        "destination_station_complex_id",
+        "year",
+        "month",
+        "day_of_week",
+        "hour_of_day",
+        "estimated_average_ridership"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "tlc-hvfhs",
+      "name": "TLC High-Volume For-Hire Service trips",
+      "status": "parent_acquired_fixed_OD_sample",
+      "observation": "Observed request, pickup and drop-off timestamps and taxi-zone OD for completed bookings.",
+      "coverage": {
+        "beginning": "February 2019",
+        "parent_sample": "May 1–7, 2023 and 2024, Greenpoint zone 112 ↔ Long Island City/Hunters Point zones 145 and 146. Parent acquired 4,589 / 7,315 rows, with 4,581 / 7,311 valid timings. This verifies data coverage and does not estimate an effect."
+      },
+      "join": "Fixed pickup-zone, drop-off-zone and request-time cells. Define likely exposure from baseline geography and the road network, not the unobserved actual route. Compare request-to-drop-off duration and pickup wait separately, with fixed OD/time composition.",
+      "usable_claim": "Elapsed taxi-service time among completed bookings in predetermined OD cells.",
+      "limitations": [
+        "Request to drop-off includes pickup wait and ride time, but excludes walking and canceled or unserved requests.",
+        "No exact occupancy, private-car population, persistent traveler ID or observed route.",
+        "A shared-match flag is not a passenger count.",
+        "The official dictionary documents on_scene_datetime for accessible vehicles only.",
+        "Changing selection into taxis prevents interpretation as the effect on all travelers."
+      ],
+      "urls": [
+        "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page",
+        "https://www.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_hvfhs.pdf",
+        "https://data.cityofnewyork.us/d/bqxa-629f"
+      ],
+      "tests": [
+        "ParentfixedODsample"
+      ],
+      "fields": [
+        "request_datetime",
+        "pickup_datetime",
+        "dropoff_datetime",
+        "PULocationID",
+        "DOLocationID",
+        "trip_miles",
+        "trip_time",
+        "shared_request_flag",
+        "shared_match_flag"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "tlc-yellow-green",
+      "name": "TLC Yellow and Green Taxi trips",
+      "status": "documented_public_download",
+      "observation": "Completed cab trip duration, distance and driver-reported passenger count.",
+      "coverage": {
+        "yellow": "Monthly bulk files from 2009.",
+        "green": "Files from 2013.",
+        "location": "Modern files use taxi zones; older files contain coordinates."
+      },
+      "join": "Fixed OD/time cells. Clean missing and implausible passenger_count before estimating person-weighted taxi ride time. Keep yellow, green and HVFHV populations separate.",
+      "usable_claim": "Taxi occupancy and taxi in-vehicle journey duration.",
+      "limitations": [
+        "Taxi occupancy does not represent private-car occupancy.",
+        "No observed route or complete door-to-door journey.",
+        "Passenger counts are driver-reported and may be missing, zero or implausible."
+      ],
+      "urls": [
+        "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page"
+      ],
+      "tests": [],
+      "fields": [
+        "pickup_datetime",
+        "dropoff_datetime",
+        "PULocationID",
+        "DOLocationID",
+        "passenger_count",
+        "trip_distance"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "nymtc-hubbound",
+      "name": "NYMTC Hub Bound Travel",
+      "status": "official_report_acquired_in_parent_work",
+      "observation": "Annual multimodal cordon counts, with occupancy estimates for motor vehicles.",
+      "coverage": {
+        "archive": "2007–2024 reports confirmed in the transport gateway; older reports are separately archived.",
+        "grain": "Typical fall weekday × hour × direction × sector or crossing × mode"
+      },
+      "join": "Use identical boundary locations, hours, directions and count periods. The multiple agency sources may use different dates. Manhattan bicycle counts at 50th Street and motor counts at 60th Street are different screenlines.",
+      "usable_claim": "An official multimodal boundary benchmark and occupancy prior.",
+      "limitations": [
+        "Sparse annual data are weak for a local corridor event study.",
+        "This is not a McGuinness neighborhood cordon.",
+        "Some person counts depend on occupancy assumptions.",
+        "Unmatched annual counts from different modes are not one simultaneous observation."
+      ],
+      "urls": [
+        "https://www.nymtc.org/hub-bound-travel",
+        "https://www.nymtc.org/hub-bound-travel-archive",
+        "https://tig22.nymtc.org/cat/Hub%20Bound"
+      ],
+      "tests": [],
+      "fields": [],
+      "priority": "context"
+    },
+    {
+      "id": "bike-counters-citibike",
+      "name": "DOT bicycle counters and Citi Bike trip records",
+      "status": "existing_project_acquired",
+      "observation": "All-bike crossings at fixed counters; separately, completed Citi Bike trips with start/end coordinates and times.",
+      "coverage": {
+        "bike_counters": "Coverage and downtime vary by physical counter. Confirm placement against the treatment.",
+        "Citi_Bike": "Monthly trip files from 2013. Current schema provides start/end times, stations, coordinates, bicycle type and membership category."
+      },
+      "join": "Counter to fixed screenline/hour. Citi Bike OD to fixed station catchments or explicitly modeled routes. Calibrate Citi Bike share only against a matched all-bike counter at the same site, hour and date.",
+      "usable_claim": "Observed bicycle crossings where a counter exists; Citi Bike demand and elapsed ride duration.",
+      "limitations": [
+        "Citi Bike OD does not reveal the actual route.",
+        "Citi Bike’s share varies by place, time, bike type and rider composition.",
+        "Current public trip files lack age and gender; older demographic fields have missingness and bias.",
+        "Ride duration excludes walking and waiting, and can include intermediate stops.",
+        "Station expansion and capacity changes can affect observed demand."
+      ],
+      "urls": [
+        "https://citibikenyc.com/system-data",
+        "https://www.nyc.gov/html/dot/html/about/datafeeds.shtml#Bikes"
+      ],
+      "tests": [],
+      "fields": [
+        "ride_id",
+        "rideable_type",
+        "started_at",
+        "ended_at",
+        "start_station_id",
+        "end_station_id",
+        "start_lat",
+        "start_lng",
+        "end_lat",
+        "end_lng",
+        "member_casual"
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "cms-panel",
+      "name": "NYC Citywide Mobility Survey and restricted spatial diaries",
+      "status": "public_microdata_acquired_in_parent_work",
+      "observation": "Weighted person and journey diaries with demographics, mainly repeated cross-sections.",
+      "coverage": {
+        "waves": "2017/2018 used one-day diaries; 2019/2022/2024 offered up to seven days in an opt-in app.",
+        "field_2024": "May 6–June 22, 2024.",
+        "recontact_2020": "Recontacted 2019 respondents without a new trip diary.",
+        "detailed_spatial": "2019 and 2022 detailed spatial data require a TSDC application."
+      },
+      "join": "Person, day, journey and leg IDs, with provided survey weights. Public geography is coarse; restricted OD is needed for credible local corridor exposure.",
+      "usable_claim": "Citywide journey-duration components and mode/demographic heterogeneity.",
+      "limitations": [
+        "The public waves are not a same-person before/after lane-conversion panel.",
+        "Public exact locations are removed and local corridor samples are small.",
+        "Check eligibility before claiming coverage of children or nonresident through-travelers.",
+        "Missing access/egress is not zero.",
+        "The 2024 field period precedes the late-2024 McGuinness conversion."
+      ],
+      "urls": [
+        "https://www.nyc.gov/html/dot/html/about/citywide-mobility-survey.shtml",
+        "https://www.nlr.gov/transportation/secure-transportation-data/tsdc-cleansed-data/2019-and-2022-new-york-city-citywide-mobility-survey"
+      ],
+      "tests": [],
+      "fields": [],
+      "priority": "context"
+    },
+    {
+      "id": "commercial-probe",
+      "name": "NPMRDS / INRIX historical road travel times",
+      "status": "restricted_or_published_aggregate_only",
+      "observation": "Probe-based road segment travel time.",
+      "coverage": {
+        "NPMRDS": "Historical five-minute TMC road-segment data, subject to eligible agency/RITIS access and license terms.",
+        "INRIX": "DOT’s April 2026 McGuinness report publishes October/November comparisons for 2019, 2023, 2024 and 2025; raw commercial records have not been acquired."
+      },
+      "join": "Versioned TMC or INRIX segment geometry to fixed treated and diversion corridors, then identical time windows. Validate sample coverage and segment changes.",
+      "usable_claim": "Road segment time and reliability.",
+      "limitations": [
+        "No occupancy or private-car person-minutes.",
+        "Not complete door-to-door journeys.",
+        "Creating an MTA account does not confer commercial probe-data access.",
+        "Published comparisons do not provide a raw date-level donor panel."
+      ],
+      "urls": [
+        "https://ops.fhwa.dot.gov/publications/fhwahop20028/",
+        "https://www.ritis.org/access",
+        "https://auth.ritis.org/npmrds",
+        "https://www.nyc.gov/html/dot/downloads/pdf/mcguinness-blvd-calyer-st-freeman-st-apr2026.pdf"
+      ],
+      "tests": [],
+      "fields": [],
+      "priority": "high"
+    }
+  ],
+  "requirements": [
+    {
+      "need": "Treatment assignment and activation",
+      "ideal": "Randomize the rollout of preapproved corridors, with actual installation and opening dates.",
+      "available": "Official plans, completion announcements and street geometry.",
+      "gap": "Assignment is not random; site selection and prior trends may confound comparisons.",
+      "action": "Freeze the lane-conversion registry, activation dates and comparison pool before inspecting outcomes."
+    },
+    {
+      "need": "Total person-throughput",
+      "ideal": "Simultaneous all-mode person crossings across a fixed closed boundary, including parallel streets and rail.",
+      "available": "Bicycle and vehicle counters, bus boardings, modeled subway OD and annual Hub Bound reports.",
+      "gap": "Private-car occupancy, bus loads and all-mode counts aligned to the same boundary and hours.",
+      "action": "Obtain raw DOT count dates and records, a paired occupancy sample, and MTA onboard APC. Do not add unrelated station entries."
+    },
+    {
+      "need": "Complete journey duration",
+      "ideal": "Follow the same baseline population and fixed OD cells from door departure to arrival, including wait, parking, walking and transfers; record canceled or suppressed trips.",
+      "available": "Citi Bike ride time, TLC request-to-drop-off time, bus segment time, road probes and survey diary legs.",
+      "gap": "No recovered all-mode same-person before/after door-to-door panel at McGuinness.",
+      "action": "Report component-specific effects separately. Collect a recruited or consented app travel panel for the complete outcome."
+    },
+    {
+      "need": "Credible counterfactual",
+      "ideal": "Randomized assignment or a lottery, with multiple independent corridors and spillover buffers.",
+      "available": "Untreated or later-treated corridors and historical outcomes.",
+      "gap": "Project selection and post-hoc matching may create bias.",
+      "action": "Use a preregistered matched or staggered event study with held-out pre-period validation, network exclusions, placebo dates and sensitivity to nonparallel trends."
+    },
+    {
+      "need": "Network substitution",
+      "ideal": "Observe all routes and modes for the baseline population, including people who switch modes.",
+      "available": "Fixed taxi OD, subway OD, bus summaries and nearby road counts.",
+      "gap": "No individual cross-mode linkage; diverted traffic can look like vanished traffic.",
+      "action": "Freeze the boundary and OD exposure before treatment. Estimate corridor, nearby network and wider-area effects separately."
+    },
+    {
+      "need": "Confounding shocks",
+      "ideal": "Random assignment plus complete weather, service and construction records.",
+      "available": "Weather, calendars, MTA service changes and GTFS, permits and official project records.",
+      "gap": "G train shutdowns, congestion pricing, bus route changes and later McGuinness phases overlap parts of the study window.",
+      "action": "Predefine exclusions or strata. Do not adjust away post-treatment mode choice, which is part of the mechanism."
+    }
+  ],
+  "non_negotiable_rules": [
+    "Specify the estimand, population, boundary, calendar and comparison before fitting.",
+    "Never turn missing data or failed API requests into zeros or proof of absence.",
+    "Label subway destinations, route assignment, occupancy and Citi Bike expansion factors as models.",
+    "Many trips are not many independently treated corridors.",
+    "Track access and canceled trips so reduced travel from unmet demand is not automatically called an improvement.",
+    "Count each crossing once per boundary; combine journey times only with compatible population weights."
+  ]
+}

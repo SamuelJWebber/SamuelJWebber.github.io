@@ -1,0 +1,57 @@
+{
+  "methods": {
+    "unit": "Minutes per train end-to-end on published revenue-service patterns; fixed baseline train-count weighting.",
+    "match_key": [
+      "Calendar month",
+      "Reporting line",
+      "Railroad direction",
+      "Departure time period",
+      "Exact ordered GTFS stop sequence"
+    ],
+    "scope": "Primary scope requires the exact service path to stop in both Brooklyn and Manhattan. Runtime is still the full train path, which may extend into Queens or Bronx; it is not only the East River crossing or a Brooklyn–Manhattan passenger journey.",
+    "pairwise": "Within each requested line/period/month window, intersect cells in baseline and target years. Normalize baseline actual_trains on that intersection and apply the same weights to both actual runtime means. Pairwise baskets can differ by year pair; do not splice them into a fixed-basket time series.",
+    "balanced_series": "Intersect exact cells across all five selected years. Hold 2019 actual train weights fixed for all five. Month is part of the key, fixing season and baseline month weights. No support yields null, never zero.",
+    "raw_comparator": "Each year’s actual_train-weighted mean over all eligible published paths in the same calendar months. Differences combine runtime, route length, service pattern and train-weight changes, so raw means are a composition diagnostic.",
+    "coverage": "Matched share is matched actual_trains / all eligible published actual_trains for that scope, line, period and calendar-month window. It is not coverage of all trains that operated; source exclusions apply. Both baseline and target shares are supplied.",
+    "actual_scheduled_diagnostic": "Sum retained actual_trains and scheduled_trains for eligible published cells with a valid schedule. Their ratio is only a diagnostic: missing observations, source filtering, schedule differences and actual service can all affect it. It is not a cancellation rate, a service-delivery measure, or proof of complete actual-data capture. Some June 2021 B Division lines have ratios near one third; matching their published paths does not repair this possible sample selection.",
+    "aliases": "Combine official path IDs only if reporting line, direction and every ordered GTFS stop match exactly. Alias runtime means use actual train counts; schedule means use scheduled train counts. No approximate stop or endpoint-only matching.",
+    "schedule_comparison": "Schedule means use baseline actual-train weights on matched cells with valid schedules in both years; scheduled_support_weight_share identifies this possibly smaller support. These are schedules, distinct from actual runtimes.",
+    "missingness": "Source excludes cancellations, unscheduled skips/reroutes, trips >=250 min, very small/implausible path samples, missing distance, most <3-stop patterns and unmatched L schedules; no missing value is treated as zero.",
+    "time_periods": {
+      "am_peak": "AM peak: first departure 06:00–08:59",
+      "pm_peak": "PM peak: first departure 15:00–18:59",
+      "midday": "Midday: 09:00–14:59",
+      "evening": "Evening: 19:00–22:59",
+      "overnight": "Overnight: 23:00–05:59",
+      "peak_combined": "AM 06:00–09:00 plus PM 15:00–19:00",
+      "all_periods": "All five departure periods"
+    },
+    "inference_limits": [
+      "Train-weighted, not passenger-weighted or door-to-door; excludes platform wait, access walk, transfer wait and terminal layover, includes intermediate station dwell.",
+      "Weekday is schedule day type; some holidays use weekend schedules.",
+      "MTA timestamps derive from calibrated ATS/PLC/CBTC/beacon/I-TRAC observations with corrections/interpolation. B Division sources changed around 2019–2020; before/after is not pure mechanical performance change.",
+      "No causal lane-conversion effect or individual modal substitution is estimated. Runtime periods differ from OD AM 07–10 and PM16–19, so they are not merged.",
+      "Aggregated means cannot provide trip-level variance or valid sampling confidence intervals; weighted path quantiles are not reported as system quantiles."
+    ]
+  },
+  "coverage": {
+    "source_runtime_rows": 36755,
+    "source_path_stop_rows": 111123,
+    "source_unique_paths": 3399,
+    "source_duplicate_keys": 0,
+    "unmapped_runtime_paths": 0,
+    "unmapped_station_ids": 0,
+    "included_tidy_cells": 26355,
+    "included_unique_canonical_paths": 1502,
+    "canonical_paths_with_multiple_official_ids": 8,
+    "latest_month_2026": 9,
+    "latest_published_month": "2026-09",
+    "source_metadata_updated_utc": "2026-10-23T15:13:37+00:00"
+  },
+  "sources": {
+    "runtime": "https://data.ny.gov/d/sp9g-mzjh",
+    "paths": "https://data.ny.gov/d/tdmq-asac",
+    "stations": "https://data.ny.gov/d/39hk-dx4f",
+    "runtime_overview": "https://data.ny.gov/api/views/sp9g-mzjh/files/60d0d13e-fb31-44c7-875c-3052a0242042?download=true&filename=MTA_SubwayEndToEndRunningTimes_Overview.pdf"
+  }
+}

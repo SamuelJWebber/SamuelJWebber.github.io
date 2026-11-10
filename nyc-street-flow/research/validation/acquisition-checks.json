@@ -1,0 +1,14 @@
+{
+  "checked_on": "2026-11-06",
+  "passed": true,
+  "ledger_entries": 36,
+  "city_packages": 8,
+  "checks": [
+    "Dashboard and downloadable ledger agree",
+    "Every bundle target exists",
+    "ZIP CRC and gzip integrity",
+    "Restricted original TransLink reports excluded",
+    "Provisional Cambridge comparisons excluded"
+  ],
+  "scope": "Acquisition and presentation checks, not causal validation."
+}

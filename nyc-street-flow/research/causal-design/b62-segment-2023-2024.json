@@ -1,0 +1,19 @@
+{
+  "url": "https://data.ny.gov/resource/58t6-89vi.json?%24select=year%2Cmin%28month%29+as+first_month%2Cmax%28month%29+as+last_month%2Ccount%28%2A%29+as+rows%2Ccount%28distinct+timepoint_stop_id%29+as+timepoints&%24where=route_id%3D%27B62%27&%24group=year",
+  "rows": [
+    {
+      "year": "2023",
+      "first_month": "1",
+      "last_month": "12",
+      "rows": "24227",
+      "timepoints": "13"
+    },
+    {
+      "year": "2024",
+      "first_month": "1",
+      "last_month": "12",
+      "rows": "24340",
+      "timepoints": "13"
+    }
+  ]
+}

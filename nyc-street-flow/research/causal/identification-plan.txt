@@ -1,0 +1,110 @@
+﻿IDENTIFICATION AND DATA-ACCEPTANCE PLAN
+Author: Samuel Webber
+Prepared: November 5, 2026
+Status: Prospective plan. Initial NYC DOT A1 and NYSDOT C requests sent November 5, 2026; agency receipt not yet verified. MTA B1 prepared, submission pending. Follow-ups remain drafts. No fees authorized.
+Existing aggregate outcomes have already been examined. This is a prospective
+protocol for additional records, not a retroactive preregistration.
+
+PURPOSE AND ESTIMANDS
+
+1. Third Avenue: estimate the effect of the 2023 street package on actual bus
+   segment runtime and, only if contemporary loads exist, passenger-weighted
+   in-vehicle time. The package includes bus/bicycle lanes, intersection changes
+   and signal priority; these data do not isolate a bicycle-lane-only effect.
+2. Person flow: count all people crossing a stated boundary in the same direction,
+   dates and hours. Vehicle counts, bus boardings and station entries are not
+   interchangeable with motor occupants, onboard passengers or complete journeys.
+3. McGuinness station 021284: assess motor counts at the verified detector
+   location. Unless metadata proves otherwise, this is an approach-corridor
+   outcome, not Pulaski Bridge throughput.
+
+STAGED ACQUISITION
+
+Request existing indexes, dictionaries, implementation histories and small samples
+first. Use the coverage response to specify exact site/stop IDs, dates and fields
+for a second-stage extract. Preserve the original files, retrieval dates, URLs,
+agency correspondence and hashes. Do not authorize fees, infer an agency's
+agreement, or submit requests automatically. Missing retained records remain
+missing; the drafts ask for no new collection or analysis.
+
+ACCEPTANCE GATES
+
+A. Geography and treatment timing
+   Verify fixed coordinates, direction, lanes and endpoints over time. Third
+   Avenue E67–E97 is a 1.472-mile published bus segment extending one block beyond
+   the E59–E96 project. Keep that distinction. Obtain dated work/signal/stop logs
+   before finalizing the treatment date and construction exclusion. For Pulaski,
+   do not substitute the bicycle opening for the permanent motor-lane closure.
+
+B. Measurement validity
+   Require documented units, time zone/DST handling, actual collection dates,
+   sampling/expansion, missingness, revisions and quality flags. Check duplicate
+   intervals, direction coding and channel continuity. A day with 24 values or
+   96 quarter-hour rows is not automatically a functioning sensor day. Do not
+   interpret unexplained zeros as real low traffic, or fill them by interpolation.
+   Record valid-hour coverage by month and direction before comparing outcomes.
+
+C. A compatible counting boundary
+   Join modes only when boundaries, dates, hours and directions match. Keep nearby
+   or different-date observations separate. Check whether vehicle totals already
+   include buses and whether occupancy includes drivers. For bus time burdens,
+   use onboard loads for the relevant segment/time; boarding counts alone cannot
+   establish those loads. Do not count a transferring passenger twice at a single
+   screenline or multiply passenger-weighted totals by passengers a second time.
+
+D. Counterfactual eligibility
+   Treat Lexington, First, Madison and the adjoining Third Avenue segments as
+   candidates. Screen their project, signal, stop, construction and service logs
+   for concurrent changes and possible diversion. Examine monthly pre-treatment
+   differences and placebo dates using 2022 plus the uncontaminated 2023 period
+   if retained. Use longer prehistory to test stability, not to select whichever
+   comparison gives the most favorable post-treatment effect. Freeze the retained
+   comparison set, windows and weighting before inspecting newly acquired post
+   outcomes. Six pre months or a nonsignificant pre-trend test cannot prove
+   parallel trends. If controls fail, report descriptive changes and bounds.
+
+E. Weighting and uncertainty
+   Hold baseline route/service, weekday, clock-hour and calendar-month composition
+   fixed when comparing segment times. Report actual-mix estimates separately.
+   Distinguish bus-run weighting from passenger weighting. Where passenger loads
+   are sampled or inferred, retain their expansion and measurement uncertainty.
+   Do not treat many trips on one treated corridor as independent interventions.
+   Account for temporal dependence; show month/day-level sensitivity and control
+   sensitivity. With few intervention units, avoid confident causal p-values.
+
+DECISION RULES
+
+- All gates supported: estimate the explicitly scoped package/segment effect with
+  uncertainty, sensitivity and remaining assumptions. A measured segment effect
+  is not automatically a whole-journey or total-network effect.
+- Operations records available but loads absent: report bus-run time changes;
+  passenger-minute totals remain unidentified or explicitly bounded.
+- Aligned mode counts incomplete: report each observed mode separately. Apply
+  occupancy, missing-mode and counterfactual bounds with labeled restrictions.
+  Report a sign only if the entire justified interval lies on one side of zero.
+  A scenario range selected by the analyst is not a data-established bound.
+- Sensor relocation, treatment date, quality or counterfactual unresolved: retain
+  a descriptive result, downgrade the causal claim, and identify the failed gate.
+
+GAPS THESE REQUESTS CANNOT REMOVE BY THEMSELVES
+
+Onboard bus time excludes access, waiting, transfers and egress. Road detectors
+exclude travelers using other streets, rail or ferries and do not identify who
+changed modes. Repeated aggregate counts do not follow the same people or reveal
+newly enabled, suppressed or rerouted journeys. PPW bus relocation may move a
+passenger to 7th Avenue without reducing travel across a wider Park Slope boundary.
+
+A complete all-traveler claim still needs a defined network boundary with aligned
+walking, cycling, motor-occupant and transit passenger observations, plus a credible
+counterfactual. Whole-journey time and switching require an existing suitable
+linked traveler study or a separately designed prospective survey, with comparable
+origins, destinations, departure times and purposes. These requests neither
+create that survey nor convert the NYC resident-only mobility diary into a panel
+of all corridor users. No personal identifiers are requested.
+
+OFFICIAL REQUEST GUIDANCE CHECKED NOVEMBER 5, 2026
+https://www.nyc.gov/html/dot/html/about/foil.shtml
+https://www.mta.info/transparency/foil
+https://www.dot.ny.gov/main/foil-form-challenge
+
+Companion file: records-requests.txt

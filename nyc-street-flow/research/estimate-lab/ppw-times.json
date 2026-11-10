@@ -1,0 +1,868 @@
+{
+  "title": "Prospect Park West 2010: controlled travel-time reanalysis from released run-level data",
+  "checked_on": "2026-11-05",
+  "source_url": "https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf",
+  "source_sha256": "226ad765e8fcc59cb3e575dd228be89005b904e5d746c344613975f59e0c1825",
+  "treatment": {
+    "implemented": "June 2010",
+    "moving_lanes_before": 3,
+    "moving_lanes_after": 2,
+    "package": [
+      "two-way protected bicycle path",
+      "signal retiming",
+      "pedestrian islands",
+      "loading changes"
+    ],
+    "concurrent_bus_change": "B69 rerouted from PPW southbound / 8th Avenue northbound to 7th Avenue effective June 27, 2010; separate MTA service change, not isolated bike-lane treatment. B67/B69 weekday frequencies and B69 span were also reduced; net bus-traffic change cannot be inferred from route relocation alone.",
+    "bus_change_source": "https://web.archive.org/web/20241003113136id_/http://web.mta.info/mta/news/books/docs/NYCT_2010_Service_Reduction_Evaluation.pdf",
+    "bus_change_source_pages": {
+      "effective_date_pdf_page": 4,
+      "effective_date_printed_page": "2",
+      "route_change_pdf_page": 47,
+      "route_change_printed_page": "B-18"
+    },
+    "bus_change_source_status": "MTA September 23, 2011 primary evaluation downloaded by companion analyst; pages 4 and 47 independently read locally."
+  },
+  "extraction": {
+    "method": "pdftotext -layout, anchored complete-row regular expression; m.ss interpreted as minutes:seconds, never decimal minutes",
+    "source_pdf_pages": [
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59
+    ],
+    "summary_pdf_page": 51,
+    "total_runs": 416,
+    "weekday_runs": 384,
+    "Saturday_runs_excluded_from_primary": 32,
+    "before_weekdays": [
+      "2010-05-11",
+      "2010-05-12"
+    ],
+    "after_weekdays": [
+      "2010-10-19",
+      "2010-10-20"
+    ],
+    "all_route_period_panels_complete": true
+  },
+  "estimator": "Difference of before/after travel-time changes, equal weighting of paired weekday \u00d7 departure-clock slots; equal route weights when controls pooled.",
+  "outcome": "Seconds per instrumented motor-vehicle corridor run between Union St and 15 St; excludes access, parking, traveler counts, bicycle and bus journey times.",
+  "summaries": [
+    {
+      "route": "PPW",
+      "window": "daily_07_19",
+      "before_runs": 48,
+      "after_runs": 48,
+      "before_mean_seconds": 173.72916666666666,
+      "after_mean_seconds": 166.60416666666666,
+      "change_seconds": -7.125,
+      "published_before_seconds": 174,
+      "published_after_seconds": 167,
+      "before_error_vs_published_seconds": -0.2708333333333428,
+      "after_error_vs_published_seconds": -0.3958333333333428
+    },
+    {
+      "route": "PPW",
+      "window": "am_07_10",
+      "before_runs": 12,
+      "after_runs": 12,
+      "before_mean_seconds": 154.66666666666666,
+      "after_mean_seconds": 162,
+      "change_seconds": 7.333333333333343,
+      "published_before_seconds": 155,
+      "published_after_seconds": 162,
+      "before_error_vs_published_seconds": -0.3333333333333428,
+      "after_error_vs_published_seconds": 0
+    },
+    {
+      "route": "PPW",
+      "window": "midday_10_14",
+      "before_runs": 16,
+      "after_runs": 16,
+      "before_mean_seconds": 173.5625,
+      "after_mean_seconds": 164.125,
+      "change_seconds": -9.4375,
+      "published_before_seconds": 174,
+      "published_after_seconds": 164,
+      "before_error_vs_published_seconds": -0.4375,
+      "after_error_vs_published_seconds": 0.125
+    },
+    {
+      "route": "PPW",
+      "window": "pm_16_19",
+      "before_runs": 12,
+      "after_runs": 12,
+      "before_mean_seconds": 183.41666666666666,
+      "after_mean_seconds": 179.25,
+      "change_seconds": -4.166666666666657,
+      "published_before_seconds": 183,
+      "published_after_seconds": 179,
+      "before_error_vs_published_seconds": 0.4166666666666572,
+      "after_error_vs_published_seconds": 0.25
+    },
+    {
+      "route": "6 Ave",
+      "window": "daily_07_19",
+      "before_runs": 48,
+      "after_runs": 48,
+      "before_mean_seconds": 259.75,
+      "after_mean_seconds": 258.4166666666667,
+      "change_seconds": -1.3333333333333144,
+      "published_before_seconds": 260,
+      "published_after_seconds": 258,
+      "before_error_vs_published_seconds": -0.25,
+      "after_error_vs_published_seconds": 0.4166666666666856
+    },
+    {
+      "route": "6 Ave",
+      "window": "am_07_10",
+      "before_runs": 12,
+      "after_runs": 12,
+      "before_mean_seconds": 250.83333333333334,
+      "after_mean_seconds": 231.5,
+      "change_seconds": -19.333333333333343,
+      "published_before_seconds": 251,
+      "published_after_seconds": 232,
+      "before_error_vs_published_seconds": -0.1666666666666572,
+      "after_error_vs_published_seconds": -0.5
+    },
+    {
+      "route": "6 Ave",
+      "window": "midday_10_14",
+      "before_runs": 16,
+      "after_runs": 16,
+      "before_mean_seconds": 261,
+      "after_mean_seconds": 254.9375,
+      "change_seconds": -6.0625,
+      "published_before_seconds": 261,
+      "published_after_seconds": 255,
+      "before_error_vs_published_seconds": 0,
+      "after_error_vs_published_seconds": -0.0625
+    },
+    {
+      "route": "6 Ave",
+      "window": "pm_16_19",
+      "before_runs": 12,
+      "after_runs": 12,
+      "before_mean_seconds": 248.41666666666666,
+      "after_mean_seconds": 273.1666666666667,
+      "change_seconds": 24.75000000000003,
+      "published_before_seconds": 248,
+      "published_after_seconds": 273,
+      "before_error_vs_published_seconds": 0.4166666666666572,
+      "after_error_vs_published_seconds": 0.16666666666668561
+    },
+    {
+      "route": "7 Ave",
+      "window": "daily_07_19",
+      "before_runs": 48,
+      "after_runs": 48,
+      "before_mean_seconds": 324.6666666666667,
+      "after_mean_seconds": 353.375,
+      "change_seconds": 28.708333333333314,
+      "published_before_seconds": 325,
+      "published_after_seconds": 353,
+      "before_error_vs_published_seconds": -0.3333333333333144,
+      "after_error_vs_published_seconds": 0.375
+    },
+    {
+      "route": "7 Ave",
+      "window": "am_07_10",
+      "before_runs": 12,
+      "after_runs": 12,
+      "before_mean_seconds": 261.8333333333333,
+      "after_mean_seconds": 332.3333333333333,
+      "change_seconds": 70.5,
+      "published_before_seconds": 262,
+      "published_after_seconds": 332,
+      "before_error_vs_published_seconds": -0.16666666666668561,
+      "after_error_vs_published_seconds": 0.3333333333333144
+    },
+    {
+      "route": "7 Ave",
+      "window": "midday_10_14",
+      "before_runs": 16,
+      "after_runs": 16,
+      "before_mean_seconds": 355.5625,
+      "after_mean_seconds": 390.0625,
+      "change_seconds": 34.5,
+      "published_before_seconds": 356,
+      "published_after_seconds": 390,
+      "before_error_vs_published_seconds": -0.4375,
+      "after_error_vs_published_seconds": 0.0625
+    },
+    {
+      "route": "7 Ave",
+      "window": "pm_16_19",
+      "before_runs": 12,
+      "after_runs": 12,
+      "before_mean_seconds": 310.6666666666667,
+      "after_mean_seconds": 338.6666666666667,
+      "change_seconds": 28.0,
+      "published_before_seconds": 311,
+      "published_after_seconds": 339,
+      "before_error_vs_published_seconds": -0.3333333333333144,
+      "after_error_vs_published_seconds": -0.3333333333333144
+    },
+    {
+      "route": "8 Ave",
+      "window": "daily_07_19",
+      "before_runs": 48,
+      "after_runs": 48,
+      "before_mean_seconds": 255.0625,
+      "after_mean_seconds": 237.02083333333334,
+      "change_seconds": -18.041666666666657,
+      "published_before_seconds": 255,
+      "published_after_seconds": 237,
+      "before_error_vs_published_seconds": 0.0625,
+      "after_error_vs_published_seconds": 0.020833333333342807
+    },
+    {
+      "route": "8 Ave",
+      "window": "am_07_10",
+      "before_runs": 12,
+      "after_runs": 12,
+      "before_mean_seconds": 259.9166666666667,
+      "after_mean_seconds": 245.08333333333334,
+      "change_seconds": -14.833333333333343,
+      "published_before_seconds": 260,
+      "published_after_seconds": 245,
+      "before_error_vs_published_seconds": -0.08333333333331439,
+      "after_error_vs_published_seconds": 0.08333333333334281
+    },
+    {
+      "route": "8 Ave",
+      "window": "midday_10_14",
+      "before_runs": 16,
+      "after_runs": 16,
+      "before_mean_seconds": 253.5625,
+      "after_mean_seconds": 207.8125,
+      "change_seconds": -45.75,
+      "published_before_seconds": 254,
+      "published_after_seconds": 208,
+      "before_error_vs_published_seconds": -0.4375,
+      "after_error_vs_published_seconds": -0.1875
+    },
+    {
+      "route": "8 Ave",
+      "window": "pm_16_19",
+      "before_runs": 12,
+      "after_runs": 12,
+      "before_mean_seconds": 249.91666666666666,
+      "after_mean_seconds": 247.08333333333334,
+      "change_seconds": -2.8333333333333144,
+      "published_before_seconds": 250,
+      "published_after_seconds": 247,
+      "before_error_vs_published_seconds": -0.08333333333334281,
+      "after_error_vs_published_seconds": 0.08333333333334281
+    }
+  ],
+  "date_route_means": [
+    {
+      "date": "2010-05-11",
+      "weekday": "Tuesday",
+      "period": "before",
+      "route": "PPW",
+      "runs": 24,
+      "mean_seconds": 166.95833333333334
+    },
+    {
+      "date": "2010-05-11",
+      "weekday": "Tuesday",
+      "period": "before",
+      "route": "6 Ave",
+      "runs": 24,
+      "mean_seconds": 250.04166666666666
+    },
+    {
+      "date": "2010-05-11",
+      "weekday": "Tuesday",
+      "period": "before",
+      "route": "7 Ave",
+      "runs": 24,
+      "mean_seconds": 331.25
+    },
+    {
+      "date": "2010-05-11",
+      "weekday": "Tuesday",
+      "period": "before",
+      "route": "8 Ave",
+      "runs": 24,
+      "mean_seconds": 257.4166666666667
+    },
+    {
+      "date": "2010-05-12",
+      "weekday": "Wednesday",
+      "period": "before",
+      "route": "PPW",
+      "runs": 24,
+      "mean_seconds": 180.5
+    },
+    {
+      "date": "2010-05-12",
+      "weekday": "Wednesday",
+      "period": "before",
+      "route": "6 Ave",
+      "runs": 24,
+      "mean_seconds": 269.4583333333333
+    },
+    {
+      "date": "2010-05-12",
+      "weekday": "Wednesday",
+      "period": "before",
+      "route": "7 Ave",
+      "runs": 24,
+      "mean_seconds": 318.0833333333333
+    },
+    {
+      "date": "2010-05-12",
+      "weekday": "Wednesday",
+      "period": "before",
+      "route": "8 Ave",
+      "runs": 24,
+      "mean_seconds": 252.70833333333334
+    },
+    {
+      "date": "2010-10-19",
+      "weekday": "Tuesday",
+      "period": "after",
+      "route": "PPW",
+      "runs": 24,
+      "mean_seconds": 168.66666666666666
+    },
+    {
+      "date": "2010-10-19",
+      "weekday": "Tuesday",
+      "period": "after",
+      "route": "6 Ave",
+      "runs": 24,
+      "mean_seconds": 260.375
+    },
+    {
+      "date": "2010-10-19",
+      "weekday": "Tuesday",
+      "period": "after",
+      "route": "7 Ave",
+      "runs": 24,
+      "mean_seconds": 351.7083333333333
+    },
+    {
+      "date": "2010-10-19",
+      "weekday": "Tuesday",
+      "period": "after",
+      "route": "8 Ave",
+      "runs": 24,
+      "mean_seconds": 235.125
+    },
+    {
+      "date": "2010-10-20",
+      "weekday": "Wednesday",
+      "period": "after",
+      "route": "PPW",
+      "runs": 24,
+      "mean_seconds": 164.54166666666666
+    },
+    {
+      "date": "2010-10-20",
+      "weekday": "Wednesday",
+      "period": "after",
+      "route": "6 Ave",
+      "runs": 24,
+      "mean_seconds": 256.4583333333333
+    },
+    {
+      "date": "2010-10-20",
+      "weekday": "Wednesday",
+      "period": "after",
+      "route": "7 Ave",
+      "runs": 24,
+      "mean_seconds": 355.0416666666667
+    },
+    {
+      "date": "2010-10-20",
+      "weekday": "Wednesday",
+      "period": "after",
+      "route": "8 Ave",
+      "runs": 24,
+      "mean_seconds": 238.91666666666666
+    }
+  ],
+  "controlled_changes": [
+    {
+      "window": "daily_07_19",
+      "control": "7th_same_direction",
+      "control_routes": [
+        "7 Ave"
+      ],
+      "treated_change_seconds": -7.125,
+      "control_change_seconds": 28.708333333333314,
+      "controlled_change_seconds": -35.833333333333314,
+      "paired_clock_weekday_cells": 48,
+      "Tuesday_controlled_change_seconds": -18.75,
+      "Wednesday_controlled_change_seconds": -52.916666666666664,
+      "causal_effect_identified": false
+    },
+    {
+      "window": "daily_07_19",
+      "control": "6th_reverse_direction",
+      "control_routes": [
+        "6 Ave"
+      ],
+      "treated_change_seconds": -7.125,
+      "control_change_seconds": -1.3333333333333144,
+      "controlled_change_seconds": -5.791666666666686,
+      "paired_clock_weekday_cells": 48,
+      "Tuesday_controlled_change_seconds": -8.625,
+      "Wednesday_controlled_change_seconds": -2.9583333333333335,
+      "causal_effect_identified": false
+    },
+    {
+      "window": "daily_07_19",
+      "control": "8th_reverse_direction",
+      "control_routes": [
+        "8 Ave"
+      ],
+      "treated_change_seconds": -7.125,
+      "control_change_seconds": -18.041666666666657,
+      "controlled_change_seconds": 10.916666666666657,
+      "paired_clock_weekday_cells": 48,
+      "Tuesday_controlled_change_seconds": 24,
+      "Wednesday_controlled_change_seconds": -2.1666666666666665,
+      "causal_effect_identified": false
+    },
+    {
+      "window": "daily_07_19",
+      "control": "all_three_equal",
+      "control_routes": [
+        "6 Ave",
+        "7 Ave",
+        "8 Ave"
+      ],
+      "treated_change_seconds": -7.125,
+      "control_change_seconds": 3.1111111111111143,
+      "controlled_change_seconds": -10.236111111111114,
+      "paired_clock_weekday_cells": 48,
+      "Tuesday_controlled_change_seconds": -1.1250000000000004,
+      "Wednesday_controlled_change_seconds": -19.34722222222222,
+      "causal_effect_identified": false
+    },
+    {
+      "window": "daily_07_19",
+      "control": "northbound_equal",
+      "control_routes": [
+        "6 Ave",
+        "8 Ave"
+      ],
+      "treated_change_seconds": -7.125,
+      "control_change_seconds": -9.687499999999986,
+      "controlled_change_seconds": 2.562499999999986,
+      "paired_clock_weekday_cells": 48,
+      "Tuesday_controlled_change_seconds": 7.6875,
+      "Wednesday_controlled_change_seconds": -2.5625,
+      "causal_effect_identified": false
+    },
+    {
+      "window": "am_07_10",
+      "control": "7th_same_direction",
+      "control_routes": [
+        "7 Ave"
+      ],
+      "treated_change_seconds": 7.333333333333343,
+      "control_change_seconds": 70.5,
+      "controlled_change_seconds": -63.16666666666666,
+      "paired_clock_weekday_cells": 12,
+      "Tuesday_controlled_change_seconds": -76.83333333333333,
+      "Wednesday_controlled_change_seconds": -49.5,
+      "causal_effect_identified": false
+    },
+    {
+      "window": "am_07_10",
+      "control": "6th_reverse_direction",
+      "control_routes": [
+        "6 Ave"
+      ],
+      "treated_change_seconds": 7.333333333333343,
+      "control_change_seconds": -19.333333333333343,
+      "controlled_change_seconds": 26.666666666666686,
+      "paired_clock_weekday_cells": 12,
+      "Tuesday_controlled_change_seconds": 54.666666666666664,
+      "Wednesday_controlled_change_seconds": -1.3333333333333333,
+      "causal_effect_identified": false
+    },
+    {
+      "window": "am_07_10",
+      "control": "8th_reverse_direction",
+      "control_routes": [
+        "8 Ave"
+      ],
+      "treated_change_seconds": 7.333333333333343,
+      "control_change_seconds": -14.833333333333343,
+      "controlled_change_seconds": 22.166666666666686,
+      "paired_clock_weekday_cells": 12,
+      "Tuesday_controlled_change_seconds": 14.166666666666666,
+      "Wednesday_controlled_change_seconds": 30.166666666666668,
+      "causal_effect_identified": false
+    },
+    {
+      "window": "am_07_10",
+      "control": "all_three_equal",
+      "control_routes": [
+        "6 Ave",
+        "7 Ave",
+        "8 Ave"
+      ],
+      "treated_change_seconds": 7.333333333333343,
+      "control_change_seconds": 12.111111111111105,
+      "controlled_change_seconds": -4.777777777777763,
+      "paired_clock_weekday_cells": 12,
+      "Tuesday_controlled_change_seconds": -2.666666666666667,
+      "Wednesday_controlled_change_seconds": -6.888888888888888,
+      "causal_effect_identified": false
+    },
+    {
+      "window": "am_07_10",
+      "control": "northbound_equal",
+      "control_routes": [
+        "6 Ave",
+        "8 Ave"
+      ],
+      "treated_change_seconds": 7.333333333333343,
+      "control_change_seconds": -17.083333333333343,
+      "controlled_change_seconds": 24.416666666666686,
+      "paired_clock_weekday_cells": 12,
+      "Tuesday_controlled_change_seconds": 34.416666666666664,
+      "Wednesday_controlled_change_seconds": 14.416666666666666,
+      "causal_effect_identified": false
+    },
+    {
+      "window": "midday_10_14",
+      "control": "7th_same_direction",
+      "control_routes": [
+        "7 Ave"
+      ],
+      "treated_change_seconds": -9.4375,
+      "control_change_seconds": 34.5,
+      "controlled_change_seconds": -43.9375,
+      "paired_clock_weekday_cells": 16,
+      "Tuesday_controlled_change_seconds": -14.625,
+      "Wednesday_controlled_change_seconds": -73.25,
+      "causal_effect_identified": false
+    },
+    {
+      "window": "midday_10_14",
+      "control": "6th_reverse_direction",
+      "control_routes": [
+        "6 Ave"
+      ],
+      "treated_change_seconds": -9.4375,
+      "control_change_seconds": -6.0625,
+      "controlled_change_seconds": -3.375,
+      "paired_clock_weekday_cells": 16,
+      "Tuesday_controlled_change_seconds": -6.625,
+      "Wednesday_controlled_change_seconds": -0.125,
+      "causal_effect_identified": false
+    },
+    {
+      "window": "midday_10_14",
+      "control": "8th_reverse_direction",
+      "control_routes": [
+        "8 Ave"
+      ],
+      "treated_change_seconds": -9.4375,
+      "control_change_seconds": -45.75,
+      "controlled_change_seconds": 36.3125,
+      "paired_clock_weekday_cells": 16,
+      "Tuesday_controlled_change_seconds": 60,
+      "Wednesday_controlled_change_seconds": 12.625,
+      "causal_effect_identified": false
+    },
+    {
+      "window": "midday_10_14",
+      "control": "all_three_equal",
+      "control_routes": [
+        "6 Ave",
+        "7 Ave",
+        "8 Ave"
+      ],
+      "treated_change_seconds": -9.4375,
+      "control_change_seconds": -5.770833333333333,
+      "controlled_change_seconds": -3.666666666666667,
+      "paired_clock_weekday_cells": 16,
+      "Tuesday_controlled_change_seconds": 12.916666666666666,
+      "Wednesday_controlled_change_seconds": -20.25,
+      "causal_effect_identified": false
+    },
+    {
+      "window": "midday_10_14",
+      "control": "northbound_equal",
+      "control_routes": [
+        "6 Ave",
+        "8 Ave"
+      ],
+      "treated_change_seconds": -9.4375,
+      "control_change_seconds": -25.90625,
+      "controlled_change_seconds": 16.46875,
+      "paired_clock_weekday_cells": 16,
+      "Tuesday_controlled_change_seconds": 26.6875,
+      "Wednesday_controlled_change_seconds": 6.25,
+      "causal_effect_identified": false
+    },
+    {
+      "window": "pm_16_19",
+      "control": "7th_same_direction",
+      "control_routes": [
+        "7 Ave"
+      ],
+      "treated_change_seconds": -4.166666666666657,
+      "control_change_seconds": 28.0,
+      "controlled_change_seconds": -32.16666666666666,
+      "paired_clock_weekday_cells": 12,
+      "Tuesday_controlled_change_seconds": -31.666666666666668,
+      "Wednesday_controlled_change_seconds": -32.666666666666664,
+      "causal_effect_identified": false
+    },
+    {
+      "window": "pm_16_19",
+      "control": "6th_reverse_direction",
+      "control_routes": [
+        "6 Ave"
+      ],
+      "treated_change_seconds": -4.166666666666657,
+      "control_change_seconds": 24.75000000000003,
+      "controlled_change_seconds": -28.916666666666686,
+      "paired_clock_weekday_cells": 12,
+      "Tuesday_controlled_change_seconds": -52.833333333333336,
+      "Wednesday_controlled_change_seconds": -5,
+      "causal_effect_identified": false
+    },
+    {
+      "window": "pm_16_19",
+      "control": "8th_reverse_direction",
+      "control_routes": [
+        "8 Ave"
+      ],
+      "treated_change_seconds": -4.166666666666657,
+      "control_change_seconds": -2.8333333333333144,
+      "controlled_change_seconds": -1.3333333333333428,
+      "paired_clock_weekday_cells": 12,
+      "Tuesday_controlled_change_seconds": 4.833333333333333,
+      "Wednesday_controlled_change_seconds": -7.5,
+      "causal_effect_identified": false
+    },
+    {
+      "window": "pm_16_19",
+      "control": "all_three_equal",
+      "control_routes": [
+        "6 Ave",
+        "7 Ave",
+        "8 Ave"
+      ],
+      "treated_change_seconds": -4.166666666666657,
+      "control_change_seconds": 16.638888888888903,
+      "controlled_change_seconds": -20.80555555555556,
+      "paired_clock_weekday_cells": 12,
+      "Tuesday_controlled_change_seconds": -26.555555555555557,
+      "Wednesday_controlled_change_seconds": -15.055555555555554,
+      "causal_effect_identified": false
+    },
+    {
+      "window": "pm_16_19",
+      "control": "northbound_equal",
+      "control_routes": [
+        "6 Ave",
+        "8 Ave"
+      ],
+      "treated_change_seconds": -4.166666666666657,
+      "control_change_seconds": 10.958333333333357,
+      "controlled_change_seconds": -15.125000000000014,
+      "paired_clock_weekday_cells": 12,
+      "Tuesday_controlled_change_seconds": -24.0,
+      "Wednesday_controlled_change_seconds": -6.25,
+      "causal_effect_identified": false
+    }
+  ],
+  "exact_date_pairs": [
+    {
+      "weekday": "Tuesday",
+      "before": "2010-05-11",
+      "after": "2010-10-19",
+      "clock_slots": 24
+    },
+    {
+      "weekday": "Wednesday",
+      "before": "2010-05-12",
+      "after": "2010-10-20",
+      "clock_slots": 24
+    }
+  ],
+  "fixed_four_route_mix": [
+    {
+      "window": "daily_07_19",
+      "drives_per_route": 25,
+      "total_drives": 100,
+      "before_vehicle_minutes_per_100_drives": 422.1701388888889,
+      "after_vehicle_minutes_per_100_drives": 423.09027777777777,
+      "change_vehicle_minutes_per_100_drives": 0.9201388888889047,
+      "observed_traffic_or_passenger_weighting": false
+    },
+    {
+      "window": "am_07_10",
+      "drives_per_route": 25,
+      "total_drives": 100,
+      "before_vehicle_minutes_per_100_drives": 386.3541666666667,
+      "after_vehicle_minutes_per_100_drives": 404.5486111111111,
+      "change_vehicle_minutes_per_100_drives": 18.194444444444425,
+      "observed_traffic_or_passenger_weighting": false
+    },
+    {
+      "window": "midday_10_14",
+      "drives_per_route": 25,
+      "total_drives": 100,
+      "before_vehicle_minutes_per_100_drives": 434.8697916666667,
+      "after_vehicle_minutes_per_100_drives": 423.7239583333333,
+      "change_vehicle_minutes_per_100_drives": -11.145833333333334,
+      "observed_traffic_or_passenger_weighting": false
+    },
+    {
+      "window": "pm_16_19",
+      "drives_per_route": 25,
+      "total_drives": 100,
+      "before_vehicle_minutes_per_100_drives": 413.5069444444444,
+      "after_vehicle_minutes_per_100_drives": 432.56944444444446,
+      "change_vehicle_minutes_per_100_drives": 19.062500000000046,
+      "observed_traffic_or_passenger_weighting": false
+    }
+  ],
+  "fixed_mix_definition": "Illustrative 100 motor-vehicle drives, 25 on each route, same half-hour schedule before/after. Vehicle-minutes, not observed traveler-minutes. Unknown occupants and bus passenger loads preclude person totals. Not a causal effect.",
+  "uncertainty": {
+    "confidence_interval": null,
+    "reason": "Only two survey weekdays before and two after. Half-hour runs are not independent treatment assignments; no defensible cluster-asymptotic causal interval or pretrend test."
+  },
+  "causal_limits": [
+    "Controls are nearby alternative routes and may be affected by diversion; this can bias treated-minus-control effects.",
+    "7th Avenue is the only same-direction control; 6th and 8th run northbound. Their baseline travel times differ.",
+    "Concurrent B69 rerouting directly affects the nominal controls: 7th Avenue gained the bus route, while PPW and 8th Avenue lost it. 6th Avenue did not directly gain/lose this route, but still may absorb traffic diversion.",
+    "Survey dates are Tuesday/Wednesday in May versus October; shared date shocks are differenced, but corridor-specific seasonal shocks remain.",
+    "Only one pre intervention survey wave: parallel trends cannot be evaluated.",
+    "Treatment is a street-redesign package, not an isolated bike-lane-only change.",
+    "Run times are not vehicle-flow or passenger weighted. Changes do not establish all-person travel-time burden.",
+    "Bicycle and motor volume surveys use different dates and locations; their sums are not aligned person counts."
+  ],
+  "bicycle_count_observations": [
+    {
+      "date": "2009-06-09",
+      "daytype": "weekday",
+      "period": "before",
+      "start_hour": 7,
+      "end_hour": 19,
+      "count": 349,
+      "unit": "bicycles",
+      "location": "Prospect Park West between 3rd and 5th Streets (individual sheets refine blocks)",
+      "source_pdf_page": 5
+    },
+    {
+      "date": "2010-08-17",
+      "daytype": "weekday",
+      "period": "after",
+      "start_hour": 7,
+      "end_hour": 19,
+      "count": 1131,
+      "unit": "bicycles",
+      "location": "Prospect Park West between 3rd and 5th Streets (individual sheets refine blocks)",
+      "source_pdf_page": 5
+    },
+    {
+      "date": "2010-09-15",
+      "daytype": "weekday",
+      "period": "after",
+      "start_hour": 7,
+      "end_hour": 19,
+      "count": 1043,
+      "unit": "bicycles",
+      "location": "Prospect Park West between 3rd and 5th Streets (individual sheets refine blocks)",
+      "source_pdf_page": 5
+    },
+    {
+      "date": "2010-10-12",
+      "daytype": "weekday",
+      "period": "after",
+      "start_hour": 7,
+      "end_hour": 19,
+      "count": 1010,
+      "unit": "bicycles",
+      "location": "Prospect Park West between 3rd and 5th Streets (individual sheets refine blocks)",
+      "source_pdf_page": 5
+    },
+    {
+      "date": "2010-11-09",
+      "daytype": "weekday",
+      "period": "after",
+      "start_hour": 7,
+      "end_hour": 19,
+      "count": 863,
+      "unit": "bicycles",
+      "location": "Prospect Park West between 3rd and 5th Streets (individual sheets refine blocks)",
+      "source_pdf_page": 5
+    },
+    {
+      "date": "2009-06-27",
+      "daytype": "weekend",
+      "period": "before",
+      "start_hour": 7,
+      "end_hour": 19,
+      "count": 790,
+      "unit": "bicycles",
+      "location": "Prospect Park West between 3rd and 5th Streets (individual sheets refine blocks)",
+      "source_pdf_page": 16
+    },
+    {
+      "date": "2010-08-21",
+      "daytype": "weekend",
+      "period": "after",
+      "start_hour": 7,
+      "end_hour": 19,
+      "count": 1719,
+      "unit": "bicycles",
+      "location": "Prospect Park West between 3rd and 5th Streets (individual sheets refine blocks)",
+      "source_pdf_page": 16
+    },
+    {
+      "date": "2010-09-18",
+      "daytype": "weekend",
+      "period": "after",
+      "start_hour": 7,
+      "end_hour": 19,
+      "count": 1727,
+      "unit": "bicycles",
+      "location": "Prospect Park West between 3rd and 5th Streets (individual sheets refine blocks)",
+      "source_pdf_page": 16
+    },
+    {
+      "date": "2010-10-09",
+      "daytype": "weekend",
+      "period": "after",
+      "start_hour": 7,
+      "end_hour": 19,
+      "count": 1813,
+      "unit": "bicycles",
+      "location": "Prospect Park West between 3rd and 5th Streets (individual sheets refine blocks)",
+      "source_pdf_page": 16
+    },
+    {
+      "date": "2010-11-13",
+      "daytype": "weekend",
+      "period": "after",
+      "start_hour": 7,
+      "end_hour": 19,
+      "count": 1838,
+      "unit": "bicycles",
+      "location": "Prospect Park West between 3rd and 5th Streets (individual sheets refine blocks)",
+      "source_pdf_page": 16
+    }
+  ],
+  "scope": "Useful controlled historical time comparison and counterfactual sensitivity, not resolution of the citywide all-person causal question."
+}

@@ -1,0 +1,9 @@
+label,before_seconds,after_seconds,calculated_change_seconds,source_printed_change_seconds,source_table
+A toward city AM,227,229,2,,5.3
+B toward city AM,212,205,-7,,5.3
+A away from city AM,244,257,13,,5.3
+B away from city AM,199,237,38,,5.3
+A toward city PM,238,256,18,,5.3
+B toward city PM,205,209,4,,5.3
+A away from city PM,226,218,-8,,5.3
+B away from city PM,197,215,18,,5.3

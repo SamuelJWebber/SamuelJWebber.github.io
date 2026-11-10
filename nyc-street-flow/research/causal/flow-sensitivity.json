@@ -1,0 +1,876 @@
+{
+  "version": "1.0",
+  "checked_on": "2026-11-05",
+  "scope": "Partial identification and sensitivity, not an estimate of bike-lane causality.",
+  "identification_conclusion": {
+    "ppw_all_person_flow_change": "Unidentified from assembled data: walking change, common-date/common-screenline correction, actual occupancy and contemporaneous B69 loads remain unknown. Even the historically anchored stable-occupancy conditional index bounds include zero.",
+    "ppw_lane_effect": "Unidentified: additional unrestricted counterfactual trend and concurrent signal/bus changes remain.",
+    "brooklyn": "Published representative-profile changes can be computed. Occupancy thresholds for isolated classified dates are conditional motor-only diagnostics; they cannot establish a causal all-mode sign.",
+    "pulaski": "No paired classified pre/post conversion panel in assembled extract; 2023 classification is after the 2016 conversion. Nearby ATR coverage has incomplete/low-count cases and cannot be treated as valid aligned person flow. Sign unidentified."
+  },
+  "equations": {
+    "full_screenline_change_per_hour": "[o1*V1 - o0*(V0-N0) - N0 - P0 + (B1-B0)]/H + deltaWalking + alignmentCorrection",
+    "definitions": "V includes all motor vehicles; o is mean occupants of vehicles other than relocated B69; N0 pre B69 buses; P0 pre B69 passengers excluding drivers; post B69 at PPW is zero; B is cyclists. H=3 hours. deltaWalking and alignmentCorrection are signed people/hour differences.",
+    "causal_effect": "target-screenline observed change minus counterfactual change without the intervention.",
+    "restrictions_for_numeric_ppw_bounds": "Set walking/alignment changes to zero; use specified occupancy restrictions; transfer historical route maximum load as an upper bound on all three relevant hours; regular scheduled bus counts stand in for actual runs. These are explicit assumptions, not observations."
+  },
+  "inputs_sha256": {
+    "inputs.json": "9d8c730d4a7f0c96149c9d5898d271f7af261d4727b73f9af2e86b9c99c460e7",
+    "road-analysis-input.json": "f4326b5809ba2a64d2f5f9c3f74f9f5de50d4c98c32d6040eb2ad62961d1b06d",
+    "bridge-profiles-input.json": "1343b6c2bb5e9940ecac48533f2b8b7c01a3e1299b9fb2d63cae24f7cec400d6"
+  },
+  "primary_sources": [
+    {
+      "id": "ppw",
+      "url": "https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf",
+      "local": "ppw-data.pdf",
+      "pages": [
+        39,
+        40,
+        47,
+        48,
+        51
+      ],
+      "description": "DOT January2011 evaluation. Motor counts at Carroll Street and bicycle counts near4th Street are on different dates. They form a proxy aggregate, not synchronized person flow.",
+      "sha256": "226ad765e8fcc59cb3e575dd228be89005b904e5d746c344613975f59e0c1825"
+    },
+    {
+      "id": "b69_timetable",
+      "url": "https://web.archive.org/web/20100330235020id_/http://www.mta.info/nyct/bus/schedule/bkln/b069cur.pdf",
+      "original_url": "http://www.mta.info/nyct/bus/schedule/bkln/b069cur.pdf",
+      "local": "b69/b69_pre2010_timetable.pdf",
+      "pages": [
+        4,
+        10
+      ],
+      "description": "Official MTA timetable effective January3,2010, archived March30,2010. Counts scheduled regular southbound runs, not observed buses or capacity.",
+      "sha256": "fa17b2f7f19051ac4245bb6c4f7bb3634bdcccb504377bffdb0c6b85c761bf6d"
+    },
+    {
+      "id": "mta_service_change",
+      "url": "https://web.archive.org/web/20241003113136id_/http://web.mta.info/mta/news/books/docs/NYCT_2010_Service_Reduction_Evaluation.pdf",
+      "original_url": "http://web.mta.info/mta/news/books/docs/NYCT_2010_Service_Reduction_Evaluation.pdf",
+      "local": "b69/nyct2010_evaluation2011.pdf",
+      "pages": [
+        4,
+        47
+      ],
+      "description": "MTA September23,2011 evaluation. B69 rerouting from PPW/8th Avenue to7th Avenue took effect June27,2010, alongside reduced weekday hours and weekend elimination.",
+      "sha256": "e74a2c1d28831c6f521cadb403f006cd3860c195ce755a9e14aab52089d26cf9"
+    },
+    {
+      "id": "b69_loads",
+      "url": "https://www.nyc.gov/html/dot/downloads/pdf/dbstc-existing-future-conditions-report.pdf",
+      "local": "b69/dot_downtown_brooklyn_conditions.pdf",
+      "printed_pages": [
+        51,
+        52
+      ],
+      "description": "DOT August2009 study, Table14. Hourly onboard passenger loads from NYCT on/off counts; maximum within AM06:00\u201310:00 or PM15:00\u201319:00. Underlying count dates are unspecified.",
+      "sha256": "f479de82103874e6e29aeaef36e8b43a76b0082808422aa71eebd21c7f0103d4",
+      "pdf_pages": [
+        52,
+        53
+      ]
+    },
+    {
+      "id": "vehicle_classes",
+      "url": "https://data.cityofnewyork.us/Transportation/Vehicle-Classification-Counts/96ay-ea4r",
+      "local": "road-analysis-input.json",
+      "description": "Previously verified explicit bridge-name extract. Classified snapshots cover2016/2019/2024 for Brooklyn and2023 for Pulaski. Raw-source hashes and queries are retained in this input.",
+      "sha256": "f4326b5809ba2a64d2f5f9c3f74f9f5de50d4c98c32d6040eb2ad62961d1b06d"
+    },
+    {
+      "id": "atr",
+      "url": "https://data.cityofnewyork.us/Transportation/Automated-Traffic-Volume-Counts/7ym2-wayt",
+      "local": "road-analysis-input.json",
+      "description": "Previously verified automated-traffic extract.96 rows alone do not prove valid traffic; very low2013 Pulaski totals are flagged.",
+      "sha256": "f4326b5809ba2a64d2f5f9c3f74f9f5de50d4c98c32d6040eb2ad62961d1b06d"
+    },
+    {
+      "id": "bridge_profiles",
+      "url": "https://www.nymtc.org/hub-bound-travel",
+      "local": "bridge-profiles-input.json",
+      "description": "Existing dashboard extract: NYMTC non-bus motor occupants and bicycles plus DOT pedestrians. Different representative fall dates; not a synchronized all-mode physical count.",
+      "sha256": "1343b6c2bb5e9940ecac48533f2b8b7c01a3e1299b9fb2d63cae24f7cec400d6"
+    },
+    {
+      "id": "dot_pedestrians",
+      "url": "https://data.cityofnewyork.us/resource/cqsj-cfgu.json",
+      "local": "bridge-profiles-input.json",
+      "sha256": "1343b6c2bb5e9940ecac48533f2b8b7c01a3e1299b9fb2d63cae24f7cec400d6",
+      "description": "DOT biannual pedestrian observations used in the existing bridge profile extract; counts are separate days from NYMTC motor and cycling profiles."
+    },
+    {
+      "id": "b69_earlier_timetable",
+      "url": "https://web.archive.org/web/20091229043613id_/http://www.mta.info/nyct/bus/schedule/bkln/b069cur.pdf",
+      "original_url": "http://www.mta.info/nyct/bus/schedule/bkln/b069cur.pdf",
+      "local": "b69/b69_april2009_timetable.pdf",
+      "pages": [
+        4,
+        10
+      ],
+      "sha256": "39da18ad13c20cb4cea32299bf0bc121ec5a47886d4da44a6da90aa96d04e060",
+      "description": "Archived official April2009 timetable. Audited southbound timepoint entries match the January2010 timetable for the relevant periods."
+    }
+  ],
+  "ppw": [
+    {
+      "period": "am",
+      "window": "07:00\u201310:00",
+      "source_counts": {
+        "window": "07:00\u201310:00",
+        "bike_before": 58,
+        "bike_after": 210,
+        "vehicle_after": 2909,
+        "vehicle_before": {
+          "published_average": 2700,
+          "april_2009": 2756,
+          "may_2010": 2643
+        },
+        "scheduled_b69_before_min": 12,
+        "scheduled_b69_before_max": 12,
+        "historical_route_max_passengers_per_hour": 214,
+        "historical_max_location": "ProspectParkWest/PresidentStreet",
+        "historical_max_hour": "08:00\u201309:00",
+        "historical_max_search_window": "06:00\u201310:00"
+      },
+      "naive_index_change_per_hour_at_1_3": 141.23333333333332,
+      "critical_average_pre_b69_passengers_per_hour_at_stable_1_3": [
+        142.43333333333334,
+        142.43333333333334
+      ],
+      "critical_average_pre_b69_passengers_per_scheduled_bus_at_stable_1_3": [
+        35.608333333333334,
+        35.608333333333334
+      ],
+      "critical_occupancy_drop_if_no_b69_passengers_no_other_changes": [
+        0.146888965280165,
+        0.146888965280165
+      ],
+      "historically_anchored_passenger_total_scenario": [
+        0,
+        642
+      ],
+      "stable_occupancy_conditional_bounds": {
+        "lower_people_per_hour": -71.5666666666666,
+        "upper_people_per_hour": 142.4333333333334,
+        "sign": "both signs possible"
+      },
+      "occupancy_box_conditional_bounds": [
+        {
+          "assumed_non_b69_occupancy_each_period": [
+            1,
+            1.5
+          ],
+          "lower_people_per_hour": -541.6666666666666,
+          "upper_people_per_hour": 605.1666666666666,
+          "sign": "both signs possible"
+        },
+        {
+          "assumed_non_b69_occupancy_each_period": [
+            1,
+            2
+          ],
+          "lower_people_per_hour": -989.6666666666666,
+          "upper_people_per_hour": 1090.0,
+          "sign": "both signs possible"
+        }
+      ]
+    },
+    {
+      "period": "pm",
+      "window": "16:00\u201319:00",
+      "source_counts": {
+        "window": "16:00\u201319:00",
+        "bike_before": 130,
+        "bike_after": 386,
+        "vehicle_after": 2807,
+        "vehicle_before": {
+          "published_average": 2807,
+          "april_2009": 2978,
+          "may_2010": 2636
+        },
+        "scheduled_b69_before_min": 10,
+        "scheduled_b69_before_max": 11,
+        "historical_route_max_passengers_per_hour": 126,
+        "historical_max_location": "VanderbiltAvenue/FultonStreet",
+        "historical_max_hour": "15:00\u201316:00",
+        "historical_max_search_window": "15:00\u201319:00"
+      },
+      "naive_index_change_per_hour_at_1_3": 85.33333333333333,
+      "critical_average_pre_b69_passengers_per_hour_at_stable_1_3": [
+        86.33333333333333,
+        86.43333333333334
+      ],
+      "critical_average_pre_b69_passengers_per_scheduled_bus_at_stable_1_3": [
+        25.9,
+        23.572727272727274
+      ],
+      "critical_occupancy_drop_if_no_b69_passengers_no_other_changes": [
+        0.09226932668329177,
+        0.0923762023512647
+      ],
+      "historically_anchored_passenger_total_scenario": [
+        0,
+        378
+      ],
+      "stable_occupancy_conditional_bounds": {
+        "lower_people_per_hour": -39.666666666666664,
+        "upper_people_per_hour": 86.43333333333324,
+        "sign": "both signs possible"
+      },
+      "occupancy_box_conditional_bounds": [
+        {
+          "assumed_non_b69_occupancy_each_period": [
+            1,
+            1.5
+          ],
+          "lower_people_per_hour": -506.8333333333333,
+          "upper_people_per_hour": 553.1666666666666,
+          "sign": "both signs possible"
+        },
+        {
+          "assumed_non_b69_occupancy_each_period": [
+            1,
+            2
+          ],
+          "lower_people_per_hour": -973.0,
+          "upper_people_per_hour": 1021.0,
+          "sign": "both signs possible"
+        }
+      ]
+    }
+  ],
+  "ppw_before_baseline_sensitivity": [
+    {
+      "period": "am",
+      "before_motor_baseline": "published_average",
+      "before_vehicles": 2700,
+      "after_vehicles": 2909,
+      "bike_change": 152,
+      "naive_index_change_per_hour_at_1_3": 141.23333333333332,
+      "bus_corrected_conditional_bounds": {
+        "lower_people_per_hour": -71.5666666666666,
+        "upper_people_per_hour": 142.4333333333334,
+        "sign": "both signs possible"
+      },
+      "additional_post_occupancy_drop_that_erases_positive_lower_bound": 0,
+      "counterfactual_growth_per_hour_that_erases_positive_lower_bound": 0
+    },
+    {
+      "period": "am",
+      "before_motor_baseline": "april_2009",
+      "before_vehicles": 2756,
+      "after_vehicles": 2909,
+      "bike_change": 152,
+      "naive_index_change_per_hour_at_1_3": 116.96666666666665,
+      "bus_corrected_conditional_bounds": {
+        "lower_people_per_hour": -95.83333333333333,
+        "upper_people_per_hour": 118.16666666666667,
+        "sign": "both signs possible"
+      },
+      "additional_post_occupancy_drop_that_erases_positive_lower_bound": 0,
+      "counterfactual_growth_per_hour_that_erases_positive_lower_bound": 0
+    },
+    {
+      "period": "am",
+      "before_motor_baseline": "may_2010",
+      "before_vehicles": 2643,
+      "after_vehicles": 2909,
+      "bike_change": 152,
+      "naive_index_change_per_hour_at_1_3": 165.9333333333333,
+      "bus_corrected_conditional_bounds": {
+        "lower_people_per_hour": -46.86666666666664,
+        "upper_people_per_hour": 167.13333333333335,
+        "sign": "both signs possible"
+      },
+      "additional_post_occupancy_drop_that_erases_positive_lower_bound": 0,
+      "counterfactual_growth_per_hour_that_erases_positive_lower_bound": 0
+    },
+    {
+      "period": "pm",
+      "before_motor_baseline": "published_average",
+      "before_vehicles": 2807,
+      "after_vehicles": 2807,
+      "bike_change": 256,
+      "naive_index_change_per_hour_at_1_3": 85.33333333333333,
+      "bus_corrected_conditional_bounds": {
+        "lower_people_per_hour": -39.666666666666664,
+        "upper_people_per_hour": 86.43333333333324,
+        "sign": "both signs possible"
+      },
+      "additional_post_occupancy_drop_that_erases_positive_lower_bound": 0,
+      "counterfactual_growth_per_hour_that_erases_positive_lower_bound": 0
+    },
+    {
+      "period": "pm",
+      "before_motor_baseline": "april_2009",
+      "before_vehicles": 2978,
+      "after_vehicles": 2807,
+      "bike_change": 256,
+      "naive_index_change_per_hour_at_1_3": 11.233333333333329,
+      "bus_corrected_conditional_bounds": {
+        "lower_people_per_hour": -113.76666666666672,
+        "upper_people_per_hour": 12.333333333333334,
+        "sign": "both signs possible"
+      },
+      "additional_post_occupancy_drop_that_erases_positive_lower_bound": 0,
+      "counterfactual_growth_per_hour_that_erases_positive_lower_bound": 0
+    },
+    {
+      "period": "pm",
+      "before_motor_baseline": "may_2010",
+      "before_vehicles": 2636,
+      "after_vehicles": 2807,
+      "bike_change": 256,
+      "naive_index_change_per_hour_at_1_3": 159.4333333333333,
+      "bus_corrected_conditional_bounds": {
+        "lower_people_per_hour": 34.433333333333245,
+        "upper_people_per_hour": 160.5333333333333,
+        "sign": "positive under stated restrictions"
+      },
+      "additional_post_occupancy_drop_that_erases_positive_lower_bound": 0.036800855005343684,
+      "counterfactual_growth_per_hour_that_erases_positive_lower_bound": 34.433333333333245
+    }
+  ],
+  "ppw_occupancy_and_counterfactual_grid": [
+    {
+      "period": "am",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.3,
+      "assumed_counterfactual_drift_bound_per_hour": 0,
+      "lower_people_per_hour": -71.5666666666666,
+      "upper_people_per_hour": 142.4333333333334,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "am",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.3,
+      "assumed_counterfactual_drift_bound_per_hour": 25,
+      "lower_people_per_hour": -96.5666666666666,
+      "upper_people_per_hour": 167.4333333333334,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "am",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.3,
+      "assumed_counterfactual_drift_bound_per_hour": 50,
+      "lower_people_per_hour": -121.5666666666666,
+      "upper_people_per_hour": 192.4333333333334,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "am",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.3,
+      "assumed_counterfactual_drift_bound_per_hour": 100,
+      "lower_people_per_hour": -171.5666666666666,
+      "upper_people_per_hour": 242.4333333333334,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "am",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.25,
+      "assumed_counterfactual_drift_bound_per_hour": 0,
+      "lower_people_per_hour": -120.05000000000003,
+      "upper_people_per_hour": 93.94999999999997,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "am",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.25,
+      "assumed_counterfactual_drift_bound_per_hour": 25,
+      "lower_people_per_hour": -145.05,
+      "upper_people_per_hour": 118.94999999999997,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "am",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.25,
+      "assumed_counterfactual_drift_bound_per_hour": 50,
+      "lower_people_per_hour": -170.05,
+      "upper_people_per_hour": 143.95,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "am",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.25,
+      "assumed_counterfactual_drift_bound_per_hour": 100,
+      "lower_people_per_hour": -220.05,
+      "upper_people_per_hour": 193.95,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "am",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.2,
+      "assumed_counterfactual_drift_bound_per_hour": 0,
+      "lower_people_per_hour": -168.53333333333345,
+      "upper_people_per_hour": 45.46666666666655,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "am",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.2,
+      "assumed_counterfactual_drift_bound_per_hour": 25,
+      "lower_people_per_hour": -193.53333333333345,
+      "upper_people_per_hour": 70.46666666666655,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "am",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.2,
+      "assumed_counterfactual_drift_bound_per_hour": 50,
+      "lower_people_per_hour": -218.53333333333345,
+      "upper_people_per_hour": 95.46666666666655,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "am",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.2,
+      "assumed_counterfactual_drift_bound_per_hour": 100,
+      "lower_people_per_hour": -268.5333333333334,
+      "upper_people_per_hour": 145.46666666666655,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "am",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.1500000000000001,
+      "assumed_counterfactual_drift_bound_per_hour": 0,
+      "lower_people_per_hour": -217.01666666666657,
+      "upper_people_per_hour": -3.0166666666665756,
+      "sign": "negative under stated restrictions"
+    },
+    {
+      "period": "am",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.1500000000000001,
+      "assumed_counterfactual_drift_bound_per_hour": 25,
+      "lower_people_per_hour": -242.01666666666657,
+      "upper_people_per_hour": 21.983333333333423,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "am",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.1500000000000001,
+      "assumed_counterfactual_drift_bound_per_hour": 50,
+      "lower_people_per_hour": -267.01666666666654,
+      "upper_people_per_hour": 46.98333333333343,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "am",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.1500000000000001,
+      "assumed_counterfactual_drift_bound_per_hour": 100,
+      "lower_people_per_hour": -317.01666666666654,
+      "upper_people_per_hour": 96.98333333333342,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "pm",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.3,
+      "assumed_counterfactual_drift_bound_per_hour": 0,
+      "lower_people_per_hour": -39.666666666666664,
+      "upper_people_per_hour": 86.43333333333324,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "pm",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.3,
+      "assumed_counterfactual_drift_bound_per_hour": 25,
+      "lower_people_per_hour": -64.66666666666666,
+      "upper_people_per_hour": 111.43333333333324,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "pm",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.3,
+      "assumed_counterfactual_drift_bound_per_hour": 50,
+      "lower_people_per_hour": -89.66666666666666,
+      "upper_people_per_hour": 136.43333333333322,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "pm",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.3,
+      "assumed_counterfactual_drift_bound_per_hour": 100,
+      "lower_people_per_hour": -139.66666666666666,
+      "upper_people_per_hour": 186.43333333333322,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "pm",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.25,
+      "assumed_counterfactual_drift_bound_per_hour": 0,
+      "lower_people_per_hour": -86.44999999999997,
+      "upper_people_per_hour": 39.64999999999994,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "pm",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.25,
+      "assumed_counterfactual_drift_bound_per_hour": 25,
+      "lower_people_per_hour": -111.44999999999997,
+      "upper_people_per_hour": 64.64999999999995,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "pm",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.25,
+      "assumed_counterfactual_drift_bound_per_hour": 50,
+      "lower_people_per_hour": -136.45,
+      "upper_people_per_hour": 89.64999999999995,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "pm",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.25,
+      "assumed_counterfactual_drift_bound_per_hour": 100,
+      "lower_people_per_hour": -186.45,
+      "upper_people_per_hour": 139.64999999999995,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "pm",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.2,
+      "assumed_counterfactual_drift_bound_per_hour": 0,
+      "lower_people_per_hour": -133.23333333333326,
+      "upper_people_per_hour": -7.133333333333364,
+      "sign": "negative under stated restrictions"
+    },
+    {
+      "period": "pm",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.2,
+      "assumed_counterfactual_drift_bound_per_hour": 25,
+      "lower_people_per_hour": -158.23333333333326,
+      "upper_people_per_hour": 17.866666666666635,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "pm",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.2,
+      "assumed_counterfactual_drift_bound_per_hour": 50,
+      "lower_people_per_hour": -183.23333333333326,
+      "upper_people_per_hour": 42.86666666666664,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "pm",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.2,
+      "assumed_counterfactual_drift_bound_per_hour": 100,
+      "lower_people_per_hour": -233.23333333333326,
+      "upper_people_per_hour": 92.86666666666663,
+      "sign": "both signs possible"
+    },
+    {
+      "period": "pm",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.1500000000000001,
+      "assumed_counterfactual_drift_bound_per_hour": 0,
+      "lower_people_per_hour": -180.01666666666657,
+      "upper_people_per_hour": -53.916666666666664,
+      "sign": "negative under stated restrictions"
+    },
+    {
+      "period": "pm",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.1500000000000001,
+      "assumed_counterfactual_drift_bound_per_hour": 25,
+      "lower_people_per_hour": -205.01666666666657,
+      "upper_people_per_hour": -28.916666666666664,
+      "sign": "negative under stated restrictions"
+    },
+    {
+      "period": "pm",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.1500000000000001,
+      "assumed_counterfactual_drift_bound_per_hour": 50,
+      "lower_people_per_hour": -230.01666666666657,
+      "upper_people_per_hour": -3.9166666666666643,
+      "sign": "negative under stated restrictions"
+    },
+    {
+      "period": "pm",
+      "reference_pre_occupancy": 1.3,
+      "assumed_post_occupancy": 1.1500000000000001,
+      "assumed_counterfactual_drift_bound_per_hour": 100,
+      "lower_people_per_hour": -280.01666666666654,
+      "upper_people_per_hour": 46.083333333333336,
+      "sign": "both signs possible"
+    }
+  ],
+  "brooklyn_classification_diagnostics": [
+    {
+      "before_snapshot": "brooklyn-2019-11-20-sb-9014212",
+      "after_snapshot": "brooklyn-2024-02-27-sb-9014212",
+      "window": "16:00\u201319:00",
+      "before_vehicles": 7698,
+      "after_vehicles": 4243,
+      "vehicle_change_per_hour": -1151.6666666666667,
+      "post_pre_all_vehicle_mean_occupancy_ratio_needed_to_offset_vehicle_decline": 1.8142823473957106,
+      "conditional_motor_occupant_bounds": [
+        {
+          "assumed_all_vehicle_mean_occupancy_each_period": [
+            1,
+            1.5
+          ],
+          "lower_change_per_hour": -2434.6666666666665,
+          "upper_change_per_hour": -444.5,
+          "sign": "negative under stated restrictions"
+        },
+        {
+          "assumed_all_vehicle_mean_occupancy_each_period": [
+            1,
+            2
+          ],
+          "lower_change_per_hour": -3717.6666666666665,
+          "upper_change_per_hour": 262.6666666666667,
+          "sign": "both signs possible"
+        }
+      ],
+      "interpretation": "Motor-only occupancy threshold for distinct sample dates. The average includes buses and all other classes; chosen occupancy boxes are assumptions, not measured bounds. No aligned walking, bike, passenger or counterfactual series is supplied."
+    },
+    {
+      "before_snapshot": "brooklyn-2019-11-20-sb-9014212",
+      "after_snapshot": "brooklyn-2024-04-11-sb-9014212",
+      "window": "16:00\u201319:00",
+      "before_vehicles": 7698,
+      "after_vehicles": 3945,
+      "vehicle_change_per_hour": -1251.0,
+      "post_pre_all_vehicle_mean_occupancy_ratio_needed_to_offset_vehicle_decline": 1.9513307984790875,
+      "conditional_motor_occupant_bounds": [
+        {
+          "assumed_all_vehicle_mean_occupancy_each_period": [
+            1,
+            1.5
+          ],
+          "lower_change_per_hour": -2534.0,
+          "upper_change_per_hour": -593.5,
+          "sign": "negative under stated restrictions"
+        },
+        {
+          "assumed_all_vehicle_mean_occupancy_each_period": [
+            1,
+            2
+          ],
+          "lower_change_per_hour": -3817.0,
+          "upper_change_per_hour": 64.0,
+          "sign": "both signs possible"
+        }
+      ],
+      "interpretation": "Motor-only occupancy threshold for distinct sample dates. The average includes buses and all other classes; chosen occupancy boxes are assumptions, not measured bounds. No aligned walking, bike, passenger or counterfactual series is supplied."
+    },
+    {
+      "before_snapshot": "brooklyn-2016-11-02-nb-9014216",
+      "after_snapshot": "brooklyn-2024-04-11-nb-9014216",
+      "window": "16:00\u201319:00",
+      "before_vehicles": 9924,
+      "after_vehicles": 7369,
+      "vehicle_change_per_hour": -851.6666666666666,
+      "post_pre_all_vehicle_mean_occupancy_ratio_needed_to_offset_vehicle_decline": 1.3467227574976253,
+      "conditional_motor_occupant_bounds": [
+        {
+          "assumed_all_vehicle_mean_occupancy_each_period": [
+            1,
+            1.5
+          ],
+          "lower_change_per_hour": -2505.6666666666665,
+          "upper_change_per_hour": 376.5,
+          "sign": "both signs possible"
+        },
+        {
+          "assumed_all_vehicle_mean_occupancy_each_period": [
+            1,
+            2
+          ],
+          "lower_change_per_hour": -4159.666666666667,
+          "upper_change_per_hour": 1604.6666666666667,
+          "sign": "both signs possible"
+        }
+      ],
+      "interpretation": "Motor-only occupancy threshold for distinct sample dates. The average includes buses and all other classes; chosen occupancy boxes are assumptions, not measured bounds. No aligned walking, bike, passenger or counterfactual series is supplied."
+    }
+  ],
+  "brooklyn_profile_comparison_sensitivity": [
+    {
+      "window": "am",
+      "pre_years": [
+        2016,
+        2017,
+        2018
+      ],
+      "post_years": [
+        2022,
+        2023,
+        2024
+      ],
+      "profiles": {
+        "brooklyn": {
+          "pre": 8283.5,
+          "post": 7942.666666666667,
+          "change": -340.83333333333303,
+          "post_pre_ratio": 0.958853946600672
+        },
+        "manhattan": {
+          "pre": 6203.666666666667,
+          "post": 5646.666666666667,
+          "change": -557.0,
+          "post_pre_ratio": 0.9102143893396378
+        },
+        "williamsburg": {
+          "pre": 6743.0,
+          "post": 6341.0,
+          "change": -402.0,
+          "post_pre_ratio": 0.940382619012309
+        }
+      },
+      "counterfactual_ratio_for_zero_treatment_effect": 0.958853946600672,
+      "peer_ratio_envelope": [
+        0.9102143893396378,
+        0.940382619012309
+      ],
+      "conditional_counterfactual_bounds": [
+        {
+          "allowed_counterfactual_ratio_bias": 0,
+          "lower_people_per_hour": 153.0072420782053,
+          "upper_people_per_hour": 402.90577257177665,
+          "sign": "positive under stated restrictions"
+        },
+        {
+          "allowed_counterfactual_ratio_bias": 0.02,
+          "lower_people_per_hour": -12.662757921794764,
+          "upper_people_per_hour": 568.5757725717767,
+          "sign": "both signs possible"
+        },
+        {
+          "allowed_counterfactual_ratio_bias": 0.05,
+          "lower_people_per_hour": -261.1677579217949,
+          "upper_people_per_hour": 817.0807725717777,
+          "sign": "both signs possible"
+        },
+        {
+          "allowed_counterfactual_ratio_bias": 0.1,
+          "lower_people_per_hour": -675.342757921796,
+          "upper_people_per_hour": 1231.255772571777,
+          "sign": "both signs possible"
+        }
+      ],
+      "interpretation": "Three-mode representative-profile index, not synchronized all-person flow. Peer-envelope bounds require untreated, spillover-free comparison bridges and a transported trend. Those assumptions are not established; earlier bicycle comparisons fail a placebo pre-trend check."
+    },
+    {
+      "window": "pm",
+      "pre_years": [
+        2016,
+        2017,
+        2018
+      ],
+      "post_years": [
+        2022,
+        2023,
+        2024
+      ],
+      "profiles": {
+        "brooklyn": {
+          "pre": 8737.0,
+          "post": 8142.222222222223,
+          "change": -594.7777777777774,
+          "post_pre_ratio": 0.9319242557196089
+        },
+        "manhattan": {
+          "pre": 6314.333333333333,
+          "post": 6191.444444444444,
+          "change": -122.88888888888869,
+          "post_pre_ratio": 0.9805381055447043
+        },
+        "williamsburg": {
+          "pre": 7562.444444444445,
+          "post": 6873.666666666667,
+          "change": -688.7777777777783,
+          "post_pre_ratio": 0.9089212776586053
+        }
+      },
+      "counterfactual_ratio_for_zero_treatment_effect": 0.9319242557196089,
+      "peer_ratio_envelope": [
+        0.9089212776586053,
+        0.9805381055447043
+      ],
+      "conditional_counterfactual_bounds": [
+        {
+          "allowed_counterfactual_ratio_bias": 0,
+          "lower_people_per_hour": -424.73920592185823,
+          "upper_people_per_hour": 200.9770193189879,
+          "sign": "both signs possible"
+        },
+        {
+          "allowed_counterfactual_ratio_bias": 0.02,
+          "lower_people_per_hour": -599.479205921858,
+          "upper_people_per_hour": 375.7170193189886,
+          "sign": "both signs possible"
+        },
+        {
+          "allowed_counterfactual_ratio_bias": 0.05,
+          "lower_people_per_hour": -861.5892059218586,
+          "upper_people_per_hour": 637.8270193189883,
+          "sign": "both signs possible"
+        },
+        {
+          "allowed_counterfactual_ratio_bias": 0.1,
+          "lower_people_per_hour": -1298.439205921859,
+          "upper_people_per_hour": 1074.6770193189877,
+          "sign": "both signs possible"
+        }
+      ],
+      "interpretation": "Three-mode representative-profile index, not synchronized all-person flow. Peer-envelope bounds require untreated, spillover-free comparison bridges and a transported trend. Those assumptions are not established; earlier bicycle comparisons fail a placebo pre-trend check."
+    }
+  ],
+  "pulaski_coverage": {
+    "classification_years": [
+      2023
+    ],
+    "atr_years": [
+      2008,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "known_quality_issue": "April13/14,2013 SB records have96intervalrows but only69/9 dailyvehicles. These observations cannot validate complete traffic measurement."
+  },
+  "limitations": [
+    "PPW motor counts are southbound at Carroll Street, bikes include both directions near4th Street, and observation dates differ. Numeric results are a published-count index unless an alignment restriction is made.",
+    "The B69 route-wide historic maxima are genuine onboard passenger loads, not boardings. Their temporal transportability is unverified; PM maximum occurs3\u20134PM, outside the4\u20137PM target but bounds each later hour in that historical source period.",
+    "The January2010 timetable is scheduled service, not observed bus counts, passenger capacity or a hard upper limit on service actually operated.",
+    "Bus relocation to7th Avenue is not disappearance of those travelers from a wider Park Slope screenline. A corridor-only reduction can coexist with unchanged network travel.",
+    "No source-supported finite bounds on all omitted-mode changes or untreated counterfactual trends are available. Numerical scenario bounds must not be reported as unconditional confidence intervals."
+  ]
+}

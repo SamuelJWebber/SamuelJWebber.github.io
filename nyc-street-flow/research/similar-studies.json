@@ -1,0 +1,40 @@
+[
+  {
+    "id": "bloor2017",
+    "authors": "City of Toronto, Transportation Services",
+    "year": 2017,
+    "title": "Bloor Street West Bike Lane Pilot Project Evaluation",
+    "url": "https://www.toronto.ca/legdocs/mmis/2017/pw/bgrd/backgroundfile-107582.pdf",
+    "actual_moving_lane_reduction": true,
+    "method": "Before June 2016, early after October 2016, and season-matched June 2017 counts and vehicle travel times; measured parallel Dupont and Harbord streets to assess diversion.",
+    "finding": "Cycling within the pilot increased 56%. After signal adjustments, car trips were 2:00 longer eastbound in the morning peak and 4:15 longer westbound in the evening peak.",
+    "lesson": "Measure the treated corridor and alternatives together; retain travel-time costs alongside bicycle growth.",
+    "limit": "An observational pilot, with signal and turn changes. Parallel streets can receive diversion. No complete all-mode person-time balance.",
+    "source_pages": "Design p5; cycling p7; vehicles p10; travel time p11 (printed page numbers)."
+  },
+  {
+    "id": "bhuyan2021",
+    "authors": "Prajamitra Bhuyan, Emma J. McCoy, Haojie Li and Daniel J. Graham",
+    "year": 2021,
+    "title": "Analysing the causal effect of London cycle superhighways on traffic congestion",
+    "url": "https://doi.org/10.1214/21-AOAS1450",
+    "open_access_url": "https://arxiv.org/abs/2003.08993",
+    "actual_moving_lane_reduction": null,
+    "method": "2007\u20132014 panel with 75 treated and 375 control zones; propensity weighting and outcome models adjusted for traffic, road and neighborhood characteristics.",
+    "finding": "Estimated motor-traffic speed changes were statistically insignificant.",
+    "lesson": "Adjust for nonrandom project placement and compare changes with credible untreated roads.",
+    "limit": "Early Cycle Superhighways included painted facilities. This is not exclusively a protected-lane-for-driving-lane study and does not measure all-person journeys."
+  },
+  {
+    "id": "moran2026",
+    "authors": "Marcel Moran, Malik Salman and Takahiro Yabe",
+    "year": 2026,
+    "title": "Heterogeneous impacts of protected bike lanes on bikeshare behavior across demographic groups in New York",
+    "url": "https://www.nature.com/articles/s44333-026-00107-2",
+    "actual_moving_lane_reduction": null,
+    "method": "72 million Citi Bike trips, matched stations, before/after difference-in-differences, pre-trend inspection and shuffled-date placebo checks.",
+    "finding": "Estimated 379 additional rides per adjacent station per month following protected-lane installation.",
+    "lesson": "Match comparable locations and test whether changes precede the intervention.",
+    "limit": "Station ridership is not crossing throughput or all-traveler time; projects are not restricted to driving-lane removals."
+  }
+]

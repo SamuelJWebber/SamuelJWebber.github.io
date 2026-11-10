@@ -1,0 +1,54 @@
+﻿Causal design for NYC lane conversion: decision memo
+Checked 2026-11-05. This is design advice and a literature audit, not a new estimated lane-conversion effect.
+
+The exact target remains unsolved in the verified literature: removing moving car lanes for bikes, then measuring the causal effect on all-mode people throughput and total travel minutes. Five close papers are indexed in studies.json. Berlin is the clearest actual moving-lane treatment. NYC has a directly relevant taxi-based analysis, but its treatment is protected cycling provision, and its outcomes remain selected vehicle proxies. Three London papers examine related schemes/data and must not be counted as three independent replications.
+
+The most executable design with our NYC data
+
+1. Define the intervention as it actually happened. For Third Avenue 2023, identify exact installed dates and segments for bike protection, moving-lane removal, bus priority, loading regulations, signal retiming, turn changes and construction. A single simultaneously installed package identifies its combined effect; it cannot identify the separate bike-lane component. A route feature class or installation year alone is insufficient. Keep an intervention registry with dated official as-built evidence, partial opening dates, lanes before/after, usable width and concurrent projects. Never pool parking-only changes with moving-lane conversions without labels.
+
+2. Use a corridor and a surrounding travel area. The local estimand is change on the treated corridor. The network estimand covers that corridor plus prespecified parallel routes and connecting cross streets between fixed east-west boundaries. Adjacent avenues are likely spillover outcomes, not clean controls. Estimate direct and neighboring exposure separately. A no-intervention donor must have comparable pre-trends, direction, signal density, transit service, land use and demand, and be outside the plausible rerouting catchment. First, Lexington and Madison need their own intervention histories; no control should be declared clean from its name alone. Carry sensitivity analyses across narrow and broad spillover zones.
+
+3. Fit comparative interrupted time series / synthetic difference-in-differences for a single package, with an event-study plot. Use at least a full seasonal pre-period and preferably two years of consistent measurement, a construction exclusion window and matched post months. Jan–June2023 versus Jan–June2024 is a useful season-matched contrast, but only six pre-months cannot convincingly establish parallel trends. Match actual hour, weekday and calendar month; use pre-period-only donor selection and weights; reserve pre-period holdouts to check forecast fit. Show unadjusted trends, donor weights, pre-fit error and placebo intervention dates/corridors. With one treated corridor, thousands of hourly rows are not thousands of independent treatments: block time uncertainty and corridor-level placebo inference are more credible than naive observation-level standard errors.
+
+4. Choose outcomes according to identification and coverage. Direct road probe speeds and fixed bus stop-to-stop times can be separate measured outcomes. Standardize each to baseline link/OD, direction, weekday and time-period weights so sample composition cannot masquerade as speed change. Report the raw mix and matched-support coverage alongside the standardized contrast. For speeds, compute travel time for each known-length link before aggregation; inverse of a mean speed is generally not mean travel time. Keep bus passenger-weighted and vehicle-weighted results distinct. Whole-line subway runtime is contextual system evidence, not a precise local Third Avenue travel-time outcome.
+
+5. Build a person-flow screenline only if every mode is observed on the same boundary, direction and hours. Bicycle counter crossings are people-passings; Citi Bike trip starts are neither all cyclists nor crossings. Car counts require occupancy bounds and vehicle classes; bus counts require onboard loads at the boundary, not daily route boardings; walking requires counts. Subway station entries are not subway passengers crossing that boundary. A defensible total may therefore require excluding subway from a street-only estimand or explicitly modelling subway route/OD assignment as a separate uncertain layer. Do not sum several parallel cross-sections: the same traveler can pass each. Report people per hour over the whole corridor and optionally per fixed pre-treatment right-of-way width, not a changing denominator that creates apparent efficiency gains.
+
+6. Measure person-minutes on a consistent spatial/time support. For vehicles moving within a network boundary, sum vehicle travel minutes multiplied by onboard passengers, plus walking/cycling person-minutes and transit passenger-minutes on included segments. For journeys, use a separate fixed-origin/destination metric that includes access, wait, transfer and egress. Do not combine these distinct accounting systems. MTA total_apt and total_att are already signed modelled extra person-minutes relative to schedule on unlinked legs; do not multiply them by passengers again or add them to end-to-end runtime and inferred OD totals. Annual system totals cannot be attributed to one street conversion.
+
+7. Estimate totals and standardized performance separately. Actual person-hours can rise because more people make useful trips. That does not automatically mean greater delay or harm. Publish (a) people crossing the boundary, (b) actual person-hours within it, and (c) travel minutes for a fixed pre-treatment OD/time mix. Any induced/suppressed trips and mode switching should be shown separately. If passenger loads or occupancy are unobserved, provide transparent ranges and the assumptions under which the sign changes. Do not present a precise aggregate causal number when the needed components are unidentified.
+
+Confounders and assumptions to make explicit
+
+A causal total effect requires parallel counterfactual trends or a credible synthetic counterfactual, consistent measurement, no anticipation outside the omitted construction window, and a defensible interference boundary. Match/adjust pre-treatment covariates and external shocks: weather, holidays, school calendar, seasonality, construction, major events, transit outages, enforcement changes and congestion policy. Check treatment/control differences in return-to-office recovery, e-bike/fleet expansion and station capacity. Sensor replacement, sampling changes and missing observations can generate false effects. A clean pre-trend is necessary evidence, not proof that an endogenous installation was random.
+
+Do not automatically control for post-treatment car volume, cycling, route choice or mode share when estimating the total redesign effect. These can be mechanisms. The London2025 mediation paper usefully distinguishes the direct road-space effect from the indirect demand effect, but that decomposition requires stronger assumptions than the total effect. Concurrent signal/bus improvements are treatment components when part of the package, not nuisance covariates to regress away.
+
+Historical retrospective alternative
+
+The Klingen approach can be reproduced or improved for verified pre-July2016 moving-lane conversions using geocoded TLC trip endpoints and metered distances, if the historical coordinates are actually obtainable. Restrict to within-road trips with route-consistent distances, keep fixed trip-length/OD/time support and report the fraction retained. Expand to area-direction outcomes to capture rerouting. Validate taxi sampling against overlapping independent road counters, allowing the taxi share to vary over time. Use a modern cohort-specific or stacked event-study estimator for multiple installations, avoiding already-treated units as controls. This identifies vehicle-time proxies for a selected historic sample; full all-mode results still require bicycle, pedestrian, passenger-load and occupancy observations.
+
+Stronger prospective design
+
+If choosing future rollout dates, randomize order among already approved comparable corridor clusters, or use matched delayed-start corridors with an agreed stable observation period. Instrument before construction: classified boundary counts, privacy-preserving occupancy samples, bus loads and observed travel times, all-cycle counts, pedestrian counts, and fixed OD travel-time panels. Treat parallel routes as part of each cluster, preregister the boundaries/outcomes/weights and publish raw aggregate panels and code. This can identify the desired all-mode effect much more directly than combining disconnected historical datasets.
+
+Exact source locations and reproducibility
+
+Klingen thesis: https://research.vu.nl/ws/files/123630572/J%20J%20%20Klingen%20-%20thesis.pdf
+Printed86–87/PDF94–95 treatment geography; printed89/PDF97 taxi input; printed93–95/PDF101–103 methods; printed98/PDF106 Table5.5. Full PDF downloaded. build_reexpressions.py calculates 100*(exp(beta)-1) and approximate normal confidence intervals from rounded published area-clustered SEs. This is transparent re-expression, not raw-panel replication. No public replication panel/code located. Street-level coefficients are descriptive because rerouting remains.
+
+Berlin: https://www.uni-potsdam.de/fileadmin/projects/lsfiwi/docs/Publikationen/Philipp_Cycling.pdf
+Printed9–16 data/methods; printed22 Table1. Downloaded. Main −0.122 log-speed coefficient means approximately−11.5%, not−12 percentage points of a congestion index. Traffic data obtained by author from government; replication package not found.
+
+London2021: https://spiral.imperial.ac.uk/entities/publication/04d675b4-0aa5-419a-b5fd-fd832a784b10
+Accepted version downloaded through https://arxiv.org/pdf/2003.08993 (Tables11–12, pp.30–31). Public underlying agencies are not equivalent to a published analytic panel. No verified replication package.
+
+London2025: https://www.sciencedirect.com/science/article/pii/S0965856424004178
+Publisher abstract and method sections verified. Full text/panel/code not verified.
+
+London2023: https://academic.oup.com/jrsssc/article/72/5/1452/7263180
+Full HTML saved. Section5/Table2; Data availability explicitly says request from Haojie Li, not publicly available. Tail AADT is not peak travel time.
+
+NYU2026: https://www.nature.com/articles/s44333-026-00107-2
+Article/supplement inspected. Data availability links raw Citi Bike and NYC bike-route sources; no linked public code repository found. +379 is monthly starts at nearby stations, not all cyclists/person throughput. Moving-lane removal is not identified by Facility ClassI.

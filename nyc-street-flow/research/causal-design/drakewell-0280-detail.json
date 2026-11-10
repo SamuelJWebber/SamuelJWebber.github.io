@@ -1,0 +1,64 @@
+{
+  "data": {
+    "FF4E2AF3-63ED-4879-B722-BA50A31E7ECA": {
+      "id": "FF4E2AF3-63ED-4879-B722-BA50A31E7ECA",
+      "node": "NYSDOT_SC",
+      "cosit": "028000000000",
+      "name": "0280",
+      "description": "McGUINNESS BLVD from MEEKER AVE N to GREENPOINT AVE",
+      "isDisabled": false,
+      "collectionInterval": 0,
+      "speedLimit": null,
+      "bearing": 340,
+      "location": {
+        "lat": 40.72364,
+        "lng": -73.94768
+      },
+      "parameters": {
+        "tz": "US/Eastern",
+        "hz": null,
+        "enableqc": "1",
+        "driveson": "r",
+        "fhwa": "1",
+        "fipsstatecode": "36",
+        "duration": "perm",
+        "noqcbefore": "2020-01-01",
+        "use": "temp",
+        "summaryinterval": "60m",
+        "directionality": "N"
+      },
+      "siteParameters": {
+        "directionality": "N"
+      },
+      "nodeParameters": {
+        "driveson": "r",
+        "fhwa": "1",
+        "enableqc": "1",
+        "fipsstatecode": "36",
+        "tz": "US/Eastern",
+        "duration": "perm",
+        "noqcbefore": "2020-01-01",
+        "use": "temp",
+        "summaryinterval": "60m"
+      },
+      "sysParameters": {
+        "tz": "America/New_York",
+        "hz": null,
+        "enableqc": "0"
+      },
+      "tz": "US/Eastern",
+      "accessParameters": {
+        "node": {
+          "node": "NYSDOT_SC",
+          "cosit": "028000000000"
+        },
+        "siteGroups": []
+      },
+      "latestData": "2026-03-06 00:00:00"
+    }
+  },
+  "_meta": {
+    "ms": 39.28,
+    "pid": 36740
+  }
+}

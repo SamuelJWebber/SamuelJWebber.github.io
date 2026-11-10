@@ -1,0 +1,158 @@
+﻿Third Avenue 2023: an executed controlled bus-time analysis
+Checked November 5, 2026
+
+RESULT AND IDENTIFICATION STATUS
+
+The fixed-cell calculation finds a conditional 28.0-second reduction (2.74%)
+in peak-period bus time over the 1.472-mile Third Avenue E67–E97 segment,
+relative to the change on Lexington Avenue E96–E68. Actual fixed-weight time
+on the treated segment fell from 17.149 to 16.543 minutes. The conditional
+comparison is -7.7 seconds for AM and -45.2 seconds for PM.
+
+This does NOT establish a clean causal effect. The primary control already
+diverged materially before construction: its Jan–Mar to Apr–Jun 2023 placebo
+change is +52.1 seconds, and its held-out pre-period forecast error is 54.1
+seconds RMS. Those discrepancies exceed the 28-second estimated saving.
+Spring 2023 transit signal priority, route operations, traffic displacement,
+and other street-specific changes remain plausible confounders.
+
+The treatment is the joint bus-lane, protected-bike-lane, intersection and
+signal package. It is not an isolated bike-lane effect. The outcome is actual
+bus in-vehicle segment time, including dwell and signals. It excludes access,
+waiting, transfers and other modes. No all-traveler passenger-minute or total
+person-flow effect can be computed from these bus records alone.
+
+FROZEN PRIMARY DESIGN
+
+The official design converts a typical five general vehicle travel lanes to
+three while adding protected cycling space and an offset bus lane. DOT
+announced construction July 17, 2023 and completion December 7, 2023. The
+primary comparison uses January–June 2023 versus January–June 2024; all
+July–December 2023 construction months are excluded. All 24 months of
+2023–2024 are shown in the descriptive event series, with implementation
+shaded. Later 2024 points are not added to the primary estimate.
+
+The segment runs E67 to E97, one block beyond the E96 project boundary. It
+contains most, but not all, of the project and must not be described as the
+entire E59–E96 corridor. Included services are M101 Limited, M102 Local and
+M103 Local. Weekday clock-hour bins are AM 07:00–09:59 and PM 16:00–18:59.
+
+Each cell is an exact endpoint pair, route, service type, weekday and hour.
+Month is retained separately. Counts from January–June 2023 weight cells,
+and exactly those weights are held fixed in later months. Primary Lexington
+uses the same treated route/service/weekday/hour weights. Each of the six
+calendar-month pairs receives equal weight in the before-after contrast.
+
+The outcome is mean minutes per fixed roadway mile, using each cell's median
+pre-period roadway length. Results are also scaled to the treated 1.472-mile
+distance for readability; the Lexington values at that distance are normalized
+comparisons, not its actual 1.405-mile traversal times. We subtract the
+control's before-after pace change from the treated change. Reported percent
+effects use the additive parallel-trend counterfactual as the denominator.
+
+Multiple floating-point distance rows within the same source cell are
+combined using their actual bus-trip counts. Cells with more than 1% distance
+variation are excluded; none met that exclusion. No approximate endpoint
+matching or imputed outcomes are used. M1's Madison timepoint was not stable
+across the primary window, so Madison estimates retain M3 and M4 Local.
+
+CONTROL AND PRETREND SENSITIVITY
+
+Combined peaks; seconds over the treated 1.472-mile distance:
+
+Control             Conditional change    Pre-only held-out RMS error
+Lexington (primary)       -28.0                       54.1
+First Avenue              -32.7                       35.8
+Madison Avenue            -28.5                       48.3
+Third Avenue south        -26.6                       29.9
+Third Avenue north        +53.9                       42.1
+
+For the pre-only diagnostic, each control is indexed to the treated Jan–Mar
+2023 mean, then predicts held-out Apr–Jun 2023. No post-treatment outcome is
+used to calibrate or rank controls. Fixed January–June count weights and
+balanced support are retained, so this is an outcome holdout, not a fully
+prospective data-availability exercise. The primary Lexington basket has
+complete support, so no post-dependent cell exclusion affects its result.
+
+The primary control remains Lexington regardless of this ranking. No flexible
+synthetic-control fit is attempted with only six pre months. Three validation
+months cannot establish parallel trends. Madison's near-zero average drift
+masks monthly forecast errors of +31.6, -67.2 and +38.6 seconds; it is not a
+clear pretrend success. Third-south has the lowest held-out RMS error but
+shares corridor signals, operations and likely traffic spillover.
+
+First Avenue's control begins at E79 to avoid the directly redesigned
+E61–E79 stretch listed in DOT's 2023 project archive, but upstream spillover
+remains possible. The northern Third Avenue control includes only M101
+Limited. Matching treated and northern M101 Limited with identical clock
+weights still gives +54.5 seconds, so the reversal is not only route mix.
+
+Primary route-specific changes versus Lexington are M101 Limited -18.8
+seconds, M102 Local -24.7, and M103 Local -46.8. The combined estimate is
+-9.0 seconds using Q1 alone and -46.9 using Q2 alone. Excluding the May pair
+gives -21.1 seconds. These are disclosed sensitivities, not alternative
+specifications selected to claim a favorable effect.
+
+UNCERTAINTY AND COVERAGE
+
+There is one treated corridor and six paired calendar months. Thousands of
+source bins and bus traversals are not independent policy replications.
+A descriptive paired-month t interval is -67.4 to +11.5 seconds; it assumes
+independent month-pair errors and is not a valid causal confidence claim in
+the presence of failed trends or spillovers. The downloadable data also
+include a two-month circular-block sensitivity interval. Its apparent
+precision with only six pairs does not resolve identification or prove an
+effect. No conventional causal significance claim is made.
+
+The raw download contains 35,660 rows. The primary combined-peak basket has
+all 90 possible paired route/service/weekday/hour cells in every primary
+month and retains 100% of selected published trips: 10,756 treated before
+and 10,171 after. This is matching coverage of published records, not proof
+that MTA captured every operated bus. The source derives arrivals from GPS
+and includes coarse timepoint estimates, detours, dwell, operator reliefs
+and traffic. Aggregated data do not reveal trip-level variance or passenger
+loads. An independent standard-library recomputation reproduced the main
+result to floating-point precision.
+
+MADISON / OTHER COINTERVENTION AUDIT
+
+The official 2025 Madison proposal extends double bus lanes south of E42 to
+E23 and documents M2/M4 enforcement expansion in 2025. These changes are
+outside the primary post window. Searches of official 2023/2024 project
+archives and MTA/DOT releases did not identify a redesign on the E57–E95
+control during January 2023–June 2024. That is not proof of no construction,
+signal or operational change. The full monthly record is therefore shown.
+The 96th Street redesign completed in December 2024 and later enforcement
+changes further limit interpretation of the descriptive second half of 2024.
+
+DIRECT CAR-TIME DATA
+
+DOT's historical E-ZPass API for 2021–July 2024 returned HTTP403 with an
+explicit login-required message in this session. Its current endpoint was
+accessible. This is an access limitation, not evidence that historical car
+data do not exist. No car-time effect is estimated or inferred from bus time.
+
+REPRODUCTION AND FILES
+
+Python dependencies: pandas, numpy, scipy; matplotlib for plots.
+Run, in this directory:
+  python fetch_bus_panel.py             # uses retained raw files by default
+  python fetch_bus_panel.py --refresh   # refetches bounded MTA queries
+  python analyze_third_avenue.py
+  python qa_recompute_independent.py
+  python plot_third_avenue.py
+
+third-avenue-analysis.json contains estimates, 24-month panels, validation,
+coverage and source evidence. CSV files provide the same comparisons,
+fixed cell weights, primary monthly differences and validation results.
+qa-independent.json contains the independent audit and route checks.
+source-evidence.json contains primary-source URLs and a control-history audit.
+Raw responses and manifests preserve API queries, retrieval times and SHA256.
+
+Key primary sources:
+https://data.ny.gov/d/58t6-89vi
+https://www.nyc.gov/html/dot/html/pr2023/3rd-ave-redesign.shtml
+https://www.nyc.gov/html/dot/html/pr2023/completion-safety-project-third-ave.shtml
+https://www.nyc.gov/html/dot/downloads/pdf/third-ave-complete-streets-safety-improvements-oct2022.pdf
+https://www.nyc.gov/html/dot/html/about/projects-2023.shtml
+https://www.nyc.gov/html/dot/html/pr2025/propose-busway-34-street-manhattan.shtml

@@ -1,0 +1,109 @@
+[
+  {
+    "name": "ezpass2023-mcguinness",
+    "url": "https://data.cityofnewyork.us/resource/pi8f-savx.json?%24select=sid%2Clink_name%2Ccount%28%2A%29+as+rows%2Cmin%28median_calculation_timestamp%29+as+first%2Cmax%28median_calculation_timestamp%29+as+last&%24where=upper%28link_name%29+like+%27%25MCGUINNESS%25%27&%24group=sid%2Clink_name&%24limit=100",
+    "status": "failed",
+    "error": "HTTP Error 503: Service Unavailable"
+  },
+  {
+    "name": "nyc-atr-mcguinness-2022plus",
+    "url": "https://data.cityofnewyork.us/resource/7ym2-wayt.json?%24select=yr%2Cstreet%2Cfromst%2Ctost%2Cdirection%2Csegmentid%2Ccount%28%2A%29+as+rows&%24where=upper%28street%29+like+%27%25MCGUINNESS%25%27+and+yr+%3E%3D+2022&%24group=yr%2Cstreet%2Cfromst%2Ctost%2Cdirection%2Csegmentid&%24limit=1000",
+    "status": "failed",
+    "error": "HTTP Error 503: Service Unavailable"
+  },
+  {
+    "name": "bus-stop-b62-coverage",
+    "url": "https://data.ny.gov/resource/fvdm-uavx.json?%24select=min%28month%29+as+first%2Cmax%28month%29+as+last%2Ccount%28%2A%29+as+rows%2Ccount%28distinct+stop_id%29+as+stops&%24where=route_id%3D%27B62%27",
+    "status": "acquired",
+    "rows": [
+      {
+        "first": "2024-01-01T00:00:00.000",
+        "last": "2026-09-01T00:00:00.000",
+        "rows": "538322",
+        "stops": "133"
+      }
+    ]
+  },
+  {
+    "name": "subway-od-sample",
+    "url": "https://data.ny.gov/resource/28vm-gjqr.json?%24limit=1",
+    "status": "acquired",
+    "rows": [
+      {
+        "year": "2026",
+        "month": "5",
+        "day_of_week": "Monday",
+        "hour_of_day": "14",
+        "timestamp": "2026-05-04T14:00:00.000",
+        "origin_station_complex_id": "455",
+        "origin_station_complex_name": "69 St (7)",
+        "origin_latitude": "40.746325",
+        "origin_longitude": "-73.896403",
+        "destination_station_complex_id": "610",
+        "destination_station_complex_name": "Grand Central-42 St (4,5,6,7,S)",
+        "destination_latitude": "40.751992",
+        "destination_longitude": "-73.97735933",
+        "estimated_average_ridership": "3.0985",
+        "origin_point": {
+          "type": "Point",
+          "coordinates": [
+            -73.896403,
+            40.746325
+          ]
+        },
+        "destination_point": {
+          "type": "Point",
+          "coordinates": [
+            -73.97735933,
+            40.751992
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "bus-segment-schema",
+    "url": "https://data.ny.gov/resource/58t6-89vi.json?%24limit=1",
+    "status": "acquired",
+    "rows": [
+      {
+        "year": "2023",
+        "month": "3",
+        "timestamp": "2023-03-01T09:00:00.000",
+        "day_of_week": "Friday",
+        "hour_of_day": "9",
+        "route_id": "B6",
+        "direction": "W",
+        "borough": "Brooklyn",
+        "route_type": "Limited",
+        "stop_order": "1",
+        "timepoint_stop_id": "306921",
+        "timepoint_stop_name": "LIVONIA AV/ASHFORD ST",
+        "timepoint_stop_latitude": "40.666382",
+        "timepoint_stop_longitude": "-73.883617",
+        "next_timepoint_stop_id": "300590",
+        "next_timepoint_stop_name": "COZINE AV /ASHFORD ST",
+        "next_timepoint_stop_latitude": "40.658352",
+        "next_timepoint_stop_longitude": "-73.877775",
+        "road_distance": "0.724",
+        "average_travel_time": "5.334420",
+        "average_road_speed": "8.14334079431316",
+        "bus_trip_count": "46",
+        "timepoint_stop_georeference": {
+          "type": "Point",
+          "coordinates": [
+            -73.883617,
+            40.666382
+          ]
+        },
+        "next_timepoint_stop_georeference": {
+          "type": "Point",
+          "coordinates": [
+            -73.877775,
+            40.658352
+          ]
+        }
+      }
+    ]
+  }
+]

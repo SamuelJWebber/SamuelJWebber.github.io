@@ -1,0 +1,3 @@
+metric,before,after,absolute_change,change_pct,unit
+bicycles,8896,9267,371,4.170413669064743,sum of three corridor-average daily counts; not an audited common screenline or unique journeys
+motor_vehicles,58315,56478,-1837,-3.1501328989110844,sum of three corridor-average daily counts; not an audited common screenline or unique journeys

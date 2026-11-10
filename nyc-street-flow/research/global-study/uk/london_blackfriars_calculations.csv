@@ -1,0 +1,4 @@
+metric,value,unit,formula,limitations
+combined carriageway and cycle track throughput,3480,people/hour,1542+1938,excludes footways and rail; snapshot only
+cycle share of these two facilities,55.68965517241379,percent,1938/(1542+1938)*100,not all-mode share; no baseline
+cycle track/main carriageway people ratio,1.2568093385214008,ratio,1938/1542,"5x cited by TfL normalizes road space, not actual throughput ratio"

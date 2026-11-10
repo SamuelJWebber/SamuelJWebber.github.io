@@ -1,0 +1,16 @@
+{
+  "checked_on": "2026-11-05",
+  "passed": true,
+  "checks": [
+    "Other cities tab rendered all 19 cases and 15 comparison selectors",
+    "Canada filter rendered 7 of 19 cases",
+    "Time filter rendered 16 of 19 cases and is labelled Speed / travel time",
+    "Vancouver comparison displayed all three windows and sensitivity warnings",
+    "Desktop overview inspected and screenshot saved",
+    "No application errors observed; browser extension metadata errors are unrelated"
+  ],
+  "limits": [
+    "Mobile layout inspected in CSS, not a device viewport",
+    "Browser checks do not establish causal validity"
+  ]
+}

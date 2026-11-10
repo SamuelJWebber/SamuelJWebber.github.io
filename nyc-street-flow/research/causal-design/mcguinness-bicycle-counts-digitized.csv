@@ -1,0 +1,5 @@
+year,location,surface,value_approx,unit,exact_count,date,hour,source_url,pdf_page,method
+2021,McGuinness Blvd at Greenpoint Ave,in street,10,bicycles in one hour,False,,,https://www.nyc.gov/html/dot/downloads/pdf/mcguinness-blvd-calyer-st-freeman-st-apr2026.pdf,12,Vector stacked-bar height; 0–60 axis; rounded to nearest bicycle
+2021,McGuinness Blvd at Greenpoint Ave,on sidewalk,13,bicycles in one hour,False,,,https://www.nyc.gov/html/dot/downloads/pdf/mcguinness-blvd-calyer-st-freeman-st-apr2026.pdf,12,Vector stacked-bar height; 0–60 axis; rounded to nearest bicycle
+2025,McGuinness Blvd at Greenpoint Ave,in street,51,bicycles in one hour,False,,,https://www.nyc.gov/html/dot/downloads/pdf/mcguinness-blvd-calyer-st-freeman-st-apr2026.pdf,12,Vector stacked-bar height; 0–60 axis; rounded to nearest bicycle
+2025,McGuinness Blvd at Greenpoint Ave,on sidewalk,0,bicycles in one hour,False,,,https://www.nyc.gov/html/dot/downloads/pdf/mcguinness-blvd-calyer-st-freeman-st-apr2026.pdf,12,No sidewalk segment visible in 2025 stacked bar; requires raw-count confirmation

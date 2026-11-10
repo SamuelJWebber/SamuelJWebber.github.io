@@ -1,0 +1,4 @@
+{
+  "url": "https://data.cityofnewyork.us/resource/7ym2-wayt.json?%24where=upper%28street%29+like+%27%25MCGUINNESS%25%27+and+yr%3E%3D2022&%24limit=5",
+  "rows": []
+}

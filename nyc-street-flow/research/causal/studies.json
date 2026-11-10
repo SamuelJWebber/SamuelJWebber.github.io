@@ -1,0 +1,84 @@
+{
+  "checked_on": "2026-11-05",
+  "answer": "No verified study in this search jointly estimates the causal effect of removing moving car lanes for bicycles on all-mode people throughput and total passenger travel minutes. The five closest papers estimate selected vehicle outcomes; three London papers are related evidence, not independent city replications.",
+  "studies": [
+    {
+      "id": "klingen-nyc-2021",
+      "citation": "Klingen, J.J. (2021), Natural Experiments in Environmental and Transport Economics, chapter 5: Bikes lanes, road safety, and congestion. VU Amsterdam PhD thesis. Chapter coauthors: Daniel Graham, Jos van Ommeren, Erik Verhoef.",
+      "status": "Published thesis; related work remains on author's working-paper list, not verified journal publication.",
+      "url": "https://research.vu.nl/en/publications/natural-experiments-in-environmental-and-transport-economics/",
+      "pdf_url": "https://research.vu.nl/ws/files/123630572/J%20J%20%20Klingen%20-%20thesis.pdf",
+      "pages": "Printed 86–95: treatment, data, methods; printed 98 / PDF106: Table 5.5.",
+      "design": "Manhattan north/south area-direction weekly two-way fixed effects, July 2012–June 2016. Treatment: ability to traverse an area fully on a protected lane. Within-road taxi trips proxy speed and flow; roadwork window excluded.",
+      "result": "Area speed log coefficient −0.013 (SE .011); taxi flow +.007 (.028): both insignificant. Re-expressed approximate normal 95% intervals: speed −1.29% [−3.40,+0.86]; flow +0.70% [−4.68,+6.38].",
+      "lane_removal": "Not established: protected-lane classification is not a moving-lane-removal indicator.",
+      "data_code": "Full thesis downloaded. No linked public processed panel or replication code found in thesis, repository, author page or targeted searches. Raw TLC, CSCL and bike-route sources cited; historical coordinates require independent availability check.",
+      "critique": "Area aggregation addresses local rerouting, not all spillovers. Taxi share may change; selected trips and post-treatment trip weights change composition. Fixed effects do not prove parallel trends. No all-mode passengers or person-minutes.",
+      "version_warning": "2020 conference draft reported positive street coefficients; current author summary mentions ~1% area speed reduction. Use explicitly dated thesis table, not an unversioned headline.",
+      "extra_urls": ["https://sites.google.com/view/jorisklingen/research", "https://transp-or.epfl.ch/heart/2020/abstracts/HEART_2020_paper_98.pdf"]
+    },
+    {
+      "id": "schrauth-berlin-2022",
+      "citation": "Schrauth, P. (2022), The Causal Effect of Cycling Infrastructure on Traffic and Accidents: Evidence from Pop-up Bike Lanes in Berlin. CEPA Discussion Paper 48. DOI 10.25932/publishup-55335.",
+      "status": "Working paper; SSRN version posted 2023, not verified peer-reviewed publication.",
+      "url": "https://www.uni-potsdam.de/fileadmin/projects/lsfiwi/docs/Publikationen/Philipp_Cycling.pdf",
+      "pages": "Printed pp.9–16 methods/data; pp.20–22 and Table1 results.",
+      "design": "2019–2020 hourly monitoring; event study and TWFE; 23 treated sensors on six streets. Controls exclude within 1 km and match lane counts. Station×lockdown controls. Synthetic control concerns accidents, not speed.",
+      "result": "Table1 adjusted level speed −4.123 km/h; log speed −0.122, equivalent to −11.5%. Adjusted log vehicle volume −0.00540, insignificant. Abstract's 'percentage points' is imprecise log-effect wording.",
+      "lane_removal": "Explicit: car lanes replaced, including two-to-one and three-to-two conversions.",
+      "data_code": "PDF downloaded. Senate/VMZ supplied traffic records; no verified public replication package. Public geography/accident inputs are insufficient alone.",
+      "critique": "COVID and treatment coincide; station-specific lockdown adjustment cannot absorb every differential recovery. Few treated streets, incomplete sensors, per-lane averaging, nearby diversion. No cycling/transit person totals or journey time. Closest verified moving-lane-removal study."
+    },
+    {
+      "id": "bhuyan-london-2021",
+      "citation": "Bhuyan, P., McCoy, E.J., Li, H., Graham, D.J. (2021), Analysing the causal effect of London cycle superhighways on traffic congestion. Annals of Applied Statistics 15(4),1999–2022. DOI 10.1214/21-AOAS1450.",
+      "status": "Peer-reviewed.",
+      "url": "https://spiral.imperial.ac.uk/entities/publication/04d675b4-0aa5-419a-b5fd-fd832a784b10",
+      "pdf_url": "https://arxiv.org/pdf/2003.08993",
+      "pages": "Accepted/arXiv version Tables11–12, printed pp.30–31.",
+      "design": "75 treated and 375 control zones; 2007–2014; pre/post GLMM, propensity weighting, doubly robust estimator. DfT/LAEI traffic, road and socioeconomic covariates.",
+      "result": "Doubly robust ATT: AADT −7.026% [−9.684,−5.007]; speed +2.096% [−0.813,+4.704]. Speed statistically inconclusive. ATE differs from ATT.",
+      "lane_removal": "Broad early CS schemes, described as barrier-free lanes; no verified segment-by-segment moving-lane reduction treatment.",
+      "data_code": "Accepted PDF downloadable. Public source datasets cited; no verified processed panel/code package. Later related paper explicitly restricts study data.",
+      "critique": "Annual vehicle averages and zonal exposure are not corridor peak travel times. No-all-unmeasured-confounding and no-interference assumptions remain; route diversion and mode changes unresolved. Cannot convert reduced vehicle flow to increased total people flow."
+    },
+    {
+      "id": "zhang-london-2025",
+      "citation": "Zhang, Y., Li, H., Ren, G. (2025), Analysing the role of traffic volume as mediator in transport policy evaluation with causal mediation analysis and targeted learning. Transportation Research A 192,104369. DOI 10.1016/j.tra.2024.104369.",
+      "status": "Peer-reviewed; publisher abstract/method snippets verified, full text access not verified.",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0965856424004178",
+      "design": "London CS observational targeted-learning mediation: separate direct speed effect and indirect effect through motor volume.",
+      "result": "AADT −9.2%; direct speed effect −2.0%, indirect +1.3%, small combined effect. These are distinct estimands from the earlier ATT and are not independent city evidence.",
+      "lane_removal": "Less vehicle space proposed as mechanism; no verified moving-lane-removal-only exposure.",
+      "data_code": "No verified public panel/code located; do not present as immediately reproducible.",
+      "critique": "Mediation requires stronger sequential exchangeability assumptions, including mediator–outcome confounding. Mechanism interpretation is useful, but does not measure total person-minutes. For policy total effects, do not mechanically adjust for post-treatment traffic volume."
+    },
+    {
+      "id": "bhuyan-london-2023",
+      "citation": "Bhuyan, P., Jana, K., McCoy, E.J. (2023), Causal analysis at extreme quantiles with application to London traffic flow data. JRSS C72(5),1452–1474. DOI10.1093/jrsssc/qlad080.",
+      "status": "Peer-reviewed; full HTML verified.",
+      "url": "https://academic.oup.com/jrsssc/article/72/5/1452/7263180",
+      "design": "450 observations; covariate-adjusted quantile causal model of AADT, 2007–2010 baseline versus2011–2014 outcomes; heavy-tail extrapolation.",
+      "result": "Treated 99.5th-percentile AADT effect +28.80% [19.27,40.13], Table2. This is a distribution-tail vehicle-flow contrast, not an individual trip delay or mean congestion effect.",
+      "lane_removal": "Same broad early CS context; no verified moving-lane-removal-specific coding.",
+      "data_code": "Data availability statement: request from Haojie Li, not public due privacy/ethical restrictions. No verified downloadable replication code.",
+      "critique": "A higher AADT tail can coexist with a lower mean; does not contradict earlier mean estimates. Annual-flow extremes are not hourly peak congestion. Small extreme-tail effective sample, model extrapolation and unmeasured confounding matter. Does not solve people throughput/time."
+    }
+  ],
+  "requested_additional_check": {
+    "id": "moran-nyu-2026",
+    "citation": "Moran, M., Salman, M., Yabe, T. (2026), Heterogeneous impacts of protected bike lanes on bikeshare behavior across demographic groups in New York. npj Sustainable Mobility and Transport3,39. DOI10.1038/s44333-026-00107-2.",
+    "url": "https://www.nature.com/articles/s44333-026-00107-2",
+    "supplement_url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs44333-026-00107-2/MediaObjects/44333_2026_107_MOESM1_ESM.pdf",
+    "result": "PSM plus station/month TWFE reports +379 monthly Citi Bike starts per station after protected lane installation, p<.001.",
+    "data_code": "Data availability links raw Citi Bike and end-2024 NYC bike-network data. Article has no code-availability section or GitHub/Zenodo repository link; targeted author/title searches found no public code. Supplement download checked separately.",
+    "lane_removal": "Facility ClassI and proximity within100m do not identify removed moving vehicle lanes. No lane-count-change variable in reported exposure.",
+    "critique": "Bike-share starts only; neither all cycling nor net mode shift. Post-treatment station supply/e-bike composition, spillovers, historical network survivorship and heterogeneous staggered TWFE deserve checks. Date-shuffle placebo does not prove absence of unobserved confounding. Do not append379 to corridor people counts."
+  },
+  "screened_out": [
+    {"citation":"Younes et al.(2024), The traffic calming effect of delineated bicycle lanes. Journal of Urban Mobility5,100071.","url":"https://vtc.rutgers.edu/publication/the-traffic-calming-effect-of-delineated-bicycle-lanes/","reason":"Useful real April2022 Asbury Park pilot,9575vehicle trajectories,−21% right-turn average speed; nine parking spaces removed and lanes narrowed, no moving lane removed. Intersection calming is not journey congestion/allmode throughput. PDF downloaded."},
+    {"citation":"Marqués et al.(2015), How infrastructure can promote cycling in cities: Lessons from Seville. Research in Transportation Economics53,31–44.","url":"https://www.sciencedirect.com/science/article/pii/S073988591500061X","reason":"Network descriptive case and modal-shift evidence; not verified quasi-experimental allmode time/throughput effect of moving-lane removal."},
+    {"citation":"NYCDOT(2014), Protected Bicycle Lanes in NYC.","url":"https://www.nyc.gov/html/dot/downloads/pdf/2014-11-bicycle-path-data-analysis.pdf","reason":"Before/after corridor taxi speeds and counts, useful descriptive benchmark; no credible comparison design verified. Search indexed source but direct download404 on check; do not list as successfully downloaded."},
+    {"citation":"NYCDOT(2010), Green Light for Midtown evaluation.","url":"https://www.nyc.gov/html/dot/downloads/pdf/broadway_report_final2010_web2.pdf","reason":"Pedestrianization with east/west taxi comparison, bundled intervention rather than bike-lane conversion. Search indexed source; direct download404 on check."}
+  ]
+}

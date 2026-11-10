@@ -1,0 +1,172 @@
+[
+  {
+    "id": "copenhagen-bus",
+    "title": "Copenhagen: bus running time",
+    "subtitle": "Routes 5A and 350S, weekday AM 08–10 / PM 15–18; September vs late October–November 2008.",
+    "unit": "seconds",
+    "rows": [
+      {
+        "label": "5A toward Nørreport AM",
+        "before": 719,
+        "after": 694,
+        "change": -25,
+        "note": "Source prints −15 s, but 11:59 to 11:34 equals −25 s; displayed means retained."
+      },
+      {
+        "label": "5A toward Nørreport PM",
+        "before": 824,
+        "after": 740,
+        "change": -84,
+        "note": "Segment running time; not a complete journey."
+      },
+      {
+        "label": "5A toward Bellahøj AM",
+        "before": 680,
+        "after": 667,
+        "change": -13,
+        "note": "Segment running time; not a complete journey."
+      },
+      {
+        "label": "5A toward Bellahøj PM",
+        "before": 846,
+        "after": 787,
+        "change": -59,
+        "note": "Segment running time; not a complete journey."
+      },
+      {
+        "label": "350S toward Nørreport AM",
+        "before": 558,
+        "after": 521,
+        "change": -37,
+        "note": "Segment running time; not a complete journey."
+      },
+      {
+        "label": "350S toward Nørreport PM",
+        "before": 644,
+        "after": 568,
+        "change": -76,
+        "note": "Segment running time; not a complete journey."
+      },
+      {
+        "label": "350S toward Bellahøj AM",
+        "before": 546,
+        "after": 531,
+        "change": -15,
+        "note": "Segment running time; not a complete journey."
+      },
+      {
+        "label": "350S toward Bellahøj PM",
+        "before": 716,
+        "after": 637,
+        "change": -79,
+        "note": "Segment running time; not a complete journey."
+      }
+    ],
+    "note": "Descriptive before/after, no untreated comparator. The treatment bundles bus priority, cycle space, access and signal changes. Separate modes and route segments cannot establish total person-minutes.",
+    "source_url": "https://www.trm.dk/media/cg1dxtrr/evaluering-af-forsoeg-paa-noerrebrogadepdf.pdf"
+  },
+  {
+    "id": "copenhagen-bike",
+    "title": "Copenhagen: cycling segment time",
+    "subtitle": "A: Bragesgade–Kapelvej. B: Kapelvej–Søtorvet. Before versus trial GPS runs; original Table 5.3.",
+    "unit": "seconds",
+    "rows": [
+      {
+        "label": "A toward city AM",
+        "before": 227,
+        "after": 229,
+        "change": 2,
+        "note": "Segment running time; not a complete journey."
+      },
+      {
+        "label": "B toward city AM",
+        "before": 212,
+        "after": 205,
+        "change": -7,
+        "note": "Segment running time; not a complete journey."
+      },
+      {
+        "label": "A away from city AM",
+        "before": 244,
+        "after": 257,
+        "change": 13,
+        "note": "Segment running time; not a complete journey."
+      },
+      {
+        "label": "B away from city AM",
+        "before": 199,
+        "after": 237,
+        "change": 38,
+        "note": "Segment running time; not a complete journey."
+      },
+      {
+        "label": "A toward city PM",
+        "before": 238,
+        "after": 256,
+        "change": 18,
+        "note": "Segment running time; not a complete journey."
+      },
+      {
+        "label": "B toward city PM",
+        "before": 205,
+        "after": 209,
+        "change": 4,
+        "note": "Segment running time; not a complete journey."
+      },
+      {
+        "label": "A away from city PM",
+        "before": 226,
+        "after": 218,
+        "change": -8,
+        "note": "Segment running time; not a complete journey."
+      },
+      {
+        "label": "B away from city PM",
+        "before": 197,
+        "after": 215,
+        "change": 18,
+        "note": "Segment running time; not a complete journey."
+      }
+    ],
+    "note": "Descriptive before/after, no untreated comparator. The treatment bundles bus priority, cycle space, access and signal changes. Separate modes and route segments cannot establish total person-minutes.",
+    "source_url": "https://www.trm.dk/media/cg1dxtrr/evaluering-af-forsoeg-paa-noerrebrogadepdf.pdf"
+  },
+  {
+    "id": "copenhagen-rerouted-bus",
+    "title": "Copenhagen: rerouted 3A bus time",
+    "subtitle": "Route 3A changed its route during the trial. It is an outcome of the package, not an untreated control.",
+    "unit": "seconds",
+    "rows": [
+      {
+        "label": "3A toward Enghave AM",
+        "before": 277,
+        "after": 316,
+        "change": 39,
+        "note": "Segment running time; not a complete journey."
+      },
+      {
+        "label": "3A toward Enghave PM",
+        "before": 309,
+        "after": 331,
+        "change": 22,
+        "note": "Segment running time; not a complete journey."
+      },
+      {
+        "label": "3A toward Nordhavn AM",
+        "before": 334,
+        "after": 285,
+        "change": -49,
+        "note": "Segment running time; not a complete journey."
+      },
+      {
+        "label": "3A toward Nordhavn PM",
+        "before": 306,
+        "after": 323,
+        "change": 17,
+        "note": "Segment running time; not a complete journey."
+      }
+    ],
+    "note": "Descriptive before/after, no untreated comparator. The treatment bundles bus priority, cycle space, access and signal changes. Separate modes and route segments cannot establish total person-minutes.",
+    "source_url": "https://www.trm.dk/media/cg1dxtrr/evaluering-af-forsoeg-paa-noerrebrogadepdf.pdf"
+  }
+]

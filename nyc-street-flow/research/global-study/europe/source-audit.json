@@ -1,0 +1,40 @@
+{
+  "review_status": "Completed bounded acquisition and quality audit; no causal model fitted",
+  "berlin": {
+    "source": "Official Berlin traffic detection archive",
+    "license": "Datenlizenz Deutschland – Namensnennung – Version 2.0",
+    "required_attribution": "Digitale Plattform Stadtverkehr Berlin / Verkehrsdetektion Berlin",
+    "archive_revision_warning": "Official landing page says historical data revised in 2025",
+    "quality_regime": "alte_qualitaetssicherung/Messquerschnitte used consistently",
+    "unit": "vehicles per hour and mean point speed km/h at direction-specific cross-section",
+    "missingness_rule": "Provider emits cross-section hour only when required constituent lane detectors are valid; lane-hour threshold at least75% valid intervals",
+    "metadata_vintage": "2022-07-20",
+    "coverage_audit": "19 road-name candidates;18 have rows in all4sampledmonths;11 have at least1metadata detector marked Radspur/deinstalled; treatment geography not yet adjudicated",
+    "causal_limit": "Paper mean-across-lanes volume differs from full-road total; detector retirement dates blank; do not assume metadata equals 2020 asbuilt"
+  },
+  "paris": {
+    "source": "Ville de Paris hourly multimodal thermal camera counts",
+    "schema_verified": true,
+    "unit": "nb_usagers counts VEHICLES, not persons",
+    "origin_destination_limit": "Trajectories describe camera entry/exit detection zones, not trip origin/destination",
+    "sample": "site10004;2021-09-06T00:00Z through2021-09-13T00:00Z exclusive",
+    "duplicates": 0,
+    "unique_hours": 168,
+    "sparse_category_rows": "Some mode/trajectory combinations have fewer rows than168; absentrow≠verifiedzero",
+    "baseline_test": "Firstsite10004record2020-05-22T22:00Z;after May11 treatment; reject as sole beforeafter dataset",
+    "versioning": "Provider says sensors and mode classification change over time; geometry mapping must be versioned",
+    "causal_limit": "No occupants, busloads, railflow, travel times or pretreatment baseline in sampled feed"
+  },
+  "voltaire": {
+    "source": "Official city project page and April2017 presentation",
+    "opening_precision": "Staged constructionJuly2017–July2019; exactsegmentdates notyetverified",
+    "metric_warning": "20%motorcapacityreduction is projected design capacity, notobserved flow",
+    "status": "No aligned raw pre/post panel yet"
+  },
+  "checks": [
+    "Reproduction script executed successfully",
+    "CandidateJSON parsed successfully",
+    "Raw-file hashes available",
+    "No account or credentials needed"
+  ]
+}

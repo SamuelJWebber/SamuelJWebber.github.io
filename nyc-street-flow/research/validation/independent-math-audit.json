@@ -1,0 +1,44 @@
+{
+  "audit_date": "2026-11-05",
+  "scope": "Independent algebra checks of calculators, not validation of assumptions or causal identification",
+  "checks": [
+    {
+      "check": "No-change scenario preserves people and time",
+      "passed": true
+    },
+    {
+      "check": "Every single mode switch conserves travelers exactly",
+      "passed": true
+    },
+    {
+      "check": "500 mixed weighted cohorts reconcile with independent sums",
+      "passed": true
+    },
+    {
+      "check": "Illustrative break-even frontier satisfies its defining equation",
+      "passed": true
+    },
+    {
+      "check": "Overallocated switches, missing and infinite inputs are rejected",
+      "passed": true
+    },
+    {
+      "check": "Occupied groups cannot receive zero complete journey time",
+      "passed": true
+    },
+    {
+      "check": "Unoccupied zero-time alternatives do not crash the frontier",
+      "passed": true
+    },
+    {
+      "check": "Impossible uniform car-time reductions are identified",
+      "passed": true
+    },
+    {
+      "check": "PPW zero-flow thresholds reconcile across periods, baselines and occupancies",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "max_abs_numeric_discrepancy": 8.731149137020111e-11
+}

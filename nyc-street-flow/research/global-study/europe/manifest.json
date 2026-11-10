@@ -1,0 +1,157 @@
+[
+  {
+    "file": "berlin-archive-list.xml",
+    "bytes": 171419,
+    "sha256": "7b685040680a06f7e9e0498966c653fe4d6f82c6642d56363230b06c84b86d36"
+  },
+  {
+    "file": "berlin-browser.js",
+    "bytes": 4657,
+    "sha256": "59e7ca183c9e3f2b1795efdd2655fc817e9d3212d3adb46cde77d65621d0c95b"
+  },
+  {
+    "file": "berlin-mq-coverage-audit.csv",
+    "bytes": 5741,
+    "sha256": "d0d2b4a99a3ffbce0b87aae3b0e1eca9391e1eeb6b306add302f45ecdd181e7d"
+  },
+  {
+    "file": "berlin-readme.txt",
+    "bytes": 4704,
+    "sha256": "51be6b4a50dc31ff005d71274d404b07d58a25077b4142589ea1eb6f1c7458af"
+  },
+  {
+    "file": "berlin-root.html",
+    "bytes": 1389,
+    "sha256": "9bb114ee7e488909c8f91fb34cb430f33e71ca0d2f9681ec218318ff3131c796"
+  },
+  {
+    "file": "berlin-station-metadata.xlsx",
+    "bytes": 71969,
+    "sha256": "e26bfd05349f8feb215c61f4f12cd8db7650f4b727b28e7ee005c1c96f44daa7"
+  },
+  {
+    "file": "berlin-study.pdf",
+    "bytes": 2184342,
+    "sha256": "44705d66124f8b2a1cf303f737a9cd1f1b3f5ba388ddc96d31cf8d010d0898c9"
+  },
+  {
+    "file": "berlin-study.txt",
+    "bytes": 179103,
+    "sha256": "45e77a65cc0de52d848cc58028a7e321d6821807d4b7cc53ffa7213fe89f02d6"
+  },
+  {
+    "file": "berlin-treatment-road-hourly-sample.csv.gz",
+    "bytes": 576495,
+    "sha256": "6951765b10e4984f2cb062cc5c0818f3de5585ca33d30c45466553d2288351d1"
+  },
+  {
+    "file": "berlin-treatment-station-candidates.csv",
+    "bytes": 11582,
+    "sha256": "14150d898b422b0ed03091b2eaf08aa4f4a8ee33c999f865f86a180e2759c8e3"
+  },
+  {
+    "file": "candidates.csv",
+    "bytes": 2643,
+    "sha256": "9d020f960da4f60e61e0472d1cf0760ef4674e499655cc399be6b77a1f9ba83f"
+  },
+  {
+    "file": "candidates.json",
+    "bytes": 9111,
+    "sha256": "d011330c5be54810fbce8a00862622314bb2193441f930a668a4da9dd0e9bc51"
+  },
+  {
+    "file": "comparisons.json",
+    "bytes": 1656,
+    "sha256": "e70cb239752cd12c09bba8c9b15ddd6f2c7ff51ebd4b9d2ef76489eb4b5892c0"
+  },
+  {
+    "file": "memo.md",
+    "bytes": 8293,
+    "sha256": "fa9ab7323c4e4f9fadc1e2a14ea1798322ead1a2dd1511fba71f39c7412ee0e4"
+  },
+  {
+    "file": "mq_hr_2019_02.csv.gz",
+    "bytes": 1911077,
+    "sha256": "05f0f75efdc935ab639566ac76424d4c979c27e0387a8404695e7907af4e9796"
+  },
+  {
+    "file": "mq_hr_2019_07.csv.gz",
+    "bytes": 1993127,
+    "sha256": "543009fbe5b3fa2ef62f6b64ada170e5398021e34dfbf46bddd0c2f443945b06"
+  },
+  {
+    "file": "mq_hr_2020_02.csv.gz",
+    "bytes": 1950907,
+    "sha256": "fcee2f98c5f67a4460ab6645f42224a9f274c6b3b1e75bf309decedc561f7aba"
+  },
+  {
+    "file": "mq_hr_2020_07.csv.gz",
+    "bytes": 2059332,
+    "sha256": "64b4b98732ef38e7188aabbcd9e047df49d548ddfebd4d8b60bf2157b8289c80"
+  },
+  {
+    "file": "paris-multimodal-documentation.pdf",
+    "bytes": 1008904,
+    "sha256": "4667443ad64bcf79b8e5a69c9ba6aa8ac6e5085da9deda935ac664ca25a00e92"
+  },
+  {
+    "file": "paris-multimodal-documentation.txt",
+    "bytes": 14036,
+    "sha256": "0e70893f581e520f937ae87b47ae8b3789d8e0fb214bcb4bfd712899d36587c2"
+  },
+  {
+    "file": "paris-multimodal-metadata.json",
+    "bytes": 13330,
+    "sha256": "0c4031e22c19e3a5c3a35a0eb6b4f6b9169eb647485a0ffee1e2347793ab7a76"
+  },
+  {
+    "file": "paris-multimodal-sample.json",
+    "bytes": 1501,
+    "sha256": "8715f66544ee6ba5f735916e254f24e83255f40bd8979548afc848328dde040a"
+  },
+  {
+    "file": "paris-rivoli-geometry.json",
+    "bytes": 2871,
+    "sha256": "cf877706fd455019a008802ce2e34c49275478110c074e0ca9f33296f81c9464"
+  },
+  {
+    "file": "paris-rivoli-history-coverage.json",
+    "bytes": 139,
+    "sha256": "ffd831573f0aa3f85577859f8278b4a060efa183e8fbfc9fc3ff946064e6bc8e"
+  },
+  {
+    "file": "paris-rivoli-sample-aggregate.csv",
+    "bytes": 2444,
+    "sha256": "1d5c62b568415bf08886b10efddefaf3683b7e33e0725d1629256bd3d8a3165e"
+  },
+  {
+    "file": "paris-rivoli-sample-week.json",
+    "bytes": 879401,
+    "sha256": "bd5799dbea7f9fc67dee79265efa635103523fc8d1a15f560642e325a3905121"
+  },
+  {
+    "file": "paris-site-coverage.json",
+    "bytes": 13528,
+    "sha256": "fcd0cbc4cd790aeb6742d9df72b9f8f80e902bcd72ef4eee84429d3c3ecb93dc"
+  },
+  {
+    "file": "paris-voltaire-coverage.json",
+    "bytes": 33,
+    "sha256": "b40a5ce424590aa2d85084c9a423d90252d3ba8a22202193a62874533698a3a3"
+  },
+  {
+    "file": "reproduce.py",
+    "bytes": 4400,
+    "sha256": "516cf0c3a28664c99d1ff992e4ea73127691abed9c8ebca41f2bdc72f44dad73"
+  },
+  {
+    "file": "source-audit.json",
+    "bytes": 2577,
+    "sha256": "c055ad3f2e3ccb31b023e946eba721d2f1f8cad977722697b777d7811dce6684"
+  },
+  {
+    "file": "source-download-manifest.json",
+    "bytes": 3199,
+    "sha256": "65f894e4212d3d8d083bb97efb08afd440d940d0b3cce7d76ba53dbcafb483ec"
+  }
+]

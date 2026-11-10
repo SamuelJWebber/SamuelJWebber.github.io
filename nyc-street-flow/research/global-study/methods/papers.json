@@ -1,0 +1,193 @@
+{
+  "checked_on": "2026-11-05",
+  "scope": "Targeted primary-paper screen, not an exhaustive systematic review. All results are reported by authors; no causal estimate reproduced in this workstream.",
+  "papers": [
+    {
+      "id": "kraus_koch_2021",
+      "title": "Provisional COVID-19 infrastructure induces large, rapid increases in cycling",
+      "authors": "Sebastian Kraus; Nicolas Koch",
+      "year": 2021,
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8053938/",
+      "doi": "10.1073/pnas.2024399118",
+      "geography": "106 European cities",
+      "observed_sample": "736 bicycle counters; 2020 COVID rollout",
+      "design": "Generalized difference in differences; city treatment intensity; counter, city-week and country-day effects in preferred specification.",
+      "assignment": "Authors argue timing is as good as random from administrative/contractor schedules; not a randomized trial.",
+      "moving_lane_conversion": "Mixed/uncertified: underlying policy data cannot systematically distinguish implementation types.",
+      "outcomes": [
+        "Bicycle counts"
+      ],
+      "reported_result": "Abstract: 11–48% increase in cycling across specifications; not an all-mode result.",
+      "replication_status": "Archive acquired and checksum verified, but advertised panel is a Git LFS pointer. Linked repository/object returned 404. No model reproduced.",
+      "replication_doi": "10.5281/zenodo.3973038",
+      "replication_archive_record": 4015974,
+      "archive_version": "v.0.4-beta (2020-09-05), predating final paper",
+      "limits": [
+        "Cycling-only counts do not establish mode substitution or total persons/time.",
+        "COVID and dense-city context constrain transport.",
+        "Berlin overlaps this sample; do not double-count as independent evidence."
+      ],
+      "evidence_read": "Full primary article and archived code/metadata",
+      "registry_role": "Mechanism evidence; not certified moving-lane conversion effect",
+      "new_estimate_produced": false
+    },
+    {
+      "id": "schrauth_berlin_2022_june",
+      "title": "The Causal Effect of Cycling Infrastructure on Traffic and Accidents: Evidence from Pop-Up Bike Lanes in Berlin",
+      "authors": "Philipp Schrauth",
+      "year": 2022,
+      "source_url": "https://www.uni-potsdam.de/fileadmin/projects/lsfiwi/docs/Publikationen/Philipp_Cycling.pdf",
+      "version": "June 2022 PDF; later SSRN version exists and must not be silently combined.",
+      "geography": "Berlin",
+      "observed_sample": "23 treated sensors in six streets versus 192 controls; 2019–2020 hourly traffic data, selected weekday/daytime coverage.",
+      "design": "Difference-in-differences; eligible multi-lane roads and timing argued conditionally quasi-random; nearby controls excluded.",
+      "assignment": "Eligibility and contractor availability arguments, not random assignment.",
+      "moving_lane_conversion": "Yes: motor moving lanes replaced by cycle lanes.",
+      "outcomes": [
+        "Motor detector speed",
+        "Motor detector volume",
+        "Accidents"
+      ],
+      "reported_result": "Adjusted Table 1: speed −4.123 km/h; log speed −0.122; log volume −0.0054 (not statistically significant).",
+      "replication_status": "Official raw sensor files acquired separately by Europe workstream; no verified processed replication package found. Published estimates not reproduced.",
+      "limits": [
+        "Paper averages volume and speed across lanes: full cross-section flow must be independently reconstructed.",
+        "Official metadata identifies cycle-lane detector deinstallations; post-treatment sensor completeness requires audit.",
+        "Spot speed is not journey time; no aligned bicycle/transit/person outcome."
+      ],
+      "evidence_read": "Primary June PDF; Europe agent separately audits official data.",
+      "registry_role": "Direct conversion case with partial outcomes; measurement gate remains",
+      "new_estimate_produced": false
+    },
+    {
+      "id": "moran_salman_yabe_2026",
+      "title": "Heterogeneous impacts of protected bike lanes on bikeshare behavior across demographic groups in New York",
+      "authors": "Marcel Moran; Malik Salman; Takahiro Yabe",
+      "year": 2026,
+      "source_url": "https://www.nature.com/articles/s44333-026-00107-2",
+      "doi": "10.1038/s44333-026-00107-2",
+      "geography": "New York City",
+      "observed_sample": "72 million selected Citi Bike trips; source data span 2013–2024.",
+      "design": "Propensity score matching plus two-way fixed-effects difference in differences at station-month level; protected and painted treatment categories.",
+      "assignment": "Observational installation; conditional parallel trends required.",
+      "moving_lane_conversion": "Not established: lane type is classified, but loss of motor moving lanes is a separate eligibility question.",
+      "outcomes": [
+        "Citi Bike station trip starts"
+      ],
+      "reported_result": "Authors report 379 additional rides per station-month after protected-lane installation (p<0.001); painted-lane causal effect not detected.",
+      "replication_status": "Full primary article acquired. Availability statement links public raw Citi Bike and NYC bike-lane data; no processed panel or code repository identified in article. No model reproduced.",
+      "limits": [
+        "Bike-share starts are not all bicycle crossings or total mobility.",
+        "Matching observed neighborhood characteristics does not establish exogenous placement.",
+        "Staggered TWFE requires heterogeneous-effect and spillover audit."
+      ],
+      "evidence_read": "Full publisher HTML acquired after web-reader redirect; methods and availability reviewed.",
+      "registry_role": "Local mechanism comparator; not independent all-mode confirmation",
+      "new_estimate_produced": false
+    },
+    {
+      "id": "laviolette_etal_2026_montreal",
+      "title": "Cycling infrastructure and its co-benefits: Evidence from a longitudinal natural experiment",
+      "authors": "Jérôme Laviolette; Zahra Zarabi; Kevin Manaugh; Owen Waygood",
+      "year": 2026,
+      "source_url": "https://www.sciencedirect.com/science/article/pii/S3050697226000151",
+      "institutional_url": "https://publications.polymtl.ca/76185/",
+      "doi": "10.1016/j.ubtr.2026.100037",
+      "geography": "Montréal region",
+      "observed_sample": "2.5 km protected lanes; longitudinal intervention/control surveys in 2023 and 2024.",
+      "design": "Before/after difference in differences of survey mode use and perceptions.",
+      "assignment": "Non-random intervention/control areas.",
+      "moving_lane_conversion": "Unverified; abstract notes on-street parking removal as possible mechanism.",
+      "outcomes": [
+        "Self-reported weekly mode-use shares",
+        "Safety and neighborhood perceptions"
+      ],
+      "reported_result": "Driving share decreased significantly; cycling and walking share increases were not significant.",
+      "replication_status": "No downloadable analysis panel acquired; abstract only verified.",
+      "limits": [
+        "No verified moving-lane loss.",
+        "Shares are not person-throughput levels or complete journey time.",
+        "Sample size, attrition, parallel trends and data access require full-text review before causal weighting."
+      ],
+      "evidence_read": "Publisher abstract and author institutional bibliographic record.",
+      "registry_role": "Mechanism/survey design candidate only",
+      "new_estimate_produced": false
+    },
+    {
+      "id": "oslo_gps_2019",
+      "title": "Does new bicycle infrastructure result in new or rerouted bicyclists? A longitudinal GPS study in Oslo",
+      "year": 2019,
+      "source_url": "https://www.sciencedirect.com/science/article/pii/S0966692318306689",
+      "geography": "Oslo",
+      "observed_sample": "113 GPS-app participants; published exposed/quasi-control comparison groups include 39 and 47 people.",
+      "design": "Longitudinal GPS natural experiment around a contraflow cycle lane.",
+      "assignment": "Exposure-based observational comparison.",
+      "moving_lane_conversion": "Not verified.",
+      "outcomes": [
+        "Route choice",
+        "Cycling mode share",
+        "Route deviation"
+      ],
+      "reported_result": "Treated-route cycling increased while parallel-route cycling declined; cycling mode-share change was not statistically significant.",
+      "replication_status": "No replication panel acquired.",
+      "limits": [
+        "Small selected app panel.",
+        "Route substitution warns against equating a treated counter increase with net new cyclists.",
+        "Not an all-mode throughput estimate."
+      ],
+      "evidence_read": "Primary publisher indexed abstract.",
+      "registry_role": "Design lesson: separate rerouting from mode shift",
+      "new_estimate_produced": false
+    },
+    {
+      "id": "victoria_aaa_2023",
+      "title": "All ages and abilities cycling infrastructure, cycling activity, and perceived safety: Findings from a natural experiment study in three mid-sized Canadian cities",
+      "year": 2023,
+      "source_url": "https://www.sciencedirect.com/science/article/pii/S2950105923000050",
+      "doi": "10.1016/j.jcmr.2023.100005",
+      "geography": "Victoria, with Kelowna and Halifax comparisons",
+      "observed_sample": "33 km AAA network; repeated population surveys in 2016, 2019 and 2021, roughly 1000 per city-wave.",
+      "design": "City/distance/time comparison; distance within 500m as exposure.",
+      "assignment": "Non-random network rollout.",
+      "moving_lane_conversion": "Mixed network; not certified moving-lane conversions.",
+      "outcomes": [
+        "Survey cycling activity",
+        "Perceived safety"
+      ],
+      "reported_result": "No statistically different cycling change for proximity comparison; control-city investment and COVID complicate inference.",
+      "replication_status": "Primary indexed article says authors cannot share data.",
+      "limits": [
+        "Control contamination.",
+        "COVID and delayed completion.",
+        "No vehicle/transit throughput or full journey outcome."
+      ],
+      "evidence_read": "Primary publisher indexed abstract and availability excerpt.",
+      "registry_role": "Include null/ambiguous mechanism evidence to avoid positive-case selection",
+      "new_estimate_produced": false
+    },
+    {
+      "id": "atlanta_synthetic_2022",
+      "title": "Have paved trails and protected bike lanes led to more bicycling in Atlanta? A generalized synthetic-control analysis",
+      "year": 2022,
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9211442/",
+      "geography": "Atlanta",
+      "observed_sample": "Five infrastructure groups; monthly Strava 2016-10 to 2018-09 calibrated using 15 physical counters.",
+      "design": "Generalized synthetic control; treatment areas and counter-based app-usage adjustment.",
+      "assignment": "Non-random infrastructure projects.",
+      "moving_lane_conversion": "Mixed off-street trails and protected bike lanes; not certified conversion subset.",
+      "outcomes": [
+        "Estimated bicycle-distance"
+      ],
+      "reported_result": "Joint ratio 1.10 (95% CI 0.99–1.18) for narrower treatment definition; effects differ by project.",
+      "replication_status": "No analysis data acquired.",
+      "limits": [
+        "App sample and calibration may not represent all trips.",
+        "Counter calibration does not identify car/transit substitution.",
+        "Bicycle-distance is a distinct outcome from crossings, trips, or time."
+      ],
+      "evidence_read": "Primary full-text indexed methods/results; direct open encountered browser challenge.",
+      "registry_role": "Method candidate: app calibration and heterogeneous synthetic controls",
+      "new_estimate_produced": false
+    }
+  ]
+}

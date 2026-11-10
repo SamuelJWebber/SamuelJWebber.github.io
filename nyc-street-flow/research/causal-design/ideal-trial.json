@@ -1,0 +1,128 @@
+{
+  "title": "Target trial: the next eligible NYC moving-lane conversion",
+  "prepared": "2026-11-05",
+  "status": "Design proposal; not a performed experiment or causal result",
+  "central_estimand": "Marginal intention-to-treat effect of assigning an eligible corridor-network to conversion now versus delayed conversion over the same 12 calendar months, averaged over the existing network and randomized exposure policy.",
+  "primary_outcomes": [
+    {
+      "id": "network_flow",
+      "outcome": "All-mode directional crossing events per hour across a fixed screenline/network boundary",
+      "unit": "person-crossings/hour",
+      "include": "Street and substitutes crossing the same boundary; peak shoulders and full day",
+      "avoid": "Capacity, unique residents, station entries, nested-boundary double counting"
+    },
+    {
+      "id": "fixed_trip_time",
+      "outcome": "Complete elapsed time / arrival within deadline for a baseline OD-purpose-departure trip menu",
+      "unit": "minutes per standardized journey and completion probability",
+      "include": "Mode and route changes; access, wait, parking, transfers, egress; unfinished tasks",
+      "avoid": "Selection on observed completed trips or post-treatment mode"
+    },
+    {
+      "id": "population_burden",
+      "outcome": "Total travel minutes per baseline population member-day, jointly with completed/foregone trips or activities",
+      "unit": "person-minutes/member-day; completed activities/member-day",
+      "include": "Non-travel days and all actual journeys",
+      "avoid": "Calling lower total minutes a benefit when desirable trips are suppressed"
+    }
+  ],
+  "trial": {
+    "eligibility": "Ready-to-build engineering-approved projects that verifiably remove a moving traffic lane; prespecified network boundary and feasible treatment/comparator versions.",
+    "randomization": "Matched or stratified randomized implementation order; assignment at corridor-network cluster, not rider.",
+    "arms": [
+      "Conversion now",
+      "Unchanged street for common 12-month period, then conversion"
+    ],
+    "cointerventions": "Hold other feasible improvements constant across arms or call the intervention a bundle; bike-specific component effects require actual separated assignment or engineering-feasible factorial arms.",
+    "interference": "Map likely substitution networks before outcomes; observe neighboring outcomes; graph clusters or randomized saturation when spillovers cross clusters; disclose exposure assumptions.",
+    "followup": "Construction/transition and 6-/12-month adaptation separately; use common calendar controls.",
+    "sampling": "Continuous synchronized counts plus occupancy/load samples; baseline population diary/GPS panel; fixed trip-menu probes.",
+    "analysis": "ITT, assignment-unit inference, baseline adjustment, correlated sum of mode effects, missingness bounds, predeclared primary outcomes.",
+    "power": "Simulation on baseline cluster/date covariance and planned missingness; select N from a policy-relevant MDE, not an arbitrary trip count."
+  },
+  "sharp_insights": [
+    "Individual mode-switch histories are not required to identify total all-mode policy effects under credible assignment; they identify mechanisms.",
+    "Missing other modes blocks an all-mode claim but does not necessarily block a narrower causal effect on a well-measured mode.",
+    "Average duration among observed completed trips conditions on a post-treatment-selected population; a fixed trip menu and population-day burden answer different defensible questions.",
+    "Do not adjust total-effect regressions for post-treatment cycling, car volume, transit use or congestion; these transmit policy effects.",
+    "A street losing flow may reflect diversion; a broader screenline can preserve those travelers, but cannot be added to its nested street counts.",
+    "Realized throughput does not identify maximum capacity, and lane count alone does not identify the binding bottleneck.",
+    "Randomizing a few marginal corridors does not identify an arbitrary citywide all-convert policy under network interference."
+  ],
+  "observational_priority": [
+    "Reconstruct true moving-lane treatment timing and ready-but-delayed eligible projects",
+    "Verify whether rollout ordering was genuinely random or exogenous",
+    "Intersect exact project timing with outcome coverage before looking at favorable effects",
+    "Use unexposed network donors, cohort-specific staggered comparisons and pre-treatment-only selection",
+    "Publish held-out/placebo diagnostics and parallel-trend sensitivity",
+    "Label claim at the outcome coverage and assignment credibility actually supported"
+  ],
+  "do_not_use_as_automatic_identification": [
+    "weather instrument for cycling",
+    "opposite direction as untreated control",
+    "opening-date regression discontinuity without staged-closure audit",
+    "station entries as rail crossings",
+    "citywide Citi Bike multiplier for a local causal all-bike effect",
+    "post-selection by mode/lane use/completed trip",
+    "machine-learning fit as exchangeability proof"
+  ],
+  "data_map": [
+    {
+      "need": "Treatment assignment/timing",
+      "available": "DOT SIP discovery geometry; engineering drawings and press records; requests for work records",
+      "missing": "Verified actual stages and ready-but-delayed implementation queue"
+    },
+    {
+      "need": "All-bike flow",
+      "available": "DOT automatic counters; temporary manual surveys",
+      "missing": "Aligned pre/post all-project support and changes in detector coverage"
+    },
+    {
+      "need": "Motor person flow",
+      "available": "NYSDOT continuous vehicles; DOT sampled ATR; NYMTC expanded persons",
+      "missing": "Synchronized same-boundary class occupancy and reliable full treatment windows"
+    },
+    {
+      "need": "Transit passenger flow/time",
+      "available": "MTA segment times, inferred subway OD, NYMTC fall screenline totals",
+      "missing": "Same-hour onboard load at the boundary; complete paths and elapsed journeys"
+    },
+    {
+      "need": "Complete comparable journeys",
+      "available": "Citi Bike dock time, TLC occupied trips, CMS diaries, ACS usual commutes",
+      "missing": "Local baseline population or fixed-trip-menu repeated complete journeys around conversions"
+    },
+    {
+      "need": "Counterfactual",
+      "available": "Untreated/not-yet-treated projects and prehistory where overlap exists",
+      "missing": "Credible assignment/exposure process; data volume alone cannot fill it"
+    }
+  ],
+  "sources": [
+    {
+      "citation": "Hernán and Robins (2016)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4832051/",
+      "use": "Explicit target trial; eligibility, treatment, assignment, time zero, outcomes, analysis; avoid postbaseline selection"
+    },
+    {
+      "citation": "Aronow and Samii (2017)",
+      "url": "https://isps.yale.edu/resource/estimating-average-causal-effects-under-general-interference-with-application-to-a-social",
+      "use": "Randomization probabilities, exposure mapping and interference-aware estimands/inference"
+    },
+    {
+      "citation": "Butts, Difference-in-Differences with Spatial Spillovers",
+      "url": "https://www.kylebutts.com/papers/spatial-spillovers/",
+      "use": "Nearby controls can be affected; direct and spillover outcomes require explicit separation"
+    },
+    {
+      "citation": "Callaway and Sant’Anna (2021)",
+      "url": "https://psantanna.com/files/Callaway_SantAnna_2020.pdf",
+      "use": "Treatment-cohort/time estimands under conditional parallel trends; not proof of that assumption"
+    },
+    {
+      "citation": "Rambachan and Roth (2023)",
+      "url": "https://economics.mit.edu/research/publications/more-credible-approach-parallel-trends",
+      "use": "Conditional inference/sensitivity when post trend violations are restricted relative to pretrends"
+    }
+  ]
+}

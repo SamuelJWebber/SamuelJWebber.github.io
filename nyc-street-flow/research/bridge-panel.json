@@ -1,0 +1,2506 @@
+{
+  "title": "Bicycle crossing panel, 2019\u2013October 2026",
+  "retrievedAt": "2026-11-05",
+  "range": [
+    "2019-01-01",
+    "2026-10-31"
+  ],
+  "monthly": [
+    {
+      "month": "2019-01",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 672.9032258064516,
+      "manhattan": 1917.9032258064517,
+      "williamsburg": 2196.3225806451615,
+      "total": 4787.129032258064,
+      "brooklynShare": 14.056509053173494,
+      "weather": {
+        "tmean": 0.32258064516129026,
+        "prcp": 2.9354838709677415,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2019-02",
+      "days": 28,
+      "validDays": 28,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 734.25,
+      "manhattan": 2044.0,
+      "williamsburg": 2549.1428571428573,
+      "total": 5327.392857142857,
+      "brooklynShare": 13.782539033432329,
+      "weather": {
+        "tmean": 2.376785714285714,
+        "prcp": 2.85,
+        "weatherDays": 28
+      }
+    },
+    {
+      "month": "2019-03",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 983.4193548387096,
+      "manhattan": 2692.967741935484,
+      "williamsburg": 3220.3870967741937,
+      "total": 6896.774193548387,
+      "brooklynShare": 14.25912067352666,
+      "weather": {
+        "tmean": 5.419354838709677,
+        "prcp": 3.174193548387097,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2019-04",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 1905.2333333333333,
+      "manhattan": 4313.133333333333,
+      "williamsburg": 4889.333333333333,
+      "total": 11107.7,
+      "brooklynShare": 17.152365776293323,
+      "weather": {
+        "tmean": 13.036666666666665,
+        "prcp": 3.8633333333333324,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2019-05",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 2009.1290322580646,
+      "manhattan": 4319.548387096775,
+      "williamsburg": 5515.548387096775,
+      "total": 11844.225806451614,
+      "brooklynShare": 16.962940973007125,
+      "weather": {
+        "tmean": 16.761290322580646,
+        "prcp": 5.587096774193549,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2019-06",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 2105.633333333333,
+      "manhattan": 4569.066666666667,
+      "williamsburg": 6199.4,
+      "total": 12874.1,
+      "brooklynShare": 16.355576959424994,
+      "weather": {
+        "tmean": 22.026666666666667,
+        "prcp": 4.616666666666666,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2019-07",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 2149.1935483870966,
+      "manhattan": 4631.774193548387,
+      "williamsburg": 5954.580645161291,
+      "total": 12735.548387096775,
+      "brooklynShare": 16.875547742919235,
+      "weather": {
+        "tmean": 26.42258064516129,
+        "prcp": 4.732258064516129,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2019-08",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 2468.032258064516,
+      "manhattan": 4955.193548387097,
+      "williamsburg": 6416.387096774193,
+      "total": 13839.612903225807,
+      "brooklynShare": 17.833101802213374,
+      "weather": {
+        "tmean": 24.164516129032258,
+        "prcp": 3.032258064516129,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2019-09",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 2394.133333333333,
+      "manhattan": 5361.4,
+      "williamsburg": 6931.4,
+      "total": 14686.933333333332,
+      "brooklynShare": 16.301111191807685,
+      "weather": {
+        "tmean": 21.310000000000002,
+        "prcp": 0.8033333333333332,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2019-10",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 1774.0,
+      "manhattan": 4182.5161290322585,
+      "williamsburg": 5283.354838709677,
+      "total": 11239.870967741936,
+      "brooklynShare": 15.783099335315525,
+      "weather": {
+        "tmean": 15.508064516129032,
+        "prcp": 5.04516129032258,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2019-11",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 1096.3333333333333,
+      "manhattan": 3071.8,
+      "williamsburg": 3795.5666666666666,
+      "total": 7963.7,
+      "brooklynShare": 13.766632762827998,
+      "weather": {
+        "tmean": 6.608333333333333,
+        "prcp": 1.6533333333333333,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2019-12",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 520.6129032258065,
+      "manhattan": 1660.0645161290322,
+      "williamsburg": 2154.8064516129034,
+      "total": 4335.4838709677415,
+      "brooklynShare": 12.008184523809526,
+      "weather": {
+        "tmean": 3.5258064516129037,
+        "prcp": 5.812903225806452,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2020-01",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 771.0,
+      "manhattan": 2446.8387096774195,
+      "williamsburg": 3023.032258064516,
+      "total": 6240.870967741936,
+      "brooklynShare": 12.354044875870303,
+      "weather": {
+        "tmean": 3.9919354838709684,
+        "prcp": 1.5838709677419356,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2020-02",
+      "days": 29,
+      "validDays": 29,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 735.551724137931,
+      "manhattan": 2274.689655172414,
+      "williamsburg": 2917.310344827586,
+      "total": 5927.551724137931,
+      "brooklynShare": 12.409030884414685,
+      "weather": {
+        "tmean": 4.536206896551724,
+        "prcp": 2.231034482758621,
+        "weatherDays": 29
+      }
+    },
+    {
+      "month": "2020-03",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 1023.516129032258,
+      "manhattan": 2835.7096774193546,
+      "williamsburg": 3740.7741935483873,
+      "total": 7600.0,
+      "brooklynShare": 13.467317487266554,
+      "weather": {
+        "tmean": 8.88225806451613,
+        "prcp": 3.0999999999999996,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2020-04",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 893.6333333333333,
+      "manhattan": 1891.1666666666667,
+      "williamsburg": 3078.766666666667,
+      "total": 5863.566666666667,
+      "brooklynShare": 15.240439550444268,
+      "weather": {
+        "tmean": 10.188333333333333,
+        "prcp": 3.806666666666666,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2020-05",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 1845.6451612903227,
+      "manhattan": 3833.548387096774,
+      "williamsburg": 6025.5161290322585,
+      "total": 11704.709677419354,
+      "brooklynShare": 15.76839761221014,
+      "weather": {
+        "tmean": 15.716129032258065,
+        "prcp": 1.354838709677419,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2020-06",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 2218.0666666666666,
+      "manhattan": 5376.7,
+      "williamsburg": 8145.033333333334,
+      "total": 15739.8,
+      "brooklynShare": 14.092089268393924,
+      "weather": {
+        "tmean": 23.166666666666668,
+        "prcp": 1.49,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2020-07",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 1941.3548387096773,
+      "manhattan": 5383.580645161291,
+      "williamsburg": 7965.129032258064,
+      "total": 15290.064516129032,
+      "brooklynShare": 12.696838765211226,
+      "weather": {
+        "tmean": 26.683870967741928,
+        "prcp": 5.390322580645161,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2020-08",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 2114.7741935483873,
+      "manhattan": 5784.741935483871,
+      "williamsburg": 8311.258064516129,
+      "total": 16210.774193548386,
+      "brooklynShare": 13.045485479589443,
+      "weather": {
+        "tmean": 24.925806451612903,
+        "prcp": 4.125806451612903,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2020-09",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 2358.0333333333333,
+      "manhattan": 6640.033333333334,
+      "williamsburg": 8894.866666666667,
+      "total": 17892.933333333334,
+      "brooklynShare": 13.17857329150428,
+      "weather": {
+        "tmean": 20.425,
+        "prcp": 3.3366666666666664,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2020-10",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 1901.2903225806451,
+      "manhattan": 5670.322580645161,
+      "williamsburg": 7403.451612903225,
+      "total": 14975.064516129032,
+      "brooklynShare": 12.696374833863606,
+      "weather": {
+        "tmean": 14.379032258064516,
+        "prcp": 4.138709677419355,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2020-11",
+      "days": 30,
+      "validDays": 29,
+      "coveragePct": 96.66666666666667,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 1493.3793103448277,
+      "manhattan": 4587.827586206897,
+      "williamsburg": 5881.517241379311,
+      "total": 11962.724137931034,
+      "brooklynShare": 12.483605683171,
+      "weather": {
+        "tmean": 11.675862068965518,
+        "prcp": 3.0241379310344825,
+        "weatherDays": 29
+      }
+    },
+    {
+      "month": "2020-12",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 756.3548387096774,
+      "manhattan": 2662.548387096774,
+      "williamsburg": 3254.6451612903224,
+      "total": 6673.548387096775,
+      "brooklynShare": 11.333623356535188,
+      "weather": {
+        "tmean": 4.02741935483871,
+        "prcp": 3.7806451612903227,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2021-01",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 762.7741935483871,
+      "manhattan": 2634.5806451612902,
+      "williamsburg": 3228.8709677419356,
+      "total": 6626.225806451613,
+      "brooklynShare": 11.511442800601715,
+      "weather": {
+        "tmean": 1.5612903225806452,
+        "prcp": 1.8903225806451613,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2021-02",
+      "days": 28,
+      "validDays": 28,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 389.17857142857144,
+      "manhattan": 1519.2142857142858,
+      "williamsburg": 1928.4642857142858,
+      "total": 3836.8571428571427,
+      "brooklynShare": 10.14316032467049,
+      "weather": {
+        "tmean": 1.2410714285714286,
+        "prcp": 4.6571428571428575,
+        "weatherDays": 28
+      }
+    },
+    {
+      "month": "2021-03",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 1119.2903225806451,
+      "manhattan": 3499.3225806451615,
+      "williamsburg": 4390.1612903225805,
+      "total": 9008.774193548386,
+      "brooklynShare": 12.424446417829214,
+      "weather": {
+        "tmean": 7.696774193548387,
+        "prcp": 2.7967741935483867,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2021-04",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 1539.9,
+      "manhattan": 4485.033333333334,
+      "williamsburg": 5699.833333333333,
+      "total": 11724.766666666666,
+      "brooklynShare": 13.133736847641602,
+      "weather": {
+        "tmean": 12.543333333333333,
+        "prcp": 2.283333333333333,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2021-05",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "pre",
+      "brooklyn": 2009.516129032258,
+      "manhattan": 5401.806451612903,
+      "williamsburg": 6983.451612903225,
+      "total": 14394.774193548386,
+      "brooklynShare": 13.960039261559976,
+      "weather": {
+        "tmean": 17.154838709677417,
+        "prcp": 3.5741935483870972,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2021-06",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "mixed",
+      "brooklyn": 2245.4666666666667,
+      "manhattan": 6066.066666666667,
+      "williamsburg": 7892.433333333333,
+      "total": 16203.966666666667,
+      "brooklynShare": 13.857512255229686,
+      "weather": {
+        "tmean": 23.475,
+        "prcp": 2.2233333333333336,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2021-07",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "construction/opening",
+      "brooklyn": 1903.2903225806451,
+      "manhattan": 5367.677419354839,
+      "williamsburg": 7064.193548387097,
+      "total": 14335.161290322581,
+      "brooklynShare": 13.277076441864127,
+      "weather": {
+        "tmean": 24.464516129032255,
+        "prcp": 9.093548387096773,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2021-08",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "construction/opening",
+      "brooklyn": 1911.6451612903227,
+      "manhattan": 5438.322580645161,
+      "williamsburg": 7078.354838709677,
+      "total": 14428.322580645161,
+      "brooklynShare": 13.249254378708544,
+      "weather": {
+        "tmean": 25.30322580645161,
+        "prcp": 8.45483870967742,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2021-09",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "mixed",
+      "brooklyn": 3275.133333333333,
+      "manhattan": 6099.433333333333,
+      "williamsburg": 7747.366666666667,
+      "total": 17121.933333333334,
+      "brooklynShare": 19.128291587009254,
+      "weather": {
+        "tmean": 21.27333333333333,
+        "prcp": 8.493333333333332,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2021-10",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 3664.3548387096776,
+      "manhattan": 5323.8387096774195,
+      "williamsburg": 6626.4838709677415,
+      "total": 15614.677419354839,
+      "brooklynShare": 23.46737457520323,
+      "weather": {
+        "tmean": 16.66612903225806,
+        "prcp": 4.312903225806451,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2021-11",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 2511.1666666666665,
+      "manhattan": 3967.4333333333334,
+      "williamsburg": 4925.3,
+      "total": 11403.9,
+      "brooklynShare": 22.02024453622591,
+      "weather": {
+        "tmean": 7.911666666666667,
+        "prcp": 0.9533333333333333,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2021-12",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 1507.483870967742,
+      "manhattan": 3036.935483870968,
+      "williamsburg": 3753.1935483870966,
+      "total": 8297.612903225807,
+      "brooklynShare": 18.16768133858941,
+      "weather": {
+        "tmean": 6.537096774193548,
+        "prcp": 1.1419354838709677,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2022-01",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 544.4193548387096,
+      "manhattan": 1812.032258064516,
+      "williamsburg": 2234.548387096774,
+      "total": 4591.0,
+      "brooklynShare": 11.85840459243541,
+      "weather": {
+        "tmean": -0.8790322580645161,
+        "prcp": 3.5161290322580645,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2022-02",
+      "days": 28,
+      "validDays": 28,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 1363.5714285714287,
+      "manhattan": 2426.9285714285716,
+      "williamsburg": 3048.3571428571427,
+      "total": 6838.857142857143,
+      "brooklynShare": 19.938586229946527,
+      "weather": {
+        "tmean": 2.998214285714286,
+        "prcp": 2.932142857142857,
+        "weatherDays": 28
+      }
+    },
+    {
+      "month": "2022-03",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 1970.032258064516,
+      "manhattan": 3469.7096774193546,
+      "williamsburg": 4248.290322580645,
+      "total": 9688.032258064517,
+      "brooklynShare": 20.334699612758005,
+      "weather": {
+        "tmean": 7.4,
+        "prcp": 1.9580645161290324,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2022-04",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 2785.9333333333334,
+      "manhattan": 4457.7,
+      "williamsburg": 5479.0,
+      "total": 12722.633333333333,
+      "brooklynShare": 21.8974583354075,
+      "weather": {
+        "tmean": 11.526666666666669,
+        "prcp": 3.8333333333333335,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2022-05",
+      "days": 31,
+      "validDays": 29,
+      "coveragePct": 93.54838709677419,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 3472.7241379310344,
+      "manhattan": 4978.103448275862,
+      "williamsburg": 6285.413793103448,
+      "total": 14736.241379310344,
+      "brooklynShare": 23.565874421728275,
+      "weather": {
+        "tmean": 17.74655172413793,
+        "prcp": 3.9586206896551723,
+        "weatherDays": 29
+      }
+    },
+    {
+      "month": "2022-06",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 4088.8333333333335,
+      "manhattan": 5832.266666666666,
+      "williamsburg": 7454.2,
+      "total": 17375.3,
+      "brooklynShare": 23.532447401387795,
+      "weather": {
+        "tmean": 21.879999999999995,
+        "prcp": 2.47,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2022-07",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 3931.0,
+      "manhattan": 5541.612903225807,
+      "williamsburg": 7140.258064516129,
+      "total": 16612.870967741936,
+      "brooklynShare": 23.662376043448628,
+      "weather": {
+        "tmean": 26.41451612903226,
+        "prcp": 3.729032258064516,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2022-08",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 4180.8387096774195,
+      "manhattan": 5945.612903225807,
+      "williamsburg": 7454.612903225807,
+      "total": 17581.064516129034,
+      "brooklynShare": 23.78035019348162,
+      "weather": {
+        "tmean": 26.29032258064516,
+        "prcp": 1.4,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2022-09",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 3631.6666666666665,
+      "manhattan": 6076.1,
+      "williamsburg": 7286.0,
+      "total": 16993.766666666666,
+      "brooklynShare": 21.37058097773105,
+      "weather": {
+        "tmean": 20.851666666666667,
+        "prcp": 3.47,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2022-10",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 2984.1290322580644,
+      "manhattan": 4820.548387096775,
+      "williamsburg": 5835.129032258064,
+      "total": 13639.806451612903,
+      "brooklynShare": 21.878089273804846,
+      "weather": {
+        "tmean": 13.822580645161288,
+        "prcp": 4.161290322580645,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2022-11",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 2495.4,
+      "manhattan": 4072.1,
+      "williamsburg": 4933.433333333333,
+      "total": 11500.933333333332,
+      "brooklynShare": 21.69736948885308,
+      "weather": {
+        "tmean": 10.513333333333334,
+        "prcp": 2.6633333333333336,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2022-12",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 1379.774193548387,
+      "manhattan": 2477.2258064516127,
+      "williamsburg": 3012.1612903225805,
+      "total": 6869.1612903225805,
+      "brooklynShare": 20.086501615448192,
+      "weather": {
+        "tmean": 3.6129032258064515,
+        "prcp": 4.77741935483871,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2023-01",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 1667.6774193548388,
+      "manhattan": 2919.7741935483873,
+      "williamsburg": 3593.5806451612902,
+      "total": 8181.032258064516,
+      "brooklynShare": 20.38468211283378,
+      "weather": {
+        "tmean": 6.379032258064515,
+        "prcp": 3.5967741935483875,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2023-02",
+      "days": 28,
+      "validDays": 28,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 1816.5357142857142,
+      "manhattan": 3060.4285714285716,
+      "williamsburg": 3768.4285714285716,
+      "total": 8645.392857142857,
+      "brooklynShare": 21.01160403352735,
+      "weather": {
+        "tmean": 5.074999999999998,
+        "prcp": 1.1642857142857144,
+        "weatherDays": 28
+      }
+    },
+    {
+      "month": "2023-03",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 2184.9032258064517,
+      "manhattan": 3375.3225806451615,
+      "williamsburg": 4267.870967741936,
+      "total": 9828.09677419355,
+      "brooklynShare": 22.231193648230388,
+      "weather": {
+        "tmean": 7.022580645161289,
+        "prcp": 2.7193548387096778,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2023-04",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 3350.9,
+      "manhattan": 4513.966666666666,
+      "williamsburg": 5785.5,
+      "total": 13650.366666666667,
+      "brooklynShare": 24.548058538110087,
+      "weather": {
+        "tmean": 14.231666666666664,
+        "prcp": 6.523333333333334,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2023-05",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 4404.290322580645,
+      "manhattan": 5448.5161290322585,
+      "williamsburg": 7048.580645161291,
+      "total": 16901.387096774193,
+      "brooklynShare": 26.05875066562584,
+      "weather": {
+        "tmean": 17.04354838709677,
+        "prcp": 1.0516129032258066,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2023-06",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 4047.4666666666667,
+      "manhattan": 5205.6,
+      "williamsburg": 6867.3,
+      "total": 16120.366666666667,
+      "brooklynShare": 25.107782908163795,
+      "weather": {
+        "tmean": 21.11833333333333,
+        "prcp": 1.3733333333333335,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2023-07",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 4164.419354838709,
+      "manhattan": 5070.096774193548,
+      "williamsburg": 7066.129032258064,
+      "total": 16300.645161290322,
+      "brooklynShare": 25.54757381461252,
+      "weather": {
+        "tmean": 26.138709677419353,
+        "prcp": 4.370967741935484,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2023-08",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 4782.903225806452,
+      "manhattan": 5532.290322580645,
+      "williamsburg": 7760.935483870968,
+      "total": 18076.129032258064,
+      "brooklynShare": 26.45977585837676,
+      "weather": {
+        "tmean": 23.89516129032258,
+        "prcp": 5.380645161290322,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2023-09",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 3903.733333333333,
+      "manhattan": 4942.766666666666,
+      "williamsburg": 6850.0,
+      "total": 15696.5,
+      "brooklynShare": 24.870087811507872,
+      "weather": {
+        "tmean": 20.779999999999998,
+        "prcp": 12.066666666666666,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2023-10",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 4199.225806451613,
+      "manhattan": 5305.1612903225805,
+      "williamsburg": 7072.0,
+      "total": 16576.387096774193,
+      "brooklynShare": 25.332575680914164,
+      "weather": {
+        "tmean": 15.833870967741934,
+        "prcp": 3.1967741935483875,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2023-11",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 2963.866666666667,
+      "manhattan": 4063.9,
+      "williamsburg": 5419.8,
+      "total": 12447.566666666668,
+      "brooklynShare": 23.81081175169444,
+      "weather": {
+        "tmean": 8.155,
+        "prcp": 2.4966666666666666,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2023-12",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 2050.2258064516127,
+      "manhattan": 2897.064516129032,
+      "williamsburg": 3766.3870967741937,
+      "total": 8713.677419354839,
+      "brooklynShare": 23.528823799440254,
+      "weather": {
+        "tmean": 7.016129032258065,
+        "prcp": 5.496774193548387,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2024-01",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 1607.9032258064517,
+      "manhattan": 2331.9032258064517,
+      "williamsburg": 3026.1935483870966,
+      "total": 6966.0,
+      "brooklynShare": 23.082159428746078,
+      "weather": {
+        "tmean": 2.791935483870968,
+        "prcp": 4.325806451612903,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2024-02",
+      "days": 29,
+      "validDays": 29,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 2041.2068965517242,
+      "manhattan": 2938.4137931034484,
+      "williamsburg": 3791.0344827586205,
+      "total": 8770.655172413793,
+      "brooklynShare": 23.273140448753484,
+      "weather": {
+        "tmean": 4.494827586206896,
+        "prcp": 1.7965517241379307,
+        "weatherDays": 29
+      }
+    },
+    {
+      "month": "2024-03",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 2657.6774193548385,
+      "manhattan": 3510.8064516129034,
+      "williamsburg": 4655.903225806452,
+      "total": 10824.387096774193,
+      "brooklynShare": 24.55268271167853,
+      "weather": {
+        "tmean": 8.974193548387097,
+        "prcp": 7.429032258064517,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2024-04",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 3565.1666666666665,
+      "manhattan": 4309.366666666667,
+      "williamsburg": 5934.166666666667,
+      "total": 13808.7,
+      "brooklynShare": 25.81826433094112,
+      "weather": {
+        "tmean": 13.123333333333335,
+        "prcp": 2.9433333333333334,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2024-05",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 4760.032258064516,
+      "manhattan": 5381.387096774193,
+      "williamsburg": 7400.645161290323,
+      "total": 17542.064516129034,
+      "brooklynShare": 27.134960390140563,
+      "weather": {
+        "tmean": 18.309677419354845,
+        "prcp": 3.367741935483871,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2024-06",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 5271.066666666667,
+      "manhattan": 6047.3,
+      "williamsburg": 9261.733333333334,
+      "total": 20580.1,
+      "brooklynShare": 25.612444383976108,
+      "weather": {
+        "tmean": 23.908333333333335,
+        "prcp": 1.4466666666666668,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2024-07",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 4979.903225806452,
+      "manhattan": 5584.451612903225,
+      "williamsburg": 8544.90322580645,
+      "total": 19109.25806451613,
+      "brooklynShare": 26.060159996758877,
+      "weather": {
+        "tmean": 26.47258064516129,
+        "prcp": 3.4419354838709673,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2024-08",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 5181.5161290322585,
+      "manhattan": 5454.870967741936,
+      "williamsburg": 8185.322580645161,
+      "total": 18821.709677419356,
+      "brooklynShare": 27.529465802187936,
+      "weather": {
+        "tmean": 23.945161290322588,
+        "prcp": 5.748387096774193,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2024-09",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 5466.966666666666,
+      "manhattan": 6202.266666666666,
+      "williamsburg": 9050.4,
+      "total": 20719.633333333335,
+      "brooklynShare": 26.38544118380473,
+      "weather": {
+        "tmean": 20.449999999999996,
+        "prcp": 1.3366666666666664,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2024-10",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 5311.709677419355,
+      "manhattan": 5982.677419354839,
+      "williamsburg": 8876.0,
+      "total": 20170.387096774193,
+      "brooklynShare": 26.334198009857953,
+      "weather": {
+        "tmean": 16.070967741935483,
+        "prcp": 0.00967741935483871,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2024-11",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 3483.766666666667,
+      "manhattan": 4361.133333333333,
+      "williamsburg": 6393.833333333333,
+      "total": 14238.733333333334,
+      "brooklynShare": 24.466829914645967,
+      "weather": {
+        "tmean": 10.788333333333336,
+        "prcp": 2.8333333333333335,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2024-12",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 1844.0,
+      "manhattan": 2469.6129032258063,
+      "williamsburg": 3377.7741935483873,
+      "total": 7691.387096774193,
+      "brooklynShare": 23.97486925048127,
+      "weather": {
+        "tmean": 3.5016129032258063,
+        "prcp": 3.712903225806452,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2025-01",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 1577.1935483870968,
+      "manhattan": 2205.5806451612902,
+      "williamsburg": 3117.7419354838707,
+      "total": 6900.5161290322585,
+      "brooklynShare": 22.85616784158268,
+      "weather": {
+        "tmean": -0.379032258064516,
+        "prcp": 0.49999999999999994,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2025-02",
+      "days": 28,
+      "validDays": 28,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 1786.857142857143,
+      "manhattan": 2448.0714285714284,
+      "williamsburg": 3416.25,
+      "total": 7651.178571428572,
+      "brooklynShare": 23.35401175355804,
+      "weather": {
+        "tmean": 1.7107142857142856,
+        "prcp": 2.3607142857142853,
+        "weatherDays": 28
+      }
+    },
+    {
+      "month": "2025-03",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 2966.1290322580644,
+      "manhattan": 3729.5806451612902,
+      "williamsburg": 5300.677419354839,
+      "total": 11996.387096774193,
+      "brooklynShare": 24.72518607752872,
+      "weather": {
+        "tmean": 8.258064516129032,
+        "prcp": 4.525806451612904,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2025-04",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 3961.1666666666665,
+      "manhattan": 4668.433333333333,
+      "williamsburg": 6854.333333333333,
+      "total": 15483.933333333332,
+      "brooklynShare": 25.582431681872393,
+      "weather": {
+        "tmean": 12.926666666666666,
+        "prcp": 2.753333333333333,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2025-05",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 4447.580645161291,
+      "manhattan": 5029.225806451613,
+      "williamsburg": 7886.354838709677,
+      "total": 17363.16129032258,
+      "brooklynShare": 25.61503962783647,
+      "weather": {
+        "tmean": 16.848387096774196,
+        "prcp": 5.390322580645161,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2025-06",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 5013.233333333334,
+      "manhattan": 5470.166666666667,
+      "williamsburg": 8868.233333333334,
+      "total": 19351.633333333335,
+      "brooklynShare": 25.90599587631707,
+      "weather": {
+        "tmean": 22.910000000000004,
+        "prcp": 2.0866666666666664,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2025-07",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 5056.354838709677,
+      "manhattan": 5632.290322580645,
+      "williamsburg": 9038.677419354839,
+      "total": 19727.322580645163,
+      "brooklynShare": 25.63122703569799,
+      "weather": {
+        "tmean": 26.37096774193549,
+        "prcp": 3.3064516129032255,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2025-08",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 5913.451612903225,
+      "manhattan": 5793.548387096775,
+      "williamsburg": 9673.032258064517,
+      "total": 21380.032258064515,
+      "brooklynShare": 27.65875907728194,
+      "weather": {
+        "tmean": 23.23548387096774,
+        "prcp": 1.8129032258064517,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2025-09",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 5702.466666666666,
+      "manhattan": 6259.933333333333,
+      "williamsburg": 10156.133333333333,
+      "total": 22118.533333333333,
+      "brooklynShare": 25.781395993706635,
+      "weather": {
+        "tmean": 21.464999999999996,
+        "prcp": 2.3400000000000003,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2025-10",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 4626.774193548387,
+      "manhattan": 5233.612903225807,
+      "williamsburg": 8521.58064516129,
+      "total": 18381.967741935485,
+      "brooklynShare": 25.17017904994551,
+      "weather": {
+        "tmean": 14.741935483870968,
+        "prcp": 3.351612903225807,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2025-11",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 3033.766666666667,
+      "manhattan": 3758.233333333333,
+      "williamsburg": 5943.4,
+      "total": 12735.4,
+      "brooklynShare": 23.821526349126582,
+      "weather": {
+        "tmean": 8.458333333333334,
+        "prcp": 1.7699999999999998,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2025-12",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 1593.1290322580646,
+      "manhattan": 2151.6129032258063,
+      "williamsburg": 3221.1612903225805,
+      "total": 6965.903225806452,
+      "brooklynShare": 22.870387092890255,
+      "weather": {
+        "tmean": 1.0161290322580643,
+        "prcp": 2.774193548387097,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2026-01",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 1460.5806451612902,
+      "manhattan": 1909.483870967742,
+      "williamsburg": 2931.3870967741937,
+      "total": 6301.451612903225,
+      "brooklynShare": 23.17847910107758,
+      "weather": {
+        "tmean": -0.8903225806451612,
+        "prcp": 2.2161290322580647,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2026-02",
+      "days": 28,
+      "validDays": 28,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 1051.357142857143,
+      "manhattan": 1552.9642857142858,
+      "williamsburg": 2172.1785714285716,
+      "total": 4776.5,
+      "brooklynShare": 22.011036174126303,
+      "weather": {
+        "tmean": -0.2625,
+        "prcp": 2.357142857142857,
+        "weatherDays": 28
+      }
+    },
+    {
+      "month": "2026-03",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 2704.6451612903224,
+      "manhattan": 3316.6451612903224,
+      "williamsburg": 5363.903225806452,
+      "total": 11385.193548387097,
+      "brooklynShare": 23.755811877905938,
+      "weather": {
+        "tmean": 8.229032258064517,
+        "prcp": 2.9548387096774196,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2026-04",
+      "days": 30,
+      "validDays": 30,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 3983.7,
+      "manhattan": 4737.4,
+      "williamsburg": 7463.5,
+      "total": 16184.6,
+      "brooklynShare": 24.61413936705263,
+      "weather": {
+        "tmean": 12.800000000000002,
+        "prcp": 2.1033333333333335,
+        "weatherDays": 30
+      }
+    },
+    {
+      "month": "2026-05",
+      "days": 31,
+      "validDays": 31,
+      "coveragePct": 100.0,
+      "displayEligible": true,
+      "phase": "post",
+      "brooklyn": 4770.903225806452,
+      "manhattan": 5536.870967741936,
+      "williamsburg": 8904.258064516129,
+      "total": 19212.032258064515,
+      "brooklynShare": 24.83289202163295,
+      "weather": {
+        "tmean": 17.34193548387097,
+        "prcp": 2.5032258064516126,
+        "weatherDays": 31
+      }
+    },
+    {
+      "month": "2026-06",
+      "days": 30,
+      "validDays": 3,
+      "coveragePct": 10.0,
+      "displayEligible": false,
+      "phase": "post",
+      "brooklyn": 6295.333333333333,
+      "manhattan": 7052.0,
+      "williamsburg": 10994.0,
+      "total": 24341.333333333332,
+      "brooklynShare": 25.86273006134969,
+      "weather": {
+        "tmean": 18.883333333333336,
+        "prcp": 0.0,
+        "weatherDays": 3
+      }
+    },
+    {
+      "month": "2026-07",
+      "days": 31,
+      "validDays": 8,
+      "coveragePct": 25.806451612903224,
+      "displayEligible": false,
+      "phase": "post",
+      "brooklyn": 5238.25,
+      "manhattan": 5986.375,
+      "williamsburg": 9746.25,
+      "total": 20970.875,
+      "brooklynShare": 24.978690684103547,
+      "weather": {
+        "tmean": 26.35625,
+        "prcp": 0.925,
+        "weatherDays": 8
+      }
+    },
+    {
+      "month": "2026-08",
+      "days": 31,
+      "validDays": 12,
+      "coveragePct": 38.70967741935484,
+      "displayEligible": false,
+      "phase": "post",
+      "brooklyn": 4816.5,
+      "manhattan": 5695.0,
+      "williamsburg": 9417.833333333334,
+      "total": 19929.333333333332,
+      "brooklynShare": 24.16789322272028,
+      "weather": {
+        "tmean": 24.258333333333336,
+        "prcp": 14.816666666666665,
+        "weatherDays": 12
+      }
+    },
+    {
+      "month": "2026-09",
+      "days": 30,
+      "validDays": 12,
+      "coveragePct": 40.0,
+      "displayEligible": false,
+      "phase": "post",
+      "brooklyn": 4381.5,
+      "manhattan": 5404.25,
+      "williamsburg": 8910.166666666666,
+      "total": 18695.916666666668,
+      "brooklynShare": 23.43559868242174,
+      "weather": {
+        "tmean": 19.125000000000004,
+        "prcp": 5.175,
+        "weatherDays": 12
+      }
+    },
+    {
+      "month": "2026-10",
+      "days": 31,
+      "validDays": 8,
+      "coveragePct": 25.806451612903224,
+      "displayEligible": false,
+      "phase": "post",
+      "brooklyn": 5163.875,
+      "manhattan": 5978.25,
+      "williamsburg": 10298.125,
+      "total": 21440.25,
+      "brooklynShare": 24.084957031751028,
+      "weather": {
+        "tmean": 13.2625,
+        "prcp": 0.0,
+        "weatherDays": 8
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "label": "Same-season annual windows",
+      "before": [
+        "2020-06-01",
+        "2021-05-31"
+      ],
+      "after": [
+        "2022-06-01",
+        "2023-05-31"
+      ],
+      "kind": "primary descriptive",
+      "daysBefore": 364,
+      "daysAfter": 365,
+      "unit": "bicycle crossings per valid calendar day",
+      "brooklyn": {
+        "before": 1556.184065934066,
+        "after": 3015.282191780822,
+        "pct": 93.76128170101548
+      },
+      "manhattan": {
+        "before": 4485.6648351648355,
+        "after": 4512.087671232876,
+        "pct": 0.5890506098650494
+      },
+      "williamsburg": {
+        "before": 6028.568681318681,
+        "after": 5638.92602739726,
+        "pct": -6.463269716555519
+      },
+      "total": {
+        "before": 12070.417582417582,
+        "after": 13166.295890410958,
+        "pct": 9.079042216316457
+      },
+      "others": {
+        "before": 10514.233516483517,
+        "after": 10151.013698630137,
+        "pct": -3.454553461114862
+      },
+      "relativeBrooklynVsOthersPct": 100.69437622102164
+    },
+    {
+      "label": "First complete post-opening year",
+      "before": [
+        "2020-06-01",
+        "2021-05-31"
+      ],
+      "after": [
+        "2021-10-01",
+        "2022-09-30"
+      ],
+      "kind": "sensitivity; full years but different calendar alignment",
+      "daysBefore": 364,
+      "daysAfter": 363,
+      "unit": "bicycle crossings per valid calendar day",
+      "brooklyn": {
+        "before": 1556.184065934066,
+        "after": 2807.6005509641873,
+        "pct": 80.4157112532177
+      },
+      "manhattan": {
+        "before": 4485.6648351648355,
+        "after": 4411.421487603306,
+        "pct": -1.6551247204095176
+      },
+      "williamsburg": {
+        "before": 6028.568681318681,
+        "after": 5501.7768595041325,
+        "pct": -8.738256950558931
+      },
+      "total": {
+        "before": 12070.417582417582,
+        "after": 12720.798898071625,
+        "pct": 5.388225479468289
+      },
+      "others": {
+        "before": 10514.233516483517,
+        "after": 9913.198347107438,
+        "pct": -5.7163954788888365
+      },
+      "relativeBrooklynVsOthersPct": 91.35427858278433
+    },
+    {
+      "label": "Pre-opening placebo",
+      "before": [
+        "2019-06-01",
+        "2020-05-31"
+      ],
+      "after": [
+        "2020-06-01",
+        "2021-05-31"
+      ],
+      "kind": "false opening date 2020-06-01; pandemic-sensitive diagnostic",
+      "daysBefore": 366,
+      "daysAfter": 364,
+      "unit": "bicycle crossings per valid calendar day",
+      "brooklyn": {
+        "before": 1483.9754098360656,
+        "after": 1556.184065934066,
+        "pct": 4.865893034304203
+      },
+      "manhattan": {
+        "before": 3480.0109289617485,
+        "after": 4485.6648351648355,
+        "pct": 28.898009998581276
+      },
+      "williamsburg": {
+        "before": 4631.9890710382515,
+        "after": 6028.568681318681,
+        "pct": 30.150753571777944
+      },
+      "total": {
+        "before": 9595.975409836066,
+        "after": 12070.417582417582,
+        "pct": 25.78624961924312
+      },
+      "others": {
+        "before": 8112.0,
+        "after": 10514.233516483517,
+        "pct": 29.613332303790884
+      },
+      "relativeBrooklynVsOthersPct": -19.09328217214803
+    },
+    {
+      "label": "Original June 1\u201320 window",
+      "before": [
+        "2021-06-01",
+        "2021-06-20"
+      ],
+      "after": [
+        "2022-06-01",
+        "2022-06-20"
+      ],
+      "kind": "short-window replication",
+      "daysBefore": 20,
+      "daysAfter": 20,
+      "unit": "bicycle crossings per valid calendar day",
+      "brooklyn": {
+        "before": 2285.75,
+        "after": 4118.9,
+        "pct": 80.19905938969703
+      },
+      "manhattan": {
+        "before": 6052.8,
+        "after": 5845.85,
+        "pct": -3.4190787734602157
+      },
+      "williamsburg": {
+        "before": 7831.9,
+        "after": 7447.65,
+        "pct": -4.906216882238024
+      },
+      "total": {
+        "before": 16170.45,
+        "after": 17412.4,
+        "pct": 7.680367584080838
+      },
+      "others": {
+        "before": 13884.7,
+        "after": 13293.5,
+        "pct": -4.257924189935691
+      },
+      "relativeBrooklynVsOthersPct": 88.21302741250435
+    },
+    {
+      "label": "Later same-season annual windows",
+      "before": [
+        "2020-06-01",
+        "2021-05-31"
+      ],
+      "after": [
+        "2023-06-01",
+        "2024-05-31"
+      ],
+      "kind": "later follow-up",
+      "daysBefore": 364,
+      "daysAfter": 366,
+      "unit": "bicycle crossings per valid calendar day",
+      "brooklyn": {
+        "before": 1556.184065934066,
+        "after": 3400.2622950819673,
+        "pct": 118.50000713386262
+      },
+      "manhattan": {
+        "before": 4485.6648351648355,
+        "after": 4294.407103825137,
+        "pct": -4.263754390215613
+      },
+      "williamsburg": {
+        "before": 6028.568681318681,
+        "after": 5806.754098360656,
+        "pct": -3.6793904935575217
+      },
+      "total": {
+        "before": 12070.417582417582,
+        "after": 13501.42349726776,
+        "pct": 11.855479771757516
+      },
+      "others": {
+        "before": 10514.233516483517,
+        "after": 10101.161202185793,
+        "pct": -3.928696406163479
+      },
+      "relativeBrooklynVsOthersPct": 127.4352475299196
+    },
+    {
+      "label": "Pre-pandemic calendar baseline",
+      "before": [
+        "2019-01-01",
+        "2019-12-31"
+      ],
+      "after": [
+        "2022-01-01",
+        "2022-12-31"
+      ],
+      "kind": "baseline sensitivity; different counter era",
+      "daysBefore": 365,
+      "daysAfter": 363,
+      "unit": "bicycle crossings per valid calendar day",
+      "brooklyn": {
+        "before": 1571.2191780821918,
+        "after": 2737.3002754820936,
+        "pct": 74.21504992213781
+      },
+      "manhattan": {
+        "before": 3648.912328767123,
+        "after": 4329.292011019284,
+        "pct": 18.646095629325355
+      },
+      "williamsburg": {
+        "before": 4599.534246575343,
+        "after": 5371.584022038567,
+        "pct": 16.78539030420452
+      },
+      "total": {
+        "before": 9819.665753424657,
+        "after": 12438.176308539945,
+        "pct": 26.66598457490337
+      },
+      "others": {
+        "before": 8248.446575342467,
+        "after": 9700.876033057852,
+        "pct": 17.608521125143884
+      },
+      "relativeBrooklynVsOthersPct": 48.13131587358412
+    },
+    {
+      "label": "After comparator flow-channel change",
+      "before": [
+        "2020-11-24",
+        "2021-05-31"
+      ],
+      "after": [
+        "2022-11-24",
+        "2023-05-31"
+      ],
+      "kind": "same-season sensitivity after 2020-11-23 channel change",
+      "daysBefore": 189,
+      "daysAfter": 189,
+      "unit": "bicycle crossings per valid calendar day",
+      "brooklyn": {
+        "before": 1107.957671957672,
+        "after": 2441.4232804232806,
+        "pct": 120.35347939867438
+      },
+      "manhattan": {
+        "before": 3397.4126984126983,
+        "after": 3603.3968253968255,
+        "pct": 6.06297042100199
+      },
+      "williamsburg": {
+        "before": 4287.137566137566,
+        "after": 4534.666666666667,
+        "pct": 5.773761553261947
+      },
+      "total": {
+        "before": 8792.507936507936,
+        "after": 10579.486772486773,
+        "pct": 20.323880841312715
+      },
+      "others": {
+        "before": 7684.550264550265,
+        "after": 8138.063492063492,
+        "pct": 5.901623542048218
+      },
+      "relativeBrooklynVsOthersPct": 108.07374998475171
+    }
+  ],
+  "model": {
+    "label": "Weather-adjusted relative bicycle use, not a causal effect",
+    "outcome": "log(Brooklyn bicycle counts / (Manhattan + Williamsburg bicycle counts))",
+    "annualWindows": {
+      "nDays": 729,
+      "term": "post",
+      "logCoefficient": 0.6950493405788608,
+      "percent": 100.38079405457998,
+      "conditional95Percent": [
+        94.85324151128019,
+        106.06515095423516
+      ],
+      "standardError": 0.014271866831106525,
+      "controls": [
+        "month of year",
+        "weekday",
+        "temperature",
+        "temperature squared",
+        "rainfall",
+        "snowfall"
+      ],
+      "uncertainty": "Conditional regression interval; Newey-West 28-calendar-day lag. Does not cover confounding, spillovers or sensor calibration."
+    },
+    "withLinearTrend": {
+      "nDays": 729,
+      "term": "post",
+      "logCoefficient": 0.7556742568480128,
+      "percent": 112.90465637333655,
+      "conditional95Percent": [
+        -17.408321843431803,
+        448.82518090406097
+      ],
+      "standardError": 0.48313036535433274,
+      "controls": [
+        "month of year",
+        "weekday",
+        "temperature",
+        "temperature squared",
+        "rainfall",
+        "snowfall",
+        "linear calendar-time trend"
+      ],
+      "uncertainty": "Conditional regression interval; Newey-West 28-calendar-day lag. Does not cover confounding, spillovers or sensor calibration."
+    },
+    "placebo": {
+      "nDays": 730,
+      "term": "post",
+      "logCoefficient": -0.17457864766514994,
+      "percent": -16.018919752694593,
+      "conditional95Percent": [
+        -19.728764487141095,
+        -12.13761947921511
+      ],
+      "standardError": 0.023051119558698645,
+      "controls": [
+        "month of year",
+        "weekday",
+        "temperature",
+        "temperature squared",
+        "rainfall",
+        "snowfall"
+      ],
+      "uncertainty": "Conditional regression interval; Newey-West 28-calendar-day lag. Does not cover confounding, spillovers or sensor calibration."
+    },
+    "pretrend": {
+      "nDays": 730,
+      "term": "trend_year",
+      "logCoefficient": -0.1741993641196087,
+      "percent": -15.987061069464767,
+      "conditional95Percent": [
+        -19.71089928382299,
+        -12.090509860154283
+      ],
+      "standardError": 0.023131092949380358,
+      "controls": [
+        "month of year",
+        "weekday",
+        "temperature",
+        "temperature squared",
+        "rainfall",
+        "snowfall",
+        "linear calendar-time trend"
+      ],
+      "uncertainty": "Conditional regression interval; Newey-West 28-calendar-day lag. Does not cover confounding, spillovers or sensor calibration."
+    }
+  },
+  "audit": {
+    "calendarDays": 2861,
+    "commonValidDays": 2748,
+    "excludedCommonDates": [
+      "2020-11-23",
+      "2022-05-11",
+      "2022-05-12",
+      "2026-06-04",
+      "2026-06-05",
+      "2026-06-06",
+      "2026-06-07",
+      "2026-06-08",
+      "2026-06-09",
+      "2026-06-10",
+      "2026-06-11",
+      "2026-06-12",
+      "2026-06-13",
+      "2026-06-14",
+      "2026-06-15",
+      "2026-06-16",
+      "2026-06-17",
+      "2026-06-18",
+      "2026-06-19",
+      "2026-06-20",
+      "2026-06-21",
+      "2026-06-22",
+      "2026-06-23",
+      "2026-06-24",
+      "2026-06-25",
+      "2026-06-26",
+      "2026-06-27",
+      "2026-06-28",
+      "2026-06-29",
+      "2026-06-30",
+      "2026-07-03",
+      "2026-07-04",
+      "2026-07-05",
+      "2026-07-06",
+      "2026-07-09",
+      "2026-07-10",
+      "2026-07-11",
+      "2026-07-16",
+      "2026-07-17",
+      "2026-07-18",
+      "2026-07-19",
+      "2026-07-20",
+      "2026-07-21",
+      "2026-07-22",
+      "2026-07-23",
+      "2026-07-24",
+      "2026-07-25",
+      "2026-07-26",
+      "2026-07-27",
+      "2026-07-28",
+      "2026-07-29",
+      "2026-07-30",
+      "2026-07-31",
+      "2026-08-01",
+      "2026-08-02",
+      "2026-08-04",
+      "2026-08-05",
+      "2026-08-08",
+      "2026-08-09",
+      "2026-08-10",
+      "2026-08-14",
+      "2026-08-15",
+      "2026-08-16",
+      "2026-08-17",
+      "2026-08-18",
+      "2026-08-19",
+      "2026-08-25",
+      "2026-08-26",
+      "2026-08-27",
+      "2026-08-28",
+      "2026-08-29",
+      "2026-08-30",
+      "2026-09-01",
+      "2026-09-02",
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-13",
+      "2026-09-14",
+      "2026-09-15",
+      "2026-09-16",
+      "2026-09-17",
+      "2026-09-24",
+      "2026-09-25",
+      "2026-09-26",
+      "2026-09-30",
+      "2026-10-01",
+      "2026-10-02",
+      "2026-10-03",
+      "2026-10-04",
+      "2026-10-05",
+      "2026-10-08",
+      "2026-10-09",
+      "2026-10-10",
+      "2026-10-11",
+      "2026-10-12",
+      "2026-10-13",
+      "2026-10-14",
+      "2026-10-15",
+      "2026-10-16",
+      "2026-10-17",
+      "2026-10-18",
+      "2026-10-19",
+      "2026-10-20",
+      "2026-10-21",
+      "2026-10-22",
+      "2026-10-23",
+      "2026-10-24",
+      "2026-10-25"
+    ],
+    "sensors": {
+      "brooklyn": {
+        "sensorId": "300020904",
+        "daysReturned": 2835,
+        "completeDays": 2785,
+        "invalidDates": [
+          "2026-06-05",
+          "2026-06-06",
+          "2026-06-08",
+          "2026-06-09",
+          "2026-06-10",
+          "2026-06-13",
+          "2026-06-14",
+          "2026-06-15",
+          "2026-06-18",
+          "2026-06-19",
+          "2026-06-20",
+          "2026-06-22",
+          "2026-06-23",
+          "2026-06-24",
+          "2026-06-25",
+          "2026-06-26",
+          "2026-06-28",
+          "2026-06-29",
+          "2026-06-30",
+          "2026-07-03",
+          "2026-07-04",
+          "2026-07-09",
+          "2026-07-10",
+          "2026-07-11",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-27",
+          "2026-07-28",
+          "2026-07-29",
+          "2026-07-30",
+          "2026-07-31",
+          "2026-08-04",
+          "2026-08-05",
+          "2026-08-08",
+          "2026-08-09",
+          "2026-08-10",
+          "2026-08-14",
+          "2026-08-15",
+          "2026-08-16",
+          "2026-08-17",
+          "2026-08-18",
+          "2026-08-19",
+          "2026-08-25",
+          "2026-08-26",
+          "2026-08-27",
+          "2026-08-28",
+          "2026-08-29",
+          "2026-08-30",
+          "2026-09-01",
+          "2026-09-02",
+          "2026-09-04",
+          "2026-09-05",
+          "2026-09-06",
+          "2026-09-08",
+          "2026-09-09",
+          "2026-09-15",
+          "2026-09-16",
+          "2026-09-17",
+          "2026-09-24",
+          "2026-09-25",
+          "2026-09-26",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25"
+        ],
+        "status": [
+          {
+            "status": "modified",
+            "intervals": 195961,
+            "bikes": 1585675
+          },
+          {
+            "status": "raw",
+            "intervals": 343495,
+            "bikes": 6171343
+          }
+        ],
+        "negativeCounts": false
+      },
+      "manhattan": {
+        "sensorId": "100062893",
+        "daysReturned": 2861,
+        "completeDays": 2858,
+        "invalidDates": [
+          "2020-11-23",
+          "2022-05-11",
+          "2022-05-12"
+        ],
+        "status": [
+          {
+            "status": "modified",
+            "intervals": 22075,
+            "bikes": 648819
+          },
+          {
+            "status": "raw",
+            "intervals": 943353,
+            "bikes": 11649245
+          }
+        ],
+        "negativeCounts": false
+      },
+      "williamsburg": {
+        "sensorId": "100009427",
+        "daysReturned": 2848,
+        "completeDays": 2791,
+        "invalidDates": [
+          "2020-11-23",
+          "2026-06-04",
+          "2026-06-05",
+          "2026-06-06",
+          "2026-06-07",
+          "2026-06-08",
+          "2026-06-09",
+          "2026-06-11",
+          "2026-06-12",
+          "2026-06-13",
+          "2026-06-14",
+          "2026-06-15",
+          "2026-06-16",
+          "2026-06-17",
+          "2026-06-18",
+          "2026-06-20",
+          "2026-06-21",
+          "2026-06-23",
+          "2026-06-24",
+          "2026-06-25",
+          "2026-06-26",
+          "2026-06-27",
+          "2026-06-28",
+          "2026-06-29",
+          "2026-06-30",
+          "2026-07-03",
+          "2026-07-04",
+          "2026-07-05",
+          "2026-07-06",
+          "2026-07-16",
+          "2026-07-17",
+          "2026-07-18",
+          "2026-07-19",
+          "2026-07-20",
+          "2026-07-21",
+          "2026-07-22",
+          "2026-07-23",
+          "2026-07-24",
+          "2026-07-25",
+          "2026-07-26",
+          "2026-07-28",
+          "2026-07-29",
+          "2026-08-01",
+          "2026-08-02",
+          "2026-08-04",
+          "2026-08-05",
+          "2026-08-17",
+          "2026-08-18",
+          "2026-09-04",
+          "2026-09-05",
+          "2026-09-09",
+          "2026-09-10",
+          "2026-09-11",
+          "2026-09-13",
+          "2026-09-14",
+          "2026-09-30",
+          "2026-10-01",
+          "2026-10-02",
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19"
+        ],
+        "status": [
+          {
+            "status": "modified",
+            "intervals": 330,
+            "bikes": 6557
+          },
+          {
+            "status": "raw",
+            "intervals": 949534,
+            "bikes": 16709779
+          }
+        ],
+        "negativeCounts": false
+      }
+    },
+    "physicalReconciliation": {
+      "100010022": {
+        "reference": "brooklyn",
+        "first": "2019-01-01",
+        "last": "2021-09-13",
+        "comparedDays": 987,
+        "missingComparisonDates": [],
+        "daysDifferent": 0,
+        "maxAbsoluteDifference": 0.0,
+        "differences": []
+      },
+      "300020241": {
+        "reference": "brooklyn",
+        "first": "2021-09-15",
+        "last": "2026-10-31",
+        "comparedDays": 1847,
+        "missingComparisonDates": [
+          "2026-06-09",
+          "2026-06-14",
+          "2026-06-19",
+          "2026-06-23",
+          "2026-06-24",
+          "2026-06-25",
+          "2026-06-29",
+          "2026-07-10",
+          "2026-07-19",
+          "2026-07-28",
+          "2026-07-29",
+          "2026-07-30",
+          "2026-08-09",
+          "2026-08-17",
+          "2026-08-18",
+          "2026-08-28",
+          "2026-08-29",
+          "2026-09-05",
+          "2026-09-16",
+          "2026-09-25",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24"
+        ],
+        "daysDifferent": 0,
+        "maxAbsoluteDifference": 0.0,
+        "differences": []
+      },
+      "100047029": {
+        "reference": "manhattan",
+        "first": "2019-01-01",
+        "last": "2026-10-31",
+        "comparedDays": 2861,
+        "missingComparisonDates": [],
+        "daysDifferent": 0,
+        "maxAbsoluteDifference": 0.0,
+        "differences": []
+      }
+    },
+    "completenessRule": "Require every active flow channel to contain one nonnull count per expected local quarter-hour. Spring DST has 92 slots; other source days have 96. Exclude a day from every bridge if any bridge fails. Sum status partitions, never comprehensive and component sensors together.",
+    "weatherMissingDays": 0,
+    "uniquenessAcrossStatuses": {
+      "300020904": {
+        "mixedStatusDays": 8,
+        "rowsChecked": 1536,
+        "duplicateTimestampFlowPairs": 0,
+        "duplicates": [],
+        "query": "https://data.cityofnewyork.us/resource/ct66-47at.json?%24select=timestamp%2Cflowid%2Cstatus%2Ccounts&%24where=sensor_id%3D%27300020904%27+AND+date_trunc_ymd%28timestamp%29+in+%28%272021-09-16T00%3A00%3A00.000%27%2C%272021-09-17T00%3A00%3A00.000%27%2C%272022-02-07T00%3A00%3A00.000%27%2C%272022-02-08T00%3A00%3A00.000%27%2C%272022-02-09T00%3A00%3A00.000%27%2C%272022-02-10T00%3A00%3A00.000%27%2C%272022-02-11T00%3A00%3A00.000%27%2C%272022-03-07T00%3A00%3A00.000%27%29+AND+travelmode%3D%27bike%27&%24limit=50000"
+      },
+      "100062893": {
+        "mixedStatusDays": 143,
+        "rowsChecked": 27456,
+        "duplicateTimestampFlowPairs": 0,
+        "duplicates": [],
+        "query": "https://data.cityofnewyork.us/resource/ct66-47at.json?%24select=timestamp%2Cflowid%2Cstatus%2Ccounts&%24where=sensor_id%3D%27100062893%27+AND+date_trunc_ymd%28timestamp%29+in+%28%272019-05-08T00%3A00%3A00.000%27%2C%272019-05-09T00%3A00%3A00.000%27%2C%272019-05-10T00%3A00%3A00.000%27%2C%272019-05-11T00%3A00%3A00.000%27%2C%272019-05-12T00%3A00%3A00.000%27%2C%272019-05-13T00%3A00%3A00.000%27%2C%272019-05-14T00%3A00%3A00.000%27%2C%272019-05-15T00%3A00%3A00.000%27%2C%272019-05-16T00%3A00%3A00.000%27%2C%272019-05-17T00%3A00%3A00.000%27%2C%272019-05-18T00%3A00%3A00.000%27%2C%272019-05-19T00%3A00%3A00.000%27%2C%272019-05-20T00%3A00%3A00.000%27%2C%272019-05-21T00%3A00%3A00.000%27%2C%272019-05-22T00%3A00%3A00.000%27%2C%272019-05-23T00%3A00%3A00.000%27%2C%272019-05-24T00%3A00%3A00.000%27%2C%272019-05-25T00%3A00%3A00.000%27%2C%272019-05-26T00%3A00%3A00.000%27%2C%272019-05-27T00%3A00%3A00.000%27%2C%272019-05-28T00%3A00%3A00.000%27%2C%272019-05-29T00%3A00%3A00.000%27%2C%272019-05-30T00%3A00%3A00.000%27%2C%272019-05-31T00%3A00%3A00.000%27%2C%272019-06-01T00%3A00%3A00.000%27%2C%272019-06-02T00%3A00%3A00.000%27%2C%272019-06-03T00%3A00%3A00.000%27%2C%272019-06-04T00%3A00%3A00.000%27%2C%272019-06-05T00%3A00%3A00.000%27%2C%272019-06-06T00%3A00%3A00.000%27%2C%272019-06-07T00%3A00%3A00.000%27%2C%272019-06-08T00%3A00%3A00.000%27%2C%272019-06-09T00%3A00%3A00.000%27%2C%272019-06-10T00%3A00%3A00.000%27%2C%272019-06-11T00%3A00%3A00.000%27%2C%272019-06-12T00%3A00%3A00.000%27%2C%272019-06-13T00%3A00%3A00.000%27%2C%272019-06-14T00%3A00%3A00.000%27%2C%272019-06-15T00%3A00%3A00.000%27%2C%272019-06-16T00%3A00%3A00.000%27%2C%272019-06-17T00%3A00%3A00.000%27%2C%272019-06-18T00%3A00%3A00.000%27%2C%272019-06-19T00%3A00%3A00.000%27%2C%272019-06-20T00%3A00%3A00.000%27%2C%272019-06-21T00%3A00%3A00.000%27%2C%272019-06-22T00%3A00%3A00.000%27%2C%272019-06-23T00%3A00%3A00.000%27%2C%272019-06-24T00%3A00%3A00.000%27%2C%272019-06-25T00%3A00%3A00.000%27%2C%272019-06-26T00%3A00%3A00.000%27%2C%272019-06-27T00%3A00%3A00.000%27%2C%272019-06-28T00%3A00%3A00.000%27%2C%272019-06-29T00%3A00%3A00.000%27%2C%272019-06-30T00%3A00%3A00.000%27%2C%272019-07-01T00%3A00%3A00.000%27%2C%272019-07-02T00%3A00%3A00.000%27%2C%272019-07-03T00%3A00%3A00.000%27%2C%272019-07-04T00%3A00%3A00.000%27%2C%272019-07-05T00%3A00%3A00.000%27%2C%272019-07-06T00%3A00%3A00.000%27%2C%272019-07-07T00%3A00%3A00.000%27%2C%272019-07-08T00%3A00%3A00.000%27%2C%272019-07-09T00%3A00%3A00.000%27%2C%272019-07-10T00%3A00%3A00.000%27%2C%272019-07-11T00%3A00%3A00.000%27%2C%272019-07-12T00%3A00%3A00.000%27%2C%272019-07-13T00%3A00%3A00.000%27%2C%272019-07-14T00%3A00%3A00.000%27%2C%272019-07-15T00%3A00%3A00.000%27%2C%272019-07-16T00%3A00%3A00.000%27%2C%272019-07-17T00%3A00%3A00.000%27%2C%272019-07-18T00%3A00%3A00.000%27%2C%272019-07-19T00%3A00%3A00.000%27%2C%272019-07-20T00%3A00%3A00.000%27%2C%272019-07-21T00%3A00%3A00.000%27%2C%272019-07-22T00%3A00%3A00.000%27%2C%272019-07-23T00%3A00%3A00.000%27%2C%272019-07-24T00%3A00%3A00.000%27%2C%272019-07-25T00%3A00%3A00.000%27%2C%272019-07-26T00%3A00%3A00.000%27%2C%272019-07-27T00%3A00%3A00.000%27%2C%272019-07-28T00%3A00%3A00.000%27%2C%272019-07-29T00%3A00%3A00.000%27%2C%272019-07-30T00%3A00%3A00.000%27%2C%272019-07-31T00%3A00%3A00.000%27%2C%272019-08-01T00%3A00%3A00.000%27%2C%272019-08-02T00%3A00%3A00.000%27%2C%272019-08-03T00%3A00%3A00.000%27%2C%272019-08-04T00%3A00%3A00.000%27%2C%272019-08-05T00%3A00%3A00.000%27%2C%272019-08-06T00%3A00%3A00.000%27%2C%272019-08-07T00%3A00%3A00.000%27%2C%272019-08-08T00%3A00%3A00.000%27%2C%272019-08-09T00%3A00%3A00.000%27%2C%272019-08-10T00%3A00%3A00.000%27%2C%272019-08-11T00%3A00%3A00.000%27%2C%272019-08-12T00%3A00%3A00.000%27%2C%272019-08-13T00%3A00%3A00.000%27%2C%272019-08-14T00%3A00%3A00.000%27%2C%272019-08-15T00%3A00%3A00.000%27%2C%272019-08-16T00%3A00%3A00.000%27%2C%272019-08-17T00%3A00%3A00.000%27%2C%272019-08-18T00%3A00%3A00.000%27%2C%272019-08-19T00%3A00%3A00.000%27%2C%272019-08-20T00%3A00%3A00.000%27%2C%272019-08-21T00%3A00%3A00.000%27%2C%272019-08-22T00%3A00%3A00.000%27%2C%272019-08-23T00%3A00%3A00.000%27%2C%272019-08-24T00%3A00%3A00.000%27%2C%272019-08-25T00%3A00%3A00.000%27%2C%272019-08-26T00%3A00%3A00.000%27%2C%272019-08-27T00%3A00%3A00.000%27%2C%272019-08-28T00%3A00%3A00.000%27%2C%272019-08-29T00%3A00%3A00.000%27%2C%272019-08-30T00%3A00%3A00.000%27%2C%272019-08-31T00%3A00%3A00.000%27%2C%272019-09-01T00%3A00%3A00.000%27%2C%272019-09-02T00%3A00%3A00.000%27%2C%272019-09-03T00%3A00%3A00.000%27%2C%272019-09-04T00%3A00%3A00.000%27%2C%272019-09-05T00%3A00%3A00.000%27%2C%272019-09-06T00%3A00%3A00.000%27%2C%272019-09-07T00%3A00%3A00.000%27%2C%272019-09-08T00%3A00%3A00.000%27%2C%272019-09-09T00%3A00%3A00.000%27%2C%272019-09-10T00%3A00%3A00.000%27%2C%272019-09-11T00%3A00%3A00.000%27%2C%272019-09-12T00%3A00%3A00.000%27%2C%272019-09-13T00%3A00%3A00.000%27%2C%272019-09-14T00%3A00%3A00.000%27%2C%272019-09-15T00%3A00%3A00.000%27%2C%272019-09-16T00%3A00%3A00.000%27%2C%272019-09-17T00%3A00%3A00.000%27%2C%272019-09-18T00%3A00%3A00.000%27%2C%272019-09-19T00%3A00%3A00.000%27%2C%272019-09-20T00%3A00%3A00.000%27%2C%272019-09-21T00%3A00%3A00.000%27%2C%272019-09-22T00%3A00%3A00.000%27%2C%272019-09-23T00%3A00%3A00.000%27%2C%272019-09-24T00%3A00%3A00.000%27%2C%272019-09-25T00%3A00%3A00.000%27%2C%272019-09-26T00%3A00%3A00.000%27%2C%272019-09-27T00%3A00%3A00.000%27%29+AND+travelmode%3D%27bike%27&%24limit=50000"
+      },
+      "100009427": {
+        "mixedStatusDays": 1,
+        "rowsChecked": 384,
+        "duplicateTimestampFlowPairs": 0,
+        "duplicates": [],
+        "query": "https://data.cityofnewyork.us/resource/ct66-47at.json?%24select=timestamp%2Cflowid%2Cstatus%2Ccounts&%24where=sensor_id%3D%27100009427%27+AND+date_trunc_ymd%28timestamp%29+in+%28%272022-05-12T00%3A00%3A00.000%27%29+AND+travelmode%3D%27bike%27&%24limit=50000"
+      }
+    }
+  },
+  "sources": {
+    "counts": "https://data.cityofnewyork.us/Transportation/Bicycle-and-Pedestrian-Counts/ct66-47at",
+    "registry": "https://data.cityofnewyork.us/Transportation/Bicycle-and-Pedestrian-Counter-Locations/6up2-gnw8",
+    "weather": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00094728&startDate=2019-01-01&endDate=2026-10-31&dataTypes=PRCP,TMAX,TMIN,SNOW&units=metric&format=json"
+  },
+  "limitations": [
+    "These are designated bicycle-path crossings, not all people or unique travelers.",
+    "Manhattan and Williamsburg are possible diversion destinations; relative changes do not isolate lane-caused demand.",
+    "The pre-opening baseline includes COVID-19; weather adjustment does not remove pandemic, commuting, tourism or station-network changes.",
+    "Brooklyn comprehensive series stitches the former promenade to the roadway bikeway. A hardware/path change at intervention can alter measurement; equal published totals do not prove equal calibration.",
+    "Manhattan and Williamsburg added flow channels on 2020-11-23; physical hardware replacements also occur. Completeness checks detect missing records, not calibration changes.",
+    "No mode-switch or door-to-door travel-time observations are in this count panel.",
+    "The all-three sum uses common valid dates, but cycling via other crossings, on unauthorized paths, or entirely different trips remains outside it.",
+    "Recent 2026 months have many incomplete counter days. Their available-day means can be selection-biased; displayEligible is false below 80% common coverage and these months should be omitted from continuous trend lines."
+  ]
+}

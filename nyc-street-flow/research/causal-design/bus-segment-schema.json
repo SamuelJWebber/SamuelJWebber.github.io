@@ -1,0 +1,45 @@
+{
+  "name": "bus-segment-schema",
+  "url": "https://data.ny.gov/resource/58t6-89vi.json?%24limit=1",
+  "status": "acquired",
+  "rows": [
+    {
+      "year": "2023",
+      "month": "3",
+      "timestamp": "2023-03-01T09:00:00.000",
+      "day_of_week": "Friday",
+      "hour_of_day": "9",
+      "route_id": "B6",
+      "direction": "W",
+      "borough": "Brooklyn",
+      "route_type": "Limited",
+      "stop_order": "1",
+      "timepoint_stop_id": "306921",
+      "timepoint_stop_name": "LIVONIA AV/ASHFORD ST",
+      "timepoint_stop_latitude": "40.666382",
+      "timepoint_stop_longitude": "-73.883617",
+      "next_timepoint_stop_id": "300590",
+      "next_timepoint_stop_name": "COZINE AV /ASHFORD ST",
+      "next_timepoint_stop_latitude": "40.658352",
+      "next_timepoint_stop_longitude": "-73.877775",
+      "road_distance": "0.724",
+      "average_travel_time": "5.334420",
+      "average_road_speed": "8.14334079431316",
+      "bus_trip_count": "46",
+      "timepoint_stop_georeference": {
+        "type": "Point",
+        "coordinates": [
+          -73.883617,
+          40.666382
+        ]
+      },
+      "next_timepoint_stop_georeference": {
+        "type": "Point",
+        "coordinates": [
+          -73.877775,
+          40.658352
+        ]
+      }
+    }
+  ]
+}

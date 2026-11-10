@@ -1,0 +1,22 @@
+[
+  {
+    "id": "copenhagen-norrebrogade-2008",
+    "city": "Copenhagen",
+    "project": "Nørrebrogade 2008 trial",
+    "region": "Europe",
+    "eligibility": "Related bundled street reallocation. Road space was narrowed for cycling and motor access restricted; a uniform moving-lane removal count has not been certified. Keep outside the clean lane-conversion cohort.",
+    "status": "Original evaluation tables acquired",
+    "treatment": "Cycle space widening, two bus-only links, turn restrictions, stops and signal changes, and a bus-route change.",
+    "timing": "Trial began 1 October 2008. Bus GPS compares weeks 36–38 with 44–46; short adaptation window.",
+    "measurement": "Automatic bus running times for three routes; GPS cycling segment times; bicycle/vehicle counts and parallel-street diversion. Bus passenger totals were not resolved in this report.",
+    "identification": "Before/after evaluation, with seasonal cautions; no credible untreated comparison in the extracted running-time tables.",
+    "finding": "All eight 5A/350S route-period means fell by 13–84 seconds. Cycling segment means were mixed (−8 to +38 seconds); rerouted 3A also had mixed results.",
+    "limit": "Bus benefits cannot be assigned to bike lanes separately from bus priority and access restrictions. No matched total-person-flow or complete door-to-door time result. One printed bus difference is arithmetically inconsistent with its displayed means; corrected explicitly in our extract.",
+    "priority": "Useful bus and bike time benchmark",
+    "source_url": "https://www.trm.dk/media/cg1dxtrr/evaluering-af-forsoeg-paa-noerrebrogadepdf.pdf",
+    "outcomes": [
+      "time",
+      "cycling"
+    ]
+  }
+]

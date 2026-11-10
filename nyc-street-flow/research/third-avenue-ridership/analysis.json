@@ -1,0 +1,1249 @@
+{
+  "title": "Third Avenue 2023 redesign: route-level weekday bus entries, treated routes vs Upper East Side comparisons",
+  "specification": "README.md, committed before outcomes were fetched (git 578c91a)",
+  "source": "https://data.ny.gov/d/kv7t-n8in (MTA Bus Hourly Ridership: 2020-2024); see source-manifest.json",
+  "treated_routes": [
+    "M101",
+    "M102",
+    "M103"
+  ],
+  "comparisons": {
+    "pooled_ues": {
+      "routes": [
+        "M15",
+        "M15+",
+        "M1",
+        "M2",
+        "M3",
+        "M4"
+      ],
+      "role": "primary"
+    },
+    "first_second": {
+      "routes": [
+        "M15",
+        "M15+"
+      ],
+      "role": "separate group"
+    },
+    "fifth_madison": {
+      "routes": [
+        "M1",
+        "M2",
+        "M3",
+        "M4"
+      ],
+      "role": "separate group"
+    },
+    "frozen_first_m15_local": {
+      "routes": [
+        "M15"
+      ],
+      "role": "travel-time study route list"
+    },
+    "frozen_madison_m1_m3_m4": {
+      "routes": [
+        "M1",
+        "M3",
+        "M4"
+      ],
+      "role": "travel-time study route list"
+    }
+  },
+  "windows": {
+    "before": "Jan-Jun 2023",
+    "after": "Jan-Jun 2024",
+    "excluded": "Jul-Dec 2023",
+    "placebo": "Jan-Jun 2022 vs Jan-Jun 2023"
+  },
+  "outcomes": {
+    "all-day": {
+      "source_rows": 9864,
+      "weekdays_used": 768,
+      "days_excluded": {
+        "weekend": 314,
+        "holiday": 14,
+        "missing_route": 0
+      },
+      "contrasts": {
+        "main_2023_to_2024": {
+          "pooled_ues": {
+            "month_pairs": 6,
+            "treated_change_percent": -3.6682533358126657,
+            "comparison_change_percent": 1.9363935687835676,
+            "relative_change_percent": -5.498180491165194,
+            "monthly_relative_change_percent": [
+              -4.428927199233179,
+              -3.6625656335529277,
+              -4.689638034952748,
+              -2.926177216853676,
+              -6.146322389536429,
+              -10.910619572374458
+            ],
+            "monthly_range_percent": [
+              -10.910619572374458,
+              -2.926177216853676
+            ],
+            "months_negative": 6,
+            "pairs": [
+              {
+                "calendar_month": 1,
+                "treated_log_change": -0.04979366575710403,
+                "comparison_log_change": -0.004493668272021057,
+                "difference": -0.045299997485082975
+              },
+              {
+                "calendar_month": 2,
+                "treated_log_change": -0.03139813687743257,
+                "comparison_log_change": 0.005915079294470181,
+                "difference": -0.03731321617190275
+              },
+              {
+                "calendar_month": 3,
+                "treated_log_change": -0.01544543599121756,
+                "comparison_log_change": 0.03258621528886775,
+                "difference": -0.04803165128008531
+              },
+              {
+                "calendar_month": 4,
+                "treated_log_change": -0.03288827745842458,
+                "comparison_log_change": -0.0031898401347630035,
+                "difference": -0.029698437323661574
+              },
+              {
+                "calendar_month": 5,
+                "treated_log_change": -0.03906163243477519,
+                "comparison_log_change": 0.024371605242056258,
+                "difference": -0.06343323767683144
+              },
+              {
+                "calendar_month": 6,
+                "treated_log_change": -0.055646395241345355,
+                "comparison_log_change": 0.05988365049313472,
+                "difference": -0.11553004573448007
+              }
+            ]
+          },
+          "first_second": {
+            "month_pairs": 6,
+            "treated_change_percent": -3.6682533358126657,
+            "comparison_change_percent": 3.2656989352123578,
+            "relative_change_percent": -6.714671321186039,
+            "monthly_relative_change_percent": [
+              -4.599229038572405,
+              -4.696445423633156,
+              -5.642677810228935,
+              -4.283063658957831,
+              -8.755486737853047,
+              -12.047550882768576
+            ],
+            "monthly_range_percent": [
+              -12.047550882768576,
+              -4.283063658957831
+            ],
+            "months_negative": 6,
+            "pairs": [
+              {
+                "calendar_month": 1,
+                "treated_log_change": -0.04979366575710403,
+                "comparison_log_change": -0.002710139547282873,
+                "difference": -0.04708352620982116
+              },
+              {
+                "calendar_month": 2,
+                "treated_log_change": -0.03139813687743257,
+                "comparison_log_change": 0.016704940338458714,
+                "difference": -0.048103077215891285
+              },
+              {
+                "calendar_month": 3,
+                "treated_log_change": -0.01544543599121756,
+                "comparison_log_change": 0.04263587451871769,
+                "difference": -0.05808131050993525
+              },
+              {
+                "calendar_month": 4,
+                "treated_log_change": -0.03288827745842458,
+                "comparison_log_change": 0.01088665246804961,
+                "difference": -0.043774929926474186
+              },
+              {
+                "calendar_month": 5,
+                "treated_log_change": -0.03906163243477519,
+                "comparison_log_change": 0.05256569153252009,
+                "difference": -0.09162732396729528
+              },
+              {
+                "calendar_month": 6,
+                "treated_log_change": -0.055646395241345355,
+                "comparison_log_change": 0.07272747325127275,
+                "difference": -0.12837386849261812
+              }
+            ]
+          },
+          "fifth_madison": {
+            "month_pairs": 6,
+            "treated_change_percent": -3.6682533358126657,
+            "comparison_change_percent": 0.5956547310227656,
+            "relative_change_percent": -4.238660286308038,
+            "monthly_relative_change_percent": [
+              -4.25329465459977,
+              -2.575996797686031,
+              -3.66688688274468,
+              -1.5279525077424139,
+              -3.4356842400826704,
+              -9.750201896581778
+            ],
+            "monthly_range_percent": [
+              -9.750201896581778,
+              -1.5279525077424139
+            ],
+            "months_negative": 6,
+            "pairs": [
+              {
+                "calendar_month": 1,
+                "treated_log_change": -0.04979366575710403,
+                "comparison_log_change": -0.0063296983124433645,
+                "difference": -0.04346396744466067
+              },
+              {
+                "calendar_month": 2,
+                "treated_log_change": -0.03139813687743257,
+                "comparison_log_change": -0.005300570625426451,
+                "difference": -0.02609756625200612
+              },
+              {
+                "calendar_month": 3,
+                "treated_log_change": -0.01544543599121756,
+                "comparison_log_change": 0.021912636535212828,
+                "difference": -0.03735807252643039
+              },
+              {
+                "calendar_month": 4,
+                "treated_log_change": -0.03288827745842458,
+                "comparison_log_change": -0.017490817570209184,
+                "difference": -0.015397459888215392
+              },
+              {
+                "calendar_month": 5,
+                "treated_log_change": -0.03906163243477519,
+                "comparison_log_change": -0.004100717348154552,
+                "difference": -0.034960915086620636
+              },
+              {
+                "calendar_month": 6,
+                "treated_log_change": -0.055646395241345355,
+                "comparison_log_change": 0.04694243061749653,
+                "difference": -0.10258882585884188
+              }
+            ]
+          },
+          "frozen_first_m15_local": {
+            "month_pairs": 6,
+            "treated_change_percent": -3.6682533358126657,
+            "comparison_change_percent": 2.9741089491961414,
+            "relative_change_percent": -6.450516885060809,
+            "monthly_relative_change_percent": [
+              -11.315391683218678,
+              -8.058691011603013,
+              -5.8552300024649835,
+              -2.093918579437626,
+              -5.828047321146523,
+              -5.2973840920938375
+            ],
+            "monthly_range_percent": [
+              -11.315391683218678,
+              -2.093918579437626
+            ],
+            "months_negative": 6,
+            "pairs": [
+              {
+                "calendar_month": 1,
+                "treated_log_change": -0.04979366575710403,
+                "comparison_log_change": 0.07029017114990067,
+                "difference": -0.1200838369070047
+              },
+              {
+                "calendar_month": 2,
+                "treated_log_change": -0.03139813687743257,
+                "comparison_log_change": 0.05262162141390418,
+                "difference": -0.08401975829133676
+              },
+              {
+                "calendar_month": 3,
+                "treated_log_change": -0.01544543599121756,
+                "comparison_log_change": 0.04489104611764065,
+                "difference": -0.06033648210885821
+              },
+              {
+                "calendar_month": 4,
+                "treated_log_change": -0.03288827745842458,
+                "comparison_log_change": -0.011726757775799271,
+                "difference": -0.021161519682625307
+              },
+              {
+                "calendar_month": 5,
+                "treated_log_change": -0.03906163243477519,
+                "comparison_log_change": 0.020986158567728497,
+                "difference": -0.06004779100250368
+              },
+              {
+                "calendar_month": 6,
+                "treated_log_change": -0.055646395241345355,
+                "comparison_log_change": -0.0012178321673254108,
+                "difference": -0.05442856307401994
+              }
+            ]
+          },
+          "frozen_madison_m1_m3_m4": {
+            "month_pairs": 6,
+            "treated_change_percent": -3.6682533358126657,
+            "comparison_change_percent": 1.6189795605141555,
+            "relative_change_percent": -5.202997431378719,
+            "monthly_relative_change_percent": [
+              -4.823451242747967,
+              -3.5544977770332054,
+              -4.304430997033903,
+              -3.1009683001422927,
+              -4.884955224672128,
+              -10.361368452681052
+            ],
+            "monthly_range_percent": [
+              -10.361368452681052,
+              -3.1009683001422927
+            ],
+            "months_negative": 6,
+            "pairs": [
+              {
+                "calendar_month": 1,
+                "treated_log_change": -0.04979366575710403,
+                "comparison_log_change": -0.0003570546370053803,
+                "difference": -0.04943661112009865
+              },
+              {
+                "calendar_month": 2,
+                "treated_log_change": -0.03139813687743257,
+                "comparison_log_change": 0.004793944097017649,
+                "difference": -0.036192080974450216
+              },
+              {
+                "calendar_month": 3,
+                "treated_log_change": -0.01544543599121756,
+                "comparison_log_change": 0.028552753519330613,
+                "difference": -0.04399818951054817
+              },
+              {
+                "calendar_month": 4,
+                "treated_log_change": -0.03288827745842458,
+                "comparison_log_change": -0.001387617539599435,
+                "difference": -0.03150065991882514
+              },
+              {
+                "calendar_month": 5,
+                "treated_log_change": -0.03906163243477519,
+                "comparison_log_change": 0.011021396983936135,
+                "difference": -0.050083029418711324
+              },
+              {
+                "calendar_month": 6,
+                "treated_log_change": -0.055646395241345355,
+                "comparison_log_change": 0.053737408024713856,
+                "difference": -0.1093838032660592
+              }
+            ]
+          }
+        },
+        "placebo_2022_to_2023": {
+          "pooled_ues": {
+            "month_pairs": 6,
+            "treated_change_percent": 7.8359064030918635,
+            "comparison_change_percent": 15.27935104583018,
+            "relative_change_percent": -6.456875906405058,
+            "monthly_relative_change_percent": [
+              -5.323628555119808,
+              -5.211045635264511,
+              -4.929884421899223,
+              -7.784189501370631,
+              -7.2235830730738915,
+              -8.212217502384
+            ],
+            "monthly_range_percent": [
+              -8.212217502384,
+              -4.929884421899223
+            ],
+            "months_negative": 6,
+            "pairs": [
+              {
+                "calendar_month": 1,
+                "treated_log_change": 0.24553628042309858,
+                "comparison_log_change": 0.3002420069096052,
+                "difference": -0.054705726486506595
+              },
+              {
+                "calendar_month": 2,
+                "treated_log_change": 0.13855265145075202,
+                "comparison_log_change": 0.19206995010620453,
+                "difference": -0.053517298655452517
+              },
+              {
+                "calendar_month": 3,
+                "treated_log_change": 0.0747091981047699,
+                "comparison_log_change": 0.12526470600686462,
+                "difference": -0.05055550790209472
+              },
+              {
+                "calendar_month": 4,
+                "treated_log_change": 0.02584646242795643,
+                "comparison_log_change": 0.10688505209223599,
+                "difference": -0.08103858966427956
+              },
+              {
+                "calendar_month": 5,
+                "treated_log_change": 0.019235629745360527,
+                "comparison_log_change": 0.09421333617988085,
+                "difference": -0.07497770643452033
+              },
+              {
+                "calendar_month": 6,
+                "treated_log_change": -0.05123721889137058,
+                "comparison_log_change": 0.03445376658856815,
+                "difference": -0.08569098547993872
+              }
+            ]
+          },
+          "first_second": {
+            "month_pairs": 6,
+            "treated_change_percent": 7.8359064030918635,
+            "comparison_change_percent": 14.100308752714374,
+            "relative_change_percent": -5.4902588942148505,
+            "monthly_relative_change_percent": [
+              -3.576115443162664,
+              -5.37151996196229,
+              -4.642007534967119,
+              -7.45644853438524,
+              -5.161093419690332,
+              -6.682487572282502
+            ],
+            "monthly_range_percent": [
+              -7.45644853438524,
+              -3.576115443162664
+            ],
+            "months_negative": 6,
+            "pairs": [
+              {
+                "calendar_month": 1,
+                "treated_log_change": 0.24553628042309858,
+                "comparison_log_change": 0.281952530370976,
+                "difference": -0.03641624994787743
+              },
+              {
+                "calendar_month": 2,
+                "treated_log_change": 0.13855265145075202,
+                "comparison_log_change": 0.19376434920517946,
+                "difference": -0.05521169775442744
+              },
+              {
+                "calendar_month": 3,
+                "treated_log_change": 0.0747091981047699,
+                "comparison_log_change": 0.1222412331677984,
+                "difference": -0.0475320350630285
+              },
+              {
+                "calendar_month": 4,
+                "treated_log_change": 0.02584646242795643,
+                "comparison_log_change": 0.103337288046465,
+                "difference": -0.07749082561850856
+              },
+              {
+                "calendar_month": 5,
+                "treated_log_change": 0.019235629745360527,
+                "comparison_log_change": 0.07222608370108749,
+                "difference": -0.05299045395572696
+              },
+              {
+                "calendar_month": 6,
+                "treated_log_change": -0.05123721889137058,
+                "comparison_log_change": 0.01792517666700108,
+                "difference": -0.06916239555837167
+              }
+            ]
+          },
+          "fifth_madison": {
+            "month_pairs": 6,
+            "treated_change_percent": 7.8359064030918635,
+            "comparison_change_percent": 16.49509144075305,
+            "relative_change_percent": -7.433090038875223,
+            "monthly_relative_change_percent": [
+              -7.119330047835248,
+              -5.046063891701779,
+              -5.2324822181219925,
+              -8.11246617312128,
+              -9.24824250258468,
+              -9.73380373780075
+            ],
+            "monthly_range_percent": [
+              -9.73380373780075,
+              -5.046063891701779
+            ],
+            "months_negative": 6,
+            "pairs": [
+              {
+                "calendar_month": 1,
+                "treated_log_change": 0.24553628042309858,
+                "comparison_log_change": 0.31939091595363234,
+                "difference": -0.07385463553053376
+              },
+              {
+                "calendar_month": 2,
+                "treated_log_change": 0.13855265145075202,
+                "comparison_log_change": 0.19033094650265805,
+                "difference": -0.05177829505190604
+              },
+              {
+                "calendar_month": 3,
+                "treated_log_change": 0.0747091981047699,
+                "comparison_log_change": 0.12845267297785404,
+                "difference": -0.05374347487308413
+              },
+              {
+                "calendar_month": 4,
+                "treated_log_change": 0.02584646242795643,
+                "comparison_log_change": 0.11045127758228178,
+                "difference": -0.08460481515432534
+              },
+              {
+                "calendar_month": 5,
+                "treated_log_change": 0.019235629745360527,
+                "comparison_log_change": 0.11627797641331405,
+                "difference": -0.09704234666795353
+              },
+              {
+                "calendar_month": 6,
+                "treated_log_change": -0.05123721889137058,
+                "comparison_log_change": 0.05116992601577763,
+                "difference": -0.10240714490714821
+              }
+            ]
+          },
+          "frozen_first_m15_local": {
+            "month_pairs": 6,
+            "treated_change_percent": 7.8359064030918635,
+            "comparison_change_percent": 12.167900577251544,
+            "relative_change_percent": -3.8620622761644574,
+            "monthly_relative_change_percent": [
+              3.898932009444467,
+              -2.5532245349809912,
+              -4.32363414470972,
+              -6.130115254044222,
+              -3.081846583261316,
+              -10.41110749833547
+            ],
+            "monthly_range_percent": [
+              -10.41110749833547,
+              3.898932009444467
+            ],
+            "months_negative": 5,
+            "pairs": [
+              {
+                "calendar_month": 1,
+                "treated_log_change": 0.24553628042309858,
+                "comparison_log_change": 0.2072878473824714,
+                "difference": 0.03824843304062717
+              },
+              {
+                "calendar_month": 2,
+                "treated_log_change": 0.13855265145075202,
+                "comparison_log_change": 0.1644165011551626,
+                "difference": -0.02586384970441058
+              },
+              {
+                "calendar_month": 3,
+                "treated_log_change": 0.0747091981047699,
+                "comparison_log_change": 0.11890807689354992,
+                "difference": -0.04419887878878001
+              },
+              {
+                "calendar_month": 4,
+                "treated_log_change": 0.02584646242795643,
+                "comparison_log_change": 0.08910702987278256,
+                "difference": -0.06326056744482612
+              },
+              {
+                "calendar_month": 5,
+                "treated_log_change": 0.019235629745360527,
+                "comparison_log_change": 0.050538972620998775,
+                "difference": -0.03130334287563825
+              },
+              {
+                "calendar_month": 6,
+                "treated_log_change": -0.05123721889137058,
+                "comparison_log_change": 0.058701622415807196,
+                "difference": -0.10993884130717778
+              }
+            ]
+          },
+          "frozen_madison_m1_m3_m4": {
+            "month_pairs": 6,
+            "treated_change_percent": 7.8359064030918635,
+            "comparison_change_percent": 17.035902525111112,
+            "relative_change_percent": -7.8608323800855135,
+            "monthly_relative_change_percent": [
+              -8.019721097114108,
+              -5.364939465729435,
+              -5.590735634569432,
+              -7.9480095469876115,
+              -9.668448092052905,
+              -10.456997668970903
+            ],
+            "monthly_range_percent": [
+              -10.456997668970903,
+              -5.364939465729435
+            ],
+            "months_negative": 6,
+            "pairs": [
+              {
+                "calendar_month": 1,
+                "treated_log_change": 0.24553628042309858,
+                "comparison_log_change": 0.3291322720917252,
+                "difference": -0.0835959916686266
+              },
+              {
+                "calendar_month": 2,
+                "treated_log_change": 0.13855265145075202,
+                "comparison_log_change": 0.19369481128767452,
+                "difference": -0.0551421598369225
+              },
+              {
+                "calendar_month": 3,
+                "treated_log_change": 0.0747091981047699,
+                "comparison_log_change": 0.13224017629246154,
+                "difference": -0.057530978187691637
+              },
+              {
+                "calendar_month": 4,
+                "treated_log_change": 0.02584646242795643,
+                "comparison_log_change": 0.10866311736387767,
+                "difference": -0.08281665493592123
+              },
+              {
+                "calendar_month": 5,
+                "treated_log_change": 0.019235629745360527,
+                "comparison_log_change": 0.12091900429254526,
+                "difference": -0.10168337454718474
+              },
+              {
+                "calendar_month": 6,
+                "treated_log_change": -0.05123721889137058,
+                "comparison_log_change": 0.059213984233697795,
+                "difference": -0.11045120312506837
+              }
+            ]
+          }
+        }
+      },
+      "reading_rule": {
+        "main_relative_change_percent": -5.498180491165194,
+        "placebo_relative_change_percent": -6.456875906405058,
+        "placebo_at_least_as_large_as_main": true,
+        "rule": "Pre-registered: interpret the main contrast as a package-related ridership shift only if the placebo is near zero; if the placebo is as large as the main contrast, the comparison failed its pre-period check and the main contrast is descriptive only."
+      }
+    },
+    "pm-16-19": {
+      "source_rows": 9864,
+      "weekdays_used": 768,
+      "days_excluded": {
+        "weekend": 314,
+        "holiday": 14,
+        "missing_route": 0
+      },
+      "contrasts": {
+        "main_2023_to_2024": {
+          "pooled_ues": {
+            "month_pairs": 6,
+            "treated_change_percent": -4.213007304253602,
+            "comparison_change_percent": 3.1167585454471736,
+            "relative_change_percent": -7.108219801605076,
+            "monthly_relative_change_percent": [
+              -7.069252889711752,
+              -4.9095739367987505,
+              -5.863745863858472,
+              -4.348199150551868,
+              -9.055805184512078,
+              -11.214417732912295
+            ],
+            "monthly_range_percent": [
+              -11.214417732912295,
+              -4.348199150551868
+            ],
+            "months_negative": 6,
+            "pairs": [
+              {
+                "calendar_month": 1,
+                "treated_log_change": -0.06844662878477344,
+                "comparison_log_change": 0.004868996171193924,
+                "difference": -0.07331562495596736
+              },
+              {
+                "calendar_month": 2,
+                "treated_log_change": -0.03200469315521761,
+                "comparison_log_change": 0.01833720066056461,
+                "difference": -0.05034189381578222
+              },
+              {
+                "calendar_month": 3,
+                "treated_log_change": -0.010056579015255956,
+                "comparison_log_change": 0.05037036214478368,
+                "difference": -0.06042694116003963
+              },
+              {
+                "calendar_month": 4,
+                "treated_log_change": -0.04046046920387451,
+                "comparison_log_change": 0.003995193584880176,
+                "difference": -0.044455662788754687
+              },
+              {
+                "calendar_month": 5,
+                "treated_log_change": -0.06190780155701829,
+                "comparison_log_change": 0.03301630981094962,
+                "difference": -0.09492411136796791
+              },
+              {
+                "calendar_month": 6,
+                "treated_log_change": -0.045383543372663,
+                "comparison_log_change": 0.07356236765653762,
+                "difference": -0.11894591102920063
+              }
+            ]
+          },
+          "first_second": {
+            "month_pairs": 6,
+            "treated_change_percent": -4.213007304253602,
+            "comparison_change_percent": 4.6699230377127865,
+            "relative_change_percent": -8.486612088905277,
+            "monthly_relative_change_percent": [
+              -7.4555047335787545,
+              -6.883928430914321,
+              -7.198404213481413,
+              -5.264496418142173,
+              -11.891858382423038,
+              -12.00696208393296
+            ],
+            "monthly_range_percent": [
+              -12.00696208393296,
+              -5.264496418142173
+            ],
+            "months_negative": 6,
+            "pairs": [
+              {
+                "calendar_month": 1,
+                "treated_log_change": -0.06844662878477344,
+                "comparison_log_change": 0.009033998435479189,
+                "difference": -0.07748062722025262
+              },
+              {
+                "calendar_month": 2,
+                "treated_log_change": -0.03200469315521761,
+                "comparison_log_change": 0.03931869649773293,
+                "difference": -0.07132338965295054
+              },
+              {
+                "calendar_month": 3,
+                "treated_log_change": -0.010056579015255956,
+                "comparison_log_change": 0.06464977135311385,
+                "difference": -0.07470635036836981
+              },
+              {
+                "calendar_month": 4,
+                "treated_log_change": -0.04046046920387451,
+                "comparison_log_change": 0.013620881024381854,
+                "difference": -0.054081350228256365
+              },
+              {
+                "calendar_month": 5,
+                "treated_log_change": -0.06190780155701829,
+                "comparison_log_change": 0.06469744239242393,
+                "difference": -0.12660524394944223
+              },
+              {
+                "calendar_month": 6,
+                "treated_log_change": -0.045383543372663,
+                "comparison_log_change": 0.08252894585709344,
+                "difference": -0.12791248922975645
+              }
+            ]
+          },
+          "fifth_madison": {
+            "month_pairs": 6,
+            "treated_change_percent": -4.213007304253602,
+            "comparison_change_percent": 1.7564150129513623,
+            "relative_change_percent": -5.866384263287172,
+            "monthly_relative_change_percent": [
+              -6.730603368841059,
+              -3.10286954281348,
+              -4.618372497938661,
+              -3.534368159499679,
+              -6.500973102852958,
+              -10.510119643570237
+            ],
+            "monthly_range_percent": [
+              -10.510119643570237,
+              -3.10286954281348
+            ],
+            "months_negative": 6,
+            "pairs": [
+              {
+                "calendar_month": 1,
+                "treated_log_change": -0.06844662878477344,
+                "comparison_log_change": 0.0012315135413409584,
+                "difference": -0.0696781423261144
+              },
+              {
+                "calendar_month": 2,
+                "treated_log_change": -0.03200469315521761,
+                "comparison_log_change": -0.0004844121804325104,
+                "difference": -0.0315202809747851
+              },
+              {
+                "calendar_month": 3,
+                "treated_log_change": -0.010056579015255956,
+                "comparison_log_change": 0.03722763090107775,
+                "difference": -0.04728420991633371
+              },
+              {
+                "calendar_month": 4,
+                "treated_log_change": -0.04046046920387451,
+                "comparison_log_change": -0.004477081394847981,
+                "difference": -0.03598338780902653
+              },
+              {
+                "calendar_month": 5,
+                "treated_log_change": -0.06190780155701829,
+                "comparison_log_change": 0.005311355707734305,
+                "difference": -0.0672191572647526
+              },
+              {
+                "calendar_month": 6,
+                "treated_log_change": -0.045383543372663,
+                "comparison_log_change": 0.06566109237060254,
+                "difference": -0.11104463574326554
+              }
+            ]
+          },
+          "frozen_first_m15_local": {
+            "month_pairs": 6,
+            "treated_change_percent": -4.213007304253602,
+            "comparison_change_percent": 2.037868660626363,
+            "relative_change_percent": -6.1260354091382645,
+            "monthly_relative_change_percent": [
+              -13.00392317391722,
+              -8.822746690920924,
+              -4.943990904741469,
+              -1.0132656971102105,
+              -7.446921398955153,
+              -0.9310993883725693
+            ],
+            "monthly_range_percent": [
+              -13.00392317391722,
+              -0.9310993883725693
+            ],
+            "months_negative": 6,
+            "pairs": [
+              {
+                "calendar_month": 1,
+                "treated_log_change": -0.06844662878477344,
+                "comparison_log_change": 0.07086053351856861,
+                "difference": -0.13930716230334206
+              },
+              {
+                "calendar_month": 2,
+                "treated_log_change": -0.03200469315521761,
+                "comparison_log_change": 0.06036004233242359,
+                "difference": -0.09236473548764121
+              },
+              {
+                "calendar_month": 3,
+                "treated_log_change": -0.010056579015255956,
+                "comparison_log_change": 0.040647319676293585,
+                "difference": -0.05070389869154954
+              },
+              {
+                "calendar_month": 4,
+                "treated_log_change": -0.04046046920387451,
+                "comparison_log_change": -0.030276127431473777,
+                "difference": -0.010184341772400737
+              },
+              {
+                "calendar_month": 5,
+                "treated_log_change": -0.06190780155701829,
+                "comparison_log_change": 0.015480081771994513,
+                "difference": -0.07738788332901281
+              },
+              {
+                "calendar_month": 6,
+                "treated_log_change": -0.045383543372663,
+                "comparison_log_change": -0.036028931221305995,
+                "difference": -0.009354612151357009
+              }
+            ]
+          },
+          "frozen_madison_m1_m3_m4": {
+            "month_pairs": 6,
+            "treated_change_percent": -4.213007304253602,
+            "comparison_change_percent": 2.9256613557717026,
+            "relative_change_percent": -6.93575204277761,
+            "monthly_relative_change_percent": [
+              -7.104523159087728,
+              -3.8439390450451527,
+              -5.80551239423257,
+              -4.870038275236411,
+              -8.425029825602925,
+              -11.364764102033408
+            ],
+            "monthly_range_percent": [
+              -11.364764102033408,
+              -3.8439390450451527
+            ],
+            "months_negative": 6,
+            "pairs": [
+              {
+                "calendar_month": 1,
+                "treated_log_change": -0.06844662878477344,
+                "comparison_log_change": 0.005248601041266259,
+                "difference": -0.0736952298260397
+              },
+              {
+                "calendar_month": 2,
+                "treated_log_change": -0.03200469315521761,
+                "comparison_log_change": 0.007192986331810162,
+                "difference": -0.03919767948702777
+              },
+              {
+                "calendar_month": 3,
+                "treated_log_change": -0.010056579015255956,
+                "comparison_log_change": 0.04975194508824588,
+                "difference": -0.059808524103501834
+              },
+              {
+                "calendar_month": 4,
+                "treated_log_change": -0.04046046920387451,
+                "comparison_log_change": 0.0094657419125779,
+                "difference": -0.049926211116452415
+              },
+              {
+                "calendar_month": 5,
+                "treated_log_change": -0.06190780155701829,
+                "comparison_log_change": 0.026104401462157718,
+                "difference": -0.088012203019176
+              },
+              {
+                "calendar_month": 6,
+                "treated_log_change": -0.045383543372663,
+                "comparison_log_change": 0.07525716769932057,
+                "difference": -0.12064071107198357
+              }
+            ]
+          }
+        },
+        "placebo_2022_to_2023": {
+          "pooled_ues": {
+            "month_pairs": 6,
+            "treated_change_percent": 7.672422211064656,
+            "comparison_change_percent": 16.809792709363116,
+            "relative_change_percent": -7.8224353338536945,
+            "monthly_relative_change_percent": [
+              -7.280881549180518,
+              -7.341245479727087,
+              -6.7497047005928845,
+              -8.344314878255988,
+              -7.259226834440369,
+              -9.922714323098447
+            ],
+            "monthly_range_percent": [
+              -9.922714323098447,
+              -6.7497047005928845
+            ],
+            "months_negative": 6,
+            "pairs": [
+              {
+                "calendar_month": 1,
+                "treated_log_change": 0.2656323701469986,
+                "comparison_log_change": 0.3412278647974168,
+                "difference": -0.0755954946504182
+              },
+              {
+                "calendar_month": 2,
+                "treated_log_change": 0.13700922087267345,
+                "comparison_log_change": 0.21325596835831528,
+                "difference": -0.07624674748564184
+              },
+              {
+                "calendar_month": 3,
+                "treated_log_change": 0.06860881421414484,
+                "comparison_log_change": 0.13849177493365125,
+                "difference": -0.0698829607195064
+              },
+              {
+                "calendar_month": 4,
+                "treated_log_change": 0.022644043987391383,
+                "comparison_log_change": 0.10977522682533865,
+                "difference": -0.08713118283794727
+              },
+              {
+                "calendar_month": 5,
+                "treated_log_change": 0.02678511030732802,
+                "comparison_log_change": 0.10214708045118219,
+                "difference": -0.07536197014385417
+              },
+              {
+                "calendar_month": 6,
+                "treated_log_change": -0.0771397342902012,
+                "comparison_log_change": 0.0273624201217159,
+                "difference": -0.1045021544119171
+              }
+            ]
+          },
+          "first_second": {
+            "month_pairs": 6,
+            "treated_change_percent": 7.672422211064656,
+            "comparison_change_percent": 15.442317313835563,
+            "relative_change_percent": -6.730543256203081,
+            "monthly_relative_change_percent": [
+              -4.96109758036024,
+              -7.061948119797734,
+              -6.545857966853507,
+              -8.273129174818061,
+              -5.0775120761747505,
+              -8.403799165324621
+            ],
+            "monthly_range_percent": [
+              -8.403799165324621,
+              -4.96109758036024
+            ],
+            "months_negative": 6,
+            "pairs": [
+              {
+                "calendar_month": 1,
+                "treated_log_change": 0.2656323701469986,
+                "comparison_log_change": 0.31651624920234245,
+                "difference": -0.05088387905534386
+              },
+              {
+                "calendar_month": 2,
+                "treated_log_change": 0.13700922087267345,
+                "comparison_log_change": 0.2102462444715819,
+                "difference": -0.07323702359890846
+              },
+              {
+                "calendar_month": 3,
+                "treated_log_change": 0.06860881421414484,
+                "comparison_log_change": 0.13630814376075584,
+                "difference": -0.067699329546611
+              },
+              {
+                "calendar_month": 4,
+                "treated_log_change": 0.022644043987391383,
+                "comparison_log_change": 0.10899886391943542,
+                "difference": -0.08635481993204404
+              },
+              {
+                "calendar_month": 5,
+                "treated_log_change": 0.02678511030732802,
+                "comparison_log_change": 0.07889465432730186,
+                "difference": -0.052109544019973836
+              },
+              {
+                "calendar_month": 6,
+                "treated_log_change": -0.0771397342902012,
+                "comparison_log_change": 0.010640656481922809,
+                "difference": -0.087780390772124
+              }
+            ]
+          },
+          "fifth_madison": {
+            "month_pairs": 6,
+            "treated_change_percent": 7.672422211064656,
+            "comparison_change_percent": 18.029783550885313,
+            "relative_change_percent": -8.775209975163067,
+            "monthly_relative_change_percent": [
+              -9.29896381765689,
+              -7.586853490798806,
+              -6.934769550162945,
+              -8.40640618047268,
+              -9.11128621887417,
+              -11.249927961416573
+            ],
+            "monthly_range_percent": [
+              -11.249927961416573,
+              -6.934769550162945
+            ],
+            "months_negative": 6,
+            "pairs": [
+              {
+                "calendar_month": 1,
+                "treated_log_change": 0.2656323701469986,
+                "comparison_log_change": 0.36323377479763375,
+                "difference": -0.09760140465063516
+              },
+              {
+                "calendar_month": 2,
+                "treated_log_change": 0.13700922087267345,
+                "comparison_log_change": 0.21591016009560673,
+                "difference": -0.07890093922293329
+              },
+              {
+                "calendar_month": 3,
+                "treated_log_change": 0.06860881421414484,
+                "comparison_log_change": 0.14047835023046304,
+                "difference": -0.0718695360163182
+              },
+              {
+                "calendar_month": 4,
+                "treated_log_change": 0.022644043987391383,
+                "comparison_log_change": 0.11045289720910939,
+                "difference": -0.08780885322171801
+              },
+              {
+                "calendar_month": 5,
+                "treated_log_change": 0.02678511030732802,
+                "comparison_log_change": 0.12231946364427769,
+                "difference": -0.09553435333694967
+              },
+              {
+                "calendar_month": 6,
+                "treated_log_change": -0.0771397342902012,
+                "comparison_log_change": 0.04220621164034594,
+                "difference": -0.11934594593054715
+              }
+            ]
+          },
+          "frozen_first_m15_local": {
+            "month_pairs": 6,
+            "treated_change_percent": 7.672422211064656,
+            "comparison_change_percent": 12.140348675709411,
+            "relative_change_percent": -3.9842273699052244,
+            "monthly_relative_change_percent": [
+              3.474945333943724,
+              -2.67462028831823,
+              -5.657057037986868,
+              -6.110712358901194,
+              -1.0269533606551473,
+              -11.25339036809243
+            ],
+            "monthly_range_percent": [
+              -11.25339036809243,
+              3.474945333943724
+            ],
+            "months_negative": 5,
+            "pairs": [
+              {
+                "calendar_month": 1,
+                "treated_log_change": 0.2656323701469986,
+                "comparison_log_change": 0.23147304680249933,
+                "difference": 0.034159323344499254
+              },
+              {
+                "calendar_month": 2,
+                "treated_log_change": 0.13700922087267345,
+                "comparison_log_change": 0.16411961189040977,
+                "difference": -0.027110391017736324
+              },
+              {
+                "calendar_month": 3,
+                "treated_log_change": 0.06860881421414484,
+                "comparison_log_change": 0.12684252756012487,
+                "difference": -0.05823371334598003
+              },
+              {
+                "calendar_month": 4,
+                "treated_log_change": 0.022644043987391383,
+                "comparison_log_change": 0.08569793289858933,
+                "difference": -0.06305388891119795
+              },
+              {
+                "calendar_month": 5,
+                "treated_log_change": 0.02678511030732802,
+                "comparison_log_change": 0.03710773939750211,
+                "difference": -0.010322629090174087
+              },
+              {
+                "calendar_month": 6,
+                "treated_log_change": -0.0771397342902012,
+                "comparison_log_change": 0.04224522540267341,
+                "difference": -0.1193849596928746
+              }
+            ]
+          },
+          "frozen_madison_m1_m3_m4": {
+            "month_pairs": 6,
+            "treated_change_percent": 7.672422211064656,
+            "comparison_change_percent": 18.666539273489068,
+            "relative_change_percent": -9.264715335707606,
+            "monthly_relative_change_percent": [
+              -10.470444240745913,
+              -8.137610842263754,
+              -7.291959062307917,
+              -8.382647307423262,
+              -9.280445752838219,
+              -11.944391923301744
+            ],
+            "monthly_range_percent": [
+              -11.944391923301744,
+              -7.291959062307917
+            ],
+            "months_negative": 6,
+            "pairs": [
+              {
+                "calendar_month": 1,
+                "treated_log_change": 0.2656323701469986,
+                "comparison_log_change": 0.3762337534218753,
+                "difference": -0.11060138327487673
+              },
+              {
+                "calendar_month": 2,
+                "treated_log_change": 0.13700922087267345,
+                "comparison_log_change": 0.221887719617076,
+                "difference": -0.08487849874440256
+              },
+              {
+                "calendar_month": 3,
+                "treated_log_change": 0.06860881421414484,
+                "comparison_log_change": 0.14432378988532724,
+                "difference": -0.07571497567118239
+              },
+              {
+                "calendar_month": 4,
+                "treated_log_change": 0.022644043987391383,
+                "comparison_log_change": 0.11019353636157359,
+                "difference": -0.0875494923741822
+              },
+              {
+                "calendar_month": 5,
+                "treated_log_change": 0.02678511030732802,
+                "comparison_log_change": 0.1241823698293519,
+                "difference": -0.09739725952202387
+              },
+              {
+                "calendar_month": 6,
+                "treated_log_change": -0.0771397342902012,
+                "comparison_log_change": 0.05006192682823432,
+                "difference": -0.1272016611184355
+              }
+            ]
+          }
+        }
+      },
+      "reading_rule": {
+        "main_relative_change_percent": -7.108219801605076,
+        "placebo_relative_change_percent": -7.8224353338536945,
+        "placebo_at_least_as_large_as_main": true,
+        "rule": "Pre-registered: interpret the main contrast as a package-related ridership shift only if the placebo is near zero; if the placebo is as large as the main contrast, the comparison failed its pre-period check and the main contrast is descriptive only."
+      }
+    }
+  },
+  "limitations": [
+    "Entries are fare registrations anywhere on each route, both directions; M101-M103 run southbound on Lexington Avenue, the travel-time study control, so route entries cannot separate treated and control directions.",
+    "Fare evasion is unmeasured and changed over 2022-2024; entries undercount riders by an unknown, possibly route-specific share (M15+ collects fares off-board).",
+    "One treated corridor; six month pairs are not independent replications, so no confidence interval is given.",
+    "Not passengers crossing E60th Street, not travel time, not an all-mode or causal result."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "bus-stop-b62-coverage",
+  "url": "https://data.ny.gov/resource/fvdm-uavx.json?%24select=min%28month%29+as+first%2Cmax%28month%29+as+last%2Ccount%28%2A%29+as+rows%2Ccount%28distinct+stop_id%29+as+stops&%24where=route_id%3D%27B62%27",
+  "status": "acquired",
+  "rows": [
+    {
+      "first": "2024-01-01T00:00:00.000",
+      "last": "2026-09-01T00:00:00.000",
+      "rows": "538322",
+      "stops": "133"
+    }
+  ]
+}

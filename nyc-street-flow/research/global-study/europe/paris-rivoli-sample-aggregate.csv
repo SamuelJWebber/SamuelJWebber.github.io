@@ -1,0 +1,40 @@
+id_trajectoire,voie,sens,mode,valid_hours,vehicles
+10004_1 -> 1,Piste cyclable,O-E,2 roues motorisées,5,5
+10004_1 -> 1,Piste cyclable,O-E,Trottinettes,168,7737
+10004_1 -> 1,Piste cyclable,O-E,"Véhicules lourds > 3,5t",3,4
+10004_1 -> 1,Piste cyclable,O-E,"Véhicules légers < 3,5t",7,7
+10004_1 -> 1,Piste cyclable,O-E,Vélos,168,51264
+10004_2 -> 1,Piste cyclable,E-O,2 roues motorisées,5,5
+10004_2 -> 1,Piste cyclable,E-O,Trottinettes,168,5582
+10004_2 -> 1,Piste cyclable,E-O,"Véhicules légers < 3,5t",10,12
+10004_2 -> 1,Piste cyclable,E-O,Vélos,168,28335
+10004_3 -> 2,Coronapiste,O-E,2 roues motorisées,6,20
+10004_3 -> 2,Coronapiste,O-E,Autobus et autocars,2,2
+10004_3 -> 2,Coronapiste,O-E,Trottinettes,111,276
+10004_3 -> 2,Coronapiste,O-E,"Véhicules lourds > 3,5t",3,6
+10004_3 -> 2,Coronapiste,O-E,"Véhicules légers < 3,5t",5,9
+10004_3 -> 2,Coronapiste,O-E,Vélos,128,667
+10004_4 -> 2,Coronapiste,E-O,2 roues motorisées,143,1135
+10004_4 -> 2,Coronapiste,E-O,Autobus et autocars,59,156
+10004_4 -> 2,Coronapiste,E-O,Trottinettes,167,3134
+10004_4 -> 2,Coronapiste,E-O,"Véhicules lourds > 3,5t",56,148
+10004_4 -> 2,Coronapiste,E-O,"Véhicules légers < 3,5t",124,571
+10004_4 -> 2,Coronapiste,E-O,Vélos,168,22431
+10004_4 -> 3,Voie de circulation générale,E-O,2 roues motorisées,22,25
+10004_4 -> 3,Voie de circulation générale,E-O,Autobus et autocars,38,63
+10004_4 -> 3,Voie de circulation générale,E-O,Trottinettes,16,36
+10004_4 -> 3,Voie de circulation générale,E-O,"Véhicules lourds > 3,5t",17,19
+10004_4 -> 3,Voie de circulation générale,E-O,"Véhicules légers < 3,5t",29,43
+10004_4 -> 3,Voie de circulation générale,E-O,Vélos,38,75
+10004_5 -> 2,Coronapiste,E-O,2 roues motorisées,39,54
+10004_5 -> 2,Coronapiste,E-O,Autobus et autocars,10,12
+10004_5 -> 2,Coronapiste,E-O,Trottinettes,17,39
+10004_5 -> 2,Coronapiste,E-O,"Véhicules lourds > 3,5t",20,25
+10004_5 -> 2,Coronapiste,E-O,"Véhicules légers < 3,5t",21,41
+10004_5 -> 2,Coronapiste,E-O,Vélos,36,78
+10004_5 -> 3,Voie de circulation générale,E-O,2 roues motorisées,168,3259
+10004_5 -> 3,Voie de circulation générale,E-O,Autobus et autocars,140,1556
+10004_5 -> 3,Voie de circulation générale,E-O,Trottinettes,145,719
+10004_5 -> 3,Voie de circulation générale,E-O,"Véhicules lourds > 3,5t",148,1390
+10004_5 -> 3,Voie de circulation générale,E-O,"Véhicules légers < 3,5t",168,34792
+10004_5 -> 3,Voie de circulation générale,E-O,Vélos,166,2735

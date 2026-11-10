@@ -1,0 +1,198 @@
+[
+  {
+    "id": "burrard-2009-matched-days",
+    "candidate_id": "vancouver-burrard-2009",
+    "title": "Burrard 2009: more walking/cycling with nearly flat vehicle counts in six matched pairs",
+    "classification": "Descriptive; short baseline; not causal or all-person throughput",
+    "comparison": "Candidate baseline June30\u2013July9, paired +14 calendar days. Exclude pair when either date has event comment or missing any total bike/pedestrian/vehicle count. Six retained dates: July2,3,4,6,7,9 versus July16,17,18,20,21,23.",
+    "metrics": [
+      {
+        "window": "all_modes_14_day_pairs",
+        "metric": "total_bicycles",
+        "paired_days": 6.0,
+        "baseline_candidate_start": "2009-06-30",
+        "baseline_candidate_end": "2009-07-09",
+        "pair_offset_days": "14",
+        "before_daily_mean": 3713.6666666666665,
+        "after_daily_mean": 5527.666666666667,
+        "change_daily_mean": 1814.0000000000005,
+        "change_pct": 48.84660263890137,
+        "interpretation": "same-weekday complete-pair descriptive comparison; not causal; not all-person flow"
+      },
+      {
+        "window": "all_modes_14_day_pairs",
+        "metric": "total_pedestrians",
+        "paired_days": 6.0,
+        "baseline_candidate_start": "2009-06-30",
+        "baseline_candidate_end": "2009-07-09",
+        "pair_offset_days": "14",
+        "before_daily_mean": 2362.3333333333335,
+        "after_daily_mean": 2647.8333333333335,
+        "change_daily_mean": 285.5,
+        "change_pct": 12.085508677860869,
+        "interpretation": "same-weekday complete-pair descriptive comparison; not causal; not all-person flow"
+      },
+      {
+        "window": "all_modes_14_day_pairs",
+        "metric": "total_vehicles",
+        "paired_days": 6.0,
+        "baseline_candidate_start": "2009-06-30",
+        "baseline_candidate_end": "2009-07-09",
+        "pair_offset_days": "14",
+        "before_daily_mean": 65127.333333333336,
+        "after_daily_mean": 65114.333333333336,
+        "change_daily_mean": -13.0,
+        "change_pct": -0.019960897114368326,
+        "interpretation": "same-weekday complete-pair descriptive comparison; not causal; not all-person flow"
+      }
+    ],
+    "sensitivity_headline": "Window sensitivity is large: immediate four weekdays show bicycles +108.58%, vehicles -5.50%; the six-pair comparison shows bicycles +48.85%, vehicles -0.02%. No weather adjustment or causal confidence interval.",
+    "sensitivity": [
+      {
+        "window": "bike_vehicle_28_day_pairs",
+        "metric": "total_bicycles",
+        "paired_days": 11.0,
+        "baseline_candidate_start": "2009-06-16",
+        "baseline_candidate_end": "2009-07-09",
+        "pair_offset_days": "28",
+        "before_daily_mean": 3665.7272727272725,
+        "after_daily_mean": 5286.727272727273,
+        "change_daily_mean": 1621.0000000000005,
+        "change_pct": 44.2204201076309,
+        "interpretation": "same-weekday complete-pair descriptive comparison; not causal; not all-person flow"
+      },
+      {
+        "window": "bike_vehicle_28_day_pairs",
+        "metric": "total_vehicles",
+        "paired_days": 11.0,
+        "baseline_candidate_start": "2009-06-16",
+        "baseline_candidate_end": "2009-07-09",
+        "pair_offset_days": "28",
+        "before_daily_mean": 64073.545454545456,
+        "after_daily_mean": 63821.90909090909,
+        "change_daily_mean": -251.6363636363676,
+        "change_pct": -0.3927305128056058,
+        "interpretation": "same-weekday complete-pair descriptive comparison; not causal; not all-person flow"
+      },
+      {
+        "window": "immediate_four_weekdays_sensitivity",
+        "metric": "total_bicycles",
+        "paired_days": 4.0,
+        "baseline_candidate_start": "2009-07-06",
+        "baseline_candidate_end": "2009-07-09",
+        "pair_offset_days": "7",
+        "before_daily_mean": 2843.5,
+        "after_daily_mean": 5931.0,
+        "change_daily_mean": 3087.5,
+        "change_pct": 108.58097415157376,
+        "interpretation": "same-weekday complete-pair descriptive comparison; not causal; not all-person flow"
+      },
+      {
+        "window": "immediate_four_weekdays_sensitivity",
+        "metric": "total_pedestrians",
+        "paired_days": 4.0,
+        "baseline_candidate_start": "2009-07-06",
+        "baseline_candidate_end": "2009-07-09",
+        "pair_offset_days": "7",
+        "before_daily_mean": 2058.25,
+        "after_daily_mean": 2835.5,
+        "change_daily_mean": 777.25,
+        "change_pct": 37.76266245596989,
+        "interpretation": "same-weekday complete-pair descriptive comparison; not causal; not all-person flow"
+      },
+      {
+        "window": "immediate_four_weekdays_sensitivity",
+        "metric": "total_vehicles",
+        "paired_days": 4.0,
+        "baseline_candidate_start": "2009-07-06",
+        "baseline_candidate_end": "2009-07-09",
+        "pair_offset_days": "7",
+        "before_daily_mean": 65845.25,
+        "after_daily_mean": 62223.0,
+        "change_daily_mean": -3622.25,
+        "change_pct": -5.5011561198416,
+        "interpretation": "same-weekday complete-pair descriptive comparison; not causal; not all-person flow"
+      }
+    ],
+    "uncertainty": "Only six shared complete pairs. Pedestrians counted only fromJune30. Nulls are excluded, never zero-filled. Vehicle occupants and bus loads absent. Other crossings, route changes, seasonal weather and novelty effects not controlled.",
+    "source_url": "https://opendata.vancouver.ca/api/explore/v2.1/catalog/datasets/bike-lane-statistics-for-burrard-bridge-2009-2010/exports/json",
+    "raw_file": "burrard-2009-2010-daily.csv",
+    "audit_files": [
+      "burrard-matched-pairs.csv",
+      "burrard-matched-exclusions.csv",
+      "burrard-coverage.csv"
+    ],
+    "script": "reproduce.py"
+  },
+  {
+    "id": "bloor-2016-counts",
+    "candidate_id": "toronto-bloor-2016",
+    "title": "Bloor local growth largely exceeds the change in the three-road count index",
+    "classification": "Descriptive before/after, same calendar month; corridor-average count index",
+    "comparison": "June2016 versusJune2017, before/after lateAugust2016 treatment; three consecutive weekdays per corridor.",
+    "metrics": [
+      {
+        "metric": "bicycles",
+        "before": 8896.0,
+        "after": 9267.0,
+        "absolute_change": 371.0,
+        "change_pct": 4.170413669064743,
+        "unit": "sum of three corridor-average daily counts; not an audited common screenline or unique journeys"
+      },
+      {
+        "metric": "motor_vehicles",
+        "before": 58315.0,
+        "after": 56478.0,
+        "absolute_change": -1837.0,
+        "change_pct": -3.1501328989110844,
+        "unit": "sum of three corridor-average daily counts; not an audited common screenline or unique journeys"
+      }
+    ],
+    "local_metrics": [
+      {
+        "mode": "bicycles",
+        "before": 3309,
+        "after": 4925,
+        "absolute_change": 1616,
+        "change_pct": 48.83650649743125
+      },
+      {
+        "mode": "motor_vehicles",
+        "before": 24322,
+        "after": 20434,
+        "absolute_change": -3888,
+        "change_pct": -15.985527505961683
+      }
+    ],
+    "boundary_warning": "The sum averages multiple video sites separately on each corridor. It is NOT an audited common screenline, unique riders, unique journeys or total people. Dupont/Harbord may receive displaced traffic, so are outcomes rather than untreated controls.",
+    "uncertainty": "Only three waves, rain on some final countdays, no occupancy/subway/bus loads or independent untreated comparison. Local49% includesBay;56% excludesBay; dry-dayalmost70% is a different subset.",
+    "source_url": "https://www.toronto.ca/wp-content/uploads/2017/10/9697-Cycling-Bloor-Attachment-1.pdf",
+    "raw_file": "bloor-daily-counts.csv",
+    "script": "reproduce.py"
+  },
+  {
+    "id": "bloor-2016-times",
+    "candidate_id": "toronto-bloor-2016",
+    "title": "Bloor peak-direction driving takes longer after lane conversion",
+    "classification": "Observed road driving time, not complete journey or person-minutes",
+    "comparison": "GPS runs June2016 versusJune2017, Bay Street to Ossington Avenue.",
+    "metrics": [
+      {
+        "metric": "AM eastbound",
+        "before_seconds": 601,
+        "after_seconds": 721,
+        "change_seconds": 120
+      },
+      {
+        "metric": "PM westbound",
+        "before_seconds": 674,
+        "after_seconds": 929,
+        "change_seconds": 255
+      }
+    ],
+    "uncertainty": "No passenger weights, bicycle/transit journey times or door-to-door coverage. Signal timing changes are part of observed package. Times on parallel routes vary differently; see full CSV.",
+    "source_url": "https://www.toronto.ca/wp-content/uploads/2017/10/9697-Cycling-Bloor-Attachment-1.pdf",
+    "raw_file": "bloor-driving-times.csv",
+    "script": "reproduce.py"
+  }
+]

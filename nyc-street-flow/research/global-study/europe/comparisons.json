@@ -1,0 +1,39 @@
+{
+  "status": "Acquisition and measurement audit; no new causal estimate",
+  "berlin": {
+    "downloaded_months": [
+      "2019-02",
+      "2019-07",
+      "2020-02",
+      "2020-07"
+    ],
+    "coverage_candidate_cross_sections": 19,
+    "covered_cross_sections_in_all_four_months": 18,
+    "candidate_selection": "Road-name regex only; includes untreated parts and bus-only lane; NOT final treatment assignment",
+    "radspur_flagged_cross_sections": 11,
+    "missing_candidate": "TE532 has no rows in sampled months",
+    "coverage_file": "berlin-mq-coverage-audit.csv",
+    "meaning": "Counts are availability audit, not traffic effect; sampled post-July month includes implementation and COVID effects."
+  },
+  "paris_rivoli": {
+    "site_id": "10004",
+    "window_start_utc": "2021-09-06T00:00:00Z",
+    "window_end_exclusive_utc": "2021-09-13T00:00:00Z",
+    "records": 2912,
+    "unique_hours": 168,
+    "duplicate_site_trajectory_time_mode_rows": 0,
+    "recorded_vehicle_passages_by_class": {
+      "2 roues motorisées": 4503,
+      "Autobus et autocars": 1789,
+      "Trottinettes": 17523,
+      "Véhicules lourds > 3,5t": 1592,
+      "Véhicules légers < 3,5t": 35475,
+      "Vélos": 105585
+    },
+    "arithmetic": "Sum nb_usagers across the downloaded site10004 category/trajectory records. Not unique travelers and not person flow. Camera trajectory documentation acquired.",
+    "zero_missing_warning": "Unequal category-hour coverage; sum recorded counts, do not imply every missing category-hour is observed zero.",
+    "first_record_utc": "2020-05-22T22:00:00Z",
+    "policy_start": "2020-05-11",
+    "baseline_eligible": false
+  }
+}

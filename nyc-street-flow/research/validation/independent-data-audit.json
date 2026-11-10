@@ -1,0 +1,46 @@
+{
+  "audit_date": "2026-11-05",
+  "scope": "Independent arithmetic audit of released derived datasets, no causal-validity certificate.",
+  "checks": [
+    {
+      "check": "directional source keys unique",
+      "passed": true,
+      "detail": "5404 rows"
+    },
+    {
+      "check": "all directional and hourly estimates independently reproduced",
+      "passed": true,
+      "detail": "1008 rows \u00d7 9 numeric fields; largest absolute discrepancy 1.46e-11"
+    },
+    {
+      "check": "PPW raw-run distributions independently reproduced",
+      "passed": true,
+      "detail": "64 per-day groups and 32 pooled groups; NumPy quantiles"
+    },
+    {
+      "check": "PPW conditional PM range reconciles",
+      "passed": true,
+      "detail": [
+        {
+          "period": "am",
+          "lower": -71.5666666666666,
+          "upper": 142.4333333333334
+        },
+        {
+          "period": "pm",
+          "lower": -39.66666666666667,
+          "upper": 86.43333333333324
+        }
+      ]
+    }
+  ],
+  "passed": true,
+  "issues": [],
+  "max_abs_numeric_discrepancy": 1.4551915228366852e-11,
+  "inputs_sha256": {
+    "directional/analysis.json": "1c159c2881ade13f8d6cc628ec1e04a390a178cc6e5cfff7dbb1762a81011663",
+    "directional/source-three-station-directional-days.csv": "0437d60f79fe0ca22c7fa7f9b9e87c8dc01866494146c0a11021de263d787544",
+    "estimate-lab/distributions.json": "452af9e96f62d195b2265e459015c55c295379f5b8a992f29f74823d62e093bd",
+    "estimate-lab/ppw-raw-runs.csv": "0971d9b164eee0a4f388f02df5224dc10ee500e88f892c5ca62a4b2614b7039e"
+  }
+}

@@ -1,0 +1,106 @@
+study,window,control,sample,change_seconds,pre_placebo_seconds
+PPW driving segment,daily_07_19,7th_same_direction,both_days,-35.833333333333314,
+PPW driving segment,daily_07_19,7th_same_direction,tuesday,-18.75,
+PPW driving segment,daily_07_19,7th_same_direction,wednesday,-52.916666666666664,
+PPW driving segment,daily_07_19,6th_reverse_direction,both_days,-5.791666666666686,
+PPW driving segment,daily_07_19,6th_reverse_direction,tuesday,-8.625,
+PPW driving segment,daily_07_19,6th_reverse_direction,wednesday,-2.9583333333333335,
+PPW driving segment,daily_07_19,8th_reverse_direction,both_days,10.916666666666657,
+PPW driving segment,daily_07_19,8th_reverse_direction,tuesday,24,
+PPW driving segment,daily_07_19,8th_reverse_direction,wednesday,-2.1666666666666665,
+PPW driving segment,daily_07_19,all_three_equal,both_days,-10.236111111111114,
+PPW driving segment,daily_07_19,all_three_equal,tuesday,-1.1250000000000004,
+PPW driving segment,daily_07_19,all_three_equal,wednesday,-19.34722222222222,
+PPW driving segment,daily_07_19,northbound_equal,both_days,2.562499999999986,
+PPW driving segment,daily_07_19,northbound_equal,tuesday,7.6875,
+PPW driving segment,daily_07_19,northbound_equal,wednesday,-2.5625,
+PPW driving segment,am_07_10,7th_same_direction,both_days,-63.16666666666666,
+PPW driving segment,am_07_10,7th_same_direction,tuesday,-76.83333333333333,
+PPW driving segment,am_07_10,7th_same_direction,wednesday,-49.5,
+PPW driving segment,am_07_10,6th_reverse_direction,both_days,26.666666666666686,
+PPW driving segment,am_07_10,6th_reverse_direction,tuesday,54.666666666666664,
+PPW driving segment,am_07_10,6th_reverse_direction,wednesday,-1.3333333333333333,
+PPW driving segment,am_07_10,8th_reverse_direction,both_days,22.166666666666686,
+PPW driving segment,am_07_10,8th_reverse_direction,tuesday,14.166666666666666,
+PPW driving segment,am_07_10,8th_reverse_direction,wednesday,30.166666666666668,
+PPW driving segment,am_07_10,all_three_equal,both_days,-4.777777777777763,
+PPW driving segment,am_07_10,all_three_equal,tuesday,-2.666666666666667,
+PPW driving segment,am_07_10,all_three_equal,wednesday,-6.888888888888888,
+PPW driving segment,am_07_10,northbound_equal,both_days,24.416666666666686,
+PPW driving segment,am_07_10,northbound_equal,tuesday,34.416666666666664,
+PPW driving segment,am_07_10,northbound_equal,wednesday,14.416666666666666,
+PPW driving segment,midday_10_14,7th_same_direction,both_days,-43.9375,
+PPW driving segment,midday_10_14,7th_same_direction,tuesday,-14.625,
+PPW driving segment,midday_10_14,7th_same_direction,wednesday,-73.25,
+PPW driving segment,midday_10_14,6th_reverse_direction,both_days,-3.375,
+PPW driving segment,midday_10_14,6th_reverse_direction,tuesday,-6.625,
+PPW driving segment,midday_10_14,6th_reverse_direction,wednesday,-0.125,
+PPW driving segment,midday_10_14,8th_reverse_direction,both_days,36.3125,
+PPW driving segment,midday_10_14,8th_reverse_direction,tuesday,60,
+PPW driving segment,midday_10_14,8th_reverse_direction,wednesday,12.625,
+PPW driving segment,midday_10_14,all_three_equal,both_days,-3.666666666666667,
+PPW driving segment,midday_10_14,all_three_equal,tuesday,12.916666666666666,
+PPW driving segment,midday_10_14,all_three_equal,wednesday,-20.25,
+PPW driving segment,midday_10_14,northbound_equal,both_days,16.46875,
+PPW driving segment,midday_10_14,northbound_equal,tuesday,26.6875,
+PPW driving segment,midday_10_14,northbound_equal,wednesday,6.25,
+PPW driving segment,pm_16_19,7th_same_direction,both_days,-32.16666666666666,
+PPW driving segment,pm_16_19,7th_same_direction,tuesday,-31.666666666666668,
+PPW driving segment,pm_16_19,7th_same_direction,wednesday,-32.666666666666664,
+PPW driving segment,pm_16_19,6th_reverse_direction,both_days,-28.916666666666686,
+PPW driving segment,pm_16_19,6th_reverse_direction,tuesday,-52.833333333333336,
+PPW driving segment,pm_16_19,6th_reverse_direction,wednesday,-5,
+PPW driving segment,pm_16_19,8th_reverse_direction,both_days,-1.3333333333333428,
+PPW driving segment,pm_16_19,8th_reverse_direction,tuesday,4.833333333333333,
+PPW driving segment,pm_16_19,8th_reverse_direction,wednesday,-7.5,
+PPW driving segment,pm_16_19,all_three_equal,both_days,-20.80555555555556,
+PPW driving segment,pm_16_19,all_three_equal,tuesday,-26.555555555555557,
+PPW driving segment,pm_16_19,all_three_equal,wednesday,-15.055555555555554,
+PPW driving segment,pm_16_19,northbound_equal,both_days,-15.125000000000014,
+PPW driving segment,pm_16_19,northbound_equal,tuesday,-24.0,
+PPW driving segment,pm_16_19,northbound_equal,wednesday,-6.25,
+Third Avenue bus segment,am,lexington,jan_jun,-7.718396109935581,30.175091607507866
+Third Avenue bus segment,am,lexington,jan_mar,-9.908976122030944,30.175091607507866
+Third Avenue bus segment,am,lexington,apr_jun,-5.5278160978402155,30.175091607507866
+Third Avenue bus segment,am,first,jan_jun,-23.482144571482586,48.58395837186962
+Third Avenue bus segment,am,first,jan_mar,-1.1315634019401706,48.58395837186962
+Third Avenue bus segment,am,first,apr_jun,-45.832725741024994,48.58395837186962
+Third Avenue bus segment,am,madison,jan_jun,-13.94299598938763,19.44104037646879
+Third Avenue bus segment,am,madison,jan_mar,-17.413721224566252,19.44104037646879
+Third Avenue bus segment,am,madison,apr_jun,-10.472270754209006,19.44104037646879
+Third Avenue bus segment,am,third_south,jan_jun,-7.589326006079019,48.38112849846143
+Third Avenue bus segment,am,third_south,jan_mar,10.371838661484476,48.38112849846143
+Third Avenue bus segment,am,third_south,apr_jun,-25.550490673642514,48.38112849846143
+Third Avenue bus segment,am,third_north,jan_jun,72.19520167020407,56.67146705943943
+Third Avenue bus segment,am,third_north,jan_mar,51.38637697466551,56.67146705943943
+Third Avenue bus segment,am,third_north,apr_jun,93.0040263657426,56.67146705943943
+Third Avenue bus segment,pm,lexington,jan_jun,-45.2212831031327,70.72197763602703
+Third Avenue bus segment,pm,lexington,jan_mar,-8.223336318853463,70.72197763602703
+Third Avenue bus segment,pm,lexington,apr_jun,-82.21922988741193,70.72197763602703
+Third Avenue bus segment,pm,first,jan_jun,-40.06439845664441,26.352205065467512
+Third Avenue bus segment,pm,first,jan_mar,-22.73948966882403,26.352205065467512
+Third Avenue bus segment,pm,first,apr_jun,-57.389307244464774,26.352205065467512
+Third Avenue bus segment,pm,madison,jan_jun,-40.89507260610168,-11.400925221107439
+Third Avenue bus segment,pm,madison,jan_mar,-31.036237996320605,-11.400925221107439
+Third Avenue bus segment,pm,madison,apr_jun,-50.753907215882755,-11.400925221107439
+Third Avenue bus segment,pm,third_south,jan_jun,-43.15563352553751,-6.496772833228144
+Third Avenue bus segment,pm,third_south,jan_mar,-39.251174229992024,-6.496772833228144
+Third Avenue bus segment,pm,third_south,apr_jun,-47.06009282108299,-6.496772833228144
+Third Avenue bus segment,pm,third_north,jan_jun,38.367556392777395,28.186018209492666
+Third Avenue bus segment,pm,third_north,jan_mar,50.74046215742703,28.186018209492666
+Third Avenue bus segment,pm,third_north,apr_jun,25.994650628127765,28.186018209492666
+Third Avenue bus segment,combined,lexington,jan_jun,-27.951684806618704,52.05065683840237
+Third Avenue bus segment,combined,lexington,jan_mar,-8.999551821376409,52.05065683840237
+Third Avenue bus segment,combined,lexington,apr_jun,-46.903817791860995,52.05065683840237
+Third Avenue bus segment,combined,first,jan_jun,-32.67120380610238,37.07196345014887
+Third Avenue bus segment,combined,first,jan_mar,-12.381055271134553,37.07196345014887
+Third Avenue bus segment,combined,first,apr_jun,-52.961352341070224,37.07196345014887
+Third Avenue bus segment,combined,madison,jan_jun,-28.484540976059716,2.8151018883910166
+Third Avenue bus segment,combined,madison,jan_mar,-24.758234760903434,2.8151018883910166
+Third Avenue bus segment,combined,madison,apr_jun,-32.210847191216,2.8151018883910166
+Third Avenue bus segment,combined,third_south,jan_jun,-26.63891774683073,19.831230159962004
+Third Avenue bus segment,combined,third_south,jan_mar,-15.49811439902589,19.831230159962004
+Third Avenue bus segment,combined,third_south,apr_jun,-37.77972109463556,19.831230159962004
+Third Avenue bus segment,combined,third_north,jan_jun,53.90562273427291,41.097348580514286
+Third Avenue bus segment,combined,third_north,jan_mar,51.0474094094512,41.097348580514286
+Third Avenue bus segment,combined,third_north,apr_jun,56.76383605909461,41.097348580514286

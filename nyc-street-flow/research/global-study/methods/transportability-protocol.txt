@@ -1,0 +1,32 @@
+MULTI-CITY LANE-CONVERSION STUDY: COMPARABILITY AND TRANSPORTABILITY
+Prepared November 5, 2026. Proposed protocol; not a new pooled causal estimate.
+
+WHY EXPAND
+A larger pool can contribute more independently assigned interventions, longer pre-periods, better all-mode counts and genuine repeated traveler data. These are different gains. A city with excellent counters can still have weak identification; an identified cycling-only result cannot establish total person throughput or full journeys. We should use other cities to improve the design and estimate specific transferable effects, while retaining city-specific results.
+
+ELIGIBILITY BEFORE OUTCOMES
+Register all found projects that remove at least one motor moving lane to create or materially improve cycling space. Verify before/after geometry, direction, hours, activation date and the rest of the street package from primary engineering records. Record removals that were reversed, null results, failed interventions and projects with missing data. Do not select the subset with positive results. Include parking-only, off-road paths, modal filters and bike-sharing expansions in a separate mechanism tier, not the direct lane-conversion pool. Keep pandemic-era emergency projects separate from ordinary rollouts unless the design explicitly handles their differences.
+
+ONE PRIMARY UNIT
+Define the affected corridor network, not one sensor or one rider, as the policy unit. Counters nested within projects improve measurement but do not increase independent assignment. Mark projects with shared diversion routes or concurrent phases; group them for interference and uncertainty. Berlin inside a European multi-city paper is not an independent second study for the same period. Multiple reports of one project remain one intervention. Preserve paper version, sample and observation-window identities.
+
+COMMON OUTCOMES, NOT A SINGLE MIXED NUMBER
+1. Person crossings per hour across one prespecified network cut, direction and time window: count parallel edges once; require car occupancy and on-board transit loads. Distinguish observed persons from modeled expansion factors. Report absolute and relative effects with original baseline counts.
+2. Complete journey time for fixed baseline OD/purpose/departure weights or a baseline population: include access, waiting, travel, transfers, parking/docking and egress; explicitly report foregone/unserved journeys.
+3. Partial outcomes: all-bike crossing counts, motor-vehicle volume, detector spot speed, bus running time, taxi service time and station boardings. These are useful, but must remain separate estimands. An average of partial outcomes is not a total.
+4. Capacity: only with comparable demand, queues/backlog and discharge evidence. Realized flow alone is insufficient.
+
+PREFERRED ESTIMATION
+First identify effects within each city using contemporaneous unexposed or not-yet-treated comparable networks, verified dates and pre-policy outcomes. Train synthetic comparisons only on pre-treatment data and reserve blocks for prediction checks. Where cohort/time effects are heterogeneous, avoid generic TWFE that uses already-treated corridors as controls. Estimate modern group-time contrasts or explicit stacked trials with clean comparison windows. Long pre-periods, held-out prediction and placebo tests are diagnostics, not proof of parallel untreated trends.
+
+Use city/country calendar shocks, weather, known independent transit works and construction exposures as appropriate. Do not automatically adjust for post-conversion mode share, traffic volume, mobility indexes or transit use: they can be mechanisms of the total effect. For contemporaneous COVID treatments, national-day fixed effects do not remove local changes in work-from-home, transit avoidance, closures or demand composition. A timing claim based on contractor availability requires the underlying scheduling record and an argument that contractor allocation does not anticipate traffic outcomes.
+
+Pool only genuinely comparable causal contrasts, with city-specific estimates visible. A multilevel/random-effects summary can describe heterogeneity; it cannot repair confounding or unmeasured modes. Report city/project weighting choices, covariance for shared controls, and leave-one-city-out results. Use independent policy/network clusters, not ride counts, for uncertainty. For a small number of cities, state the limits of asymptotic and placebo inference. Do not pool merely because effects are expressed as percentages or standardized deviations.
+
+NYC TRANSFER
+Prespecify effect modifiers before looking for favorable cases: baseline cycling and transit shares; spare transit capacity and crowding; street/network connectivity; existing protected-bike connectivity; vehicle-lane saturation and intersection bottlenecks; parallel-route capacity; origin-destination mix/trip length; density; gradient; weather/season; e-bike and bike-share availability; parking/loading; enforcement; and co-treatment intensity. Lane width and vehicle speed alone are insufficient.
+
+Assess overlap between source-city projects and NYC projects on these variables. If there is adequate overlap and credible within-city effects, report an NYC-targeted reweighted/transport model alongside unweighted city results. Label its additional transportability assumptions: conditional effect exchangeability, comparable measurement, and positive support. Where NYC lies outside support, give a bounded/qualitative prediction or abstain; do not extrapolate a precise universal coefficient. This is especially relevant for high subway use and intense intersection constraints in Manhattan.
+
+ACCEPTANCE RULE
+Expanding cities is successful if at least one new case provides (a) a verified moving-lane conversion, (b) repeated aligned outcome measurements, and (c) a stronger justified counterfactual than the original NYC comparisons. All-mode and whole-journey conclusions still require their respective measurement gates. A narrower causal effect can be a valuable result even if the ultimate joint mobility question remains unresolved.

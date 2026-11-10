@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "siteId": "FF4E2AF3-63ED-4879-B722-BA50A31E7ECA",
+      "year": 2026,
+      "coverage": 0.006,
+      "totalCount": 43534,
+      "speedAvg": null,
+      "speed85Pct": null,
+      "hgvPml": null,
+      "aadt": null,
+      "aadtMethod": null
+    }
+  ],
+  "_meta": {
+    "ms": 66.96,
+    "pid": 40292
+  }
+}

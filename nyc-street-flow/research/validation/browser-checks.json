@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-05",
+  "environment": "Cloud Chrome, preview and public production dashboard",
+  "passed": [
+    "All five workbench panels loaded",
+    "Project outcome cards and request status rendered",
+    "Calculator unchanged scenario returns zero",
+    "Calculator rejects switches exceeding baseline travelers",
+    "Map case selection, layer toggling and counter detail rendered",
+    "Directional northbound PM change agrees with independently audited data",
+    "Sensitivity switches PPW to Third Avenue and selected PM",
+    "AM reversal input of 214 bus passengers/hour yields -71.6 people/hour",
+    "Desktop overview, calculator, map controls and stress-test layout visually inspected",
+    "Public production version loads all five workbench panels",
+    "Global Copy view link encodes active traveler scenario and reports success",
+    "Published network map visually reviewed with numbered locations and source details"
+  ],
+  "limitations": [
+    "Mobile viewport was reviewed through responsive CSS only; browser device resizing is not exposed by the current browser API."
+  ],
+  "scientific_limit": "UI checks and arithmetic checks do not establish causality.",
+  "live_url": "https://nyc-street-flow.smartgoldfish.chatgpt.site",
+  "preview_image": "dashboard-preview.jpg"
+}

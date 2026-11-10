@@ -1,0 +1,19 @@
+NYC STREET FLOW — NEW DATA ACQUISITION SPECIFICATION
+Prepared 5 November 2026. Draft scope only; no new request sent and no fee authorized.
+
+FIRST PRIORITY: ASSIGNMENT AND ACTUAL TREATMENT
+NYC DOT: export the universe of proposed, approved, funded and construction-ready projects that remove a motor moving lane, with stable project/segment IDs, geometry, pre/post lane and time-of-week schedules, readiness and planned-start dates, actual sign/marking activation dates, temporary stages, completion/punch-list dates, and contemporaneously recorded reasons for delay or resequencing. Include eligible projects not yet built or canceled, not merely successful completed projects. Include related signal, bus, parking, loading and intersection work. For McGuinness 2023/2024/2026 and Queens Blvd Skillman–Roosevelt 2024, prioritize daily work and inspection logs and as-built sign schedules. Administrative sequencing is a candidate assignment explanation, not an assumed instrument.
+
+SECOND PRIORITY: RAW COUNTS AND TRAVEL TIMES ALREADY USED IN THE OFFICIAL EVALUATION
+NYC DOT: original machine-readable ATR records behind April 14, 2026 McGuinness slide 11 and appendix slides 34–36; exact sites, coordinates, dates/times, direction, interval duration, vehicle classification, quality flags, equipment changes, missingness and aggregation code. Include Leonard, Humboldt, Manhattan and every measured diversion road. For northern profiles, specify whether bars are rolling hourly totals or scaled intervals. Provide the raw bicycle sheets behind slide 12 with date, clock hour, direction, sidewalk/street and protocol. Clarify the Pulaski '11% /123,000' reporting windows. Provide accessible raw INRIX segment series or exportable aggregates, geometry, sample sizes, quality/weighting and license restrictions for all main/diversion paths. Do not substitute annual summaries for the requested observations.
+
+NYSDOT: resolve the relationship among 021284, 02_1284, CC0280 and the current public short-count site; actual data collection intervals, sensor retirements/replacements, and all quality flags. The 2024 map's last-count date is 2021-02-26; an updated publication year does not establish modern observations. A March 2026 viewer record is a separate lead to verify, not assumed continuous coverage.
+
+THIRD PRIORITY: PEOPLE, NOT JUST VEHICLES OR BOARDINGS
+Obtain synchronized occupancy by vehicle class/direction/hour, plus all-bike and pedestrian counts across the audited network screenline. MTA: bus APC boarding/alighting/onboard loads and AVL on the actual crossing link; G/other relevant rail link loads or OD route-allocation products with uncertainty; service calendars, disruptions, waiting, runtime and transfer distributions for the same periods. Determine the boundary first; do not request every NYC record without a usable join design.
+
+PROSPECTIVE ADDITION THAT PUBLIC ARCHIVES CANNOT FULLY REPLACE
+A consenting baseline population/traveler panel with complete journey diaries or privacy-preserving GPS, including canceled/foregone trips and retention information. A fixed OD/purpose/departure menu supports consistent time comparisons. Simultaneous short count campaigns should cover treated, diversion and genuinely external comparison networks on randomized measurement days, all modes and occupancy. Repeated random DAYS improve measurement; they do not randomize lane installation.
+
+PRIORITY RULE
+First resolve which projects and periods can support identification. Then collect the smallest matched multimodal panel needed for those comparisons. Do not expand the catalog without closing a specific assignment, boundary, timing or load gap.

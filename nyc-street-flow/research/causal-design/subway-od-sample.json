@@ -1,0 +1,37 @@
+{
+  "name": "subway-od-sample",
+  "url": "https://data.ny.gov/resource/28vm-gjqr.json?%24limit=1",
+  "status": "acquired",
+  "rows": [
+    {
+      "year": "2026",
+      "month": "5",
+      "day_of_week": "Monday",
+      "hour_of_day": "14",
+      "timestamp": "2026-05-04T14:00:00.000",
+      "origin_station_complex_id": "455",
+      "origin_station_complex_name": "69 St (7)",
+      "origin_latitude": "40.746325",
+      "origin_longitude": "-73.896403",
+      "destination_station_complex_id": "610",
+      "destination_station_complex_name": "Grand Central-42 St (4,5,6,7,S)",
+      "destination_latitude": "40.751992",
+      "destination_longitude": "-73.97735933",
+      "estimated_average_ridership": "3.0985",
+      "origin_point": {
+        "type": "Point",
+        "coordinates": [
+          -73.896403,
+          40.746325
+        ]
+      },
+      "destination_point": {
+        "type": "Point",
+        "coordinates": [
+          -73.97735933,
+          40.751992
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,424 @@
+{
+  "checked_on": "2026-11-05",
+  "reviewer": "independent subagent, standard-library recomputation without running analysis script",
+  "status": "arithmetic_pass_with_identification_limits",
+  "primary_recomputed": {
+    "combined_effect_seconds": -27.951684806618623,
+    "difference_from_reported_seconds": 8.171241461241152e-14,
+    "raw_mix_effect_seconds": -29.784977406337877,
+    "t_interval_seconds": [
+      -67.36569208206407,
+      11.462322468826828
+    ],
+    "pre_placebo_seconds": 52.050656838402254,
+    "heldout_rmspe_seconds": 54.095774633087466,
+    "heldout_mean_error_seconds": 52.03832067962643,
+    "month_pair_seconds": [
+      22.988243570848095,
+      -58.16733569295313,
+      8.180436657975967,
+      -59.43096708382489,
+      -62.162687902506995,
+      -19.117798389250783
+    ]
+  },
+  "group_summaries": {
+    "third_treated": {
+      "before_minutes_per_mile": 11.649815545317479,
+      "after_minutes_per_mile": 11.238304865547745,
+      "directions": [
+        "N"
+      ],
+      "distances": [
+        1.472
+      ],
+      "stop_orders": [
+        "23",
+        "32"
+      ]
+    },
+    "lexington": {
+      "before_minutes_per_mile": 11.063327924423238,
+      "after_minutes_per_mile": 10.96829918313424,
+      "directions": [
+        "S"
+      ],
+      "distances": [
+        1.405,
+        1.406
+      ],
+      "stop_orders": [
+        "13",
+        "25",
+        "46"
+      ]
+    }
+  },
+  "weights": {
+    "cells_per_group": {
+      "third_treated": 90,
+      "lexington": 90
+    },
+    "complete_cells_per_group": {
+      "third_treated": 90,
+      "lexington": 90
+    },
+    "paired_complete_cells": 90,
+    "theoretical_cells": 90,
+    "sum_weights": 1.0,
+    "baseline_treated_trip_count": 10756.0,
+    "weight_by_route": {
+      "M103": 0.2624581628858312,
+      "M101": 0.4319449609520268,
+      "M102": 0.30559687616214204
+    },
+    "weight_by_hour": {
+      "7": 0.11891037560431388,
+      "8": 0.17822610635924135,
+      "9": 0.16335068798809968,
+      "16": 0.17952770546671626,
+      "17": 0.17841204908888061,
+      "18": 0.18157307549274823
+    },
+    "exported_lexington_weights_exactly_equal_treated": true,
+    "exported_weight_sum": 1.0
+  },
+  "coverage": {
+    "third_treated": [
+      {
+        "month": "2023-01",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1730.0,
+        "available_trips": 1730.0,
+        "share": 1.0
+      },
+      {
+        "month": "2023-02",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1704.0,
+        "available_trips": 1704.0,
+        "share": 1.0
+      },
+      {
+        "month": "2023-03",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1955.0,
+        "available_trips": 1955.0,
+        "share": 1.0
+      },
+      {
+        "month": "2023-04",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1701.0,
+        "available_trips": 1701.0,
+        "share": 1.0
+      },
+      {
+        "month": "2023-05",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1876.0,
+        "available_trips": 1876.0,
+        "share": 1.0
+      },
+      {
+        "month": "2023-06",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1790.0,
+        "available_trips": 1790.0,
+        "share": 1.0
+      },
+      {
+        "month": "2024-01",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1878.0,
+        "available_trips": 1878.0,
+        "share": 1.0
+      },
+      {
+        "month": "2024-02",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1657.0,
+        "available_trips": 1657.0,
+        "share": 1.0
+      },
+      {
+        "month": "2024-03",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1783.0,
+        "available_trips": 1783.0,
+        "share": 1.0
+      },
+      {
+        "month": "2024-04",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1775.0,
+        "available_trips": 1775.0,
+        "share": 1.0
+      },
+      {
+        "month": "2024-05",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1677.0,
+        "available_trips": 1677.0,
+        "share": 1.0
+      },
+      {
+        "month": "2024-06",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1401.0,
+        "available_trips": 1401.0,
+        "share": 1.0
+      }
+    ],
+    "lexington": [
+      {
+        "month": "2023-01",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1753.0,
+        "available_trips": 1753.0,
+        "share": 1.0
+      },
+      {
+        "month": "2023-02",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1709.0,
+        "available_trips": 1709.0,
+        "share": 1.0
+      },
+      {
+        "month": "2023-03",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1986.0,
+        "available_trips": 1986.0,
+        "share": 1.0
+      },
+      {
+        "month": "2023-04",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1700.0,
+        "available_trips": 1700.0,
+        "share": 1.0
+      },
+      {
+        "month": "2023-05",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1845.0,
+        "available_trips": 1845.0,
+        "share": 1.0
+      },
+      {
+        "month": "2023-06",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1754.0,
+        "available_trips": 1754.0,
+        "share": 1.0
+      },
+      {
+        "month": "2024-01",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1880.0,
+        "available_trips": 1880.0,
+        "share": 1.0
+      },
+      {
+        "month": "2024-02",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1647.0,
+        "available_trips": 1647.0,
+        "share": 1.0
+      },
+      {
+        "month": "2024-03",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1788.0,
+        "available_trips": 1788.0,
+        "share": 1.0
+      },
+      {
+        "month": "2024-04",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1827.0,
+        "available_trips": 1827.0,
+        "share": 1.0
+      },
+      {
+        "month": "2024-05",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1734.0,
+        "available_trips": 1734.0,
+        "share": 1.0
+      },
+      {
+        "month": "2024-06",
+        "matched_cells": 90,
+        "available_cells": 90,
+        "matched_trips": 1422.0,
+        "available_trips": 1422.0,
+        "share": 1.0
+      }
+    ]
+  },
+  "raw_file_sha256": {
+    "bus-panel-raw.json": "81d7f828d65d6316e4d94a4d31ffa6e2e920acb612ceaebb9d4db1df7433a010",
+    "bus-panel-2024h2-raw.json": "aa7391efefe60bb315de61fa4a7114dfa0bcd0b229e6f2e93fe6029f08e7e0ea"
+  },
+  "findings": [
+    {
+      "severity": "pass",
+      "finding": "Primary paired fixed-weight DID independently matches \u221227.9516848066 seconds over1.472miles. All90 route/service\u00d7weekday\u00d7hour cells exist in all12 primary months in both groups; matched share100% of selected source bus trips."
+    },
+    {
+      "severity": "pass",
+      "finding": "Observed GPS-derived timepoint travel times are minutes; distance is miles. Bus-trip-weighted source collapse and fixed baseline treated weights are appropriate for a bus-vehicle estimand. Lexington uses precisely the treated weights. Equal six-month averages and Jan-to-Jan pairing are consistent."
+    },
+    {
+      "severity": "major_identification_limit",
+      "finding": "Pre-period Q1-to-Q2 gap drift is +52.0507sec and held-out RMSPE54.0958sec, larger than the \u221227.9517sec post contrast. No firm causal effect or isolated bicycle-lane effect is supported; opposite-direction Lexington and intervention/spillover histories remain substantive assumptions."
+    },
+    {
+      "severity": "inference_caution",
+      "finding": "Six-pair t interval includes zero. A two-month circular block percentile interval can exclude zero despite extremely little independent information; it is exploratory variability, not calibrated causal confidence. Existing warning is necessary; do not feature this interval as statistical proof."
+    },
+    {
+      "severity": "diagnostic_caution",
+      "finding": "The held-out check calibrates Q1 levels but retains Jan\u2013June2023 trip weights and full12-month complete-case support. It is not a fully frozen Q1-only forecasting exercise. This is disclosed; no missing primary cells means post-support selection has no numerical effect here."
+    },
+    {
+      "severity": "robustness",
+      "finding": "Analysis relies on raw fetch filters for weekdays and infers direction from exact stop IDs. Both are verified in these raw files. Add explicit assertions if inputs change; current estimates unaffected."
+    },
+    {
+      "severity": "scope",
+      "finding": "Counterfactual and percent fields are conditional arithmetic predictions, not validated counterfactuals. Road-distance normalization makes different-length corridors comparable only under parallel pace trends. Includes bus stop dwell/traffic/signals; no passenger occupancy, private-car speed or door-to-door time."
+    },
+    {
+      "severity": "scope",
+      "finding": "E67\u2192E97 excludes the project E59\u2192E67 section and includes one block beyond E96. Complete support means complete aggregate cells, not complete underlying GPS observations or every actual weekday."
+    },
+    {
+      "severity": "important_sensitivity",
+      "finding": "M101-Limited matched northern sensitivity remains positive even after pairing the same30 cells and baseline treated route weights; northern-control sign reversal is not merely different route mix. Its negative control time change can reflect segment-specific changes/spillovers; no clean causal interpretation."
+    }
+  ],
+  "route_service_sensitivity": [
+    {
+      "route": "M101",
+      "service": "Limited",
+      "control": "lexington",
+      "paired_cells": 30,
+      "baseline_treated_trips": 4646.0,
+      "weights": "Within-route Jan\u2013June2023 treated bus-trip counts, identical weights in treated/control",
+      "treated_change_seconds_over_1_472mi": -32.716444261730395,
+      "control_change_seconds_over_1_472mi": -13.904315813847951,
+      "did_seconds_over_1_472mi": -18.812128447882603,
+      "six_pair_t_interval_seconds": [
+        -61.41619061307055,
+        23.791933717305334
+      ],
+      "month_pair_seconds": [
+        24.27004848376071,
+        -56.58229569346294,
+        19.42886881859258,
+        -47.58217912038016,
+        -61.97099906230539,
+        9.563785886499577
+      ],
+      "counterfactual_warning": "Descriptive controlled sensitivity with one treated corridor; same route does not remove segment differences or spillovers."
+    },
+    {
+      "route": "M102",
+      "service": "Local",
+      "control": "lexington",
+      "paired_cells": 30,
+      "baseline_treated_trips": 3287.0,
+      "weights": "Within-route Jan\u2013June2023 treated bus-trip counts, identical weights in treated/control",
+      "treated_change_seconds_over_1_472mi": -44.149178971706675,
+      "control_change_seconds_over_1_472mi": -19.49153551962602,
+      "did_seconds_over_1_472mi": -24.65764345208071,
+      "six_pair_t_interval_seconds": [
+        -62.49099989893314,
+        13.175712994771722
+      ],
+      "month_pair_seconds": [
+        24.433822142979047,
+        -62.42359743282908,
+        12.637605350390354,
+        -55.589798563017986,
+        -42.39038891990562,
+        -24.61350329010097
+      ],
+      "counterfactual_warning": "Descriptive controlled sensitivity with one treated corridor; same route does not remove segment differences or spillovers."
+    },
+    {
+      "route": "M103",
+      "service": "Local",
+      "control": "lexington",
+      "paired_cells": 30,
+      "baseline_treated_trips": 2823.0,
+      "weights": "Within-route Jan\u2013June2023 treated bus-trip counts, identical weights in treated/control",
+      "treated_change_seconds_over_1_472mi": -33.22841523910731,
+      "control_change_seconds_over_1_472mi": 13.600312704264223,
+      "did_seconds_over_1_472mi": -46.82872794337153,
+      "six_pair_t_interval_seconds": [
+        -89.90635008011728,
+        -3.751105806625795
+      ],
+      "month_pair_seconds": [
+        19.195511586439203,
+        -55.820103492691004,
+        -15.52162827655895,
+        -83.40382921845318,
+        -85.50031918390528,
+        -59.92199907506
+      ],
+      "counterfactual_warning": "Descriptive controlled sensitivity with one treated corridor; same route does not remove segment differences or spillovers."
+    },
+    {
+      "route": "M101",
+      "service": "Limited",
+      "control": "third_north",
+      "paired_cells": 30,
+      "baseline_treated_trips": 4646.0,
+      "weights": "Within-route Jan\u2013June2023 treated bus-trip counts, identical weights in treated/control",
+      "treated_change_seconds_over_1_472mi": -32.716444261730395,
+      "control_change_seconds_over_1_472mi": -87.20160679779697,
+      "did_seconds_over_1_472mi": 54.48516253606649,
+      "six_pair_t_interval_seconds": [
+        28.264100062188607,
+        80.70622500994436
+      ],
+      "month_pair_seconds": [
+        19.79511329695561,
+        88.78038995779552,
+        48.701274235715566,
+        60.508141961678504,
+        36.23048049229586,
+        72.89557527195788
+      ],
+      "counterfactual_warning": "Descriptive controlled sensitivity with one treated corridor; same route does not remove segment differences or spillovers."
+    }
+  ]
+}

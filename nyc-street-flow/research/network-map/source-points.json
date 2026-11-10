@@ -1,0 +1,132 @@
+{
+  "subway_source": "https://data.ny.gov/d/39hk-dx4f",
+  "subway_snapshot": "2026-11-05; geometry only, no historical service inferred",
+  "subway_stations": [
+    {
+      "gtfs_stop_id": "F24",
+      "stop_name": "7 Av",
+      "gtfs_latitude": "40.666271",
+      "gtfs_longitude": "-73.980305",
+      "line": "6th Av - Culver"
+    },
+    {
+      "gtfs_stop_id": "F25",
+      "stop_name": "15 St-Prospect Park",
+      "gtfs_latitude": "40.660365",
+      "gtfs_longitude": "-73.979493",
+      "line": "6th Av - Culver"
+    },
+    {
+      "gtfs_stop_id": "G22",
+      "stop_name": "Court Sq",
+      "gtfs_latitude": "40.746554",
+      "gtfs_longitude": "-73.943832",
+      "line": "Crosstown"
+    },
+    {
+      "gtfs_stop_id": "G24",
+      "stop_name": "21 St",
+      "gtfs_latitude": "40.744065",
+      "gtfs_longitude": "-73.949724",
+      "line": "Crosstown"
+    },
+    {
+      "gtfs_stop_id": "G26",
+      "stop_name": "Greenpoint Av",
+      "gtfs_latitude": "40.731352",
+      "gtfs_longitude": "-73.954449",
+      "line": "Crosstown"
+    },
+    {
+      "gtfs_stop_id": "G28",
+      "stop_name": "Nassau Av",
+      "gtfs_latitude": "40.724635",
+      "gtfs_longitude": "-73.951277",
+      "line": "Crosstown"
+    },
+    {
+      "gtfs_stop_id": "237",
+      "stop_name": "Grand Army Plaza",
+      "gtfs_latitude": "40.675235",
+      "gtfs_longitude": "-73.971046",
+      "line": "Eastern Pky"
+    },
+    {
+      "gtfs_stop_id": "625",
+      "stop_name": "96 St",
+      "gtfs_latitude": "40.785672",
+      "gtfs_longitude": "-73.95107",
+      "line": "Lexington Av"
+    },
+    {
+      "gtfs_stop_id": "626",
+      "stop_name": "86 St",
+      "gtfs_latitude": "40.779492",
+      "gtfs_longitude": "-73.955589",
+      "line": "Lexington Av"
+    },
+    {
+      "gtfs_stop_id": "627",
+      "stop_name": "77 St",
+      "gtfs_latitude": "40.77362",
+      "gtfs_longitude": "-73.959874",
+      "line": "Lexington Av"
+    },
+    {
+      "gtfs_stop_id": "628",
+      "stop_name": "68 St-Hunter College",
+      "gtfs_latitude": "40.768141",
+      "gtfs_longitude": "-73.96387",
+      "line": "Lexington Av"
+    },
+    {
+      "gtfs_stop_id": "629",
+      "stop_name": "59 St",
+      "gtfs_latitude": "40.762526",
+      "gtfs_longitude": "-73.967967",
+      "line": "Lexington Av"
+    },
+    {
+      "gtfs_stop_id": "Q05",
+      "stop_name": "96 St",
+      "gtfs_latitude": "40.784318",
+      "gtfs_longitude": "-73.947152",
+      "line": "Second Av"
+    },
+    {
+      "gtfs_stop_id": "Q04",
+      "stop_name": "86 St",
+      "gtfs_latitude": "40.777891",
+      "gtfs_longitude": "-73.951787",
+      "line": "Second Av"
+    },
+    {
+      "gtfs_stop_id": "Q03",
+      "stop_name": "72 St",
+      "gtfs_latitude": "40.768799",
+      "gtfs_longitude": "-73.958424",
+      "line": "Second Av"
+    }
+  ],
+  "motor_counter": {
+    "station": "021284",
+    "continuous_counter_id": "0280",
+    "road": "MCGUINNES BLVD",
+    "begin": "I -278",
+    "end": "GREENPOINT AVE",
+    "latitude": 40.72549,
+    "longitude": -73.9488,
+    "inventory_source": "TDV_Shapefile_Continuous_Counts_2016.zip (its attributes reference 2014 AADT)"
+  },
+  "bike_registry_source": "https://data.cityofnewyork.us/d/6up2-gnw8",
+  "bike_registry_snapshot": "2026-11-05",
+  "bike_counter_registry": {
+    "id": "100010018",
+    "name": "Pulaski Bridge",
+    "lat": "40.742563",
+    "lon": "-73.9514924",
+    "firstdata": "2017-06-24T00:00:00.000",
+    "lastdata": "2026-11-01T01:15:00.000",
+    "counters_installationdate": "2022-05-12T18:15:00.000"
+  }
+}

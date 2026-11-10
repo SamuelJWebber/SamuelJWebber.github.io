@@ -1,0 +1,40 @@
+{
+  "purpose": "Pre-treatment availability and timing completeness check only. No causal effect estimated.",
+  "checked_on": "2026-11-05",
+  "scope": "Completed HVFHV bookings between Greenpoint and Long Island City taxi zones; actual route and passenger count unobserved.",
+  "years": [
+    {
+      "year": 2023,
+      "dataset": "u253-aew4",
+      "query_url": "https://data.cityofnewyork.us/resource/u253-aew4.json?%24select=request_datetime%2Cpickup_datetime%2Cdropoff_datetime%2Cpulocationid%2Cdolocationid%2Ctrip_time%2Ctrip_miles%2Cshared_match_flag%2Chvfhs_license_num&%24where=pickup_datetime+%3E%3D+%272023-05-01T00%3A00%3A00%27+AND+pickup_datetime+%3C+%272023-05-08T00%3A00%3A00%27+AND+%28%28pulocationid%3D112+AND+dolocationid+in%28145%2C146%29%29+OR+%28dolocationid%3D112+AND+pulocationid+in%28145%2C146%29%29%29&%24limit=50000&%24order=pickup_datetime",
+      "window": "2023-05-01 to 2023-05-07 inclusive",
+      "rows": 4589,
+      "timing_complete_valid": 4581,
+      "timing_missing": 0,
+      "timing_invalid_or_over_4h": 8,
+      "shared_matched_rows": 11,
+      "source_sha256": "a2914e61ebbc0804216bdb8d6ca1ecc789f0c932fd580ef1606361de8b00e594",
+      "timestamp_filter_note": "Nonnegative request-to-pickup, positive ride, total at most4h. Threshold is feasibility cleaning, not analysis preregistration."
+    },
+    {
+      "year": 2024,
+      "dataset": "bqxa-629f",
+      "query_url": "https://data.cityofnewyork.us/resource/bqxa-629f.json?%24select=request_datetime%2Cpickup_datetime%2Cdropoff_datetime%2Cpulocationid%2Cdolocationid%2Ctrip_time%2Ctrip_miles%2Cshared_match_flag%2Chvfhs_license_num&%24where=pickup_datetime+%3E%3D+%272024-05-01T00%3A00%3A00%27+AND+pickup_datetime+%3C+%272024-05-08T00%3A00%3A00%27+AND+%28%28pulocationid%3D112+AND+dolocationid+in%28145%2C146%29%29+OR+%28dolocationid%3D112+AND+pulocationid+in%28145%2C146%29%29%29&%24limit=50000&%24order=pickup_datetime",
+      "window": "2024-05-01 to 2024-05-07 inclusive",
+      "rows": 7315,
+      "timing_complete_valid": 7311,
+      "timing_missing": 0,
+      "timing_invalid_or_over_4h": 4,
+      "shared_matched_rows": 83,
+      "source_sha256": "acb75f96caba68779e971f3ba53116082a8af71cce7505ea064c7395b343a415",
+      "timestamp_filter_note": "Nonnegative request-to-pickup, positive ride, total at most4h. Threshold is feasibility cleaning, not analysis preregistration."
+    }
+  ],
+  "limitations": [
+    "Both windows predate the southern McGuinness late2024 redesign.",
+    "Zone-level exposure cannot prove use of the redesigned road.",
+    "Request-to-dropoff omits access/egress and canceled/unserved requests.",
+    "Completed bookings are not people, vehicles or all travel; shared rows can overlap.",
+    "Same dates of month have different weekday composition; no year-to-year outcome comparison made."
+  ]
+}

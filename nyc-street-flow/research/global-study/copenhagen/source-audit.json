@@ -1,0 +1,21 @@
+{
+  "url": "https://www.trm.dk/media/cg1dxtrr/evaluering-af-forsoeg-paa-noerrebrogadepdf.pdf",
+  "checked_on": "2026-11-05",
+  "document": "COWI for Copenhagen, 8 December 2008",
+  "pdf_sha256": "cd5c072dde85a212f10a2bd17c46b77c81e674f465fd0efe4c5c4f7cf5679b1e",
+  "tables": [
+    {
+      "table": "5.4",
+      "physical_pdf_page": 30,
+      "printed_page": 28,
+      "visual_check": true,
+      "issue": "First row source prints -0:15 although displayed 11:59 -> 11:34 is -25 seconds. We recompute from displayed means."
+    },
+    {
+      "table": "5.3",
+      "physical_pdf_page": 27,
+      "printed_page": 25
+    }
+  ],
+  "inference_limit": "No causal all-mode effect. Bike season adjustment cannot establish treatment effect; report explicitly says passenger change unresolved."
+}

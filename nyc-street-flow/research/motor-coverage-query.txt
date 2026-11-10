@@ -1,0 +1,1 @@
+https://data.cityofnewyork.us/resource/7ym2-wayt.json?%24select=street%2Cyr%2Cm%2Cd%2Cfromst%2Ctost%2Cdirection%2Ccount%28%2A%29+as+n%2Csum%28vol%29+as+total&%24where=upper%28street%29+like+%27%25BROOKLYN%25BRIDGE%25%27+and+yr+between+2019+and+2023&%24group=street%2Cyr%2Cm%2Cd%2Cfromst%2Ctost%2Cdirection&%24order=yr%2Cm%2Cd&%24limit=5000

@@ -1,0 +1,22 @@
+MULTI-CITY CAUSAL METHODS AUDIT
+Prepared November 5, 2026
+
+Finding
+Expanding cities improves the opportunity to measure a real lane conversion and construct comparisons. It does not allow cycling-only, vehicle-only and unrelated city transit totals to be added into a causal all-person result. No paper acquired by this methods workstream identifies the joint effect on network person-throughput and complete journey time. This is a result of the screen, not a claim that no such study exists anywhere.
+
+Concrete work completed
+The Kraus/Koch Zenodo archive was downloaded and independently checked against its published checksum. It contains a Git-LFS pointer instead of the advertised 330 MB analysis panel. The linked repository and object were unavailable. The archive predates the final paper. Consequently no replication estimate is claimed; reproduce_access_audit.py reproduces the access/byte/checksum audit offline, not an econometric result. See replication-access-audit.json.
+
+The key direct-conversion case remains Berlin. Use the separate Europe acquisition/audit for official raw data. The paper’s across-lane mean volume and documented detector deinstallations make cross-section reconstruction necessary before inferring that total cars barely changed. Do not convert its published motor spot-speed result into complete commute minutes.
+
+The additional paper register keeps mechanisms separate: Montréal illustrates survey mode substitution, Oslo route diversion, Atlanta app-calibrated distance and Victoria null/contaminated comparisons. The new 2026 NYC paper provides a current matched-DiD bikeshare comparator but does not supply the missing all-mode outcome. Abstract-only papers are flagged and are not ready for quantitative pooling.
+
+How to strengthen the dashboard now
+1. Show eligibility, measurement and causal-design gates independently. A verified lane removal with aligned multimode counts may be strong measurement but weak identification.
+2. Keep city-specific results visible and label author-reported, independently recalculated and causally estimated values distinctly.
+3. Register all found conversions, including reversals and data failures. Never choose cities based on positive cycling results.
+4. Use transportability-protocol.txt before estimating any pooled result. It defines independent units, matching outcomes, interference, mediator avoidance, NYC effect modifiers and support checks.
+5. If the strongest eligible case still lacks passenger occupancy, report explicit bounds or a partial outcome. Do not fill the gap with citywide average occupancy and present it as observed person-flow.
+
+Archive contents to preserve
+papers.json; transportability-protocol.txt; replication-access-audit.json; reproduce_access_audit.py; zenodo-record.json; kraus-koch-zenodo.zip. Raw primary article copies, when available, are research intermediates; the archive is research code/output with a missing input panel.

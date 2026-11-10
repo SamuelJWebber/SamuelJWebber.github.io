@@ -1,0 +1,110 @@
+﻿McGUINNESS APPROACH: DIRECTION AND CLOCK HOUR
+Analysis date: November 5, 2026
+
+Question and boundary
+The 2016 Pulaski bikeway removed a Brooklyn-bound / southbound bridge lane.
+NYSDOT station 021284 / 02_1284 / CC0280 is farther south, between Meeker
+Avenue / I-278 and Greenpoint Avenue. Intervening junctions prevent treating
+this counter as the bridge screenline. This is a historical 2014-2016 study,
+not a test of any subsequent McGuinness redesign. Counts include motor
+vehicles of all types; no occupancy, people, speed or capacity is inferred.
+
+The December 2014 plan says three southbound bridge lanes already merged
+to two near McGuinness / Green Street. Removing a lane along the bridge is
+not, by itself, proof that the downstream bottleneck lost a lane/capacity.
+
+New finding
+On identical common support, 2014 to 2016 observed all-day counts fell
+6.38% southbound and 7.06% northbound. The PM-window decline is 5.90%
+southbound and 15.44% northbound. Both directions decline; northbound is
+not used as an untreated control. The pattern is not concentrated only
+in the removed bridge lane's direction. These observations do not identify
+the cause or exclude network effects, diversion, demand or detector changes.
+
+Primary support and estimates
+Requested post months: May-December, 2014 versus 2016.
+Retained months: May, June, September, October, November; 20/40 month by
+weekday cells, 70 baseline dates and 66 after dates. Each cell has at least
+two exact common dates across all three stations in each year. All selected
+hours and directions share exactly the same dates and cell weights.
+
+Direction    Window       Raw change    Relative Boston    Relative Broadway
+Southbound   24h            -6.38%          -4.60%             -9.47%
+Northbound   24h            -7.06%          -5.29%            -10.13%
+Southbound   07-10h        -11.18%          -4.04%            -13.81%
+Northbound   07-10h         -9.33%          -2.04%            -12.02%
+Southbound   16-19h         -5.90%          -4.26%            -10.52%
+Northbound   16-19h        -15.44%         -13.96%            -19.59%
+
+Counterfactual diagnostic
+For each direction and time window, scale the 2014 McGuinness mean by
+comparison-year / 2014 growth at a donor. Donors are Boston Road 010009
+and Broadway 010012, both in the Bronx. Donor outcomes are bidirectional
+in the identical clock-hour window. Formula:
+  expected_target = target_2014 * donor_later / donor_2014
+  relative_change_pct = 100 * (target_later / expected_target - 1)
+Means give each retained month by weekday cell equal weight. Within a
+cell, dates receive equal weight. Missing cells are not imputed; equal
+retained-cell weights do not imply equal month weights. These are
+sensitivity comparisons, not identified causal effects or confidence bounds.
+
+Timing and earlier-period diagnostics
+Construction was documented by September 22, 2015, when DOT said it had
+recently started. The bikeway opened April 29, 2016. The December 2014
+plan scheduled an April 2015 project start, temporary daytime and nighttime
+lane closures, and noted a November 3, 2014 notice to proceed. A schedule
+does not establish actual closures. Exact permanent motor-lane closure
+and any preparatory restrictions remain unverified.
+
+The preferred conservative earlier comparison is January-February 2014
+versus January-February 2015. Only 5/10 requested cells survive; this is
+too short to establish seasonal parallel trends or guarantee no anticipation.
+The broader January-August 2014/2015 diagnostic retains 21/40 common cells
+across January-June and may overlap preparatory work. It is not a verified
+untreated pre-period. Earlier-period diagnostics are not held-out forecasts.
+The 2017 Kosciuszko opening is a competing network change; no 2017 effects
+are presented here.
+
+Quality and direction mapping
+Both directions at every station must contain 24 present, nonnegative
+hourly values. Main sensitivity excludes a common date if ANY of the six
+source direction records contains an hourly zero; the alternative keeps
+zeros. A zero can be real, so this is a sensitivity screen, not an agency
+fault diagnosis. No interpolation or zero filling is performed.
+
+For McGuinness, old ROAD99 is begin-to-end (I-278 / Meeker to Greenpoint),
+mapped northbound; ROAD-99 is southbound. New FEDERAL_DIRECTION1 and5
+map north and south. Original codes and rows are preserved. Stable station
+IDs and a defensible direction mapping do not certify unchanged detector
+placement or calibration across the 2016 format change.
+
+Reproduction
+Unzip reproduction.zip and run: python reproduce.py
+Python 3 standard library only. Official source archives live in sources/.
+The script emits analysis.json, comparisons.csv, hourly-comparisons.csv,
+monthly-comparisons.csv, matched-dates.csv and the extracted raw directional
+station-day CSV. It tests direction sums, hourly sums, duplicate source
+keys and reconciliation with the previously audited common-support result.
+The raw source CSV has 5,404 direction rows across the three stations.
+
+Independent audit
+A separately implemented pandas reconstruction checked 1,008 period/hour
+rows and nine numeric fields from the released raw CSV. Maximum absolute
+numeric discrepancy: 1.46e-11. The separate validation directory contains
+its code and full report. Arithmetic agreement does not establish causality.
+
+Limits
+No aligned person counts or complete journey times at this boundary.
+No basis for converting fewer detected vehicles into fewer people moved.
+Traffic displaced elsewhere and car-to-subway shifts remain unmeasured.
+Distant donors, missing months, earlier trend differences and unknown
+instrument continuity prevent a signed causal conclusion.
+
+Primary source URLs
+https://www.dot.ny.gov/divisions/engineering/technical-services/highway-data-services/hdsb/repository/CC_VOL_R11_2014.zip
+https://www.dot.ny.gov/divisions/engineering/technical-services/highway-data-services/hdsb/repository/CC_VOL_R11_2015.zip
+https://www.dot.ny.gov/divisions/engineering/technical-services/highway-data-services/hdsb/repository/CC_Volume_Data_R11_2016.zip
+https://www.dot.ny.gov/divisions/engineering/technical-services/highway-data-services/hdsb/repository/Field_Definitions_CC%20Formats.pdf
+https://www.nyc.gov/html/dot/html/pr2015/pr15-096.shtml
+https://www.nyc.gov/html/dot/html/pr2016/pr16-044.shtml
+https://www.nyc.gov/html/dot/downloads/pdf/2014-12-pulaski-presentation.pdf

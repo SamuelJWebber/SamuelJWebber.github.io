@@ -1,0 +1,305 @@
+{
+  "checked_on": "2026-11-05",
+  "selected_pilot": "mcguinness-2023-2024-2026",
+  "runner_up": "queens-blvd-skillman-roosevelt-2024",
+  "candidates": [
+    {
+      "rank": 1,
+      "id": "mcguinness-2023-2024-2026",
+      "name": "McGuinness staged conversion",
+      "status": "candidate",
+      "moving_lane_treatment": "2023 north added a permanent bikeway while preserving two daytime vehicle lanes and one overnight. The 2024 south project reduced traffic to one moving lane each direction. The 2026 north project removes the remaining daytime extra lane within an existing bikeway corridor.",
+      "data_coverage": "April 2026 DOT evaluation contains vehicle, bicycle, diversion and travel-time evidence. Citi Bike and MTA records are supplementary demand proxies. ATR and local E-ZPass coverage require spatial and date joins.",
+      "feasible_design": "Use external comparison networks and separate event dates. A daytime/overnight triple difference is a supplementary estimate of the 2026 incremental lane and curb change, not first creation of bike infrastructure.",
+      "identification_threats": "The connected north and south are contaminated controls. Day and night demand, parking and enforcement differ. Other transportation policies and service changes may confound the comparison. No valid instrument was identified.",
+      "next_action": "Get operating dates and sign schedules per block, raw dated count records, and synchronized parallel-road outcomes. The daytime rule is 07:00–19:00, not just rush-hour peaks; weekday and weekend signs remain to be certified.",
+      "source_ids": [
+        "mcg_2023_timeline",
+        "mcg_2023_minutes",
+        "mcg_2024_start",
+        "mcg_2026_start",
+        "mcg_2026_evaluation",
+        "current_projects"
+      ],
+      "timing_summary": "October 2023 northern installation is documented. Southern major restriping began November 4, 2024 after work the prior week. Northern work began May 27, 2026; early-fall completion was an expectation. Exact operating dates are unverified."
+    },
+    {
+      "rank": 2,
+      "id": "queens-blvd-skillman-roosevelt-2024",
+      "name": "Queens Boulevard, Skillman–Roosevelt",
+      "status": "candidate",
+      "moving_lane_treatment": "Four full-time moving lanes become three each direction; curb rush-hour capacity also changes. The project adds protected bike lanes, parking/loading, pedestrian islands and signal changes.",
+      "data_coverage": "Modern ATR, local E-ZPass, Citi Bike, TLC and MTA sources are potentially usable; repeated local coverage has not yet been certified.",
+      "feasible_design": "Second modern network pilot with external donors selected from pre-period outcomes. Include the parallel subway as an outcome when passenger link loads are available.",
+      "identification_threats": "This is not an untreated control for McGuinness: both changed in autumn 2024 and share the Queensboro approach network. Earlier Queens Boulevard service-road projects have different geometry.",
+      "next_action": "Query local speed and count coverage and obtain daily installation records for September–November 2024. Include all parallel alternatives at the same cut and hour.",
+      "source_ids": [
+        "qb_2024_design",
+        "qb_2024_final_design",
+        "qb_2024_start",
+        "qb_2024_complete"
+      ],
+      "timing_summary": "Implementation notice says September 2024. Completion was announced November 12, 2024. Exact per-block operative dates remain unknown. The 2025 project archive lists it despite 2024 completion."
+    },
+    {
+      "rank": 3,
+      "id": "tenth-amsterdam-52-72-2019",
+      "name": "Tenth/Amsterdam, West 52–72",
+      "status": "candidate",
+      "moving_lane_treatment": "One of four full-time moving lanes is removed; west-curb PM rush-hour rules are eliminated. Three full-time through lanes remain. West 70–72 turn capacity is maintained.",
+      "data_coverage": "Dense public TLC and Citi Bike OD records. NYMTC 60th Street counts may support motor and bus person flow. Cycling counts at 50th Street are outside the treated segment.",
+      "feasible_design": "Pre-pandemic fixed-OD travel-time and demand panel with external donors. Estimate person flow only for genuinely aligned screenline data.",
+      "identification_threats": "TLC routes are unobserved and taxis are a selected subset. Nearby projects and traffic-policy changes may confound results. Local E-ZPass data begin too late for this baseline.",
+      "next_action": "Verify dates, audit 2018–2019 pre-trends, and retrieve raw NYMTC survey dates and locations.",
+      "source_ids": [
+        "amsterdam_2019_south_design",
+        "projects_2019"
+      ],
+      "timing_summary": "Implemented in 2019. The precise month and operative date still require verified SIP or work-order evidence; the 2018 presentation is not the opening date."
+    },
+    {
+      "rank": 4,
+      "id": "amsterdam-72-110-2016",
+      "name": "Amsterdam, West 72–110",
+      "status": "candidate",
+      "moving_lane_treatment": "Moving lanes were reduced to three through lanes with turning, loading and signal changes plus protected bicycle infrastructure.",
+      "data_coverage": "DOT reports bicycle observations in October 2007, 2011 and 2015. A later deck reports January 2016 versus January 2017 taxi speeds. Citi Bike expanded to West 86th Street in fall 2015.",
+      "feasible_design": "Fixed-OD taxi time analysis with dense pre-periods and external donors. Published before/after taxi means remain descriptive.",
+      "identification_threats": "Citi Bike supply expanded near the baseline. Signal and loading changes are part of the package. Taxi schema changes require consistent geography.",
+      "next_action": "Seek raw DOT road-specific taxi observations; otherwise use public OD exposure cautiously.",
+      "source_ids": [
+        "amsterdam_2016_design",
+        "amsterdam_2016_complete",
+        "amsterdam_2019_south_design"
+      ],
+      "timing_summary": "Completed during 2016. An inaccessible historical DOT list is indexed as August, but that month is not treated as certified."
+    },
+    {
+      "rank": 5,
+      "id": "skillman-43rd-2018",
+      "name": "Skillman/43rd Avenue mixed treatment",
+      "status": "candidate",
+      "moving_lane_treatment": "Lower-volume blocks lose one moving lane; higher-volume blocks retain two. At Sunnyside Yards, one full-time lane plus a 07:00–10:00 lane is proposed. Conventional bike lanes existed from 2008.",
+      "data_coverage": "Planning traffic collection occurred in 2017. Public Citi Bike and TLC OD records exist where service operated. Repeated all-bike and vehicle counts have not been obtained.",
+      "feasible_design": "Useful for coding treatment intensity and falsification checks. Use external controls and baseline demand adjustment before comparing project blocks.",
+      "identification_threats": "Lane removal was deliberately assigned to lower-volume blocks; the within-project difference is endogenous. Traffic crosses block boundaries and all blocks receive bike protection.",
+      "next_action": "Digitize the treatment map into separate segments; verify as-built lane schedules and operating dates.",
+      "source_ids": [
+        "skillman_2018",
+        "projects_2018"
+      ],
+      "timing_summary": "Implemented during 2018. Exact operative dates are unverified; an inaccessible historical DOT list is indexed as October."
+    },
+    {
+      "rank": 6,
+      "id": "amsterdam-110-162-2019",
+      "name": "Amsterdam, West 110–162",
+      "status": "candidate",
+      "moving_lane_treatment": "The official implemented-project description verifies two moving lanes reduced to one each direction, with left-turn and bicycle lanes.",
+      "data_coverage": "Planning records contain 2017 bicycle counts. TLC, Citi Bike and temporary ATR data are potential outcomes; a post count at the same location is not yet certified.",
+      "feasible_design": "Additional pre-pandemic conversion cohort for fixed-OD travel times and local flow outcomes.",
+      "identification_threats": "Some design is conventional rather than protected bike infrastructure. Supply expansion and neighborhood trends may confound results; late-2019 implementation would leave little pre-pandemic follow-up.",
+      "next_action": "Get the implementation month and as-built geometry, then check repeated counts before March 2020.",
+      "source_ids": [
+        "projects_2019"
+      ],
+      "timing_summary": "Implemented in 2019; the exact operative date remains unknown."
+    },
+    {
+      "rank": 7,
+      "id": "seagirt-2023",
+      "name": "Seagirt Boulevard, Rockaway Freeway–Beach Ninth",
+      "status": "candidate",
+      "moving_lane_treatment": "An official retrospective verifies removal of one travel lane each direction for parking-protected bike lanes and pedestrian space.",
+      "data_coverage": "ATR and local E-ZPass are potential sources, subject to coverage audit. A repeated all-bike counter has not been verified.",
+      "feasible_design": "Modern road-diet cohort with explicit matching on season and beach travel demand.",
+      "identification_threats": "Strong seasonality and the 2024 signal upgrade complicate inference. Citi Bike should not be assumed to represent this area.",
+      "next_action": "Audit speed/count locations and dates; recover all-bike counts at the same observation windows.",
+      "source_ids": [
+        "seagirt_2023"
+      ],
+      "timing_summary": "Installed in 2023; an additional signal upgrade followed in 2024. Exact dates are not yet verified."
+    },
+    {
+      "rank": 8,
+      "id": "bailey-sedgwick-2026",
+      "name": "Bailey/Sedgwick Harlem River Greenway",
+      "status": "candidate",
+      "moving_lane_treatment": "The proposal includes a vehicle-lane reduction and protected bike lanes. A 2026 retrospective confirms a built two-way bike lane, median and turn bays; precise lane counts still need as-built verification.",
+      "data_coverage": "Modern motor, bus, subway and bicycle sources may cover the corridor. Bus changes are part of the package.",
+      "feasible_design": "Potential multimodal cohort after repeated pre-period coverage is established.",
+      "identification_threats": "The bus improvements prevent isolation of a bike-only component. Follow-up is short as of November 2026.",
+      "next_action": "Get phase dates and the bus-change calendar; query bus speeds, passenger counts and local road observations.",
+      "source_ids": [
+        "bailey_2026_complete",
+        "current_projects"
+      ],
+      "timing_summary": "Already built by an October 2026 official release. Exact operating dates are unknown. A stale current-project listing does not make this prospective."
+    },
+    {
+      "rank": 9,
+      "id": "prospect-park-west-2010",
+      "name": "Prospect Park West benchmark",
+      "status": "legacy_benchmark",
+      "moving_lane_treatment": "Three moving lanes became two, together with a two-way bike path, signals and loading changes.",
+      "data_coverage": "Existing audit contains 384 weekday travel-time runs across four streets. Motor and bicycle observation dates are not aligned.",
+      "feasible_design": "Retain as a descriptive benchmark and control-sensitivity demonstration.",
+      "identification_threats": "B69 rerouting affects the treated and several comparison streets. One pre-period wave cannot establish parallel trends.",
+      "next_action": "Prioritize modern candidates for new data collection while retaining the historical evidence with clear limits.",
+      "source_ids": [
+        "ppw_2010"
+      ],
+      "timing_summary": "June 2010 implementation. Travel-time comparison: May 11–12 versus October 19–20, 2010."
+    },
+    {
+      "rank": 10,
+      "id": "west72-2026-proposed",
+      "name": "West 72nd Street proposed project",
+      "status": "prospective_candidate_unverified",
+      "moving_lane_treatment": "A two-way parking-protected bicycle lane is proposed with turning, loading, signal and bus-boarding changes. Verify final moving-lane geometry before eligibility.",
+      "data_coverage": "Modern public sources are available in principle. Synchronized all-bike counts, occupancy and complete journey observations still need pre-measurement.",
+      "feasible_design": "If still unbuilt, pre-register measurements and external comparisons. Randomized implementation order requires agency agreement and multiple eligible corridors.",
+      "identification_threats": "We cannot randomize street works ourselves. The connected park and avenue network creates spillovers. A proposal is not a completed treatment.",
+      "next_action": "Verify present status and the final cross-section before selecting it for prospective collection.",
+      "source_ids": [
+        "west72_proposal"
+      ],
+      "timing_summary": "Proposal announced April 15, 2026. Current construction status is not certified; do not label it unbuilt without checking."
+    }
+  ],
+  "sources": {
+    "mcg_2023_timeline": {
+      "url": "https://www.nyc.gov/html/dot/downloads/pdf/mcguinness-blvd-update-sept2024.pdf",
+      "date": "2024-09-10",
+      "pages": [
+        2,
+        3
+      ]
+    },
+    "mcg_2023_minutes": {
+      "url": "https://www.nyc.gov/assets/brooklyncb1/downloads/pdf/meeting-minutes/Combined-Public-Hearing-and-Board-Meeting-Minutes-10-11-2023.pdf",
+      "date": "2023-09-21",
+      "pages": [
+        138,
+        140
+      ],
+      "note": "District Service Cabinet minutes attached inside the October11 CB1 PDF; do not call September21 statements an October11 meeting report."
+    },
+    "mcg_2024_start": {
+      "url": "https://www.nyc.gov/html/dot/html/pr2024/travel-advisory-mcguinness-boulevard.shtml",
+      "date": "2024-11-02"
+    },
+    "mcg_2026_start": {
+      "url": "https://www.nyc.gov/mayors-office/news/2026/05/mayor-mamdani-announces-start-of-construction-to-complete-mcguin",
+      "date": "2026-05-27"
+    },
+    "mcg_2026_evaluation": {
+      "url": "https://www.nyc.gov/html/dot/downloads/pdf/mcguinness-blvd-calyer-st-freeman-st-apr2026.pdf",
+      "date": "2026-04"
+    },
+    "qb_2024_design": {
+      "url": "https://www.nyc.gov/html/dot/downloads/pdf/queens-blvd-roosevelt-ave-skillman-ave-may2024.pdf",
+      "date": "2024-05",
+      "pages": [
+        9
+      ]
+    },
+    "qb_2024_final_design": {
+      "url": "https://www.nyc.gov/html/dot/downloads/pdf/queens-blvd-roosevelt-ave-skillman-ave-jun2024.pdf",
+      "date": "2024-06",
+      "pages": [
+        14
+      ]
+    },
+    "qb_2024_start": {
+      "url": "https://www.nyc.gov/assets/queenscb2/downloads/pdf/2024/Queens-Blvd-Skillman-Ave-to-Roosevelt-Ave-WHH.pdf",
+      "date": "2024-09"
+    },
+    "qb_2024_complete": {
+      "url": "https://www.nyc.gov/html/dot/html/pr2024/complete-queens-boulevard-redesign.shtml",
+      "date": "2024-11-12"
+    },
+    "amsterdam_2019_south_design": {
+      "url": "https://www.nyc.gov/html/dot/downloads/pdf/amsterdam-10th-ave-june2018.pdf",
+      "date": "2018-06-20/2018-07-10",
+      "pages": [
+        11,
+        12,
+        18,
+        21
+      ]
+    },
+    "projects_2019": {
+      "url": "https://www.nyc.gov/html/dot/html/about/projects-2019.shtml",
+      "date": "2019"
+    },
+    "amsterdam_2016_design": {
+      "url": "https://www.nyc.gov/html/dot/downloads/pdf/amsterdam-avenue-cb7-feb2016.pdf",
+      "date": "2016-02-02",
+      "pages": [
+        9,
+        10,
+        12,
+        16,
+        22,
+        24,
+        26
+      ]
+    },
+    "amsterdam_2016_complete": {
+      "url": "https://www.nyc.gov/html/dot/html/pr2016/pr16-106.shtml",
+      "date": "2016"
+    },
+    "skillman_2018": {
+      "url": "https://www.nyc.gov/html/dot/downloads/pdf/skillman-ave-43rd-ave-june2018.pdf",
+      "date": "2018-06-07",
+      "pages": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    "projects_2018": {
+      "url": "https://www.nyc.gov/html/dot/html/about/projects-2018.shtml",
+      "date": "2018"
+    },
+    "seagirt_2023": {
+      "url": "https://www.nyc.gov/html/dot/html/pr2026/traffic-deaths-are-near-lowest-levels.shtml",
+      "date": "2026"
+    },
+    "bailey_2026_complete": {
+      "url": "https://www.nyc.gov/html/dot/html/pr2026/vision-zero-pedestrian-fatalities-reach-record-lows.shtml",
+      "date": "2026-10"
+    },
+    "current_projects": {
+      "url": "https://www.nyc.gov/html/dot/html/about/current-projects.shtml",
+      "date": "checked2026-11-05"
+    },
+    "west72_proposal": {
+      "url": "https://www.nyc.gov/html/dot/html/pr2026/nyc-dot-proposes-protected-bike-lane-for-72nd-street-manhattan.shtml",
+      "date": "2026-04-15"
+    },
+    "ppw_2010": {
+      "url": "https://www.nyc.gov/html/dot/downloads/pdf/20110120_ppw_data.pdf",
+      "date": "2011-01-20"
+    }
+  },
+  "public_data": {
+    "motor_counts": "https://data.cityofnewyork.us/d/7ym2-wayt",
+    "local_ezpass": "https://data.cityofnewyork.us/d/6a2s-2t65",
+    "traffic_management_speeds": "https://data.cityofnewyork.us/d/i4gi-tjb9",
+    "street_improvement_projects": "https://data.cityofnewyork.us/d/if4c-w48d"
+  },
+  "purpose": "Primary-source screening of actual moving-lane conversions. Ranking reflects research priority, not causal validity. No candidate has passed all-person causal identification gates.",
+  "date_rule": "Separate construction starts, operative dates, expected completion, announcement dates and archive years. Never infer a treatment date from the archive year alone.",
+  "exclusions_and_cautions": [
+    "Columbus 2010/11, Eighth Avenue 23rd–34th in 2010 and Sixth Avenue 2016 retained moving lanes; they are not eligible lane-removal cases.",
+    "Fourth Avenue Brooklyn 2018/19 protection may follow an earlier 2012/13 road diet. Ninth Street Brooklyn 2018 also requires separating older road-diet work from protection upgrades.",
+    "Brooklyn Bridge 2021 is a true conversion, but pandemic recovery makes it a weak sole causal study.",
+    "Pulaski 2016 may not remove bottleneck capacity because of the existing downstream merge. Its bicycle counter begins after treatment.",
+    "Queens Boulevard phases were selected endogenously and share traffic; later phases are not automatically valid controls.",
+    "Weather and political delays are not automatically valid instruments: both can independently affect transport outcomes."
+  ]
+}
