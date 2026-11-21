@@ -52,6 +52,21 @@ export function bridgeTrend(metric,time,compare){
  const ct=post.treated/pre.treated-1,cp=post.peers/pre.peers-1;
  return {pts,pre,post,ct,cp,networkChange:post.network/pre.network-1,relative:(ct-cp)*pre.treated};
 }
+// Motor occupants + cyclists per hour by bridge and direction, mean of 2016-18 against mean of 2022-24. 'in' is toward
+// Manhattan, the direction in which the Brooklyn Bridge lost a traffic lane; pedestrian counts carry no direction
+// and are left out. bridgeTrend sums both directions, which hid an 18% fall toward Manhattan behind a 12% rise the
+// other way (independent review 2026-11-10, B-1).
+export function bridgeDirection(time){
+ const {start,end}=periods[time],n=end-start,out={};
+ const rate=(bridge,dir,y)=>{const rows=bridgeData.hourly.filter(a=>a[0]===y&&a[1]===bridge&&a[2]===dir&&a[3]>=start&&a[3]<end);
+  return rows.length!==n||rows.some(a=>a[5]===null||a[6]===null)?null:rows.reduce((v,a)=>v+a[5]+a[6],0)/n;};
+ for(const bridge of bridgeData.bridges)for(const dir of ['in','out']){
+  const b=[2016,2017,2018].map(y=>rate(bridge,dir,y)),c=[2022,2023,2024].map(y=>rate(bridge,dir,y));
+  if([...b,...c].some(v=>v===null)){out[bridge+':'+dir]=null;continue;}
+  const pre=mean(b),post=mean(c);out[bridge+':'+dir]={pre,post,change:post/pre-1,pairsDown:b.reduce((k,x)=>k+c.filter(y=>y<x).length,0)};
+ }
+ return out;
+}
 export function csv(columns,rows){
  const escape=v=>{if(v==null)return '';const s=String(v);return /[",\r\n]/.test(s)?'"'+s.replaceAll('"','""')+'"':s;};
  return [columns,...rows].map(r=>r.map(escape).join(',')).join('\r\n')+'\r\n';
