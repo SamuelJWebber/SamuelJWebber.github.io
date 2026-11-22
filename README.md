@@ -10,6 +10,7 @@ within a few minutes.
 | `market-calibration-atlas/` | SamuelJWebber/market-calibration-atlas, `dist/` | https://samueljwebber.github.io/market-calibration-atlas/ |
 | `nyc-street-flow/` | SamuelJWebber/nyc-street-flow, `dist/` | https://samueljwebber.github.io/nyc-street-flow/ |
 | `senate-coattails/` | SamuelJWebber/senate-coattails, `dist/` | https://samueljwebber.github.io/senate-coattails/ |
+| `curb-report/` | None yet. A static app with no build step, so this folder is its source; the scripts that built its map tiles, and its tests, are not on GitHub | https://samueljwebber.github.io/curb-report/ |
 
 The home page also links the dashboards that publish from their own public repositories: credit-card-data,
 abs-risk and ski-rentals-2027.
