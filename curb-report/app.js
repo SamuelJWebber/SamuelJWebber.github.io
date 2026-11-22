@@ -101,6 +101,16 @@ function startLocation() {
   }, err => { here.denied = err.code === 1; here.watching = false; updateChips(); }, { enableHighAccuracy: true, maximumAge: 5000, timeout: 20000 });
 }
 
+function hereNow(ms = 8000) {
+  startLocation();
+  if (here.lat != null && Date.now() - here.ts < 60000) return Promise.resolve({ lat: here.lat, lon: here.lon });
+  if (!navigator.geolocation) return Promise.resolve(null);
+  return new Promise(res => {
+    const t = setTimeout(() => res(here.lat != null ? { lat: here.lat, lon: here.lon } : null), ms);
+    navigator.geolocation.getCurrentPosition(p => { clearTimeout(t); res({ lat: p.coords.latitude, lon: p.coords.longitude }); }, () => { clearTimeout(t); res(null); }, { enableHighAccuracy: true, maximumAge: 60000, timeout: ms });
+  });
+}
+
 // ---------- plate reader (web worker) ----------
 const ocr = {
   w: null, ready: false, failed: false, loaded: 0, total: 0, seq: 0, pend: new Map(),
@@ -173,13 +183,16 @@ function updateChips() {
 }
 
 // ---------- building a report ----------
+function placeFields(p) {
+  return { houseNumber: p?.houseNumber || '', street: p?.street || '', borough: p?.borough || '', zip: p?.zip || '', crossFrom: (p?.atIntersection ? p.nearestCross : p?.crossFrom) || '', crossTo: (p?.atIntersection ? '' : p?.crossTo) || '',
+    where: p?.atIntersection ? 'intersection' : 'front', bikeLane: p?.bikeLane || '', hasBikeLane: !!p?.hasBikeLane, mapChecked: !!p };
+}
 function newReport(vkey, opts = {}) {
   const p = opts.place || null;
   return {
     id: uid(), kind: 'parking', violation: vkey, createdAt: new Date().toISOString(), observedAt: opts.observedAt || toLocalInput(new Date()),
     plate: opts.plate || '', plateState: opts.state || 'NY', lat: opts.lat ?? null, lon: opts.lon ?? null,
-    houseNumber: p?.houseNumber || '', street: p?.street || '', borough: p?.borough || '', zip: p?.zip || '', crossFrom: (p?.atIntersection ? p.nearestCross : p?.crossFrom) || '', crossTo: (p?.atIntersection ? '' : p?.crossTo) || '',
-    where: p?.atIntersection ? 'intersection' : 'front', bikeLane: p?.bikeLane || '', hasBikeLane: !!p?.hasBikeLane, mapChecked: !!p,
+    ...placeFields(p),
     status: 'draft', ref: '', outcome: 'Waiting', thumb: opts.thumb || '', notes: '', msgTouched: false, message: '',
   };
 }
@@ -250,7 +263,7 @@ async function readShot(canvasOrBitmap) {
       }
     }
   } catch { if (draft) draft._noPlate = true; }
-  if (draft) { draft._reading = false; if (!draft.msgTouched) draft.message = smsBody(draft); renderResult(); }
+  if (draft) { draft._reading = false; if (!draft.msgTouched) draft.message = smsBody(draft); renderResult(); pickFollowUp(false); }
 }
 function showSentBar(r) {
   const bar = document.createElement('div'); bar.className = 'card'; bar.id = 'sent-bar';
@@ -261,6 +274,40 @@ function showSentBar(r) {
   $('#sent-save').onclick = () => { const l = store.all().find(x => x.id === r.id); if (l) { l.ref = $('#sent-ref').value.trim(); store.save(l); } bar.remove(); toast('Saved to My reports'); };
   $('#sent-undo').onclick = () => { store.remove(r.id); bar.remove(); toast('Removed'); };
   $('#sent-edit').onclick = () => { draft = store.all().find(x => x.id === r.id) || r; bar.remove(); go('result'); };
+}
+
+// ---------- quick pick (photos shared to the app or chosen from the gallery) ----------
+function solidDraft(r) { return !!(r && r.street && r.plate && r.locSource !== 'signs' && r.timeSource !== 'file' && !r._reading && !r._locating); }
+function sendDraftNow() {
+  const r = draft; if (!r) return;
+  if (!r.msgTouched) r.message = smsBody(r);
+  r.status = 'texted'; store.save(clean(r)); pendingSent = r.id;
+  openSms(r.message);
+  setTimeout(() => { if (draft === r) draft = null; go('report'); showSentBar(r); }, 300);
+}
+function quickPick(vkey) {
+  const r = draft; if (!r) return;
+  r.violation = vkey; r._pick = vkey;
+  if (!r.msgTouched) r.message = smsBody(r);
+  if (!settings.review && isPhone() && solidDraft(r)) { sendDraftNow(); return; }
+  renderResult(); pickFollowUp(true);
+}
+function pickFollowUp(fromTap) {
+  const r = draft; if (!r || !r._pick || r._reading || r._locating) return;
+  // the tap that picked can still open Messages for a few seconds while the photo finishes reading
+  if (!fromTap && !settings.review && isPhone() && solidDraft(r) && navigator.userActivation?.isActive) { sendDraftNow(); return; }
+  const issue = document.querySelector('#view-result .checks li.bad, #view-result .checks li.warn');
+  (issue || $('#sms-link'))?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  $('#sms-link')?.classList.add('pulse');
+}
+document.addEventListener('click', e => { const b = e.target.closest('[data-pick]'); if (b && draft) quickPick(b.dataset.pick); });
+function pickBlock(r) {
+  if (!r.fromPhoto) return '';
+  const busy = r._reading || r._locating;
+  const hint = !r._pick ? '' : busy ? 'Reading the photo…' : settings.review ? 'Check the details, then tap Text 311.' : solidDraft(r) ? '' : 'Check the items marked below, then tap Text 311.';
+  return `<div class="pick"><div class="pick-h">What is wrong?</div>
+      <div class="vgrid">${VIOLATIONS.slice(0, 7).map(v => `<button class="vbtn${r._pick === v.key ? ' on' : ''}" type="button" data-pick="${v.key}">${esc(v.btn)}</button>`).join('')}</div>
+      ${hint ? `<p class="small muted" style="margin:6px 0 0">${esc(hint)}</p>` : ''}</div>`;
 }
 
 // ---------- review screen ----------
@@ -275,7 +322,7 @@ function checksFor(r) {
   const out = [];
   out.push(r.plate ? ['ok', `Plate ${r.plate} (${r.plateState}). Check it against the photo.`] : r._reading ? ['warn', 'Reading the plate…'] : ['warn', 'Plate not readable. Type it, or send without it.']);
   const locNote = { photo: " (from the photo's GPS)", current: ' (your current location)', signs: r.gpsBlanked ? " (Android removed the photo's GPS, so this was read from the street signs: check it)" : ' (read from the street signs: check it)' }[r.locSource] || '';
-  out.push(r.street ? [r.locSource === 'signs' ? 'warn' : 'ok', `Location: ${where(r)}${locNote}`] : ['bad', r.gpsBlanked ? 'Android removed this photo\'s location. Pick it with "Choose a photo" (it opens Files, which keeps it), or type the address.' : 'No location in this photo. Type the address.']);
+  out.push(r.street ? [r.locSource === 'signs' ? 'warn' : 'ok', `Location: ${where(r)}${locNote}`] : r._locating ? ['warn', 'Finding where you are…'] : ['bad', r.gpsBlanked ? 'Android removed this photo\'s location. Pick it with "Choose a photo" (it opens Files, which keeps it), or type the address.' : 'No location in this photo. Type the address.']);
   if (r.timeSource) out.push(r.timeSource === 'photo' ? ['ok', `Taken ${fmtWhen(r.observedAt)} (from the photo)`] : ['warn', `No capture time in this photo; using ${fmtWhen(r.observedAt)}. Fix it below if that's wrong.`]);
   if (r.violation === 'bike_lane' && r.mapChecked) out.push(r.hasBikeLane ? ['ok', `City map shows a ${r.bikeLane} on this block`] : ['warn', 'The city map shows no bike lane on this block.']);
   return out;
@@ -285,10 +332,11 @@ function renderResult() {
   const r = draft; if (!r.msgTouched) r.message = smsBody(r);
   const active = document.activeElement?.id;
   const box = lastShot?.box && lastShot.canvas ? lastShot.box : null;
-  const photo = lastShot?.canvas ? `<div class="photo"><img src="${lastShot.url || (lastShot.url = lastShot.canvas.toDataURL('image/jpeg', 0.8))}" alt="Your photo">${box ? `<span class="pbox" style="left:${100 * box.x1 / lastShot.canvas.width}%;top:${100 * box.y1 / lastShot.canvas.height}%;width:${100 * (box.x2 - box.x1) / lastShot.canvas.width}%;height:${100 * (box.y2 - box.y1) / lastShot.canvas.height}%"></span>` : ''}</div>` : (r.thumb ? `<div class="photo"><img src="${r.thumb}" alt="Your photo"></div>` : '');
+  const photo = lastShot?.canvas ? `<div class="photo"><span class="pw"><img src="${lastShot.url || (lastShot.url = lastShot.canvas.toDataURL('image/jpeg', 0.8))}" alt="Your photo">${box ? `<span class="pbox" style="left:${100 * box.x1 / lastShot.canvas.width}%;top:${100 * box.y1 / lastShot.canvas.height}%;width:${100 * (box.x2 - box.x1) / lastShot.canvas.width}%;height:${100 * (box.y2 - box.y1) / lastShot.canvas.height}%"></span>` : ''}</span></div>` : (r.thumb ? `<div class="photo"><span class="pw"><img src="${r.thumb}" alt="Your photo"></span></div>` : '');
   el.innerHTML = `<div class="card">
       <div class="row" style="justify-content:space-between"><h2>Check and send</h2><button class="btn small" type="button" data-act="discard">Start over</button></div>
       ${photo}
+      ${pickBlock(r)}
       <ul class="checks">${checksFor(r).map(([l, t]) => `<li class="${l}"><span class="i">${l === 'ok' ? '✓' : l === 'warn' ? '!' : '✕'}</span><span>${esc(t)}</span></li>`).join('')}</ul>
       <div id="block-stats" class="small muted"></div>
     </div>
@@ -334,7 +382,7 @@ document.addEventListener('click', async e => {
   }
   if (act === 'save') { draft.status = 'logged'; store.save(clean(draft)); draft = null; toast('Saved to My reports'); go('log'); }
 });
-function clean(r) { const { _reading, _noPlate, plateTouched, ...rest } = r; return rest; }
+function clean(r) { const { _reading, _noPlate, _locating, _pick, plateTouched, ...rest } = r; return rest; }
 function showWebSteps(r) {
   const v = VMAP[r.violation];
   $('#modal-root').innerHTML = `<div class="modal" role="dialog" aria-modal="true" aria-label="311 website steps"><div class="card">
@@ -471,7 +519,7 @@ async function fromGallery(file, via) {
   let gps = meta.lat != null ? { lat: meta.lat, lon: meta.lon, src: 'photo' } : null;
   const when = meta.when || toLocalInput(new Date(file.lastModified || Date.now()));
   const fresh = !!meta.when && Date.now() - fromLocalInput(meta.when) < 15 * 60 * 1000; // only trust the photo's own clock
-  if (!gps && fresh && here.lat) gps = { lat: here.lat, lon: here.lon, src: 'current' };
+  if (!gps && fresh && here.lat != null && Date.now() - here.ts < 60000) gps = { lat: here.lat, lon: here.lon, src: 'current' };
   const place = gps ? await reverseGeocode(gps.lat, gps.lon) : null;
   const bmp = await createImageBitmap(file, { imageOrientation: 'from-image' }).catch(() => null);
   if (!bmp) { toast('Could not open that photo.'); return; }
@@ -481,6 +529,21 @@ async function fromGallery(file, via) {
   draft.timeSource = meta.when ? 'photo' : 'file';
   draft.locSource = gps ? gps.src : '';
   draft.gpsBlanked = meta.gpsBlanked;
+  draft.fromPhoto = true;
+  const d = draft;
+  if (!gps && fresh) {
+    // taken in the last 15 minutes: you are probably still there
+    d._locating = true;
+    hereNow().then(async p => {
+      if (draft !== d) return;
+      const pl = p && (!d.street || d.locSource === 'signs') ? await reverseGeocode(p.lat, p.lon) : null;
+      if (draft !== d) return;
+      if (pl) Object.assign(d, placeFields(pl), { lat: p.lat, lon: p.lon, locSource: 'current' });
+      d._locating = false;
+      if (!d.msgTouched) d.message = smsBody(d);
+      renderResult(); pickFollowUp(false);
+    });
+  }
   go('result'); readShot(c);
 }
 

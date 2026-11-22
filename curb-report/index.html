@@ -84,6 +84,15 @@ label.cb input { margin-top: 4px; width: 18px; height: 18px; flex: none; }
 .mono { font-family: var(--font-mono); }
 .photo { position: relative; border-radius: 10px; overflow: hidden; background: #000; }
 .photo img { width: 100%; display: block; }
+#view-result .photo { text-align: center; }
+#view-result .photo .pw { position: relative; display: inline-block; max-width: 100%; vertical-align: top; }
+#view-result .photo img { width: auto; max-width: 100%; max-height: 42vh; }
+.pick { margin-top: 12px; }
+.pick-h { font-weight: 700; margin: 0 0 6px; font-family: var(--font-display); }
+.pick .vbtn { min-height: 50px; }
+.vbtn.on { background: var(--sign); color: var(--sign-ink); border-color: var(--sign); }
+.btn.pulse { animation: pulse 1.1s ease-in-out 3; }
+@keyframes pulse { 50% { transform: scale(1.03); } }
 .photo .pbox { position: absolute; border: 3px solid #ffd400; border-radius: 4px; box-shadow: 0 0 0 2px rgba(0,0,0,.4); }
 .checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
 .checks li { display: grid; grid-template-columns: 22px 1fr; gap: 6px; font-size: .9rem; }
@@ -169,7 +178,7 @@ label.cb input { margin-top: 4px; width: 18px; height: 18px; flex: none; }
     <div class="card">
       <h2>How it works</h2>
       <p>Open the app, point your camera at the car, and tap the button that matches the problem. Curb Report reads the license plate and works out the block from your GPS, using the city's own street map stored in the app. It then opens a text message to NYC 311's text line (311-692) with the complaint written out. You press Send, and a 311 agent files it with NYPD.</p>
-      <p>Photos you took earlier work too. "Choose a photo" reads the time and GPS the camera saved in the photo. On Android it opens the Files picker, because Android's Photo Picker removes the location before a web app sees it. You can also share a photo to Curb Report from your gallery: that keeps the time, and if Android removed the location, Curb Report reads the street signs in the photo instead.</p>
+      <p>Photos you took earlier work too. "Choose a photo" reads the time and GPS the camera saved in the photo. On Android it opens the Files picker, because Android's Photo Picker removes the location before a web app sees it. Fastest: install Curb Report (Chrome menu, Install app), then share a photo to it straight from the camera or gallery and tap what's wrong; the text to 311 opens. Sharing keeps the time. If Android removed the location, Curb Report uses where you are now for a photo taken in the last 15 minutes, or reads the street signs in the photo.</p>
       <p>If you prefer the 311 website, turn on "Let me check before texting" and choose the website option. Every report is saved on your phone under My reports so you can track what happened.</p>
       <h3>Privacy</h3>
       <p>The photo, plate reading and address lookup never leave your phone. The only outside requests are the text you choose to send and, on the Stats page, a query to NYC Open Data for complaints near a point rounded to about 100 meters.</p>
