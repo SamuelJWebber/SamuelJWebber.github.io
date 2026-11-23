@@ -16,8 +16,8 @@ Point your phone at a car blocking a bike lane, hydrant or crosswalk, tap what i
 - **Plate reading, on the phone.** PaddleOCR PP-OCRv4 finds every patch of text and reads it (about 15 MB, ONNX Runtime Web). Rules then pick the plate: a known state format (NY, NJ including its older ABC-12D series, PA, CT, CA, FL, MA) counts only when every character is at least 60% confident; any other 5 to 8 character plate counts only when every character is at least 90% confident. When no state name is readable, the format sets the state (A12-BCD means New Jersey).
 - **Live camera.** A plate has to be read the same way twice, or once very clearly, before one tap sends it.
 - **Second look.** Zoomed-in tiles and rotated re-reads for small or tilted plates, capped at 8 seconds. Plates found only this way are flagged for checking and never sent in one tap.
-- **AI assist (optional), four places to run it** (`lib/ai.js`):
-  - *TattleTale's AI* (shared, for people without a key): the phone reads first, and a photo only leaves it for what the phone couldn't settle. It goes to a Cloudflare Worker (`tools/worker`) that asks the owner's computer, waits up to 10 seconds, then falls back to Jev on the owner's OpenRouter key, with daily caps per person and in total counted in a Durable Object. Tested in Cloudflare's own runtime (Miniflare) against a fake computer and a fake OpenRouter, and end to end from the app. Hidden until `config.js` has the Worker's address.
+- **AI assist, four places to run it** (`lib/ai.js`):
+  - *TattleTale's AI* (shared; on by default; nobody needs a key): the phone reads first, and a photo only leaves it for what the phone couldn't settle. It goes to a Cloudflare Worker (`tools/worker`, one-tap deploy) that asks the owner's computer (open JPT-4B) for up to 10 seconds, then Gemma 4 on Workers AI inside Cloudflare's free daily allowance, then optionally Jev on the owner's OpenRouter key. A computer that misses is skipped for 2 minutes. A reading model only confirms a plate by reading the same characters as the phone. Daily caps per person and in total are counted exactly in a Durable Object. Tested in Cloudflare's own runtime (Miniflare) against a fake computer, a fake Workers AI and a fake OpenRouter, and end to end from the app. Off until `config.js` has the Worker's address.
   - *Jev 1.14* (TypeSafe, closed) through OpenRouter on the user's own key: picks the violation with calibrated probabilities (used only at 80% or more), draws a box around the plate so the phone's reader can read just that patch, and chooses between the phone's candidate readings.
   - *Qwen3.5-9B* (open weights) through OpenRouter: reads the plate text itself and picks the violation; its confidence is its own estimate, not calibrated.
   - *Your own computer*: any Jev-compatible server, such as `llm2jev` serving the open JPT-4B (non-commercial license), reached through `tools/tattletale_relay.py` and a free Cloudflare tunnel. The relay adds the browser headers and checks a token.
@@ -40,7 +40,7 @@ The right plate appears somewhere in the reader's raw output for 64% of photos, 
 
 It is a static site. Serve the folder over HTTPS (GitHub Pages, Netlify, any static host). Camera and GPS need HTTPS.
 
-To offer TattleTale's AI, deploy `tools/worker` (steps in its README) and put its address in `config.js`.
+To offer TattleTale's AI, deploy `tools/worker` (one tap: [Deploy to Cloudflare](https://deploy.workers.cloudflare.com/?url=https://github.com/SamuelJWebber/SamuelJWebber.github.io/tree/main/tattletale/tools/worker); details in its README) and put its address in `config.js`.
 
 ## Limits
 

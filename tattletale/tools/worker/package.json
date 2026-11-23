@@ -1,0 +1,13 @@
+{
+  "name": "tattletale-ai",
+  "private": true,
+  "description": "TattleTale NYC's shared AI: the owner's computer first, then a free Workers AI model, with daily caps.",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "test": "node test.mjs"
+  },
+  "devDependencies": {
+    "miniflare": "^4.20260730.0",
+    "wrangler": "^4.166.0"
+  }
+}

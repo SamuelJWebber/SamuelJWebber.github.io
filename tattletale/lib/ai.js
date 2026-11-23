@@ -5,15 +5,15 @@
             reads the plate text itself; its confidence is its own estimate, not calibrated.
    - local: any Jev-compatible server on your own computer, e.g. llm2jev serving the open JPT-4B,
             reached through tools/tattletale_relay.py and a tunnel. No box question.
-   - shared: TattleTale's own service (tools/worker): tries the owner's computer for up to 10 s, then the
-            cloud on the owner's key, with daily limits. For people who don't have a key of their own.
+   - shared: TattleTale's own service (tools/worker), on by default, no key: the owner's computer for up to
+            10 s, then a free open model on Cloudflare Workers AI, with daily limits.
    look(cfg, canvas) -> { model, tier, violation: { choice, p }, plateVisible, box, plate, plateState, ms, cost } */
 const AI = (() => {
   const OR = 'https://openrouter.ai/api';
   // the shared service's address; empty until it's deployed (tools/worker/README)
   const SHARED = (typeof window !== 'undefined' && window.TT_SHARED_AI) || ''; // set in config.js
   const MODELS = { jev: 'typesafe/jev-1.14', qwen: 'qwen/qwen3.5-9b' };
-  const LABEL = { jev: 'Jev', qwen: 'Qwen3.5-9B', local: 'Your computer', shared: "TattleTale's AI" };
+  const LABEL = { jev: 'Jev', qwen: 'Qwen3.5-9B', local: 'Your computer', shared: "TattleTale's AI", wai: 'Workers AI' };
   const CRITERIA = {
     bike_lane: 'Parked or stopped in a bike lane', double_traffic: 'Double parked beside parked cars, blocking a travel lane', hydrant: 'Parked next to a fire hydrant',
     crosswalk: 'Parked or stopped in a crosswalk', sidewalk: 'Parked on the sidewalk', bus: 'Stopped in a bus stop or bus lane',
@@ -84,7 +84,7 @@ const AI = (() => {
   }
   // which of these readings is the plate? (decision models only: they can't write text, but they can choose)
   async function pickPlate(cfg, canvas, cands) {
-    if (cfg.model === 'shared') { const j = await viaShared('/v1/plate', { image: image(canvas), cands }); return { choice: j.choice || '', p: +(j.p || 0), cost: j.cost, ms: j.ms, model: j.model, tier: j.tier }; }
+    if (cfg.model === 'shared') { const j = await viaShared('/v1/plate', { image: image(canvas), cands }); return { choice: j.choice || '', p: +(j.p || 0), read: normPlate(j.read), cost: j.cost, ms: j.ms, model: j.model, tier: j.tier, label: j.label || '' }; }
     const criteria = Object.fromEntries([...cands.map(p => [p, `The plate reads ${p.split('').join(' ')}`]), ['none', 'None of these, or the plate cannot be read']]);
     const { A, cost, ms } = await decide(cfg, image(canvas), { plate_text: { type: 'choice', instructions: "Which of these exactly matches the main vehicle's license plate?", criteria } });
     return { choice: A.plate_text?.choice || '', p: probOf(A.plate_text), cost, ms };
@@ -98,11 +98,12 @@ const AI = (() => {
     const g = c.getContext('2d'); g.imageSmoothingQuality = 'high'; g.drawImage(canvas, x, y, w, h, 0, 0, c.width, c.height); return c;
   }
   async function ping(cfg) {
-    if (cfg.model === 'shared') {
+    if (cfg.model === 'shared') { // a tiny made-up photo through each of its tiers
       const t0 = performance.now(); let r;
-      try { r = await fetch(SHARED.replace(/\/+$/, '') + '/v1/look', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{}' }); } catch { throw new Error("couldn't reach TattleTale's AI"); }
-      if (r.status !== 400) throw new Error(r.status === 403 ? "this site isn't allowed to use TattleTale's AI" : `TattleTale's AI answered with status ${r.status}`);
-      return { ms: Math.round(performance.now() - t0), cost: 0, note: 'reachable' };
+      try { r = await fetch(SHARED.replace(/\/+$/, '') + '/v1/status?probe=1'); } catch { throw new Error("couldn't reach TattleTale's AI"); }
+      if (!r.ok) throw new Error(r.status === 403 ? "this site isn't allowed to use TattleTale's AI" : `TattleTale's AI answered with status ${r.status}`);
+      const s = await r.json();
+      return { ms: Math.round(performance.now() - t0), cost: 0, ok: !!s.ok, note: `owner's computer ${s.computer}; free cloud model: ${s.cloud}; paid backup: ${s.backup}` };
     }
     if (cfg.model === 'qwen') {
       const t0 = performance.now();

@@ -15,8 +15,8 @@ JPT-4B model. Standard library only.
        tailscale funnel --bg 8787          -> https://<computer>.<tailnet>.ts.net
      or, for a quick test, a Cloudflare quick tunnel (a new address every time):
        cloudflared tunnel --url http://localhost:8787
-  4a. For everyone, through TattleTale's AI (tools/worker): put the address in wrangler.toml as
-      LOCAL_URL and the token in the Worker with: npx wrangler secret put LOCAL_TOKEN
+  4a. For everyone, through TattleTale's AI (tools/worker): in the Cloudflare dashboard, set the Worker's
+      LOCAL_URL to the address and add the token as a secret named LOCAL_TOKEN
   4b. Just for you: in the app, About > AI assist > Model: Your computer. Paste the address and token there.
 """
 import argparse, http.server, json, os, secrets, sys, time, urllib.error, urllib.request

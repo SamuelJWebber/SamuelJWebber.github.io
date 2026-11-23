@@ -287,18 +287,13 @@ async function readShot(canvasOrBitmap) {
 async function sharedAssist(d, canvas, res) {
   const needV = !d._pick, needP = !d.plateTouched && (!d.plate || d.plateUnsure);
   if (!needV && !needP) return;
-  d._ai = true; if (draft === d) renderResult();
+  d._ai = true; if (!settings.aiNoticeShown) { d.aiFirst = true; settings.aiNoticeShown = true; saveSettings(); }
+  if (draft === d) renderResult();
   let look = { model: 'shared', cost: 0, ms: 0 };
   if (needV || !d.plate) { look = await AI.look(aiCfg('shared'), canvas).catch(e => ({ error: e.message })); logAI(d, look); }
   try { await applyAI(d, look, canvas, res, 'shared'); } catch {}
   d._ai = false;
   if (draft === d) { if (!d.msgTouched) d.message = smsBody(d); renderResult(); }
-}
-// the 'Let AI pick' button on a photo that's already open
-async function aiNow() {
-  const d = draft; if (!d || d._ai) return;
-  if (d._reading) { renderResult(); return; } // the phone is still reading; readShot asks TattleTale's AI right after
-  if (lastShot?.canvas) { await sharedAssist(d, lastShot.canvas, d._res); if (draft === d) pickFollowUp(false); }
 }
 function showSentBar(r) {
   const bar = document.createElement('div'); bar.className = 'card'; bar.id = 'sent-bar';
@@ -315,19 +310,22 @@ function showSentBar(r) {
 const aiSource = () => settings.aiModel || (AI.SHARED && !settings.aiKey ? 'shared' : 'jev');
 const aiCfg = (model = aiSource()) => ({ model, key: settings.aiKey, localUrl: settings.localUrl, localToken: settings.localToken });
 const aiReady = m => m === 'shared' ? !!AI.SHARED : m === 'local' ? !!settings.localUrl : !!settings.aiKey;
-const aiEnabled = () => !!settings.aiOn && aiReady(aiSource());
+// TattleTale's AI is on unless switched off; your own key or computer only once you switch it on
+const aiEnabled = () => (settings.aiOn ?? aiSource() === 'shared') && aiReady(aiSource());
 const probOf = AI.probOf;
 async function applyAI(d, look, canvas, res, source = look?.model) {
   if (!look || look.error) { d.aiNote = !look?.error ? '' : source === 'shared' ? `${sharedTrouble(look.error)}, so pick the violation yourself.` : `AI assist failed: ${look.error}.`; return; }
   const model = look.model, tag = source === 'shared' ? 'shared' : model;
   d.aiCost = (d.aiCost || 0) + look.cost; d.aiMs = look.ms;
   const top = look.violation?.choice, p = look.violation?.p || 0;
-  if (top) { d.aiPick = { key: top, p, model, tier: look.tier || '' }; if (top !== 'none' && VMAP[top] && p >= 0.8 && !d._pick) d.violation = top; }
-  // a model that reads text (Qwen) is a second opinion on the plate
+  if (top) { d.aiPick = { key: top, p, model, tier: look.tier || '', label: look.label || '', calibrated: look.calibrated }; if (top !== 'none' && VMAP[top] && p >= 0.8 && !d._pick) d.violation = top; }
+  // a model that reads text (Qwen, Gemma) is a second opinion on the plate: two readers agreeing confirms it
+  const cands = () => [...new Set([d.plate, ...(d.aiCands || []), ...(res?.lines || []).filter(l => l.plate && l.plate.length >= 5 && l.plate.length <= 8 && /\d/.test(l.plate) && l.pconf >= 0.5).map(l => l.plate)])].filter(Boolean).slice(0, 5);
   if (look.plate && !d.plateTouched) {
     if (look.plate === d.plate) { d.plateUnsure = false; d.plateAI = Math.max(p, 0.9); d.plateAIModel = tag; }
+    else if (d.plate && d.plateUnsure && cands().includes(look.plate)) { d.plate = look.plate; d.plateUnsure = false; d.plateAI = 0.9; d.plateAIModel = tag; if (look.plateState) d.plateState = look.plateState; }
     else if (!d.plate) { d.plate = look.plate; d.plateUnsure = true; d.plateByAI = tag; if (look.plateState) d.plateState = look.plateState; }
-    else { d.plateUnsure = true; d.aiAltPlate = look.plate; }
+    else { d.plateUnsure = true; d.aiAltPlate = look.plate; d.aiAltBy = look.label || ''; }
   }
   // the phone couldn't read the plate confidently: read again inside the box the model found
   if ((!d.plate || d.plateUnsure) && !d.plateTouched && (look.plateVisible ?? 0) >= 0.5 && look.box) {
@@ -341,32 +339,34 @@ async function applyAI(d, look, canvas, res, source = look?.model) {
       }
     }
   }
-  // still unsure: a decision model chooses which reading the photo actually shows
-  if ((source === 'shared' || model !== 'qwen') && d.plate && d.plateUnsure && !d.plateTouched && draft === d) {
-    const cands = [...new Set([d.plate, ...(d.aiCands || []), ...(res?.lines || []).filter(l => l.plate && l.plate.length >= 5 && l.plate.length <= 8 && /\d/.test(l.plate) && l.pconf >= 0.5).map(l => l.plate)])].slice(0, 5);
+  // still unsure: a model chooses which reading the photo actually shows (skipped if a reading model just had its say)
+  const readerAnswered = source === 'shared' ? look.tier === 'cloud' && look.calibrated === false : model === 'qwen';
+  if (!readerAnswered && d.plate && d.plateUnsure && !d.plateTouched && draft === d) {
     try {
-      const v = await AI.pickPlate(aiCfg(source === 'shared' ? 'shared' : model), canvas, cands); d.aiCost += v.cost || 0;
+      const v = await AI.pickPlate(aiCfg(source === 'shared' ? 'shared' : model), canvas, cands()); d.aiCost += v.cost || 0;
       if (v.choice && v.choice !== 'none' && v.p >= 0.85 && draft === d && !d.plateTouched) { d.plate = v.choice; d.plateUnsure = false; d.plateAI = v.p; d.plateAIModel = tag; }
+      else if (v.choice === 'none' && v.read && v.read !== d.plate) { d.aiAltPlate = v.read; d.aiAltBy = v.label || ''; }
       else if (v.choice === 'none') d.aiPlateDoubt = true;
     } catch (e) { d.aiNote = source === 'shared' ? `${sharedTrouble(e.message)}, so check the plate yourself.` : `AI plate check failed: ${e.message}.`; }
   }
 }
-const sharedTrouble = e => /limit/.test(e) ? "TattleTale's AI has hit today's limit (it resets at midnight)" : /credit/.test(e) ? "TattleTale's AI is out of credit for now" : /reach/.test(e) ? "Couldn't reach TattleTale's AI" : `TattleTale's AI didn't answer (${e})`;
+const sharedTrouble = e => /limit/.test(e) ? "TattleTale's AI is at its daily limit" : /credit|paid plan|key was rejected/.test(e) ? "TattleTale's AI isn't available right now" : /reach/.test(e) ? "Couldn't reach TattleTale's AI" : /too long/.test(e) ? "TattleTale's AI took too long" : "TattleTale's AI didn't answer";
 // the log that makes every report a test case: what each model said, next to what you sent
 function logAI(d, look) {
   if (!look || look.error) return;
   d.aiLog = [...(d.aiLog || []), { model: look.tier ? `shared-${look.tier === 'computer' ? 'computer' : look.model}` : look.model, v: look.violation?.choice || '', p: +(look.violation?.p || 0).toFixed(3), plate: look.plate || '', ms: look.ms, cost: look.cost }];
 }
 function aiLines(r) {
-  const out = [], who = (m, tier) => tier === 'computer' ? "TattleTale's AI (owner's computer)" : tier === 'cloud' ? `TattleTale's AI (${AI.LABEL[m] || 'cloud'})` : AI.LABEL[m] || 'AI';
+  const out = [], who = (m, tier, label) => tier === 'computer' ? "TattleTale's AI (owner's computer)" : tier === 'cloud' ? `TattleTale's AI (${label || AI.LABEL[m] || 'cloud'})` : AI.LABEL[m] || 'AI';
   if (r._ai) out.push(['warn', aiSource() === 'shared' ? "Asking TattleTale's AI…" : 'AI assist is looking at the photo…']);
+  if (r.aiFirst) out.push(['ok', "AI assist is on: when your phone can't tell, TattleTale's AI checks the photo and keeps nothing. Turn it off in About."]);
   if (r.aiNote) out.push(['warn', r.aiNote]);
   if (r.aiPick) {
-    const pc = Math.round(100 * r.aiPick.p), v = VMAP[r.aiPick.key], est = r.aiPick.model === 'qwen' ? ', its own estimate' : '', w = who(r.aiPick.model, r.aiPick.tier);
+    const pc = Math.round(100 * r.aiPick.p), v = VMAP[r.aiPick.key], est = r.aiPick.calibrated === false || r.aiPick.model === 'qwen' ? ', its own estimate' : '', w = who(r.aiPick.model, r.aiPick.tier, r.aiPick.label);
     out.push(r.aiPick.key === 'none' ? ['warn', `${w} sees no violation (${pc}% sure${est}). Pick one if it's wrong.`]
       : r.aiPick.p >= 0.8 ? ['ok', `${w}: ${v.label} (${pc}% sure${est})`] : ['warn', `${w}'s best guess is ${v.label.toLowerCase()} (${pc}%${est}), not sure enough to pick it for you.`]);
   }
-  if (r.aiAltPlate) out.push(['warn', `${who(r.aiPick?.model, r.aiPick?.tier)} read the plate as ${r.aiAltPlate}. Check which is right.`]);
+  if (r.aiAltPlate) out.push(['warn', `${r.aiAltBy ? `TattleTale's AI (${r.aiAltBy})` : who(r.aiPick?.model, r.aiPick?.tier, r.aiPick?.label)} read the plate as ${r.aiAltPlate}. Check which is right.`]);
   if (r.plateByAI) out.push(['warn', `Only ${who(r.plateByAI)} could read the plate. Check it.`]);
   if (r.aiPlateDoubt) out.push(['warn', "AI couldn't match the plate to any reading. Check it."]);
   const other = (r.aiLog || []).slice(1).find(x => x.model !== r.aiPick?.model);
@@ -375,27 +375,29 @@ function aiLines(r) {
   return out;
 }
 function bindAI() {
-  const key = $('#ai-key'), on = $('#ai-on'), st = $('#ai-status'), model = $('#ai-model'), cmp = $('#ai-compare'), lurl = $('#ai-local-url'), ltok = $('#ai-local-token');
+  const key = $('#ai-key'), on = $('#ai-on'), st = $('#ai-status'), model = $('#ai-model'), cmp = $('#ai-compare'), lurl = $('#ai-local-url'), ltok = $('#ai-local-token'), blurb = $('#ai-blurb');
   if (!key) return;
   const opt = model.querySelector('option[value=shared]'); if (opt) opt.hidden = opt.disabled = !AI.SHARED;
   const show = (m = '') => {
     const md = aiSource();
-    model.value = md; on.checked = !!settings.aiOn; cmp.checked = !!settings.aiCompare; lurl.value = settings.localUrl || ''; $('#ai-local').hidden = md !== 'local';
+    blurb.textContent = AI.SHARED ? "On photos you share or choose, TattleTale's AI steps in when your phone can't tell what's wrong or can't read the plate for sure: it suggests the violation and double-checks the plate. Free, nothing to set up." : 'This copy of the app has no shared AI. You can try models with your own key under Advanced.';
+    model.value = md; on.checked = aiEnabled(); cmp.checked = !!settings.aiCompare; lurl.value = settings.localUrl || ''; $('#ai-local').hidden = md !== 'local';
     $('#ai-key-row').hidden = $('#ai-compare-row').hidden = md === 'shared';
-    st.textContent = m || (md === 'shared' ? "TattleTale's AI is free for you, with a daily limit. Your phone goes first; a photo is only sent when the phone can't tell, to the app owner's computer, or to OpenRouter if that doesn't answer in 10 seconds." : md === 'local' ? (settings.localUrl ? `Using ${settings.localUrl}` : 'Add your server address.') : settings.aiKey ? `OpenRouter key saved on this phone (ends in ${settings.aiKey.slice(-4)}).` : 'No key yet.');
+    if (settings.aiModel && settings.aiModel !== 'shared') $('#ai-adv').open = true;
+    st.textContent = m || (md === 'shared' ? '' : md === 'local' ? (settings.localUrl ? `Using ${settings.localUrl}` : 'Add your server address.') : settings.aiKey ? `OpenRouter key saved on this phone (ends in ${settings.aiKey.slice(-4)}).` : 'No key yet.');
   };
   key.onchange = () => { const v = key.value.trim(); if (v) { settings.aiKey = v; settings.aiOn = true; saveSettings(); key.value = ''; show(); } };
   model.onchange = () => { settings.aiModel = model.value; saveSettings(); show(); };
   cmp.onchange = () => { settings.aiCompare = cmp.checked; saveSettings(); show(); };
   lurl.onchange = () => { settings.localUrl = lurl.value.trim(); saveSettings(); show(); };
   ltok.onchange = () => { const v = ltok.value.trim(); if (v) { settings.localToken = v; ltok.value = ''; saveSettings(); show('Token saved.'); } };
-  on.onchange = () => { settings.aiOn = on.checked && aiReady(aiSource()); saveSettings(); show(settings.aiOn || !on.checked ? '' : 'Add a key or server first.'); };
+  on.onchange = () => { settings.aiOn = on.checked && aiReady(aiSource()); saveSettings(); show(settings.aiOn || !on.checked ? '' : 'Add a key or server under Advanced first.'); };
   $('#ai-forget').onclick = () => { delete settings.aiKey; delete settings.localToken; settings.aiOn = false; saveSettings(); show('Key and token removed.'); };
   $('#ai-test').onclick = async () => {
     const md = aiSource();
-    if (!aiReady(md)) return show('Add a key or server first.');
+    if (!aiReady(md)) return show('Add a key or server under Advanced first.');
     show('Testing…');
-    try { const t = await AI.ping(aiCfg(md)); show(`Works: ${AI.LABEL[md]} answered in ${t.ms} ms${md === 'shared' ? '' : ` (${t.note}), cost $${t.cost.toFixed(6)}`}.`); }
+    try { const t = await AI.ping(aiCfg(md)); show(md === 'shared' ? `${t.ok ? 'Works' : 'Not fully working'}: ${t.note}.` : `Works: ${AI.LABEL[md]} answered in ${t.ms} ms (${t.note}), cost $${t.cost.toFixed(6)}.`); }
     catch (e) { show(`Didn't work: ${e.message}.`); }
   };
   show();
@@ -433,8 +435,7 @@ function pickBlock(r) {
   const hint = !r._pick ? (sug ? `AI picked ${VMAP[sug].label.toLowerCase()}. Tap it to send, or pick another.` : '') : busy ? 'Reading the photo…' : settings.review ? 'Check the details, then tap Text 311.' : solidDraft(r) ? '' : 'Check the items marked below, then tap Text 311.';
   return `<div class="pick"><div class="pick-h">What is wrong?</div>
       <div class="vgrid">${VIOLATIONS.slice(0, 7).map(v => `<button class="vbtn${r._pick === v.key ? ' on' : !r._pick && sug === v.key ? ' suggest' : ''}" type="button" data-pick="${v.key}">${esc(v.btn)}${!r._pick && sug === v.key ? ' ✓' : ''}</button>`).join('')}</div>
-      ${hint ? `<p class="small muted" style="margin:6px 0 0">${esc(hint)}</p>` : ''}
-      ${!r._pick && !aiEnabled() && AI.SHARED && !r.aiPick && !r._ai ? `<button class="btn small" type="button" data-act="ai-on" style="margin-top:8px">Let AI pick</button><p class="small muted" style="margin:4px 0 0">Sends photos to TattleTale's AI when your phone can't tell. Free; turn it off in About.</p>` : ''}</div>`;
+      ${hint ? `<p class="small muted" style="margin:6px 0 0">${esc(hint)}</p>` : ''}</div>`;
 }
 
 // ---------- review screen ----------
@@ -497,7 +498,6 @@ document.addEventListener('click', async e => {
   const a = e.target.closest('[data-act]'); if (!a || !draft && !['still-plate', 'still-co', 'idle-save', 'idle-discard'].includes(a.dataset.act)) return;
   const act = a.dataset.act;
   if (act === 'discard') { draft = null; go('report'); }
-  if (act === 'ai-on') { settings.aiOn = true; settings.aiModel = 'shared'; saveSettings(); aiNow(); }
   if (act === 'sms') {
     if (!draft.street) { e.preventDefault(); toast('Add the address first.'); $('#r-street')?.focus(); return; }
     draft.status = 'texted'; draft.sentAt = new Date().toISOString(); store.save(clean(draft));
@@ -511,7 +511,7 @@ document.addEventListener('click', async e => {
   }
   if (act === 'save') { draft.status = 'logged'; store.save(clean(draft)); draft = null; toast('Saved to My reports'); go('log'); }
 });
-function clean(r) { const { _reading, _noPlate, _locating, _pick, _ai, _res, plateTouched, plateUnsure, fromPhoto, aiCands, aiNote, aiAltPlate, ...rest } = r; return rest; }
+function clean(r) { const { _reading, _noPlate, _locating, _pick, _ai, _res, aiFirst, aiAltBy, plateTouched, plateUnsure, fromPhoto, aiCands, aiNote, aiAltPlate, ...rest } = r; return rest; }
 function showWebSteps(r) {
   const v = VMAP[r.violation];
   $('#modal-root').innerHTML = `<div class="modal" role="dialog" aria-modal="true" aria-label="311 website steps"><div class="card">

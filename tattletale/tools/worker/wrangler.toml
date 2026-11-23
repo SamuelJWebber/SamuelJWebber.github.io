@@ -1,15 +1,21 @@
-# TattleTale NYC's shared AI on Cloudflare's free plan. Setup steps: tools/worker/README.md
+# TattleTale NYC's shared AI on Cloudflare's free plan. No keys needed: see README.md (one-tap deploy).
 name = "tattletale-ai"
 main = "worker.js"
 compatibility_date = "2026-07-01"
 
 [vars]
 ALLOWED_ORIGIN = "https://samueljwebber.github.io"
-LOCAL_URL = ""              # your computer's https address (relay + Tailscale Funnel); empty = always the cloud
-LOCAL_TIMEOUT_MS = "10000"  # how long to wait for your computer before using the cloud
-CLOUD_MODEL = "jev"         # or "qwen"
+WAI_MODEL = "@cf/google/gemma-4-26b-a4b-it"   # the free cloud model (Workers AI)
+LOCAL_URL = ""              # optional: your computer's https address (relay + Tailscale Funnel)
+LOCAL_TIMEOUT_MS = "10000"  # how long to wait for your computer
+COMPUTER_REST_MS = "120000" # after your computer misses, skip it for this long
+OPENROUTER_MODEL = "jev"    # optional backup if you add an OPENROUTER_KEY secret: "jev" or "qwen"
 PER_IP_DAILY = "30"         # cloud answers per person per day
 ALL_DAILY = "500"           # cloud answers per day for everyone
+
+# Workers AI (free daily allowance on the Workers Free plan)
+[ai]
+binding = "AI"
 
 # daily counters (free plan: SQLite-backed Durable Objects)
 [[durable_objects.bindings]]
