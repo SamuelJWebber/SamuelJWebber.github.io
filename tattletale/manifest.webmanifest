@@ -1,7 +1,7 @@
 {
-  "name": "Curb Report NYC",
-  "short_name": "Curb Report",
-  "description": "Report cars blocking NYC bike lanes, hydrants and crosswalks to 311 in one tap.",
+  "name": "TattleTale NYC",
+  "short_name": "TattleTale",
+  "description": "Tattle on cars blocking NYC bike lanes, hydrants and crosswalks: 311 in one tap, and a record of what NYPD did about it.",
   "start_url": "./#report",
   "scope": "./",
   "display": "standalone",

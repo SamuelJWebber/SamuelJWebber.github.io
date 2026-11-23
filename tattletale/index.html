@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TattleTale NYC</title>
+<meta name="description" content="Report cars blocking NYC bike lanes, hydrants and crosswalks to 311 in one tap. Plate reading and location happen on your phone.">
+<meta name="theme-color" content="#0c6b3e">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@600;800&family=Overpass+Mono:wght@500;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: phone-first single column; viewfinder on top, violation buttons as big street-sign green targets below. */
+:root {
+  --paper: #f4f5f1; --card: #ffffff; --ink: #1b2420; --muted: #5c6862; --line: #d8ddd8;
+  --sign: #0c6b3e; --sign-ink: #ffffff; --lane: #3f9b5d;
+  --warn: #b7791f; --warn-bg: #fff4dc; --bad: #b42318; --bad-bg: #fde8e6; --ok: #1f7a46; --ok-bg: #e3f4ea; --plate-bg: #fdfcf6;
+  --font-display: "Overpass", "Arial Narrow", system-ui, sans-serif;
+  --font-body: "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Overpass Mono", ui-monospace, Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #121715; --card: #1a211e; --ink: #e8ede9; --muted: #9aa7a0; --line: #2d3833; --sign: #1d8a54; --lane: #5fbf7f;
+    --warn: #f0b44c; --warn-bg: #3a2e14; --bad: #ff8a7a; --bad-bg: #3d1d19; --ok: #6fd39a; --ok-bg: #16331f; --plate-bg: #22292a; color-scheme: dark; }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--paper); color: var(--ink); font: 15px/1.5 var(--font-body); -webkit-text-size-adjust: 100%; padding-bottom: env(safe-area-inset-bottom); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.15; margin: 0; text-wrap: balance; }
+h2 { font-size: 1.25rem; }
+h3 { font-size: .8rem; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); font-weight: 600; }
+a { color: var(--sign); }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--lane); outline-offset: 2px; }
+.top { background: var(--sign); color: var(--sign-ink); padding: calc(10px + env(safe-area-inset-top)) 16px 0; position: sticky; top: 0; z-index: 5; }
+.brand { display: flex; align-items: baseline; gap: 10px; }
+.brand h1 { font-size: 1.25rem; text-transform: uppercase; letter-spacing: .04em; }
+.brand span { font-size: .78rem; opacity: .85; }
+nav { display: flex; gap: 2px; margin-top: 6px; overflow-x: auto; }
+nav a { color: var(--sign-ink); text-decoration: none; padding: 8px 10px 10px; font-weight: 600; opacity: .8; border-bottom: 3px solid transparent; white-space: nowrap; font-size: .92rem; }
+nav a[aria-current="page"] { opacity: 1; border-bottom-color: var(--sign-ink); }
+main { max-width: 640px; margin: 0 auto; padding: 12px 16px 24px; display: grid; gap: 14px; }
+main > *, .card > *, .grid2 > *, .grid3 > * { min-width: 0; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px; display: grid; gap: 10px; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 10px 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); cursor: pointer; font-weight: 600; min-height: 44px; text-decoration: none; color: var(--ink); text-align: center; }
+.btn.primary { background: var(--sign); color: var(--sign-ink); border-color: var(--sign); }
+.btn.big { min-height: 56px; font-size: 1.05rem; }
+.btn.small { min-height: 34px; padding: 6px 10px; font-size: .85rem; }
+.btn:disabled { opacity: .5; cursor: default; }
+.filebtn { position: relative; }
+.filebtn input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.tip { font-size: .85rem; color: var(--muted); margin: 0; }
+.viewfinder { position: relative; background: #000; border-radius: 12px; overflow: hidden; aspect-ratio: 3 / 4; max-height: 52vh; width: 100%; margin: 0 auto; }
+.viewfinder video, .viewfinder canvas { width: 100%; height: 100%; object-fit: cover; display: block; }
+.viewfinder .overlay { position: absolute; left: 8px; right: 8px; bottom: 8px; display: flex; flex-wrap: wrap; gap: 6px; }
+.viewfinder .start { position: absolute; inset: 0; display: grid; place-items: center; padding: 20px; text-align: center; color: #fff; gap: 12px; align-content: center; }
+.viewfinder .start p { margin: 0; font-size: .9rem; opacity: .9; }
+.vchip { background: rgba(0,0,0,.62); color: #fff; font-size: .8rem; font-weight: 600; padding: 4px 9px; border-radius: 999px; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.vchip.ok { background: rgba(31,122,70,.9); }
+.vchip.mono { font-family: var(--font-mono); letter-spacing: .06em; }
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.vbtn { min-height: 58px; border-radius: 10px; border: 1px solid var(--line); background: var(--card); font-weight: 700; font-family: var(--font-display); font-size: 1rem; cursor: pointer; padding: 8px 10px; line-height: 1.15; color: var(--ink); }
+.vbtn.main { grid-column: 1 / -1; background: var(--lane); color: #fff; border-color: var(--lane); min-height: 70px; font-size: 1.25rem; }
+.vbtn:active { transform: scale(.98); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-size: .78rem; font-weight: 600; padding: 3px 8px; border-radius: 999px; background: var(--paper); border: 1px solid var(--line); }
+.chip.ok { background: var(--ok-bg); color: var(--ok); border-color: transparent; }
+.chip.warn { background: var(--warn-bg); color: var(--warn); border-color: transparent; }
+.chip.bad { background: var(--bad-bg); color: var(--bad); border-color: transparent; }
+.plate { font: 700 1.5rem var(--font-mono); letter-spacing: .08em; background: var(--plate-bg); border: 2px solid var(--ink); border-radius: 6px; padding: 2px 10px; display: inline-block; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.grid3 { display: grid; grid-template-columns: 1fr 2fr 1.2fr; gap: 10px; }
+@media (max-width: 420px) { .grid3 { grid-template-columns: 1fr 2fr; } .grid3 > :last-child { grid-column: 1 / -1; } }
+label.f { display: grid; gap: 4px; font-size: .8rem; font-weight: 600; color: var(--muted); }
+label.f input, label.f select, label.f textarea { width: 100%; padding: 9px 10px; border-radius: 7px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); font-weight: 400; font-size: 16px; }
+label.f textarea { min-height: 120px; resize: vertical; }
+label.cb { display: flex; gap: 8px; align-items: flex-start; font-size: .9rem; }
+label.cb input { margin-top: 4px; width: 18px; height: 18px; flex: none; }
+.mono { font-family: var(--font-mono); }
+.photo { position: relative; border-radius: 10px; overflow: hidden; background: #000; }
+.photo img { width: 100%; display: block; }
+#view-result .photo { text-align: center; }
+#view-result .photo .pw { position: relative; display: inline-block; max-width: 100%; vertical-align: top; }
+#view-result .photo img { width: auto; max-width: 100%; max-height: 42vh; }
+.pick { margin-top: 12px; }
+.pick-h { font-weight: 700; margin: 0 0 6px; font-family: var(--font-display); }
+.pick .vbtn { min-height: 50px; }
+.vbtn.on { background: var(--sign); color: var(--sign-ink); border-color: var(--sign); }
+.btn.pulse { animation: pulse 1.1s ease-in-out 3; }
+@keyframes pulse { 50% { transform: scale(1.03); } }
+.track-nypd { margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px; }
+.track-nypd h3 { margin: 0 0 6px; }
+.rechecks { display: flex; gap: 8px; overflow-x: auto; margin: 8px 0; }
+.rechecks figure { margin: 0; flex: 0 0 auto; width: 110px; }
+.rechecks img { width: 110px; height: 82px; object-fit: cover; border-radius: 6px; display: block; }
+.rechecks figcaption { font-size: .75rem; color: var(--muted, #666); }
+.chip.bad { background: #fde8e8; color: #9b1c1c; }
+.photo .pbox { position: absolute; border: 3px solid #ffd400; border-radius: 4px; box-shadow: 0 0 0 2px rgba(0,0,0,.4); }
+.checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.checks li { display: grid; grid-template-columns: 22px 1fr; gap: 6px; font-size: .9rem; }
+.checks .i { font-weight: 800; text-align: center; }
+.checks .ok .i { color: var(--ok); } .checks .warn .i { color: var(--warn); } .checks .bad .i { color: var(--bad); }
+.fields { display: grid; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.fields .fr { display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center; padding: 8px 10px; border-top: 1px solid var(--line); }
+.fields .fr:first-child { border-top: 0; }
+.fields .k { font-size: .75rem; color: var(--muted); font-weight: 600; }
+.fields .v { overflow-wrap: anywhere; }
+.fields .sec { background: var(--paper); font: 600 .75rem var(--font-body); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); padding: 6px 10px; border-top: 1px solid var(--line); }
+.notice { border-radius: 8px; padding: 10px 12px; font-size: .9rem; }
+.notice.warn { background: var(--warn-bg); border-left: 4px solid var(--warn); }
+.notice.bad { background: var(--bad-bg); border-left: 4px solid var(--bad); }
+.notice.ok { background: var(--ok-bg); border-left: 4px solid var(--ok); }
+.stat { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.tile { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px; }
+.tile b { display: block; font: 800 1.35rem var(--font-display); font-variant-numeric: tabular-nums; }
+.tile span { font-size: .75rem; color: var(--muted); }
+.bars { display: grid; gap: 6px; }
+.bar { display: grid; grid-template-columns: minmax(120px, 44%) 1fr 48px; gap: 8px; align-items: center; font-size: .85rem; }
+.bar .track { height: 14px; background: var(--paper); border-radius: 3px; overflow: hidden; border: 1px solid var(--line); }
+.bar .fill { height: 100%; display: block; background: var(--lane); }
+.bar .fill.warn { background: var(--warn); } .bar .fill.bad { background: var(--bad); }
+.bar b { font-variant-numeric: tabular-nums; text-align: right; }
+.list { display: grid; gap: 8px; }
+.item { display: grid; grid-template-columns: 60px 1fr; gap: 10px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px; text-align: left; width: 100%; cursor: pointer; }
+.item img, .item .ph { width: 60px; height: 60px; object-fit: cover; border-radius: 6px; background: var(--paper); }
+.item .t { font-weight: 600; } .item .s { font-size: .82rem; color: var(--muted); }
+.thumbs { display: flex; gap: 8px; overflow-x: auto; }
+.thumbs img { height: 90px; border-radius: 6px; border: 1px solid var(--line); }
+.toast { position: fixed; left: 50%; bottom: calc(16px + env(safe-area-inset-bottom)); transform: translateX(-50%); background: var(--ink); color: var(--paper); padding: 10px 14px; border-radius: 8px; font-size: .9rem; opacity: 0; pointer-events: none; transition: opacity .2s; max-width: calc(100% - 32px); z-index: 30; }
+.toast.show { opacity: 1; }
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,.45); display: grid; place-items: center; padding: 16px; z-index: 20; }
+.modal .card { width: 100%; max-width: 560px; max-height: 90%; overflow: auto; }
+.progress { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.progress span { display: block; height: 100%; background: var(--lane); width: 0; transition: width .2s; }
+[hidden] { display: none !important; }
+.muted { color: var(--muted); } .small { font-size: .82rem; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><h1>TattleTale NYC</h1><span>NYC 311 in one tap</span></div>
+  <nav aria-label="Sections">
+    <a href="#report" id="nav-report">Report</a>
+    <a href="#idling" id="nav-idling">Idling reward</a>
+    <a href="#log" id="nav-log">My reports</a>
+    <a href="#stats" id="nav-stats">Stats</a>
+    <a href="#about" id="nav-about">About</a>
+  </nav>
+</header>
+<main>
+  <section id="view-report">
+    <div class="viewfinder" id="vf">
+      <video id="cam" playsinline muted autoplay></video>
+      <div class="start" id="vf-start">
+        <h2>Point at the car, tap what it's doing</h2>
+        <p>TattleTale reads the plate and the block on your phone, then opens a text to 311 with everything filled in. You press Send.</p>
+        <button class="btn primary big" id="btn-start" type="button">Turn on camera and location</button>
+      </div>
+      <div class="overlay" id="vf-overlay" hidden>
+        <span class="vchip" id="chip-loc">Finding your block…</span>
+        <span class="vchip mono" id="chip-plate">Plate: looking…</span>
+      </div>
+    </div>
+    <div class="vgrid" id="vgrid" style="margin-top:12px"></div>
+    <div class="row" style="justify-content:space-between">
+      <button class="btn small" type="button" id="btn-pick">Choose a photo</button>
+      <input id="in-photo" type="file" accept="image/*" hidden>
+      <input id="in-video-any" type="file" accept="video/*" hidden>
+      <label class="cb small" for="set-review"><input type="checkbox" id="set-review"><span>Let me check before texting</span></label>
+    </div>
+    <div class="progress" id="ocr-progress" hidden aria-label="Plate reader download"><span></span></div>
+    <p class="tip" id="ocr-note"></p>
+  </section>
+  <section id="view-result" hidden></section>
+  <section id="view-idling" hidden></section>
+  <section id="view-log" hidden></section>
+  <section id="view-stats" hidden></section>
+  <section id="view-about" hidden>
+    <div class="card">
+      <h2>How it works</h2>
+      <p>Open the app, point your camera at the car, and tap the button that matches the problem. TattleTale reads the license plate and works out the block from your GPS, using the city's own street map stored in the app. It then opens a text message to NYC 311's text line (311-692) with the complaint written out. You press Send, and a 311 agent files it with NYPD.</p>
+      <p>Photos you took earlier work too. "Choose a photo" reads the time and GPS the camera saved in the photo. On Android it opens the Files picker, because Android's Photo Picker removes the location before a web app sees it. Fastest: install TattleTale (Chrome menu, Install app), then share a photo to it straight from the camera or gallery and tap what's wrong; the text to 311 opens. Sharing keeps the time. If Android removed the location, TattleTale uses where you are now for a photo taken in the last 15 minutes, or reads the street signs in the photo.</p>
+      <p>If you prefer the 311 website, turn on "Let me check before texting" and choose the website option. Every report is saved on your phone under My reports so you can track what happened.</p>
+      <h3>Privacy</h3>
+      <p>The photo, plate reading and address lookup never leave your phone. The only outside requests are the text you choose to send and, on the Stats page, a query to NYC Open Data for complaints near a point rounded to about 100 meters.</p>
+      <h3>Limits</h3>
+      <p>311 has no public submission API, so the last step is always yours: pressing Send, or Submit on the 311 website. The plate reader can misread dirty, angled or far-away plates; the text shows the plate so you can fix it before sending. The idling reward needs a DEP account and a time-stamped video, so it cannot be one tap.</p>
+      <h3>Credits</h3>
+      <p class="small">Street map: NYC Department of City Planning street centerline (CSCL). Text reading: PaddleOCR PP-OCRv4 models (Apache 2.0) on ONNX Runtime Web (MIT). Photo data: exifr (MIT). Complaint data: NYC Open Data, 311 Service Requests. Not affiliated with the City of New York.</p>
+    </div>
+  </section>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div id="modal-root"></div>
+<script src="lib/exifr.lite.umd.js"></script>
+<script src="lib/geocode.js"></script>
+<script src="lib/mp4meta.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

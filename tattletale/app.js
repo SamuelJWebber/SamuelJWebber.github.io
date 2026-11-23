@@ -1,5 +1,5 @@
 'use strict';
-/* Curb Report NYC — photo to 311 complaint, entirely on the phone. */
+/* TattleTale NYC — photo to 311 complaint, entirely on the phone. */
 
 // ---------- constants ----------
 const VIOLATIONS = [
@@ -235,7 +235,7 @@ async function onViolationTap(vkey) {
   const r = newReport(vkey, { place: here.place, lat: here.lat, lon: here.lon, plate: lp?.plate, state: lp?.state || 'NY', thumb });
   const ready = r.street && r.plate && isPhone() && !settings.review;
   if (ready) {
-    r.message = smsBody(r); r.status = 'texted'; store.save(r); pendingSent = r.id;
+    r.message = smsBody(r); r.status = 'texted'; r.sentAt = new Date().toISOString(); store.save(r); pendingSent = r.id;
     openSms(r.message);
     showSentBar(r);
     return;
@@ -281,7 +281,7 @@ function solidDraft(r) { return !!(r && r.street && r.plate && r.locSource !== '
 function sendDraftNow() {
   const r = draft; if (!r) return;
   if (!r.msgTouched) r.message = smsBody(r);
-  r.status = 'texted'; store.save(clean(r)); pendingSent = r.id;
+  r.status = 'texted'; r.sentAt = new Date().toISOString(); store.save(clean(r)); pendingSent = r.id;
   openSms(r.message);
   setTimeout(() => { if (draft === r) draft = null; go('report'); showSentBar(r); }, 300);
 }
@@ -371,18 +371,18 @@ document.addEventListener('click', async e => {
   if (act === 'discard') { draft = null; go('report'); }
   if (act === 'sms') {
     if (!draft.street) { e.preventDefault(); toast('Add the address first.'); $('#r-street')?.focus(); return; }
-    draft.status = 'texted'; store.save(clean(draft));
+    draft.status = 'texted'; draft.sentAt = new Date().toISOString(); store.save(clean(draft));
     if (window.__curbTest) { e.preventDefault(); window.__curbTest.sms = draft.message; }
     setTimeout(() => { const r = draft; draft = null; go('report'); showSentBar(r); }, 300);
   }
   if (act === 'web') {
     if (!draft.street) { toast('Add the address first.'); return; }
-    await copyText(webDescription(draft)); draft.status = 'web'; store.save(clean(draft));
+    await copyText(webDescription(draft)); draft.status = 'web'; draft.sentAt = new Date().toISOString(); store.save(clean(draft));
     showWebSteps(draft);
   }
   if (act === 'save') { draft.status = 'logged'; store.save(clean(draft)); draft = null; toast('Saved to My reports'); go('log'); }
 });
-function clean(r) { const { _reading, _noPlate, _locating, _pick, plateTouched, ...rest } = r; return rest; }
+function clean(r) { const { _reading, _noPlate, _locating, _pick, plateTouched, fromPhoto, ...rest } = r; return rest; }
 function showWebSteps(r) {
   const v = VMAP[r.violation];
   $('#modal-root').innerHTML = `<div class="modal" role="dialog" aria-modal="true" aria-label="311 website steps"><div class="card">
@@ -427,6 +427,22 @@ async function sodaStats(detail, lat, lon, radius) {
   });
   statCache.set(url, p); p.catch(() => statCache.delete(url));
   return p;
+}
+async function sodaTiming(detail, lat, lon, radius) {
+  const since = toLocalInput(new Date(Date.now() - 365 * 864e5));
+  let where = `descriptor='${detail}' AND created_date>'${since}' AND closed_date IS NOT NULL AND date_extract_y(closed_date)=date_extract_y(created_date) AND date_extract_m(closed_date)=date_extract_m(created_date)`;
+  if (lat != null) where += ` AND within_circle(location,${lat.toFixed(4)},${lon.toFixed(4)},${radius})`;
+  const sel = `count(*) as n, sum(case(${MINS_SQL}<5,1,true,0)) as f5, sum(case(${MINS_SQL}<10,1,true,0)) as f10, sum(case(${MINS_SQL}>=60,1,true,0)) as s1, sum(case(${MINS_SQL}>=180,1,true,0)) as s3`;
+  const url = `${SODA}?$select=${encodeURIComponent(sel)}&$where=${encodeURIComponent(where)}`;
+  if (statCache.has(url)) return statCache.get(url);
+  const p = fetch(url).then(r => { if (!r.ok) throw new Error('timing'); return r.json(); }).then(rows => { const x = rows[0] || {}; return { n: +x.n || 0, f5: +x.f5 || 0, f10: +x.f10 || 0, s1: +x.s1 || 0, s3: +x.s3 || 0 }; });
+  statCache.set(url, p); p.catch(() => statCache.delete(url));
+  return p;
+}
+const pct = (a, n) => { const v = n ? 100 * a / n : 0; return v < 10 ? v.toFixed(1) : String(Math.round(v)); };
+function timingHTML(t) {
+  return `<div class="stat"><div class="tile"><b>${pct(t.f5, t.n)}%</b><span>closed in under 5 min</span></div><div class="tile"><b>${pct(t.f10, t.n)}%</b><span>under 10 min</span></div><div class="tile"><b>${pct(t.s3, t.n)}%</b><span>3+ hours later</span></div></div>
+    <p class="small">${t.f5.toLocaleString()} of ${t.n.toLocaleString()} were closed in under 5 minutes, too fast for anyone to have come and checked. ${pct(t.s1, t.n)}% were closed an hour or more after 311 logged them.</p>`;
 }
 async function loadBlockStats(r) {
   const el = $('#block-stats'); if (!el || r.lat == null) return;
@@ -557,7 +573,7 @@ function renderIdling() {
       <p class="small">If a truck or bus idles more than 3 minutes (1 minute next to a school or park), DEP fines the owner and pays you 25% of the fine when it is upheld. DEP needs a date- and time-stamped video that shows the plate, the company name on the truck, and the exhaust or engine sound.</p>
       <ol class="small" style="margin:0;padding-left:20px;display:grid;gap:4px">
         <li>Record with a timestamp camera app (DEP names Timestamp Camera Enterprise, free) for at least 3:04, starting at the plate and ending at the company name.</li>
-        <li>Choose the video here. Curb Report checks it against DEP's rules, reads the plate and company, and makes the two stills DEP asks for.</li>
+        <li>Choose the video here. TattleTale checks it against DEP's rules, reads the plate and company, and makes the two stills DEP asks for.</li>
         <li>Paste the fields into DEP's form and upload the video and stills.</li>
       </ol>
       <button class="btn primary big" type="button" id="btn-pick-video">Choose idling video</button>
@@ -715,9 +731,10 @@ function renderLog() {
       const v = r.kind === 'idling' ? 'Idling truck (DEP)' : (VMAP[r.violation]?.label || 'Report');
       const st = { texted: 'Texted 311', web: 'Filed on 311 website', logged: 'Saved only', draft: 'Draft' }[r.status] || r.status;
       const cls = /Ticketed|Summons|Upheld|Reward/.test(r.outcome) ? 'ok' : /Gone|no action|Rejected|Dismissed/.test(r.outcome) ? 'bad' : 'warn';
-      return `<button class="item" type="button" data-open="${esc(r.id)}">${r.thumb ? `<img src="${r.thumb}" alt="">` : '<span class="ph"></span>'}<span><span class="t">${esc(v)}</span><br><span class="s">${esc([r.plate && `${r.plate} ${r.plateState}`, fmtWhen(r.observedAt)].filter(Boolean).join(' · '))}</span><br><span class="s">${esc(where(r))}</span><span class="chips" style="margin-top:4px"><span class="chip">${esc(st)}</span><span class="chip ${cls}">${esc(r.outcome || 'Waiting')}</span>${r.ref ? `<span class="chip mono">${esc(r.ref)}</span>` : ''}</span></span></button>` + (openId === r.id ? editorHTML(r) : '');
+      return `<button class="item" type="button" data-open="${esc(r.id)}">${r.thumb ? `<img src="${r.thumb}" alt="">` : '<span class="ph"></span>'}<span><span class="t">${esc(v)}</span><br><span class="s">${esc([r.plate && `${r.plate} ${r.plateState}`, fmtWhen(r.observedAt)].filter(Boolean).join(' · '))}</span><br><span class="s">${esc(where(r))}</span><span class="chips" style="margin-top:4px"><span class="chip">${esc(st)}</span><span class="chip ${cls}">${esc(r.outcome || 'Waiting')}</span>${cityChip(r)}${r.ref ? `<span class="chip mono">${esc(r.ref)}</span>` : ''}</span></span></button>` + (openId === r.id ? editorHTML(r) : '');
     }).join('')}</div>`;
-  $('#csv') && ($('#csv').onclick = () => download(new Blob([toCSV(list)], { type: 'text/csv' }), `curb-report-${new Date().toISOString().slice(0, 10)}.csv`));
+  $('#csv') && ($('#csv').onclick = () => download(new Blob([toCSV(list)], { type: 'text/csv' }), `tattletale-${new Date().toISOString().slice(0, 10)}.csv`));
+  autoCheckCity();
 }
 function editorHTML(r) {
   const outs = r.kind === 'idling' ? IDLE_OUTCOMES : OUTCOMES;
@@ -725,6 +742,11 @@ function editorHTML(r) {
     <div class="grid2"><label class="f" for="e-ref">${r.kind === 'idling' ? 'DEP complaint #' : '311 number'}<input id="e-ref" class="mono" value="${esc(r.ref || '')}"></label>
     <label class="f" for="e-out">What happened<select id="e-out">${outs.map(o => `<option${(r.outcome || 'Waiting') === o ? ' selected' : ''}>${esc(o)}</option>`).join('')}</select></label></div>
     <label class="f" for="e-notes">Notes${r.kind === 'idling' ? ' (summons #, reward amount)' : ''}<input id="e-notes" value="${esc(r.notes || '')}"></label>
+    ${r.kind !== 'idling' && (r.status === 'texted' || r.status === 'web') ? `<div class="track-nypd"><h3>Did NYPD really come?</h3>
+      ${cityLines(r).length ? `<ul class="checks">${cityLines(r).map(([l, t]) => `<li class="${l}"><span class="i">${l === 'ok' ? '✓' : l === 'warn' ? '!' : '✕'}</span><span>${esc(t)}</span></li>`).join('')}</ul>` : `<p class="small muted">Sent ${esc(fmtClock(new Date(r.sentAt || r.createdAt)))}. The city publishes when 311 logged it and when NYPD closed it, overnight.</p>`}
+      ${(r.rechecks || []).length ? `<div class="rechecks">${r.rechecks.map(k => `<figure><img src="${k.thumb}" alt="Re-check photo"><figcaption>${esc(fmtClock(new Date(k.at)))}${k.plate ? ` · ${esc(k.plate)}` : ''}</figcaption></figure>`).join('')}</div>` : ''}
+      <div class="row"><button class="btn small" type="button" data-log="city" data-id="${esc(r.id)}">Check the city's record</button><button class="btn small" type="button" data-log="recheck" data-id="${esc(r.id)}">Still there? Take a photo</button></div>
+      <p class="tip">If NYPD closes it as gone or fixed and the car is still there, a photo taken after the closing time is your proof.</p></div>` : ''}
     <div class="row"><button class="btn primary small" type="button" data-log="save" data-id="${esc(r.id)}">Save</button>${r.kind !== 'idling' ? `<button class="btn small" type="button" data-log="resend" data-id="${esc(r.id)}">Open again</button>` : ''}<a class="btn small" href="https://portal.311.nyc.gov/check-status/" target="_blank" rel="noopener">Check status on 311</a><button class="btn small" type="button" data-log="del" data-id="${esc(r.id)}">Delete</button></div>
   </div>`;
 }
@@ -734,12 +756,105 @@ document.addEventListener('click', e => {
   const r = store.all().find(x => x.id === b.dataset.id); if (!r) return;
   if (b.dataset.log === 'save') { r.ref = $('#e-ref').value.trim(); r.outcome = $('#e-out').value; r.notes = $('#e-notes').value; store.save(r); openId = null; toast('Saved'); renderLog(); }
   if (b.dataset.log === 'resend') { draft = r; lastShot = null; go('result'); }
+  if (b.dataset.log === 'city') { b.textContent = 'Checking…'; b.disabled = true; checkCity(r).then(ok => { if (!ok) toast("Couldn't reach NYC Open Data."); renderLog(); }); }
+  if (b.dataset.log === 'recheck') recheck(r);
   if (b.dataset.log === 'del') { if (b.dataset.confirm !== '1') { b.dataset.confirm = '1'; b.textContent = 'Tap again to delete'; return; } store.remove(r.id); openId = null; renderLog(); }
 });
 function toCSV(rs) {
-  const cols = ['createdAt', 'kind', 'violation', 'status', 'ref', 'outcome', 'observedAt', 'plate', 'plateState', 'houseNumber', 'street', 'borough', 'zip', 'crossFrom', 'crossTo', 'bikeLane', 'lat', 'lon', 'company', 'notes'];
+  rs = rs.map(r => ({ ...r, city_key: r.city?.key, city_logged: r.city?.created, nypd_closed: r.city?.closed, minutes_to_close: r.city?.closed ? Math.round(minsBetween(r.city.created, r.city.closed)) : '', nypd_result: r.city?.result, precinct: r.city?.precinct,
+    rechecks: (r.rechecks || []).map(k => `${k.at}${k.plate ? ' ' + k.plate : ''}`).join('; ') }));
+  const cols = ['createdAt', 'sentAt', 'kind', 'violation', 'status', 'ref', 'outcome', 'observedAt', 'plate', 'plateState', 'houseNumber', 'street', 'borough', 'zip', 'crossFrom', 'crossTo', 'bikeLane', 'lat', 'lon', 'company', 'notes', 'city_key', 'city_logged', 'nypd_closed', 'minutes_to_close', 'nypd_result', 'precinct', 'rechecks'];
   const q = v => { const s = String(v ?? ''); return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
   return [cols.join(','), ...rs.map(r => cols.map(c => q(r[c])).join(','))].join('\n');
+}
+
+// ---------- did NYPD really come? Each report is matched to the city's record of it ----------
+// minutes from 311 logging a complaint to NYPD closing it, computed by NYC Open Data (same-month closings)
+const MINS_SQL = '((date_extract_d(closed_date)-date_extract_d(created_date))*1440+(date_extract_hh(closed_date)-date_extract_hh(created_date))*60+(date_extract_mm(closed_date)-date_extract_mm(created_date)))';
+const BAD_RESULTS = ['Gone when police came', 'Police said no action needed', 'Moved along, no ticket'];
+const minsBetween = (a, b) => (fromLocalInput(b) - fromLocalInput(a)) / 60e3;
+const fmtMins = m => { m = Math.max(0, Math.round(m)); if (m < 60) return `${m} min`; const h = Math.floor(m / 60), r = m % 60; return h < 10 && r ? `${h} h ${r} min` : `${Math.round(m / 60)} h`; };
+const fmtClock = s => { const d = typeof s === 'string' ? fromLocalInput(s) : s; return d ? d.toLocaleString('en-US', { timeZone: 'America/New_York', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) : ''; };
+const ordinal = n => { n = +n; const t = n % 100 >= 11 && n % 100 <= 13 ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' }[n % 10] || 'th'); return n + t; };
+const precinctName = p => { const n = String(p || '').match(/\d+/); return n ? `${ordinal(n[0])} Precinct` : ''; };
+async function cityLookup(r) {
+  const v = VMAP[r.violation]; if (!v || r.lat == null) return null;
+  const sent = new Date(r.sentAt || r.createdAt);
+  const where = `complaint_type='Illegal Parking' AND descriptor='${v.detail}' AND created_date between '${toLocalInput(new Date(+sent - 15 * 60e3))}' and '${toLocalInput(new Date(+sent + 6 * 3600e3))}' AND within_circle(location,${(+r.lat).toFixed(5)},${(+r.lon).toFixed(5)},300)`;
+  const url = `${SODA}?$select=unique_key,created_date,closed_date,status,resolution_description,police_precinct&$where=${encodeURIComponent(where)}&$order=created_date&$limit=20`;
+  const rows = await fetch(url).then(x => { if (!x.ok) throw new Error('city data'); return x.json(); });
+  const digits = String(r.ref || '').replace(/\D/g, '');
+  let best = (digits && rows.find(x => x.unique_key === digits)) || null;
+  if (!best) { let bd = Infinity; for (const x of rows) { const d = Math.abs(fromLocalInput(x.created_date) - sent); if (d < bd) { bd = d; best = x; } } }
+  if (!best) return null;
+  return { key: best.unique_key, created: String(best.created_date).slice(0, 19), closed: best.closed_date ? String(best.closed_date).slice(0, 19) : '', result: best.closed_date ? bucket(best.resolution_description, best.status) : 'Still open', precinct: best.police_precinct || '' };
+}
+async function checkCity(r) {
+  try { r.city = await cityLookup(r); r.cityCheckedAt = new Date().toISOString(); if (r.city?.closed && (!r.outcome || r.outcome === 'Waiting') && OUTCOMES.includes(r.city.result)) r.outcome = r.city.result; store.save(r); return true; }
+  catch { return false; }
+}
+let cityBusy = false;
+async function autoCheckCity() {
+  if (cityBusy || !navigator.onLine) return; cityBusy = true;
+  try {
+    const now = Date.now(), age = r => now - new Date(r.sentAt || r.createdAt);
+    const due = store.all().filter(r => (r.status === 'texted' || r.status === 'web') && r.kind !== 'idling' && r.lat != null && !r.city?.closed
+      && age(r) > 3 * 3600e3 && age(r) < 60 * 864e5 && !(r.cityCheckedAt && now - new Date(r.cityCheckedAt) < 6 * 3600e3)).slice(0, 8);
+    let changed = false;
+    for (const r of due) changed = (await checkCity(r)) || changed;
+    if (changed && currentView === 'log') renderLog();
+  } finally { cityBusy = false; }
+}
+function cityLines(r) {
+  const c = r.city, out = [];
+  if (!c) {
+    if (r.cityCheckedAt) out.push(['warn', Date.now() - new Date(r.sentAt || r.createdAt) < 36 * 3600e3 ? "Not in the city's data yet. It updates overnight, so check again tomorrow." : "No matching complaint in the city's data. If 311 texted you a number, check it on 311's site."]);
+    return out;
+  }
+  const sent = r.sentAt ? new Date(r.sentAt) : null;
+  const lag = sent ? (fromLocalInput(c.created) - sent) / 60e3 : null;
+  out.push(['ok', `311 logged it ${fmtClock(c.created)}${lag != null && lag > 1 ? `, ${fmtMins(lag)} after you sent it` : ''}${c.precinct ? `, for the ${precinctName(c.precinct)}` : ''}.`]);
+  if (!c.closed) { out.push(['warn', 'NYPD has not closed it yet.']); return out; }
+  const m = minsBetween(c.created, c.closed);
+  const when = `NYPD closed it ${fmtClock(c.closed)}, ${fmtMins(m)} after 311 logged it`;
+  out.push(m < 5 ? ['bad', `${when}. No one could be sent, get there and check that fast.`]
+    : m < 10 ? ['bad', `${when}. That's about as fast as police get to a 911 crime in progress.`]
+    : m >= 180 ? ['warn', `${when}. After 3 hours the car is usually gone.`]
+    : ['ok', `${when}.`]);
+  out.push([/Ticketed|Towed|Arrest/.test(c.result) ? 'ok' : 'bad', `NYPD's result: ${c.result}.`]);
+  const closedAt = fromLocalInput(c.closed);
+  for (const k of r.rechecks || []) {
+    const at = new Date(k.at); if (!(at > closedAt) || !BAD_RESULTS.includes(c.result)) continue;
+    const far = k.lat != null && r.lat != null ? metersBetween(k, r) : 0;
+    if (far > 150) continue;
+    const same = k.plate && r.plate && k.plate === r.plate;
+    out.push(['bad', `Your photo ${fmtClock(at)}, ${fmtMins((at - closedAt) / 60e3)} after NYPD closed it as "${c.result}", ${same ? `shows ${r.plate} still there` : 'shows the spot after the closing'}.`]);
+  }
+  return out;
+}
+function cityChip(r) {
+  const c = r.city; if (!c) return '';
+  if (!c.closed) return '<span class="chip warn">NYPD: open</span>';
+  const m = minsBetween(c.created, c.closed), bad = m < 10 || BAD_RESULTS.includes(c.result);
+  return `<span class="chip ${bad ? 'bad' : 'ok'}">NYPD closed in ${esc(fmtMins(m))}</span>`;
+}
+const inRecheck = Object.assign(document.createElement('input'), { type: 'file', accept: 'image/*', hidden: true });
+inRecheck.setAttribute('capture', 'environment'); document.body.appendChild(inRecheck);
+async function recheck(r) {
+  const f = await new Promise(res => { inRecheck.onchange = () => { const x = inRecheck.files[0] || null; inRecheck.value = ''; res(x); }; inRecheck.click(); });
+  if (!f) return;
+  toast('Reading the photo…');
+  const meta = await photoMeta(f).catch(() => ({}));
+  const at = meta.when ? fromLocalInput(meta.when) : new Date();
+  const pos = meta.lat != null ? { lat: meta.lat, lon: meta.lon } : await hereNow(6000);
+  const bmp = await createImageBitmap(f, { imageOrientation: 'from-image' }).catch(() => null);
+  if (!bmp) { toast('Could not open that photo.'); return; }
+  const c = canvasFrom(bmp, 1600);
+  let plate = '';
+  try { const res = await ocr.read(await createImageBitmap(c), { maxSide: 1600, zoom: true }); if (res.plate && res.score >= 3.4) plate = res.plate; } catch {}
+  const k = { at: at.toISOString(), lat: pos?.lat ?? null, lon: pos?.lon ?? null, plate, thumb: canvasFrom(c, 240).toDataURL('image/jpeg', 0.6) };
+  r.rechecks = [...(r.rechecks || []), k]; store.save(r); renderLog();
+  toast(plate && plate === r.plate ? `Same plate, ${plate}, at ${fmtClock(at)}` : plate ? `Read ${plate} at ${fmtClock(at)}` : `Saved, ${fmtClock(at)}`);
 }
 
 // ---------- stats ----------
@@ -753,7 +868,10 @@ async function renderStats() {
       <label class="f" for="s-detail">Complaint type<select id="s-detail">${details.map(d => `<option${d === statDetail ? ' selected' : ''}>${esc(d)}</option>`).join('')}</select></label>
       <div id="s-city"><p class="small muted">Loading NYC Open Data…</p></div>
       <div id="s-near"></div>
-      <p class="tip">Source: NYC Open Data, 311 Service Requests, last 12 months, grouped by NYPD's closing note.</p>
+      <h3 style="margin-top:12px">How fast NYPD closes them</h3>
+      <div id="s-time"><p class="small muted">Loading…</p></div>
+      <div id="s-time-near"></div>
+      <p class="tip">Source: NYC Open Data, 311 Service Requests, last 12 months, grouped by NYPD's closing note. Time to close runs from when 311 logged the complaint to when NYPD entered a result; the city doesn't publish when an officer was assigned.</p>
       <div class="row"><button class="btn small" type="button" id="s-copy">Copy these numbers</button></div>
     </div>
     <div class="card"><h3>Your reports</h3><div class="stat"><div class="tile"><b>${mine.length}</b><span>reports</span></div><div class="tile"><b>${mineSent}</b><span>sent to 311</span></div><div class="tile"><b>${mine.filter(r => /Ticketed|Summons|Upheld|Reward/.test(r.outcome)).length}</b><span>ticketed</span></div></div>
@@ -766,7 +884,16 @@ async function renderStats() {
     summary = `Citywide in the last 12 months, NYC 311 got ${s.total.toLocaleString()} "${statDetail}" complaints. NYPD ticketed ${t.toLocaleString()} (${s.total ? Math.round(100 * t / s.total) : 0}%).`;
     $('#s-city').innerHTML = `<div class="stat"><div class="tile"><b>${s.total.toLocaleString()}</b><span>complaints, citywide</span></div><div class="tile"><b>${s.total ? Math.round(100 * t / s.total) : 0}%</b><span>ticketed</span></div><div class="tile"><b>${s.total ? Math.round(100 * ((s.buckets.find(b => b[0] === 'Gone when police came')?.[1]) || 0) / s.total) : 0}%</b><span>gone when police came</span></div></div>${bars(s.buckets, k => k === 'Ticketed' || k === 'Towed' || k === 'Arrest' ? '' : k === 'Still open' ? 'warn' : 'bad')}`;
   } catch { $('#s-city').innerHTML = '<p class="small">Could not reach NYC Open Data. Check your connection and try again.</p>'; }
+  try {
+    const t = await sodaTiming(statDetail, null, null, 0);
+    summary += ` ${pct(t.f5, t.n)}% were closed in under 5 minutes and ${pct(t.s3, t.n)}% 3+ hours after they were logged.`;
+    $('#s-time').innerHTML = timingHTML(t);
+  } catch { $('#s-time').innerHTML = ''; }
   if (here.lat != null) {
+    try {
+      const t = await sodaTiming(statDetail, here.lat, here.lon, 400);
+      if (t.n) $('#s-time-near').innerHTML = `<h3 style="margin-top:8px">Within about 400 m of you</h3>${timingHTML(t)}`;
+    } catch {}
     try {
       const s = await sodaStats(statDetail, here.lat, here.lon, 400);
       const t = s.buckets.find(b => b[0] === 'Ticketed')?.[1] || 0;
@@ -810,7 +937,7 @@ $('#btn-start').onclick = async () => { startLocation(); await startCamera(); };
 $('#btn-pick').onclick = async () => { const f = await pickMedia('image'); if (f) fromGallery(f, 'picker'); };
 async function takeShared() {
   try {
-    const c = await caches.open('curb-share'); const r = await c.match('shared-media'); if (!r) return;
+    const c = await caches.open('tt-share'); const r = await c.match('shared-media'); if (!r) return;
     await c.delete('shared-media');
     const blob = await r.blob();
     const f = new File([blob], decodeURIComponent(r.headers.get('x-name') || 'shared'), { type: blob.type || r.headers.get('content-type') || '', lastModified: Number(r.headers.get('x-modified')) || Date.now() });

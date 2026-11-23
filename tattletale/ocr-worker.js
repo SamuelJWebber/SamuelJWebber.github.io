@@ -1,4 +1,4 @@
-/* On-device text reader for Curb Report: PP-OCRv4 detection + recognition via onnxruntime-web.
+/* On-device text reader for TattleTale NYC: PP-OCRv4 detection + recognition via onnxruntime-web.
    Runs entirely in the browser. Messages in: {type:'init'} | {type:'read', id, bitmap, mode}
    Messages out: {type:'progress', loaded, total} | {type:'ready'} | {type:'result', id, ...} | {type:'error', id, message} */
 importScripts('vendor/ort.wasm.min.js');
