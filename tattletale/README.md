@@ -11,6 +11,25 @@ Point your phone at a car blocking a bike lane, hydrant or crosswalk, tap what i
 - **Stats.** Live numbers from NYC Open Data on what NYPD did with each complaint type, citywide and near you.
 - **Installable.** Works as a home-screen app and offline after the first visit (the plate reader is a one-time ~27 MB download).
 
+## How the models fit
+
+- **Plate reading, on the phone.** PaddleOCR PP-OCRv4 finds every patch of text and reads it (about 15 MB, ONNX Runtime Web). Rules then pick the plate: a known state format (NY, NJ including its older ABC-12D series, PA, CT, CA, FL, MA) counts only when every character is at least 60% confident; any other 5 to 8 character plate counts only when every character is at least 90% confident. When no state name is readable, the format sets the state (A12-BCD means New Jersey).
+- **Live camera.** A plate has to be read the same way twice, or once very clearly, before one tap sends it.
+- **Second look.** Zoomed-in tiles and rotated re-reads for small or tilted plates, capped at 8 seconds. Plates found only this way are flagged for checking and never sent in one tap.
+- **AI assist (optional).** Jev 1.14, TypeSafe's decision model, through the user's own OpenRouter key: it picks the violation (only when at least 80% sure, otherwise the user picks), draws a box around the plate so the phone's reader can read just that patch, and chooses between the phone's candidate readings when a plate is shaky.
+
+## Plate benchmark
+
+OpenALPR's public US end-to-end set: 222 photos, mostly California plates. Times are from headless Chrome on a 2-core machine.
+
+| Reader | Exactly right | Wrong | Median time |
+| --- | --- | --- | --- |
+| First release rules | 18.9% | 3.6% | 0.8 s |
+| Current rules, first pass | 42.8% | 2.7% | 0.9 s |
+| Current rules plus second look | 53.2% | 9.9% | 5.9 s |
+
+The right plate appears somewhere in the reader's raw output for 64% of photos, so better plate picking has a ceiling; the rest needs a better detector or reader. Forcing reads into state formats by swapping lookalike characters (O/0, I/1, Z/2) was tested and dropped: it pushed wrong reads to 27 to 49%.
+
 ## Deploy
 
 It is a static site. Serve the folder over HTTPS (GitHub Pages, Netlify, any static host). Camera and GPS need HTTPS.

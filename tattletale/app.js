@@ -162,7 +162,11 @@ async function scanLoop() {
       try {
         const bmp = await createImageBitmap(video);
         const r = await ocr.read(bmp, { maxSide: 1280, maxLines: 16, refine: true });
-        if (r.plate && r.score >= 3.4) { cam.live = { plate: r.plate, state: r.state, score: r.score, unsure: !!r.zoomed, ts: Date.now() }; }
+        if (r.plate && r.score >= 3.4) {
+          const now = Date.now(); cam.votes = (cam.votes || []).filter(v => now - v.ts < 4000); cam.votes.push({ plate: r.plate, ts: now });
+          const agree = cam.votes.filter(v => v.plate === r.plate).length;
+          cam.live = { plate: r.plate, state: r.state, score: r.score, agree, unsure: (!!r.zoomed && agree < 2) || (agree < 2 && r.score < 4.8), ts: now };
+        }
         updateChips();
       } catch {}
       await sleep(500);
@@ -246,10 +250,14 @@ async function onViolationTap(vkey) {
 }
 async function readShot(canvasOrBitmap) {
   if (!draft) return;
+  const d0 = draft;
+  const ai = aiEnabled() && d0.fromPhoto && canvasOrBitmap.getContext ? jevLook(canvasOrBitmap).catch(e => ({ error: e.message === 'Failed to fetch' ? "couldn't reach OpenRouter" : e.message })) : null;
+  if (ai) d0._ai = true;
   draft._reading = true; renderResult();
+  let res = null;
   try {
     const bmp = await createImageBitmap(canvasOrBitmap);
-    const res = await ocr.read(bmp, { maxSide: 1600, zoom: true });
+    res = await ocr.read(bmp, { maxSide: 1600, zoom: true });
     if (draft && res.plate && res.score >= 3.4 && !draft.plateTouched) { draft.plate = res.plate; draft.plateUnsure = !!res.zoomed; if (res.state) draft.plateState = res.state; if (lastShot) lastShot.box = res.box; }
     if (draft && !(res.plate && res.score >= 3.4)) draft._noPlate = true;
     if (draft && !draft.street) {
@@ -264,7 +272,9 @@ async function readShot(canvasOrBitmap) {
       }
     }
   } catch { if (draft) draft._noPlate = true; }
-  if (draft) { draft._reading = false; if (!draft.msgTouched) draft.message = smsBody(draft); renderResult(); pickFollowUp(false); }
+  if (draft) { draft._reading = false; if (!draft.msgTouched) draft.message = smsBody(draft); renderResult(); }
+  if (ai && draft === d0) { try { await applyAI(d0, await ai, canvasOrBitmap, res); } catch {} d0._ai = false; if (draft === d0) { if (!d0.msgTouched) d0.message = smsBody(d0); renderResult(); } }
+  if (draft) pickFollowUp(false);
 }
 function showSentBar(r) {
   const bar = document.createElement('div'); bar.className = 'card'; bar.id = 'sent-bar';
@@ -277,8 +287,102 @@ function showSentBar(r) {
   $('#sent-edit').onclick = () => { draft = store.all().find(x => x.id === r.id) || r; bar.remove(); go('result'); };
 }
 
+// ---------- AI assist: Jev (TypeSafe's decision model) on the user's own OpenRouter key ----------
+const JEV_URL = 'https://openrouter.ai/api/alpha/decisions', JEV_MODEL = 'typesafe/jev-1.14';
+const aiEnabled = () => !!(settings.aiOn && settings.aiKey);
+const VIOLATION_CRITERIA = {
+  bike_lane: 'Parked or stopped in a bike lane', double_traffic: 'Double parked beside parked cars, blocking a travel lane', hydrant: 'Parked next to a fire hydrant',
+  crosswalk: 'Parked or stopped in a crosswalk', sidewalk: 'Parked on the sidewalk', bus: 'Stopped in a bus stop or bus lane',
+  double_vehicle: 'Double parked next to a parked car, boxing it in', none: 'Legally parked, or no violation is visible' };
+// Jev takes 280 to 1568 px per side, JPEG or PNG, already rotated
+function jevImage(src) {
+  const w0 = src.width, h0 = src.height; let k = Math.min(1, 1568 / Math.max(w0, h0)); if (Math.min(w0, h0) * k < 280) k = 280 / Math.min(w0, h0);
+  const c = document.createElement('canvas'); c.width = Math.round(w0 * k); c.height = Math.round(h0 * k); c.getContext('2d').drawImage(src, 0, 0, c.width, c.height);
+  return c.toDataURL('image/jpeg', 0.85);
+}
+async function jevCall(state, questions) {
+  const t0 = performance.now();
+  const r = await fetch(JEV_URL, { method: 'POST', headers: { Authorization: 'Bearer ' + settings.aiKey, 'Content-Type': 'application/json' }, body: JSON.stringify({ model: JEV_MODEL, state, questions }) });
+  if (!r.ok) { let m = ''; try { m = (await r.json())?.error?.message || ''; } catch {} throw new Error(r.status === 401 ? 'the key was rejected' : r.status === 402 ? 'the key is out of credit' : `error ${r.status}${m ? ': ' + m : ''}`); }
+  const j = await r.json(); const A = j.answers || j.results || j;
+  return { A, cost: +(j.usage?.cost || 0), ms: Math.round(performance.now() - t0) };
+}
+const SCENE = 'A phone photo taken on a New York City street to report the vehicle in the middle of the photo to 311.';
+async function jevLook(canvas, cands = []) {
+  const qs = { violation: { type: 'choice', instructions: 'What is the main vehicle doing?', criteria: VIOLATION_CRITERIA },
+    plate_visible: { type: 'noul', instructions: "Is the main vehicle's license plate visible and readable?", criteria: { true: 'Its characters can be read', false: 'No plate is visible, or it cannot be read' } },
+    plate_box: { type: 'box', instructions: 'the license plate of the main vehicle' } };
+  const { A, cost, ms } = await jevCall([SCENE, { type: 'image_url', image_url: { url: jevImage(canvas) } }], qs);
+  return { violation: A.violation, plateVisible: A.plate_visible?.noul, box: A.plate_box?.box, cost, ms };
+}
+async function jevPlate(canvas, cands) {
+  const criteria = Object.fromEntries([...cands.map(p => [p, `The plate reads ${p.split('').join(' ')}`]), ['none', 'None of these, or the plate cannot be read']]);
+  const { A, cost } = await jevCall([SCENE, { type: 'image_url', image_url: { url: jevImage(canvas) } }], { plate_text: { type: 'choice', instructions: "Which of these exactly matches the main vehicle's license plate?", criteria } });
+  return { pick: A.plate_text, cost };
+}
+const probOf = q => { const c = q?.choice; return c ? (q.probabilities?.[c] ?? q.confidence ?? 0) : 0; };
+// the box Jev drew around the plate, padded and enlarged for the phone's text reader
+function cropBox(canvas, b) {
+  const W = canvas.width, H = canvas.height; if (!b || !(b.right > b.left) || !(b.bottom > b.top)) return null;
+  const bw = (b.right - b.left) * W, bh = (b.bottom - b.top) * H; if (bw < 8 || bh < 4) return null;
+  const x = Math.max(0, b.left * W - bw * 0.25), y = Math.max(0, b.top * H - bh * 0.4), w = Math.min(W - x, bw * 1.5), h = Math.min(H - y, bh * 1.8);
+  const k = Math.max(1, Math.min(6, 160 / h)), c = document.createElement('canvas'); c.width = Math.round(w * k); c.height = Math.round(h * k);
+  const g = c.getContext('2d'); g.imageSmoothingQuality = 'high'; g.drawImage(canvas, x, y, w, h, 0, 0, c.width, c.height); return c;
+}
+async function applyAI(d, look, canvas, res) {
+  if (!look || look.error) { d.aiNote = look?.error ? `AI assist failed: ${look.error}.` : ''; return; }
+  d.aiCost = (d.aiCost || 0) + look.cost; d.aiMs = look.ms;
+  const top = look.violation?.choice, p = probOf(look.violation);
+  if (top) { d.aiPick = { key: top, p }; if (top !== 'none' && VMAP[top] && p >= 0.8 && !d._pick) d.violation = top; }
+  // the phone couldn't read the plate confidently: read again inside the box Jev found
+  if ((!d.plate || d.plateUnsure) && !d.plateTouched && (look.plateVisible ?? 0) >= 0.5) {
+    const crop = cropBox(canvas, look.box);
+    if (crop) {
+      const r2 = await ocr.read(await createImageBitmap(crop), { maxSide: 960, refine: true, budgetMs: 3000 }).catch(() => null);
+      if (r2?.plate && r2.score >= 3.4 && draft === d) { d.aiCands = [r2.plate]; if (!d.plate) { d.plate = r2.plate; d.plateUnsure = true; if (r2.state) d.plateState = r2.state; } }
+    }
+  }
+  // still unsure: ask which reading the photo actually shows
+  if (d.plate && d.plateUnsure && !d.plateTouched && draft === d) {
+    const cands = [...new Set([d.plate, ...(d.aiCands || []), ...(res?.lines || []).filter(l => l.plate && l.plate.length >= 5 && l.plate.length <= 8 && /\d/.test(l.plate) && l.pconf >= 0.5).map(l => l.plate)])].slice(0, 5);
+    try {
+      const v = await jevPlate(canvas, cands); d.aiCost += v.cost;
+      const ch = v.pick?.choice, pp = probOf(v.pick);
+      if (ch && ch !== 'none' && pp >= 0.85 && draft === d && !d.plateTouched) { d.plate = ch; d.plateUnsure = false; d.plateAI = pp; }
+      else if (ch === 'none') d.aiPlateDoubt = true;
+    } catch (e) { d.aiNote = `AI plate check failed: ${e.message}.`; }
+  }
+}
+function aiLines(r) {
+  const out = [];
+  if (r._ai) out.push(['warn', 'AI assist is looking at the photo…']);
+  if (r.aiNote) out.push(['warn', r.aiNote]);
+  if (r.aiPick) {
+    const pc = Math.round(100 * r.aiPick.p), v = VMAP[r.aiPick.key];
+    out.push(r.aiPick.key === 'none' ? ['warn', `AI sees no violation (${pc}% sure). Pick one if it's wrong.`]
+      : r.aiPick.p >= 0.8 ? ['ok', `AI: ${v.label} (${pc}% sure)`] : ['warn', `AI's best guess is ${v.label.toLowerCase()} (${pc}%), not sure enough to pick it for you.`]);
+  }
+  if (r.aiPlateDoubt) out.push(['warn', "AI couldn't match the plate to any reading. Check it."]);
+  if (r.aiCost) out.push(['ok', `AI cost for this photo: $${r.aiCost.toFixed(5)}`]);
+  return out;
+}
+function bindAI() {
+  const key = $('#ai-key'), on = $('#ai-on'), st = $('#ai-status'); if (!key) return;
+  const show = (m = '') => { st.textContent = m || (settings.aiKey ? `Key saved on this phone (ends in ${settings.aiKey.slice(-4)}).` : 'No key yet.'); on.checked = !!settings.aiOn; };
+  key.onchange = () => { const v = key.value.trim(); if (v) { settings.aiKey = v; settings.aiOn = true; saveSettings(); key.value = ''; show(); } };
+  on.onchange = () => { settings.aiOn = on.checked && !!settings.aiKey; saveSettings(); show(settings.aiKey ? '' : 'Add a key first.'); };
+  $('#ai-forget').onclick = () => { delete settings.aiKey; settings.aiOn = false; saveSettings(); show('Key removed.'); };
+  $('#ai-test').onclick = async () => {
+    if (!settings.aiKey) return show('Add a key first.');
+    show('Testing…');
+    try { const { A, cost, ms } = await jevCall(['A parked car is blocking a fire hydrant.'], { t: { type: 'noul', instructions: 'Is a hydrant mentioned?', criteria: { true: 'Yes', false: 'No' } } }); show(`Works: Jev answered in ${ms} ms (yes = ${Math.round(100 * (A.t?.noul ?? 0))}%), cost $${cost.toFixed(6)}.`); }
+    catch (e) { show(`Didn't work: ${e.message === 'Failed to fetch' ? "the browser couldn't reach OpenRouter" : e.message}.`); }
+  };
+  show();
+}
+
 // ---------- quick pick (photos shared to the app or chosen from the gallery) ----------
-function solidDraft(r) { return !!(r && r.street && r.plate && !r.plateUnsure && r.locSource !== 'signs' && r.timeSource !== 'file' && !r._reading && !r._locating); }
+function solidDraft(r) { return !!(r && r.street && r.plate && !r.plateUnsure && !r._ai && r.locSource !== 'signs' && r.timeSource !== 'file' && !r._reading && !r._locating); }
 function sendDraftNow() {
   const r = draft; if (!r) return;
   if (!r.msgTouched) r.message = smsBody(r);
@@ -294,7 +398,7 @@ function quickPick(vkey) {
   renderResult(); pickFollowUp(true);
 }
 function pickFollowUp(fromTap) {
-  const r = draft; if (!r || !r._pick || r._reading || r._locating) return;
+  const r = draft; if (!r || !r._pick || r._reading || r._locating || r._ai) return;
   // the tap that picked can still open Messages for a few seconds while the photo finishes reading
   if (!fromTap && !settings.review && isPhone() && solidDraft(r) && navigator.userActivation?.isActive) { sendDraftNow(); return; }
   const issue = document.querySelector('#view-result .checks li.bad, #view-result .checks li.warn');
@@ -305,9 +409,10 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-pick
 function pickBlock(r) {
   if (!r.fromPhoto) return '';
   const busy = r._reading || r._locating;
-  const hint = !r._pick ? '' : busy ? 'Reading the photo…' : settings.review ? 'Check the details, then tap Text 311.' : solidDraft(r) ? '' : 'Check the items marked below, then tap Text 311.';
+  const sug = r.aiPick && r.aiPick.key !== 'none' && r.aiPick.p >= 0.8 ? r.aiPick.key : '';
+  const hint = !r._pick ? (sug ? `AI picked ${VMAP[sug].label.toLowerCase()}. Tap it to send, or pick another.` : '') : busy ? 'Reading the photo…' : settings.review ? 'Check the details, then tap Text 311.' : solidDraft(r) ? '' : 'Check the items marked below, then tap Text 311.';
   return `<div class="pick"><div class="pick-h">What is wrong?</div>
-      <div class="vgrid">${VIOLATIONS.slice(0, 7).map(v => `<button class="vbtn${r._pick === v.key ? ' on' : ''}" type="button" data-pick="${v.key}">${esc(v.btn)}</button>`).join('')}</div>
+      <div class="vgrid">${VIOLATIONS.slice(0, 7).map(v => `<button class="vbtn${r._pick === v.key ? ' on' : !r._pick && sug === v.key ? ' suggest' : ''}" type="button" data-pick="${v.key}">${esc(v.btn)}${!r._pick && sug === v.key ? ' ✓' : ''}</button>`).join('')}</div>
       ${hint ? `<p class="small muted" style="margin:6px 0 0">${esc(hint)}</p>` : ''}</div>`;
 }
 
@@ -321,10 +426,11 @@ function fld(key, label, o = {}) {
 }
 function checksFor(r) {
   const out = [];
-  out.push(r.plate && r.plateUnsure ? ['warn', `Plate ${r.plate} (${r.plateState})? It took a closer second look to read, so check every character against the photo.`] : r.plate ? ['ok', `Plate ${r.plate} (${r.plateState}). Check it against the photo.`] : r._reading ? ['warn', 'Reading the plate…'] : ['warn', 'Plate not readable. Type it, or send without it.']);
+  out.push(r.plate && r.plateAI ? ['ok', `Plate ${r.plate} (${r.plateState}), double-checked by AI (${Math.round(100 * r.plateAI)}%).`] : r.plate && r.plateUnsure ? ['warn', `Plate ${r.plate} (${r.plateState})? It took a closer second look to read, so check every character against the photo.`] : r.plate ? ['ok', `Plate ${r.plate} (${r.plateState}). Check it against the photo.`] : r._reading ? ['warn', 'Reading the plate…'] : ['warn', 'Plate not readable. Type it, or send without it.']);
   const locNote = { photo: " (from the photo's GPS)", current: ' (your current location)', signs: r.gpsBlanked ? " (Android removed the photo's GPS, so this was read from the street signs: check it)" : ' (read from the street signs: check it)' }[r.locSource] || '';
   out.push(r.street ? [r.locSource === 'signs' ? 'warn' : 'ok', `Location: ${where(r)}${locNote}`] : r._locating ? ['warn', 'Finding where you are…'] : ['bad', r.gpsBlanked ? 'Android removed this photo\'s location. Pick it with "Choose a photo" (it opens Files, which keeps it), or type the address.' : 'No location in this photo. Type the address.']);
   if (r.timeSource) out.push(r.timeSource === 'photo' ? ['ok', `Taken ${fmtWhen(r.observedAt)} (from the photo)`] : ['warn', `No capture time in this photo; using ${fmtWhen(r.observedAt)}. Fix it below if that's wrong.`]);
+  out.push(...aiLines(r));
   if (r.violation === 'bike_lane' && r.mapChecked) out.push(r.hasBikeLane ? ['ok', `City map shows a ${r.bikeLane} on this block`] : ['warn', 'The city map shows no bike lane on this block.']);
   return out;
 }
@@ -361,7 +467,7 @@ function renderResult() {
 document.addEventListener('input', e => {
   const k = e.target.dataset?.r; if (!k || !draft) return;
   draft[k] = e.target.value;
-  if (k === 'plate') { draft.plate = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, ''); draft.plateTouched = true; draft.plateUnsure = false; }
+  if (k === 'plate') { draft.plate = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, ''); draft.plateTouched = true; draft.plateUnsure = false; draft.plateAI = 0; }
   if (k === 'message') draft.msgTouched = true; else if (!draft.msgTouched) { draft.message = smsBody(draft); const ta = $('#r-message'); if (ta) ta.value = draft.message; }
   const a = $('#sms-link'); if (a) a.href = smsHref(draft.message);
 });
@@ -383,7 +489,7 @@ document.addEventListener('click', async e => {
   }
   if (act === 'save') { draft.status = 'logged'; store.save(clean(draft)); draft = null; toast('Saved to My reports'); go('log'); }
 });
-function clean(r) { const { _reading, _noPlate, _locating, _pick, plateTouched, plateUnsure, fromPhoto, ...rest } = r; return rest; }
+function clean(r) { const { _reading, _noPlate, _locating, _pick, _ai, plateTouched, plateUnsure, fromPhoto, aiCands, aiNote, ...rest } = r; return rest; }
 function showWebSteps(r) {
   const v = VMAP[r.violation];
   $('#modal-root').innerHTML = `<div class="modal" role="dialog" aria-modal="true" aria-label="311 website steps"><div class="card">
@@ -947,6 +1053,7 @@ async function takeShared() {
 }
 if (location.hash === '#shared') { history.replaceState(null, '', '#report'); takeShared(); }
 $('#set-review').checked = !!settings.review;
+bindAI();
 $('#set-review').onchange = e => { settings.review = e.target.checked; saveSettings(); };
 if (settings.camOK) startLocation();
 if (navigator.permissions?.query) navigator.permissions.query({ name: 'geolocation' }).then(p => { if (p.state === 'granted') startLocation(); }).catch(() => {});

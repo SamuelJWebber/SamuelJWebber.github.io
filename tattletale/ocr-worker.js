@@ -102,9 +102,21 @@ async function recognize(bitmap, b) {
   return { text, conf, plate, pconf, pmin, alts, box: b, w: sw, h: sh };
 }
 
-const PATTERNS = [[/^[A-Z]{3}\d{4}$/, 3], [/^\d{5}[A-Z]{2}$/, 2.6], [/^T\d{6}C$/, 3], [/^[A-Z]\d{2}[A-Z]{3}$/, 2.5], [/^[A-Z]{2}\d{5}$/, 2], [/^\d[A-Z]{2}\d{3,4}$/, 2], [/^[A-Z]{3}\d{3}$/, 1.1], [/^\d{3}[A-Z]{3}$/, 1.1], [/^[A-Z]{2}\d{4}[A-Z]?$/, 1.0]];
+const PATTERNS = [
+  [/^[A-Z]{3}\d{4}$/, 3],          // NY, PA, TX, OH, MI, GA, NC, VA passenger
+  [/^\d{5}[A-Z]{2}$/, 2.6],        // NY commercial
+  [/^T\d{6}C$/, 3],                // NY taxi
+  [/^[A-Z]\d{2}[A-Z]{3}$/, 2.6],    // NJ since 1999 (A12-BCD)
+  [/^[A-Z]{3}\d{2}[A-Z]$/, 2.3],    // NJ before that (ABC-12D), still on the road
+  [/^\d[A-Z]{3}\d{3}$/, 2.2],       // CA
+  [/^[A-Z]{2}\d{5}$/, 2],          // CT, IL
+  [/^\d[A-Z]{2}\d{3,4}$/, 2],
+  [/^[A-Z]{4}\d{2}$/, 1.5],         // FL
+  [/^\d[A-Z]{3}\d{2}$/, 1.5],       // MA
+  [/^[A-Z]{3}\d{3}$/, 1.1], [/^\d{3}[A-Z]{3}$/, 1.1], [/^[A-Z]{2}\d{4}[A-Z]?$/, 1.0]];
 const STATES = [['NEWYORK', 'NY'], ['EMPIRE', 'NY'], ['EXCELSIOR', 'NY'], ['NEWJERSEY', 'NJ'], ['GARDEN', 'NJ'], ['PENNSYLVANIA', 'PA'], ['VISITPA', 'PA'], ['CONNECTICUT', 'CT'], ['CONSTITUTION', 'CT'], ['FLORIDA', 'FL'], ['SUNSHINE', 'FL'], ['MASSACHUSETTS', 'MA'], ['VIRGINIA', 'VA'], ['MARYLAND', 'MD'], ['DELAWARE', 'DE'], ['VERMONT', 'VT'], ['MAINE', 'ME'], ['TEXAS', 'TX'], ['CALIFORNIA', 'CA'], ['OHIO', 'OH'], ['NORTHCAROLINA', 'NC'], ['GEORGIA', 'GA'], ['ILLINOIS', 'IL'], ['MICHIGAN', 'MI'], ['RHODEISLAND', 'RI'], ['NEWHAMPSHIRE', 'NH'], ['LIVEFREE', 'NH'], ['QUEBEC', 'QC'], ['ONTARIO', 'ON']];
 
+const FORMAT_STATE = [[/^[A-Z]\d{2}[A-Z]{3}$/, 'NJ'], [/^[A-Z]{3}\d{2}[A-Z]$/, 'NJ'], [/^\d[A-Z]{3}\d{3}$/, 'CA'], [/^[A-Z]{4}\d{2}$/, 'FL'], [/^\d[A-Z]{3}\d{2}$/, 'MA']];
 const GENERIC = 1.3, SIGNLIKE = /\d(AM|PM)|\d(ST|ND|RD|TH|AV|AVE)$|^(ST|AVE?)\d/;
 function pickPlate(lines) {
   let best = null;
@@ -112,7 +124,8 @@ function pickPlate(lines) {
     const s = L.plate;
     if (s.length < 4 || s.length > 8 || !/\d/.test(s)) continue;
     let score = L.pconf * 2, w = 0;
-    for (const [re, wgt] of PATTERNS) if (re.test(s)) { w = wgt; break; }
+    // a format match only counts when no character is a coin flip (benchmark: wrong reads 6.3% -> 2.7%)
+    if ((L.pmin ?? 1) >= 0.6) for (const [re, wgt] of PATTERNS) if (re.test(s)) { w = wgt; break; }
     // any other US format: 5-8 letters and digits, every character read confidently, and not sign text (2AM, 4TH, 103RD)
     if (!w && /[A-Z]/.test(s) && s.length >= 5 && (L.pmin ?? 0) >= 0.9 && !SIGNLIKE.test(s)) w = GENERIC;
     score += w || (/[A-Z]/.test(s) ? 0.8 : 0);
@@ -122,6 +135,8 @@ function pickPlate(lines) {
   const joined = lines.map(L => L.text.toUpperCase().replace(/[^A-Z]/g, '')).join(' ');
   let state = '';
   for (const [k, st] of STATES) if (joined.includes(k)) { state = st; break; }
+  // no state name readable: some formats only exist in one state
+  if (!state && best) state = (FORMAT_STATE.find(([re]) => re.test(best.L.plate)) || [])[1] || '';
   return best ? { plate: best.L.plate, pconf: best.L.pconf, pmin: best.L.pmin, score: best.score, w: best.w, box: best.L.box, state } : { plate: '', pconf: 0, score: 0, box: null, state };
 }
 
