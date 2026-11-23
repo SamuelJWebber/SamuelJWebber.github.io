@@ -191,10 +191,19 @@ label.cb input { margin-top: 4px; width: 18px; height: 18px; flex: none; }
     </div>
     <div class="card" id="ai-card">
       <h2>AI assist (optional)</h2>
-      <p class="small">Uses Jev, TypeSafe's decision model, on photos you choose or share: it picks what the car is doing (and only when it's at least 80% sure), finds the plate when the phone can't, and double-checks shaky plate readings. Those photos go to TypeSafe through OpenRouter. It runs on your own OpenRouter key, costs a fraction of a cent per photo, and the key stays on this phone. Set a spending limit on the key.</p>
+      <p class="small">On photos you choose or share, a model picks what the car is doing (only when it's at least 80% sure), helps find and check the plate, and every answer is saved next to what you sent, so My reports doubles as a test set. Photos go to the model you pick. OpenRouter models run on your own key, cost a fraction of a cent per photo, and the key stays on this phone; set a spending limit on it.</p>
+      <label class="f" for="ai-model">Model<select id="ai-model">
+        <option value="jev">Jev 1.14, TypeSafe (closed, via OpenRouter)</option>
+        <option value="qwen">Qwen3.5-9B (open weights, via OpenRouter)</option>
+        <option value="local">Your computer (Jev-compatible server, e.g. JPT-4B)</option></select></label>
       <label class="f" for="ai-key">OpenRouter API key<input id="ai-key" type="password" autocomplete="off" placeholder="Paste a key to save it"></label>
+      <div id="ai-local" hidden>
+        <label class="f" for="ai-local-url">Server address (https)<input id="ai-local-url" type="url" autocomplete="off" placeholder="https://your-tunnel.trycloudflare.com"></label>
+        <label class="f" for="ai-local-token">Server token<input id="ai-local-token" type="password" autocomplete="off" placeholder="Paste the token the relay printed"></label>
+      </div>
       <label class="cb small" for="ai-on"><input type="checkbox" id="ai-on"><span>Use AI assist on photos</span></label>
-      <div class="row"><button class="btn small" id="ai-test" type="button">Test the key</button><button class="btn small" id="ai-forget" type="button">Remove key</button></div>
+      <label class="cb small" for="ai-compare"><input type="checkbox" id="ai-compare"><span>Also ask a second model and save both answers (for comparing)</span></label>
+      <div class="row"><button class="btn small" id="ai-test" type="button">Test</button><button class="btn small" id="ai-forget" type="button">Remove key and token</button><a class="btn small" href="lab.html">Model lab</a></div>
       <p class="small" id="ai-status"></p>
     </div>
     <div class="card">
@@ -212,6 +221,7 @@ label.cb input { margin-top: 4px; width: 18px; height: 18px; flex: none; }
 <script src="lib/exifr.lite.umd.js"></script>
 <script src="lib/geocode.js"></script>
 <script src="lib/mp4meta.js"></script>
+<script src="lib/ai.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

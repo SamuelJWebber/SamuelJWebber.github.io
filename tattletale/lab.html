@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TattleTale NYC · Model lab</title>
+<style>
+  :root { --ink: #121212; --muted: #5f6368; --line: #dcdcd4; --card: #fff; --bg: #f4f5f1; --sign: #0c6b3e; --bad: #b42318; --ok: #0c6b3e; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  header { background: var(--sign); color: #fff; padding: 14px 16px; }
+  header h1 { margin: 0; font-size: 1.15rem; letter-spacing: .02em; }
+  header a { color: #fff; }
+  main { max-width: 860px; margin: 0 auto; padding: 12px; display: grid; gap: 12px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px; }
+  h2 { margin: 0 0 8px; font-size: 1.05rem; }
+  .small { font-size: .88rem; } .muted { color: var(--muted); }
+  label { display: flex; gap: 8px; align-items: center; margin: 4px 0; }
+  input[type=number] { width: 80px; padding: 6px; border: 1px solid var(--line); border-radius: 8px; font: inherit; }
+  button { font: inherit; padding: 8px 14px; border-radius: 10px; border: 1px solid var(--sign); background: var(--sign); color: #fff; cursor: pointer; }
+  button.ghost { background: #fff; color: var(--sign); }
+  button:disabled { opacity: .5; cursor: default; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+  th, td { text-align: left; padding: 6px 4px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .ok { color: var(--ok); } .bad { color: var(--bad); }
+  .mono { font-family: ui-monospace, Menlo, monospace; }
+  .scroll { overflow-x: auto; }
+  progress { width: 100%; }
+</style>
+</head>
+<body>
+<header><h1>TattleTale NYC · Model lab</h1><div class="small"><a href="./#about">Back to the app</a></div></header>
+<main>
+  <div class="card">
+    <h2>Plate bake-off</h2>
+    <p class="small">Runs the phone's plate reader and the AI models on public US plate photos (OpenALPR's end-to-end benchmark, loaded from GitHub; mostly California plates) and scores each against the true plate. The AI models use the key or server saved in the app's About page. A run of 50 photos costs a few cents.</p>
+    <label class="small"><input type="number" id="n" value="50" min="5" max="222" step="5"> photos (of 222)</label>
+    <label class="small"><input type="checkbox" id="m-jev" checked> Jev 1.14: finds the plate when the phone can't, and picks the right reading among the phone's candidates</label>
+    <label class="small"><input type="checkbox" id="m-qwen" checked> Qwen3.5-9B (open weights): reads the plate itself</label>
+    <label class="small"><input type="checkbox" id="m-local"> Your computer (Jev-compatible server, e.g. JPT-4B): picks among the phone's candidates</label>
+    <div class="row"><button id="go">Run</button><button class="ghost" id="csv" disabled>Download results (CSV)</button></div>
+    <p class="small muted" id="status">Loading the plate reader…</p>
+    <progress id="prog" value="0" max="1" hidden></progress>
+  </div>
+  <div class="card" id="summary-card" hidden>
+    <h2>Results</h2>
+    <div class="scroll"><table id="summary"></table></div>
+    <p class="small muted">Right and wrong count only answers each method was willing to give. "Phone + Jev" keeps the phone's plate only when Jev agrees; "Phone + Qwen agree" keeps it only when both read the same plate.</p>
+  </div>
+  <div class="card" id="rows-card" hidden>
+    <h2>Each photo</h2>
+    <div class="scroll"><table id="rows"></table></div>
+  </div>
+</main>
+<script src="lib/ai.js"></script>
+<script src="lab.js"></script>
+</body>
+</html>

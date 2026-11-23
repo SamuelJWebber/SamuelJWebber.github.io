@@ -16,7 +16,12 @@ Point your phone at a car blocking a bike lane, hydrant or crosswalk, tap what i
 - **Plate reading, on the phone.** PaddleOCR PP-OCRv4 finds every patch of text and reads it (about 15 MB, ONNX Runtime Web). Rules then pick the plate: a known state format (NY, NJ including its older ABC-12D series, PA, CT, CA, FL, MA) counts only when every character is at least 60% confident; any other 5 to 8 character plate counts only when every character is at least 90% confident. When no state name is readable, the format sets the state (A12-BCD means New Jersey).
 - **Live camera.** A plate has to be read the same way twice, or once very clearly, before one tap sends it.
 - **Second look.** Zoomed-in tiles and rotated re-reads for small or tilted plates, capped at 8 seconds. Plates found only this way are flagged for checking and never sent in one tap.
-- **AI assist (optional).** Jev 1.14, TypeSafe's decision model, through the user's own OpenRouter key: it picks the violation (only when at least 80% sure, otherwise the user picks), draws a box around the plate so the phone's reader can read just that patch, and chooses between the phone's candidate readings when a plate is shaky.
+- **AI assist (optional), three places to run it** (`lib/ai.js`):
+  - *Jev 1.14* (TypeSafe, closed) through OpenRouter on the user's own key: picks the violation with calibrated probabilities (used only at 80% or more), draws a box around the plate so the phone's reader can read just that patch, and chooses between the phone's candidate readings.
+  - *Qwen3.5-9B* (open weights) through OpenRouter: reads the plate text itself and picks the violation; its confidence is its own estimate, not calibrated.
+  - *Your own computer*: any Jev-compatible server, such as `llm2jev` serving the open JPT-4B (non-commercial license), reached through `tools/tattletale_relay.py` and a free Cloudflare tunnel. The relay adds the browser headers and checks a token.
+  - "Also ask a second model" saves both models' answers with each report, next to what was actually sent, so the My reports CSV becomes a test set built from real NYC photos.
+- **Model lab** (`lab.html`): scores the phone's reader, Jev, Qwen and your computer on OpenALPR's public US plate photos (loaded from GitHub at run time), with a CSV of every answer.
 
 ## Plate benchmark
 
