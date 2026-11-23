@@ -162,7 +162,7 @@ async function scanLoop() {
       try {
         const bmp = await createImageBitmap(video);
         const r = await ocr.read(bmp, { maxSide: 1280, maxLines: 16, refine: true });
-        if (r.plate && r.score >= 3.4) { cam.live = { plate: r.plate, state: r.state, score: r.score, ts: Date.now() }; }
+        if (r.plate && r.score >= 3.4) { cam.live = { plate: r.plate, state: r.state, score: r.score, unsure: !!r.zoomed, ts: Date.now() }; }
         updateChips();
       } catch {}
       await sleep(500);
@@ -233,7 +233,8 @@ async function onViolationTap(vkey) {
   lastShot = { canvas: c, box: null };
   const lp = livePlate();
   const r = newReport(vkey, { place: here.place, lat: here.lat, lon: here.lon, plate: lp?.plate, state: lp?.state || 'NY', thumb });
-  const ready = r.street && r.plate && isPhone() && !settings.review;
+  r.plateUnsure = !!lp?.unsure;
+  const ready = r.street && r.plate && !r.plateUnsure && isPhone() && !settings.review;
   if (ready) {
     r.message = smsBody(r); r.status = 'texted'; r.sentAt = new Date().toISOString(); store.save(r); pendingSent = r.id;
     openSms(r.message);
@@ -249,7 +250,7 @@ async function readShot(canvasOrBitmap) {
   try {
     const bmp = await createImageBitmap(canvasOrBitmap);
     const res = await ocr.read(bmp, { maxSide: 1600, zoom: true });
-    if (draft && res.plate && res.score >= 3.4 && !draft.plateTouched) { draft.plate = res.plate; if (res.state) draft.plateState = res.state; if (lastShot) lastShot.box = res.box; }
+    if (draft && res.plate && res.score >= 3.4 && !draft.plateTouched) { draft.plate = res.plate; draft.plateUnsure = !!res.zoomed; if (res.state) draft.plateState = res.state; if (lastShot) lastShot.box = res.box; }
     if (draft && !(res.plate && res.score >= 3.4)) draft._noPlate = true;
     if (draft && !draft.street) {
       const texts = [...(res.rows || []).map(r => r.text), ...(res.lines || []).map(l => l.text)];
@@ -277,7 +278,7 @@ function showSentBar(r) {
 }
 
 // ---------- quick pick (photos shared to the app or chosen from the gallery) ----------
-function solidDraft(r) { return !!(r && r.street && r.plate && r.locSource !== 'signs' && r.timeSource !== 'file' && !r._reading && !r._locating); }
+function solidDraft(r) { return !!(r && r.street && r.plate && !r.plateUnsure && r.locSource !== 'signs' && r.timeSource !== 'file' && !r._reading && !r._locating); }
 function sendDraftNow() {
   const r = draft; if (!r) return;
   if (!r.msgTouched) r.message = smsBody(r);
@@ -320,7 +321,7 @@ function fld(key, label, o = {}) {
 }
 function checksFor(r) {
   const out = [];
-  out.push(r.plate ? ['ok', `Plate ${r.plate} (${r.plateState}). Check it against the photo.`] : r._reading ? ['warn', 'Reading the plate…'] : ['warn', 'Plate not readable. Type it, or send without it.']);
+  out.push(r.plate && r.plateUnsure ? ['warn', `Plate ${r.plate} (${r.plateState})? It took a closer second look to read, so check every character against the photo.`] : r.plate ? ['ok', `Plate ${r.plate} (${r.plateState}). Check it against the photo.`] : r._reading ? ['warn', 'Reading the plate…'] : ['warn', 'Plate not readable. Type it, or send without it.']);
   const locNote = { photo: " (from the photo's GPS)", current: ' (your current location)', signs: r.gpsBlanked ? " (Android removed the photo's GPS, so this was read from the street signs: check it)" : ' (read from the street signs: check it)' }[r.locSource] || '';
   out.push(r.street ? [r.locSource === 'signs' ? 'warn' : 'ok', `Location: ${where(r)}${locNote}`] : r._locating ? ['warn', 'Finding where you are…'] : ['bad', r.gpsBlanked ? 'Android removed this photo\'s location. Pick it with "Choose a photo" (it opens Files, which keeps it), or type the address.' : 'No location in this photo. Type the address.']);
   if (r.timeSource) out.push(r.timeSource === 'photo' ? ['ok', `Taken ${fmtWhen(r.observedAt)} (from the photo)`] : ['warn', `No capture time in this photo; using ${fmtWhen(r.observedAt)}. Fix it below if that's wrong.`]);
@@ -360,7 +361,7 @@ function renderResult() {
 document.addEventListener('input', e => {
   const k = e.target.dataset?.r; if (!k || !draft) return;
   draft[k] = e.target.value;
-  if (k === 'plate') { draft.plate = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, ''); draft.plateTouched = true; }
+  if (k === 'plate') { draft.plate = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, ''); draft.plateTouched = true; draft.plateUnsure = false; }
   if (k === 'message') draft.msgTouched = true; else if (!draft.msgTouched) { draft.message = smsBody(draft); const ta = $('#r-message'); if (ta) ta.value = draft.message; }
   const a = $('#sms-link'); if (a) a.href = smsHref(draft.message);
 });
@@ -382,7 +383,7 @@ document.addEventListener('click', async e => {
   }
   if (act === 'save') { draft.status = 'logged'; store.save(clean(draft)); draft = null; toast('Saved to My reports'); go('log'); }
 });
-function clean(r) { const { _reading, _noPlate, _locating, _pick, plateTouched, fromPhoto, ...rest } = r; return rest; }
+function clean(r) { const { _reading, _noPlate, _locating, _pick, plateTouched, plateUnsure, fromPhoto, ...rest } = r; return rest; }
 function showWebSteps(r) {
   const v = VMAP[r.violation];
   $('#modal-root').innerHTML = `<div class="modal" role="dialog" aria-modal="true" aria-label="311 website steps"><div class="card">

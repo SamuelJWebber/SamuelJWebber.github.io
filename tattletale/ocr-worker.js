@@ -86,24 +86,26 @@ async function recognize(bitmap, b) {
   }
   const out = await rec.run({ x: new ort.Tensor('float32', data, [1, 3, 48, tw]) });
   const t = out[Object.keys(out)[0]], [, T, C] = t.dims, p = t.data;
+  // greedy CTC decode; also keeps the weakest character's probability and the runner-up for each character
   const decode = cols => {
-    let txt = '', confs = 0, n = 0, prev = -1;
+    let txt = '', confs = 0, n = 0, prev = -1, min = 1; const alts = [];
     for (let s = 0; s < T; s++) {
-      let bi = 0, bv = -1; const base = s * C;
-      if (cols) { for (const c of cols) { const v = p[base + c]; if (v > bv) { bv = v; bi = c; } } }
-      else { for (let c = 0; c < C; c++) { const v = p[base + c]; if (v > bv) { bv = v; bi = c; } } }
-      if (bi !== 0 && bi !== prev) { txt += CHARS[bi]; confs += bv; n++; }
+      let bi = 0, bv = -1, si = 0, sv = -1; const base = s * C;
+      const scan = c => { const v = p[base + c]; if (v > bv) { si = bi; sv = bv; bv = v; bi = c; } else if (v > sv) { sv = v; si = c; } };
+      if (cols) { for (const c of cols) scan(c); } else { for (let c = 0; c < C; c++) scan(c); }
+      if (bi !== 0 && bi !== prev) { txt += CHARS[bi]; confs += bv; n++; if (bv < min) min = bv; if (si !== 0 && sv > 0.05) alts.push([txt.length - 1, CHARS[si], +sv.toFixed(3)]); }
       prev = bi;
     }
-    return [txt, n ? confs / n : 0];
+    return [txt, n ? confs / n : 0, n ? min : 0, alts];
   };
-  const [text, conf] = decode(null), [plate, pconf] = decode(ALLOWED);
-  return { text, conf, plate, pconf, box: b, w: sw, h: sh };
+  const [text, conf] = decode(null), [plate, pconf, pmin, alts] = decode(ALLOWED);
+  return { text, conf, plate, pconf, pmin, alts, box: b, w: sw, h: sh };
 }
 
 const PATTERNS = [[/^[A-Z]{3}\d{4}$/, 3], [/^\d{5}[A-Z]{2}$/, 2.6], [/^T\d{6}C$/, 3], [/^[A-Z]\d{2}[A-Z]{3}$/, 2.5], [/^[A-Z]{2}\d{5}$/, 2], [/^\d[A-Z]{2}\d{3,4}$/, 2], [/^[A-Z]{3}\d{3}$/, 1.1], [/^\d{3}[A-Z]{3}$/, 1.1], [/^[A-Z]{2}\d{4}[A-Z]?$/, 1.0]];
 const STATES = [['NEWYORK', 'NY'], ['EMPIRE', 'NY'], ['EXCELSIOR', 'NY'], ['NEWJERSEY', 'NJ'], ['GARDEN', 'NJ'], ['PENNSYLVANIA', 'PA'], ['VISITPA', 'PA'], ['CONNECTICUT', 'CT'], ['CONSTITUTION', 'CT'], ['FLORIDA', 'FL'], ['SUNSHINE', 'FL'], ['MASSACHUSETTS', 'MA'], ['VIRGINIA', 'VA'], ['MARYLAND', 'MD'], ['DELAWARE', 'DE'], ['VERMONT', 'VT'], ['MAINE', 'ME'], ['TEXAS', 'TX'], ['CALIFORNIA', 'CA'], ['OHIO', 'OH'], ['NORTHCAROLINA', 'NC'], ['GEORGIA', 'GA'], ['ILLINOIS', 'IL'], ['MICHIGAN', 'MI'], ['RHODEISLAND', 'RI'], ['NEWHAMPSHIRE', 'NH'], ['LIVEFREE', 'NH'], ['QUEBEC', 'QC'], ['ONTARIO', 'ON']];
 
+const GENERIC = 1.3, SIGNLIKE = /\d(AM|PM)|\d(ST|ND|RD|TH|AV|AVE)$|^(ST|AVE?)\d/;
 function pickPlate(lines) {
   let best = null;
   for (const L of lines) {
@@ -111,6 +113,8 @@ function pickPlate(lines) {
     if (s.length < 4 || s.length > 8 || !/\d/.test(s)) continue;
     let score = L.pconf * 2, w = 0;
     for (const [re, wgt] of PATTERNS) if (re.test(s)) { w = wgt; break; }
+    // any other US format: 5-8 letters and digits, every character read confidently, and not sign text (2AM, 4TH, 103RD)
+    if (!w && /[A-Z]/.test(s) && s.length >= 5 && (L.pmin ?? 0) >= 0.9 && !SIGNLIKE.test(s)) w = GENERIC;
     score += w || (/[A-Z]/.test(s) ? 0.8 : 0);
     const ar = L.w / Math.max(1, L.h); if (ar >= 1.8 && ar <= 9) score += 0.5;
     if (!best || score > best.score) best = { score, w, L };
@@ -118,11 +122,11 @@ function pickPlate(lines) {
   const joined = lines.map(L => L.text.toUpperCase().replace(/[^A-Z]/g, '')).join(' ');
   let state = '';
   for (const [k, st] of STATES) if (joined.includes(k)) { state = st; break; }
-  return best ? { plate: best.L.plate, pconf: best.L.pconf, score: best.score, w: best.w, box: best.L.box, state } : { plate: '', pconf: 0, score: 0, box: null, state };
+  return best ? { plate: best.L.plate, pconf: best.L.pconf, pmin: best.L.pmin, score: best.score, w: best.w, box: best.L.box, state } : { plate: '', pconf: 0, score: 0, box: null, state };
 }
 
 // a read good enough to stop looking: a clear read of a standard plate format
-const enough = p => p.score >= 4.6 || (p.w >= 2 && p.pconf >= 0.9);
+const enough = p => p.score >= 4.6 || (p.w >= 2 && p.pconf >= 0.9) || (p.w === GENERIC && (p.pmin ?? 0) >= 0.95);
 // partial plate reads: digits present but not a full plate pattern
 function partials(lines) {
   return lines.filter(l => l.plate.length >= 3 && (l.plate.match(/\d/g) || []).length >= 2 && !PATTERNS.some(([re]) => re.test(l.plate)))
@@ -135,11 +139,12 @@ function overlap(a, b) {
   return dp[b.length];
 }
 // re-read a partial: widen the box, enlarge it, and try a few rotations (tilted plates)
-async function refine(bitmap, b, partial, trace) {
+async function refine(bitmap, b, partial, trace, deadline = Infinity) {
   const cx = (b.x1 + b.x2) / 2, cy = (b.y1 + b.y2) / 2, w = b.x2 - b.x1, h = b.y2 - b.y1;
   const need = Math.min(3, (partial || '').length);
   let best = null;
   for (const ex of [1.4, 1.8, 2.3]) for (const ang of [0, 8, -8, 14, -14, 20, -20]) {
+    if (performance.now() > deadline) return best;
     const rw = w * ex + 12, rh = h * ex * 0.75 + 12, S = Math.max(2, Math.min(6, 200 / rh));
     const c = new OffscreenCanvas(Math.round(rw * S), Math.round(rh * S)), g = c.getContext('2d');
     g.fillStyle = '#000'; g.fillRect(0, 0, c.width, c.height); g.imageSmoothingQuality = 'high';
@@ -165,10 +170,11 @@ async function readLines(bitmap, maxSide, maxLines) {
   return lines;
 }
 // second pass for small or far plates: 3x3 overlapping tiles, each enlarged 2x
-async function zoomPass(bitmap, trace) {
+async function zoomPass(bitmap, trace, deadline = Infinity) {
   const W = bitmap.width, H = bitmap.height, n = 3, tw = Math.round(W / n * 1.35), th = Math.round(H / n * 1.35);
   let best = null;
   for (let j = n - 1; j >= 0; j--) for (let i = 0; i < n; i++) {
+    if (performance.now() > deadline) return best;
     const x0 = Math.max(0, Math.min(W - tw, Math.round(i * W / n - (tw - W / n) / 2)));
     const y0 = Math.max(0, Math.min(H - th, Math.round(j * H / n - (th - H / n) / 2)));
     const c = new OffscreenCanvas(tw * 2, th * 2), g = c.getContext('2d'); g.imageSmoothingQuality = 'high';
@@ -181,7 +187,7 @@ async function zoomPass(bitmap, trace) {
     if (trace && p.plate) trace.push(['tile', i, j, p.plate, +p.score.toFixed(2)]);
     if (p.plate && p.score >= 3.4 && (!best || p.score > best.score)) best = { ...p, box: toOrig(p.box) };
     for (const l of partials(lines)) {
-      const r = await refine(bitmap, toOrig(l.box), l.plate, trace);
+      const r = await refine(bitmap, toOrig(l.box), l.plate, trace, deadline);
       if (r && (!best || r.score > best.score)) best = r;
     }
     if (best && enough(best)) return best;
@@ -198,9 +204,10 @@ onmessage = async e => {
       const t0 = performance.now();
       const lines = await readLines(m.bitmap, m.maxSide || 1280, m.maxLines || 24);
       let plate = pickPlate(lines); const trace = m.debug ? [['base', plate.plate, +plate.score.toFixed(2)]] : null;
+      const deadline = t0 + (m.budgetMs ?? (m.zoom ? 8000 : 1500));
       if ((m.zoom || m.refine) && !enough(plate)) {
-        for (const l of partials(lines)) { const r = await refine(m.bitmap, l.box, l.plate, trace); if (r && r.score > plate.score) plate = { ...r, state: r.state || plate.state, zoomed: true }; if (enough(plate)) break; }
-        if (m.zoom && !enough(plate)) { const z = await zoomPass(m.bitmap, trace); if (z && z.score > plate.score) plate = { ...z, state: z.state || plate.state, zoomed: true }; }
+        for (const l of partials(lines)) { if (performance.now() > deadline) break; const r = await refine(m.bitmap, l.box, l.plate, trace, deadline); if (r && r.score > plate.score) plate = { ...r, state: r.state || plate.state, zoomed: true }; if (enough(plate)) break; }
+        if (m.zoom && !enough(plate)) { const z = await zoomPass(m.bitmap, trace, deadline); if (z && z.score > plate.score) plate = { ...z, state: z.state || plate.state, zoomed: true }; }
       }
       // merge words that sit on the same row into one line (company names, street signs)
       const rows = [];
@@ -220,7 +227,7 @@ onmessage = async e => {
         cur && merged.push(cur);
       }
       m.bitmap.close && m.bitmap.close();
-      postMessage({ type: 'result', id: m.id, ...plate, lines: lines.map(l => ({ text: l.text, conf: l.conf, plate: l.plate, pconf: l.pconf, h: l.h, w: l.w, box: l.box })), rows: merged, trace, ms: Math.round(performance.now() - t0) });
+      postMessage({ type: 'result', id: m.id, ...plate, lines: lines.map(l => ({ text: l.text, conf: l.conf, plate: l.plate, pconf: l.pconf, pmin: l.pmin, alts: l.alts, h: l.h, w: l.w, box: l.box })), rows: merged, trace, ms: Math.round(performance.now() - t0) });
     } catch (err) { postMessage({ type: 'error', id: m.id, message: String(err && err.message || err) }); }
   }
 };
