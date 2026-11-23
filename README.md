@@ -44,3 +44,10 @@ inside the private repository and does **not** publish here, so run that script 
 - Pages paths are relative, so each dashboard works under its subfolder.
 - These dashboards moved here on 2026-11-10 from ChatGPT Sites (`*.smartgoldfish.chatgpt.site`), which only the
   owner's ChatGPT account could redeploy. Those older copies may be out of date.
+
+## Portfolio freshness check
+
+- `data/portfolio_status.json` records verified public snapshot dates, commit dates, update cadences, and upcoming release deadlines across the portfolio.
+- `python tools/check_freshness.py --format markdown` prints the **Portfolio Drift & Upcoming Deadlines** digest (and exits non-zero if any scheduled dashboard is overdue).
+- `python tools/check_freshness.py --update-index` refreshes the `Freshness & cadence` table in `index.html` from the manifest.
+- `python -m unittest discover -s tests -v` runs the offline freshness and zero-leak checks.
