@@ -1,6 +1,6 @@
 /* TattleTale NYC service worker: works offline after the first visit. */
-const VERSION = 'tt-v3';
-const SHELL = ['./', 'index.html', 'app.js', 'ocr-worker.js', 'lib/exifr.lite.umd.js', 'lib/geocode.js', 'lib/mp4meta.js', 'lib/ai.js', 'manifest.webmanifest', 'geo/intersections.json', 'icons/icon-192.png', 'icons/icon-512.png', 'geo/index.json'];
+const VERSION = 'tt-v4';
+const SHELL = ['./', 'index.html', 'app.js', 'ocr-worker.js', 'lib/exifr.lite.umd.js', 'lib/geocode.js', 'lib/mp4meta.js', 'lib/ai.js', 'config.js', 'manifest.webmanifest', 'geo/intersections.json', 'icons/icon-192.png', 'icons/icon-512.png', 'geo/index.json'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => /^(tt|curb)-/.test(k) && k !== VERSION && k !== 'tt-share').map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener('fetch', e => {

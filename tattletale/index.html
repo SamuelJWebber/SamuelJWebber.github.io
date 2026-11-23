@@ -191,24 +191,25 @@ label.cb input { margin-top: 4px; width: 18px; height: 18px; flex: none; }
     </div>
     <div class="card" id="ai-card">
       <h2>AI assist (optional)</h2>
-      <p class="small">On photos you choose or share, a model picks what the car is doing (only when it's at least 80% sure), helps find and check the plate, and every answer is saved next to what you sent, so My reports doubles as a test set. Photos go to the model you pick. OpenRouter models run on your own key, cost a fraction of a cent per photo, and the key stays on this phone; set a spending limit on it.</p>
+      <p class="small">On photos you choose or share, a model picks what the car is doing (only when it's at least 80% sure), helps find and check the plate, and every answer is saved next to what you sent, so My reports doubles as a test set. Photos go to the model you pick. OpenRouter models run on your own key, cost a fraction of a cent per photo, and the key stays on this phone; set a spending limit on it. TattleTale's AI, when this copy of the app offers it, needs no key.</p>
       <label class="f" for="ai-model">Model<select id="ai-model">
+        <option value="shared">TattleTale's AI (free for you, with a daily limit)</option>
         <option value="jev">Jev 1.14, TypeSafe (closed, via OpenRouter)</option>
         <option value="qwen">Qwen3.5-9B (open weights, via OpenRouter)</option>
         <option value="local">Your computer (Jev-compatible server, e.g. JPT-4B)</option></select></label>
-      <label class="f" for="ai-key">OpenRouter API key<input id="ai-key" type="password" autocomplete="off" placeholder="Paste a key to save it"></label>
+      <label class="f" for="ai-key" id="ai-key-row">OpenRouter API key<input id="ai-key" type="password" autocomplete="off" placeholder="Paste a key to save it"></label>
       <div id="ai-local" hidden>
         <label class="f" for="ai-local-url">Server address (https)<input id="ai-local-url" type="url" autocomplete="off" placeholder="https://your-tunnel.trycloudflare.com"></label>
         <label class="f" for="ai-local-token">Server token<input id="ai-local-token" type="password" autocomplete="off" placeholder="Paste the token the relay printed"></label>
       </div>
       <label class="cb small" for="ai-on"><input type="checkbox" id="ai-on"><span>Use AI assist on photos</span></label>
-      <label class="cb small" for="ai-compare"><input type="checkbox" id="ai-compare"><span>Also ask a second model and save both answers (for comparing)</span></label>
+      <label class="cb small" for="ai-compare" id="ai-compare-row"><input type="checkbox" id="ai-compare"><span>Also ask a second model and save both answers (for comparing)</span></label>
       <div class="row"><button class="btn small" id="ai-test" type="button">Test</button><button class="btn small" id="ai-forget" type="button">Remove key and token</button><a class="btn small" href="lab.html">Model lab</a></div>
       <p class="small" id="ai-status"></p>
     </div>
     <div class="card">
       <h3>Privacy</h3>
-      <p>Unless you turn on AI assist, the photo, plate reading and address lookup never leave your phone. The only outside requests are the text you choose to send and, on the Stats page, a query to NYC Open Data for complaints near a point rounded to about 100 meters.</p>
+      <p>Unless you turn on AI assist, the photo, plate reading and address lookup never leave your phone. With TattleTale's AI, a photo leaves your phone only when the phone can't tell what's wrong or can't read the plate for sure. It goes to the app owner's computer, or through OpenRouter to the model's maker if that computer doesn't answer in 10 seconds. The service keeps no photos, and counts daily use without storing IP addresses. The only outside requests are the text you choose to send and, on the Stats page, a query to NYC Open Data for complaints near a point rounded to about 100 meters.</p>
       <h3>Limits</h3>
       <p>311 has no public submission API, so the last step is always yours: pressing Send, or Submit on the 311 website. The plate reader can misread dirty, angled or far-away plates; the text shows the plate so you can fix it before sending. The idling reward needs a DEP account and a time-stamped video, so it cannot be one tap.</p>
       <h3>Credits</h3>
@@ -221,6 +222,7 @@ label.cb input { margin-top: 4px; width: 18px; height: 18px; flex: none; }
 <script src="lib/exifr.lite.umd.js"></script>
 <script src="lib/geocode.js"></script>
 <script src="lib/mp4meta.js"></script>
+<script src="config.js"></script>
 <script src="lib/ai.js"></script>
 <script src="app.js"></script>
 </body>

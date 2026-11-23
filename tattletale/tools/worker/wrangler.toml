@@ -1,0 +1,21 @@
+# TattleTale NYC's shared AI on Cloudflare's free plan. Setup steps: tools/worker/README.md
+name = "tattletale-ai"
+main = "worker.js"
+compatibility_date = "2026-07-01"
+
+[vars]
+ALLOWED_ORIGIN = "https://samueljwebber.github.io"
+LOCAL_URL = ""              # your computer's https address (relay + Tailscale Funnel); empty = always the cloud
+LOCAL_TIMEOUT_MS = "10000"  # how long to wait for your computer before using the cloud
+CLOUD_MODEL = "jev"         # or "qwen"
+PER_IP_DAILY = "30"         # cloud answers per person per day
+ALL_DAILY = "500"           # cloud answers per day for everyone
+
+# daily counters (free plan: SQLite-backed Durable Objects)
+[[durable_objects.bindings]]
+name = "LIMITS"
+class_name = "Limits"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Limits"]
