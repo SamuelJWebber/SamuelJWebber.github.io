@@ -39,7 +39,7 @@ async function loadSet(n) {
   }));
 }
 
-let rows = [];
+let rows = [], ran = {};
 const METHODS = [
   ['phone', 'Phone reader (first pass)'],
   ['jev', 'Phone + Jev'],
@@ -51,6 +51,7 @@ function summary() {
   const on = { phone: true, jev: $('#m-jev').checked, qwen: $('#m-qwen').checked, agree: $('#m-qwen').checked, local: $('#m-local').checked };
   const n = rows.length;
   const tr = METHODS.filter(([k]) => on[k]).map(([k, label]) => {
+    if (!ran[k]) return `<tr><td>${esc(label)}</td><td colspan="5" class="small muted">${k === 'local' ? 'Needs your server address (app: About, AI assist)' : 'Needs an OpenRouter key (app: About, AI assist)'}</td></tr>`;
     const ans = rows.filter(r => r[k]), right = ans.filter(r => r[k] === r.truth).length, wrong = ans.length - right;
     const ms = median(rows.map(r => r[k + 'Ms'])), cost = rows.reduce((t, r) => t + (r[k + 'Cost'] || 0), 0);
     const err = rows.find(r => r[k + 'Err'])?.[k + 'Err'];
@@ -100,7 +101,7 @@ async function runOne(item, use) {
 
 $('#go').onclick = async () => {
   const use = { jev: $('#m-jev').checked && !!settings.aiKey, qwen: $('#m-qwen').checked && !!settings.aiKey, local: $('#m-local').checked && !!settings.localUrl };
-  $('#go').disabled = true; $('#csv').disabled = true; rows = [];
+  $('#go').disabled = true; $('#csv').disabled = true; rows = []; ran = { phone: true, jev: use.jev, qwen: use.qwen, agree: use.qwen, local: use.local };
   try {
     await ready;
     $('#status').textContent = 'Loading the photo list from GitHub…';
